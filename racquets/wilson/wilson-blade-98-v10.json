@@ -22,7 +22,7 @@
   "geometry": {
     "head": {
       "shape": "oval",
-      "aspect": 1.35
+      "aspect": 1.38
     },
     "beam": {
       "profile": "box"
@@ -38,15 +38,15 @@
     "finish": "matte",
     "zones": [
       {
-        "from": 0.8,
-        "to": 0.93,
-        "color": "#e5322d",
+        "from": 0.12,
+        "to": 0.35,
+        "color": "#09472e",
         "blend": 0.03
       },
       {
-        "from": 0.93,
-        "to": 1,
-        "color": "#0b5b3a",
+        "from": 0.8,
+        "to": 0.93,
+        "color": "#e5322d",
         "blend": 0.03
       }
     ]

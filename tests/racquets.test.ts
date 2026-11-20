@@ -29,3 +29,10 @@ test('every spec is sourced and carries a boolean verified flag', () => {
 test('no spec has a dampener', () => {
   for (const s of specs) expect(s.parts.dampener).toBeNull();
 });
+test('every spec has 2-5 paint zones, none equal to the base colour', () => {
+  for (const s of specs) {
+    expect(s.paint.zones.length).toBeGreaterThanOrEqual(2);
+    expect(s.paint.zones.length).toBeLessThanOrEqual(5);
+    for (const z of s.paint.zones) expect(z.color).not.toBe(s.paint.base);
+  }
+});

@@ -40,6 +40,18 @@
     "finish": "matte",
     "zones": [
       {
+        "from": 0,
+        "to": 0.12,
+        "color": "#1d1d20",
+        "blend": 0.03
+      },
+      {
+        "from": 0.55,
+        "to": 0.8,
+        "color": "#16161a",
+        "blend": 0.03
+      },
+      {
         "from": 0.8,
         "to": 0.93,
         "color": "#1d1d20",

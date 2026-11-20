@@ -4,7 +4,7 @@ Fourteen racquets: three each for Yonex, Babolat, Wilson and Prince, two for Sol
 `racquets/`.
 
 **Read the trust column.** Specs (head, pattern, beam, weight, generation) were checked against
-retailer product pages on 2026-11-19 (Tennis Warehouse and others; manufacturer sites were mostly
+retailer pages and search snippets on 2026-11-19 (Tennis Warehouse and others; manufacturer sites were mostly
 unreachable). **No product photos were viewed**, so every colourway, accessory colour, head aspect
 ratio and throat/bridge style is *estimated*, and every spec file carries `verified: false`. A
 later likeness-review task checks photos and flips `verified`.
@@ -44,6 +44,8 @@ frames.
 | Clash 100 v3 | 100 | 16×19 | 24.5 / 24.5 / 24.5 | ellipse | Standard colourway not found (red is the Reverse edition); estimated black/charcoal | Thick constant beam; long, flexible-looking throat | Specs verified 2026-11-19 (snippets); colourway estimated and uncertain |
 | Pro Staff 97 v14 | 97 | 16×19 | 21.5 / 21.5 / 21.5 | box | Copper-bronze with black | Classic box beam; leather-look grip; small head | Specs verified 2026-11-19 (retailers); colourway estimated (Bronze colour-shift) |
 
+Blade 98 and Pro Staff 97 are genuinely similar frames; the specs differentiate them only by estimated head aspect (Blade ~1.38, more elongated; Pro Staff ~1.30, rounder, more traditional) and colourway.
+
 Wilson sells many limited cosmetics (US Open, Roland Garros and others). Use the standard
 launch colourway for each.
 
@@ -72,6 +74,8 @@ holes at 3, 9 and sometimes other positions on the hoop).
 | O3 Phantom 100X (2025) | 100 | 16×18 | 19 / 20 / 20 | tapered-box | Matte black (estimated) | Thin variable beam; O-Ports. Replaces the 18×20 Phantom 100X (22 / 20.5 / 18, 2024), which is no longer the newest | Specs verified 2026-11-19 (TW); weight (305 g) estimated; colourway estimated |
 | Tour 100 290g (2026) | 100 | 16×18 | 22 / 23 / 20 | box (rounded corners) | Black (retailers); gold throat accent is a guess | Open 16×18 pattern; mid-thickness beam | Specs verified 2026-11-19 (TW US and EU); colourway unconfirmed |
 | Ripstick 100 | 100 | 16×18 | 27 / 25.5 / 22 | ellipse | Red (retailers); the red-to-orange two-tone is an estimate | O-Ports; thick beam; the loudest paint in the set | Specs verified 2026-11-19 (retailers agree on beam); colourway estimated |
+
+Note: the tip / mid / shaft ordering of the O3 Phantom (19 / 20 / 20) and Tour 100 (22 / 23 / 20) beam widths is not stated by the sources; the order here is an assumption.
 
 ## Sources seen during design research
 
