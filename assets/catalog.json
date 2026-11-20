@@ -1,0 +1,573 @@
+{
+  "version": 1,
+  "styles": [
+    {
+      "id": "realistic",
+      "kind": "3d",
+      "label": "Realistic",
+      "extension": "glb"
+    }
+  ],
+  "racquets": [
+    {
+      "id": "babolat-pure-aero-100",
+      "brand": "Babolat",
+      "line": "Pure Aero",
+      "model": "Pure Aero 100",
+      "generation": "2026",
+      "year": 2026,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 300
+      },
+      "swatch": "#f6d60a",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-pure-aero-100.glb",
+          "bytes": 116616,
+          "triangles": 4468
+        }
+      }
+    },
+    {
+      "id": "babolat-pure-drive-100",
+      "brand": "Babolat",
+      "line": "Pure Drive",
+      "model": "Pure Drive 100",
+      "generation": "Gen 11",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 300
+      },
+      "swatch": "#1e6fd9",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-pure-drive-100.glb",
+          "bytes": 110680,
+          "triangles": 4468
+        }
+      }
+    },
+    {
+      "id": "babolat-pure-strike-98",
+      "brand": "Babolat",
+      "line": "Pure Strike",
+      "model": "Pure Strike 98 16x19",
+      "generation": "Gen 4",
+      "year": 2024,
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          21,
+          23,
+          21
+        ],
+        "unstrungWeightG": 305
+      },
+      "swatch": "#8a8d91",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-pure-strike-98.glb",
+          "bytes": 130708,
+          "triangles": 4336
+        }
+      }
+    },
+    {
+      "id": "prince-o3-phantom-100x",
+      "brand": "Prince",
+      "line": "Phantom",
+      "model": "O3 Phantom 100X",
+      "generation": "2025",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          18
+        ],
+        "beamMm": [
+          19,
+          20,
+          20
+        ],
+        "unstrungWeightG": 305
+      },
+      "swatch": "#0e0e10",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/prince-o3-phantom-100x.glb",
+          "bytes": 134056,
+          "triangles": 4448
+        }
+      }
+    },
+    {
+      "id": "prince-ripstick-100",
+      "brand": "Prince",
+      "line": "Ripstick",
+      "model": "Ripstick 100",
+      "generation": "2025",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          18
+        ],
+        "beamMm": [
+          27,
+          25.5,
+          22
+        ],
+        "unstrungWeightG": 300
+      },
+      "swatch": "#d8262f",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/prince-ripstick-100.glb",
+          "bytes": 114148,
+          "triangles": 4580
+        }
+      }
+    },
+    {
+      "id": "prince-tour-100-290g",
+      "brand": "Prince",
+      "line": "Tour",
+      "model": "Tour 100 290g",
+      "generation": "2026",
+      "year": 2026,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          18
+        ],
+        "beamMm": [
+          22,
+          23,
+          20
+        ],
+        "unstrungWeightG": 290
+      },
+      "swatch": "#151517",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/prince-tour-100-290g.glb",
+          "bytes": 130272,
+          "triangles": 4328
+        }
+      }
+    },
+    {
+      "id": "solinco-blackout-v2-300",
+      "brand": "Solinco",
+      "line": "Blackout",
+      "model": "Blackout 300",
+      "generation": "V2",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23.5,
+          26,
+          23
+        ],
+        "unstrungWeightG": 300
+      },
+      "swatch": "#111111",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/solinco-blackout-v2-300.glb",
+          "bytes": 110684,
+          "triangles": 4468
+        }
+      }
+    },
+    {
+      "id": "solinco-whiteout-v2-305",
+      "brand": "Solinco",
+      "line": "Whiteout",
+      "model": "Whiteout 305",
+      "generation": "V2",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          21.7,
+          21.7,
+          21.7
+        ],
+        "unstrungWeightG": 305
+      },
+      "swatch": "#f2f2f0",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/solinco-whiteout-v2-305.glb",
+          "bytes": 130688,
+          "triangles": 4336
+        }
+      }
+    },
+    {
+      "id": "wilson-blade-98-v10",
+      "brand": "Wilson",
+      "line": "Blade",
+      "model": "Blade 98 16x19",
+      "generation": "v10",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          21.5,
+          21.5,
+          20.5
+        ],
+        "unstrungWeightG": 305
+      },
+      "swatch": "#0b5b3a",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/wilson-blade-98-v10.glb",
+          "bytes": 130704,
+          "triangles": 4336
+        }
+      }
+    },
+    {
+      "id": "wilson-clash-100-v3",
+      "brand": "Wilson",
+      "line": "Clash",
+      "model": "Clash 100",
+      "generation": "v3",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          24.5,
+          24.5,
+          24.5
+        ],
+        "unstrungWeightG": 295
+      },
+      "swatch": "#1c1c1e",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/wilson-clash-100-v3.glb",
+          "bytes": 110672,
+          "triangles": 4468
+        }
+      }
+    },
+    {
+      "id": "wilson-pro-staff-97-v14",
+      "brand": "Wilson",
+      "line": "Pro Staff",
+      "model": "Pro Staff 97",
+      "generation": "v14",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 97,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          21.5,
+          21.5,
+          21.5
+        ],
+        "unstrungWeightG": 315
+      },
+      "swatch": "#8c5a2b",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/wilson-pro-staff-97-v14.glb",
+          "bytes": 130708,
+          "triangles": 4336
+        }
+      }
+    },
+    {
+      "id": "yonex-ezone-100",
+      "brand": "Yonex",
+      "line": "EZONE",
+      "model": "EZONE 100",
+      "generation": "8th gen",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          24.5,
+          26.5,
+          23
+        ],
+        "unstrungWeightG": 300
+      },
+      "swatch": "#1f5fd6",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/yonex-ezone-100.glb",
+          "bytes": 110668,
+          "triangles": 4468
+        }
+      }
+    },
+    {
+      "id": "yonex-percept-97",
+      "brand": "Yonex",
+      "line": "Percept",
+      "model": "Percept 97",
+      "generation": "2025",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 97,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          21,
+          21,
+          21
+        ],
+        "unstrungWeightG": 310
+      },
+      "swatch": "#14213d",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/yonex-percept-97.glb",
+          "bytes": 130696,
+          "triangles": 4336
+        }
+      }
+    },
+    {
+      "id": "yonex-vcore-100",
+      "brand": "Yonex",
+      "line": "VCORE",
+      "model": "VCORE 100",
+      "generation": "8th gen",
+      "year": 2026,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          24,
+          26,
+          23
+        ],
+        "unstrungWeightG": 300
+      },
+      "swatch": "#c21a2b",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/yonex-vcore-100.glb",
+          "bytes": 121644,
+          "triangles": 4660
+        }
+      }
+    }
+  ]
+}
