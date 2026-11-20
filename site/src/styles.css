@@ -309,7 +309,10 @@ body[data-view='detail'] .signs { display: none; }
 .stage:focus-visible { outline-offset: 2px; }
 .stage canvas { position: absolute; top: 0; left: 0; display: block; width: 100%; height: calc(100% - var(--controls-h)); touch-action: none; cursor: grab; }
 .stage canvas:active { cursor: grabbing; }
-.stage .silhouette { position: absolute; top: 4%; left: 0; width: 100%; height: calc(92% - var(--controls-h)); }
+/* The silhouette and note sit above the canvas in the DOM; never let them eat the drag. */
+.stage .silhouette { position: absolute; top: 4%; left: 0; width: 100%; height: calc(92% - var(--controls-h)); pointer-events: none; }
+.stage canvas { z-index: 1; }
+.stage-note { pointer-events: none; }
 .stage[data-state='ready'] .silhouette { opacity: 0; }
 .stage[data-state='ready'] canvas { opacity: 1; }
 .stage canvas { opacity: 0; transition: opacity 0.4s var(--ease-out); }
@@ -338,7 +341,7 @@ body[data-view='detail'] .signs { display: none; }
   text-align: center;
 }
 /* Inside the hoop of the silhouette, where nothing else is drawn. */
-.stage-fault { top: calc((100% - var(--controls-h)) * 0.27); transform: translateY(-50%); }
+.stage-fault { top: calc((100% - var(--controls-h)) * 0.27); transform: translateY(-50%); z-index: 2; }
 .stage-fault p { padding: 2px 6px; border-radius: 4px; background: var(--wall); }
 .stage-fault .button { background: var(--wall); }
 .stage[data-state='failed'] .stage-controls { visibility: hidden; }
