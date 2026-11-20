@@ -1,0 +1,32 @@
+{
+  "id": "head-paw-patrol-junior-19",
+  "status": "placeholder",
+  "brand": "Head",
+  "line": "Paw Patrol",
+  "model": "Paw Patrol Junior 19",
+  "generation": null,
+  "releaseYear": null,
+  "category": "junior",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 81,
+    "lengthIn": 19,
+    "stringPattern": [
+      16,
+      17
+    ],
+    "beamMm": null,
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Blue (also White)",
+  "sources": [
+    "https://www.tennis-warehouse.com/Head_Paw_Patrol_19_Junior_Racquet_Blue/descpageRCHEAD-PAW19B.html",
+    "https://www.tennis-warehouse.com/Head_Paw_Patrol_19_Junior_Racquet_White/descpageRCHEAD-PAW19W.html"
+  ],
+  "notes": "Licensed cartoon cosmetic junior; sold in Blue and White (second source).",
+  "researched": "2026-11-20",
+  "verified": false
+}

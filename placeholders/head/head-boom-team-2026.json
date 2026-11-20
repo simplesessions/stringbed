@@ -1,0 +1,36 @@
+{
+  "id": "head-boom-team-2026",
+  "status": "placeholder",
+  "brand": "Head",
+  "line": "Boom",
+  "model": "Boom Team",
+  "generation": "2026",
+  "releaseYear": 2026,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 107,
+    "lengthIn": 27.4,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      26,
+      26,
+      23
+    ],
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Coral/Black (also Purple)",
+  "sources": [
+    "https://www.tennis-warehouse.com/Head_Boom_Team_2026/descpageRCHEAD-HBOT26.html",
+    "https://www.tennis-warehouse.com/Head_Boom_Team_2026_Purple/descpageRCHEAD-HBMTAL.html"
+  ],
+  "notes": "Also sold in a Purple cosmetic with the same specs (second source). TW average strung specs: weight 9.7oz / 275g; balance 13.65in / 34.67cm / 0 pts EB. No unstrung weight/balance available (TW US lists strung only; head.com and TW Europe unreachable).",
+  "researched": "2026-11-20",
+  "verified": false
+}

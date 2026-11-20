@@ -1,0 +1,35 @@
+{
+  "id": "head-extreme-mp-2026",
+  "status": "placeholder",
+  "brand": "Head",
+  "line": "Extreme",
+  "model": "Extreme MP",
+  "generation": "2026",
+  "releaseYear": 2026,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      23,
+      26,
+      21
+    ],
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Yellow",
+  "sources": [
+    "https://www.tennis-warehouse.com/Head_Extreme_MP_Racquet/descpageRCHEAD-HREM26.html"
+  ],
+  "notes": "Year from TW lead (\"Updated with Hy-bor technology for 2026\"); TW title has no year. TW average strung specs: weight 11.2oz / 318g; balance 12.99in / 32.99cm / 4 pts HL. No unstrung weight/balance available (TW US lists strung only; head.com and TW Europe unreachable).",
+  "researched": "2026-11-20",
+  "verified": false
+}

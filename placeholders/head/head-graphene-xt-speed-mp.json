@@ -1,0 +1,35 @@
+{
+  "id": "head-graphene-xt-speed-mp",
+  "status": "placeholder",
+  "brand": "Head",
+  "line": "Speed",
+  "model": "Graphene XT Speed MP",
+  "generation": null,
+  "releaseYear": null,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      22,
+      22,
+      22
+    ],
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": null,
+  "sources": [
+    "https://www.tennis-warehouse.com/Head_Graphene_XT_Speed_MP/descpageRCHEAD-GXSMPR.html"
+  ],
+  "notes": "Legacy Graphene XT model \"reintroduced\" by Head per TW, sold pre-strung; no colour listed on page; no year stated. TW average strung specs: weight 11.1oz / 315g; balance 13in / 33.02cm / 4 pts HL. No unstrung weight/balance available (TW US lists strung only; head.com and TW Europe unreachable).",
+  "researched": "2026-11-20",
+  "verified": false
+}

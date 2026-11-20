@@ -1,0 +1,35 @@
+{
+  "id": "head-pwr-115-2026",
+  "status": "placeholder",
+  "brand": "Head",
+  "line": "PWR",
+  "model": "PWR 115",
+  "generation": "2026",
+  "releaseYear": 2026,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 115,
+    "lengthIn": 27.7,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      29,
+      29,
+      29
+    ],
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Black",
+  "sources": [
+    "https://www.tennis-warehouse.com/Head_PWR_115/descpageRCHEAD-HPWR15.html"
+  ],
+  "notes": "Year from TW lead (\"Introducing the PWR 115 2026\"). Not in the requested line list; included as a current Head racquet. TW average strung specs: weight 8.6oz / 244g; balance 15in / 38.1cm / 9 pts HH. No unstrung weight/balance available (TW US lists strung only; head.com and TW Europe unreachable).",
+  "researched": "2026-11-20",
+  "verified": false
+}

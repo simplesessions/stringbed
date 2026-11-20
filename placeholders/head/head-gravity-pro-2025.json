@@ -1,0 +1,35 @@
+{
+  "id": "head-gravity-pro-2025",
+  "status": "placeholder",
+  "brand": "Head",
+  "line": "Gravity",
+  "model": "Gravity Pro",
+  "generation": "2025",
+  "releaseYear": 2025,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27,
+    "stringPattern": [
+      18,
+      20
+    ],
+    "beamMm": [
+      20,
+      20,
+      20
+    ],
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Blue/Black",
+  "sources": [
+    "https://www.tennis-warehouse.com/Head_Gravity_Pro_2025/descpageRCHEAD-HGPRR.html"
+  ],
+  "notes": "TW average strung specs: weight 11.7oz / 332g; balance 12.59in / 31.98cm / 7 pts HL. No unstrung weight/balance available (TW US lists strung only; head.com and TW Europe unreachable).",
+  "researched": "2026-11-20",
+  "verified": false
+}

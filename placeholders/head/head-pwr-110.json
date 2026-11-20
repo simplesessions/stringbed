@@ -1,0 +1,35 @@
+{
+  "id": "head-pwr-110",
+  "status": "placeholder",
+  "brand": "Head",
+  "line": "PWR",
+  "model": "PWR 110",
+  "generation": null,
+  "releaseYear": null,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 110,
+    "lengthIn": 27.4,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      26,
+      25,
+      23
+    ],
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "White",
+  "sources": [
+    "https://www.tennis-warehouse.com/Head_PWR_110/descpageRCHEAD-HPWR10.html"
+  ],
+  "notes": "Not in the requested line list; included as a current Head racquet. TW average strung specs: weight 9.8oz / 278g; balance 13.8in / 35.05cm / 1 pts HH. No unstrung weight/balance available (TW US lists strung only; head.com and TW Europe unreachable).",
+  "researched": "2026-11-20",
+  "verified": false
+}

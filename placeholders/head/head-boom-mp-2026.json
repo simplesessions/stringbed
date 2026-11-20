@@ -1,0 +1,36 @@
+{
+  "id": "head-boom-mp-2026",
+  "status": "placeholder",
+  "brand": "Head",
+  "line": "Boom",
+  "model": "Boom MP",
+  "generation": "2026",
+  "releaseYear": 2026,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      23,
+      24,
+      22
+    ],
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Coral/Black (also Purple)",
+  "sources": [
+    "https://www.tennis-warehouse.com/Head_Boom_MP_2026/descpageRCHEAD-HBOMP6.html",
+    "https://www.tennis-warehouse.com/Head_Boom_MP_2026_Purple/descpageRCHEAD-HBOMPA.html"
+  ],
+  "notes": "Also sold in a Purple cosmetic with the same specs (second source). TW average strung specs: weight 11oz / 312g; balance 12.79in / 32.49cm / 6 pts HL. No unstrung weight/balance available (TW US lists strung only; head.com and TW Europe unreachable).",
+  "researched": "2026-11-20",
+  "verified": false
+}

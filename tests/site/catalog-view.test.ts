@@ -130,7 +130,7 @@ test('formatBeam collapses a constant beam', () => {
 
 test('placeholders group by brand, newest sale year first', () => {
   const groups = groupPlaceholders(catalog);
-  expect(groups.map((g) => g.brand)).toEqual(['Babolat', 'Prince', 'Solinco', 'Wilson', 'Yonex']);
+  expect(groups.map((g) => g.brand)).toEqual(['Babolat', 'Head', 'Prince', 'Solinco', 'Wilson', 'Yonex']);
   expect(groups.reduce((n, g) => n + g.count, 0)).toBe(catalog.placeholders.length);
   const babolat = groups.find((g) => g.brand === 'Babolat')!;
   expect(babolat.years.map((y) => y.year)).toEqual([2026, 2023]);

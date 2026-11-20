@@ -1,0 +1,35 @@
+{
+  "id": "head-gravity-tour-2025",
+  "status": "placeholder",
+  "brand": "Head",
+  "line": "Gravity",
+  "model": "Gravity Tour",
+  "generation": "2025",
+  "releaseYear": 2025,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 98,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      22,
+      22,
+      22
+    ],
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Black/Blue",
+  "sources": [
+    "https://www.tennis-warehouse.com/Head_Gravity_Tour_2025/descpageRCHEAD-HGTRR.html"
+  ],
+  "notes": "2025 version moved to 98 sq in / 16x19 (previous gen was 100 / 18x20) per TW. TW average strung specs: weight 11.4oz / 323g; balance 12.99in / 32.99cm / 4 pts HL. No unstrung weight/balance available (TW US lists strung only; head.com and TW Europe unreachable).",
+  "researched": "2026-11-20",
+  "verified": false
+}

@@ -5,7 +5,6 @@ import {
   assetFor,
   assetUrl,
   fileNameFromPath,
-  filterByBrand,
   formatBeam,
   formatBytes,
   formatCount,
@@ -141,7 +140,12 @@ function catalogFailed(err: unknown) {
 // ---------- header ----------
 
 function buildHeader(a: App) {
-  const n = a.catalog.racquets.length;
+  // Signs cover every brand, modelled or not; counts include racquets with no model yet.
+  const counts = new Map<string, number>();
+  for (const g of a.groups) counts.set(g.brand, g.racquets.length);
+  for (const g of a.stock) counts.set(g.brand, (counts.get(g.brand) ?? 0) + g.count);
+  const brands = [...counts.keys()].sort((x, y) => x.localeCompare(y, 'en'));
+  const n = [...counts.values()].reduce((x, y) => x + y, 0);
   const buttons: HTMLButtonElement[] = [];
   const add = (brand: string | null, label: string, count: number) => {
     const b = el('button', { class: 'sign', type: 'button', 'aria-pressed': String(brand === a.brand) },
@@ -151,14 +155,14 @@ function buildHeader(a: App) {
       a.lastOpened = null; // a filter choice is a new place on the wall; don't jump to the old bay
       for (const x of buttons) x.setAttribute('aria-pressed', String(x === b));
       applyFilter(a);
-      const shown = filterByBrand(a.groups, brand).reduce((n, g) => n + g.racquets.length, 0);
+      const shown = brand ? counts.get(brand)! : n;
       announce.textContent = brand ? `Showing ${shown} ${brand} racquets.` : `Showing all ${shown} racquets.`;
       if (parseRoute(location.hash).racquetId) location.hash = routeFor(null);
     });
     buttons.push(b);
   };
   add(null, 'All', n);
-  for (const g of a.groups) add(g.brand, g.brand, g.racquets.length);
+  for (const b of brands) add(b, b, counts.get(b)!);
   signs.replaceChildren(...buttons);
 
   // Styles come from the catalog. With a single style there is nothing to switch.

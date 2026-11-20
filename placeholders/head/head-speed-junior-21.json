@@ -1,0 +1,28 @@
+{
+  "id": "head-speed-junior-21",
+  "status": "placeholder",
+  "brand": "Head",
+  "line": "Speed",
+  "model": "Speed Junior 21",
+  "generation": null,
+  "releaseYear": null,
+  "category": "junior",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 91,
+    "lengthIn": 21,
+    "stringPattern": null,
+    "beamMm": null,
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Yellow/Blue",
+  "sources": [
+    "https://www.tennis-warehouse.com/Head_Speed_21_Junior_Racquet/descpageRCHEAD-SPED21.html"
+  ],
+  "notes": "Aluminium construction; no string pattern listed.",
+  "researched": "2026-11-20",
+  "verified": false
+}

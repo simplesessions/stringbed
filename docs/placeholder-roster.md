@@ -18,6 +18,7 @@ every frame listed there has a record.
 | Brand | Current (on sale late 2026) | On sale in 2023 | Total |
 |---|---|---|---|
 | Babolat | 59 (22 junior) | 81 (28 junior) | 133 (7 in both) |
+| Head | 72 (18 junior) | — | 72 |
 | Prince | 45 (5 junior) | — | 45 |
 | Wilson | 41 (5 junior) | — | 41 |
 | Yonex | 43 (10 junior) | — | 43 |
@@ -52,7 +53,11 @@ The 14 library racquets are not repeated here.
 
 ## Known gaps
 
-- Unstrung weight is known for 93 of 272, unstrung balance for fewer. Sites that publish
+- Head (added later the same day) comes from Tennis Warehouse US only; head.com and Tennis Warehouse
+  Europe rate-limited, so Head has no unstrung balance and one unstrung weight (Gravity Team).
+  Superseded 2024 Speed, Extreme and Boom frames still on sale are kept and noted; Zverev and
+  Legend cosmetics are skipped.
+- Unstrung weight is known for 93 of the first 272, unstrung balance for fewer. Sites that publish
   unstrung figures (Merchant of Tennis, Tennis Express, Racquet Guys, Tennis Point) rate-limited
   every request.
 - 118 records have no release year; 64 have no beam widths.

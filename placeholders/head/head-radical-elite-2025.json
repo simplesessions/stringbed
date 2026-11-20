@@ -1,0 +1,35 @@
+{
+  "id": "head-radical-elite-2025",
+  "status": "placeholder",
+  "brand": "Head",
+  "line": "Radical",
+  "model": "Radical Elite",
+  "generation": "2025",
+  "releaseYear": 2025,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 102,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      22,
+      25,
+      23
+    ],
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Orange",
+  "sources": [
+    "https://www.tennis-warehouse.com/Head_Radical_Elite_2025/descpageRCHEAD-RADELT.html"
+  ],
+  "notes": "TW average strung specs: weight 10oz / 283g; balance 12.99in / 32.99cm / 4 pts HL. No unstrung weight/balance available (TW US lists strung only; head.com and TW Europe unreachable).",
+  "researched": "2026-11-20",
+  "verified": false
+}

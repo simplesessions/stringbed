@@ -1,0 +1,28 @@
+{
+  "id": "head-gravity-mp-xl",
+  "status": "placeholder",
+  "brand": "Head",
+  "line": "Gravity",
+  "model": "Gravity MP XL",
+  "generation": "2025",
+  "releaseYear": null,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": null,
+    "lengthIn": null,
+    "stringPattern": null,
+    "beamMm": null,
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": null,
+  "sources": [
+    "https://www.tennis-warehouse.com/Head_Tennis_Racquets/catpage-HEADRACS.html"
+  ],
+  "notes": "Listed on the TW Head category page as \"Gravity MP XL 2025\", but its product page (/Head_Gravity_MP_XL_2025/descpageRCHEAD-HGMPXL.html) returned 404 twice, so no specs could be read. releaseYear left null because no product page confirmed it. No unstrung weight/balance available (TW US lists strung only; head.com and TW Europe unreachable).",
+  "researched": "2026-11-20",
+  "verified": false
+}

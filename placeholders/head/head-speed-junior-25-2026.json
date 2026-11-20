@@ -1,0 +1,31 @@
+{
+  "id": "head-speed-junior-25-2026",
+  "status": "placeholder",
+  "brand": "Head",
+  "line": "Speed",
+  "model": "Speed Junior 25",
+  "generation": "2026",
+  "releaseYear": 2026,
+  "category": "junior",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 25,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": null,
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "White/Black",
+  "sources": [
+    "https://www.tennis-warehouse.com/Head_Speed_25_Junior_Racquet_2026/descpageRCHEAD-HSJR25.html"
+  ],
+  "notes": null,
+  "researched": "2026-11-20",
+  "verified": false
+}

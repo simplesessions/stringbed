@@ -1,0 +1,31 @@
+{
+  "id": "head-ig-speed-junior-25-2026",
+  "status": "placeholder",
+  "brand": "Head",
+  "line": "Speed",
+  "model": "IG Speed Junior 25",
+  "generation": "2026",
+  "releaseYear": 2026,
+  "category": "junior",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 25,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": null,
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": null,
+  "sources": [
+    "https://www.tennis-warehouse.com/Head_IG_Speed_25_Junior_Racquet/descpageRCHEAD-HIGSP25.html"
+  ],
+  "notes": "Year from TW lead (\"Introducing the 2026 Head Speed Junior 25\"); title has no year. Innegra (IG) model, distinct from the Auxetic Speed Junior 25 2026.",
+  "researched": "2026-11-20",
+  "verified": false
+}

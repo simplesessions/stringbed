@@ -1,0 +1,28 @@
+{
+  "id": "head-radical-junior-21",
+  "status": "placeholder",
+  "brand": "Head",
+  "line": "Radical",
+  "model": "Radical Junior 21",
+  "generation": null,
+  "releaseYear": null,
+  "category": "junior",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 81,
+    "lengthIn": 21,
+    "stringPattern": null,
+    "beamMm": null,
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Orange",
+  "sources": [
+    "https://www.tennis-warehouse.com/Head_Radical_Junior_21/descpageRCHEAD-HARJ21.html"
+  ],
+  "notes": "Aluminium construction; no string pattern listed.",
+  "researched": "2026-11-20",
+  "verified": false
+}

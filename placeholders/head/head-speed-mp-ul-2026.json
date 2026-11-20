@@ -1,0 +1,35 @@
+{
+  "id": "head-speed-mp-ul-2026",
+  "status": "placeholder",
+  "brand": "Head",
+  "line": "Speed",
+  "model": "Speed MP UL",
+  "generation": "2026",
+  "releaseYear": 2026,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      23,
+      23,
+      23
+    ],
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "White/Black",
+  "sources": [
+    "https://www.tennis-warehouse.com/Head_Speed_MP_UL_2026/descpageRCHEAD-HSMPUL.html"
+  ],
+  "notes": "TW lead text has a typo calling it \"Speed MP L 2026\"; title says Speed MP UL 2026. TW average strung specs: weight 9.8oz / 278g; balance 13.19in / 33.5cm / 2 pts HL. No unstrung weight/balance available (TW US lists strung only; head.com and TW Europe unreachable).",
+  "researched": "2026-11-20",
+  "verified": false
+}

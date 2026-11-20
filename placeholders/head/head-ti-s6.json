@@ -1,0 +1,35 @@
+{
+  "id": "head-ti-s6",
+  "status": "placeholder",
+  "brand": "Head",
+  "line": "Titanium",
+  "model": "Ti.S6",
+  "generation": null,
+  "releaseYear": null,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 115,
+    "lengthIn": 27.75,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      27,
+      28,
+      27
+    ],
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Silver & Blue",
+  "sources": [
+    "https://www.tennis-warehouse.com/Head_Titanium_TiS6_Strung/descpageRCHEAD-TIS6.html"
+  ],
+  "notes": "Long-running legacy model sold pre-strung; not in the requested line list. TW average strung specs: weight 8.6oz / 244g; balance 14.8in / 37.59cm / 7 pts HH. No unstrung weight/balance available (TW US lists strung only; head.com and TW Europe unreachable).",
+  "researched": "2026-11-20",
+  "verified": false
+}

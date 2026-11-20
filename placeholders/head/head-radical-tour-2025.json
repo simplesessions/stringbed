@@ -1,0 +1,35 @@
+{
+  "id": "head-radical-tour-2025",
+  "status": "placeholder",
+  "brand": "Head",
+  "line": "Radical",
+  "model": "Radical Tour",
+  "generation": "2025",
+  "releaseYear": 2025,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 98,
+    "lengthIn": 27,
+    "stringPattern": [
+      18,
+      20
+    ],
+    "beamMm": [
+      20,
+      23,
+      21
+    ],
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Orange/Blue",
+  "sources": [
+    "https://www.tennis-warehouse.com/Head_Radical_Tour_2025/descpageRCHEAD-HRTOUR.html"
+  ],
+  "notes": "Year from TW product title only. TW average strung specs: weight 11.4oz / 323g; balance 12.75in / 32.39cm / 6 pts HL. No unstrung weight/balance available (TW US lists strung only; head.com and TW Europe unreachable).",
+  "researched": "2026-11-20",
+  "verified": false
+}

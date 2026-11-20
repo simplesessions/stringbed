@@ -1,0 +1,28 @@
+{
+  "id": "head-instinct-junior-21",
+  "status": "placeholder",
+  "brand": "Head",
+  "line": "Instinct",
+  "model": "Instinct Junior 21",
+  "generation": null,
+  "releaseYear": null,
+  "category": "junior",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 81,
+    "lengthIn": 21,
+    "stringPattern": null,
+    "beamMm": null,
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Purple",
+  "sources": [
+    "https://www.tennis-warehouse.com/Head_Instinct_21_Junior/descpageRCHEAD-INST21.html"
+  ],
+  "notes": "Aluminium construction; no string pattern listed.",
+  "researched": "2026-11-20",
+  "verified": false
+}

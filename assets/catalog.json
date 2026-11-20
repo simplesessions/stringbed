@@ -4999,6 +4999,2226 @@
       "researched": "2026-11-20"
     },
     {
+      "id": "head-boom-elite-2026",
+      "brand": "Head",
+      "line": "Boom",
+      "model": "Boom Elite",
+      "generation": "2026",
+      "releaseYear": 2026,
+      "category": "adult",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 107,
+        "lengthIn": 27.2,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          22
+        ],
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "Coral/Black",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Boom_Elite_2026/descpageRCHEAD-HBMELT.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-boom-junior-25-2026",
+      "brand": "Head",
+      "line": "Boom",
+      "model": "Boom Junior 25",
+      "generation": "2026",
+      "releaseYear": 2026,
+      "category": "junior",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 25,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": null,
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "Black/Coral (also Purple)",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Boom_25_Junior_Racquet_2026/descpageRCHEAD-HBJR25.html",
+        "https://www.tennis-warehouse.com/Head_Boom_25_Junior_Racquet_2026_Purple/descpageRCHEAD-HBJRA5.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-boom-junior-26-2026",
+      "brand": "Head",
+      "line": "Boom",
+      "model": "Boom Junior 26",
+      "generation": "2026",
+      "releaseYear": 2026,
+      "category": "junior",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 26,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": null,
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "Black/Coral (also Purple)",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Boom_26_Junior/descpageRCHEAD-HBMJR6.html",
+        "https://www.tennis-warehouse.com/Head_Boom_26_Junior_Purple/descpageRCHEAD-HBJRA6.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-boom-mp-2026",
+      "brand": "Head",
+      "line": "Boom",
+      "model": "Boom MP",
+      "generation": "2026",
+      "releaseYear": 2026,
+      "category": "adult",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          24,
+          22
+        ],
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "Coral/Black (also Purple)",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Boom_MP_2026/descpageRCHEAD-HBOMP6.html",
+        "https://www.tennis-warehouse.com/Head_Boom_MP_2026_Purple/descpageRCHEAD-HBOMPA.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-boom-mp-l-2026",
+      "brand": "Head",
+      "line": "Boom",
+      "model": "Boom MP L",
+      "generation": "2026",
+      "releaseYear": 2026,
+      "category": "adult",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          24,
+          22
+        ],
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "Coral/Black (also Purple)",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Boom_MP_L_2026/descpageRCHEAD-HBMPL6.html",
+        "https://www.tennis-warehouse.com/Head_Boom_MP_L_2026_Purple/descpageRCHEAD-BMPLA6.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-boom-mp-ul-2026",
+      "brand": "Head",
+      "line": "Boom",
+      "model": "Boom MP UL",
+      "generation": "2026",
+      "releaseYear": 2026,
+      "category": "adult",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          24,
+          22
+        ],
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "Coral/Black (also Purple)",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Boom_MP_UL_2026/descpageRCHEAD-HBMPUL.html",
+        "https://www.tennis-warehouse.com/Head_Boom_MP_UL_2026_Purple/descpageRCHEAD-BMPULA.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-boom-pro-2024",
+      "brand": "Head",
+      "line": "Boom",
+      "model": "Boom Pro",
+      "generation": "2024",
+      "releaseYear": 2024,
+      "category": "adult",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          22,
+          22,
+          21.5
+        ],
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "Black/Coral",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Boom_Pro/descpageRCHEAD-HBOOMP.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-boom-pro-2026",
+      "brand": "Head",
+      "line": "Boom",
+      "model": "Boom Pro",
+      "generation": "2026",
+      "releaseYear": 2026,
+      "category": "adult",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          22,
+          22,
+          21.5
+        ],
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "Coral/Black",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Boom_Pro_2026/descpageRCHEAD-HBOOP6.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-boom-team-2026",
+      "brand": "Head",
+      "line": "Boom",
+      "model": "Boom Team",
+      "generation": "2026",
+      "releaseYear": 2026,
+      "category": "adult",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 107,
+        "lengthIn": 27.4,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          26,
+          26,
+          23
+        ],
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "Coral/Black (also Purple)",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Boom_Team_2026/descpageRCHEAD-HBOT26.html",
+        "https://www.tennis-warehouse.com/Head_Boom_Team_2026_Purple/descpageRCHEAD-HBMTAL.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-extreme-elite-2026",
+      "brand": "Head",
+      "line": "Extreme",
+      "model": "Extreme Elite",
+      "generation": "2026",
+      "releaseYear": 2026,
+      "category": "adult",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          24,
+          26,
+          21
+        ],
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "Yellow",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Extreme_Elite_2026_Racquet/descpageRCHEAD-HELT26.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-extreme-mp-2024",
+      "brand": "Head",
+      "line": "Extreme",
+      "model": "Extreme MP",
+      "generation": "2024",
+      "releaseYear": 2024,
+      "category": "adult",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          21
+        ],
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "Yellow",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Extreme_MP_2024/descpageRCHEAD-HREM24.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-extreme-mp-2026",
+      "brand": "Head",
+      "line": "Extreme",
+      "model": "Extreme MP",
+      "generation": "2026",
+      "releaseYear": 2026,
+      "category": "adult",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          21
+        ],
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "Yellow",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Extreme_MP_Racquet/descpageRCHEAD-HREM26.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-extreme-mp-l-2024",
+      "brand": "Head",
+      "line": "Extreme",
+      "model": "Extreme MP L",
+      "generation": "2024",
+      "releaseYear": 2024,
+      "category": "adult",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          21
+        ],
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "Yellow",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Extreme_MP_L_2024/descpageRCHEAD-HEMPL24.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-extreme-mp-l-2026",
+      "brand": "Head",
+      "line": "Extreme",
+      "model": "Extreme MP L",
+      "generation": "2026",
+      "releaseYear": 2026,
+      "category": "adult",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          21
+        ],
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "Yellow",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Extreme_MP_L_Racquet/descpageRCHEAD-HEMPL6.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-extreme-mp-ul-2026",
+      "brand": "Head",
+      "line": "Extreme",
+      "model": "Extreme MP UL",
+      "generation": "2026",
+      "releaseYear": 2026,
+      "category": "adult",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          21
+        ],
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "Yellow",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Extreme_MP_UL_Racquet/descpageRCHEAD-HEMPUL.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-extreme-mp-xl",
+      "brand": "Head",
+      "line": "Extreme",
+      "model": "Extreme MP XL",
+      "generation": null,
+      "releaseYear": null,
+      "category": "adult",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27.5,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          21
+        ],
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "Yellow",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Extreme_MP_XL_Racquet/descpageRCHEAD-HEMPXL.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-extreme-pro-2024",
+      "brand": "Head",
+      "line": "Extreme",
+      "model": "Extreme Pro",
+      "generation": "2024",
+      "releaseYear": 2024,
+      "category": "adult",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          22,
+          23,
+          21
+        ],
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "Yellow",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Extreme_Pro_2024/descpageRCHEAD-HREP24.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-extreme-pro-2026",
+      "brand": "Head",
+      "line": "Extreme",
+      "model": "Extreme Pro",
+      "generation": "2026",
+      "releaseYear": 2026,
+      "category": "adult",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          22,
+          23,
+          21
+        ],
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "Yellow",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Extreme_Pro_Racquet/descpageRCHEAD-HEXP26.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-extreme-team-2024",
+      "brand": "Head",
+      "line": "Extreme",
+      "model": "Extreme Team",
+      "generation": "2024",
+      "releaseYear": 2024,
+      "category": "adult",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 105,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          21
+        ],
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "Yellow",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Extreme_Team_2024/descpageRCHEAD-HRET24.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-extreme-team-2026",
+      "brand": "Head",
+      "line": "Extreme",
+      "model": "Extreme Team",
+      "generation": "2026",
+      "releaseYear": 2026,
+      "category": "adult",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 105,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          21
+        ],
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "Yellow",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Extreme_Team_Racquet/descpageRCHEAD-HEXT26.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-graphene-360-extreme-mp",
+      "brand": "Head",
+      "line": "Extreme",
+      "model": "Graphene 360+ Extreme MP",
+      "generation": null,
+      "releaseYear": null,
+      "category": "adult",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          21
+        ],
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "Yellow/Grey",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Graphene_360_Extreme_MP/descpageRCHEAD-360XM.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-graphene-xt-radical-mp",
+      "brand": "Head",
+      "line": "Radical",
+      "model": "Graphene XT Radical MP",
+      "generation": null,
+      "releaseYear": null,
+      "category": "adult",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          20,
+          23,
+          21
+        ],
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "Orange/Black",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Graphene_XT_Radical_MP/descpageRCHEAD-HGXTRPM.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-graphene-xt-radical-s",
+      "brand": "Head",
+      "line": "Radical",
+      "model": "Graphene XT Radical S",
+      "generation": null,
+      "releaseYear": null,
+      "category": "adult",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 102,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          22,
+          25,
+          23
+        ],
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "Black/Orange",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Graphene_XT_Radical_S/descpageRCHEAD-HGXTRS.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-graphene-xt-speed-mp",
+      "brand": "Head",
+      "line": "Speed",
+      "model": "Graphene XT Speed MP",
+      "generation": null,
+      "releaseYear": null,
+      "category": "adult",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          22,
+          22,
+          22
+        ],
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": null,
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Graphene_XT_Speed_MP/descpageRCHEAD-GXSMPR.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-graphene-xt-speed-s",
+      "brand": "Head",
+      "line": "Speed",
+      "model": "Graphene XT Speed S",
+      "generation": null,
+      "releaseYear": null,
+      "category": "adult",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          22.5,
+          22.5,
+          22
+        ],
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "Black/White",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Graphene_XT_Speed_S/descpageRCHEAD-GXSS.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-gravity-mp-2025",
+      "brand": "Head",
+      "line": "Gravity",
+      "model": "Gravity MP",
+      "generation": "2025",
+      "releaseYear": 2025,
+      "category": "adult",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          20
+        ],
+        "beamMm": [
+          22,
+          22,
+          22
+        ],
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "Blue/Black",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Gravity_MP_2025/descpageRCHEAD-HGMPG.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-gravity-mp-l-2025",
+      "brand": "Head",
+      "line": "Gravity",
+      "model": "Gravity MP L",
+      "generation": "2025",
+      "releaseYear": 2025,
+      "category": "adult",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          20
+        ],
+        "beamMm": [
+          22,
+          22,
+          22
+        ],
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "Blue/Black",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Gravity_MP_L_2025/descpageRCHEAD-HGMLPG.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-gravity-mp-xl",
+      "brand": "Head",
+      "line": "Gravity",
+      "model": "Gravity MP XL",
+      "generation": "2025",
+      "releaseYear": null,
+      "category": "adult",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": null,
+        "lengthIn": null,
+        "stringPattern": null,
+        "beamMm": null,
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": null,
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Tennis_Racquets/catpage-HEADRACS.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-gravity-pro-2025",
+      "brand": "Head",
+      "line": "Gravity",
+      "model": "Gravity Pro",
+      "generation": "2025",
+      "releaseYear": 2025,
+      "category": "adult",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          18,
+          20
+        ],
+        "beamMm": [
+          20,
+          20,
+          20
+        ],
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "Blue/Black",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Gravity_Pro_2025/descpageRCHEAD-HGPRR.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-gravity-team-2025",
+      "brand": "Head",
+      "line": "Gravity",
+      "model": "Gravity Team",
+      "generation": "2025",
+      "releaseYear": 2025,
+      "category": "adult",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 104,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          20
+        ],
+        "beamMm": [
+          24,
+          24,
+          24
+        ],
+        "unstrungWeightG": 270,
+        "balanceMm": null
+      },
+      "colourway": "Blue/Black",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Gravity_Team_2025/descpageRCHEAD-HRTMPG.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-gravity-tour-2025",
+      "brand": "Head",
+      "line": "Gravity",
+      "model": "Gravity Tour",
+      "generation": "2025",
+      "releaseYear": 2025,
+      "category": "adult",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          22,
+          22,
+          22
+        ],
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "Black/Blue",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Gravity_Tour_2025/descpageRCHEAD-HGTRR.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-ig-boom-xceed",
+      "brand": "Head",
+      "line": "Boom",
+      "model": "IG Boom XCeed",
+      "generation": null,
+      "releaseYear": null,
+      "category": "adult",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 107,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "Mint/Black",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_IG_Boom_XCeed/descpageRCHEAD-XCEEDB.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-ig-radical-xceed",
+      "brand": "Head",
+      "line": "Radical",
+      "model": "IG Radical XCeed",
+      "generation": null,
+      "releaseYear": null,
+      "category": "adult",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "Orange/Blue",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_IG_Radical_XCeed/descpageRCHEAD-XCEEDR.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-ig-speed-junior-25-2026",
+      "brand": "Head",
+      "line": "Speed",
+      "model": "IG Speed Junior 25",
+      "generation": "2026",
+      "releaseYear": 2026,
+      "category": "junior",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 25,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": null,
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": null,
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_IG_Speed_25_Junior_Racquet/descpageRCHEAD-HIGSP25.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-ig-speed-junior-26-2026",
+      "brand": "Head",
+      "line": "Speed",
+      "model": "IG Speed Junior 26",
+      "generation": "2026",
+      "releaseYear": 2026,
+      "category": "junior",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 26,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": null,
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": null,
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_IG_Speed_26_Junior_Racquet/descpageRCHEAD-HIGSP26.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-instinct-junior-21",
+      "brand": "Head",
+      "line": "Instinct",
+      "model": "Instinct Junior 21",
+      "generation": null,
+      "releaseYear": null,
+      "category": "junior",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 81,
+        "lengthIn": 21,
+        "stringPattern": null,
+        "beamMm": null,
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "Purple",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Instinct_21_Junior/descpageRCHEAD-INST21.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-instinct-junior-23",
+      "brand": "Head",
+      "line": "Instinct",
+      "model": "Instinct Junior 23",
+      "generation": null,
+      "releaseYear": null,
+      "category": "junior",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 23,
+        "stringPattern": null,
+        "beamMm": null,
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "Purple",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Instinct_23_Junior_Racquet/descpageRCHEAD-INST23.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-instinct-junior-25",
+      "brand": "Head",
+      "line": "Instinct",
+      "model": "Instinct Junior 25",
+      "generation": null,
+      "releaseYear": null,
+      "category": "junior",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 105,
+        "lengthIn": 25,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": null,
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "Purple/Blue",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Instinct_25_Junior_Racquet/descpageRCHEAD-INST25.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-paw-patrol-junior-17",
+      "brand": "Head",
+      "line": "Paw Patrol",
+      "model": "Paw Patrol Junior 17",
+      "generation": null,
+      "releaseYear": null,
+      "category": "junior",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 62,
+        "lengthIn": 17,
+        "stringPattern": [
+          14,
+          15
+        ],
+        "beamMm": null,
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "Blue (also White)",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Paw_Patrol_17_Junior_Racquet_Blue/descpageRCHEAD-PAW17B.html",
+        "https://www.tennis-warehouse.com/Head_Paw_Patrol_17_Junior_Racquet_White/descpageRCHEAD-PAW17W.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-paw-patrol-junior-19",
+      "brand": "Head",
+      "line": "Paw Patrol",
+      "model": "Paw Patrol Junior 19",
+      "generation": null,
+      "releaseYear": null,
+      "category": "junior",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 81,
+        "lengthIn": 19,
+        "stringPattern": [
+          16,
+          17
+        ],
+        "beamMm": null,
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "Blue (also White)",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Paw_Patrol_19_Junior_Racquet_Blue/descpageRCHEAD-PAW19B.html",
+        "https://www.tennis-warehouse.com/Head_Paw_Patrol_19_Junior_Racquet_White/descpageRCHEAD-PAW19W.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-paw-patrol-junior-21",
+      "brand": "Head",
+      "line": "Paw Patrol",
+      "model": "Paw Patrol Junior 21",
+      "generation": null,
+      "releaseYear": null,
+      "category": "junior",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 81,
+        "lengthIn": 21,
+        "stringPattern": [
+          16,
+          17
+        ],
+        "beamMm": null,
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "Blue (also White)",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Paw_Patrol_21_Junior_Racquet_Blue/descpageRCHEAD-PAW21B.html",
+        "https://www.tennis-warehouse.com/Head_Paw_Patrol_21_Junior_Racquet_White/descpageRCHEAD-PAW21W.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-paw-patrol-junior-23",
+      "brand": "Head",
+      "line": "Paw Patrol",
+      "model": "Paw Patrol Junior 23",
+      "generation": null,
+      "releaseYear": null,
+      "category": "junior",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 23,
+        "stringPattern": [
+          16,
+          18
+        ],
+        "beamMm": null,
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "Blue (also White)",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Paw_Patrol_23_Junior_Racquet_Blue/descpageRCHEAD-PAW23B.html",
+        "https://www.tennis-warehouse.com/Head_Paw_Patrol_23_Junior_Racquet_White/descpageRCHEAD-PAW23W.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-prestige-mp-l",
+      "brand": "Head",
+      "line": "Prestige",
+      "model": "Prestige MP L",
+      "generation": null,
+      "releaseYear": null,
+      "category": "adult",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 99,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          21.5,
+          21.5,
+          21.5
+        ],
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "Maroon",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Prestige_MP_L/descpageRCHEAD-HPRMPL.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-prestige-mp-limited",
+      "brand": "Head",
+      "line": "Prestige",
+      "model": "Prestige MP Limited",
+      "generation": null,
+      "releaseYear": null,
+      "category": "adult",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 99,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          21.5,
+          21.5,
+          21.5
+        ],
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "Silver",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Prestige_MP_Limited/descpageRCHEAD-HPMPL6.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-prestige-pro-2023",
+      "brand": "Head",
+      "line": "Prestige",
+      "model": "Prestige Pro",
+      "generation": null,
+      "releaseYear": 2023,
+      "category": "adult",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          18,
+          20
+        ],
+        "beamMm": [
+          20,
+          20,
+          20
+        ],
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "Maroon",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Prestige_Pro/descpageRCHEAD-PRPROR.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-prestige-tour-2023",
+      "brand": "Head",
+      "line": "Prestige",
+      "model": "Prestige Tour",
+      "generation": null,
+      "releaseYear": 2023,
+      "category": "adult",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 95,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          22,
+          22,
+          22
+        ],
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "Maroon",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Prestige_Tour/descpageRCHEAD-THPRTR.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-pwr-110",
+      "brand": "Head",
+      "line": "PWR",
+      "model": "PWR 110",
+      "generation": null,
+      "releaseYear": null,
+      "category": "adult",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 110,
+        "lengthIn": 27.4,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          26,
+          25,
+          23
+        ],
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "White",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_PWR_110/descpageRCHEAD-HPWR10.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-pwr-115-2026",
+      "brand": "Head",
+      "line": "PWR",
+      "model": "PWR 115",
+      "generation": "2026",
+      "releaseYear": 2026,
+      "category": "adult",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 115,
+        "lengthIn": 27.7,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          29,
+          29,
+          29
+        ],
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "Black",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_PWR_115/descpageRCHEAD-HPWR15.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-radical-elite-2025",
+      "brand": "Head",
+      "line": "Radical",
+      "model": "Radical Elite",
+      "generation": "2025",
+      "releaseYear": 2025,
+      "category": "adult",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 102,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          22,
+          25,
+          23
+        ],
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "Orange",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Radical_Elite_2025/descpageRCHEAD-RADELT.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-radical-junior-21",
+      "brand": "Head",
+      "line": "Radical",
+      "model": "Radical Junior 21",
+      "generation": null,
+      "releaseYear": null,
+      "category": "junior",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 81,
+        "lengthIn": 21,
+        "stringPattern": null,
+        "beamMm": null,
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "Orange",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Radical_Junior_21/descpageRCHEAD-HARJ21.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-radical-junior-26-2025",
+      "brand": "Head",
+      "line": "Radical",
+      "model": "Radical Junior 26",
+      "generation": "2025",
+      "releaseYear": 2025,
+      "category": "junior",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 26,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": null,
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "Orange",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Radical_Junior_2025/descpageRCHEAD-HRJR26.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-radical-mp-2025",
+      "brand": "Head",
+      "line": "Radical",
+      "model": "Radical MP",
+      "generation": "2025",
+      "releaseYear": 2025,
+      "category": "adult",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          20,
+          23,
+          21
+        ],
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "Orange",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Radical_MP_2025/descpageRCHEAD-HRMP.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-radical-pro-2025",
+      "brand": "Head",
+      "line": "Radical",
+      "model": "Radical Pro",
+      "generation": "2025",
+      "releaseYear": 2025,
+      "category": "adult",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          20,
+          21.5,
+          21
+        ],
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "Orange",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Radical_Pro_2025/descpageRCHEAD-HPRR.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-radical-team-2025",
+      "brand": "Head",
+      "line": "Radical",
+      "model": "Radical Team",
+      "generation": "2025",
+      "releaseYear": 2025,
+      "category": "adult",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 102,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          22,
+          25,
+          23
+        ],
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "Orange",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Radical_Team_2025/descpageRCHEAD-HRRT.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-radical-tour-2025",
+      "brand": "Head",
+      "line": "Radical",
+      "model": "Radical Tour",
+      "generation": "2025",
+      "releaseYear": 2025,
+      "category": "adult",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          18,
+          20
+        ],
+        "beamMm": [
+          20,
+          23,
+          21
+        ],
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "Orange/Blue",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Radical_Tour_2025/descpageRCHEAD-HRTOUR.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-speed-elite-2026",
+      "brand": "Head",
+      "line": "Speed",
+      "model": "Speed Elite",
+      "generation": "2026",
+      "releaseYear": 2026,
+      "category": "adult",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          25,
+          25,
+          25
+        ],
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "White/Black",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Speed_Elite_2026/descpageRCHEAD-HSPELT.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-speed-junior-21",
+      "brand": "Head",
+      "line": "Speed",
+      "model": "Speed Junior 21",
+      "generation": null,
+      "releaseYear": null,
+      "category": "junior",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 91,
+        "lengthIn": 21,
+        "stringPattern": null,
+        "beamMm": null,
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "Yellow/Blue",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Speed_21_Junior_Racquet/descpageRCHEAD-SPED21.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-speed-junior-23",
+      "brand": "Head",
+      "line": "Speed",
+      "model": "Speed Junior 23",
+      "generation": null,
+      "releaseYear": null,
+      "category": "junior",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 23,
+        "stringPattern": null,
+        "beamMm": null,
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "Green",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Speed_23_Junior_Racquet/descpageRCHEAD-SPED23.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-speed-junior-25-2026",
+      "brand": "Head",
+      "line": "Speed",
+      "model": "Speed Junior 25",
+      "generation": "2026",
+      "releaseYear": 2026,
+      "category": "junior",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 25,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": null,
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "White/Black",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Speed_25_Junior_Racquet_2026/descpageRCHEAD-HSJR25.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-speed-junior-25",
+      "brand": "Head",
+      "line": "Speed",
+      "model": "Speed Junior 25",
+      "generation": null,
+      "releaseYear": null,
+      "category": "junior",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 105,
+        "lengthIn": 25,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": null,
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "Blue/Green",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Speed_25_Junior_Racquet/descpageRCHEAD-SPED25.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-speed-junior-26-2026",
+      "brand": "Head",
+      "line": "Speed",
+      "model": "Speed Junior 26",
+      "generation": "2026",
+      "releaseYear": 2026,
+      "category": "junior",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 26,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": null,
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "White/Black",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Speed_Junior_26_2026/descpageRCHEAD-HSPJR6.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-speed-mp-2024",
+      "brand": "Head",
+      "line": "Speed",
+      "model": "Speed MP",
+      "generation": "2024",
+      "releaseYear": 2024,
+      "category": "adult",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          23,
+          23
+        ],
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "White/Black",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Speed_MP_2024/descpageRCHEAD-HSPDM.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-speed-mp-2026",
+      "brand": "Head",
+      "line": "Speed",
+      "model": "Speed MP",
+      "generation": "2026",
+      "releaseYear": 2026,
+      "category": "adult",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          23,
+          23
+        ],
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "White/Black",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Speed_MP_2026/descpageRCHEAD-HSPMP6.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-speed-mp-l-2026",
+      "brand": "Head",
+      "line": "Speed",
+      "model": "Speed MP L",
+      "generation": "2026",
+      "releaseYear": 2026,
+      "category": "adult",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          23,
+          23
+        ],
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "White/Black",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Speed_MP_L_2026/descpageRCHEAD-HSMPL6.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-speed-mp-ul-2026",
+      "brand": "Head",
+      "line": "Speed",
+      "model": "Speed MP UL",
+      "generation": "2026",
+      "releaseYear": 2026,
+      "category": "adult",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          23,
+          23
+        ],
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "White/Black",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Speed_MP_UL_2026/descpageRCHEAD-HSMPUL.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-speed-pro-2024",
+      "brand": "Head",
+      "line": "Speed",
+      "model": "Speed Pro",
+      "generation": "2024",
+      "releaseYear": 2024,
+      "category": "adult",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          18,
+          20
+        ],
+        "beamMm": [
+          23,
+          23,
+          23
+        ],
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "White/Black",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Speed_Pro_2024/descpageRCHEAD-HSPDP.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-speed-pro-2026",
+      "brand": "Head",
+      "line": "Speed",
+      "model": "Speed Pro",
+      "generation": "2026",
+      "releaseYear": 2026,
+      "category": "adult",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          18,
+          20
+        ],
+        "beamMm": [
+          23,
+          23,
+          23
+        ],
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "White/Black",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Speed_Pro_2026/descpageRCHEAD-HSPDP6.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-speed-sinner",
+      "brand": "Head",
+      "line": "Speed",
+      "model": "Speed Sinner",
+      "generation": null,
+      "releaseYear": null,
+      "category": "adult",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          22,
+          22,
+          22
+        ],
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "White/Black",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Speed_Sinner/descpageRCHEAD-HSPSIN.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-speed-team-2026",
+      "brand": "Head",
+      "line": "Speed",
+      "model": "Speed Team",
+      "generation": "2026",
+      "releaseYear": 2026,
+      "category": "adult",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 105,
+        "lengthIn": 27.4,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          24,
+          24,
+          24
+        ],
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "White/Black",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Speed_Team_2026/descpageRCHEAD-HSPTM6.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-speed-tour-2026",
+      "brand": "Head",
+      "line": "Speed",
+      "model": "Speed Tour",
+      "generation": "2026",
+      "releaseYear": 2026,
+      "category": "adult",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 97,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          23,
+          23
+        ],
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "White/Black",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Speed_Tour_2026/descpageRCHEAD-HSPDT6.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-squared",
+      "brand": "Head",
+      "line": "Squared",
+      "model": "Squared",
+      "generation": null,
+      "releaseYear": null,
+      "category": "adult",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          18
+        ],
+        "beamMm": [
+          23,
+          25,
+          24
+        ],
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "Silver",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Squared/descpageRCHEAD-HSQUR.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
+      "id": "head-ti-s6",
+      "brand": "Head",
+      "line": "Titanium",
+      "model": "Ti.S6",
+      "generation": null,
+      "releaseYear": null,
+      "category": "adult",
+      "onSaleIn": [
+        2026
+      ],
+      "specs": {
+        "headSizeSqIn": 115,
+        "lengthIn": 27.75,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          27,
+          28,
+          27
+        ],
+        "unstrungWeightG": null,
+        "balanceMm": null
+      },
+      "colourway": "Silver & Blue",
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Titanium_TiS6_Strung/descpageRCHEAD-TIS6.html"
+      ],
+      "researched": "2026-11-20"
+    },
+    {
       "id": "prince-ats-textreme-tour-100-290-carbon",
       "brand": "Prince",
       "line": "ATS Textreme Tour",

@@ -1,0 +1,31 @@
+{
+  "id": "head-radical-junior-26-2025",
+  "status": "placeholder",
+  "brand": "Head",
+  "line": "Radical",
+  "model": "Radical Junior 26",
+  "generation": "2025",
+  "releaseYear": 2025,
+  "category": "junior",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 26,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": null,
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Orange",
+  "sources": [
+    "https://www.tennis-warehouse.com/Head_Radical_Junior_2025/descpageRCHEAD-HRJR26.html"
+  ],
+  "notes": "TW title \"Radical Junior 2025\"; 26 in length per spec table; for ages 11+.",
+  "researched": "2026-11-20",
+  "verified": false
+}

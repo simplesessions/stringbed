@@ -1,0 +1,35 @@
+{
+  "id": "head-prestige-pro-2023",
+  "status": "placeholder",
+  "brand": "Head",
+  "line": "Prestige",
+  "model": "Prestige Pro",
+  "generation": null,
+  "releaseYear": 2023,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 98,
+    "lengthIn": 27,
+    "stringPattern": [
+      18,
+      20
+    ],
+    "beamMm": [
+      20,
+      20,
+      20
+    ],
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Maroon",
+  "sources": [
+    "https://www.tennis-warehouse.com/Head_Prestige_Pro/descpageRCHEAD-PRPROR.html"
+  ],
+  "notes": "releaseYear from TW lead (\"For 2023, Head makes incremental tweaks\"); title has no year. TW average strung specs: weight 11.9oz / 337g; balance 12.59in / 31.98cm / 7 pts HL. No unstrung weight/balance available (TW US lists strung only; head.com and TW Europe unreachable).",
+  "researched": "2026-11-20",
+  "verified": false
+}

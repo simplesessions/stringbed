@@ -1,0 +1,35 @@
+{
+  "id": "head-extreme-pro-2024",
+  "status": "placeholder",
+  "brand": "Head",
+  "line": "Extreme",
+  "model": "Extreme Pro",
+  "generation": "2024",
+  "releaseYear": 2024,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 98,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      22,
+      23,
+      21
+    ],
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Yellow",
+  "sources": [
+    "https://www.tennis-warehouse.com/Head_Extreme_Pro_2024/descpageRCHEAD-HREP24.html"
+  ],
+  "notes": "Previous generation (superseded by Extreme Pro 2026), still listed on TW. Formerly called Extreme Tour. TW average strung specs: weight 11.4oz / 323g; balance 12.79in / 32.49cm / 6 pts HL. No unstrung weight/balance available (TW US lists strung only; head.com and TW Europe unreachable).",
+  "researched": "2026-11-20",
+  "verified": false
+}

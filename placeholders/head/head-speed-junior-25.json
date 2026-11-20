@@ -1,0 +1,31 @@
+{
+  "id": "head-speed-junior-25",
+  "status": "placeholder",
+  "brand": "Head",
+  "line": "Speed",
+  "model": "Speed Junior 25",
+  "generation": null,
+  "releaseYear": null,
+  "category": "junior",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 105,
+    "lengthIn": 25,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": null,
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Blue/Green",
+  "sources": [
+    "https://www.tennis-warehouse.com/Head_Speed_25_Junior_Racquet/descpageRCHEAD-SPED25.html"
+  ],
+  "notes": "Older/entry Speed 25 junior still listed (105 sq in head per TW, vs 100 for the 2026 version); no year stated.",
+  "researched": "2026-11-20",
+  "verified": false
+}

@@ -1,0 +1,31 @@
+{
+  "id": "head-speed-junior-26-2026",
+  "status": "placeholder",
+  "brand": "Head",
+  "line": "Speed",
+  "model": "Speed Junior 26",
+  "generation": "2026",
+  "releaseYear": 2026,
+  "category": "junior",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 26,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": null,
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "White/Black",
+  "sources": [
+    "https://www.tennis-warehouse.com/Head_Speed_Junior_26_2026/descpageRCHEAD-HSPJR6.html"
+  ],
+  "notes": null,
+  "researched": "2026-11-20",
+  "verified": false
+}

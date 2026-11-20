@@ -1,0 +1,35 @@
+{
+  "id": "head-squared",
+  "status": "placeholder",
+  "brand": "Head",
+  "line": "Squared",
+  "model": "Squared",
+  "generation": null,
+  "releaseYear": null,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      18
+    ],
+    "beamMm": [
+      23,
+      25,
+      24
+    ],
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Silver",
+  "sources": [
+    "https://www.tennis-warehouse.com/Head_Squared/descpageRCHEAD-HSQUR.html"
+  ],
+  "notes": "Not in the requested line list; included as a current Head racquet. TW average strung specs: weight 10.9oz / 309g; balance 12in / 30.48cm / 12 pts HL. No unstrung weight/balance available (TW US lists strung only; head.com and TW Europe unreachable).",
+  "researched": "2026-11-20",
+  "verified": false
+}

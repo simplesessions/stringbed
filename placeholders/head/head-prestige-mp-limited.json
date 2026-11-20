@@ -1,0 +1,35 @@
+{
+  "id": "head-prestige-mp-limited",
+  "status": "placeholder",
+  "brand": "Head",
+  "line": "Prestige",
+  "model": "Prestige MP Limited",
+  "generation": null,
+  "releaseYear": null,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 99,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      21.5,
+      21.5,
+      21.5
+    ],
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Silver",
+  "sources": [
+    "https://www.tennis-warehouse.com/Head_Prestige_MP_Limited/descpageRCHEAD-HPMPL6.html"
+  ],
+  "notes": "Limited edition but with its own name and no standard twin listed; TW says it differs from the 2023 Prestige MP (faster, more open 16x19 pattern, Hy-Bor). No year stated; no standard current Prestige MP listed on TW. TW average strung specs: weight 11.2oz / 318g; balance 13in / 33.02cm / 4 pts HL. No unstrung weight/balance available (TW US lists strung only; head.com and TW Europe unreachable).",
+  "researched": "2026-11-20",
+  "verified": false
+}

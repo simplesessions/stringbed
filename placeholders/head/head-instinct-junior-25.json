@@ -1,0 +1,31 @@
+{
+  "id": "head-instinct-junior-25",
+  "status": "placeholder",
+  "brand": "Head",
+  "line": "Instinct",
+  "model": "Instinct Junior 25",
+  "generation": null,
+  "releaseYear": null,
+  "category": "junior",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 105,
+    "lengthIn": 25,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": null,
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Purple/Blue",
+  "sources": [
+    "https://www.tennis-warehouse.com/Head_Instinct_25_Junior_Racquet/descpageRCHEAD-INST25.html"
+  ],
+  "notes": "Aluminium construction.",
+  "researched": "2026-11-20",
+  "verified": false
+}

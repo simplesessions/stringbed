@@ -1,0 +1,35 @@
+{
+  "id": "head-boom-pro-2026",
+  "status": "placeholder",
+  "brand": "Head",
+  "line": "Boom",
+  "model": "Boom Pro",
+  "generation": "2026",
+  "releaseYear": 2026,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 98,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      22,
+      22,
+      21.5
+    ],
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Coral/Black",
+  "sources": [
+    "https://www.tennis-warehouse.com/Head_Boom_Pro_2026/descpageRCHEAD-HBOOP6.html"
+  ],
+  "notes": "TW average strung specs: weight 11.5oz / 326g; balance 12.59in / 31.98cm / 7 pts HL. No unstrung weight/balance available (TW US lists strung only; head.com and TW Europe unreachable).",
+  "researched": "2026-11-20",
+  "verified": false
+}

@@ -1,0 +1,35 @@
+{
+  "id": "head-extreme-elite-2026",
+  "status": "placeholder",
+  "brand": "Head",
+  "line": "Extreme",
+  "model": "Extreme Elite",
+  "generation": "2026",
+  "releaseYear": 2026,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      24,
+      26,
+      21
+    ],
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Yellow",
+  "sources": [
+    "https://www.tennis-warehouse.com/Head_Extreme_Elite_2026_Racquet/descpageRCHEAD-HELT26.html"
+  ],
+  "notes": "TW average strung specs: weight 9.7oz / 275g; balance 13.9in / 35.31cm / 3 pts HH. No unstrung weight/balance available (TW US lists strung only; head.com and TW Europe unreachable).",
+  "researched": "2026-11-20",
+  "verified": false
+}

@@ -1,0 +1,35 @@
+{
+  "id": "head-ig-radical-xceed",
+  "status": "placeholder",
+  "brand": "Head",
+  "line": "Radical",
+  "model": "IG Radical XCeed",
+  "generation": null,
+  "releaseYear": null,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      23,
+      26,
+      23
+    ],
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Orange/Blue",
+  "sources": [
+    "https://www.tennis-warehouse.com/Head_IG_Radical_XCeed/descpageRCHEAD-XCEEDR.html"
+  ],
+  "notes": "Value pre-strung Innegra (IG) model; no year stated. TW average strung specs: weight 10.1oz / 286g; balance 13.5in / 34.29cm / 0 pts EB. No unstrung weight/balance available (TW US lists strung only; head.com and TW Europe unreachable).",
+  "researched": "2026-11-20",
+  "verified": false
+}

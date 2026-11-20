@@ -1,0 +1,35 @@
+{
+  "id": "head-extreme-mp-ul-2026",
+  "status": "placeholder",
+  "brand": "Head",
+  "line": "Extreme",
+  "model": "Extreme MP UL",
+  "generation": "2026",
+  "releaseYear": 2026,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      23,
+      26,
+      21
+    ],
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Yellow",
+  "sources": [
+    "https://www.tennis-warehouse.com/Head_Extreme_MP_UL_Racquet/descpageRCHEAD-HEMPUL.html"
+  ],
+  "notes": "New to the Extreme line; year from TW lead (\"the Extreme MP UL 2026\"); TW title has no year. TW average strung specs: weight 9.7oz / 275g; balance 13.58in / 34.49cm / 1 pts HH. No unstrung weight/balance available (TW US lists strung only; head.com and TW Europe unreachable).",
+  "researched": "2026-11-20",
+  "verified": false
+}

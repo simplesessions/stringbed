@@ -1,0 +1,28 @@
+{
+  "id": "head-speed-junior-23",
+  "status": "placeholder",
+  "brand": "Head",
+  "line": "Speed",
+  "model": "Speed Junior 23",
+  "generation": null,
+  "releaseYear": null,
+  "category": "junior",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 98,
+    "lengthIn": 23,
+    "stringPattern": null,
+    "beamMm": null,
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Green",
+  "sources": [
+    "https://www.tennis-warehouse.com/Head_Speed_23_Junior_Racquet/descpageRCHEAD-SPED23.html"
+  ],
+  "notes": "Aluminium construction; no string pattern listed.",
+  "researched": "2026-11-20",
+  "verified": false
+}

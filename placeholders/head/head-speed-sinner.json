@@ -1,0 +1,35 @@
+{
+  "id": "head-speed-sinner",
+  "status": "placeholder",
+  "brand": "Head",
+  "line": "Speed",
+  "model": "Speed Sinner",
+  "generation": null,
+  "releaseYear": null,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      22,
+      22,
+      22
+    ],
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "White/Black",
+  "sources": [
+    "https://www.tennis-warehouse.com/Head_Speed_Sinner/descpageRCHEAD-HSPSIN.html"
+  ],
+  "notes": "Player edition with its own name, mold, layup and drill pattern per TW (not a paint job); TW notes its strung sample does not exactly match the stated unstrung factory targets, which TW does not list. No year stated. TW average strung specs: weight 11.34oz / 321g; balance 13.14in / 33.38cm / 3 pts HL. No unstrung weight/balance available (TW US lists strung only; head.com and TW Europe unreachable).",
+  "researched": "2026-11-20",
+  "verified": false
+}

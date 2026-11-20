@@ -1,0 +1,35 @@
+{
+  "id": "head-graphene-xt-radical-mp",
+  "status": "placeholder",
+  "brand": "Head",
+  "line": "Radical",
+  "model": "Graphene XT Radical MP",
+  "generation": null,
+  "releaseYear": null,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 98,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      20,
+      23,
+      21
+    ],
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Orange/Black",
+  "sources": [
+    "https://www.tennis-warehouse.com/Head_Graphene_XT_Radical_MP/descpageRCHEAD-HGXTRPM.html"
+  ],
+  "notes": "Legacy Graphene XT model \"reintroduced\" by Head per TW, sold pre-strung; no year stated. TW average strung specs: weight 11oz / 312g; balance 12.79in / 32.49cm / 6 pts HL. No unstrung weight/balance available (TW US lists strung only; head.com and TW Europe unreachable).",
+  "researched": "2026-11-20",
+  "verified": false
+}
