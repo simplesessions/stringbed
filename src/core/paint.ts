@@ -10,6 +10,18 @@ type RGB = [number, number, number];
 const clamp01 = (v: number) => Math.min(1, Math.max(0, v));
 const mix = (a: RGB, b: RGB, t: number): RGB => [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t, a[2] + (b[2] - a[2]) * t];
 
+/** Weight (0..1) of a zone at u: 1 inside, fading to 0 across `blend` at an edge not on a frame end. */
+function zoneWeight(z: Paint['zones'][number], u: number): number {
+  if (u < z.from || u > z.to) return 0;
+  const b = z.blend ?? 0;
+  let w = 1;
+  if (b > 0) {
+    if (z.from > 0) w = Math.min(w, (u - z.from) / b);
+    if (z.to < 1) w = Math.min(w, (z.to - u) / b);
+  }
+  return clamp01(w);
+}
+
 /**
  * Linear-RGB colour at frame coordinate u, before any pattern: base, overridden by zones in order
  * (later wins). A zone's `blend` fades it in and out *inside* its [from, to] edges, so a zone never
@@ -19,16 +31,15 @@ const mix = (a: RGB, b: RGB, t: number): RGB => [a[0] + (b[0] - a[0]) * t, a[1] 
 export function paintColorAt(paint: Paint, u: number): RGB {
   let c = hexToLinear(paint.base);
   for (const z of paint.zones) {
-    if (u < z.from || u > z.to) continue;
-    const b = z.blend ?? 0;
-    let w = 1;
-    if (b > 0) {
-      if (z.from > 0) w = Math.min(w, (u - z.from) / b);
-      if (z.to < 1) w = Math.min(w, (z.to - u) / b);
-    }
-    c = mix(c, hexToLinear(z.color), clamp01(w));
+    const w = zoneWeight(z, u);
+    if (w > 0) c = mix(c, hexToLinear(z.color), w);
   }
   return c;
+}
+
+/** True where a zone covers u at least half strength. The pattern paints only the base, never a zone. */
+export function zonedAt(paint: Paint, u: number): boolean {
+  return paint.zones.some((z) => zoneWeight(z, u) >= 0.5);
 }
 
 /** 32-bit integer hash of a lattice point and seed (no Math.random; fully deterministic). */
@@ -56,22 +67,23 @@ function valueNoise(x: number, y: number, z: number, seed: number): number {
 
 /**
  * Noise cell size (metres) at scale 1, per axis of the frame's own space (x across the head, y along
- * the racquet, z through the thickness). The cells are tall (y) and thin through z, so on the long
- * sides of the hoop blobs run lengthwise as stripes, while the narrow cell in z flips front and back
- * faces and the rim independently so stripes wrap the beam rather than ignoring it.
+ * the racquet, z through the thickness). Tiger camo runs in horizontal streaks, so cells are long in x
+ * and short in y: on the sides of the hoop the streaks cross the beam, across the top and bottom they
+ * run along it. y is kept near two hoop ring spacings, the finest detail vertex colours can hold. The
+ * narrow cell in z flips the front and back faces and the rim independently so streaks wrap the beam.
  */
-const CELL_M = { x: 0.022, y: 0.05, z: 0.012 };
-const CAMO_THRESHOLD = 0.55;
+const CELL_M = { x: 0.04, y: 0.019, z: 0.008 };
+const CAMO_THRESHOLD = 0.46;
 
-/** Camo field in 0..1 at a vertex position: value noise plus a light fine octave for ragged edges. */
+/** Camo field in 0..1 at a vertex position: value noise plus a fine octave for ragged, broken edges. */
 function camoField(x: number, y: number, z: number, scale: number, seed: number): number {
   const px = (x / CELL_M.x) * scale, py = (y / CELL_M.y) * scale, pz = (z / CELL_M.z) * scale;
   const coarse = valueNoise(px, py, pz, seed);
-  const fine = valueNoise(px * 2.3 + 40, py * 2.3, pz * 2.3, seed + 101);
-  return coarse * 0.85 + fine * 0.15;
+  const fine = valueNoise(px * 2.7 + 40, py * 1.9, pz * 2.3, seed + 101);
+  return coarse * 0.7 + fine * 0.3;
 }
 
-/** Adds a "color" attribute (itemSize 3, linear RGB) to the frame: zones first, then the pattern. */
+/** Adds a "color" attribute (itemSize 3, linear RGB) to the frame: zones first, then the pattern on the bare base. */
 export function applyPaint(frame: THREE.BufferGeometry, paint: Paint): void {
   const pos = frame.getAttribute('position');
   const uAttr = frame.getAttribute('u');
@@ -82,7 +94,7 @@ export function applyPaint(frame: THREE.BufferGeometry, paint: Paint): void {
   for (let i = 0; i < pos.count; i++) {
     const u = uAttr.getX(i);
     let c = paintColorAt(paint, u);
-    if (pat && patColor && camoField(pos.getX(i), pos.getY(i), pos.getZ(i), pat.scale, pat.seed) > CAMO_THRESHOLD) c = patColor;
+    if (pat && patColor && !zonedAt(paint, u) && camoField(pos.getX(i), pos.getY(i), pos.getZ(i), pat.scale, pat.seed) > CAMO_THRESHOLD) c = patColor;
     out[i * 3] = c[0]; out[i * 3 + 1] = c[1]; out[i * 3 + 2] = c[2];
   }
   frame.setAttribute('color', new THREE.BufferAttribute(out, 3));

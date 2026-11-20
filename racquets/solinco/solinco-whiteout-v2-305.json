@@ -34,54 +34,55 @@
     "features": []
   },
   "paint": {
-    "base": "#f2f2f0",
+    "base": "#f3f3f1",
     "finish": "matte",
     "zones": [
       {
-        "from": 0.12,
-        "to": 0.35,
-        "color": "#cfd2d5",
-        "blend": 0.03
+        "from": 0.84,
+        "to": 0.92,
+        "color": "#2a2b2e",
+        "blend": 0.02
       },
       {
-        "from": 0.93,
+        "from": 0.92,
         "to": 1,
-        "color": "#d8dadc",
-        "blend": 0.03
+        "color": "#1e1f21",
+        "blend": 0.02
       }
     ],
     "pattern": {
       "type": "camo",
-      "color": "#69707a",
+      "color": "#bcc1c6",
       "scale": 1,
       "seed": 305
     }
   },
   "parts": {
     "grip": {
-      "color": "#f2f2f2"
+      "color": "#1e1e1e"
     },
     "collar": {
-      "color": "#f2f2f0"
+      "color": "#f3f3f1"
     },
     "buttCap": {
-      "color": "#1a1a1a"
+      "color": "#1e1e1e"
     },
     "strings": {
       "color": "#f2f2f2",
       "gaugeMm": 1.25
     },
     "grommets": {
-      "color": "#f2f2f0"
+      "color": "#f3f3f1"
     },
     "bumper": {
-      "color": "#8a8d91"
+      "color": "#1e1f21"
     },
     "dampener": null
   },
   "sources": [
     "https://www.tennis-warehouse.com/learning_center/racquet_reviews/WTOCAXreview.html",
-    "https://www.tennis-warehouse.com/Solinco_Whiteout_Racquets/catpage-SOLWH.html"
+    "https://www.tennis-warehouse.com/Solinco_Whiteout_Racquets/catpage-SOLWH.html",
+    "https://www.tennis-warehouse.com/Solinco_Whiteout_305_v2_Camo/descpageRCSOLINCO-WTOCAH.html"
   ],
-  "verified": false
+  "verified": true
 }

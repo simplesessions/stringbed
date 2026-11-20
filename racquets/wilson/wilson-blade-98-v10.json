@@ -22,7 +22,7 @@
   "geometry": {
     "head": {
       "shape": "oval",
-      "aspect": 1.38
+      "aspect": 1.35
     },
     "beam": {
       "profile": "box"
@@ -34,48 +34,49 @@
     "features": []
   },
   "paint": {
-    "base": "#0b5b3a",
-    "finish": "matte",
+    "base": "#2e8c66",
+    "finish": "satin",
     "zones": [
       {
-        "from": 0.12,
+        "from": 0,
         "to": 0.35,
-        "color": "#09472e",
-        "blend": 0.03
+        "color": "#137a4e",
+        "blend": 0.02
       },
       {
-        "from": 0.8,
-        "to": 0.93,
-        "color": "#e5322d",
-        "blend": 0.03
+        "from": 0.365,
+        "to": 0.39,
+        "color": "#ea4436",
+        "blend": 0
       }
     ]
   },
   "parts": {
     "grip": {
-      "color": "#1a1a1a"
+      "color": "#3f7259"
     },
     "collar": {
-      "color": "#0b5b3a"
+      "color": "#137a4e"
     },
     "buttCap": {
-      "color": "#1a1a1a"
+      "color": "#3f7259"
     },
     "strings": {
       "color": "#f2f2f2",
       "gaugeMm": 1.25
     },
     "grommets": {
-      "color": "#1a1a1a"
+      "color": "#1d5c40"
     },
     "bumper": {
-      "color": "#1a1a1a"
+      "color": "#1d5c40"
     },
     "dampener": null
   },
   "sources": [
     "https://www.merchantoftennis.com/products/wilson-blade-98-16x19-v10",
-    "https://nz.wilson.com/products/tiger-blade-98-16x19-v10-tennis-racket"
+    "https://nz.wilson.com/products/tiger-blade-98-16x19-v10-tennis-racket",
+    "https://www.tennis-warehouse.com/Wilson_Blade_98_16x19_v10/descpageRCWILSON-WB9810.html"
   ],
-  "verified": false
+  "verified": true
 }

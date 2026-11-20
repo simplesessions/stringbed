@@ -32,3 +32,9 @@ test('points are evenly spaced by arc length', () => {
   const d = loop.map((p, i) => Math.hypot(p.x - loop[(i + 1) % 128].x, p.y - loop[(i + 1) % 128].y));
   expect(Math.max(...d) / Math.min(...d)).toBeLessThan(1.05);
 });
+test('isometric narrows toward the throat: squared shoulders over a tapering base', () => {
+  const iso = headOutline('isometric', 100, 1.3, 256), oval = headOutline('oval', 100, 1.3, 256);
+  const top = Math.max(...oval.map((p) => p.y));
+  expect(outlineHalfWidthAt(iso, 0.9 * top)).toBeGreaterThan(outlineHalfWidthAt(oval, 0.9 * top) * 1.08);
+  expect(outlineHalfWidthAt(iso, -0.75 * top)).toBeLessThan(outlineHalfWidthAt(oval, -0.75 * top) * 0.97);
+});

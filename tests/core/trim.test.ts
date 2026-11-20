@@ -34,13 +34,29 @@ test('o-ports colour the grommets: color attribute only when the spec has o-port
   expect(plain).toBeGreaterThan(0);
   expect(buildGrommets(spec, layout).getAttribute('color')).toBeUndefined();
 });
-test('o-ports are at 3 and 9 o\'clock, flush insets', () => {
+test('o-ports sit on both sides (around 3 and 9 o\'clock), flush insets', () => {
   const lightSpec = makeSpec({ geometry: { features: ['o-ports'] }, parts: { grommets: { color: '#ffffff' } } });
   const g = buildGrommets(lightSpec, layoutOf(lightSpec)); const c = g.getAttribute('color'), p = g.getAttribute('position');
   const nr = g.getAttribute('normal');
   let minX = Infinity, maxX = -Infinity;
   for (let i = 0; i < c.count; i++) if (c.getX(i) < 0.5) { expect(nr.getX(i) * Math.sign(p.getX(i))).toBeGreaterThan(0.5); minX = Math.min(minX, p.getX(i)); maxX = Math.max(maxX, p.getX(i)); }
   expect(minX).toBeLessThan(-0.05); expect(maxX).toBeGreaterThan(0.05);
+});
+test('o-ports are a row of separate insets down each side, clear of the bumper', () => {
+  const lightSpec = makeSpec({ geometry: { features: ['o-ports'] }, parts: { grommets: { color: '#ffffff' } } });
+  const l = layoutOf(lightSpec);
+  const g = buildGrommets(lightSpec, l); const c = g.getAttribute('color'), p = g.getAttribute('position');
+  const bumper = box(buildBumper(lightSpec, l));
+  for (const side of [1, -1]) {
+    const ys = [];
+    for (let i = 0; i < c.count; i++) if (c.getX(i) < 0.5 && Math.sign(p.getX(i)) === side) ys.push(p.getY(i));
+    ys.sort((a, b) => a - b);
+    let runs = 1;
+    for (let i = 1; i < ys.length; i++) if (ys[i] - ys[i - 1] > 0.004) runs++; // a gap between ovals starts a new port
+    expect(runs).toBeGreaterThanOrEqual(4);
+    expect(ys[ys.length - 1] - ys[0]).toBeGreaterThan(0.1); // the row spans a good part of the side
+    expect(ys[ys.length - 1]).toBeLessThan(bumper.max.y);
+  }
 });
 test('no dampener unless the spec asks for one', () => {
   expect(buildDampener(spec, layout)).toBeNull();

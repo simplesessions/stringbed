@@ -22,7 +22,7 @@
   "geometry": {
     "head": {
       "shape": "isometric",
-      "aspect": 1.3
+      "aspect": 1.35
     },
     "beam": {
       "profile": "ellipse"
@@ -34,55 +34,62 @@
     "features": []
   },
   "paint": {
-    "base": "#1f5fd6",
-    "finish": "satin",
+    "base": "#3a62bf",
+    "finish": "gloss",
     "zones": [
       {
         "from": 0,
-        "to": 0.35,
-        "color": "#14203f",
-        "blend": 0.03
+        "to": 0.12,
+        "color": "#5d97d6",
+        "blend": 0.02
       },
       {
-        "from": 0.55,
-        "to": 0.8,
-        "color": "#2f7bff",
-        "blend": 0.03
+        "from": 0.35,
+        "to": 0.395,
+        "color": "#2fb8b0",
+        "blend": 0.02
       },
       {
-        "from": 0.93,
+        "from": 0.44,
+        "to": 0.53,
+        "color": "#5a82dc",
+        "blend": 0.02
+      },
+      {
+        "from": 0.67,
         "to": 1,
-        "color": "#14203f",
-        "blend": 0.03
+        "color": "#1f2f7a",
+        "blend": 0.02
       }
     ]
   },
   "parts": {
     "grip": {
-      "color": "#1a1a1a"
+      "color": "#e8eaea"
     },
     "collar": {
-      "color": "#14203f"
+      "color": "#3558b0"
     },
     "buttCap": {
-      "color": "#1a1a1a"
+      "color": "#d9dede"
     },
     "strings": {
       "color": "#f2f2f2",
       "gaugeMm": 1.25
     },
     "grommets": {
-      "color": "#14203f"
+      "color": "#1f2f7a"
     },
     "bumper": {
-      "color": "#14203f"
+      "color": "#1f2f7a"
     },
     "dampener": null
   },
   "sources": [
     "https://www.tennis-warehouse.com/Best_Racquets_of_2026/catpage-BESTRAC26.html",
     "https://www.dickssportinggoods.com/p/yonex-ezone-100-tennis-racquet-2025-25enpaznxxxxxxxxxtnn/25enpaznxxxxxxxxxtnn",
-    "https://merchantoftennis.com/products/yonex-ezone-100-8th-gen-blast-blue"
+    "https://merchantoftennis.com/products/yonex-ezone-100-8th-gen-blast-blue",
+    "https://www.tennis-warehouse.com/Yonex_EZONE_100_2025/descpageRCYONEX-EZ10BB.html"
   ],
-  "verified": false
+  "verified": true
 }

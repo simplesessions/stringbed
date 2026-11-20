@@ -34,48 +34,49 @@
     "features": []
   },
   "paint": {
-    "base": "#1c1c1e",
-    "finish": "matte",
+    "base": "#1e1e20",
+    "finish": "gloss",
     "zones": [
       {
         "from": 0.12,
-        "to": 0.35,
-        "color": "#2a2a2e",
-        "blend": 0.03
+        "to": 0.3,
+        "color": "#2c2c30",
+        "blend": 0.02
       },
       {
-        "from": 0.8,
-        "to": 0.93,
-        "color": "#3a3a3f",
-        "blend": 0.03
+        "from": 0.3,
+        "to": 0.345,
+        "color": "#f2542d",
+        "blend": 0.02
       }
     ]
   },
   "parts": {
     "grip": {
-      "color": "#1a1a1a"
+      "color": "#1e1e1e"
     },
     "collar": {
-      "color": "#1a1a1a"
+      "color": "#1e1e20"
     },
     "buttCap": {
-      "color": "#1a1a1a"
+      "color": "#1e1e1e"
     },
     "strings": {
       "color": "#f2f2f2",
       "gaugeMm": 1.25
     },
     "grommets": {
-      "color": "#1a1a1a"
+      "color": "#1e1e20"
     },
     "bumper": {
-      "color": "#1a1a1a"
+      "color": "#1e1e20"
     },
     "dampener": null
   },
   "sources": [
     "https://www.merchantoftennis.com/products/wilson-clash-100-v3",
-    "https://www.racquetpoint.com/products/wilson-clash-100-v3-us-open-tennis-racquet"
+    "https://www.racquetpoint.com/products/wilson-clash-100-v3-us-open-tennis-racquet",
+    "https://www.tennis-warehouse.com/Wilson_Clash_100_v3/descpageRCWILSON-CL103V.html"
   ],
-  "verified": false
+  "verified": true
 }

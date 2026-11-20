@@ -22,7 +22,7 @@
   "geometry": {
     "head": {
       "shape": "isometric",
-      "aspect": 1.3
+      "aspect": 1.35
     },
     "beam": {
       "profile": "aero"
@@ -36,65 +36,54 @@
     ]
   },
   "paint": {
-    "base": "#c21a2b",
-    "finish": "satin",
+    "base": "#c41f3a",
+    "finish": "gloss",
     "zones": [
-      {
-        "from": 0,
-        "to": 0.12,
-        "color": "#1a1a1a",
-        "blend": 0.03
-      },
       {
         "from": 0.12,
         "to": 0.35,
-        "color": "#8e0f1c",
-        "blend": 0.03
+        "color": "#a8152e",
+        "blend": 0.02
       },
       {
         "from": 0.55,
         "to": 0.8,
-        "color": "#d9242f",
-        "blend": 0.03
-      },
-      {
-        "from": 0.8,
-        "to": 0.93,
-        "color": "#e03a3a",
-        "blend": 0.03
+        "color": "#d42b45",
+        "blend": 0.02
       },
       {
         "from": 0.93,
         "to": 1,
-        "color": "#1a1a1a",
-        "blend": 0.03
+        "color": "#b0182f",
+        "blend": 0.02
       }
     ]
   },
   "parts": {
     "grip": {
-      "color": "#1a1a1a"
+      "color": "#ececec"
     },
     "collar": {
-      "color": "#c21a2b"
+      "color": "#c41f3a"
     },
     "buttCap": {
-      "color": "#1a1a1a"
+      "color": "#e6e6e6"
     },
     "strings": {
       "color": "#f2f2f2",
       "gaugeMm": 1.25
     },
     "grommets": {
-      "color": "#1a1a1a"
+      "color": "#8e1024"
     },
     "bumper": {
-      "color": "#1a1a1a"
+      "color": "#8e1024"
     },
     "dampener": null
   },
   "sources": [
-    "https://www.tennis-warehouse.com/Yonex_VCORE_100_8th_Gen/descpageRCYONEX-VC108GD.html"
+    "https://www.tennis-warehouse.com/Yonex_VCORE_100_8th_Gen/descpageRCYONEX-VC108GD.html",
+    "https://www.tennis-warehouse.com/Yonex_VCORE_100_8th_Gen/descpageRCYONEX-VC108G.html"
   ],
-  "verified": false
+  "verified": true
 }

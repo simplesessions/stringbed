@@ -1,7 +1,8 @@
 import type * as THREE from 'three';
+import { BufferGeometry, Float32BufferAttribute } from 'three';
 import { buildFrame } from '../../src/core/frame';
 import { computeLayout } from '../../src/core/layout';
-import { applyPaint, hexToLinear, paintColorAt } from '../../src/core/paint';
+import { applyPaint, hexToLinear, paintColorAt, zonedAt } from '../../src/core/paint';
 import { HOOP_RADIAL } from '../../src/core/section';
 import { loadAllSpecs, type RacquetSpec } from '../../src/core/spec';
 import { makeSpec } from '../fixtures';
@@ -67,6 +68,32 @@ test('real camo patterns contrast with the base and every zone (linear luma > 0.
     expect(Math.abs(p - luma(s.paint.base)), `${s.id} base`).toBeGreaterThan(0.2);
     for (const z of s.paint.zones) expect(Math.abs(p - luma(z.color)), `${s.id} zone ${z.from}`).toBeGreaterThan(0.2);
   }
+});
+test('camo paints the bare base only: zones stay solid', () => {
+  const p: RacquetSpec['paint'] = { ...camoPaint, zones: [{ from: 0.8, to: 1, color: '#000000', blend: 0.02 }] };
+  expect(zonedAt(p, 0.9)).toBe(true); expect(zonedAt(p, 0.5)).toBe(false); expect(zonedAt(p, 0.805)).toBe(false);
+  const f = frameOf(spec); applyPaint(f, p);
+  const c = f.getAttribute('color'), u = f.getAttribute('u'); const pc = hexToLinear(p.pattern!.color);
+  let inZone = 0, outside = 0, camoOutside = 0;
+  for (let i = 0; i < c.count; i++) {
+    const isCamo = Math.abs(c.getX(i) - pc[0]) < 1e-6;
+    if (u.getX(i) >= 0.82) { inZone++; expect(isCamo).toBe(false); expect(c.getX(i)).toBe(0); }
+    else if (u.getX(i) < 0.78) { outside++; if (isCamo) camoOutside++; }
+  }
+  expect(inZone).toBeGreaterThan(0); expect(camoOutside / outside).toBeGreaterThan(0.15);
+});
+test('camo streaks run across the racquet: the pattern changes faster along y than along x', () => {
+  // A flat, dense grid in the frame's own space (z = 0), painted away from any zone.
+  const n = 200, step = 0.002, pos: number[] = [], us: number[] = [];
+  for (let j = 0; j < n; j++) for (let i = 0; i < n; i++) { pos.push(i * step, j * step, 0); us.push(0.5); }
+  const g = new BufferGeometry();
+  g.setAttribute('position', new Float32BufferAttribute(pos, 3)); g.setAttribute('u', new Float32BufferAttribute(us, 1));
+  applyPaint(g, camoPaint);
+  const c = g.getAttribute('color'); const at = (i: number, j: number) => c.getX(j * n + i);
+  let fx = 0, fy = 0;
+  for (let j = 0; j < n - 1; j++) for (let i = 0; i < n - 1; i++) { if (at(i + 1, j) !== at(i, j)) fx++; if (at(i, j + 1) !== at(i, j)) fy++; }
+  expect(fx).toBeGreaterThan(0);
+  expect(fy).toBeGreaterThan(fx * 1.5);
 });
 test('applyPaint explains a frame missing u', () => {
   const g = frameOf(spec); g.deleteAttribute('u');

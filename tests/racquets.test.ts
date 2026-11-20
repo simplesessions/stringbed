@@ -20,11 +20,8 @@ test('every Yonex head is isometric', () => {
 test('every Solinco has a camo pattern', () => {
   for (const s of specs.filter((s) => s.brand === 'Solinco')) expect(s.paint.pattern?.type).toBe('camo');
 });
-test('every spec is sourced and carries a boolean verified flag', () => {
-  for (const s of specs) {
-    expect(s.sources.length).toBeGreaterThan(0);
-    expect(typeof s.verified).toBe('boolean');
-  }
+test('every spec is verified and sourced', () => {
+  for (const s of specs) { expect(s.verified, s.id).toBe(true); expect(s.sources.length).toBeGreaterThan(0); }
 });
 test('no spec has a dampener', () => {
   for (const s of specs) expect(s.parts.dampener).toBeNull();

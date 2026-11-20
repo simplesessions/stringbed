@@ -36,48 +36,48 @@
     ]
   },
   "paint": {
-    "base": "#0e0e10",
-    "finish": "matte",
+    "base": "#5e7034",
+    "finish": "satin",
     "zones": [
       {
         "from": 0,
-        "to": 0.12,
-        "color": "#1d1d20",
-        "blend": 0.03
+        "to": 0.35,
+        "color": "#5b6b31",
+        "blend": 0.02
       },
       {
-        "from": 0.55,
-        "to": 0.8,
-        "color": "#16161a",
-        "blend": 0.03
+        "from": 0.48,
+        "to": 0.62,
+        "color": "#7e9a40",
+        "blend": 0.02
       },
       {
-        "from": 0.8,
-        "to": 0.93,
-        "color": "#1d1d20",
-        "blend": 0.03
+        "from": 0.63,
+        "to": 0.85,
+        "color": "#485622",
+        "blend": 0.02
       }
     ]
   },
   "parts": {
     "grip": {
-      "color": "#1a1a1a"
+      "color": "#858a66"
     },
     "collar": {
-      "color": "#0e0e10"
+      "color": "#5b6b31"
     },
     "buttCap": {
-      "color": "#1a1a1a"
+      "color": "#6a6e50"
     },
     "strings": {
       "color": "#f2f2f2",
       "gaugeMm": 1.25
     },
     "grommets": {
-      "color": "#0e0e10"
+      "color": "#4b5a28"
     },
     "bumper": {
-      "color": "#0e0e10"
+      "color": "#4b5a28"
     },
     "dampener": null
   },
@@ -85,5 +85,5 @@
     "https://www.tennis-warehouse.com/Prince_O3_Phantom_100X/descpage-PO310X.html",
     "https://www.tennis-warehouse.com/Prince_Phantom_Racquets/catpage-PRINPHAN.html"
   ],
-  "verified": false
+  "verified": true
 }

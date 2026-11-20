@@ -34,48 +34,42 @@
     "features": []
   },
   "paint": {
-    "base": "#151517",
-    "finish": "matte",
+    "base": "#141416",
+    "finish": "gloss",
     "zones": [
       {
-        "from": 0.12,
-        "to": 0.35,
-        "color": "#e0a526",
-        "blend": 0.03
+        "from": 0.35,
+        "to": 0.45,
+        "color": "#e2772a",
+        "blend": 0.02
       },
       {
-        "from": 0.8,
-        "to": 0.93,
-        "color": "#2a2a2e",
-        "blend": 0.03
-      },
-      {
-        "from": 0.93,
+        "from": 0.975,
         "to": 1,
-        "color": "#0b0b0d",
-        "blend": 0.03
+        "color": "#e2772a",
+        "blend": 0.02
       }
     ]
   },
   "parts": {
     "grip": {
-      "color": "#1a1a1a"
+      "color": "#1e1e1e"
     },
     "collar": {
-      "color": "#151517"
+      "color": "#141416"
     },
     "buttCap": {
-      "color": "#1a1a1a"
+      "color": "#1e1e1e"
     },
     "strings": {
       "color": "#f2f2f2",
       "gaugeMm": 1.25
     },
     "grommets": {
-      "color": "#151517"
+      "color": "#141416"
     },
     "bumper": {
-      "color": "#151517"
+      "color": "#141416"
     },
     "dampener": null
   },
@@ -83,5 +77,5 @@
     "https://www.tennis-warehouse.com/Prince_Tour_100_290g_2026/descpage-PTR629.html",
     "https://www.tenniswarehouse-europe.com/Prince_Tour_100_Rackets_290g_2026/descpageRCPRINCEH-PTR629-EN.html"
   ],
-  "verified": false
+  "verified": true
 }

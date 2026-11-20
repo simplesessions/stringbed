@@ -34,54 +34,61 @@
     "features": []
   },
   "paint": {
-    "base": "#8a8d91",
-    "finish": "matte",
+    "base": "#8a929b",
+    "finish": "satin",
     "zones": [
       {
-        "from": 0.35,
-        "to": 0.55,
-        "color": "#2b2b2d",
-        "blend": 0.03
+        "from": 0,
+        "to": 0.35,
+        "color": "#58606a",
+        "blend": 0.02
       },
       {
-        "from": 0.8,
-        "to": 0.93,
-        "color": "#ff3b30",
-        "blend": 0.03
+        "from": 0.36,
+        "to": 0.405,
+        "color": "#f55a46",
+        "blend": 0.02
       },
       {
-        "from": 0.93,
+        "from": 0.425,
+        "to": 0.535,
+        "color": "#f55a46",
+        "blend": 0.02
+      },
+      {
+        "from": 0.79,
         "to": 1,
-        "color": "#2b2b2d",
-        "blend": 0.03
+        "color": "#4c5158",
+        "blend": 0.02
       }
     ]
   },
   "parts": {
     "grip": {
-      "color": "#1a1a1a"
+      "color": "#1e1e1e"
     },
     "collar": {
-      "color": "#2b2b2d"
+      "color": "#3a3e44"
     },
     "buttCap": {
-      "color": "#1a1a1a"
+      "color": "#1e1e1e"
     },
     "strings": {
       "color": "#f2f2f2",
       "gaugeMm": 1.25
     },
     "grommets": {
-      "color": "#2b2b2d"
+      "color": "#3a3e44"
     },
     "bumper": {
-      "color": "#2b2b2d"
+      "color": "#3a3e44"
     },
     "dampener": null
   },
   "sources": [
     "https://www.babolat.com/us/pure-strike-16-19-gen4-unstrung/101577.html",
-    "https://racquetguys.ca/products/babolat-pure-strike-98-16x19-4th-gen"
+    "https://racquetguys.ca/products/babolat-pure-strike-98-16x19-4th-gen",
+    "https://www.tennis-warehouse.com/Babolat_Pure_Strike_98_16x19_Carbon_Grey/descpageRCBAB-PS9816.html"
   ],
-  "verified": false
+  "verified": true
 }

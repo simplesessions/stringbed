@@ -30,7 +30,7 @@
         ],
         "unstrungWeightG": 300
       },
-      "swatch": "#f6d60a",
+      "swatch": "#55626a",
       "parts": [
         "frame",
         "bumper",
@@ -44,7 +44,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-aero-100.glb",
-          "bytes": 116616,
+          "bytes": 116608,
           "triangles": 4468
         }
       }
@@ -70,7 +70,7 @@
         ],
         "unstrungWeightG": 300
       },
-      "swatch": "#1e6fd9",
+      "swatch": "#4aa3d6",
       "parts": [
         "frame",
         "bumper",
@@ -84,7 +84,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-drive-100.glb",
-          "bytes": 110680,
+          "bytes": 110676,
           "triangles": 4468
         }
       }
@@ -110,7 +110,7 @@
         ],
         "unstrungWeightG": 305
       },
-      "swatch": "#8a8d91",
+      "swatch": "#8a929b",
       "parts": [
         "frame",
         "bumper",
@@ -124,7 +124,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-strike-98.glb",
-          "bytes": 130708,
+          "bytes": 130700,
           "triangles": 4336
         }
       }
@@ -150,7 +150,7 @@
         ],
         "unstrungWeightG": 305
       },
-      "swatch": "#0e0e10",
+      "swatch": "#5e7034",
       "parts": [
         "frame",
         "bumper",
@@ -164,8 +164,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/prince-o3-phantom-100x.glb",
-          "bytes": 134056,
-          "triangles": 4448
+          "bytes": 142932,
+          "triangles": 4828
         }
       }
     },
@@ -190,7 +190,7 @@
         ],
         "unstrungWeightG": 300
       },
-      "swatch": "#d8262f",
+      "swatch": "#dd3a40",
       "parts": [
         "frame",
         "bumper",
@@ -204,8 +204,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/prince-ripstick-100.glb",
-          "bytes": 114148,
-          "triangles": 4580
+          "bytes": 123024,
+          "triangles": 4960
         }
       }
     },
@@ -230,7 +230,7 @@
         ],
         "unstrungWeightG": 290
       },
-      "swatch": "#151517",
+      "swatch": "#141416",
       "parts": [
         "frame",
         "bumper",
@@ -270,7 +270,7 @@
         ],
         "unstrungWeightG": 300
       },
-      "swatch": "#111111",
+      "swatch": "#1c1f22",
       "parts": [
         "frame",
         "bumper",
@@ -310,7 +310,7 @@
         ],
         "unstrungWeightG": 305
       },
-      "swatch": "#f2f2f0",
+      "swatch": "#f3f3f1",
       "parts": [
         "frame",
         "bumper",
@@ -324,7 +324,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/solinco-whiteout-v2-305.glb",
-          "bytes": 130688,
+          "bytes": 130696,
           "triangles": 4336
         }
       }
@@ -350,7 +350,7 @@
         ],
         "unstrungWeightG": 305
       },
-      "swatch": "#0b5b3a",
+      "swatch": "#2e8c66",
       "parts": [
         "frame",
         "bumper",
@@ -364,7 +364,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-blade-98-v10.glb",
-          "bytes": 130704,
+          "bytes": 130688,
           "triangles": 4336
         }
       }
@@ -390,7 +390,7 @@
         ],
         "unstrungWeightG": 295
       },
-      "swatch": "#1c1c1e",
+      "swatch": "#1e1e20",
       "parts": [
         "frame",
         "bumper",
@@ -430,7 +430,7 @@
         ],
         "unstrungWeightG": 315
       },
-      "swatch": "#8c5a2b",
+      "swatch": "#3d2419",
       "parts": [
         "frame",
         "bumper",
@@ -444,7 +444,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-pro-staff-97-v14.glb",
-          "bytes": 130708,
+          "bytes": 130696,
           "triangles": 4336
         }
       }
@@ -470,7 +470,7 @@
         ],
         "unstrungWeightG": 300
       },
-      "swatch": "#1f5fd6",
+      "swatch": "#3a62bf",
       "parts": [
         "frame",
         "bumper",
@@ -484,7 +484,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-ezone-100.glb",
-          "bytes": 110668,
+          "bytes": 110648,
           "triangles": 4468
         }
       }
@@ -510,7 +510,7 @@
         ],
         "unstrungWeightG": 310
       },
-      "swatch": "#14213d",
+      "swatch": "#66688a",
       "parts": [
         "frame",
         "bumper",
@@ -524,7 +524,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-percept-97.glb",
-          "bytes": 130696,
+          "bytes": 130684,
           "triangles": 4336
         }
       }
@@ -550,7 +550,7 @@
         ],
         "unstrungWeightG": 300
       },
-      "swatch": "#c21a2b",
+      "swatch": "#c41f3a",
       "parts": [
         "frame",
         "bumper",
@@ -564,7 +564,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-vcore-100.glb",
-          "bytes": 121644,
+          "bytes": 121620,
           "triangles": 4660
         }
       }

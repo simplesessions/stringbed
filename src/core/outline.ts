@@ -11,7 +11,7 @@ interface ShapeParams {
 
 const SHAPES: Record<HeadShape, ShapeParams> = {
   oval: { nTop: 2.2, nBottom: 2.2, taper: 0.04 },
-  isometric: { nTop: 3.0, nBottom: 2.3, taper: 0.03 },
+  isometric: { nTop: 2.5, nBottom: 2.1, taper: 0.06 },
   teardrop: { nTop: 2.2, nBottom: 2.1, taper: 0.14 },
 };
 

@@ -34,32 +34,32 @@
     "features": []
   },
   "paint": {
-    "base": "#111111",
+    "base": "#1c1f22",
     "finish": "matte",
     "zones": [
       {
-        "from": 0.12,
-        "to": 0.35,
-        "color": "#1f2326",
-        "blend": 0.03
+        "from": 0.8,
+        "to": 0.9,
+        "color": "#0f1011",
+        "blend": 0.02
       },
       {
-        "from": 0.93,
+        "from": 0.9,
         "to": 1,
-        "color": "#26292c",
-        "blend": 0.03
+        "color": "#0b0b0c",
+        "blend": 0.02
       }
     ],
     "pattern": {
       "type": "camo",
-      "color": "#9aa0a6",
+      "color": "#8a9299",
       "scale": 1,
       "seed": 300
     }
   },
   "parts": {
     "grip": {
-      "color": "#1a1a1a"
+      "color": "#1e1e1e"
     },
     "collar": {
       "color": "#111111"
@@ -72,16 +72,17 @@
       "gaugeMm": 1.25
     },
     "grommets": {
-      "color": "#111111"
+      "color": "#0f1011"
     },
     "bumper": {
-      "color": "#111111"
+      "color": "#0f1011"
     },
     "dampener": null
   },
   "sources": [
     "https://www.tenniswarehouse-europe.com/Raqueta_Solinco_Blackout_300_v2_Camo/descpage-BKOCAH.html",
-    "https://www.tennisnerd.net/gear/racquets/racquet-reviews/solinco-blackout-v2-review/61196"
+    "https://www.tennisnerd.net/gear/racquets/racquet-reviews/solinco-blackout-v2-review/61196",
+    "https://www.tennis-warehouse.com/Solinco_Blackout_300_v2_Camo/descpageRCSOLINCO-BKOCAH.html"
   ],
-  "verified": false
+  "verified": true
 }

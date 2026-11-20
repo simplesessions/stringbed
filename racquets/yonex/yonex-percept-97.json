@@ -22,7 +22,7 @@
   "geometry": {
     "head": {
       "shape": "isometric",
-      "aspect": 1.33
+      "aspect": 1.4
     },
     "beam": {
       "profile": "box"
@@ -34,55 +34,62 @@
     "features": []
   },
   "paint": {
-    "base": "#14213d",
-    "finish": "matte",
+    "base": "#66688a",
+    "finish": "satin",
     "zones": [
       {
-        "from": 0.12,
+        "from": 0,
         "to": 0.35,
-        "color": "#0b1226",
-        "blend": 0.03
+        "color": "#55576f",
+        "blend": 0.02
       },
       {
-        "from": 0.55,
-        "to": 0.8,
-        "color": "#1b2d55",
-        "blend": 0.03
+        "from": 0.38,
+        "to": 0.49,
+        "color": "#6c78b4",
+        "blend": 0.02
       },
       {
-        "from": 0.93,
-        "to": 1,
-        "color": "#0b1226",
-        "blend": 0.03
+        "from": 0.49,
+        "to": 0.58,
+        "color": "#8a6fa8",
+        "blend": 0.02
+      },
+      {
+        "from": 0.58,
+        "to": 0.68,
+        "color": "#a28fb2",
+        "blend": 0.02
       }
     ]
   },
   "parts": {
     "grip": {
-      "color": "#1a1a1a"
+      "color": "#3a3a3c"
     },
     "collar": {
-      "color": "#14213d"
+      "color": "#55576f"
     },
     "buttCap": {
-      "color": "#1a1a1a"
+      "color": "#2a2a2c"
     },
     "strings": {
       "color": "#f2f2f2",
       "gaugeMm": 1.25
     },
     "grommets": {
-      "color": "#0b1226"
+      "color": "#3d3e52"
     },
     "bumper": {
-      "color": "#0b1226"
+      "color": "#3d3e52"
     },
     "dampener": null
   },
   "sources": [
     "https://www.tennisnuts.com/yonex-percept-97-tennis-racket-frame-only-2025-1731558.html",
     "https://www.merchantoftennis.com/products/yonex-percept-97-midnight",
-    "https://www.tennis-warehouse.com/Best_Racquets_of_2026/catpage-BESTRAC26.html"
+    "https://www.tennis-warehouse.com/Best_Racquets_of_2026/catpage-BESTRAC26.html",
+    "https://www.tennis-warehouse.com/Yonex_Percept_97_Midnight_Navy/descpageRCYONEX-PERM97.html"
   ],
-  "verified": false
+  "verified": true
 }

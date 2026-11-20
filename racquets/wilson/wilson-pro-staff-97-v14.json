@@ -34,60 +34,55 @@
     "features": []
   },
   "paint": {
-    "base": "#8c5a2b",
+    "base": "#3d2419",
     "finish": "satin",
     "zones": [
       {
         "from": 0.12,
         "to": 0.35,
-        "color": "#6e2f2a",
-        "blend": 0.03
+        "color": "#4b2c1f",
+        "blend": 0.02
       },
       {
         "from": 0.55,
         "to": 0.8,
-        "color": "#a8793a",
-        "blend": 0.03
-      },
-      {
-        "from": 0.8,
-        "to": 0.93,
-        "color": "#b8893f",
-        "blend": 0.03
+        "color": "#5a3524",
+        "blend": 0.02
       },
       {
         "from": 0.93,
         "to": 1,
-        "color": "#1a1a1a",
-        "blend": 0.03
+        "color": "#2e1a12",
+        "blend": 0.02
       }
     ]
   },
   "parts": {
     "grip": {
-      "color": "#1a1a1a"
+      "color": "#b0602f"
     },
     "collar": {
-      "color": "#1a1a1a"
+      "color": "#1e1e1e"
     },
     "buttCap": {
-      "color": "#1a1a1a"
+      "color": "#a65a2c"
     },
     "strings": {
       "color": "#f2f2f2",
       "gaugeMm": 1.25
     },
     "grommets": {
-      "color": "#1a1a1a"
+      "color": "#a8683a"
     },
     "bumper": {
-      "color": "#1a1a1a"
+      "color": "#8a5530"
     },
     "dampener": null
   },
   "sources": [
     "https://www.ustaproshop.com/product/44382/wilson-pro-staff-97-v14",
-    "https://racquetguys.com/products/wilson-pro-staff-97-v14"
+    "https://racquetguys.com/products/wilson-pro-staff-97-v14",
+    "https://racquetguys.ca/products/wilson-pro-staff-97-v14"
   ],
-  "verified": false
+  "verified": true
 }

@@ -37,14 +37,26 @@ const GROMMET_GAPS_PER_SIDE = 14;
 /** Aero fins: angles from the tip on each side, and the half-width of a fin. */
 const FIN_ANGLES = [(15 * Math.PI) / 180, (35 * Math.PI) / 180, (55 * Math.PI) / 180];
 const FIN_HALF_WIDTH = 0.004; // metres along the rim
-/** O-port: a flush dark oval inset at 3 and 9 o'clock. Half-length along the hoop, half-height as a fraction of beam thickness. */
-const PORT_HALF_LENGTH = 0.011;
-const PORT_HALF_HEIGHT_FRACTION = 0.4;
-const PORT_SEGMENTS = 12;
+/**
+ * O-ports: a row of flush dark oval insets down each side of the hoop, centred on 3 and 9 o'clock
+ * (Prince's O3 frames carry five to eight per side). PORTS_PER_SIDE ovals, PORT_PITCH metres of
+ * rim apart (centre to centre). Half-length along the hoop, half-height as a fraction of beam thickness.
+ */
+const PORTS_PER_SIDE = 5;
+const PORT_PITCH = 0.037;
+const PORT_HALF_LENGTH = 0.0125;
+const PORT_HALF_HEIGHT_FRACTION = 0.76;
+const PORT_SEGMENTS = 10;
 /** Rings between the oval's centre and its edge; enough that chords stay within ~0.02 mm of the curved rim. */
 const PORT_RINGS = 3;
-/** The grommet strip sits this far below GROMMET_OUT so the o-port insets (at GROMMET_OUT) show above it. */
+/** The grommet strip sits this far below GROMMET_OUT so the o-port insets show above it. */
 const PORT_LIFT = 0.00002;
+/**
+ * The o-port insets sit this far above GROMMET_OUT. A port spans most of the rim's depth, where the
+ * section curves, so its chords sag up to ~0.1 mm between vertices; without the raise the strip
+ * pokes through. Still inside the bumper's 0.3 mm and the 0.4 mm in-plane limit.
+ */
+const PORT_RAISE = 0.00012;
 /** Linear-RGB scale of a port against the grommet colour. */
 const PORT_DARKEN = 0.15;
 
@@ -177,7 +189,7 @@ function xAtZ(points: Vec2[], z: number): number {
 /** Point on the grommet shell (right side) at fractional index f and height z. */
 function shellPoint(m: RawMesh, spec: RacquetSpec, tc: TrimContext, f: number, z: number): number {
   const p = rimAt(tc.ctx, f, 1, tc.sJ);
-  const { points, centre } = outerSection(spec, p.u, GROMMET_OUT, GROMMET_FACE);
+  const { points, centre } = outerSection(spec, p.u, GROMMET_OUT + PORT_RAISE, GROMMET_FACE + PORT_RAISE);
   const x = centre + xAtZ(points, z);
   return m.vertex(p.x + p.nx * x, p.y + p.ny * x, z);
 }
@@ -210,7 +222,7 @@ function oPort(m: RawMesh, spec: RacquetSpec, tc: TrimContext, f: number): void 
 /**
  * Grommet strip: the outer rim from the bumper's end down to the throat junction, both sides.
  * With `o-ports` the geometry also carries a `color` attribute (linear RGB, itemSize 3): the
- * grommet colour on the strip and a near-black on the two flush oval insets at 3 and 9 o'clock.
+ * grommet colour on the strip and PORT_DARKEN x that on the flush oval insets down each side.
  * Without o-ports there is no `color` attribute. The build step must set `vertexColors: true` on
  * the grommets material exactly when the attribute exists.
  */
@@ -226,7 +238,16 @@ export function buildGrommets(spec: RacquetSpec, layout: Layout): THREE.BufferGe
   const ports = new RawMesh();
   let widest = 0;
   for (let i = 1; i < tc.ctx.inner.length; i++) if (tc.ctx.inner[i].x > tc.ctx.inner[widest].x) widest = i;
-  oPort(ports, spec, tc, widest);
+  const step = tc.ctx.arc[1] - tc.ctx.arc[0]; // outline samples are evenly spaced
+  // Centre the row on the widest point, kept between the bumper's end and the throat junction:
+  // slide it along the rim if it overhangs either end, and close it up if the rim is too short.
+  const margin = (PORT_HALF_LENGTH * 1.2) / step;
+  const lo = tc.fB + margin;
+  const hi = tc.fJ - margin;
+  const pitch = Math.min(PORT_PITCH / step, (hi - lo) / (PORTS_PER_SIDE - 1));
+  const span = (PORTS_PER_SIDE - 1) * pitch;
+  const first = Math.min(Math.max(widest - span / 2, lo), hi - span);
+  for (let k = 0; k < PORTS_PER_SIDE; k++) oPort(ports, spec, tc, first + k * pitch);
   ports.appendMirrorX();
   m.append(ports);
   const g = m.build();

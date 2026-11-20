@@ -36,48 +36,49 @@
     ]
   },
   "paint": {
-    "base": "#d8262f",
+    "base": "#dd3a40",
     "finish": "gloss",
     "zones": [
       {
-        "from": 0,
+        "from": 0.12,
         "to": 0.35,
-        "color": "#1a1a1a",
-        "blend": 0.03
+        "color": "#c92f35",
+        "blend": 0.02
       },
       {
-        "from": 0.8,
-        "to": 1,
-        "color": "#ff6a2b",
-        "blend": 0.03
+        "from": 0.55,
+        "to": 0.8,
+        "color": "#e24a4c",
+        "blend": 0.02
       }
     ]
   },
   "parts": {
     "grip": {
-      "color": "#1a1a1a"
+      "color": "#d63b42"
     },
     "collar": {
-      "color": "#1a1a1a"
+      "color": "#c92f35"
     },
     "buttCap": {
-      "color": "#1a1a1a"
+      "color": "#c8343a"
     },
     "strings": {
       "color": "#f2f2f2",
       "gaugeMm": 1.25
     },
     "grommets": {
-      "color": "#1a1a1a"
+      "color": "#c2262e"
     },
     "bumper": {
-      "color": "#1a1a1a"
+      "color": "#c2262e"
     },
     "dampener": null
   },
   "sources": [
     "https://www.tennis-warehouse.com/Prince_Ripstick_100_280g_2025/descpageRCTWABG-25RIPLD.html",
-    "https://www.merchantoftennis.com/products/prince-o3-ripstick-100-300g"
+    "https://www.merchantoftennis.com/products/prince-o3-ripstick-100-300g",
+    "https://www.tennis-warehouse.com/Prince_Ripstick_100_300g/descpageRCTWABG-25RIPH.html"
   ],
-  "verified": false
+  "verified": true
 }

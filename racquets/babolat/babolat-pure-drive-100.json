@@ -34,49 +34,56 @@
     "features": []
   },
   "paint": {
-    "base": "#1e6fd9",
+    "base": "#4aa3d6",
     "finish": "gloss",
     "zones": [
       {
-        "from": 0,
-        "to": 0.12,
-        "color": "#111111",
-        "blend": 0.03
+        "from": 0.36,
+        "to": 0.415,
+        "color": "#2b3446",
+        "blend": 0.02
       },
       {
-        "from": 0.93,
+        "from": 0.44,
+        "to": 0.52,
+        "color": "#2b3446",
+        "blend": 0.02
+      },
+      {
+        "from": 0.71,
         "to": 1,
-        "color": "#111111",
-        "blend": 0.03
+        "color": "#2b3446",
+        "blend": 0.02
       }
     ]
   },
   "parts": {
     "grip": {
-      "color": "#1a1a1a"
+      "color": "#1e1e1e"
     },
     "collar": {
-      "color": "#111111"
+      "color": "#2b3446"
     },
     "buttCap": {
-      "color": "#1a1a1a"
+      "color": "#1e1e1e"
     },
     "strings": {
       "color": "#f2f2f2",
       "gaugeMm": 1.25
     },
     "grommets": {
-      "color": "#111111"
+      "color": "#2b3446"
     },
     "bumper": {
-      "color": "#111111"
+      "color": "#2b3446"
     },
     "dampener": null
   },
   "sources": [
     "https://www.tennis-warehouse.com/Best_Racquets_of_2026/catpage-BESTRAC26.html",
     "https://racquetguys.ca/products/babolat-pure-drive-gen-11",
-    "https://www.tennisnerd.net/?p=42376"
+    "https://www.tennisnerd.net/?p=42376",
+    "https://www.tennis-warehouse.com/Babolat_Pure_Drive_2025/descpageRCBAB-BPD25R.html"
   ],
-  "verified": false
+  "verified": true
 }
