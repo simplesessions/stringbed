@@ -1,0 +1,246 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-20T06:52:55.228Z",
+  "title": "Design System: stringbed",
+  "extensions": {
+    "colorMeta": {
+      "wall": {
+        "role": "neutral",
+        "displayName": "Shop Wall",
+        "canonical": "oklch(0.885 0.006 80)",
+        "tonalRamp": [
+          "oklch(0.18 0.004 80)",
+          "oklch(0.28 0.007 80)",
+          "oklch(0.38 0.007 80)",
+          "oklch(0.5 0.007 80)",
+          "oklch(0.62 0.007 80)",
+          "oklch(0.74 0.007 80)",
+          "oklch(0.85 0.007 80)",
+          "oklch(0.95 0.004 80)"
+        ]
+      },
+      "wall-deep": {
+        "role": "neutral",
+        "displayName": "Wall Shadow",
+        "canonical": "oklch(0.845 0.007 80)",
+        "tonalRamp": [
+          "oklch(0.18 0.004 80)",
+          "oklch(0.28 0.007 80)",
+          "oklch(0.38 0.007 80)",
+          "oklch(0.5 0.007 80)",
+          "oklch(0.62 0.007 80)",
+          "oklch(0.74 0.007 80)",
+          "oklch(0.85 0.007 80)",
+          "oklch(0.95 0.004 80)"
+        ]
+      },
+      "rail": {
+        "role": "neutral",
+        "displayName": "Shelf Rail",
+        "canonical": "oklch(0.76 0.008 80)",
+        "tonalRamp": [
+          "oklch(0.18 0.005 80)",
+          "oklch(0.28 0.008 80)",
+          "oklch(0.38 0.008 80)",
+          "oklch(0.5 0.008 80)",
+          "oklch(0.62 0.008 80)",
+          "oklch(0.74 0.008 80)",
+          "oklch(0.85 0.008 80)",
+          "oklch(0.95 0.005 80)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "oklch(0.23 0.01 75)",
+        "tonalRamp": [
+          "oklch(0.18 0.006 75)",
+          "oklch(0.28 0.010 75)",
+          "oklch(0.38 0.010 75)",
+          "oklch(0.5 0.010 75)",
+          "oklch(0.62 0.010 75)",
+          "oklch(0.74 0.010 75)",
+          "oklch(0.85 0.010 75)",
+          "oklch(0.95 0.006 75)"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Soft Ink",
+        "canonical": "oklch(0.43 0.012 75)",
+        "tonalRamp": [
+          "oklch(0.18 0.007 75)",
+          "oklch(0.28 0.012 75)",
+          "oklch(0.38 0.012 75)",
+          "oklch(0.5 0.012 75)",
+          "oklch(0.62 0.012 75)",
+          "oklch(0.74 0.012 75)",
+          "oklch(0.85 0.012 75)",
+          "oklch(0.95 0.007 75)"
+        ]
+      },
+      "ink-hover": {
+        "role": "neutral",
+        "displayName": "Ink Hover",
+        "canonical": "oklch(0.33 0.012 75)",
+        "tonalRamp": [
+          "oklch(0.18 0.007 75)",
+          "oklch(0.28 0.012 75)",
+          "oklch(0.38 0.012 75)",
+          "oklch(0.5 0.012 75)",
+          "oklch(0.62 0.012 75)",
+          "oklch(0.74 0.012 75)",
+          "oklch(0.85 0.012 75)",
+          "oklch(0.95 0.007 75)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Model name in the detail view."
+      },
+      "wordmark": {
+        "displayName": "Wordmark",
+        "purpose": "The project name in the header strip."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Model names on hang-tag labels under each bay."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Prose and spec values, tabular numerals."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Spec sheet section headings, uppercase."
+      },
+      "code": {
+        "displayName": "Code",
+        "purpose": "Part names, file names and hex values only."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "State changes: sign fills, swatch rail mark, canvas fade-in."
+      },
+      {
+        "name": "turn",
+        "value": "1.1 rad/s while hovered or focused; exponential ease back (rate 6/s)",
+        "purpose": "The one signature motion: a bay racquet turns on its axis. Off under prefers-reduced-motion."
+      },
+      {
+        "name": "auto-rotate",
+        "value": "OrbitControls autoRotateSpeed 1.2, stops on first interaction",
+        "purpose": "Detail model idles slowly. Off under prefers-reduced-motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "stack",
+        "value": "720px"
+      },
+      {
+        "name": "six-bay",
+        "value": "1099px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Download Button",
+      "kind": "button",
+      "refersTo": "button-download",
+      "description": "The one primary action of a detail view: the file, its name and size.",
+      "html": "<a class=\"ds-download\" href=\"#\"><svg viewBox=\"0 0 24 24\" width=\"22\" height=\"22\" aria-hidden=\"true\"><path d=\"M12 4v11M7 10.5l5 5 5-5M5 20h14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg><span class=\"ds-download-label\">Download .glb<span class=\"ds-download-name\">babolat-pure-aero-100.glb</span></span><span class=\"ds-download-size\">117 kB</span></a>",
+      "css": ".ds-download { display: flex; align-items: center; gap: 14px; padding: 14px 20px; border-radius: 12px; background: oklch(0.23 0.01 75); color: oklch(0.885 0.006 80); text-decoration: none; font-family: Archivo, system-ui, sans-serif; transition: background-color .2s cubic-bezier(0.16,1,0.3,1); } .ds-download:hover { background: oklch(0.33 0.012 75); } .ds-download:focus-visible { outline: 2px solid oklch(0.23 0.01 75); outline-offset: 3px; } .ds-download-label { display: grid; font-weight: 680; font-stretch: 88%; font-size: 1.0625rem; line-height: 1.25; } .ds-download-name { font-family: ui-monospace, Menlo, monospace; font-size: .8125rem; font-weight: 400; opacity: .8; } .ds-download-size { margin-left: auto; font-variant-numeric: tabular-nums; opacity: .8; }"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Secondary actions: Retry, Try again.",
+      "html": "<button class=\"ds-btn-outline\" type=\"button\">Try again</button>",
+      "css": ".ds-btn-outline { display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 8px 16px; border: 1.5px solid oklch(0.23 0.01 75); border-radius: 999px; background: transparent; color: oklch(0.23 0.01 75); font: 620 1rem/1.5 Archivo, system-ui, sans-serif; font-stretch: 88%; cursor: pointer; transition: background-color .2s, color .2s; } .ds-btn-outline:hover { background: oklch(0.23 0.01 75); color: oklch(0.885 0.006 80); } .ds-btn-outline:focus-visible { outline: 2px solid oklch(0.23 0.01 75); outline-offset: 3px; }"
+    },
+    {
+      "name": "Brand Signs",
+      "kind": "nav",
+      "refersTo": "sign",
+      "description": "Brand filter toggles with counts; the active one is ink-filled.",
+      "html": "<div class=\"ds-signs\" role=\"group\" aria-label=\"Filter by brand\"><button class=\"ds-sign\" aria-pressed=\"true\">All <span>14</span></button><button class=\"ds-sign\" aria-pressed=\"false\">Babolat <span>3</span></button><button class=\"ds-sign\" aria-pressed=\"false\">Wilson <span>3</span></button></div>",
+      "css": ".ds-signs { display: flex; gap: 2px; background: oklch(0.885 0.006 80); padding: 8px; } .ds-sign { display: inline-flex; gap: 6px; align-items: baseline; min-height: 36px; padding: 7px 12px 6px; border: 0; border-radius: 999px; background: transparent; color: oklch(0.23 0.01 75); font: 620 .9375rem Archivo, system-ui, sans-serif; font-stretch: 86%; cursor: pointer; } .ds-sign span { color: oklch(0.43 0.012 75); font-weight: 450; font-variant-numeric: tabular-nums; } .ds-sign:hover { background: oklch(0.845 0.007 80); } .ds-sign[aria-pressed=\"true\"] { background: oklch(0.23 0.01 75); color: oklch(0.885 0.006 80); } .ds-sign[aria-pressed=\"true\"] span { color: oklch(0.72 0.006 80); } .ds-sign:focus-visible { outline: 2px solid oklch(0.23 0.01 75); outline-offset: 3px; }"
+    },
+    {
+      "name": "Bay",
+      "kind": "custom",
+      "refersTo": "bay",
+      "description": "A racquet standing on the shelf rail with its hang-tag label; the swatch mark wipes along the rail on hover or focus.",
+      "html": "<a class=\"ds-bay\" href=\"#\" style=\"--swatch:#f6d60a\"><span class=\"ds-bay-stage\"><svg viewBox=\"0 0 42 100\" aria-hidden=\"true\"><ellipse cx=\"21\" cy=\"26\" rx=\"16.6\" ry=\"22.3\" fill=\"none\" stroke=\"var(--swatch)\" stroke-width=\"2.6\"/><path d=\"M11.9 45.6 L19.6 57.3 M30.1 45.6 L22.4 57.3\" stroke=\"var(--swatch)\" stroke-width=\"2.2\" stroke-linecap=\"round\"/><rect x=\"19.4\" y=\"57.3\" width=\"3.2\" height=\"39\" rx=\"1.2\" fill=\"var(--swatch)\"/></svg></span><span class=\"ds-tag\"><b>Pure Aero 100</b><span>Babolat · 2026</span></span></a>",
+      "css": ".ds-bay { display: block; width: 120px; color: oklch(0.23 0.01 75); text-decoration: none; font-family: Archivo, system-ui, sans-serif; } .ds-bay-stage { position: relative; display: block; height: 286px; border-bottom: 3px solid oklch(0.76 0.008 80); } .ds-bay-stage svg { width: 100%; height: 100%; } .ds-bay-stage::after { content: \"\"; position: absolute; left: 8%; right: 8%; bottom: -3px; height: 3px; background: var(--swatch); transform: scaleX(0); transition: transform .45s cubic-bezier(0.16,1,0.3,1); } .ds-bay:hover .ds-bay-stage::after, .ds-bay:focus-visible .ds-bay-stage::after { transform: scaleX(1); } .ds-bay:focus-visible { outline: 2px solid oklch(0.23 0.01 75); outline-offset: 6px; border-radius: 4px; } .ds-tag { display: grid; gap: 3px; margin-top: 14px; } .ds-tag b { font-weight: 660; font-stretch: 82%; font-size: .9375rem; line-height: 1.15; } .ds-tag span { color: oklch(0.43 0.012 75); font-size: .8125rem; }"
+    },
+    {
+      "name": "Part Chip",
+      "kind": "chip",
+      "refersTo": "part-chip",
+      "description": "A node name inside the file, set as code.",
+      "html": "<code class=\"ds-part\">strings_mains</code>",
+      "css": ".ds-part { display: inline-block; padding: 3px 8px; border-radius: 6px; background: oklch(0.845 0.007 80); color: oklch(0.23 0.01 75); font: .8125rem ui-monospace, Menlo, monospace; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Demo Wall",
+    "overview": "The gallery is a pro shop's racquet wall. Every frame stands upright at one true scale in a row of bays, sectioned by brand under a sign, standing on a shelf rail with a hang-tag label beneath. The comparison is the point: head shape, beam and colourway read because the neighbours are right there at the same size. The interface is the wall, the rail and the type; it never competes with the racquets.\n The page has no colour of its own. Its ground is a mid-light warm grey chosen so black frames and white frames both read against it, and its only chromatic moments come from the racquets: their renders, the swatch mark that slides along the rail on hover, the swatch chip in the spec sheet. Detail is a second room of the same shop: the racquet taken off the wall, turning slowly, with its spec tag set beside it.",
+    "keyCharacteristics": [
+      "One warm-grey ground, one ink, no accent: the catalogue's colourways are the palette.",
+      "Racquets at one shared scale, upright, never cropped, never boxed.",
+      "Archivo across the board, its width axis doing the work: condensed for labels and model names, wide for the wordmark.",
+      "Flat. Depth comes from the 3D renders and nothing else.",
+      "One signature motion: the turn on hover or focus, off under reduced motion."
+    ],
+    "rules": [
+      {
+        "name": "The Borrowed Colour Rule",
+        "body": "The page owns no hue. Any colour on screen comes from a racquet's `swatch` or its render; a new accent would compete with the content.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two-Frame Test Rule",
+        "body": "Any ground change must keep both a near-white and a near-black frame clearly separated from it. That is what fixed the wall's value.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Family Rule",
+        "body": "Archivo's width axis is the hierarchy. Don't add a display face; reach for wdth and weight.",
+        "section": "typography"
+      },
+      {
+        "name": "The Code Is Mono Rule",
+        "body": "Monospace marks things a developer will type: part names, file names, hex values. Nothing else.",
+        "section": "typography"
+      },
+      {
+        "name": "The Renders Carry Depth Rule",
+        "body": "If an element needs a shadow to be noticed, it is competing with the racquets. Use ink weight or a Wall Shadow tint instead.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** draw every racquet at the same scale and upright; frame by height.",
+      "**Do** take colour only from racquet swatches and renders.",
+      "**Do** keep 3D in at most two WebGL contexts: one shared offscreen renderer for all bays, one for the detail view.",
+      "**Do** give every 3D state a flat-silhouette fallback in the swatch colour.",
+      "**Do** use the width axis of Archivo for hierarchy, tabular numerals for specs."
+    ],
+    "donts": [
+      "**Don't** show brand logos, wordmarks or string stencils anywhere; names are plain text.",
+      "**Don't** add an accent colour, a dark mode painted by category, or neon tennis-ball yellow.",
+      "**Don't** put racquets in cards, boxes or shadowed tiles.",
+      "**Don't** add eyebrow labels above headings or a second motion effect that competes with the turn."
+    ]
+  }
+}

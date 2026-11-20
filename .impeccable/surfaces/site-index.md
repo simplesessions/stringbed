@@ -23,8 +23,12 @@ No cards, no shadows, no borders around racquets.
 STORY: The visitor sees the whole lineup at once, narrows to a brand, takes one frame off the
 wall, turns it in 3D, reads the spec tag and downloads the file.
 
-FIRST VIEWPORT: A slim strip (name, one-line description, brand signs). Below it, at 1280 px,
-all 14 racquets standing in two rows on rails. Primary action: each racquet is the link.
+FIRST VIEWPORT: A slim strip (name, one-line description, brand signs). Below it the wall
+fills the width: at 1280 px the first row (three brand sections, eight frames, each about
+315 px tall) stands whole on its rail and the second row rises from the fold. Primary action:
+each racquet is the link. Amended after the finish review: the first draft promised all 14
+above the fold, which needed frames near 215 px; scale won, because the design doc makes
+identity at thumbnail size the library's one job and Experience mode lets the artifact lead.
 
 FORM: Retail demo wall, first of seven on the ordered list. seed: none (unavailable; the
 launcher was not run under owner ruling R14).
