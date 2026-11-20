@@ -76,6 +76,26 @@ export function formatPattern([mains, crosses]: readonly number[]): string {
   return `${mains} × ${crosses}`;
 }
 
+export function generationLabel(r: Pick<Racquet, 'generation' | 'year'>): string {
+  return r.generation === String(r.year) ? r.generation : `${r.generation}, ${r.year}`;
+}
+
+const trim = (n: number, digits: number) => String(Number(n.toFixed(digits)));
+
+export function formatHeadSize(sqIn: number): { primary: string; secondary: string } {
+  return { primary: `${trim(sqIn, 1)} in²`, secondary: `${Math.round(sqIn * 6.4516)} cm²` };
+}
+
+export function formatLength(inches: number): { primary: string; secondary: string } {
+  return { primary: `${trim(inches, 2)} in`, secondary: `${trim(inches * 2.54, 1)} cm` };
+}
+
+/** Beam widths are [tip, mid, shaft]. */
+export function formatBeam(beam: readonly number[]): string {
+  const parts = beam.map((b) => trim(b, 1));
+  return new Set(parts).size === 1 ? `${parts[0]} mm` : `${parts.join(' / ')} mm`;
+}
+
 export function formatCount(n: number): string {
   return n.toLocaleString('en-US');
 }

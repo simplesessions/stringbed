@@ -7,8 +7,12 @@ import {
   assetUrl,
   fileNameFromPath,
   filterByBrand,
+  formatBeam,
   formatBytes,
+  formatHeadSize,
+  formatLength,
   formatPattern,
+  generationLabel,
   groupByBrand,
   parseRoute,
   pickStyle,
@@ -103,4 +107,20 @@ test('formatBytes uses decimal kilobytes', () => {
 
 test('formatPattern uses a multiplication sign', () => {
   expect(formatPattern([16, 19])).toBe('16 × 19');
+});
+
+test('generationLabel shows the year once when the generation is the year', () => {
+  const r = catalog.racquets.find((x) => x.id === 'babolat-pure-aero-100')!;
+  expect(generationLabel(r)).toBe('2026');
+  expect(generationLabel({ ...r, generation: 'Gen 11', year: 2025 })).toBe('Gen 11, 2025');
+});
+
+test('formatHeadSize and formatLength give imperial then metric', () => {
+  expect(formatHeadSize(100)).toEqual({ primary: '100 in²', secondary: '645 cm²' });
+  expect(formatLength(27)).toEqual({ primary: '27 in', secondary: '68.6 cm' });
+});
+
+test('formatBeam collapses a constant beam', () => {
+  expect(formatBeam([23, 26, 23])).toBe('23 / 26 / 23 mm');
+  expect(formatBeam([21.7, 21.7, 21.7])).toBe('21.7 mm');
 });

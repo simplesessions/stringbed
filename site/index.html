@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>stringbed: tennis racquet 3D models</title>
+    <meta name="description" content="A library of tennis racquets as small 3D files, generated from data. Browse the lineup, turn any frame in 3D and download it." />
+    <meta name="color-scheme" content="light" />
+    <meta name="theme-color" content="#dbd9d5" />
+    <link rel="icon" href="data:," />
+    <script type="module" src="./src/main.ts"></script>
+  </head>
+  <body>
+    <header class="strip">
+      <div class="strip-id">
+        <a class="name" href="#/">stringbed</a>
+        <p class="lede" id="lede">Tennis racquets as small 3D files, generated from data at one scale.</p>
+      </div>
+      <div class="signs" id="signs" role="group" aria-label="Filter by brand" hidden></div>
+    </header>
+
+    <main id="main">
+      <p class="notice" id="notice" role="status"></p>
+      <p class="sr-only" id="announce" aria-live="polite"></p>
+      <div class="wall" id="wall" aria-busy="true">
+        <p class="loading">Loading racquets…</p>
+      </div>
+      <article class="detail" id="detail" hidden></article>
+    </main>
+
+    <footer class="foot">
+      <p>
+        Racquet and brand names are trademarks of their owners and are used here only to identify
+        the models. This project is not affiliated with or endorsed by any manufacturer. Assets
+        contain no logos or wordmarks.
+      </p>
+      <p class="foot-links">
+        <a href="https://github.com/simplesessions/stringbed">Source and data on GitHub</a>
+        <a id="font-licence" href="https://openfontlicense.org">Set in Archivo (OFL)</a>
+      </p>
+    </footer>
+  </body>
+</html>
