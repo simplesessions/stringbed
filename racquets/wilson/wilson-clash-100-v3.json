@@ -1,0 +1,87 @@
+{
+  "id": "wilson-clash-100-v3",
+  "brand": "Wilson",
+  "line": "Clash",
+  "model": "Clash 100",
+  "generation": "v3",
+  "year": 2025,
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      24.5,
+      24.5,
+      24.5
+    ],
+    "unstrungWeightG": 295
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.34
+    },
+    "beam": {
+      "profile": "ellipse"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "curved"
+    },
+    "features": []
+  },
+  "paint": {
+    "base": "#1c1c1e",
+    "finish": "matte",
+    "zones": [
+      {
+        "from": 0.12,
+        "to": 0.35,
+        "color": "#2a2a2e",
+        "blend": 0.03
+      },
+      {
+        "from": 0.8,
+        "to": 0.93,
+        "color": "#3a3a3f",
+        "blend": 0.03
+      },
+      {
+        "from": 0.93,
+        "to": 1,
+        "color": "#1c1c1e",
+        "blend": 0.03
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#1a1a1a"
+    },
+    "collar": {
+      "color": "#1a1a1a"
+    },
+    "buttCap": {
+      "color": "#1a1a1a"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#1a1a1a"
+    },
+    "bumper": {
+      "color": "#1a1a1a"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://www.merchantoftennis.com/products/wilson-clash-100-v3",
+    "https://www.racquetpoint.com/products/wilson-clash-100-v3-us-open-tennis-racquet"
+  ],
+  "verified": false
+}

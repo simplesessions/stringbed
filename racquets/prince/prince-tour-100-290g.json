@@ -1,0 +1,75 @@
+{
+  "id": "prince-tour-100-290g",
+  "brand": "Prince",
+  "line": "Tour",
+  "model": "Tour 100 290g",
+  "generation": "2026",
+  "year": 2026,
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      18
+    ],
+    "beamMm": [
+      22,
+      23,
+      20
+    ],
+    "unstrungWeightG": 290
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.34
+    },
+    "beam": {
+      "profile": "box"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "flat"
+    },
+    "features": []
+  },
+  "paint": {
+    "base": "#151517",
+    "finish": "matte",
+    "zones": [
+      {
+        "from": 0.12,
+        "to": 0.35,
+        "color": "#e0a526",
+        "blend": 0.03
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#1a1a1a"
+    },
+    "collar": {
+      "color": "#151517"
+    },
+    "buttCap": {
+      "color": "#1a1a1a"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#151517"
+    },
+    "bumper": {
+      "color": "#151517"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://www.tennis-warehouse.com/Prince_Tour_100_290g_2026/descpage-PTR629.html",
+    "https://www.tenniswarehouse-europe.com/Prince_Tour_100_Rackets_290g_2026/descpageRCPRINCEH-PTR629-EN.html"
+  ],
+  "verified": false
+}

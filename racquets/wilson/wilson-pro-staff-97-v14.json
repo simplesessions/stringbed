@@ -1,0 +1,93 @@
+{
+  "id": "wilson-pro-staff-97-v14",
+  "brand": "Wilson",
+  "line": "Pro Staff",
+  "model": "Pro Staff 97",
+  "generation": "v14",
+  "year": 2025,
+  "specs": {
+    "headSizeSqIn": 97,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      21.5,
+      21.5,
+      21.5
+    ],
+    "unstrungWeightG": 315
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.35
+    },
+    "beam": {
+      "profile": "box"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "curved"
+    },
+    "features": []
+  },
+  "paint": {
+    "base": "#8c5a2b",
+    "finish": "satin",
+    "zones": [
+      {
+        "from": 0.12,
+        "to": 0.35,
+        "color": "#6e2f2a",
+        "blend": 0.03
+      },
+      {
+        "from": 0.55,
+        "to": 0.8,
+        "color": "#a8793a",
+        "blend": 0.03
+      },
+      {
+        "from": 0.8,
+        "to": 0.93,
+        "color": "#b8893f",
+        "blend": 0.03
+      },
+      {
+        "from": 0.93,
+        "to": 1,
+        "color": "#1a1a1a",
+        "blend": 0.03
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#1a1a1a"
+    },
+    "collar": {
+      "color": "#1a1a1a"
+    },
+    "buttCap": {
+      "color": "#1a1a1a"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#1a1a1a"
+    },
+    "bumper": {
+      "color": "#1a1a1a"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://www.ustaproshop.com/product/44382/wilson-pro-staff-97-v14",
+    "https://racquetguys.com/products/wilson-pro-staff-97-v14"
+  ],
+  "verified": false
+}

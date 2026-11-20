@@ -1,0 +1,89 @@
+{
+  "id": "prince-ripstick-100",
+  "brand": "Prince",
+  "line": "Ripstick",
+  "model": "Ripstick 100",
+  "generation": "2025",
+  "year": 2025,
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      18
+    ],
+    "beamMm": [
+      27,
+      25.5,
+      22
+    ],
+    "unstrungWeightG": 300
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.33
+    },
+    "beam": {
+      "profile": "ellipse"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "flat"
+    },
+    "features": [
+      "o-ports"
+    ]
+  },
+  "paint": {
+    "base": "#d8262f",
+    "finish": "gloss",
+    "zones": [
+      {
+        "from": 0,
+        "to": 0.35,
+        "color": "#1a1a1a",
+        "blend": 0.03
+      },
+      {
+        "from": 0.35,
+        "to": 0.8,
+        "color": "#d8262f",
+        "blend": 0.03
+      },
+      {
+        "from": 0.8,
+        "to": 1,
+        "color": "#ff6a2b",
+        "blend": 0.03
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#1a1a1a"
+    },
+    "collar": {
+      "color": "#1a1a1a"
+    },
+    "buttCap": {
+      "color": "#1a1a1a"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#1a1a1a"
+    },
+    "bumper": {
+      "color": "#1a1a1a"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://www.tennis-warehouse.com/Prince_Ripstick_100_280g_2025/descpageRCTWABG-25RIPLD.html",
+    "https://www.merchantoftennis.com/products/prince-o3-ripstick-100-300g"
+  ],
+  "verified": false
+}

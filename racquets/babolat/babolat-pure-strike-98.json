@@ -1,0 +1,87 @@
+{
+  "id": "babolat-pure-strike-98",
+  "brand": "Babolat",
+  "line": "Pure Strike",
+  "model": "Pure Strike 98 16x19",
+  "generation": "Gen 4",
+  "year": 2024,
+  "specs": {
+    "headSizeSqIn": 98,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      21,
+      23,
+      21
+    ],
+    "unstrungWeightG": 305
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.33
+    },
+    "beam": {
+      "profile": "box"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "curved"
+    },
+    "features": []
+  },
+  "paint": {
+    "base": "#8a8d91",
+    "finish": "matte",
+    "zones": [
+      {
+        "from": 0.35,
+        "to": 0.55,
+        "color": "#2b2b2d",
+        "blend": 0.03
+      },
+      {
+        "from": 0.8,
+        "to": 0.93,
+        "color": "#ff3b30",
+        "blend": 0.03
+      },
+      {
+        "from": 0.93,
+        "to": 1,
+        "color": "#2b2b2d",
+        "blend": 0.03
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#1a1a1a"
+    },
+    "collar": {
+      "color": "#2b2b2d"
+    },
+    "buttCap": {
+      "color": "#1a1a1a"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#2b2b2d"
+    },
+    "bumper": {
+      "color": "#2b2b2d"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://www.babolat.com/us/pure-strike-16-19-gen4-unstrung/101577.html",
+    "https://racquetguys.ca/products/babolat-pure-strike-98-16x19-4th-gen"
+  ],
+  "verified": false
+}

@@ -1,0 +1,100 @@
+{
+  "id": "yonex-vcore-100",
+  "brand": "Yonex",
+  "line": "VCORE",
+  "model": "VCORE 100",
+  "generation": "8th gen",
+  "year": 2026,
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      24,
+      26,
+      23
+    ],
+    "unstrungWeightG": 300
+  },
+  "geometry": {
+    "head": {
+      "shape": "isometric",
+      "aspect": 1.3
+    },
+    "beam": {
+      "profile": "aero"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "flat"
+    },
+    "features": [
+      "aero-fins"
+    ]
+  },
+  "paint": {
+    "base": "#c21a2b",
+    "finish": "satin",
+    "zones": [
+      {
+        "from": 0,
+        "to": 0.12,
+        "color": "#1a1a1a",
+        "blend": 0.03
+      },
+      {
+        "from": 0.12,
+        "to": 0.35,
+        "color": "#8e0f1c",
+        "blend": 0.03
+      },
+      {
+        "from": 0.55,
+        "to": 0.8,
+        "color": "#d9242f",
+        "blend": 0.03
+      },
+      {
+        "from": 0.8,
+        "to": 0.93,
+        "color": "#e03a3a",
+        "blend": 0.03
+      },
+      {
+        "from": 0.93,
+        "to": 1,
+        "color": "#1a1a1a",
+        "blend": 0.03
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#1a1a1a"
+    },
+    "collar": {
+      "color": "#c21a2b"
+    },
+    "buttCap": {
+      "color": "#1a1a1a"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#1a1a1a"
+    },
+    "bumper": {
+      "color": "#1a1a1a"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://www.tennis-warehouse.com/Yonex_VCORE_100_8th_Gen/descpageRCYONEX-VC108GD.html"
+  ],
+  "verified": false
+}

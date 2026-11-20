@@ -1,0 +1,88 @@
+{
+  "id": "yonex-percept-97",
+  "brand": "Yonex",
+  "line": "Percept",
+  "model": "Percept 97",
+  "generation": "2025",
+  "year": 2025,
+  "specs": {
+    "headSizeSqIn": 97,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      21,
+      21,
+      21
+    ],
+    "unstrungWeightG": 310
+  },
+  "geometry": {
+    "head": {
+      "shape": "isometric",
+      "aspect": 1.33
+    },
+    "beam": {
+      "profile": "box"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "flat"
+    },
+    "features": []
+  },
+  "paint": {
+    "base": "#14213d",
+    "finish": "matte",
+    "zones": [
+      {
+        "from": 0.12,
+        "to": 0.35,
+        "color": "#0b1226",
+        "blend": 0.03
+      },
+      {
+        "from": 0.55,
+        "to": 0.8,
+        "color": "#1b2d55",
+        "blend": 0.03
+      },
+      {
+        "from": 0.93,
+        "to": 1,
+        "color": "#0b1226",
+        "blend": 0.03
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#1a1a1a"
+    },
+    "collar": {
+      "color": "#14213d"
+    },
+    "buttCap": {
+      "color": "#1a1a1a"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#0b1226"
+    },
+    "bumper": {
+      "color": "#0b1226"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://www.tennisnuts.com/yonex-percept-97-tennis-racket-frame-only-2025-1731558.html",
+    "https://www.merchantoftennis.com/products/yonex-percept-97-midnight",
+    "https://www.tennis-warehouse.com/Best_Racquets_of_2026/catpage-BESTRAC26.html"
+  ],
+  "verified": false
+}

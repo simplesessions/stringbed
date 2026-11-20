@@ -1,0 +1,88 @@
+{
+  "id": "yonex-ezone-100",
+  "brand": "Yonex",
+  "line": "EZONE",
+  "model": "EZONE 100",
+  "generation": "8th gen",
+  "year": 2025,
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      24.5,
+      26.5,
+      23
+    ],
+    "unstrungWeightG": 300
+  },
+  "geometry": {
+    "head": {
+      "shape": "isometric",
+      "aspect": 1.3
+    },
+    "beam": {
+      "profile": "ellipse"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "flat"
+    },
+    "features": []
+  },
+  "paint": {
+    "base": "#1f5fd6",
+    "finish": "satin",
+    "zones": [
+      {
+        "from": 0,
+        "to": 0.35,
+        "color": "#14203f",
+        "blend": 0.03
+      },
+      {
+        "from": 0.55,
+        "to": 0.8,
+        "color": "#2f7bff",
+        "blend": 0.03
+      },
+      {
+        "from": 0.93,
+        "to": 1,
+        "color": "#14203f",
+        "blend": 0.03
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#1a1a1a"
+    },
+    "collar": {
+      "color": "#14203f"
+    },
+    "buttCap": {
+      "color": "#1a1a1a"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#14203f"
+    },
+    "bumper": {
+      "color": "#14203f"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://www.tennis-warehouse.com/Best_Racquets_of_2026/catpage-BESTRAC26.html",
+    "https://www.dickssportinggoods.com/p/yonex-ezone-100-tennis-racquet-2025-25enpaznxxxxxxxxxtnn/25enpaznxxxxxxxxxtnn",
+    "https://merchantoftennis.com/products/yonex-ezone-100-8th-gen-blast-blue"
+  ],
+  "verified": false
+}

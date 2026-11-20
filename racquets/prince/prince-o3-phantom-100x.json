@@ -1,0 +1,77 @@
+{
+  "id": "prince-o3-phantom-100x",
+  "brand": "Prince",
+  "line": "Phantom",
+  "model": "O3 Phantom 100X",
+  "generation": "2025",
+  "year": 2025,
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      18
+    ],
+    "beamMm": [
+      19,
+      20,
+      20
+    ],
+    "unstrungWeightG": 305
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.33
+    },
+    "beam": {
+      "profile": "tapered-box"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "flat"
+    },
+    "features": [
+      "o-ports"
+    ]
+  },
+  "paint": {
+    "base": "#0e0e10",
+    "finish": "matte",
+    "zones": [
+      {
+        "from": 0.8,
+        "to": 0.93,
+        "color": "#1d1d20",
+        "blend": 0.03
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#1a1a1a"
+    },
+    "collar": {
+      "color": "#0e0e10"
+    },
+    "buttCap": {
+      "color": "#1a1a1a"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#0e0e10"
+    },
+    "bumper": {
+      "color": "#0e0e10"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://www.tennis-warehouse.com/Prince_O3_Phantom_100X/descpage-PO310X.html",
+    "https://www.tennis-warehouse.com/Prince_Phantom_Racquets/catpage-PRINPHAN.html"
+  ],
+  "verified": false
+}

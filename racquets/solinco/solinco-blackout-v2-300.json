@@ -1,0 +1,81 @@
+{
+  "id": "solinco-blackout-v2-300",
+  "brand": "Solinco",
+  "line": "Blackout",
+  "model": "Blackout 300",
+  "generation": "V2",
+  "year": 2025,
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      23.5,
+      26,
+      23
+    ],
+    "unstrungWeightG": 300
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.32
+    },
+    "beam": {
+      "profile": "ellipse"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "curved"
+    },
+    "features": []
+  },
+  "paint": {
+    "base": "#111111",
+    "finish": "matte",
+    "zones": [
+      {
+        "from": 0,
+        "to": 0.12,
+        "color": "#111111",
+        "blend": 0.03
+      }
+    ],
+    "pattern": {
+      "type": "camo",
+      "color": "#3a3f44",
+      "scale": 1,
+      "seed": 300
+    }
+  },
+  "parts": {
+    "grip": {
+      "color": "#1a1a1a"
+    },
+    "collar": {
+      "color": "#111111"
+    },
+    "buttCap": {
+      "color": "#111111"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#111111"
+    },
+    "bumper": {
+      "color": "#111111"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://www.tenniswarehouse-europe.com/Raqueta_Solinco_Blackout_300_v2_Camo/descpage-BKOCAH.html",
+    "https://www.tennisnerd.net/gear/racquets/racquet-reviews/solinco-blackout-v2-review/61196"
+  ],
+  "verified": false
+}
