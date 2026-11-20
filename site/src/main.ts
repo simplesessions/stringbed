@@ -417,7 +417,7 @@ function placeholderView(a: App, p: Placeholder): Node[] {
     row('On sale in', p.onSaleIn.join(', ')),
     row('Category', p.category === 'junior' ? 'Junior' : 'Adult'),
   );
-  const stage = el('div', { class: 'stage', 'data-state': 'flat', style: '--swatch: var(--rail)' },
+  const stage = el('div', { class: 'stage stage-empty', 'data-state': 'flat', style: '--swatch: var(--rail)' },
     silhouette(s.headSizeSqIn ?? 100),
     el('p', { class: 'stage-note' }, 'No 3D model yet.'),
   );

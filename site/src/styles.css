@@ -601,6 +601,29 @@ body[data-view='detail'] .signs { display: none; }
   .stepper { gap: 4px; }
   .stepper a { justify-content: center; min-width: 44px; }
   .row { grid-template-columns: 7.5rem minmax(0, 1fr); }
+
+  /* Header: brands on one row that scrolls sideways (bleeding to the screen edges), size as a
+     full-width segmented row under it, so the filters take two short rows instead of three. */
+  .strip { gap: 10px; padding-bottom: 10px; }
+  .strip-id { width: 100%; }
+  .signs:not(.sizes) {
+    flex-wrap: nowrap;
+    width: calc(100% + 2 * var(--pad));
+    margin-inline: calc(-1 * var(--pad));
+    padding-inline: calc(var(--pad) - 4px);
+    overflow-x: auto;
+    scroll-padding-inline: var(--pad);
+    scrollbar-width: none;
+    mask-image: linear-gradient(90deg, transparent, #000 var(--pad), #000 calc(100% - var(--pad)), transparent);
+  }
+  .signs:not(.sizes)::-webkit-scrollbar { display: none; }
+  .signs:not(.sizes) .sign { flex: none; }
+  .sizes { display: grid; grid-template-columns: repeat(3, 1fr); width: 100%; }
+  .sign-size { justify-content: center; min-height: 34px; }
+
+  /* No model: the outline is a stand-in, not the content, so it gets a short stage. */
+  .stage-empty { height: 34svh; min-height: 240px; }
+  .stage-empty .stage-note { bottom: 6px; }
 }
 
 .hint-coarse { display: none; }
