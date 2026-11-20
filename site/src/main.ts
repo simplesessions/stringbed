@@ -18,6 +18,7 @@ import {
   parseRoute,
   pickStyle,
   routeFor,
+  searchRacquets,
   type BrandGroup,
   type Placeholder,
   type Racquet,
@@ -173,6 +174,7 @@ function buildHeader(a: App) {
     signs.append(el('span', { class: 'signs-break', 'aria-hidden': 'true' }), ...links);
   }
   signs.hidden = false;
+  searchOpen.hidden = false;
 }
 
 function applyFilter(a: App) {
@@ -506,8 +508,87 @@ function sheet(a: App, r: Racquet): HTMLElement {
   );
 }
 
+// ---------- search ----------
+
+const searchDialog = $<HTMLDialogElement>('search');
+const searchInput = $<HTMLInputElement>('search-input');
+const searchList = $<HTMLUListElement>('search-results');
+const searchEmpty = $<HTMLParagraphElement>('search-empty');
+const searchOpen = $<HTMLButtonElement>('search-open');
+const isMac = /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent);
+$<HTMLElement>('search-key').textContent = isMac ? '⌘K' : 'Ctrl K';
+let searchActive = -1;
+
+function openSearch() {
+  if (!app || searchDialog.open) return;
+  searchDialog.showModal();
+  searchInput.select();
+  renderSearch();
+}
+
+function renderSearch() {
+  if (!app) return;
+  const q = searchInput.value.trim();
+  const hits = searchRacquets(app.catalog, q);
+  searchActive = hits.length ? 0 : -1;
+  searchList.replaceChildren(...hits.map((h, i) =>
+    el('li', { id: `search-hit-${i}`, role: 'option', 'aria-selected': String(i === 0) },
+      el('a', { class: 'search-hit', href: routeFor(h.id), tabindex: '-1' },
+        el('span', { class: 'search-model' }, h.model),
+        el('span', { class: 'search-meta' }, [h.brand, h.meta].filter(Boolean).join(' · ')),
+        el('span', { class: 'search-badge' }, h.hasModel ? '3D' : 'No model yet'),
+      ),
+    ),
+  ));
+  searchInput.setAttribute('aria-expanded', String(hits.length > 0));
+  searchInput.setAttribute('aria-activedescendant', hits.length ? 'search-hit-0' : '');
+  searchEmpty.textContent = !q ? 'Type a brand, model or year.' : hits.length ? '' : `No racquet matches “${q}”.`;
+}
+
+function moveSearch(step: number) {
+  const items = searchList.children;
+  if (!items.length) return;
+  items[searchActive]?.setAttribute('aria-selected', 'false');
+  searchActive = (searchActive + step + items.length) % items.length;
+  const item = items[searchActive];
+  item.setAttribute('aria-selected', 'true');
+  searchInput.setAttribute('aria-activedescendant', item.id);
+  item.scrollIntoView({ block: 'nearest' });
+}
+
+searchOpen.addEventListener('click', openSearch);
+searchInput.addEventListener('input', renderSearch);
+searchInput.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+    e.preventDefault();
+    moveSearch(e.key === 'ArrowDown' ? 1 : -1);
+  } else if (e.key === 'Enter') {
+    const link = searchList.children[searchActive]?.querySelector('a');
+    if (link) {
+      e.preventDefault();
+      searchDialog.close();
+      location.hash = link.getAttribute('href')!;
+    }
+  }
+});
+searchList.addEventListener('click', (e) => {
+  if ((e.target as Element).closest('a')) searchDialog.close();
+});
+// A click on the backdrop (the dialog element itself, outside its content) closes it.
+searchDialog.addEventListener('click', (e) => {
+  if (e.target === searchDialog) searchDialog.close();
+});
+searchDialog.addEventListener('close', () => searchOpen.focus({ preventScroll: true }));
+
 window.addEventListener('hashchange', route);
 window.addEventListener('keydown', (e) => {
+  if ((e.metaKey || e.ctrlKey) && !e.altKey && !e.shiftKey && e.key.toLowerCase() === 'k') {
+    e.preventDefault();
+    if (searchDialog.open) searchDialog.close();
+    else openSearch();
+    return;
+  }
+  if (searchDialog.open) return; // Escape closes the dialog, not the detail view
   if (e.key === 'Escape' && !detail.hidden && !e.defaultPrevented) location.hash = routeFor(null);
 });
 void boot();

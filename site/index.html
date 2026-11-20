@@ -16,7 +16,21 @@
         <a class="name" href="#/">stringbed</a>
       </div>
       <div class="signs" id="signs" role="group" aria-label="Filter by brand" hidden></div>
+      <button class="search-open" id="search-open" type="button" aria-haspopup="dialog" aria-keyshortcuts="Meta+K Control+K" hidden>
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10.5 17a6.5 6.5 0 1 0 0-13 6.5 6.5 0 0 0 0 13zM15.2 15.2 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+        <span>Search</span><kbd class="search-key" id="search-key">⌘K</kbd>
+      </button>
     </header>
+    <dialog class="search" id="search" aria-label="Search racquets">
+      <div class="search-field">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10.5 17a6.5 6.5 0 1 0 0-13 6.5 6.5 0 0 0 0 13zM15.2 15.2 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+        <input id="search-input" type="search" placeholder="Brand, model or year" autocomplete="off" spellcheck="false"
+          role="combobox" aria-expanded="false" aria-controls="search-results" aria-autocomplete="list" aria-label="Search racquets" />
+        <kbd class="search-key">Esc</kbd>
+      </div>
+      <ul class="search-results" id="search-results" role="listbox" aria-label="Results"></ul>
+      <p class="search-empty" id="search-empty" role="status"></p>
+    </dialog>
 
     <main id="main">
       <p class="notice" id="notice" role="status"></p>

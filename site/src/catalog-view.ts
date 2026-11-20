@@ -133,3 +133,39 @@ export function placeholderLabel(p: Pick<Placeholder, 'generation' | 'releaseYea
   if (g && y) return g === String(y) ? g : /^\d{4}$/.test(g) ? `${g} (released ${y})` : `${g}, ${y}`;
   return g ?? (y ? String(y) : '');
 }
+
+export interface SearchHit {
+  id: string;
+  brand: string;
+  model: string;
+  meta: string;
+  hasModel: boolean;
+}
+
+const fold = (s: string) => s.toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, ' ');
+
+/**
+ * Every query word must appear in brand, line, model, generation or year. Prefix matches on the
+ * model rank first, then racquets with a 3D model, then newest. Empty query: no hits.
+ */
+export function searchRacquets(c: Catalog, query: string, limit = 40): SearchHit[] {
+  const words = fold(query).split(' ').filter(Boolean);
+  if (words.length === 0) return [];
+  const pool: Array<SearchHit & { hay: string; model_: string; year: number }> = [
+    ...c.racquets.map((r) => ({
+      id: r.id, brand: r.brand, model: r.model, meta: generationLabel(r), hasModel: true,
+      hay: ` ${fold(`${r.brand} ${r.line} ${r.model} ${r.generation} ${r.year}`)} `, model_: fold(r.model), year: r.year,
+    })),
+    ...(c.placeholders ?? []).map((p) => ({
+      id: p.id, brand: p.brand, model: p.model, meta: placeholderLabel(p), hasModel: false,
+      hay: ` ${fold(`${p.brand} ${p.line} ${p.model} ${p.generation ?? ''} ${p.releaseYear ?? ''} ${p.onSaleIn.join(' ')} ${p.category === 'junior' ? 'junior' : ''}`)} `,
+      model_: fold(p.model), year: p.releaseYear ?? Math.max(...p.onSaleIn) - 1,
+    })),
+  ];
+  const score = (h: (typeof pool)[number]) => (h.model_.startsWith(words[0]) ? 0 : 1) * 2 + (h.hasModel ? 0 : 1);
+  return pool
+    .filter((h) => words.every((w) => h.hay.includes(` ${w}`)))
+    .sort((a, b) => score(a) - score(b) || b.year - a.year || byText(a.brand, b.brand) || byText(a.model, b.model))
+    .slice(0, limit)
+    .map(({ id, brand, model, meta, hasModel }) => ({ id, brand, model, meta, hasModel }));
+}
