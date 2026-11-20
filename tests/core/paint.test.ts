@@ -60,3 +60,15 @@ test('real camo specs mix both colours', () => {
     expect(v, s.id).toBeGreaterThan(0.15); expect(v, s.id).toBeLessThan(0.85);
   }
 });
+test('real camo patterns contrast with the base and every zone (linear luma > 0.2)', () => {
+  const luma = (h: string) => { const [r, g, b] = hexToLinear(h); return 0.2126 * r + 0.7152 * g + 0.0722 * b; };
+  for (const s of loadAllSpecs().filter((x) => x.paint.pattern)) {
+    const p = luma(s.paint.pattern!.color);
+    expect(Math.abs(p - luma(s.paint.base)), `${s.id} base`).toBeGreaterThan(0.2);
+    for (const z of s.paint.zones) expect(Math.abs(p - luma(z.color)), `${s.id} zone ${z.from}`).toBeGreaterThan(0.2);
+  }
+});
+test('applyPaint explains a frame missing u', () => {
+  const g = frameOf(spec); g.deleteAttribute('u');
+  expect(() => applyPaint(g, camoPaint)).toThrow(/"u"/);
+});

@@ -54,41 +54,35 @@ function valueNoise(x: number, y: number, z: number, seed: number): number {
   );
 }
 
-/** Noise cell length along the frame (metres) and across the section (in unit-normal space) at scale 1. */
-const CELL_ALONG_M = 0.045;
-const CELL_ACROSS = 0.7;
-
 /**
- * Camo field in 0..1 for one vertex. Value noise in (arc length along the frame, section normal):
- * arc length is u times the frame's approximate arc length, so blobs run along the beam wherever the
- * hoop turns; the unit normal places the vertex around the section, giving a few blobs per ring.
- * Two octaves give ragged tiger-stripe edges.
+ * Noise cell size (metres) at scale 1, per axis of the frame's own space (x across the head, y along
+ * the racquet, z through the thickness). The cells are tall (y) and thin through z, so on the long
+ * sides of the hoop blobs run lengthwise as stripes, while the narrow cell in z flips front and back
+ * faces and the rim independently so stripes wrap the beam rather than ignoring it.
  */
-function camoField(u: number, nx: number, ny: number, nz: number, arcM: number, scale: number, seed: number): number {
-  const along = ((u * arcM) / CELL_ALONG_M) * scale;
-  const k = scale / CELL_ACROSS;
-  const coarse = valueNoise(along, nx * k + 17.3, ny * k + nz * k * 1.3 - 5.1, seed);
-  const fine = valueNoise(along * 2.1 + 40, (nx * k + 3.7) * 2.1, (ny * k + nz * k * 1.3) * 2.1, seed + 101);
-  return coarse * 0.7 + fine * 0.3;
-}
+const CELL_M = { x: 0.022, y: 0.05, z: 0.012 };
+const CAMO_THRESHOLD = 0.55;
 
-const CAMO_THRESHOLD = 0.5;
+/** Camo field in 0..1 at a vertex position: value noise plus a light fine octave for ragged edges. */
+function camoField(x: number, y: number, z: number, scale: number, seed: number): number {
+  const px = (x / CELL_M.x) * scale, py = (y / CELL_M.y) * scale, pz = (z / CELL_M.z) * scale;
+  const coarse = valueNoise(px, py, pz, seed);
+  const fine = valueNoise(px * 2.3 + 40, py * 2.3, pz * 2.3, seed + 101);
+  return coarse * 0.85 + fine * 0.15;
+}
 
 /** Adds a "color" attribute (itemSize 3, linear RGB) to the frame: zones first, then the pattern. */
 export function applyPaint(frame: THREE.BufferGeometry, paint: Paint): void {
   const pos = frame.getAttribute('position');
-  const nor = frame.getAttribute('normal');
   const uAttr = frame.getAttribute('u');
+  if (!uAttr) throw new Error('applyPaint: frame needs a "u" attribute (use buildFrame output)');
   const out = new Float32Array(pos.count * 3);
-  frame.computeBoundingBox();
-  // The hoop is traversed twice (up one side, over the top, down the other), plus shaft and bridge.
-  const arcM = 2 * (frame.boundingBox!.max.y - frame.boundingBox!.min.y);
   const pat = paint.pattern;
   const patColor = pat ? hexToLinear(pat.color) : null;
   for (let i = 0; i < pos.count; i++) {
     const u = uAttr.getX(i);
     let c = paintColorAt(paint, u);
-    if (pat && patColor && camoField(u, nor.getX(i), nor.getY(i), nor.getZ(i), arcM, pat.scale, pat.seed) > CAMO_THRESHOLD) c = patColor;
+    if (pat && patColor && camoField(pos.getX(i), pos.getY(i), pos.getZ(i), pat.scale, pat.seed) > CAMO_THRESHOLD) c = patColor;
     out[i * 3] = c[0]; out[i * 3 + 1] = c[1]; out[i * 3 + 2] = c[2];
   }
   frame.setAttribute('color', new THREE.BufferAttribute(out, 3));

@@ -40,13 +40,7 @@
       {
         "from": 0.12,
         "to": 0.35,
-        "color": "#3a3f44",
-        "blend": 0.03
-      },
-      {
-        "from": 0.8,
-        "to": 0.93,
-        "color": "#3a3f44",
+        "color": "#1f2326",
         "blend": 0.03
       },
       {
@@ -58,7 +52,7 @@
     ],
     "pattern": {
       "type": "camo",
-      "color": "#3a3f44",
+      "color": "#9aa0a6",
       "scale": 1,
       "seed": 300
     }
