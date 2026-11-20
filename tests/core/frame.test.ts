@@ -1,3 +1,4 @@
+import { test, expect } from 'bun:test';
 import type * as THREE from 'three';
 import { armRings, beamThicknessAt, BRIDGE_U, bridgeRings, buildFrame, findJunction, frameContext, hoopRings, U_JUNCTION, U_SHAFT } from '../../src/core/frame';
 import { computeLayout } from '../../src/core/layout';

@@ -1,3 +1,4 @@
+import { test, expect } from 'bun:test';
 import type * as THREE from 'three';
 import { computeLayout } from '../../src/core/layout';
 import { headOutline, outlineHalfWidthAt } from '../../src/core/outline';

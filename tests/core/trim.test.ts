@@ -1,3 +1,4 @@
+import { test, expect } from 'bun:test';
 import type * as THREE from 'three';
 import { buildFrame } from '../../src/core/frame';
 import { computeLayout } from '../../src/core/layout';

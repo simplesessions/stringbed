@@ -51,7 +51,7 @@ scene.add(gltf.scene);
 
 1. Add a JSON spec at `racquets/<brand>/<id>.json` (copy a similar one; the schema is in
    `src/core/spec.ts`).
-2. Run `npm run generate`.
+2. Run `bun run generate`.
 3. Commit the spec and the regenerated `assets/`.
 
 Never edit files in `assets/` by hand. CI fails if they don't match the specs.
@@ -59,12 +59,12 @@ Never edit files in `assets/` by hand. CI fails if they don't match the specs.
 ## Development
 
 ```
-npm install
-npm test               # unit tests
-npm run typecheck
-npm run generate       # specs -> assets/ (add -- --check to verify only)
-npm run dev            # gallery at http://localhost:5173/stringbed/
-npm run build          # static site in dist/
+bun install
+bun test               # unit tests
+bun run typecheck
+bun run generate       # specs -> assets/ (add --check to verify only)
+bun run dev            # gallery at http://localhost:5173/stringbed/
+bun run build          # static site in dist/
 ```
 
 ## Later

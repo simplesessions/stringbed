@@ -1,3 +1,4 @@
+import { test, expect } from 'bun:test';
 import { loadAllSpecs } from '../src/core/spec';
 import { loadPlaceholders } from '../src/placeholders';
 

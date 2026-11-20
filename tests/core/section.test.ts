@@ -1,3 +1,4 @@
+import { test, expect } from 'bun:test';
 import { beamSection, HOOP_RADIAL } from '../../src/core/section';
 import { polygonArea } from '../../src/core/outline';
 

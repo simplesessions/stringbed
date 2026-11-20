@@ -1,3 +1,4 @@
+import { test, expect } from 'bun:test';
 import { NodeIO } from '@gltf-transform/core';
 import { buildRacquet } from '../../src/core/build';
 import { loadAllSpecs } from '../../src/core/spec';

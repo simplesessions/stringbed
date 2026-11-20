@@ -1,3 +1,4 @@
+import { test, expect } from 'bun:test';
 import { headOutline, outlineHalfWidthAt, polygonArea } from '../../src/core/outline';
 import { sqInToSqM } from '../../src/core/units';
 

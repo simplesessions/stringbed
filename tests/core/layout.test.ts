@@ -1,3 +1,4 @@
+import { test, expect } from 'bun:test';
 import { computeLayout } from '../../src/core/layout';
 import { makeSpec } from '../fixtures';
 

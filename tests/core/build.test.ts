@@ -1,3 +1,4 @@
+import { test, expect } from 'bun:test';
 import { readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import * as THREE from 'three';

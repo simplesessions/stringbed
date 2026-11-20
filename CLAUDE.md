@@ -18,9 +18,10 @@ Rules that are easy to break by accident:
 - Design the gallery with the Impeccable skill (`.claude/skills/impeccable`). Its launcher
   downloads a binary; it has not been run here yet (see the design doc's open items).
 
-Commands: `npm test`, `npm run typecheck`, `npm run generate` (`-- --check` to verify
-`assets/` matches the specs, as CI does), `npm run dev` (gallery at `/stringbed/`),
-`npm run build` (static site in `dist/`, deployed to Pages from `main`).
+Commands (Bun for everything; there is no npm lockfile): `bun install`, `bun test`,
+`bun run typecheck`, `bun run generate` (`--check` to verify `assets/` matches the specs, as CI
+does), `bun run dev` (gallery at `/stringbed/`), `bun run build` (static site in `dist/`,
+deployed to Pages from `main`).
 
 Layout: `racquets/` specs → `src/core` (model, named parts) → `src/styles` + `src/export`
 (GLB) → `scripts/generate.ts` writes `assets/`; `site/` is the gallery and reads

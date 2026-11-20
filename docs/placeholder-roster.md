@@ -2,7 +2,7 @@
 
 Racquets we know about but have not modelled. One JSON file per racquet in
 `placeholders/<brand>/<id>.json`, validated by `src/placeholders.ts`. No model is built from
-them: `npm run generate` copies them (without `notes`) into `assets/catalog.json` as
+them: `bun run generate` copies them (without `notes`) into `assets/catalog.json` as
 `placeholders`, and the gallery lists them under the wall as "No model yet", each with a spec
 page and its sources but no 3D view or download. `tests/placeholders.test.ts` checks that ids
 are unique and never reuse a library id from `racquets/`.

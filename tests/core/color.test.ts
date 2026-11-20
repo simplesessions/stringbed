@@ -1,3 +1,4 @@
+import { test, expect } from 'bun:test';
 import { hexToLinear } from '../../src/core/color';
 
 test('hexToLinear converts sRGB to linear exactly at the ends', () => {

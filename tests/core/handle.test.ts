@@ -1,3 +1,4 @@
+import { test, expect } from 'bun:test';
 import type * as THREE from 'three';
 import { buildButtCap, buildCollar, buildGrip } from '../../src/core/handle';
 import { computeLayout } from '../../src/core/layout';
