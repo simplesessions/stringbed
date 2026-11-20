@@ -19,6 +19,8 @@ import {
   pickStyle,
   routeFor,
   searchRacquets,
+  AGES,
+  type Age,
   type BrandGroup,
   type Placeholder,
   type Racquet,
@@ -60,6 +62,7 @@ interface App {
   stock: StockGroup[];
   stockOrder: Placeholder[];
   brand: string | null;
+  age: Age;
   gl: GL | null;
   thumbs: Thumbnails | null;
   viewer: Viewer | null | undefined; // undefined: not tried yet
@@ -99,6 +102,7 @@ async function boot() {
     stock,
     stockOrder: stock.flatMap((g) => g.years.flatMap((y) => y.items)),
     brand: null,
+    age: storedAge(),
     gl: null,
     thumbs: null,
     viewer: undefined,
@@ -140,11 +144,65 @@ function catalogFailed(err: unknown) {
 
 // ---------- header ----------
 
-function buildHeader(a: App) {
-  // Signs cover every brand, modelled or not; counts include racquets with no model yet.
+const AGE_KEY = 'stringbed.age';
+const AGE_LABEL: Record<Age, string> = { adult: 'Adult', junior: 'Junior', all: 'All sizes' };
+function storedAge(): Age {
+  try {
+    const v = localStorage.getItem(AGE_KEY) as Age | null;
+    return v && AGES.includes(v) ? v : 'adult';
+  } catch {
+    return 'adult';
+  }
+}
+
+/** Racquets per brand for the current size filter: modelled ones (all adult) plus placeholders. */
+function brandCounts(a: App): Map<string, number> {
   const counts = new Map<string, number>();
-  for (const g of a.groups) counts.set(g.brand, g.racquets.length);
-  for (const g of a.stock) counts.set(g.brand, (counts.get(g.brand) ?? 0) + g.count);
+  if (a.age !== 'junior') for (const g of a.groups) counts.set(g.brand, g.racquets.length);
+  for (const g of groupPlaceholders(a.catalog, a.age)) counts.set(g.brand, (counts.get(g.brand) ?? 0) + g.count);
+  return counts;
+}
+
+const sizes = el('div', { class: 'signs sizes', role: 'group', 'aria-label': 'Racquet size' });
+
+function buildHeader(a: App) {
+  renderSigns(a);
+  // Size is a second, smaller axis: three choices, adult by default and remembered.
+  sizes.replaceChildren(...AGES.map((age) => {
+    const b = el('button', { class: 'sign sign-size', type: 'button', 'aria-pressed': String(age === a.age) }, AGE_LABEL[age]);
+    b.addEventListener('click', () => {
+      if (a.age === age) return;
+      a.age = age;
+      try {
+        localStorage.setItem(AGE_KEY, age);
+      } catch {
+        /* private mode: the choice lasts for this visit */
+      }
+      for (const x of sizes.children) x.setAttribute('aria-pressed', String(x === b));
+      a.lastOpened = null;
+      if (a.brand && !brandCounts(a).has(a.brand)) a.brand = null; // the brand has nothing in this size
+      renderSigns(a);
+      applyFilter(a);
+      announceShown(a);
+      if (parseRoute(location.hash).racquetId) location.hash = routeFor(null);
+    });
+    return b;
+  }));
+  if (!sizes.isConnected) signs.after(sizes);
+  signs.hidden = false;
+  searchOpen.hidden = false;
+}
+
+function announceShown(a: App) {
+  const counts = brandCounts(a);
+  const shown = a.brand ? (counts.get(a.brand) ?? 0) : [...counts.values()].reduce((x, y) => x + y, 0);
+  const size = a.age === 'all' ? '' : ` ${a.age}`;
+  announce.textContent = a.brand ? `Showing ${shown}${size} ${a.brand} racquets.` : `Showing all ${shown}${size} racquets.`;
+}
+
+/** Brand signs for the current size; a brand with nothing in that size has no sign. */
+function renderSigns(a: App) {
+  const counts = brandCounts(a);
   const brands = [...counts.keys()].sort((x, y) => x.localeCompare(y, 'en'));
   const n = [...counts.values()].reduce((x, y) => x + y, 0);
   const buttons: HTMLButtonElement[] = [];
@@ -156,8 +214,7 @@ function buildHeader(a: App) {
       a.lastOpened = null; // a filter choice is a new place on the wall; don't jump to the old bay
       for (const x of buttons) x.setAttribute('aria-pressed', String(x === b));
       applyFilter(a);
-      const shown = brand ? counts.get(brand)! : n;
-      announce.textContent = brand ? `Showing ${shown} ${brand} racquets.` : `Showing all ${shown} racquets.`;
+      announceShown(a);
       if (parseRoute(location.hash).racquetId) location.hash = routeFor(null);
     });
     buttons.push(b);
@@ -173,14 +230,14 @@ function buildHeader(a: App) {
     );
     signs.append(el('span', { class: 'signs-break', 'aria-hidden': 'true' }), ...links);
   }
-  signs.hidden = false;
-  searchOpen.hidden = false;
 }
 
 function applyFilter(a: App) {
-  for (const section of wall.querySelectorAll<HTMLElement>('.section, .stock-brand')) {
-    section.hidden = a.brand !== null && section.dataset.brand !== a.brand;
+  // Every modelled racquet is an adult frame, so the wall itself steps aside for juniors.
+  for (const section of wall.querySelectorAll<HTMLElement>('.section')) {
+    section.hidden = a.age === 'junior' || (a.brand !== null && section.dataset.brand !== a.brand);
   }
+  wall.querySelector('.stock')?.replaceWith(...stockList(a));
   wall.classList.toggle('is-filtered', a.brand !== null);
 }
 
@@ -194,40 +251,42 @@ function buildWall(a: App) {
       el('ul', { class: 'bays', role: 'list' }, ...g.racquets.map((r) => bay(a, r))),
     );
   });
-  wall.replaceChildren(el('h1', { class: 'sr-only' }, 'All racquets'), ...sections, ...stockList(a));
+  wall.replaceChildren(el('h1', { class: 'sr-only' }, 'All racquets'), ...sections, el('section', { class: 'stock' }));
   wall.setAttribute('aria-busy', 'false');
   applyFilter(a);
 }
 
 /** Researched racquets with no model yet: a plain list under the wall, one column per brand. */
 function stockList(a: App): HTMLElement[] {
-  if (a.stock.length === 0) return [];
-  const total = a.stockOrder.length;
+  const stock = groupPlaceholders(a.catalog, a.age).filter((g) => a.brand === null || g.brand === a.brand);
+  if (stock.length === 0) return [el('section', { class: 'stock', hidden: true })];
+  const total = stock.reduce((n, g) => n + g.count, 0);
   const brand = (g: StockGroup) =>
     el('section', { class: 'stock-brand', 'data-brand': g.brand, 'aria-label': `${g.brand}, no model yet` },
       el('h3', { class: 'stock-sign' }, g.brand, el('span', { class: 'sign-count' }, String(g.count))),
       ...g.years.flatMap((y) => [
         el('h4', { class: 'stock-year' }, y.year === CURRENT_YEAR ? 'Current' : `On sale in ${y.year}`),
-        el('ul', { class: 'stock-rows', role: 'list' }, ...y.items.map((p) => stockRow(p))),
+        el('ul', { class: 'stock-rows', role: 'list' }, ...y.items.map((p) => stockRow(p, a.age === 'all'))),
       ]),
     );
   return [
     el('section', { class: 'stock', 'aria-labelledby': 'stock-title' },
       el('h2', { class: 'stock-title', id: 'stock-title' }, 'No model yet', el('span', { class: 'sign-count' }, String(total))),
       el('p', { class: 'stock-lede' }, 'Researched from retailer listings and not yet modelled. Specs are unverified and often incomplete.'),
-      el('div', { class: 'stock-brands' }, ...a.stock.map(brand)),
+      el('div', { class: 'stock-brands' }, ...stock.map(brand)),
     ),
   ];
 }
 
 const CURRENT_YEAR = 2026;
 
-function stockRow(p: Placeholder): HTMLLIElement {
+/** showSize: flag junior frames, needed only when adult and junior rows are mixed. */
+function stockRow(p: Placeholder, showSize: boolean): HTMLLIElement {
   const s = p.specs;
   const facts = [s.headSizeSqIn ? `${s.headSizeSqIn} in²` : null, s.stringPattern ? formatPattern(s.stringPattern) : null].filter(Boolean).join(' · ');
   return el('li', { 'data-id': p.id },
     el('a', { class: 'stock-row', href: routeFor(p.id) },
-      el('span', { class: 'stock-model' }, p.model, p.category === 'junior' ? el('span', { class: 'stock-flag' }, 'Junior') : null),
+      el('span', { class: 'stock-model' }, p.model, p.category === 'junior' && showSize ? el('span', { class: 'stock-flag' }, 'Junior') : null),
       el('span', { class: 'stock-meta' }, placeholderLabel(p)),
       el('span', { class: 'stock-facts' }, facts),
     ),
@@ -536,7 +595,7 @@ function renderSearch() {
       el('a', { class: 'search-hit', href: routeFor(h.id), tabindex: '-1' },
         el('span', { class: 'search-model' }, h.model),
         el('span', { class: 'search-meta' }, [h.brand, h.meta].filter(Boolean).join(' · ')),
-        el('span', { class: 'search-badge' }, h.hasModel ? '3D' : 'No model yet'),
+        el('span', { class: 'search-badge' }, [h.junior ? 'Junior' : '', h.hasModel ? '3D' : 'No model yet'].filter(Boolean).join(' · ')),
       ),
     ),
   ));

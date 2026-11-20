@@ -152,3 +152,10 @@ test('searchRacquets matches word prefixes across brand, model and year', () => 
   expect(searchRacquets(catalog, 'babolat 2023').length).toBeGreaterThan(0);
   expect(searchRacquets(catalog, 'zzzz')).toEqual([]);
 });
+
+test('groupPlaceholders filters by size', () => {
+  const total = (age: 'adult' | 'junior' | 'all') => groupPlaceholders(catalog, age).reduce((n, g) => n + g.count, 0);
+  expect(total('adult') + total('junior')).toBe(total('all'));
+  expect(total('junior')).toBeGreaterThan(0);
+  for (const g of groupPlaceholders(catalog, 'junior')) for (const y of g.years) for (const p of y.items) expect(p.category).toBe('junior');
+});

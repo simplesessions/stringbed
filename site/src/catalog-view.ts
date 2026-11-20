@@ -108,10 +108,19 @@ export interface StockGroup {
   count: number;
 }
 
+/** Which racquets to show by size. Every modelled racquet is an adult frame. */
+export type Age = 'adult' | 'junior' | 'all';
+export const AGES: readonly Age[] = ['adult', 'junior', 'all'];
+
+export function matchesAge(category: 'adult' | 'junior', age: Age): boolean {
+  return age === 'all' || category === age;
+}
+
 /** Racquets with no model yet, by brand, then by the latest year each was confirmed on sale. */
-export function groupPlaceholders(c: Catalog): StockGroup[] {
+export function groupPlaceholders(c: Catalog, age: Age = 'all'): StockGroup[] {
   const brands = new Map<string, Map<number, Placeholder[]>>();
   for (const p of c.placeholders ?? []) {
+    if (!matchesAge(p.category, age)) continue;
     const year = Math.max(...p.onSaleIn);
     const byYear = brands.get(p.brand) ?? new Map<number, Placeholder[]>();
     byYear.set(year, [...(byYear.get(year) ?? []), p]);
@@ -140,6 +149,7 @@ export interface SearchHit {
   model: string;
   meta: string;
   hasModel: boolean;
+  junior: boolean;
 }
 
 const fold = (s: string) => s.toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, ' ');
@@ -153,11 +163,11 @@ export function searchRacquets(c: Catalog, query: string, limit = 40): SearchHit
   if (words.length === 0) return [];
   const pool: Array<SearchHit & { hay: string; model_: string; year: number }> = [
     ...c.racquets.map((r) => ({
-      id: r.id, brand: r.brand, model: r.model, meta: generationLabel(r), hasModel: true,
+      id: r.id, brand: r.brand, model: r.model, meta: generationLabel(r), hasModel: true, junior: false,
       hay: ` ${fold(`${r.brand} ${r.line} ${r.model} ${r.generation} ${r.year}`)} `, model_: fold(r.model), year: r.year,
     })),
     ...(c.placeholders ?? []).map((p) => ({
-      id: p.id, brand: p.brand, model: p.model, meta: placeholderLabel(p), hasModel: false,
+      id: p.id, brand: p.brand, model: p.model, meta: placeholderLabel(p), hasModel: false, junior: p.category === 'junior',
       hay: ` ${fold(`${p.brand} ${p.line} ${p.model} ${p.generation ?? ''} ${p.releaseYear ?? ''} ${p.onSaleIn.join(' ')} ${p.category === 'junior' ? 'junior' : ''}`)} `,
       model_: fold(p.model), year: p.releaseYear ?? Math.max(...p.onSaleIn) - 1,
     })),
@@ -167,5 +177,5 @@ export function searchRacquets(c: Catalog, query: string, limit = 40): SearchHit
     .filter((h) => words.every((w) => h.hay.includes(` ${w}`)))
     .sort((a, b) => score(a) - score(b) || b.year - a.year || byText(a.brand, b.brand) || byText(a.model, b.model))
     .slice(0, limit)
-    .map(({ id, brand, model, meta, hasModel }) => ({ id, brand, model, meta, hasModel }));
+    .map(({ id, brand, model, meta, hasModel, junior }) => ({ id, brand, model, meta, hasModel, junior }));
 }

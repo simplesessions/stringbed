@@ -110,6 +110,9 @@ code { font-family: var(--mono); }
 .sign-count { color: var(--ink-2); font-weight: 450; font-variant-numeric: tabular-nums; }
 .sign[aria-pressed='true'] .sign-count { color: color-mix(in oklch, var(--wall) 72%, var(--ink)); }
 .signs-break { width: 1px; margin: 6px 8px; background: var(--line); }
+/* Size: a quieter second filter beside the brand signs, joined into one segmented pill. */
+.sizes { gap: 0; margin-inline: 0; padding: 2px; border: 1.5px solid var(--line); border-radius: 999px; }
+.sign-size { min-height: 30px; padding: 4px 12px 3px; font-size: 0.875rem; }
 
 /* ---------- main ---------- */
 
