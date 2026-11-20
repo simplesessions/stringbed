@@ -1,0 +1,146 @@
+import { readdirSync, readFileSync } from 'node:fs';
+import { basename, join, resolve } from 'node:path';
+import { z } from 'zod';
+
+export type HeadShape = 'oval' | 'isometric' | 'teardrop';
+export type BeamProfile = 'box' | 'ellipse' | 'aero' | 'tapered-box';
+export type Finish = 'matte' | 'satin' | 'gloss';
+export type Feature = 'o-ports' | 'aero-fins';
+export type HexColor = string; // "#rrggbb"
+
+export interface RacquetSpec {
+  id: string; // kebab-case, equals the file name, e.g. "babolat-pure-aero-100"
+  brand: string;
+  line: string;
+  model: string; // display name, "Pure Aero 100"
+  generation: string; // "2026", "v10", "V2"
+  year: number;
+  specs: {
+    headSizeSqIn: number; // 85..115
+    lengthIn: number; // 26..29
+    stringPattern: [number, number]; // [mains, crosses], each 12..22
+    beamMm: [number, number, number]; // [tip, mid, shaft], each 14..32
+    unstrungWeightG?: number;
+  };
+  geometry: {
+    head: { shape: HeadShape; aspect: number }; // aspect = inner length / inner width, 1.2..1.45
+    beam: { profile: BeamProfile };
+    throat: { style: 'open-v' | 'open-u'; bridge: 'curved' | 'flat' };
+    features: Feature[];
+  };
+  paint: {
+    base: HexColor;
+    finish: Finish;
+    zones: Array<{ from: number; to: number; color: HexColor; blend?: number }>; // from/to are frame coordinate u, 0..1
+    pattern?: { type: 'camo'; color: HexColor; scale: number; seed: number };
+  };
+  parts: {
+    grip: { color: HexColor };
+    collar: { color: HexColor };
+    buttCap: { color: HexColor };
+    strings: { color: HexColor; gaugeMm: number }; // gauge 1.0..1.4
+    grommets: { color: HexColor };
+    bumper: { color: HexColor };
+    dampener: null | { color: HexColor };
+  };
+  sources: string[]; // URLs
+  verified: boolean;
+}
+
+const hex = z.string().regex(/^#[0-9a-fA-F]{6}$/, 'expected a #rrggbb colour');
+const color = z.object({ color: hex }).strict();
+const patternCount = z.number().int().min(12).max(22);
+const beam = z.number().min(14).max(32);
+const unit = z.number().min(0).max(1);
+
+const zone = z
+  .object({ from: unit, to: unit, color: hex, blend: z.number().min(0).max(0.5).optional() })
+  .strict()
+  .refine((z) => z.from < z.to, { message: 'from must be less than to', path: ['to'] });
+
+export const racquetSpecSchema = z
+  .object({
+    id: z.string().regex(/^[a-z0-9]+(-[a-z0-9]+)*$/, 'expected kebab-case'),
+    brand: z.string().min(1),
+    line: z.string().min(1),
+    model: z.string().min(1),
+    generation: z.string().min(1),
+    year: z.number().int(),
+    specs: z
+      .object({
+        headSizeSqIn: z.number().min(85).max(115),
+        lengthIn: z.number().min(26).max(29),
+        stringPattern: z.tuple([patternCount, patternCount]),
+        beamMm: z.tuple([beam, beam, beam]),
+        unstrungWeightG: z.number().positive().optional(),
+      })
+      .strict(),
+    geometry: z
+      .object({
+        head: z
+          .object({
+            shape: z.enum(['oval', 'isometric', 'teardrop']),
+            aspect: z.number().min(1.2).max(1.45),
+          })
+          .strict(),
+        beam: z.object({ profile: z.enum(['box', 'ellipse', 'aero', 'tapered-box']) }).strict(),
+        throat: z
+          .object({ style: z.enum(['open-v', 'open-u']), bridge: z.enum(['curved', 'flat']) })
+          .strict(),
+        features: z.array(z.enum(['o-ports', 'aero-fins'])),
+      })
+      .strict(),
+    paint: z
+      .object({
+        base: hex,
+        finish: z.enum(['matte', 'satin', 'gloss']),
+        zones: z.array(zone),
+        pattern: z
+          .object({ type: z.literal('camo'), color: hex, scale: z.number().positive(), seed: z.number().int() })
+          .strict()
+          .optional(),
+      })
+      .strict(),
+    parts: z
+      .object({
+        grip: color,
+        collar: color,
+        buttCap: color,
+        strings: z.object({ color: hex, gaugeMm: z.number().min(1.0).max(1.4) }).strict(),
+        grommets: color,
+        bumper: color,
+        dampener: color.nullable(),
+      })
+      .strict(),
+    sources: z.array(z.string().url()),
+    verified: z.boolean(),
+  })
+  .strict() satisfies z.ZodType<RacquetSpec, unknown>;
+
+export function parseSpec(data: unknown, fileName: string): RacquetSpec {
+  const result = racquetSpecSchema.safeParse(data);
+  if (result.success) return result.data;
+  const lines = result.error.issues.map(
+    (i) => `${fileName}: ${i.path.length ? i.path.join('.') : '(root)'}: ${i.message}`,
+  );
+  throw new Error(lines.join('\n'));
+}
+
+/** Node only. Reads `<dir>/<brand>/*.json`, sorted by brand then model. */
+export function loadAllSpecs(dir = 'racquets'): RacquetSpec[] {
+  const root = resolve(process.cwd(), dir);
+  const specs: RacquetSpec[] = [];
+  for (const brandDir of readdirSync(root, { withFileTypes: true })) {
+    if (!brandDir.isDirectory()) continue;
+    for (const file of readdirSync(join(root, brandDir.name)).filter((f) => f.endsWith('.json'))) {
+      const label = `${brandDir.name}/${file}`;
+      const spec = parseSpec(JSON.parse(readFileSync(join(root, brandDir.name, file), 'utf8')), label);
+      if (spec.id !== basename(file, '.json')) {
+        throw new Error(`${label}: id: "${spec.id}" does not match file name`);
+      }
+      specs.push(spec);
+    }
+  }
+  const cmp = (a: string, b: string) => (a < b ? -1 : a > b ? 1 : 0);
+  return specs.sort((a, b) => cmp(a.brand, b.brand) || cmp(a.model, b.model));
+}
