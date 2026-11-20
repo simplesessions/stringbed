@@ -1,8 +1,8 @@
 name: CI
 
+# Manual only: run from the Actions tab when you want it.
 on:
-  push:
-  pull_request:
+  workflow_dispatch:
 
 permissions:
   contents: read
