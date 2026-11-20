@@ -30,6 +30,8 @@ export function createRenderer(canvas: HTMLCanvasElement | OffscreenCanvas = doc
     renderer.setClearColor(0x000000, 0);
     return renderer;
   } catch {
+    // Release the context we created, so a fallback renderer cannot push the page past two.
+    context.getExtension('WEBGL_lose_context')?.loseContext();
     return null;
   }
 }

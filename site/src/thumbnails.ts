@@ -109,8 +109,10 @@ export class Thumbnails {
     if (e.state === 'idle') {
       this.setState(e, 'loading');
       loadModel(e.url).then(
-        (model) => {
-          e.model = model;
+        (source) => {
+          // Turn a clone, never the cached source: the detail viewer clones that source and
+          // must start from the file's own pose. Clones share geometry and materials.
+          e.model = source.clone();
           this.setState(e, 'ready');
           this.mark(e);
         },

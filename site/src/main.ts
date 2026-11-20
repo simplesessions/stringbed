@@ -27,8 +27,15 @@ import type { Thumbnails, ThumbState, Viewer } from './gl';
 const BASE = import.meta.env.BASE_URL;
 
 type GL = typeof import('./gl');
+let glModule: Promise<GL | null> | null = null;
+/** Load the 3D code once; a failed load is forgotten so the next boot (Try again) retries it. */
+const loadGL = (): Promise<GL | null> =>
+  (glModule ??= import('./gl').catch(() => {
+    glModule = null;
+    return null;
+  }));
 // Start fetching the 3D code alongside the catalog; the page does not wait for it to list racquets.
-const glModule: Promise<GL | null> = import('./gl').catch(() => null);
+void loadGL();
 /** Bays waiting for the 3D code, so they can be wired up (or left flat) once it arrives. */
 let pendingBays: Array<(thumbs: Thumbnails | null) => void> = [];
 
@@ -56,6 +63,8 @@ interface App {
 let app: App | null = null;
 /** False until the 3D code has settled; routing waits so a detail view never misreports WebGL. */
 let ready = false;
+/** The standing notice (no WebGL, no 3D code); route-specific notes are added in front of it. */
+let baseNotice = '';
 
 // ---------- catalog ----------
 
@@ -90,16 +99,17 @@ async function boot() {
   const a = app;
   buildHeader(a);
   buildWall(a);
-  a.gl = await glModule;
+  a.gl = await loadGL();
   a.thumbs = a.gl?.Thumbnails.create() ?? null;
   for (const attach of pendingBays) attach(a.thumbs);
   pendingBays = [];
   ready = true;
-  if (!a.gl) {
-    notice.textContent = 'The 3D viewer did not load, so racquets show as colour silhouettes. Specs and downloads still work.';
-  } else if (!a.thumbs) {
-    notice.textContent = 'This browser is not giving the page WebGL, so racquets show as colour silhouettes. Specs and downloads still work.';
-  }
+  baseNotice = !a.gl
+    ? 'The 3D viewer did not load, so racquets show as colour silhouettes. Specs and downloads still work.'
+    : !a.thumbs
+      ? 'This browser is not giving the page WebGL, so racquets show as colour silhouettes. Specs and downloads still work.'
+      : '';
+  notice.textContent = baseNotice;
   route();
 }
 
@@ -132,6 +142,7 @@ function buildHeader(a: App) {
       el('span', {}, label), el('span', { class: 'sign-count' }, String(count)));
     b.addEventListener('click', () => {
       a.brand = brand;
+      a.lastOpened = null; // a filter choice is a new place on the wall; don't jump to the old bay
       for (const x of buttons) x.setAttribute('aria-pressed', String(x === b));
       applyFilter(a);
       const shown = filterByBrand(a.groups, brand).reduce((n, g) => n + g.racquets.length, 0);
@@ -205,7 +216,10 @@ function watch(thumbs: Thumbnails, item: HTMLLIElement, link: HTMLAnchorElement,
   retry.setAttribute('aria-label', `Retry loading the ${r.model} preview`);
   const fault = el('span', { class: 'bay-fault', hidden: true }, el('span', {}, 'Preview failed'), retry);
   item.append(fault);
-  retry.addEventListener('click', () => thumbs.retry(canvas));
+  retry.addEventListener('click', () => {
+    link.focus(); // the button hides as loading starts; keep focus on the entry
+    thumbs.retry(canvas);
+  });
   thumbs.add(canvas, assetUrl(BASE, path), link, (state: ThumbState) => {
     item.dataset.state = state;
     fault.hidden = state !== 'failed';
@@ -218,11 +232,8 @@ function route() {
   if (!app || !ready) return;
   const { racquetId } = parseRoute(location.hash);
   const r = racquetId ? app.catalog.racquets.find((x) => x.id === racquetId) : undefined;
-  if (racquetId && !r) {
-    notice.textContent = `There is no racquet with the id “${racquetId}”. Here is the full lineup.`;
-  } else if (app.thumbs) {
-    notice.textContent = '';
-  }
+  const missing = racquetId && !r ? `There is no racquet with the id “${racquetId}”. Here is the full lineup.` : '';
+  notice.textContent = [missing, baseNotice].filter(Boolean).join(' ');
   if (r) showDetail(app, r);
   else showWall(app);
 }
@@ -282,6 +293,9 @@ function stage(a: App, r: Racquet): HTMLElement {
   if (a.viewer === undefined && a.thumbs && a.gl) a.viewer = a.gl.Viewer.create();
   const viewer = a.viewer;
   if (!viewer || !asset) {
+    // Coming from another detail view: stop drawing the previous racquet.
+    viewer?.detach();
+    viewer?.clear();
     host.dataset.state = 'flat';
     host.append(el('p', { class: 'stage-note' }, viewer ? 'No 3D file for this style.' : 'The 3D preview needs WebGL. Specs and the download still work.'));
     return host;
@@ -319,7 +333,10 @@ function stage(a: App, r: Racquet): HTMLElement {
       },
     );
   };
-  retry.addEventListener('click', load);
+  retry.addEventListener('click', () => {
+    host.focus(); // the button hides as loading starts; keep focus on the 3D view
+    load();
+  });
   viewer.attach(host);
   load();
   return host;

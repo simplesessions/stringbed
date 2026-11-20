@@ -47,7 +47,9 @@ export class Viewer {
     this.resized.disconnect();
     this.resized.observe(host);
     this.fit();
-    this.loop();
+    // Every detail render attaches again; start the loop once, or chains pile up and each
+    // one runs controls.update() (faster auto-rotation, faster damping, orphan renders).
+    if (!this.frame) this.loop();
   }
 
   detach(): void {
