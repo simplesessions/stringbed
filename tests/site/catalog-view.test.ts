@@ -1,0 +1,106 @@
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
+import type { Catalog } from '../../src/catalog';
+import {
+  DEFAULT_STYLE,
+  assetFor,
+  assetUrl,
+  fileNameFromPath,
+  filterByBrand,
+  formatBytes,
+  formatPattern,
+  groupByBrand,
+  parseRoute,
+  pickStyle,
+  routeFor,
+} from '../../site/src/catalog-view';
+
+const catalog: Catalog = JSON.parse(readFileSync(join(__dirname, '../../assets/catalog.json'), 'utf8'));
+
+test('assetUrl respects the base path', () => {
+  expect(assetUrl('/stringbed/', 'realistic/x.glb')).toBe('/stringbed/realistic/x.glb');
+  expect(assetUrl('/', 'realistic/x.glb')).toBe('/realistic/x.glb');
+});
+
+test('assetUrl tolerates a base without a trailing slash and a path with a leading one', () => {
+  expect(assetUrl('/stringbed', '/realistic/x.glb')).toBe('/stringbed/realistic/x.glb');
+  expect(assetUrl('./', 'catalog.json')).toBe('./catalog.json');
+});
+
+test('parseRoute', () => {
+  expect(parseRoute('#/wilson-blade-98-v10')).toEqual({ racquetId: 'wilson-blade-98-v10' });
+  expect(parseRoute('')).toEqual({ racquetId: null });
+});
+
+test('parseRoute ignores hashes that are not racquet routes', () => {
+  expect(parseRoute('#')).toEqual({ racquetId: null });
+  expect(parseRoute('#/')).toEqual({ racquetId: null });
+  expect(parseRoute('#main')).toEqual({ racquetId: null });
+  expect(parseRoute('#/wilson-blade-98-v10/')).toEqual({ racquetId: 'wilson-blade-98-v10' });
+  expect(parseRoute('#/Not%20An%20Id')).toEqual({ racquetId: null });
+});
+
+test('routeFor round-trips through parseRoute', () => {
+  expect(routeFor('yonex-ezone-100')).toBe('#/yonex-ezone-100');
+  expect(parseRoute(routeFor('yonex-ezone-100'))).toEqual({ racquetId: 'yonex-ezone-100' });
+  expect(routeFor(null)).toBe('#/');
+});
+
+test('groupByBrand sorts brands', () => {
+  expect(groupByBrand(catalog).map((g) => g.brand)).toEqual(['Babolat', 'Prince', 'Solinco', 'Wilson', 'Yonex']);
+});
+
+test('groupByBrand keeps every racquet exactly once and sorts models within a brand', () => {
+  const groups = groupByBrand(catalog);
+  const ids = groups.flatMap((g) => g.racquets.map((r) => r.id));
+  expect(ids.sort()).toEqual(catalog.racquets.map((r) => r.id).sort());
+  for (const g of groups) {
+    expect(g.racquets.every((r) => r.brand === g.brand)).toBe(true);
+    const models = g.racquets.map((r) => r.model);
+    expect(models).toEqual([...models].sort((a, b) => a.localeCompare(b)));
+  }
+});
+
+test('filterByBrand keeps one brand, or all of them for null', () => {
+  const groups = groupByBrand(catalog);
+  expect(filterByBrand(groups, null)).toBe(groups);
+  expect(filterByBrand(groups, 'Wilson').map((g) => g.brand)).toEqual(['Wilson']);
+  expect(filterByBrand(groups, 'Nobody')).toEqual([]);
+});
+
+test('pickStyle prefers the default style, then the first listed', () => {
+  expect(DEFAULT_STYLE).toBe('realistic');
+  expect(pickStyle(catalog, null)?.id).toBe(DEFAULT_STYLE);
+  const other: Catalog = {
+    ...catalog,
+    styles: [
+      { id: 'toon', kind: '3d', label: 'Toon', extension: 'glb' },
+      { id: 'pixel', kind: '2d', label: 'Pixel', extension: 'png' },
+    ],
+  };
+  expect(pickStyle(other, null)?.id).toBe('toon');
+  expect(pickStyle(other, 'pixel')?.id).toBe('pixel');
+  expect(pickStyle(other, 'missing')?.id).toBe('toon');
+  expect(pickStyle({ ...catalog, styles: [] }, null)).toBeNull();
+});
+
+test('assetFor returns the racquet asset for a style, or null', () => {
+  const r = catalog.racquets[0];
+  expect(assetFor(r, DEFAULT_STYLE)?.path).toBe(r.assets[DEFAULT_STYLE].path);
+  expect(assetFor(r, 'missing')).toBeNull();
+});
+
+test('fileNameFromPath takes the last path segment', () => {
+  expect(fileNameFromPath('realistic/babolat-pure-aero-100.glb')).toBe('babolat-pure-aero-100.glb');
+  expect(fileNameFromPath('x.glb')).toBe('x.glb');
+});
+
+test('formatBytes uses decimal kilobytes', () => {
+  expect(formatBytes(116616)).toBe('117 kB');
+  expect(formatBytes(999)).toBe('999 B');
+  expect(formatBytes(1_500_000)).toBe('1.5 MB');
+});
+
+test('formatPattern uses a multiplication sign', () => {
+  expect(formatPattern([16, 19])).toBe('16 × 19');
+});
