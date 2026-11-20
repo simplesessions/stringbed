@@ -47,7 +47,7 @@ export interface RacquetSpec {
   verified: boolean;
 }
 
-const hex = z.string().regex(/^#[0-9a-fA-F]{6}$/, 'expected a #rrggbb colour');
+const hex = z.string().regex(/^#[0-9a-f]{6}$/, 'expected a #rrggbb colour');
 const color = z.object({ color: hex }).strict();
 const patternCount = z.number().int().min(12).max(22);
 const beam = z.number().min(14).max(32);
@@ -126,21 +126,34 @@ export function parseSpec(data: unknown, fileName: string): RacquetSpec {
   throw new Error(lines.join('\n'));
 }
 
-/** Node only. Reads `<dir>/<brand>/*.json`, sorted by brand then model. */
+const cmp = (a: string, b: string) => (a < b ? -1 : a > b ? 1 : 0);
+
+/** Node only. Reads `<dir>/<brand>/*.json`, sorted by brand then model then id. */
 export function loadAllSpecs(dir = 'racquets'): RacquetSpec[] {
   const root = resolve(process.cwd(), dir);
   const specs: RacquetSpec[] = [];
-  for (const brandDir of readdirSync(root, { withFileTypes: true })) {
-    if (!brandDir.isDirectory()) continue;
-    for (const file of readdirSync(join(root, brandDir.name)).filter((f) => f.endsWith('.json'))) {
-      const label = `${brandDir.name}/${file}`;
-      const spec = parseSpec(JSON.parse(readFileSync(join(root, brandDir.name, file), 'utf8')), label);
+  const brandDirs = readdirSync(root, { withFileTypes: true })
+    .filter((d) => d.isDirectory())
+    .map((d) => d.name)
+    .sort(cmp);
+  for (const brandDir of brandDirs) {
+    const files = readdirSync(join(root, brandDir))
+      .filter((f) => f.endsWith('.json'))
+      .sort(cmp);
+    for (const file of files) {
+      const label = `${brandDir}/${file}`;
+      let data: unknown;
+      try {
+        data = JSON.parse(readFileSync(join(root, brandDir, file), 'utf8'));
+      } catch (e) {
+        throw new Error(`${label}: invalid JSON: ${e instanceof Error ? e.message : String(e)}`);
+      }
+      const spec = parseSpec(data, label);
       if (spec.id !== basename(file, '.json')) {
         throw new Error(`${label}: id: "${spec.id}" does not match file name`);
       }
       specs.push(spec);
     }
   }
-  const cmp = (a: string, b: string) => (a < b ? -1 : a > b ? 1 : 0);
-  return specs.sort((a, b) => cmp(a.brand, b.brand) || cmp(a.model, b.model));
+  return specs.sort((a, b) => cmp(a.brand, b.brand) || cmp(a.model, b.model) || cmp(a.id, b.id));
 }

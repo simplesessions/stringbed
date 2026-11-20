@@ -95,6 +95,18 @@ describe('loadAllSpecs', () => {
     ]);
   });
 
+  test('throws naming the file on malformed JSON', () => {
+    mkdirSync(join(dir, 'babolat'), { recursive: true });
+    writeFileSync(join(dir, 'babolat', 'broken.json'), '{ not json');
+    expect(() => loadAllSpecs(dir)).toThrow(/babolat\/broken\.json: invalid JSON/);
+  });
+
+  test('rejects uppercase hex colours', () => {
+    const bad = structuredClone(good);
+    bad.paint.base = '#FFD400';
+    expect(() => parseSpec(bad, 'x.json')).toThrow(/paint\.base/);
+  });
+
   test('throws naming the file when id does not match', () => {
     write('babolat', 'babolat-other', good);
     expect(() => loadAllSpecs(dir)).toThrow(/babolat-other\.json/);
