@@ -1,5 +1,5 @@
 import type * as THREE from 'three';
-import { beamThicknessAt, buildFrame } from '../../src/core/frame';
+import { armRings, beamThicknessAt, BRIDGE_U, bridgeRings, buildFrame, findJunction, frameContext, hoopRings, U_JUNCTION, U_SHAFT } from '../../src/core/frame';
 import { computeLayout } from '../../src/core/layout';
 import { headOutline } from '../../src/core/outline';
 import { HOOP_RADIAL } from '../../src/core/section';
@@ -29,7 +29,7 @@ test('beam thickness never leaves the range of the published values', () => {
 });
 test('frame spans grip top to tip and is symmetric', () => {
   const g = buildFrame(spec, layout); g.computeBoundingBox(); const b = g.boundingBox!;
-  expect(b.max.y).toBeCloseTo(layout.tipY, 3); expect(b.min.y).toBeCloseTo(layout.gripTopY, 3);
+  expect(b.max.y).toBeCloseTo(layout.tipY, 6); expect(b.min.y).toBeCloseTo(layout.gripTopY, 3);
   expect(b.min.x).toBeCloseTo(-b.max.x, 4); expect(b.min.z).toBeCloseTo(-b.max.z, 4);
 });
 test('frame z extent equals the thickest beam value', () => {
@@ -104,7 +104,7 @@ test('every real spec builds a finite, budgeted, deterministic frame', () => {
     for (let i = 0; i < pa.length; i++) expect(Number.isFinite(pa[i])).toBe(true);
     expect(tris(a)).toBeLessThan(5000);
     a.computeBoundingBox();
-    expect(a.boundingBox!.max.y).toBeCloseTo(l.tipY, 3);
+    expect(a.boundingBox!.max.y).toBeCloseTo(l.tipY, 6);
     expect(a.boundingBox!.max.z * 2).toBeCloseTo(Math.max(...s.specs.beamMm) / 1000, 3);
   }
 });
@@ -118,7 +118,7 @@ test('extreme but valid specs still build clean frames', () => {
     const g = frameOf(s), l = layoutOf(s), p = g.getAttribute('position').array, n = g.getAttribute('normal').array;
     for (let i = 0; i < p.length; i++) { expect(Number.isFinite(p[i])).toBe(true); expect(Number.isFinite(n[i])).toBe(true); }
     g.computeBoundingBox();
-    expect(g.boundingBox!.max.y).toBeCloseTo(l.tipY, 3); expect(g.boundingBox!.min.y).toBeCloseTo(l.gripTopY, 3);
+    expect(g.boundingBox!.max.y).toBeCloseTo(l.tipY, 6); expect(g.boundingBox!.min.y).toBeCloseTo(l.gripTopY, 3);
   }
 });
 test('normals face outward', () => {
@@ -131,4 +131,32 @@ test('normals face outward', () => {
     if (p.getX(i) > b.max.x - 1e-4) { expect(n.getX(i)).toBeGreaterThan(0.5); checked++; }
   }
   expect(checked).toBeGreaterThan(3);
+});
+test('mirrored vertices share u', () => {
+  for (const s of [spec, makeSpec({ geometry: { beam: { profile: 'tapered-box' }, throat: { style: 'open-u', bridge: 'flat' } } })]) {
+    const g = frameOf(s), p = g.getAttribute('position'), u = g.getAttribute('u');
+    const key = (x: number, y: number, z: number) => `${Math.round(x * 1e6)},${Math.round(y * 1e6)},${Math.round(z * 1e6)}`;
+    const uAt = new Map<string, number>();
+    for (let i = 0; i < p.count; i++) uAt.set(key(p.getX(i), p.getY(i), p.getZ(i)), u.getX(i));
+    let pairs = 0;
+    for (let i = 0; i < p.count; i++) {
+      if (Math.abs(p.getX(i)) < 1e-6) continue;
+      const m = uAt.get(key(-p.getX(i), p.getY(i), p.getZ(i)));
+      expect(m).toBeDefined(); expect(m!).toBeCloseTo(u.getX(i), 6); pairs++;
+    }
+    expect(pairs).toBeGreaterThan(1000);
+  }
+});
+test('junction rings carry U_JUNCTION, arms run down to U_SHAFT, the bridge carries BRIDGE_U', () => {
+  for (const s of [spec, makeSpec({ geometry: { throat: { style: 'open-u', bridge: 'flat' } } })]) {
+    const ctx = frameContext(s, layoutOf(s)), fJ = findJunction(ctx), hoop = hoopRings(ctx, fJ);
+    expect(hoop[0].u).toBeCloseTo(1, 9);
+    expect(hoop[hoop.length - 1].u).toBeCloseTo(U_JUNCTION, 9);
+    const arm = armRings(ctx, hoop[hoop.length - 1]);
+    expect(arm[0].u).toBeLessThan(U_JUNCTION); expect(arm[arm.length - 1].u).toBeCloseTo(U_SHAFT, 9);
+    const bridge = bridgeRings(ctx, fJ);
+    for (const r of bridge) expect(r.u).toBe(BRIDGE_U);
+    // the bridge starts and ends at the junctions
+    expect(bridge[0].c.x).toBeCloseTo(hoop[hoop.length - 1].c.x, 3); expect(bridge[bridge.length - 1].c.x).toBeCloseTo(-bridge[0].c.x, 9);
+  }
 });

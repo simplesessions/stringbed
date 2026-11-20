@@ -21,6 +21,8 @@ export const SHAFT_RINGS = 4;
 export const ROUND_SECTION_POINTS = 16;
 /** Segments per rounded corner of box sections. */
 export const BOX_CORNER_SEGMENTS = 3;
+/** Dense samples of each arm's Bezier before rings are placed on it (not a mesh density). */
+const ARM_CURVE_SAMPLES = 200;
 /** Ring placement: metres of arc length that count the same as one radian of turning. */
 const TURN_WEIGHT = 0.04;
 
@@ -92,7 +94,7 @@ export function beamRadialAt(spec: RacquetSpec, u: number): number {
   return r * lerp(TAPER_MIN, 1, smoothstep((u - U_SHAFT) / (0.6 - U_SHAFT)));
 }
 
-interface Ring {
+export interface Ring {
   c: Vec2; // centre of the section, world XY
   t: Vec2; // unit tangent along the sweep direction
   u: number; // frame coordinate written to the vertices
@@ -244,6 +246,172 @@ function cubic(p0: Vec2, p1: Vec2, p2: Vec2, p3: Vec2, t: number): { p: Vec2; d:
   return { p, d };
 }
 
+/** Shared, read-only inputs for the region builders. Build with `frameContext`. */
+export interface FrameContext {
+  spec: RacquetSpec;
+  layout: Layout;
+  /** Inner outline, right half, world XY: index 0 = tip, last = bottom centre, clockwise. */
+  inner: Vec2[];
+  /** Unit clockwise tangent of the inner outline at each `inner` point. */
+  tangents: Vec2[];
+  /** Cumulative arc length of `inner`. */
+  arc: number[];
+  /** In-plane width of each arm where it meets the shaft (the shaft holds two). */
+  armR: number;
+  /** Right arm's centre where it meets the shaft; the left is its mirror. */
+  apex: Vec2;
+}
+
+export function frameContext(spec: RacquetSpec, layout: Layout): FrameContext {
+  // 256 points match computeLayout, so the hoop's outer tip lands exactly on layout.tipY.
+  const { shape, aspect } = spec.geometry.head;
+  const loop = headOutline(shape, spec.specs.headSizeSqIn, aspect, 256).map((p) => ({ x: p.x, y: p.y + layout.headCenterY }));
+  const half = loop.length / 2;
+  const inner = loop.slice(0, half + 1);
+  const tangents = inner.map((_, i) => norm({
+    x: loop[(i + 1) % loop.length].x - loop[(i - 1 + loop.length) % loop.length].x,
+    y: loop[(i + 1) % loop.length].y - loop[(i - 1 + loop.length) % loop.length].y,
+  }));
+  const arc = [0];
+  for (let i = 1; i < inner.length; i++) arc.push(arc[i - 1] + Math.hypot(inner[i].x - inner[i - 1].x, inner[i].y - inner[i - 1].y));
+  const armR = Math.min(ARM_WIDEN * beamRadialAt(spec, U_SHAFT), SHAFT_MAX_WIDTH / 2);
+  const apex: Vec2 = { x: armR / 2, y: lerp(layout.gripTopY, layout.bridgeY, APEX_FRACTION) };
+  return { spec, layout, inner, tangents, arc, armR, apex };
+}
+
+/** Centreline point and tangent for an inner-outline position (fractional index) and radial extent. */
+function centreAt(ctx: FrameContext, f: number, r: number): { c: Vec2; t: Vec2 } {
+  const p = at(ctx.inner, f, mixV);
+  const t = norm(at(ctx.tangents, f, mixV));
+  return { c: { x: p.x - (t.y * r) / 2, y: p.y + (t.x * r) / 2 }, t }; // outward normal = (-t.y, t.x)
+}
+
+/** Arm radial: the hoop's at the junction, widening to `armR` at the apex. */
+function armRadialAt(ctx: FrameContext, u: number): number {
+  return lerp(ctx.armR, beamRadialAt(ctx.spec, u), smoothstep((u - U_SHAFT) / (U_JUNCTION - U_SHAFT)));
+}
+
+/**
+ * Throat junction, as a fractional index into `ctx.inner`: the first point below the widest
+ * point where the hoop centreline's tangent aims at the throat style's target near the apex.
+ */
+export function findJunction(ctx: FrameContext): number {
+  const { inner, apex, spec } = ctx;
+  const throat = THROAT[spec.geometry.throat.style];
+  const target: Vec2 = { x: apex.x, y: apex.y + throat.aim };
+  const rJ = beamRadialAt(spec, U_JUNCTION);
+  const aim = (f: number) => {
+    const { c, t } = centreAt(ctx, f, rJ);
+    return t.x * (target.y - c.y) - t.y * (target.x - c.x);
+  };
+  const half = inner.length - 1;
+  let widest = 0;
+  for (let i = 1; i <= half; i++) if (inner[i].x > inner[widest].x) widest = i;
+  let fJ = -1;
+  for (let i = widest + 1; i <= half && fJ < 0; i++) {
+    const a = aim(i - 1);
+    const b = aim(i);
+    if (a < 0 && b >= 0) {
+      fJ = i - 1 + a / (a - b);
+    }
+  }
+  // A point below a convex head always has a tangent on the lower right quarter of the hoop.
+  if (fJ < 0) throw new Error(`buildFrame: ${spec.id}: no throat junction found`);
+  return fJ;
+}
+
+/** Right half of the hoop, tip to junction (last ring is at the junction, u = U_JUNCTION). */
+export function hoopRings(ctx: FrameContext, fJ: number): Ring[] {
+  const { inner, spec } = ctx;
+  const arcAt = (f: number) => at(ctx.arc, f, mixN);
+  const sJ = arcAt(fJ);
+  const cJ = Math.ceil(fJ);
+  const hoopDense = inner.slice(0, cJ + 1);
+  hoopDense[hoopDense.length - 1] = at(inner, fJ, mixV);
+  // Map a fractional index into hoopDense (last point replaced by the junction) back to `inner`.
+  const hoopF = (g: number) => (g <= cJ - 1 ? g : cJ - 1 + (g - (cJ - 1)) * (fJ - (cJ - 1)));
+  const rings: Ring[] = placeRings(hoopDense, HOOP_HALF_RINGS).map((g) => {
+    const f = hoopF(g);
+    const u = 1 - ((1 - U_JUNCTION) * arcAt(f)) / sJ;
+    const r = beamRadialAt(spec, u);
+    return { ...centreAt(ctx, f, r), u, thickness: beamThicknessAt(spec, u), radial: r };
+  });
+  rings[0].t = { x: 1, y: 0 }; // exact at the tip, by symmetry
+  rings[0].c.x = 0;
+  return rings;
+}
+
+/**
+ * Right arm, after the junction ring down to the apex: a cubic leaving the junction along the
+ * hoop's tangent and arriving at the apex heading straight down.
+ */
+export function armRings(ctx: FrameContext, junction: Ring): Ring[] {
+  const { apex, spec } = ctx;
+  const throat = THROAT[spec.geometry.throat.style];
+  const L = Math.hypot(junction.c.x - apex.x, junction.c.y - apex.y);
+  const p1 = { x: junction.c.x + junction.t.x * throat.out * L, y: junction.c.y + junction.t.y * throat.out * L };
+  const p2 = { x: apex.x, y: apex.y + throat.in * L };
+  const armDense: Vec2[] = [];
+  const armTangent: Vec2[] = [];
+  for (let i = 0; i <= ARM_CURVE_SAMPLES; i++) {
+    const { p, d } = cubic(junction.c, p1, p2, apex, i / ARM_CURVE_SAMPLES);
+    armDense.push(p);
+    armTangent.push(norm(d));
+  }
+  const armArc = [0];
+  for (let i = 1; i < armDense.length; i++) armArc.push(armArc[i - 1] + Math.hypot(armDense[i].x - armDense[i - 1].x, armDense[i].y - armDense[i - 1].y));
+  const armLen = armArc[armArc.length - 1];
+  const rings: Ring[] = placeRings(armDense, ARM_RINGS).slice(1).map((f) => {
+    const u = U_JUNCTION - ((U_JUNCTION - U_SHAFT) * at(armArc, f, mixN)) / armLen;
+    const r = armRadialAt(ctx, u);
+    return { c: at(armDense, f, mixV), t: norm(at(armTangent, f, mixV)), u, thickness: beamThicknessAt(spec, u), radial: r };
+  });
+  rings[rings.length - 1].t = { x: 0, y: -1 };
+  return rings;
+}
+
+/**
+ * The whole bridge, right junction to left junction across the bottom. `curved` follows the
+ * outline; `flat` is the same curve pushed up through a smooth max, so its middle runs level.
+ * u is BRIDGE_U throughout, but the section is sized from U_JUNCTION (then inset) so it matches
+ * the hoop ring it branches from and nests inside it; thickness is continuous there either way.
+ */
+export function bridgeRings(ctx: FrameContext, fJ: number): Ring[] {
+  const { inner, spec, layout } = ctx;
+  const cJ = Math.ceil(fJ);
+  const rB = beamRadialAt(spec, U_JUNCTION) * BRIDGE_INSET;
+  const tB = beamThicknessAt(spec, U_JUNCTION) * BRIDGE_INSET;
+  // bridgeDense[0] is the junction, bridgeDense[k >= 1] is inner[cJ + k - 1].
+  const bridgeDense = [at(inner, fJ, mixV), ...inner.slice(cJ)];
+  const bridgeF = placeRings(bridgeDense, BRIDGE_RINGS / 2).map((g) => (g <= 1 ? fJ + (cJ - fJ) * g : cJ + g - 1));
+  const flatY = layout.bridgeY - rB / 2 + FLAT_BRIDGE_RAISE * rB;
+  const right: Ring[] = bridgeF.map((f) => {
+    let { c, t } = centreAt(ctx, f, rB);
+    if (spec.geometry.throat.bridge === 'flat') {
+      const [y, dy] = smax(c.y, flatY, FLAT_BRIDGE_SOFTNESS);
+      c = { x: c.x, y };
+      t = norm({ x: t.x, y: t.y * dy });
+    }
+    return { c, t, u: BRIDGE_U, thickness: tB, radial: rB };
+  });
+  const bottom = right[right.length - 1];
+  bottom.c.x = 0;
+  bottom.t = { x: -1, y: 0 };
+  return [...right, ...right.slice(0, -1).reverse().map(mirror)];
+}
+
+/** Shaft rings, gripTopY (u = 0) up to the apex (u = U_SHAFT). */
+export function shaftRings(ctx: FrameContext): Ring[] {
+  const { layout, apex, armR, spec } = ctx;
+  const rings: Ring[] = [];
+  for (let k = 0; k <= SHAFT_RINGS; k++) {
+    const y = lerp(layout.gripTopY, apex.y, k / SHAFT_RINGS);
+    const u = (U_SHAFT * k) / SHAFT_RINGS;
+    rings.push({ c: { x: 0, y }, t: { x: 0, y: 1 }, u, thickness: beamThicknessAt(spec, u), radial: armR });
+  }
+  return rings;
+}
+
 // One merged BufferGeometry: hoop + two throat arms + bridge + shaft down to gripTopY.
 // Attributes: position, normal, and a float attribute "u" (itemSize 1) with the frame coordinate per vertex.
 //
@@ -259,132 +427,23 @@ export function buildFrame(spec: RacquetSpec, layout: Layout): THREE.BufferGeome
   const profile = spec.geometry.beam.profile;
   const detail: SectionDetail = { roundPoints: ROUND_SECTION_POINTS, boxCornerSegments: BOX_CORNER_SEGMENTS };
   const sectionOf = (r: Ring) => beamSectionLoop(profile, r.thickness, r.radial, detail);
-  const thick = (u: number) => beamThicknessAt(spec, u);
-  const radial = (u: number) => beamRadialAt(spec, u);
-
-  // Inner outline, right half: index 0 = tip, 128 = bottom centre, clockwise (down the +x side).
-  // 256 points match computeLayout, so the hoop's outer tip lands exactly on layout.tipY.
-  const { shape, aspect } = spec.geometry.head;
-  const loop = headOutline(shape, spec.specs.headSizeSqIn, aspect, 256).map((p) => ({ x: p.x, y: p.y + layout.headCenterY }));
-  const half = loop.length / 2;
-  const inner = loop.slice(0, half + 1);
-  const tangents = inner.map((_, i) => norm({
-    x: loop[(i + 1) % loop.length].x - loop[(i - 1 + loop.length) % loop.length].x,
-    y: loop[(i + 1) % loop.length].y - loop[(i - 1 + loop.length) % loop.length].y,
-  }));
-  const arc = [0];
-  for (let i = 1; i < inner.length; i++) arc.push(arc[i - 1] + Math.hypot(inner[i].x - inner[i - 1].x, inner[i].y - inner[i - 1].y));
-  /** Centreline point for an inner-outline position (fractional index) and radial extent. */
-  const centreAt = (f: number, r: number): { c: Vec2; t: Vec2 } => {
-    const p = at(inner, f, mixV);
-    const t = norm(at(tangents, f, mixV));
-    return { c: { x: p.x - (t.y * r) / 2, y: p.y + (t.x * r) / 2 }, t }; // outward normal = (-t.y, t.x)
-  };
-
-  // Throat apex: where the two arms merge into the shaft.
-  const armR = Math.min(ARM_WIDEN * radial(U_SHAFT), SHAFT_MAX_WIDTH / 2);
-  const armRadial = (u: number) => lerp(armR, radial(u), smoothstep((u - U_SHAFT) / (U_JUNCTION - U_SHAFT)));
-  const apexY = lerp(layout.gripTopY, layout.bridgeY, APEX_FRACTION);
-  const apex: Vec2 = { x: armR / 2, y: apexY };
-  const throat = THROAT[spec.geometry.throat.style];
-
-  // Junction: first point below the widest point where the hoop's tangent aims at the target.
-  const target: Vec2 = { x: apex.x, y: apex.y + throat.aim };
-  const rJ = radial(U_JUNCTION);
-  const aim = (f: number) => {
-    const { c, t } = centreAt(f, rJ);
-    return t.x * (target.y - c.y) - t.y * (target.x - c.x);
-  };
-  let widest = 0;
-  for (let i = 1; i <= half; i++) if (inner[i].x > inner[widest].x) widest = i;
-  let fJ = -1;
-  for (let i = widest + 1; i <= half && fJ < 0; i++) {
-    const a = aim(i - 1);
-    const b = aim(i);
-    if (a < 0 && b >= 0) {
-      fJ = i - 1 + a / (a - b);
-    }
-  }
-  // A point below a convex head always has a tangent on the lower right quarter of the hoop.
-  if (fJ < 0) throw new Error(`buildFrame: ${spec.id}: no throat junction found`);
-  const arcAt = (f: number) => at(arc, f, mixN);
-  const sJ = arcAt(fJ);
-
-  // Hoop, right half: tip to junction. u by inner-outline arc length.
-  const hoopDense = inner.slice(0, Math.ceil(fJ) + 1);
-  hoopDense[hoopDense.length - 1] = at(inner, fJ, mixV);
-  const cJ = Math.ceil(fJ);
-  // Map a fractional index into hoopDense (last point replaced by the junction) back to `inner`.
-  const hoopF = (g: number) => (g <= cJ - 1 ? g : cJ - 1 + (g - (cJ - 1)) * (fJ - (cJ - 1)));
-  const hoopRings: Ring[] = placeRings(hoopDense, HOOP_HALF_RINGS).map((g) => {
-    const f = hoopF(g);
-    const u = 1 - ((1 - U_JUNCTION) * arcAt(f)) / sJ;
-    const r = radial(u);
-    return { ...centreAt(f, r), u, thickness: thick(u), radial: r };
-  });
-  hoopRings[0].t = { x: 1, y: 0 }; // exact at the tip, by symmetry
-  hoopRings[0].c.x = 0;
-
-  // Arm, right side: cubic from the junction (tangent to the hoop) to the apex (heading straight down).
-  const junction = hoopRings[hoopRings.length - 1];
-  const L = Math.hypot(junction.c.x - apex.x, junction.c.y - apex.y);
-  const p1 = { x: junction.c.x + junction.t.x * throat.out * L, y: junction.c.y + junction.t.y * throat.out * L };
-  const p2 = { x: apex.x, y: apex.y + throat.in * L };
-  const armDense: Vec2[] = [];
-  const armTangent: Vec2[] = [];
-  for (let i = 0; i <= 200; i++) {
-    const { p, d } = cubic(junction.c, p1, p2, apex, i / 200);
-    armDense.push(p);
-    armTangent.push(norm(d));
-  }
-  const armArc = [0];
-  for (let i = 1; i < armDense.length; i++) armArc.push(armArc[i - 1] + Math.hypot(armDense[i].x - armDense[i - 1].x, armDense[i].y - armDense[i - 1].y));
-  const armLen = armArc[armArc.length - 1];
-  const armRings: Ring[] = placeRings(armDense, ARM_RINGS).slice(1).map((f) => {
-    const u = U_JUNCTION - ((U_JUNCTION - U_SHAFT) * at(armArc, f, mixN)) / armLen;
-    const r = armRadial(u);
-    return { c: at(armDense, f, mixV), t: norm(at(armTangent, f, mixV)), u, thickness: thick(u), radial: r };
-  });
-  armRings[armRings.length - 1].t = { x: 0, y: -1 };
+  const ctx = frameContext(spec, layout);
+  const fJ = findJunction(ctx);
+  const hoop = hoopRings(ctx, fJ);
+  const right = [...hoop, ...armRings(ctx, hoop[hoop.length - 1])];
 
   const mesh = new MeshBuilder();
-  const right = [...hoopRings, ...armRings];
   mesh.sweep([...right.slice(1).reverse().map(mirror), ...right], sectionOf);
+  mesh.sweep(bridgeRings(ctx, fJ), sectionOf);
 
-  // Bridge: junction to junction across the bottom. Curved follows the outline; flat is the
-  // same curve pushed up through a smooth max, so its middle runs straight and level.
-  const rB = radial(U_JUNCTION) * BRIDGE_INSET;
-  const tB = thick(U_JUNCTION) * BRIDGE_INSET;
-  // bridgeDense[0] is the junction, bridgeDense[k >= 1] is inner[cJ + k - 1].
-  const bridgeDense = [at(inner, fJ, mixV), ...inner.slice(cJ)];
-  const bridgeF = placeRings(bridgeDense, BRIDGE_RINGS / 2).map((g) => (g <= 1 ? fJ + (cJ - fJ) * g : cJ + g - 1));
-  const flatY = layout.bridgeY - rB / 2 + FLAT_BRIDGE_RAISE * rB;
-  const bridgeRight: Ring[] = bridgeF.map((f) => {
-    let { c, t } = centreAt(f, rB);
-    if (spec.geometry.throat.bridge === 'flat') {
-      const [y, dy] = smax(c.y, flatY, FLAT_BRIDGE_SOFTNESS);
-      c = { x: c.x, y };
-      t = norm({ x: t.x, y: t.y * dy });
-    }
-    return { c, t, u: BRIDGE_U, thickness: tB, radial: rB };
-  });
-  const bottom = bridgeRight[bridgeRight.length - 1];
-  bottom.c.x = 0;
-  bottom.t = { x: -1, y: 0 };
-  mesh.sweep([...bridgeRight, ...bridgeRight.slice(0, -1).reverse().map(mirror)], sectionOf);
-
-  // Shaft: grip top to the apex, wide enough to hold both arms side by side. The arms stand on
-  // its top cap, which closes the floor of the V; the bottom cap closes it inside the grip.
+  // The shaft holds both arms side by side. The arms stand on its top cap, which closes the
+  // floor of the V; the bottom cap closes it inside the grip.
+  const { armR } = ctx;
   const shaftLoop = (r: Ring) => stretchSection(beamSectionLoop(profile, r.thickness, armR, detail), armR / 2 + SHAFT_CLEARANCE);
-  const shaftRings: Ring[] = [];
-  for (let k = 0; k <= SHAFT_RINGS; k++) {
-    const y = lerp(layout.gripTopY, apexY, k / SHAFT_RINGS);
-    const u = (U_SHAFT * k) / SHAFT_RINGS;
-    shaftRings.push({ c: { x: 0, y }, t: { x: 0, y: 1 }, u, thickness: thick(u), radial: armR });
-  }
-  mesh.sweep(shaftRings, shaftLoop);
-  mesh.cap(shaftRings[0], shaftLoop(shaftRings[0]), -1);
-  mesh.cap(shaftRings[SHAFT_RINGS], shaftLoop(shaftRings[SHAFT_RINGS]), 1);
+  const shaft = shaftRings(ctx);
+  mesh.sweep(shaft, shaftLoop);
+  mesh.cap(shaft[0], shaftLoop(shaft[0]), -1);
+  mesh.cap(shaft[SHAFT_RINGS], shaftLoop(shaft[SHAFT_RINGS]), 1);
 
   return mesh.build();
 }

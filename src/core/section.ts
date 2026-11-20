@@ -19,7 +19,12 @@ export const DEFAULT_BOX_CORNER_SEGMENTS = 3;
 
 /** Box corner radius as a fraction of the smaller of radial and thickness. */
 const BOX_CORNER = 0.28;
-/** Aero: |cos|^PINCH narrows the section toward the faces; |sin|^FLAT flattens the sides. */
+/**
+ * Aero: x = |cos|^PINCH narrows the section toward the faces and z = |sin|^FLAT flattens the
+ * sides. The curve stays tangent-continuous at z = +-t/2, but its curvature there is unbounded
+ * (z falls off as |x|^1.25), so it is a pinched edge, not a rounded nose. With 16 points the two
+ * facets either side of each edge point meet at about 54 degrees.
+ */
 const AERO_PINCH = 1.6;
 const AERO_FLAT = 0.8;
 
@@ -61,7 +66,9 @@ function roundLoop(profile: 'ellipse' | 'aero', thickness: number, radial: numbe
       creases.push(false);
     } else {
       points.push({ x: a * Math.sign(c) * Math.abs(c) ** AERO_PINCH, y: b * Math.sign(s) * Math.abs(s) ** AERO_FLAT });
-      creases.push(i === n / 4 || i === (3 * n) / 4); // sharp leading and trailing edges at the faces
+      // Shading choice, not a geometric corner: crease the pinched edge points so each face shows
+      // a crisp ridge line along the hoop instead of a smeared highlight.
+      creases.push(i === n / 4 || i === (3 * n) / 4);
     }
   }
   return { points, creases };
