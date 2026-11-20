@@ -1,0 +1,36 @@
+{
+  "id": "babolat-carlitos-junior-21",
+  "status": "placeholder",
+  "brand": "Babolat",
+  "line": "Carlitos",
+  "model": "Carlitos Junior 21",
+  "generation": null,
+  "releaseYear": null,
+  "category": "junior",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 86,
+    "lengthIn": 21,
+    "stringPattern": [
+      14,
+      15
+    ],
+    "beamMm": [
+      19,
+      19,
+      19
+    ],
+    "unstrungWeightG": 180,
+    "balanceMm": 257
+  },
+  "colourway": "Grey/Fluorescent yellow",
+  "sources": [
+    "https://www.tennis-warehouse.com/Babolat_Carlitos_21_Junior/descpageRCBAB-BCJR21.html",
+    "https://www.babolat.com/us/carlitos-junior-21/140549.html"
+  ],
+  "notes": "Aluminium. Release year not stated on TW or babolat.com. Babolat pages label weight/balance 'unstrung' while a separate field reads 'Strung' (sold strung).",
+  "researched": "2026-11-20",
+  "verified": false
+}

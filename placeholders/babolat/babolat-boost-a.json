@@ -1,0 +1,36 @@
+{
+  "id": "babolat-boost-a",
+  "status": "placeholder",
+  "brand": "Babolat",
+  "line": "Boost",
+  "model": "Boost A",
+  "generation": null,
+  "releaseYear": null,
+  "category": "adult",
+  "onSaleIn": [
+    2023
+  ],
+  "specs": {
+    "headSizeSqIn": 102,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      23,
+      26,
+      23
+    ],
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": null,
+  "sources": [
+    "https://web.archive.org/web/20221201193711/https://www.tennisexpress.com/babolat-boost-a-prestrung-tennis-racquet-72049",
+    "https://web.archive.org/web/20230608223519/https://www.tennisexpress.com/babolat-tennis-racquets"
+  ],
+  "notes": "Older Boost Aero predecessor still listed by Tennis Express Jun 2023; TE (Dec 2022 capture): 102 sq in, 27 in, 16x19, beam 23/26/23 (order not labelled), balance '2 Points Head Heavy'; release year not found; no Tennis Warehouse product capture found; on Tennis Express Babolat page Jun 2023 as 'Babolat Boost A Prestrung Tennis Racquet'",
+  "researched": "2026-11-20",
+  "verified": false
+}

@@ -1,0 +1,35 @@
+{
+  "id": "wilson-burn-pink-105s-v6-2026",
+  "status": "placeholder",
+  "brand": "Wilson",
+  "line": "Burn",
+  "model": "Burn Pink 105S",
+  "generation": "v6",
+  "releaseYear": 2026,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 105,
+    "lengthIn": 27,
+    "stringPattern": [
+      18,
+      16
+    ],
+    "beamMm": [
+      23.5,
+      25,
+      23.5
+    ],
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Orange (per TW colour field; model name says Pink)",
+  "sources": [
+    "https://www.tennis-warehouse.com/Wilson_Burn_Pink_105S_v6/descpageRCWILSON-BRNP15.html"
+  ],
+  "notes": "Unstrung weight/balance not published on TW (it lists average strung specs only); left null. TW strung: 278 g, balance 34.49 cm / 1 pts HH. Page: 'New for 2026'. TW's colour field says Orange, which conflicts with the model name; treat the colourway as uncertain.",
+  "researched": "2026-11-20",
+  "verified": false
+}

@@ -1,0 +1,36 @@
+{
+  "id": "babolat-pure-strike-lite-2024",
+  "status": "placeholder",
+  "brand": "Babolat",
+  "line": "Pure Strike",
+  "model": "Pure Strike Lite",
+  "generation": "Gen4",
+  "releaseYear": 2024,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      21,
+      23,
+      21
+    ],
+    "unstrungWeightG": 265,
+    "balanceMm": 330
+  },
+  "colourway": "Grey/Neon Red",
+  "sources": [
+    "https://www.babolat.com/gb/pure-strike-lite-gen4-unstrung/101581.html",
+    "https://www.babolat.com/gb/tennis/racquets/adults.html"
+  ],
+  "notes": "Seen on babolat.com GB only (not on TW US or babolat.com US listings). Head size given as 645 cm², length 685 mm. Launch year assumed same as Gen4 family; not confirmed for this model.",
+  "researched": "2026-11-20",
+  "verified": false
+}

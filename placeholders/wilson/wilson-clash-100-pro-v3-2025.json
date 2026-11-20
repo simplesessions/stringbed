@@ -1,0 +1,35 @@
+{
+  "id": "wilson-clash-100-pro-v3-2025",
+  "status": "placeholder",
+  "brand": "Wilson",
+  "line": "Clash",
+  "model": "Clash 100 Pro",
+  "generation": "v3",
+  "releaseYear": 2025,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      20
+    ],
+    "beamMm": [
+      24.5,
+      24.5,
+      24.5
+    ],
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Black/Red",
+  "sources": [
+    "https://www.tennis-warehouse.com/Wilson_Clash_100_Pro_v3/descpageRCWILSON-CL1P3V.html"
+  ],
+  "notes": "Unstrung weight/balance not published on TW (it lists average strung specs only); left null. TW strung: 323 g, balance 31.98 cm / 7 pts HL. Page says 'For 2025'; a review cites January 2025 release.",
+  "researched": "2026-11-20",
+  "verified": false
+}

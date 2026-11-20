@@ -1,0 +1,37 @@
+{
+  "id": "solinco-whiteout-v2-305-xtd-2025",
+  "status": "placeholder",
+  "brand": "Solinco",
+  "line": "Whiteout",
+  "model": "Whiteout V2 305 XTD",
+  "generation": "V2",
+  "releaseYear": 2025,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 98,
+    "lengthIn": 27.5,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      21.7,
+      21.7,
+      21.7
+    ],
+    "unstrungWeightG": 305,
+    "balanceMm": null
+  },
+  "colourway": "White with tiger camo",
+  "sources": [
+    "https://www.tennis-warehouse.com/Solinco_Whiteout_305_XTD_v2_Camo/descpageRCSOLINCO-WTOCAX.html",
+    "https://prod.tennis.com/news/articles/tennis-racquet-preview-solinco-whiteout-v2-more-power-stability-camo-design",
+    "https://www.tennisnerd.net/?p=43334"
+  ],
+  "notes": "Launched Jan 10, 2025. 305 g from tennis.com/TennisNerd launch coverage (not explicitly labeled unstrung, but it is the model's weight class). Unstrung balance not seen on a fetched page; a search snippet of solincosports.com/equipment/whiteout-v2-305-xtd shows 320 mm (unlabeled; Solinco site blocks fetches). TW US strung: 323 g, 330.2 mm, 6 pts HL.",
+  "researched": "2026-11-20",
+  "verified": false
+}

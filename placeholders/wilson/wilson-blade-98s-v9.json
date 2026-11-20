@@ -1,0 +1,35 @@
+{
+  "id": "wilson-blade-98s-v9",
+  "status": "placeholder",
+  "brand": "Wilson",
+  "line": "Blade",
+  "model": "Blade 98S",
+  "generation": "v9",
+  "releaseYear": null,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 98,
+    "lengthIn": 27,
+    "stringPattern": [
+      18,
+      16
+    ],
+    "beamMm": [
+      21,
+      21,
+      21
+    ],
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Green",
+  "sources": [
+    "https://www.tennis-warehouse.com/Wilson_Blade_98S_v9/descpageRCWILSON-WB98SV.html"
+  ],
+  "notes": "Unstrung weight/balance not published on TW (it lists average strung specs only); left null. TW strung: 312 g, balance 33.48 cm / 3 pts HL. Still sold at TW as v9; no Blade 98S v10 on TW's Wilson list (a Wilson AU 'Blade 98S V10' page appeared in search results but could not be loaded, HTTP 429). Release year not stated on page. Box beam 21 mm per page.",
+  "researched": "2026-11-20",
+  "verified": false
+}

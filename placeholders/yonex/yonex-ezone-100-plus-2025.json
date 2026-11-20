@@ -1,0 +1,35 @@
+{
+  "id": "yonex-ezone-100-plus-2025",
+  "status": "placeholder",
+  "brand": "Yonex",
+  "line": "EZONE",
+  "model": "EZONE 100+",
+  "generation": "2025",
+  "releaseYear": 2025,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27.5,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      24.5,
+      26.5,
+      23
+    ],
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Blue",
+  "sources": [
+    "https://www.tennis-warehouse.com/Yonex_EZONE_100_2025/descpageRCYONEX-LEZ10B.html"
+  ],
+  "notes": "TW labels this '(2025)'; '8th gen' appears only in Merchant of Tennis product titles seen in search results (pages not fetched, rate-limited). Extended length. TW lists only average strung weight/balance (318g, 33.99cm); unstrung weight and balance left null.",
+  "researched": "2026-11-20",
+  "verified": false
+}

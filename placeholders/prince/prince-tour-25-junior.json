@@ -1,0 +1,31 @@
+{
+  "id": "prince-tour-25-junior",
+  "status": "placeholder",
+  "brand": "Prince",
+  "line": "Tour",
+  "model": "Tour 25\" Junior",
+  "generation": null,
+  "releaseYear": null,
+  "category": "junior",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 25,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": null,
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "White",
+  "sources": [
+    "https://www.tennis-warehouse.com/Prince_Tour_25_Junior/descpageRCPRINCE-PTOUR25.html"
+  ],
+  "notes": "TW 'Weight: 7.9 oz / 225 g' unlabeled, left null. White colourway suggests it matches the ATS Textreme Tour generation, not 2026 (unconfirmed). No year.",
+  "researched": "2026-11-20",
+  "verified": false
+}

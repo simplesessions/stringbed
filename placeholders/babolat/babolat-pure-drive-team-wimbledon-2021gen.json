@@ -1,0 +1,29 @@
+{
+  "id": "babolat-pure-drive-team-wimbledon-2021gen",
+  "status": "placeholder",
+  "brand": "Babolat",
+  "line": "Pure Drive",
+  "model": "Pure Drive Team Wimbledon",
+  "generation": null,
+  "releaseYear": null,
+  "category": "adult",
+  "onSaleIn": [
+    2023
+  ],
+  "specs": {
+    "headSizeSqIn": null,
+    "lengthIn": null,
+    "stringPattern": null,
+    "beamMm": null,
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Wimbledon special-edition cosmetic",
+  "sources": [
+    "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html",
+    "https://web.archive.org/web/20230608223519/https://www.tennisexpress.com/babolat-tennis-racquets"
+  ],
+  "notes": "Special edition listed on TW Aug 2023 category page; no product capture found, release year and specs not sourced; no Tennis Warehouse product capture found; specs not sourced; on TW US Babolat racquet page in 2023 captures 2023-06-06 to 2023-09-03 (4 of 8 captures); on Tennis Express Babolat page Jun 2023 as 'Babolat Pure Drive Team Wimbledon Tennis Racquet'",
+  "researched": "2026-11-20",
+  "verified": false
+}

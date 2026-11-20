@@ -1,0 +1,40 @@
+{
+  "id": "babolat-pure-drive-98-2023",
+  "status": "placeholder",
+  "brand": "Babolat",
+  "line": "Pure Drive",
+  "model": "Pure Drive 98",
+  "generation": "2023",
+  "releaseYear": 2023,
+  "category": "adult",
+  "onSaleIn": [
+    2023,
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 98,
+    "lengthIn": 27.0,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      21,
+      23,
+      21
+    ],
+    "unstrungWeightG": 305,
+    "balanceMm": null
+  },
+  "colourway": "Blue",
+  "sources": [
+    "https://web.archive.org/web/20240823062343/https://www.tennis-warehouse.com/Babolat_Pure_Drive_98/descpageRCBAB-BRPD98.html",
+    "https://web.archive.org/web/20230131040526/https://www.tennisexpress.com/babolat-pure-drive-98-tennis-racquet-99824",
+    "https://www.babolat.com/us/news-articles-blog-pure-drive-98/pure-drive-98.html",
+    "https://web.archive.org/web/20240329074225/https://www.tennis-warehouse.com/Babolatracquets.html",
+    "https://www.tennis-warehouse.com/Babolat_Pure_Drive_98_2023_2-Pack/descpageRCBAB-PD98X2.html"
+  ],
+  "notes": "Babolat article published 25 Jan 2023: 'launching the PURE DRIVE 98 racquet this month'; not on the TW US Babolat page in any 2023 capture (first seen there Mar 2024), but Tennis Express listed it from its 31 Jan 2023 capture; successor of Pure Drive VS; TW strung weight 11.4oz / 323g; TW strung balance 13.12in / 33.32cm / 3 pts HL; beam as listed by TW '21mm / 23mm / 21mm' (order not labelled); Tennis Express confirms this weight as unstrung; on Tennis Express Babolat page Jun 2023 as 'Babolat Pure Drive 98 Tennis Racquet' [2026 listing] Previous-generation holdover, only sold as a 2-pack at TW US. Unstrung specs not found. TW US strung: 323 g, 333.2 mm (3 pts HL). Year from TW title.",
+  "researched": "2026-11-20",
+  "verified": false
+}

@@ -1,0 +1,36 @@
+{
+  "id": "babolat-boost-d",
+  "status": "placeholder",
+  "brand": "Babolat",
+  "line": "Boost",
+  "model": "Boost D",
+  "generation": null,
+  "releaseYear": null,
+  "category": "adult",
+  "onSaleIn": [
+    2023
+  ],
+  "specs": {
+    "headSizeSqIn": 105,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      23,
+      26,
+      23
+    ],
+    "unstrungWeightG": 261,
+    "balanceMm": null
+  },
+  "colourway": "Blue",
+  "sources": [
+    "https://web.archive.org/web/20220810115548/https://www.tennisexpress.com/babolat-boost-d-prestrung-blue-tennis-racquet-64793",
+    "https://web.archive.org/web/20230608223519/https://www.tennisexpress.com/babolat-tennis-racquets"
+  ],
+  "notes": "Older Boost Drive predecessor still listed by Tennis Express Jun 2023; TE (Aug 2022 capture): strung 275 g / unstrung 261 g, balance '3 Pts Head Heavy', beam 23/26/23 (order not labelled); release year not found; no Tennis Warehouse product capture found; Tennis Express confirms this weight as unstrung; on Tennis Express Babolat page Jun 2023 as 'Babolat Boost D Prestrung Blue Tennis Racquet'",
+  "researched": "2026-11-20",
+  "verified": false
+}

@@ -1,0 +1,28 @@
+{
+  "id": "solinco-blackout-v2-265",
+  "status": "placeholder",
+  "brand": "Solinco",
+  "line": "Blackout",
+  "model": "Blackout V2 265",
+  "generation": "V2",
+  "releaseYear": null,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": null,
+    "lengthIn": null,
+    "stringPattern": null,
+    "beamMm": null,
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": null,
+  "sources": [
+    "https://www.tennis.com/news/articles/racquet-preview-solinco-unveils-blackout-v2"
+  ],
+  "notes": "Existence uncertain: tennis.com announced a 265 g V2 for later in 2025, and a Tennis Express URL (tennisexpress.com/products/blackout-v2-265-tennis-racquet) appears in search, but it could not be fetched (429) and TW US does not list it. Category assumed adult (V1 265 was 27 in) but not confirmed; could be a 26/27 in junior/light frame.",
+  "researched": "2026-11-20",
+  "verified": false
+}

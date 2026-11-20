@@ -1,0 +1,29 @@
+{
+  "id": "babolat-rafa-nadal-junior-23-prev",
+  "status": "placeholder",
+  "brand": "Babolat",
+  "line": "Rafa Nadal Junior",
+  "model": "Rafa Nadal Junior 23",
+  "generation": null,
+  "releaseYear": null,
+  "category": "junior",
+  "onSaleIn": [
+    2023
+  ],
+  "specs": {
+    "headSizeSqIn": 98,
+    "lengthIn": 23.0,
+    "stringPattern": null,
+    "beamMm": null,
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Yellow/Black",
+  "sources": [
+    "https://web.archive.org/web/20230130100937/https://www.tennis-warehouse.com/Babolat_Rafa_Nadal_23_Junior/descpageRCBAB-BNJR23.html",
+    "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html"
+  ],
+  "notes": "Older Yellow/Black Rafa cosmetic still on TW Jan 2023; release year not found; on TW US Babolat racquet page in 2023 captures 2023-01-30 to 2023-06-06 (5 of 8 captures)",
+  "researched": "2026-11-20",
+  "verified": false
+}

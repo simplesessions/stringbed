@@ -1,0 +1,35 @@
+{
+  "id": "babolat-boost-wimbledon-2026",
+  "status": "placeholder",
+  "brand": "Babolat",
+  "line": "Boost Drive",
+  "model": "Boost Wimbledon",
+  "generation": null,
+  "releaseYear": 2026,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 105,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      23,
+      26,
+      23
+    ],
+    "unstrungWeightG": 260,
+    "balanceMm": 345
+  },
+  "colourway": "White/Ivory",
+  "sources": [
+    "https://www.babolat.com/us/boost-wimbledon-2026-strung/121270.html"
+  ],
+  "notes": "Special edition. babolat.com does not say which frame it is based on; its specs match Boost Drive, so line is assigned as Boost Drive. Year from product name '(2026)'.",
+  "researched": "2026-11-20",
+  "verified": false
+}

@@ -1,0 +1,39 @@
+{
+  "id": "babolat-pure-strike-vs-2022",
+  "status": "placeholder",
+  "brand": "Babolat",
+  "line": "Pure Strike",
+  "model": "Pure Strike VS",
+  "generation": null,
+  "releaseYear": 2022,
+  "category": "adult",
+  "onSaleIn": [
+    2023
+  ],
+  "specs": {
+    "headSizeSqIn": 97,
+    "lengthIn": 27.0,
+    "stringPattern": [
+      16,
+      20
+    ],
+    "beamMm": [
+      21,
+      22,
+      21
+    ],
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Black/Orange",
+  "sources": [
+    "https://web.archive.org/web/20230410175204/https://www.tennis-warehouse.com/Babolat_Pure_Strike_VS/descpageRCBAB-PSVSIN.html",
+    "https://web.archive.org/web/20230608223519/https://www.tennisexpress.com/babolat-tennis-racquets",
+    "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html",
+    "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html",
+    "https://www.babolat.com/us/news-articles-blog-pure-strike-vs-2022/pure-strike-vs-2022.html"
+  ],
+  "notes": "Babolat announcement published 24 Mar 2022; TW strung weight 11.7oz / 332g; TW strung balance 12.59in / 31.98cm / 7 pts HL; beam as listed by TW '21mm / 22mm / 21mm' (order not labelled); on TW US Babolat racquet page in 2023 captures 2023-01-30 to 2023-09-03 (8 of 8 captures); on Tennis Express Babolat page Jun 2023 as 'Babolat Pure Strike VS 2022 Tennis Racquet'",
+  "researched": "2026-11-20",
+  "verified": false
+}

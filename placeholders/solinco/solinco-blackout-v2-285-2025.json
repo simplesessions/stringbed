@@ -1,0 +1,36 @@
+{
+  "id": "solinco-blackout-v2-285-2025",
+  "status": "placeholder",
+  "brand": "Solinco",
+  "line": "Blackout",
+  "model": "Blackout V2 285",
+  "generation": "V2",
+  "releaseYear": 2025,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      23.5,
+      26,
+      23
+    ],
+    "unstrungWeightG": 285,
+    "balanceMm": null
+  },
+  "colourway": "Black with tiger camo",
+  "sources": [
+    "https://www.tennis-warehouse.com/Solinco_Blackout_285_v2_Camo/descpageRCSOLINCO-BKOCAL.html",
+    "https://www.tennis.com/news/articles/racquet-preview-solinco-unveils-blackout-v2"
+  ],
+  "notes": "Part of the Sept 22, 2025 launch. 285 g per tennis.com launch article. Search snippets of Solinco's page (solincosports.com/?p=8632) give 330 mm balance (+/-5 mm); not fetched, left null. TW strung: 301 g, 339.9 mm, 1 pt HL.",
+  "researched": "2026-11-20",
+  "verified": false
+}

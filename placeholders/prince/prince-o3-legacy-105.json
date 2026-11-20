@@ -1,0 +1,36 @@
+{
+  "id": "prince-o3-legacy-105",
+  "status": "placeholder",
+  "brand": "Prince",
+  "line": "Legacy",
+  "model": "O3 Legacy 105",
+  "generation": "2024",
+  "releaseYear": null,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 105,
+    "lengthIn": 27.25,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      23.5,
+      25,
+      23
+    ],
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Gold",
+  "sources": [
+    "https://www.tennis-warehouse.com/Prince_O3_Legacy_105/descpageRCLEADER-PLEG5.html",
+    "https://www.tenniswarehouse-europe.com/catpage-PRINCERAC-EN.html"
+  ],
+  "notes": "TW average strung specs: 298 g, 34.47 cm / 0 pts EB; unstrung weight/balance not on TW page. Beam as listed by TW (a/b/c); tip/mid/shaft order not confirmed by source. Generation '2024' from TWE catalogue title only; TW page has no year (says 'like previous generations'). Pre-strung.",
+  "researched": "2026-11-20",
+  "verified": false
+}

@@ -1,0 +1,36 @@
+{
+  "id": "babolat-evo-drive-tour-2025",
+  "status": "placeholder",
+  "brand": "Babolat",
+  "line": "Evo Drive",
+  "model": "Evo Drive Tour",
+  "generation": "Gen2",
+  "releaseYear": null,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 102,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      23,
+      26,
+      23
+    ],
+    "unstrungWeightG": 285,
+    "balanceMm": 320
+  },
+  "colourway": "Blue",
+  "sources": [
+    "https://www.babolat.com/gb/evo-drive-tour-gen2-strung/102549.html",
+    "https://www.babolat.com/gb/tennis/racquets/adults.html"
+  ],
+  "notes": "Seen on babolat.com GB only. Head 660 cm², length 685 mm. Release year not stated; id uses 2025 to match the Evo Drive Gen2 family.",
+  "researched": "2026-11-20",
+  "verified": false
+}

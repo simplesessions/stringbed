@@ -1,0 +1,36 @@
+{
+  "id": "babolat-aero-junior-26-2026",
+  "status": "placeholder",
+  "brand": "Babolat",
+  "line": "Aero Junior",
+  "model": "Aero Junior 26",
+  "generation": null,
+  "releaseYear": 2026,
+  "category": "junior",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 26,
+    "stringPattern": [
+      16,
+      17
+    ],
+    "beamMm": [
+      23,
+      26,
+      23
+    ],
+    "unstrungWeightG": 240,
+    "balanceMm": 315
+  },
+  "colourway": "Grey/Fluorescent yellow",
+  "sources": [
+    "https://www.tennis-warehouse.com/Babolat_Aero_26_Junior/descpageRCBAB-BAEJR6.html",
+    "https://www.babolat.com/us/aero-junior-26/140518.html"
+  ],
+  "notes": "Babolat pages label weight/balance 'unstrung' while a separate field reads 'Strung' (sold strung). Year from TW US title only.",
+  "researched": "2026-11-20",
+  "verified": false
+}

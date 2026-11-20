@@ -1,0 +1,28 @@
+{
+  "id": "prince-warrior-white-edition-100-265g",
+  "status": "placeholder",
+  "brand": "Prince",
+  "line": "Warrior",
+  "model": "Warrior White Edition 100 (265g)",
+  "generation": null,
+  "releaseYear": null,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": null,
+    "lengthIn": null,
+    "stringPattern": null,
+    "beamMm": null,
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "White (per name)",
+  "sources": [
+    "https://www.tenniswarehouse-europe.com/catpage-PRINCERAC-EN.html"
+  ],
+  "notes": "TWE catalogue title only ('Warrior White Edt 100 (265g)', pre-strung); no specs seen.",
+  "researched": "2026-11-20",
+  "verified": false
+}

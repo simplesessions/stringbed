@@ -1,0 +1,35 @@
+{
+  "id": "prince-warrior-107-275g-2025",
+  "status": "placeholder",
+  "brand": "Prince",
+  "line": "Warrior",
+  "model": "Warrior 107 (275g)",
+  "generation": null,
+  "releaseYear": 2025,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 107,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      28,
+      27,
+      24
+    ],
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Black/Brown",
+  "sources": [
+    "https://www.tennis-warehouse.com/Prince_Warrior_107_275g/descpageRCPRINCE-P5WA27.html"
+  ],
+  "notes": "TW average strung specs: 289 g, 34.29 cm / 0 pts EB; unstrung weight/balance not on TW page. Beam as listed by TW (a/b/c); tip/mid/shaft order not confirmed by source. TWE lists a same-named model under a different product code; generation match unverified, TWE not used. TW: 'Updated with a new look for 2025'. Pre-strung.",
+  "researched": "2026-11-20",
+  "verified": false
+}

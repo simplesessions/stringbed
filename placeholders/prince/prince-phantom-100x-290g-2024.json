@@ -1,0 +1,36 @@
+{
+  "id": "prince-phantom-100x-290g-2024",
+  "status": "placeholder",
+  "brand": "Prince",
+  "line": "Phantom",
+  "model": "Phantom 100X 290g",
+  "generation": "2024",
+  "releaseYear": 2024,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      18
+    ],
+    "beamMm": [
+      22,
+      20.5,
+      18
+    ],
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Green",
+  "sources": [
+    "https://www.tennis-warehouse.com/Prince_Phantom_100X_290g/descpageRCTWABG-PHNX9.html",
+    "https://www.tenniswarehouse-europe.com/catpage-PRINCERAC-EN.html"
+  ],
+  "notes": "TW average strung specs: 303 g, 33.02 cm / 4 pts HL; unstrung weight/balance not on TW page. Beam as listed by TW (a/b/c); tip/mid/shaft order not confirmed by source. releaseYear taken from the year in the TW product title (no separate year statement in the description).",
+  "researched": "2026-11-20",
+  "verified": false
+}

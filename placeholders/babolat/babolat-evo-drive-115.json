@@ -1,0 +1,38 @@
+{
+  "id": "babolat-evo-drive-115",
+  "status": "placeholder",
+  "brand": "Babolat",
+  "line": "Evo",
+  "model": "Evo Drive 115",
+  "generation": null,
+  "releaseYear": null,
+  "category": "adult",
+  "onSaleIn": [
+    2023
+  ],
+  "specs": {
+    "headSizeSqIn": 115,
+    "lengthIn": 27.6,
+    "stringPattern": [
+      16,
+      17
+    ],
+    "beamMm": [
+      25,
+      28,
+      24
+    ],
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Blue",
+  "sources": [
+    "https://web.archive.org/web/20230410180218/https://www.tennis-warehouse.com/Babolat_EVO_Drive_115/descpageRCBAB-BEVODO.html",
+    "https://web.archive.org/web/20230608223519/https://www.tennisexpress.com/babolat-tennis-racquets",
+    "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html",
+    "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html"
+  ],
+  "notes": "Release year not found; TW strung weight 9oz / 255g; TW strung balance 13.75in / 34.93cm / 0 pts EB; beam as listed by TW '25mm / 28mm / 24mm' (order not labelled); on TW US Babolat racquet page in 2023 captures 2023-01-30 to 2023-09-03 (8 of 8 captures); on Tennis Express Babolat page Jun 2023 as 'Babolat EVO Drive 115 Prestrung Tennis Racquet'",
+  "researched": "2026-11-20",
+  "verified": false
+}

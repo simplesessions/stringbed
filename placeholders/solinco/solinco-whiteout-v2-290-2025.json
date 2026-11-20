@@ -1,0 +1,37 @@
+{
+  "id": "solinco-whiteout-v2-290-2025",
+  "status": "placeholder",
+  "brand": "Solinco",
+  "line": "Whiteout",
+  "model": "Whiteout V2 290",
+  "generation": "V2",
+  "releaseYear": 2025,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 98,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      21.7,
+      21.7,
+      21.7
+    ],
+    "unstrungWeightG": 290,
+    "balanceMm": 325
+  },
+  "colourway": "White with tiger camo",
+  "sources": [
+    "https://www.tennis-warehouse.com/Solinco_Whiteout_290_v2_Camo/descpageRCSOLINCO-WTOCAL.html",
+    "https://www.tennisdirect.com.au/solinco-whiteout-v2-290",
+    "https://prod.tennis.com/news/articles/tennis-racquet-preview-solinco-whiteout-v2-more-power-stability-camo-design"
+  ],
+  "notes": "Launched with the V2 line Jan 10, 2025. Unstrung 290 g / 32.5 cm / 6 pts HL come from the TW Europe page (WTOCAL) as quoted in a search result; direct fetch of that page was blocked (406). Tennis Direct AU page (fetched) gives 325 mm, unlabeled strung/unstrung. TW US strung: 303 g, 334.8 mm, 3 pts HL.",
+  "researched": "2026-11-20",
+  "verified": false
+}

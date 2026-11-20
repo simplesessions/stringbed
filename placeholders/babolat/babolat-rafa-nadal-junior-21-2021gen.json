@@ -1,0 +1,31 @@
+{
+  "id": "babolat-rafa-nadal-junior-21-2021gen",
+  "status": "placeholder",
+  "brand": "Babolat",
+  "line": "Rafa Nadal Junior",
+  "model": "Rafa Nadal Junior 21",
+  "generation": "2021",
+  "releaseYear": null,
+  "category": "junior",
+  "onSaleIn": [
+    2023
+  ],
+  "specs": {
+    "headSizeSqIn": 85,
+    "lengthIn": 21.0,
+    "stringPattern": null,
+    "beamMm": null,
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Black/Yellow/Purple",
+  "sources": [
+    "https://web.archive.org/web/20230130100938/https://www.tennis-warehouse.com/Babolat_Rafa_Nadal_21_Junior/descpageRCBAB-BNADJR21.html",
+    "https://web.archive.org/web/20230608223519/https://www.tennisexpress.com/babolat-tennis-racquets",
+    "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html",
+    "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html"
+  ],
+  "notes": "TW: 'with the updated cosmetic for 2021' (cosmetic-year wording, not a confirmed launch date); on TW US Babolat racquet page in 2023 captures 2023-01-30 to 2023-09-03 (8 of 8 captures); on Tennis Express Babolat page Jun 2023 as 'Babolat Rafa Nadal Jr 21 Prestrung Tennis Racquet'",
+  "researched": "2026-11-20",
+  "verified": false
+}

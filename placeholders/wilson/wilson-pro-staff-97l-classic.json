@@ -1,0 +1,35 @@
+{
+  "id": "wilson-pro-staff-97l-classic",
+  "status": "placeholder",
+  "brand": "Wilson",
+  "line": "Pro Staff",
+  "model": "Pro Staff 97L Classic",
+  "generation": null,
+  "releaseYear": null,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 97,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      23.5,
+      23.5,
+      23.5
+    ],
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Black",
+  "sources": [
+    "https://www.tennis-warehouse.com/Wilson_Pro_Staff_97L_Classic/descpageRCWILSON-WPS97L.html"
+  ],
+  "notes": "Unstrung weight/balance not published on TW (it lists average strung specs only); left null. TW strung: 306 g, balance 33.32 cm / 3 pts HL. Page: same specs and playability as Pro Staff 97L v14, with a classic Pro Staff cosmetic. Release year not stated.",
+  "researched": "2026-11-20",
+  "verified": false
+}

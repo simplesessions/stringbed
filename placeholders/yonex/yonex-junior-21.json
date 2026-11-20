@@ -1,0 +1,31 @@
+{
+  "id": "yonex-junior-21",
+  "status": "placeholder",
+  "brand": "Yonex",
+  "line": "Junior",
+  "model": "Yonex Junior 21\"",
+  "generation": null,
+  "releaseYear": null,
+  "category": "junior",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 85,
+    "lengthIn": 21,
+    "stringPattern": [
+      16,
+      16
+    ],
+    "beamMm": null,
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Coral Orange or Ocean Blue",
+  "sources": [
+    "https://www.tennis-warehouse.com/Yonex_Junior_21_Racquet_Ocean_Blue/descpageRCYONEX-YONJ21OB.html"
+  ],
+  "notes": "Aluminium entry junior; sold in Coral Orange and Ocean Blue (separate TW listings, same specs). Junior racquets are sold strung; weight not labelled unstrung so left null. Year not stated.",
+  "researched": "2026-11-20",
+  "verified": false
+}

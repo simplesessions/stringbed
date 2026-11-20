@@ -1,0 +1,36 @@
+{
+  "id": "prince-tour-98-2026",
+  "status": "placeholder",
+  "brand": "Prince",
+  "line": "Tour",
+  "model": "Tour 98",
+  "generation": "2026",
+  "releaseYear": 2026,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 98,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      23,
+      23,
+      20
+    ],
+    "unstrungWeightG": 305,
+    "balanceMm": 315
+  },
+  "colourway": "Black",
+  "sources": [
+    "https://www.tennis-warehouse.com/Prince_Tour_98_2026/descpageRCTWABG-PTR698.html",
+    "https://www.tenniswarehouse-europe.com/Prince_Tour_98_Rackets_305g_2026/descpageRCPRINCEH-PTR698-EN.html"
+  ],
+  "notes": "TW average strung specs: 323 g, 32.49 cm / 6 pts HL; unstrung weight/balance not on TW page. Beam as listed by TW (a/b/c); tip/mid/shaft order not confirmed by source. Unstrung 305 g and unstrung balance 31.5 cm (9 pts HL) from TWE page; therackethq (search snippet only, not opened) gives 31.8 cm unstrung balance. TW: 'updated with a new layup ... for 2026'.",
+  "researched": "2026-11-20",
+  "verified": false
+}

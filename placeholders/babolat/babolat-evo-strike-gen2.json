@@ -1,0 +1,36 @@
+{
+  "id": "babolat-evo-strike-gen2",
+  "status": "placeholder",
+  "brand": "Babolat",
+  "line": "Evo Strike",
+  "model": "Evo Strike",
+  "generation": "Gen2",
+  "releaseYear": null,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 102,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      23,
+      24,
+      23
+    ],
+    "unstrungWeightG": 290,
+    "balanceMm": 320
+  },
+  "colourway": "White/Red/Grey",
+  "sources": [
+    "https://www.tennis-warehouse.com/Babolat_EVO_Strike/descpageRCBAB-EVOPS.html",
+    "https://www.babolat.com/us/evo-strike-gen2-strung/102515.html"
+  ],
+  "notes": "Release year unknown (no year on TW or babolat.com), so the id uses 'gen2' in place of a year. Specs from babolat.com. CONFLICT: TW US lists beam 23/24.5/23 and colour White/Coral.",
+  "researched": "2026-11-20",
+  "verified": false
+}

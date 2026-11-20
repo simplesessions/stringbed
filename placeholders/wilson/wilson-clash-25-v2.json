@@ -1,0 +1,31 @@
+{
+  "id": "wilson-clash-25-v2",
+  "status": "placeholder",
+  "brand": "Wilson",
+  "line": "Clash",
+  "model": "Clash 25\" Junior",
+  "generation": "v2",
+  "releaseYear": null,
+  "category": "junior",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 25,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": null,
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Black/Red",
+  "sources": [
+    "https://www.tennis-warehouse.com/Wilson_Clash_25_v2_Junior_Racquet/descpageRCWILSON-WC25V2.html"
+  ],
+  "notes": "TW lists 'Weight' without saying strung or unstrung (juniors are sold pre-strung); unstrung weight left null. No beam or balance on page. Listed weight 240 g. Still v2 while the adult Clash is v3. Ages 9-10.",
+  "researched": "2026-11-20",
+  "verified": false
+}

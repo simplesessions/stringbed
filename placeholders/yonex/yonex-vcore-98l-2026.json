@@ -1,0 +1,28 @@
+{
+  "id": "yonex-vcore-98l-2026",
+  "status": "placeholder",
+  "brand": "Yonex",
+  "line": "VCORE",
+  "model": "VCORE 98L",
+  "generation": "8th gen",
+  "releaseYear": 2026,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": null,
+    "lengthIn": null,
+    "stringPattern": null,
+    "beamMm": null,
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": null,
+  "sources": [
+    "https://www.yonex.co.uk/pages/vcore"
+  ],
+  "notes": "Listed (label 'Light') on Yonex UK's VCORE page alongside the 08 models; not stocked by TW. Product page https://www.yonex.co.uk/products/vcore-98l was rate-limited, so all specs null. Generation/year inferred from it sitting in the current 08 lineup page.",
+  "researched": "2026-11-20",
+  "verified": false
+}

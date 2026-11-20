@@ -1,0 +1,35 @@
+{
+  "id": "babolat-pure-drive-team-spectra-edition-2026",
+  "status": "placeholder",
+  "brand": "Babolat",
+  "line": "Pure Drive",
+  "model": "Pure Drive Team Spectra Edition",
+  "generation": "Gen11",
+  "releaseYear": null,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      23,
+      26,
+      23
+    ],
+    "unstrungWeightG": 285,
+    "balanceMm": 320
+  },
+  "colourway": "Iridescent/Black",
+  "sources": [
+    "https://www.babolat.com/gb/pure-drive-team-gen11-spectra-edition-unstrung/101585.html"
+  ],
+  "notes": "Limited cosmetic edition of Pure Drive Team Gen11. Seen on babolat.com GB (US listing reported as 'Expected soon' in search results). Release year not confirmed; id uses 2026 provisionally.",
+  "researched": "2026-11-20",
+  "verified": false
+}

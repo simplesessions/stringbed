@@ -1,0 +1,36 @@
+{
+  "id": "wilson-blade-100-v10-2026",
+  "status": "placeholder",
+  "brand": "Wilson",
+  "line": "Blade",
+  "model": "Blade 100",
+  "generation": "v10",
+  "releaseYear": 2026,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      22,
+      22,
+      22
+    ],
+    "unstrungWeightG": 300,
+    "balanceMm": null
+  },
+  "colourway": "Green",
+  "sources": [
+    "https://www.tennis-warehouse.com/Wilson_Blade_100_v10/descpageRCWILSON-WB1001.html",
+    "https://tennisexpress.com/blogs/news/wilson-blade-v10-racquet-review"
+  ],
+  "notes": "Unstrung weight from Tennis Express v10 review table (labelled unstrung); unstrung balance not published by either source, left null. Beam from TW (Tennis Express lists slightly different values for the 98s, e.g. 21.6/20.6 mm). TW strung: 318 g, balance 33.02 cm / 4 pts HL. Page says updated/new for 2026.",
+  "researched": "2026-11-20",
+  "verified": false
+}

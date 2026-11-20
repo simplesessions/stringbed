@@ -1,0 +1,33 @@
+{
+  "id": "babolat-aero-junior-26",
+  "status": "placeholder",
+  "brand": "Babolat",
+  "line": "Aero",
+  "model": "Aero Junior 26",
+  "generation": null,
+  "releaseYear": null,
+  "category": "junior",
+  "onSaleIn": [
+    2023
+  ],
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 26.0,
+    "stringPattern": [
+      16,
+      17
+    ],
+    "beamMm": null,
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Yellow/Black",
+  "sources": [
+    "https://web.archive.org/web/20240823062343/https://www.tennis-warehouse.com/Babolat_Aero_26_Junior/descpageRCBAB-BJRA2600.html",
+    "https://web.archive.org/web/20230608223519/https://www.tennisexpress.com/babolat-tennis-racquets",
+    "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html"
+  ],
+  "notes": "Release year not found; TW product capture is from Aug 2024; TW lists weight 8.5 oz / 240 g (strung/unstrung not stated; junior frames ship pre-strung); on TW US Babolat racquet page in 2023 captures 2023-03-06 to 2023-09-03 (7 of 8 captures); on Tennis Express Babolat page Jun 2023 as 'Babolat Aero Junior 26 Prestrung Tennis Racquet Grey and Yellow'",
+  "researched": "2026-11-20",
+  "verified": false
+}

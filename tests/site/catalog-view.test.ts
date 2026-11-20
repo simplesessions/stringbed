@@ -17,6 +17,8 @@ import {
   parseRoute,
   pickStyle,
   routeFor,
+  groupPlaceholders,
+  placeholderLabel,
 } from '../../site/src/catalog-view';
 
 const catalog: Catalog = JSON.parse(readFileSync(join(__dirname, '../../assets/catalog.json'), 'utf8'));
@@ -123,4 +125,18 @@ test('formatHeadSize and formatLength give imperial then metric', () => {
 test('formatBeam collapses a constant beam', () => {
   expect(formatBeam([23, 26, 23])).toBe('23 / 26 / 23 mm');
   expect(formatBeam([21.7, 21.7, 21.7])).toBe('21.7 mm');
+});
+
+test('placeholders group by brand, newest sale year first', () => {
+  const groups = groupPlaceholders(catalog);
+  expect(groups.map((g) => g.brand)).toEqual(['Babolat', 'Prince', 'Solinco', 'Wilson', 'Yonex']);
+  expect(groups.reduce((n, g) => n + g.count, 0)).toBe(catalog.placeholders.length);
+  const babolat = groups.find((g) => g.brand === 'Babolat')!;
+  expect(babolat.years.map((y) => y.year)).toEqual([2026, 2023]);
+});
+test('placeholderLabel', () => {
+  expect(placeholderLabel({ generation: 'Gen9', releaseYear: 2026 })).toBe('Gen9, 2026');
+  expect(placeholderLabel({ generation: '2023', releaseYear: 2022 })).toBe('2023 (released 2022)');
+  expect(placeholderLabel({ generation: '2025', releaseYear: 2025 })).toBe('2025');
+  expect(placeholderLabel({ generation: null, releaseYear: null })).toBe('');
 });

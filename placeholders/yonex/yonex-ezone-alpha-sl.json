@@ -1,0 +1,35 @@
+{
+  "id": "yonex-ezone-alpha-sl",
+  "status": "placeholder",
+  "brand": "Yonex",
+  "line": "EZONE",
+  "model": "EZONE Alpha SL (245g)",
+  "generation": null,
+  "releaseYear": null,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      18
+    ],
+    "beamMm": [
+      25,
+      27,
+      24
+    ],
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Blue",
+  "sources": [
+    "https://www.tennis-warehouse.com/Yonex_EZONE_Alpha_SL_245g/descpageRCYONEX-EZASLB.html"
+  ],
+  "notes": "'245g' in the product name not labelled unstrung; left null. Year not stated. TW lists only average strung weight/balance (258g, 34.54cm, 1 pt HH); unstrung weight and balance left null.",
+  "researched": "2026-11-20",
+  "verified": false
+}

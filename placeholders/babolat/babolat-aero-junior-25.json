@@ -1,0 +1,29 @@
+{
+  "id": "babolat-aero-junior-25",
+  "status": "placeholder",
+  "brand": "Babolat",
+  "line": "Aero",
+  "model": "Aero Junior 25",
+  "generation": null,
+  "releaseYear": null,
+  "category": "junior",
+  "onSaleIn": [
+    2023
+  ],
+  "specs": {
+    "headSizeSqIn": null,
+    "lengthIn": null,
+    "stringPattern": null,
+    "beamMm": null,
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": null,
+  "sources": [
+    "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html",
+    "https://web.archive.org/web/20240526172627/https://www.tennisexpress.com/babolat-aero-junior-25-prestrung-tennis-racquet-grey-and-yellow-99833"
+  ],
+  "notes": "Release year not found; no TW product capture; no Tennis Warehouse product capture found; specs not sourced; on TW US Babolat racquet page in 2023 captures 2023-03-06 to 2023-09-03 (7 of 8 captures); on Tennis Express Babolat page Jun 2023 as 'Babolat Aero Junior 25 Prestrung Tennis Racquet Grey and Yellow'",
+  "researched": "2026-11-20",
+  "verified": false
+}

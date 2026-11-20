@@ -1,0 +1,35 @@
+{
+  "id": "wilson-burn-100s-v6-2026",
+  "status": "placeholder",
+  "brand": "Wilson",
+  "line": "Burn",
+  "model": "Burn 100S",
+  "generation": "v6",
+  "releaseYear": 2026,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27,
+    "stringPattern": [
+      18,
+      16
+    ],
+    "beamMm": [
+      23.5,
+      25,
+      23.5
+    ],
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Orange",
+  "sources": [
+    "https://www.tennis-warehouse.com/Wilson_Burn_100S_v6/descpageRCWILSON-WB1SV6.html"
+  ],
+  "notes": "Unstrung weight/balance not published on TW (it lists average strung specs only); left null. TW strung: 320 g, balance 33.91 cm / 1 pts HL. Page: 'Updated with a new cosmetic for 2026'. The year may be a cosmetic refresh rather than the v6 mould launch.",
+  "researched": "2026-11-20",
+  "verified": false
+}

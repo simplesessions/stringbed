@@ -1,0 +1,31 @@
+{
+  "id": "wilson-blade-26-v10-2026",
+  "status": "placeholder",
+  "brand": "Wilson",
+  "line": "Blade",
+  "model": "Blade 26\" Junior",
+  "generation": "v10",
+  "releaseYear": 2026,
+  "category": "junior",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 26,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": null,
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": null,
+  "sources": [
+    "https://www.tennis-warehouse.com/Wilson_Blade_26_v10_Junior/descpageRCWILSON-WB26J1.html"
+  ],
+  "notes": "TW lists 'Weight' without saying strung or unstrung (juniors are sold pre-strung); unstrung weight left null. No beam or balance on page. Listed weight 255 g. Page: new cosmetic for 2026, same as the tour cosmetic (green per the adult v10). Ages 11 and up.",
+  "researched": "2026-11-20",
+  "verified": false
+}

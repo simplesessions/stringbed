@@ -1,0 +1,29 @@
+{
+  "id": "babolat-drive-junior-23",
+  "status": "placeholder",
+  "brand": "Babolat",
+  "line": "Drive",
+  "model": "Drive Junior 23",
+  "generation": null,
+  "releaseYear": null,
+  "category": "junior",
+  "onSaleIn": [
+    2023
+  ],
+  "specs": {
+    "headSizeSqIn": 98,
+    "lengthIn": 23.0,
+    "stringPattern": null,
+    "beamMm": null,
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Blue/Green/White",
+  "sources": [
+    "https://web.archive.org/web/20230130100911/https://www.tennis-warehouse.com/Babolat_Drive_23_Junior/descpageRCBAB-BRD23J.html",
+    "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html"
+  ],
+  "notes": "Release year not found; on TW US Babolat racquet page in 2023 captures 2023-01-30 to 2023-05-08 (4 of 8 captures)",
+  "researched": "2026-11-20",
+  "verified": false
+}

@@ -1,0 +1,35 @@
+{
+  "id": "wilson-defyer-100l",
+  "status": "placeholder",
+  "brand": "Wilson",
+  "line": "Defyer",
+  "model": "Defyer 100L",
+  "generation": null,
+  "releaseYear": null,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      23.8,
+      25,
+      23
+    ],
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Red",
+  "sources": [
+    "https://www.tennis-warehouse.com/Wilson_Defyer_100L_Racquet/descpageRCWILSON-RL100L.html"
+  ],
+  "notes": "Unstrung weight/balance not published on TW (it lists average strung specs only); left null. TW strung: 301 g, balance 33.02 cm / 4 pts HL. New line; no generation or year stated. Reviews from Jul to Oct 2026.",
+  "researched": "2026-11-20",
+  "verified": false
+}

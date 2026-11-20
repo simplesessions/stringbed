@@ -1,0 +1,35 @@
+{
+  "id": "wilson-ultra-team-v5-2025",
+  "status": "placeholder",
+  "brand": "Wilson",
+  "line": "Ultra",
+  "model": "Ultra Team",
+  "generation": "v5",
+  "releaseYear": 2025,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      23,
+      26,
+      21
+    ],
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Blue",
+  "sources": [
+    "https://www.tennis-warehouse.com/Wilson_Ultra_Team_v5/descpageRCWILSON-WUTEV5.html"
+  ],
+  "notes": "Unstrung weight/balance not published on TW (it lists average strung specs only); left null. TW strung: 295 g, balance 33.5 cm / 2 pts HL. Page says 'For 2025'.",
+  "researched": "2026-11-20",
+  "verified": false
+}

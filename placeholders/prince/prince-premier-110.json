@@ -1,0 +1,36 @@
+{
+  "id": "prince-premier-110",
+  "status": "placeholder",
+  "brand": "Prince",
+  "line": "Premier",
+  "model": "Premier 110",
+  "generation": null,
+  "releaseYear": null,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 110,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      18
+    ],
+    "beamMm": [
+      25,
+      27,
+      26.5
+    ],
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Blue",
+  "sources": [
+    "https://www.tennis-warehouse.com/Prince_Premier_110/descpageRCPRINCE-PREM10.html",
+    "https://www.tenniswarehouse-europe.com/catpage-PRINCERAC-EN.html"
+  ],
+  "notes": "TW average strung specs: 278 g, 36.07 cm / 6 pts HH; unstrung weight/balance not on TW page. Beam as listed by TW (a/b/c); tip/mid/shaft order not confirmed by source. No year on page. Pre-strung.",
+  "researched": "2026-11-20",
+  "verified": false
+}

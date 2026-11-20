@@ -1,0 +1,29 @@
+{
+  "id": "babolat-b-fly-23-prev",
+  "status": "placeholder",
+  "brand": "Babolat",
+  "line": "B Fly",
+  "model": "B Fly 23",
+  "generation": null,
+  "releaseYear": null,
+  "category": "junior",
+  "onSaleIn": [
+    2023
+  ],
+  "specs": {
+    "headSizeSqIn": 96,
+    "lengthIn": 23.0,
+    "stringPattern": null,
+    "beamMm": null,
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Purple/Blue",
+  "sources": [
+    "https://web.archive.org/web/20230130100932/https://www.tennis-warehouse.com/Babolat_B_Fly_23_Junior/descpageRCBAB-BFLY2322.html",
+    "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html"
+  ],
+  "notes": "Pre-2023 cosmetic (TW code suffix '22' suggests 2022, unconfirmed); on TW in Jan 2023; on TW US Babolat racquet page in 2023 captures 2023-01-30 to 2023-06-06 (5 of 8 captures)",
+  "researched": "2026-11-20",
+  "verified": false
+}

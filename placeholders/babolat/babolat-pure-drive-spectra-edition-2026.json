@@ -1,0 +1,36 @@
+{
+  "id": "babolat-pure-drive-spectra-edition-2026",
+  "status": "placeholder",
+  "brand": "Babolat",
+  "line": "Pure Drive",
+  "model": "Pure Drive Spectra Edition",
+  "generation": "Gen11",
+  "releaseYear": null,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      23,
+      26,
+      23
+    ],
+    "unstrungWeightG": 300,
+    "balanceMm": 320
+  },
+  "colourway": "Iridescent/Black",
+  "sources": [
+    "https://www.babolat.com/us/pure-drive-gen11-spectra-edition-unstrung/101584.html",
+    "https://www.babolat.com/us/tennis/racquets/adults.html"
+  ],
+  "notes": "Limited cosmetic edition of Pure Drive Gen11. babolat.com US shows 'New' / 'Expected soon' / out of stock. Release year not on a fetched page (a JustTennis URL seen in search says 2026); id uses 2026 provisionally.",
+  "researched": "2026-11-20",
+  "verified": false
+}

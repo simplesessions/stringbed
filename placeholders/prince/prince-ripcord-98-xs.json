@@ -1,0 +1,36 @@
+{
+  "id": "prince-ripcord-98-xs",
+  "status": "placeholder",
+  "brand": "Prince",
+  "line": "Ripcord",
+  "model": "Ripcord 98 XS",
+  "generation": null,
+  "releaseYear": null,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 98,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      18
+    ],
+    "beamMm": [
+      25,
+      23,
+      21
+    ],
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Blue",
+  "sources": [
+    "https://www.tennis-warehouse.com/Prince_Ripcord_98_XS/descpageRCTWABG-PRIPXS.html",
+    "https://www.tenniswarehouse-europe.com/catpage-PRINCERAC-EN.html"
+  ],
+  "notes": "TW average strung specs: 323 g, 31.98 cm / 7 pts HL; unstrung weight/balance not on TW page. Beam as listed by TW (a/b/c); tip/mid/shaft order not confirmed by source. 'New addition to the Ripcord family' but no year stated.",
+  "researched": "2026-11-20",
+  "verified": false
+}

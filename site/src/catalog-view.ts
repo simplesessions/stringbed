@@ -99,3 +99,37 @@ export function formatBeam(beam: readonly number[]): string {
 export function formatCount(n: number): string {
   return n.toLocaleString('en-US');
 }
+
+export type Placeholder = Catalog['placeholders'][number];
+export interface StockGroup {
+  brand: string;
+  /** Newest sale year first; within a year, newest release first, then model. */
+  years: Array<{ year: number; items: Placeholder[] }>;
+  count: number;
+}
+
+/** Racquets with no model yet, by brand, then by the latest year each was confirmed on sale. */
+export function groupPlaceholders(c: Catalog): StockGroup[] {
+  const brands = new Map<string, Map<number, Placeholder[]>>();
+  for (const p of c.placeholders ?? []) {
+    const year = Math.max(...p.onSaleIn);
+    const byYear = brands.get(p.brand) ?? new Map<number, Placeholder[]>();
+    byYear.set(year, [...(byYear.get(year) ?? []), p]);
+    brands.set(p.brand, byYear);
+  }
+  return [...brands.keys()].sort(byText).map((brand) => {
+    const byYear = brands.get(brand)!;
+    const years = [...byYear.keys()].sort((a, b) => b - a).map((year) => ({
+      year,
+      items: byYear.get(year)!.sort((a, b) => (b.releaseYear ?? 0) - (a.releaseYear ?? 0) || byText(a.model, b.model)),
+    }));
+    return { brand, years, count: years.reduce((n, y) => n + y.items.length, 0) };
+  });
+}
+
+/** "Gen9, 2026", "2023 (released 2022)", "3rd Gen", "2025" or "" when nothing is known. */
+export function placeholderLabel(p: Pick<Placeholder, 'generation' | 'releaseYear'>): string {
+  const { generation: g, releaseYear: y } = p;
+  if (g && y) return g === String(y) ? g : /^\d{4}$/.test(g) ? `${g} (released ${y})` : `${g}, ${y}`;
+  return g ?? (y ? String(y) : '');
+}

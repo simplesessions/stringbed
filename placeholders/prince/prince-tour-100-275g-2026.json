@@ -1,0 +1,35 @@
+{
+  "id": "prince-tour-100-275g-2026",
+  "status": "placeholder",
+  "brand": "Prince",
+  "line": "Tour",
+  "model": "Tour 100 275g",
+  "generation": "2026",
+  "releaseYear": 2026,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      18
+    ],
+    "beamMm": [
+      24,
+      25,
+      22
+    ],
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Black",
+  "sources": [
+    "https://www.tennis-warehouse.com/Prince_Tour_100_275g_2026/descpageRCTWABG-PTR627.html"
+  ],
+  "notes": "TW average strung specs: 283 g, 33.5 cm / 2 pts HL; unstrung weight/balance not on TW page. Beam as listed by TW (a/b/c); tip/mid/shaft order not confirmed by source. TW spec table says 283 g strung but description says '10.2 ounces strung' (~289 g); conflict unresolved. Not listed on TWE catalogue. TW: 'lightest member of the 2026 Prince Tour family'.",
+  "researched": "2026-11-20",
+  "verified": false
+}

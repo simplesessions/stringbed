@@ -1,0 +1,36 @@
+{
+  "id": "babolat-boost-aero-pink-2026",
+  "status": "placeholder",
+  "brand": "Babolat",
+  "line": "Boost Aero",
+  "model": "Boost Aero Pink",
+  "generation": null,
+  "releaseYear": 2026,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 102,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      23,
+      26,
+      23
+    ],
+    "unstrungWeightG": 260,
+    "balanceMm": 340
+  },
+  "colourway": "Grey/Raspberry Pink",
+  "sources": [
+    "https://www.tennis-warehouse.com/Babolat_Boost_Aero_Pink_2026/descpageRCBAB-BBOAPS.html",
+    "https://www.babolat.com/us/boost-aero-pink-strung/121267.html"
+  ],
+  "notes": "Sold strung. Unstrung specs from babolat.com. Year from TW US title only.",
+  "researched": "2026-11-20",
+  "verified": false
+}

@@ -1,0 +1,31 @@
+{
+  "id": "wilson-blade-25-v10-2026",
+  "status": "placeholder",
+  "brand": "Wilson",
+  "line": "Blade",
+  "model": "Blade 25\" Junior",
+  "generation": "v10",
+  "releaseYear": 2026,
+  "category": "junior",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 25,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": null,
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": null,
+  "sources": [
+    "https://www.tennis-warehouse.com/Wilson_Blade_25_v10_Junior/descpageRCWILSON-WB25J1.html"
+  ],
+  "notes": "TW lists 'Weight' without saying strung or unstrung (juniors are sold pre-strung); unstrung weight left null. No beam or balance on page. Listed weight 245 g. Page: new cosmetic for 2026 (the text mistakenly says 'v9'). Ages 9-10. Blade 25 v9 Junior is also still sold.",
+  "researched": "2026-11-20",
+  "verified": false
+}

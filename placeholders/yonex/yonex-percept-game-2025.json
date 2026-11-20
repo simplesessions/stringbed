@@ -1,0 +1,31 @@
+{
+  "id": "yonex-percept-game-2025",
+  "status": "placeholder",
+  "brand": "Yonex",
+  "line": "Percept",
+  "model": "Percept Game",
+  "generation": null,
+  "releaseYear": 2025,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": null,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": null,
+    "unstrungWeightG": 270,
+    "balanceMm": null
+  },
+  "colourway": "Midnight Navy",
+  "sources": [
+    "https://www.tennisnuts.com/shop/tennis/tennis-rackets/yonex/percept.html"
+  ],
+  "notes": "Sold strung; tennisnuts lists both 'Percept Game (2025) - Midnight Navy' and a sold-out 'Percept Game (2023)'. 270g from tennisnuts listing (not labelled unstrung, and racquet arrives strung - treat with caution). Balance listed only as 'Even'.",
+  "researched": "2026-11-20",
+  "verified": false
+}

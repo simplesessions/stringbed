@@ -1,0 +1,39 @@
+{
+  "id": "babolat-evo-drive-lite-2021gen",
+  "status": "placeholder",
+  "brand": "Babolat",
+  "line": "Evo",
+  "model": "Evo Drive Lite",
+  "generation": "2021",
+  "releaseYear": null,
+  "category": "adult",
+  "onSaleIn": [
+    2023
+  ],
+  "specs": {
+    "headSizeSqIn": 104,
+    "lengthIn": 27.0,
+    "stringPattern": [
+      16,
+      17
+    ],
+    "beamMm": [
+      23,
+      26,
+      23
+    ],
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Blue; also a white 'Evo Drive Lite W' variant",
+  "sources": [
+    "https://web.archive.org/web/20230130101219/https://www.tennis-warehouse.com/Babolat_EVO_Drive_Lite/descpageRCBAB-BEVODL.html",
+    "https://web.archive.org/web/20230608223519/https://www.tennisexpress.com/babolat-tennis-racquets",
+    "https://web.archive.org/web/20230130101215/https://www.tennis-warehouse.com/Babolat_EVO_Drive_Lite_W/descpageRCBAB-BEVODW.html",
+    "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html",
+    "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html"
+  ],
+  "notes": "Launch date not found; TW strung weight 9.5oz / 269g; TW strung balance 13in / 33.02cm / 4 pts HL; beam as listed by TW '23mm / 26mm / 23mm' (order not labelled); on TW US Babolat racquet page in 2023 captures 2023-01-30 to 2023-09-03 (8 of 8 captures); on Tennis Express Babolat page Jun 2023 as 'Babolat EVO Drive Lite Prestrung Tennis Racquet'",
+  "researched": "2026-11-20",
+  "verified": false
+}

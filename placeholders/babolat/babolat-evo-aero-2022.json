@@ -1,0 +1,42 @@
+{
+  "id": "babolat-evo-aero-2022",
+  "status": "placeholder",
+  "brand": "Babolat",
+  "line": "Evo",
+  "model": "Evo Aero",
+  "generation": null,
+  "releaseYear": 2022,
+  "category": "adult",
+  "onSaleIn": [
+    2023
+  ],
+  "specs": {
+    "headSizeSqIn": 102,
+    "lengthIn": 27.0,
+    "stringPattern": [
+      16,
+      18
+    ],
+    "beamMm": [
+      23,
+      26,
+      23
+    ],
+    "unstrungWeightG": 275,
+    "balanceMm": null
+  },
+  "colourway": "White/Grey; also a Pink variant",
+  "sources": [
+    "https://web.archive.org/web/20221108061113/https://www.tennis-warehouse.com/Babolat_EVO_Aero/descpageRCBAB-BEAR.html",
+    "https://web.archive.org/web/20230608223519/https://www.tennisexpress.com/babolat-tennis-racquets",
+    "https://web.archive.org/web/20231002042710/https://www.tennisexpress.com/babolat-evo-aero-prestrung-tennis-racquet-99817",
+    "https://web.archive.org/web/20221109041442/https://www.tennis-warehouse.com/Babolat_EVO_Aero_Pink/descpageRCBAB-BEARP.html",
+    "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html",
+    "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html",
+    "https://www.babolat.com/us/news-articles-blog-evo-2022/evo-2022.html",
+    "https://www.tennis.com/baseline/articles/babolat-expands-popular-evo-line-with-two-new-racquet-models"
+  ],
+  "notes": "Babolat article 26 Oct 2022; Tennis.com 10 Nov 2022 lists 'Weight: 275 g' (manufacturer figure, not labelled unstrung; TW strung 289 g); TW strung weight 10.2oz / 289g; TW strung balance 12.99in / 32.99cm / 4 pts HL; beam as listed by TW '23mm / 26mm / 23mm' (order not labelled); on TW US Babolat racquet page in 2023 captures 2023-01-30 to 2023-09-03 (8 of 8 captures); Tennis Express confirms this weight as unstrung; on Tennis Express Babolat page Jun 2023 as 'Babolat EVO Aero Prestrung Tennis Racquet'; on Tennis Express Babolat page Jun 2023 as 'Babolat EVO Aero Prestrung Tennis Racquet Pink'",
+  "researched": "2026-11-20",
+  "verified": false
+}

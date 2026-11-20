@@ -1,0 +1,39 @@
+{
+  "id": "babolat-pure-aero-rafa-2021",
+  "status": "placeholder",
+  "brand": "Babolat",
+  "line": "Pure Aero",
+  "model": "Pure Aero Rafa",
+  "generation": null,
+  "releaseYear": 2021,
+  "category": "adult",
+  "onSaleIn": [
+    2023
+  ],
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27.0,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      23,
+      26,
+      23
+    ],
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Yellow/Black/Purple",
+  "sources": [
+    "https://web.archive.org/web/20230410173810/https://www.tennis-warehouse.com/Babolat_Pure_Aero_Rafa/descpageRCBAB-BPARR.html",
+    "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html",
+    "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html",
+    "https://tennisnerd.net/players/babolat-pure-aero-rafa-the-best-looking-racquet/24316",
+    "https://tennisnerd.net/gear/racquets/the-babolat-pure-aero-rafa-collection/25784"
+  ],
+  "notes": "2019 Pure Aero mould in Rafa (Mallorca) cosmetic; tennisnerd post dated 17 Mar 2021: 'on March 18 it will finally be here'; TW strung weight 11.2oz / 318g; TW strung balance 12.99in / 32.99cm / 4 pts HL; beam as listed by TW '23mm / 26mm / 23mm' (order not labelled); on TW US Babolat racquet page in 2023 captures 2023-01-30 to 2023-09-03 (8 of 8 captures)",
+  "researched": "2026-11-20",
+  "verified": false
+}

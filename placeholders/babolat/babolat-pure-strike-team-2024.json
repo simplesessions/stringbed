@@ -1,0 +1,37 @@
+{
+  "id": "babolat-pure-strike-team-2024",
+  "status": "placeholder",
+  "brand": "Babolat",
+  "line": "Pure Strike",
+  "model": "Pure Strike Team",
+  "generation": "Gen4",
+  "releaseYear": 2024,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      21,
+      23,
+      21
+    ],
+    "unstrungWeightG": 285,
+    "balanceMm": 325
+  },
+  "colourway": "Carbon Grey (2025 cosmetic refresh)",
+  "sources": [
+    "https://www.tennis-warehouse.com/Babolat_Pure_Strike_Team_Carbon_Grey/descpageRCBAB-PSTE25.html",
+    "https://www.babolat.com/us/pure-strike-team-gen4-unstrung/101580.html",
+    "https://prod.tennis.com/news/articles/babolat-gives-the-pure-strike-a-makeover-with-carbon-grey-cosmetic"
+  ],
+  "notes": "Gen4 frame launched 25 Jan 2024 (tennis.com preview, 6 Jan 2024). Currently sold in the Carbon Grey cosmetic introduced Aug 2025, which tennis.com says keeps the same layup ('cosmetic update, not a new generation'); TW Europe titles say '(2025)' because of the paint. No Gen5 found. Unstrung specs from babolat.com. Launch year assumed same as Gen4 family (preview does not list each model).",
+  "researched": "2026-11-20",
+  "verified": false
+}

@@ -1,0 +1,38 @@
+{
+  "id": "babolat-boost-strike",
+  "status": "placeholder",
+  "brand": "Babolat",
+  "line": "Boost",
+  "model": "Boost Strike",
+  "generation": null,
+  "releaseYear": null,
+  "category": "adult",
+  "onSaleIn": [
+    2023
+  ],
+  "specs": {
+    "headSizeSqIn": 102,
+    "lengthIn": 27.0,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      23,
+      26,
+      23
+    ],
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Red",
+  "sources": [
+    "https://web.archive.org/web/20230410174047/https://www.tennis-warehouse.com/Babolat_Boost_S_Strike/descpageRCBAB-BABOSR.html",
+    "https://web.archive.org/web/20230608223519/https://www.tennisexpress.com/babolat-tennis-racquets",
+    "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html",
+    "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html"
+  ],
+  "notes": "TW name 'Boost S (Strike)'; a European retailer labels it '2021'; release year not confirmed; TW strung weight 10.4oz / 295g; TW strung balance 13.18in / 33.48cm / 3 pts HL; beam as listed by TW '23mm / 26mm / 23mm' (order not labelled); on TW US Babolat racquet page in 2023 captures 2023-01-30 to 2023-09-03 (8 of 8 captures); on Tennis Express Babolat page Jun 2023 as 'Babolat 2020 Boost S Prestrung Tennis Racquet'",
+  "researched": "2026-11-20",
+  "verified": false
+}

@@ -4,6 +4,7 @@ import { pathToFileURL } from 'node:url';
 import type { Catalog } from '../src/catalog';
 import { buildRacquet, triangleCount } from '../src/core/build';
 import { loadAllSpecs } from '../src/core/spec';
+import { loadPlaceholders } from '../src/placeholders';
 import { styles } from '../src/styles';
 
 export const MAX_BYTES = 150 * 1024;
@@ -23,6 +24,7 @@ export async function generateInMemory(): Promise<Generated> {
     version: 1,
     styles: styles.map((s) => ({ id: s.id, kind: s.kind, label: s.label, extension: s.extension })),
     racquets: [],
+    placeholders: loadPlaceholders().map(({ status: _s, notes: _n, verified: _v, ...p }) => p),
   };
   for (const spec of specs) {
     const model = buildRacquet(spec);

@@ -1,0 +1,31 @@
+{
+  "id": "yonex-ezone-jr-25",
+  "status": "placeholder",
+  "brand": "Yonex",
+  "line": "EZONE",
+  "model": "EZONE JR 25\" Junior",
+  "generation": null,
+  "releaseYear": null,
+  "category": "junior",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 25,
+    "stringPattern": [
+      16,
+      18
+    ],
+    "beamMm": null,
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Blast Blue",
+  "sources": [
+    "https://www.tennis-warehouse.com/Yonex_EZONE_JR_25_Junior/descpageRCYONEX-EZOJ25H.html"
+  ],
+  "notes": "Separate cheaper model ($100, graphite hybrid) from the EZONE 25\" Junior. TW weight 230g (Junior racquets are sold strung; weight not labelled unstrung so left null.) Year not stated.",
+  "researched": "2026-11-20",
+  "verified": false
+}

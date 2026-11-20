@@ -1,0 +1,31 @@
+{
+  "id": "yonex-junior-26",
+  "status": "placeholder",
+  "brand": "Yonex",
+  "line": "Junior",
+  "model": "Yonex Junior 26\"",
+  "generation": null,
+  "releaseYear": null,
+  "category": "junior",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 26,
+    "stringPattern": [
+      16,
+      18
+    ],
+    "beamMm": null,
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Coral Orange or Ocean Blue",
+  "sources": [
+    "https://www.tennis-warehouse.com/Yonex_Junior_26_Racquet_Coral_Orange/descpageRCYONEX-YONJ26CO.html"
+  ],
+  "notes": "Aluminium entry junior; sold in Coral Orange and Ocean Blue (separate TW listings, same specs). TW weight 240g. Junior racquets are sold strung; weight not labelled unstrung so left null. Year not stated.",
+  "researched": "2026-11-20",
+  "verified": false
+}

@@ -1,0 +1,33 @@
+{
+  "id": "babolat-pure-strike-junior-26-2019gen",
+  "status": "placeholder",
+  "brand": "Babolat",
+  "line": "Pure Strike",
+  "model": "Pure Strike Junior 26",
+  "generation": "3rd Gen",
+  "releaseYear": null,
+  "category": "junior",
+  "onSaleIn": [
+    2023
+  ],
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 26.0,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": null,
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "White/Coral",
+  "sources": [
+    "https://web.archive.org/web/20230130100833/https://www.tennis-warehouse.com/Babolat_Pure_Strike_3rd_Gen_26_Junior/descpageRCBAB-PSJ26R.html",
+    "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html",
+    "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html"
+  ],
+  "notes": "3rd-gen Pure Strike junior; launch date not found; TW lists weight 8.8 oz / 250 g (strung/unstrung not stated; junior frames ship pre-strung); on TW US Babolat racquet page in 2023 captures 2023-01-30 to 2023-09-03 (8 of 8 captures)",
+  "researched": "2026-11-20",
+  "verified": false
+}

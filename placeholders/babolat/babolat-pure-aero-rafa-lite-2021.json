@@ -1,0 +1,38 @@
+{
+  "id": "babolat-pure-aero-rafa-lite-2021",
+  "status": "placeholder",
+  "brand": "Babolat",
+  "line": "Pure Aero",
+  "model": "Pure Aero Rafa Lite",
+  "generation": null,
+  "releaseYear": 2021,
+  "category": "adult",
+  "onSaleIn": [
+    2023
+  ],
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27.0,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      23,
+      26,
+      23
+    ],
+    "unstrungWeightG": 270,
+    "balanceMm": 330
+  },
+  "colourway": "Black/Yellow/Purple",
+  "sources": [
+    "https://web.archive.org/web/20230410173828/https://www.tennis-warehouse.com/Babolat_Pure_Aero_Rafa_Lite/descpageRCBAB-BPARLR.html",
+    "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html",
+    "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html",
+    "https://tennisnerd.net/gear/racquets/the-babolat-pure-aero-rafa-collection/25784"
+  ],
+  "notes": "Rafa cosmetic on 2019 Lite mould; tennisnerd (17 Nov 2021) gives unstrung 270 g / 33 cm; TW strung weight 10.1oz / 286g; TW strung balance 13.5in / 34.29cm / 0 pts EB; beam as listed by TW '23mm / 26mm / 23mm' (order not labelled); on TW US Babolat racquet page in 2023 captures 2023-01-30 to 2023-08-22 (7 of 8 captures)",
+  "researched": "2026-11-20",
+  "verified": false
+}

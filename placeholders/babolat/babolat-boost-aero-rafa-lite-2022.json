@@ -1,0 +1,29 @@
+{
+  "id": "babolat-boost-aero-rafa-lite-2022",
+  "status": "placeholder",
+  "brand": "Babolat",
+  "line": "Boost",
+  "model": "Boost Aero Rafa Lite",
+  "generation": "2022",
+  "releaseYear": null,
+  "category": "adult",
+  "onSaleIn": [
+    2023
+  ],
+  "specs": {
+    "headSizeSqIn": null,
+    "lengthIn": null,
+    "stringPattern": null,
+    "beamMm": null,
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": null,
+  "sources": [
+    "https://web.archive.org/web/20230203092200/https://www.tennisexpress.com/babolat-2022-boost-aero-rafa-lite-prestrung-tennis-racquet-94278",
+    "https://web.archive.org/web/20230608223519/https://www.tennisexpress.com/babolat-tennis-racquets"
+  ],
+  "notes": "Only seen at Tennis Express (Jun 2023 listing, labelled '2022'); TE gives only spec bands (Mid Plus 95-105, standard length, strung 9.1-9.5 oz, head heavy); launch date not found; no Tennis Warehouse product capture found; specs not sourced; on Tennis Express Babolat page Jun 2023 as 'Babolat 2022 Boost Aero Rafa Lite Prestrung Tennis Racquet'",
+  "researched": "2026-11-20",
+  "verified": false
+}

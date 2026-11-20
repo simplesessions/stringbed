@@ -1,0 +1,32 @@
+{
+  "id": "babolat-ballfighter-17",
+  "status": "placeholder",
+  "brand": "Babolat",
+  "line": "Ballfighter",
+  "model": "Ballfighter 17",
+  "generation": null,
+  "releaseYear": null,
+  "category": "junior",
+  "onSaleIn": [
+    2023,
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 62,
+    "lengthIn": 17.0,
+    "stringPattern": null,
+    "beamMm": null,
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": null,
+  "sources": [
+    "https://web.archive.org/web/20251216141623/https://www.tennis-warehouse.com/Babolat_Ballfighter_17_Junior/descpageRCBAB-BALLF17.html",
+    "https://web.archive.org/web/20230608223519/https://www.tennisexpress.com/babolat-tennis-racquets",
+    "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html",
+    "https://www.tennis-warehouse.com/Babolat_Ballfighter_17_Junior/descpageRCBAB-BALLF17.html"
+  ],
+  "notes": "Release year not found; TW product capture post-2023; on TW US Babolat racquet page in 2023 captures 2023-08-05 to 2023-09-03 (3 of 8 captures); on Tennis Express Babolat page Jun 2023 as 'Babolat Ballfighter 17 Junior Tennis Racquet Blue and Orange' [2026 listing] Aluminium. TW US only; not on babolat.com US junior listing. TW gives no pattern, weight, balance or colour. Release year unknown.",
+  "researched": "2026-11-20",
+  "verified": false
+}

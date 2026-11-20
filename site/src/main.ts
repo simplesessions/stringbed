@@ -14,11 +14,15 @@ import {
   formatPattern,
   generationLabel,
   groupByBrand,
+  groupPlaceholders,
+  placeholderLabel,
   parseRoute,
   pickStyle,
   routeFor,
   type BrandGroup,
+  type Placeholder,
   type Racquet,
+  type StockGroup,
   type Style,
 } from './catalog-view';
 import { el, icon, silhouette } from './dom';
@@ -44,7 +48,6 @@ const wall = $<HTMLDivElement>('wall');
 const detail = $<HTMLElement>('detail');
 const signs = $<HTMLElement>('signs');
 const notice = $<HTMLParagraphElement>('notice');
-const lede = $<HTMLParagraphElement>('lede');
 const announce = $<HTMLParagraphElement>('announce');
 const baseTitle = document.title;
 $<HTMLAnchorElement>('font-licence').href = fontLicence;
@@ -54,6 +57,8 @@ interface App {
   style: Style;
   groups: BrandGroup[];
   order: Racquet[];
+  stock: StockGroup[];
+  stockOrder: Placeholder[];
   brand: string | null;
   gl: GL | null;
   thumbs: Thumbnails | null;
@@ -85,11 +90,14 @@ async function boot() {
   const style = pickStyle(catalog, new URLSearchParams(location.search).get('style'));
   if (!style) return catalogFailed(new Error('The catalog lists no styles.'));
   const groups = groupByBrand(catalog);
+  const stock = groupPlaceholders(catalog);
   app = {
     catalog,
     style,
     groups,
     order: groups.flatMap((g) => g.racquets),
+    stock,
+    stockOrder: stock.flatMap((g) => g.years.flatMap((y) => y.items)),
     brand: null,
     gl: null,
     thumbs: null,
@@ -134,8 +142,6 @@ function catalogFailed(err: unknown) {
 
 function buildHeader(a: App) {
   const n = a.catalog.racquets.length;
-  lede.textContent = `${n} tennis racquets as small 3D files, generated from data at one scale. Open one to turn it, read its specs and download it.`;
-
   const buttons: HTMLButtonElement[] = [];
   const add = (brand: string | null, label: string, count: number) => {
     const b = el('button', { class: 'sign', type: 'button', 'aria-pressed': String(brand === a.brand) },
@@ -166,9 +172,8 @@ function buildHeader(a: App) {
 }
 
 function applyFilter(a: App) {
-  const shown = new Set(filterByBrand(a.groups, a.brand).map((g) => g.brand));
-  for (const section of wall.querySelectorAll<HTMLElement>('.section')) {
-    section.hidden = !shown.has(section.dataset.brand!);
+  for (const section of wall.querySelectorAll<HTMLElement>('.section, .stock-brand')) {
+    section.hidden = a.brand !== null && section.dataset.brand !== a.brand;
   }
   wall.classList.toggle('is-filtered', a.brand !== null);
 }
@@ -183,9 +188,44 @@ function buildWall(a: App) {
       el('ul', { class: 'bays', role: 'list' }, ...g.racquets.map((r) => bay(a, r))),
     );
   });
-  wall.replaceChildren(el('h1', { class: 'sr-only' }, 'All racquets'), ...sections);
+  wall.replaceChildren(el('h1', { class: 'sr-only' }, 'All racquets'), ...sections, ...stockList(a));
   wall.setAttribute('aria-busy', 'false');
   applyFilter(a);
+}
+
+/** Researched racquets with no model yet: a plain list under the wall, one column per brand. */
+function stockList(a: App): HTMLElement[] {
+  if (a.stock.length === 0) return [];
+  const total = a.stockOrder.length;
+  const brand = (g: StockGroup) =>
+    el('section', { class: 'stock-brand', 'data-brand': g.brand, 'aria-label': `${g.brand}, no model yet` },
+      el('h3', { class: 'stock-sign' }, g.brand, el('span', { class: 'sign-count' }, String(g.count))),
+      ...g.years.flatMap((y) => [
+        el('h4', { class: 'stock-year' }, y.year === CURRENT_YEAR ? 'Current' : `On sale in ${y.year}`),
+        el('ul', { class: 'stock-rows', role: 'list' }, ...y.items.map((p) => stockRow(p))),
+      ]),
+    );
+  return [
+    el('section', { class: 'stock', 'aria-labelledby': 'stock-title' },
+      el('h2', { class: 'stock-title', id: 'stock-title' }, 'No model yet', el('span', { class: 'sign-count' }, String(total))),
+      el('p', { class: 'stock-lede' }, 'Researched from retailer listings and not yet modelled. Specs are unverified and often incomplete.'),
+      el('div', { class: 'stock-brands' }, ...a.stock.map(brand)),
+    ),
+  ];
+}
+
+const CURRENT_YEAR = 2026;
+
+function stockRow(p: Placeholder): HTMLLIElement {
+  const s = p.specs;
+  const facts = [s.headSizeSqIn ? `${s.headSizeSqIn} in²` : null, s.stringPattern ? formatPattern(s.stringPattern) : null].filter(Boolean).join(' · ');
+  return el('li', { 'data-id': p.id },
+    el('a', { class: 'stock-row', href: routeFor(p.id) },
+      el('span', { class: 'stock-model' }, p.model, p.category === 'junior' ? el('span', { class: 'stock-flag' }, 'Junior') : null),
+      el('span', { class: 'stock-meta' }, placeholderLabel(p)),
+      el('span', { class: 'stock-facts' }, facts),
+    ),
+  );
 }
 
 function bay(a: App, r: Racquet): HTMLLIElement {
@@ -232,9 +272,11 @@ function route() {
   if (!app || !ready) return;
   const { racquetId } = parseRoute(location.hash);
   const r = racquetId ? app.catalog.racquets.find((x) => x.id === racquetId) : undefined;
-  const missing = racquetId && !r ? `There is no racquet with the id “${racquetId}”. Here is the full lineup.` : '';
+  const p = racquetId && !r ? app.stockOrder.find((x) => x.id === racquetId) : undefined;
+  const missing = racquetId && !r && !p ? `There is no racquet with the id “${racquetId}”. Here is the full lineup.` : '';
   notice.textContent = [missing, baseNotice].filter(Boolean).join(' ');
   if (r) showDetail(app, r);
+  else if (p) showPlaceholder(app, p);
   else showWall(app);
 }
 
@@ -249,7 +291,7 @@ function showWall(a: App) {
   document.body.dataset.view = 'wall';
   document.title = baseTitle;
   if (a.lastOpened) {
-    const link = wall.querySelector<HTMLAnchorElement>(`.bay[data-id="${a.lastOpened}"] .bay-link`);
+    const link = wall.querySelector<HTMLAnchorElement>(`.bay[data-id="${a.lastOpened}"] .bay-link, li[data-id="${a.lastOpened}"] .stock-row`);
     a.lastOpened = null;
     if (link && !link.closest('[hidden]')) {
       link.focus({ preventScroll: true });
@@ -267,6 +309,74 @@ function showDetail(a: App, r: Racquet) {
   detail.replaceChildren(...detailView(a, r));
   window.scrollTo(0, 0);
   detail.querySelector<HTMLElement>('h1')?.focus({ preventScroll: true });
+}
+
+function showPlaceholder(a: App, p: Placeholder) {
+  a.viewer?.detach();
+  a.viewer?.clear();
+  a.lastOpened = p.id;
+  wall.hidden = true;
+  detail.hidden = false;
+  document.body.dataset.view = 'detail';
+  document.title = `${p.model} · ${baseTitle.split(':')[0]}`;
+  detail.replaceChildren(...placeholderView(a, p));
+  window.scrollTo(0, 0);
+  detail.querySelector<HTMLElement>('h1')?.focus({ preventScroll: true });
+}
+
+function placeholderView(a: App, p: Placeholder): Node[] {
+  const i = a.stockOrder.indexOf(p);
+  const prev = a.stockOrder[(i - 1 + a.stockOrder.length) % a.stockOrder.length];
+  const next = a.stockOrder[(i + 1) % a.stockOrder.length];
+  const nav = el('nav', { class: 'detail-nav', 'aria-label': 'Racquet' },
+    el('a', { class: 'back', href: routeFor(null) }, icon('back'), 'All racquets'),
+    el('span', { class: 'stepper' },
+      el('a', { href: routeFor(prev.id), 'aria-label': `Previous: ${prev.model}` }, icon('prev'), el('span', { class: 'stepper-name' }, prev.model)),
+      el('a', { href: routeFor(next.id), 'aria-label': `Next: ${next.model}` }, el('span', { class: 'stepper-name' }, next.model), icon('next')),
+    ),
+  );
+  const s = p.specs;
+  const row = (label: string, value: Node | string | null, aside?: string) =>
+    value === null ? null : el('div', { class: 'row' }, el('dt', {}, label), el('dd', {}, value, aside ? el('span', { class: 'aside' }, aside) : null));
+  const head = s.headSizeSqIn ? formatHeadSize(s.headSizeSqIn) : null;
+  const len = s.lengthIn ? formatLength(s.lengthIn) : null;
+  const specs = el('dl', { class: 'rows' },
+    row('Head size', head?.primary ?? null, head?.secondary),
+    row('Length', len?.primary ?? null, len?.secondary),
+    row('String pattern', s.stringPattern ? formatPattern(s.stringPattern) : null, 'mains × crosses'),
+    row('Beam', s.beamMm ? formatBeam(s.beamMm) : null, s.beamMm && new Set(s.beamMm).size > 1 ? 'as listed by the retailer' : undefined),
+    row('Weight', s.unstrungWeightG ? `${formatCount(s.unstrungWeightG)} g` : null, 'unstrung'),
+    row('Balance', s.balanceMm ? `${formatCount(s.balanceMm)} mm` : null, 'unstrung'),
+    row('Colourway', p.colourway),
+    row('Released', p.releaseYear ? String(p.releaseYear) : null),
+    row('On sale in', p.onSaleIn.join(', ')),
+    row('Category', p.category === 'junior' ? 'Junior' : 'Adult'),
+  );
+  const stage = el('div', { class: 'stage', 'data-state': 'flat', style: '--swatch: var(--rail)' },
+    silhouette(s.headSizeSqIn ?? 100),
+    el('p', { class: 'stage-note' }, 'No 3D model yet.'),
+  );
+  const sheet = el('div', { class: 'sheet' },
+    el('h1', { class: 'sheet-title', tabindex: '-1' }, p.model),
+    el('p', { class: 'sheet-sub' }, [p.brand, placeholderLabel(p)].filter(Boolean).join(' · ')),
+    el('p', { class: 'sheet-note' }, `Researched ${p.researched} from retailer listings and not yet modelled. Nothing to download. Specs are unverified; blanks were not found.`),
+    el('h2', { class: 'sheet-head' }, 'Specs'),
+    specs,
+    el('h2', { class: 'sheet-head' }, 'Sources'),
+    el('ul', { class: 'sources', role: 'list' }, ...p.sources.map((u) => el('li', {}, el('a', { href: u, rel: 'noreferrer' }, sourceLabel(u))))),
+  );
+  return [nav, el('div', { class: 'detail-body' }, stage, sheet)];
+}
+
+/** "tennis-warehouse.com", or "tennis-warehouse.com, archived 2023" for a Wayback Machine capture. */
+function sourceLabel(u: string): string {
+  const host = (x: string) => new URL(x).hostname.replace(/^www\./, '');
+  const m = /^https?:\/\/web\.archive\.org\/web\/(\d{4})\d*[a-z_]*\/(https?:\/\/.+)$/.exec(u);
+  try {
+    return m ? `${host(m[2])}, archived ${m[1]}` : host(u);
+  } catch {
+    return u;
+  }
 }
 
 // ---------- detail ----------

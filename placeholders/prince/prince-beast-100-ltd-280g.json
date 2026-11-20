@@ -1,0 +1,28 @@
+{
+  "id": "prince-beast-100-ltd-280g",
+  "status": "placeholder",
+  "brand": "Prince",
+  "line": "Beast",
+  "model": "Beast 100 LTD (280g)",
+  "generation": null,
+  "releaseYear": null,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": null,
+    "lengthIn": null,
+    "stringPattern": null,
+    "beamMm": null,
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": null,
+  "sources": [
+    "https://www.tenniswarehouse-europe.com/catpage-PRINCERAC-EN.html"
+  ],
+  "notes": "TWE catalogue title only; no specs seen (100 in the name likely head size, not recorded).",
+  "researched": "2026-11-20",
+  "verified": false
+}

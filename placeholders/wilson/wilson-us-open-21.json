@@ -1,0 +1,28 @@
+{
+  "id": "wilson-us-open-21",
+  "status": "placeholder",
+  "brand": "Wilson",
+  "line": "US Open",
+  "model": "US Open 21\" Junior",
+  "generation": null,
+  "releaseYear": null,
+  "category": "junior",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 95,
+    "lengthIn": 21,
+    "stringPattern": null,
+    "beamMm": null,
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Red/Orange",
+  "sources": [
+    "https://www.tennis-warehouse.com/Wilson_US_Open_21_Junior/descpageRCWILSON-WSB21.html"
+  ],
+  "notes": "TW lists 'Weight' without saying strung or unstrung (juniors are sold pre-strung); unstrung weight left null. No beam or balance on page. Ages 4-5. No string pattern listed.",
+  "researched": "2026-11-20",
+  "verified": false
+}

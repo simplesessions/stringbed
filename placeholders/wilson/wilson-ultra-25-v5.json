@@ -1,0 +1,31 @@
+{
+  "id": "wilson-ultra-25-v5",
+  "status": "placeholder",
+  "brand": "Wilson",
+  "line": "Ultra",
+  "model": "Ultra 25\" Junior",
+  "generation": "v5",
+  "releaseYear": null,
+  "category": "junior",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 102,
+    "lengthIn": 25,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": null,
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Blue",
+  "sources": [
+    "https://www.tennis-warehouse.com/Wilson_Ultra_25_v5_Junior/descpageRCWILSON-WU255R.html"
+  ],
+  "notes": "TW lists 'Weight' without saying strung or unstrung (juniors are sold pre-strung); unstrung weight left null. No beam or balance on page. Listed weight 235 g. Ages 9-10.",
+  "researched": "2026-11-20",
+  "verified": false
+}

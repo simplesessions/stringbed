@@ -1,0 +1,31 @@
+{
+  "id": "prince-ripcord-25-junior",
+  "status": "placeholder",
+  "brand": "Prince",
+  "line": "Ripcord",
+  "model": "Ripcord 25\" Junior",
+  "generation": null,
+  "releaseYear": null,
+  "category": "junior",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 25,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": null,
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Blue",
+  "sources": [
+    "https://www.tennis-warehouse.com/Prince_Ripcord_25_Junior/descpageRCPRINCE-PRIPCJ25.html"
+  ],
+  "notes": "TW 'Weight: 7.9 ounces / 225 grams' unlabeled, left null. No beam or year.",
+  "researched": "2026-11-20",
+  "verified": false
+}

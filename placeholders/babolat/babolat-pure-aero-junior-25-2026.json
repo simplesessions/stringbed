@@ -1,0 +1,36 @@
+{
+  "id": "babolat-pure-aero-junior-25-2026",
+  "status": "placeholder",
+  "brand": "Babolat",
+  "line": "Pure Aero",
+  "model": "Pure Aero Junior 25",
+  "generation": "Gen9",
+  "releaseYear": 2026,
+  "category": "junior",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 98,
+    "lengthIn": 25,
+    "stringPattern": [
+      16,
+      17
+    ],
+    "beamMm": [
+      22,
+      24,
+      22
+    ],
+    "unstrungWeightG": 235,
+    "balanceMm": 315
+  },
+  "colourway": "Metallic Grey/Fluo Yellow",
+  "sources": [
+    "https://www.tennis-warehouse.com/Babolat_Pure_Aero_Junior_25/descpageRCBAB-BPAJR5.html",
+    "https://www.babolat.com/us/pure-aero-junior-25-gen9/140538.html"
+  ],
+  "notes": "Babolat pages label weight/balance 'unstrung' while a separate field reads 'Strung' (sold strung). CONFLICT: TW US lists 16x19; babolat.com lists 16/17 (used).",
+  "researched": "2026-11-20",
+  "verified": false
+}

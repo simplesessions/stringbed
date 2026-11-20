@@ -1,0 +1,35 @@
+{
+  "id": "prince-phantom-107g-2024",
+  "status": "placeholder",
+  "brand": "Prince",
+  "line": "Phantom",
+  "model": "Phantom 107G",
+  "generation": "2024",
+  "releaseYear": 2024,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 107,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      21.5,
+      20,
+      17.5
+    ],
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Green",
+  "sources": [
+    "https://www.tennis-warehouse.com/Prince_Phantom_107G/descpageRCPRINCE-PHN7G.html"
+  ],
+  "notes": "TW average strung specs: 323 g, 31.98 cm / 7 pts HL; unstrung weight/balance not on TW page. Beam as listed by TW (a/b/c); tip/mid/shaft order not confirmed by source. releaseYear taken from the year in the TW product title (no separate year statement in the description). Not on TWE catalogue.",
+  "researched": "2026-11-20",
+  "verified": false
+}

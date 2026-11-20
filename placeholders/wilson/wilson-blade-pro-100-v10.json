@@ -1,0 +1,36 @@
+{
+  "id": "wilson-blade-pro-100-v10",
+  "status": "placeholder",
+  "brand": "Wilson",
+  "line": "Blade",
+  "model": "Blade Pro 100",
+  "generation": "v10",
+  "releaseYear": null,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27.25,
+    "stringPattern": [
+      16,
+      20
+    ],
+    "beamMm": [
+      23,
+      23,
+      23
+    ],
+    "unstrungWeightG": 295,
+    "balanceMm": null
+  },
+  "colourway": "Green",
+  "sources": [
+    "https://www.tennis-warehouse.com/Wilson_Blade_Pro_100_v10/descpageRCWILSON-WB100P.html",
+    "https://tennisexpress.com/blogs/news/wilson-blade-v10-racquet-review"
+  ],
+  "notes": "Unstrung weight from Tennis Express v10 review table (labelled unstrung); unstrung balance not published by either source, left null. Beam from TW (Tennis Express lists slightly different values for the 98s, e.g. 21.6/20.6 mm). TW strung: 309 g, balance 33.02 cm / 5 pts HL. Release year not stated on page (v10 siblings say 2026; reviews from Apr 2026). Tennis Express prose says 8 pts HL, presumably unstrung, no mm value. Extended length 27.25 in.",
+  "researched": "2026-11-20",
+  "verified": false
+}

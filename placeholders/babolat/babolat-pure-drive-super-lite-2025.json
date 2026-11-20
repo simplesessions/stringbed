@@ -1,0 +1,37 @@
+{
+  "id": "babolat-pure-drive-super-lite-2025",
+  "status": "placeholder",
+  "brand": "Babolat",
+  "line": "Pure Drive",
+  "model": "Pure Drive Super Lite",
+  "generation": "Gen11",
+  "releaseYear": 2025,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      23,
+      26,
+      23
+    ],
+    "unstrungWeightG": 255,
+    "balanceMm": 330
+  },
+  "colourway": "Yellow/Black",
+  "sources": [
+    "https://www.tennis-warehouse.com/Babolat_Pure_Drive_Super_Lite_2025/descpageRCBAB-BPDSLR.html",
+    "https://www.tenniswarehouse-europe.com/descpageRCQBA-BPDSLR-EN.html",
+    "https://www.babolat.com/us/tennis/racquets/adults.html"
+  ],
+  "notes": "Babolat name: 'Pure Drive S Lite Gen11'. Not among the six frames in the Jan 2025 tennis.com launch preview; year from TW title only. Unstrung specs from TW Europe.",
+  "researched": "2026-11-20",
+  "verified": false
+}

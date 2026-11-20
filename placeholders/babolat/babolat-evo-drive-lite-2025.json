@@ -1,0 +1,36 @@
+{
+  "id": "babolat-evo-drive-lite-2025",
+  "status": "placeholder",
+  "brand": "Babolat",
+  "line": "Evo Drive",
+  "model": "Evo Drive Lite",
+  "generation": "Gen2",
+  "releaseYear": 2025,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 104,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      17
+    ],
+    "beamMm": [
+      23,
+      26,
+      23
+    ],
+    "unstrungWeightG": 255,
+    "balanceMm": 325
+  },
+  "colourway": "Blue",
+  "sources": [
+    "https://www.tennis-warehouse.com/Babolat_Evo_Drive_Lite/descpageRCBAB-BEDLR.html",
+    "https://www.babolat.com/us/evo-drive-lite-gen2-strung/102547.html"
+  ],
+  "notes": "Unstrung specs from babolat.com; TW US lists colour as Teal. Year from TW US title only.",
+  "researched": "2026-11-20",
+  "verified": false
+}

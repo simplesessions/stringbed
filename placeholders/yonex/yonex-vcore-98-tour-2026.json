@@ -1,0 +1,36 @@
+{
+  "id": "yonex-vcore-98-tour-2026",
+  "status": "placeholder",
+  "brand": "Yonex",
+  "line": "VCORE",
+  "model": "VCORE 98 Tour",
+  "generation": "8th gen",
+  "releaseYear": 2026,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 98,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      23,
+      23.5,
+      22
+    ],
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Red (ruby red)",
+  "sources": [
+    "https://www.tennis-warehouse.com/Yonex_VCORE_98_Tour_8th_Gen/descpageRCYONEX-VC9T8G.html",
+    "https://www.tennis-warehouse.com/catpage-YONEXVCORE.html"
+  ],
+  "notes": "TW: '8th Gen'; VCORE 8th gen is the 2026 update (TW VCORE 100 page: 'Introducing the 8th generation of the VCORE 100! With this 2026 update...'). TW lists only average strung weight/balance (332g, 33.02cm); unstrung weight and balance left null.",
+  "researched": "2026-11-20",
+  "verified": false
+}

@@ -1,0 +1,37 @@
+{
+  "id": "yonex-percept-97l-2023",
+  "status": "placeholder",
+  "brand": "Yonex",
+  "line": "Percept",
+  "model": "Percept 97L",
+  "generation": null,
+  "releaseYear": 2023,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 97,
+    "lengthIn": null,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      21,
+      21,
+      21
+    ],
+    "unstrungWeightG": null,
+    "balanceMm": 325
+  },
+  "colourway": "Midnight Navy (2025 colourway; original 2023 colourway olive green)",
+  "sources": [
+    "https://tennisexpress.com/blogs/news/yonex-percept-tennis-racquets-midnight-navy",
+    "https://www.tennisnuts.com/yonex-percept-97l-tennis-racket-frame-only-2025-1731565.html",
+    "https://www.tennisnerd.net/gear/racquets/yonex-launching-the-percept-midnight-navy/57688"
+  ],
+  "notes": "Percept frame family originally launched 2023 (TennisNerd 28 Jul 2025: Midnight Navy 'builds on the Percept line's 2023 success', 'update from the previous green'); Midnight Navy (Tennis Express blog, 22 Aug 2025) is a 2025 colourway with no spec change described. releaseYear 2023 = original frame; tennisnuts titles the Midnight Navy stock '2025'. Tennis Express gives only 10.2 oz (not converted); a Central Sports snippet says 290g unstrung but page not fetched. 325mm from Tennis Express blog.",
+  "researched": "2026-11-20",
+  "verified": false
+}

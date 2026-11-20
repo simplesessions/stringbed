@@ -1,0 +1,31 @@
+{
+  "id": "babolat-pure-drive-junior-25-light-blue-2025",
+  "status": "placeholder",
+  "brand": "Babolat",
+  "line": "Pure Drive",
+  "model": "Pure Drive Junior 25 Light Blue",
+  "generation": null,
+  "releaseYear": null,
+  "category": "junior",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 98,
+    "lengthIn": 25,
+    "stringPattern": [
+      16,
+      17
+    ],
+    "beamMm": null,
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Light Blue",
+  "sources": [
+    "https://www.tennis-warehouse.com/Babolat_Pure_Drive_25_Junior_Light_Blue/descpageRCBAB-BJPD25.html"
+  ],
+  "notes": "Colourway variant; TW US only (no year in title). TW lists 'Weight: 240 g' without saying strung or unstrung, so it is left null.",
+  "researched": "2026-11-20",
+  "verified": false
+}

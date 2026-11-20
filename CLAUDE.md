@@ -24,4 +24,6 @@ Commands: `npm test`, `npm run typecheck`, `npm run generate` (`-- --check` to v
 
 Layout: `racquets/` specs → `src/core` (model, named parts) → `src/styles` + `src/export`
 (GLB) → `scripts/generate.ts` writes `assets/`; `site/` is the gallery and reads
-`assets/catalog.json`.
+`assets/catalog.json`. `placeholders/` holds research-only records for racquets not yet modelled
+(see `docs/placeholder-roster.md`); no model is built from it, but `generate` copies it into
+the catalog and the gallery lists it as "No model yet".

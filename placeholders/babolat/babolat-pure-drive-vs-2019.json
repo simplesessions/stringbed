@@ -1,0 +1,38 @@
+{
+  "id": "babolat-pure-drive-vs-2019",
+  "status": "placeholder",
+  "brand": "Babolat",
+  "line": "Pure Drive",
+  "model": "Pure Drive VS",
+  "generation": null,
+  "releaseYear": 2019,
+  "category": "adult",
+  "onSaleIn": [
+    2023
+  ],
+  "specs": {
+    "headSizeSqIn": 98,
+    "lengthIn": 27.0,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      21,
+      23,
+      21
+    ],
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Anthracite/Blue",
+  "sources": [
+    "https://web.archive.org/web/20230130101013/https://www.tennis-warehouse.com/Babolat_Pure_Drive_VS/descpageRCBAB-PDVS.html",
+    "https://web.archive.org/web/20230608223519/https://www.tennisexpress.com/babolat-tennis-racquets",
+    "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html",
+    "https://www.babolat.com/us/news-articles-blog-pure-strike-vs-2022/pure-strike-vs-2022.html"
+  ],
+  "notes": "Babolat (24 Mar 2022 article): 'The series began with the Pure Drive VS in 2019'; TW strung weight 11.2oz / 318g; TW strung balance 12.99in / 32.99cm / 4 pts HL; beam as listed by TW '21mm / 23mm / 21mm' (order not labelled); on TW US Babolat racquet page in 2023 captures 2023-01-30 to 2023-03-06 (2 of 8 captures); on Tennis Express Babolat page Jun 2023 as 'Babolat Pure Drive VS Tennis Racquets'",
+  "researched": "2026-11-20",
+  "verified": false
+}

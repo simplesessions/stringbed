@@ -1,0 +1,38 @@
+{
+  "id": "babolat-pure-drive-tour-2018",
+  "status": "placeholder",
+  "brand": "Babolat",
+  "line": "Pure Drive",
+  "model": "Pure Drive Tour",
+  "generation": "2018",
+  "releaseYear": 2018,
+  "category": "adult",
+  "onSaleIn": [
+    2023
+  ],
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27.0,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      23,
+      26,
+      23
+    ],
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Blue",
+  "sources": [
+    "https://web.archive.org/web/20221109041442/https://www.tennis-warehouse.com/Babolat_Pure_Drive_Tour_2018/descpageRCBAB-BPDT.html",
+    "https://web.archive.org/web/20220928190311/https://www.tennisexpress.com/babolat-2018-pure-drive-tour-tennis-racquet-58094",
+    "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html",
+    "https://mijnracket.nl/en/blogs/news/babolat-pure-drive-20172018-nieuwe-pure-drive"
+  ],
+  "notes": "Previous (2018) generation still listed in 2023 (TW Jan 2023, Tennis Express Jun 2023 as '2018 Pure Drive Tour'); mijnracket.nl (6 Aug 2017): 300 g model early Sept 2017, 'remaining models will follow in early 2018' (Tour not named); TW strung weight 11.7oz / 331.69g; TW strung balance 12.79in / 32.49cm / 6 pts HL; beam as listed by TW '23mm / 26mm / 23mm /' (order not labelled); on TW US Babolat racquet page in 2023 captures 2023-01-30 to 2023-01-30 (1 of 8 captures); on Tennis Express Babolat page Jun 2023 as 'Babolat 2018 Pure Drive Tour Tennis Racquet'",
+  "researched": "2026-11-20",
+  "verified": false
+}

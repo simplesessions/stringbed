@@ -1,0 +1,36 @@
+{
+  "id": "babolat-boost-drive-usa",
+  "status": "placeholder",
+  "brand": "Babolat",
+  "line": "Boost",
+  "model": "Boost USA",
+  "generation": null,
+  "releaseYear": null,
+  "category": "adult",
+  "onSaleIn": [
+    2023
+  ],
+  "specs": {
+    "headSizeSqIn": 105,
+    "lengthIn": 27.0,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      23,
+      26,
+      23
+    ],
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "USA Flag Cosmetic",
+  "sources": [
+    "https://web.archive.org/web/20230603173019/https://www.tennis-warehouse.com/Babolat_Boost_USA/descpageRCBAB-USBOOR.html",
+    "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html"
+  ],
+  "notes": "USA-flag special-edition cosmetic of Boost Drive; release year not found; TW strung weight 9.8oz / 278g; TW strung balance 13.85in / 35.18cm / 3 pts HH; beam as listed by TW '23mm / 26mm / 23mm' (order not labelled); on TW US Babolat racquet page in 2023 captures 2023-01-30 to 2023-06-06 (5 of 8 captures)",
+  "researched": "2026-11-20",
+  "verified": false
+}

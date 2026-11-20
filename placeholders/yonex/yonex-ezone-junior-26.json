@@ -1,0 +1,31 @@
+{
+  "id": "yonex-ezone-junior-26",
+  "status": "placeholder",
+  "brand": "Yonex",
+  "line": "EZONE",
+  "model": "EZONE 26\" Junior",
+  "generation": null,
+  "releaseYear": null,
+  "category": "junior",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 26,
+    "stringPattern": [
+      16,
+      18
+    ],
+    "beamMm": null,
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Blue",
+  "sources": [
+    "https://www.tennis-warehouse.com/Yonex_EZONE_26_Junior/descpageRCYONEX-EZOJ26.html"
+  ],
+  "notes": "Graphite. TW weight 250g (Junior racquets are sold strung; weight not labelled unstrung so left null.) Year not stated.",
+  "researched": "2026-11-20",
+  "verified": false
+}

@@ -1,0 +1,35 @@
+{
+  "id": "yonex-ezone-115-2025",
+  "status": "placeholder",
+  "brand": "Yonex",
+  "line": "EZONE",
+  "model": "EZONE 115",
+  "generation": "2025",
+  "releaseYear": 2025,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 115,
+    "lengthIn": 27.25,
+    "stringPattern": [
+      16,
+      18
+    ],
+    "beamMm": [
+      27,
+      29.5,
+      25
+    ],
+    "unstrungWeightG": null,
+    "balanceMm": null
+  },
+  "colourway": "Blue",
+  "sources": [
+    "https://www.tennis-warehouse.com/Yonex_EZONE_115_2025/descpageRCYONEX-EZ115B.html"
+  ],
+  "notes": "TW labels '(2025)'. Nanocell NEO layup, $230 tier. TW lists only average strung weight/balance (264g, 34.29cm); unstrung weight and balance left null.",
+  "researched": "2026-11-20",
+  "verified": false
+}
