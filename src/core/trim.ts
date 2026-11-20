@@ -9,6 +9,7 @@ import {
   U_JUNCTION,
   type FrameContext,
 } from './frame';
+import { hexToLinear } from './color';
 import type { Layout } from './layout';
 import type { Vec2 } from './outline';
 import { RawMesh } from './raw';
@@ -28,19 +29,24 @@ const GROMMET_FACE = 0.0001;
 /** Aero fin ridge peak: barely past the bumper in-plane, proud on the faces. */
 const FIN_OUT = 0.0004;
 const FIN_FACE = 0.0008;
-const PORT_OUT = 0.0004;
 
 /** Bumper spans +-60 degrees about the head centre (10 to 2 o'clock). */
 const BUMPER_HALF_ANGLE = Math.PI / 3;
 const BUMPER_GAPS_PER_SIDE = 14;
 const GROMMET_GAPS_PER_SIDE = 14;
-/** Aero fins: angles from the tip on each side, and the half-width of a fin in outline samples. */
+/** Aero fins: angles from the tip on each side, and the half-width of a fin. */
 const FIN_ANGLES = [(15 * Math.PI) / 180, (35 * Math.PI) / 180, (55 * Math.PI) / 180];
-const FIN_HALF_SAMPLES = 1.2;
-/** O-port: an oval dome at 3 and 9 o'clock. Half-length along the hoop, half-height as a fraction of beam thickness. */
+const FIN_HALF_WIDTH = 0.004; // metres along the rim
+/** O-port: a flush dark oval inset at 3 and 9 o'clock. Half-length along the hoop, half-height as a fraction of beam thickness. */
 const PORT_HALF_LENGTH = 0.011;
 const PORT_HALF_HEIGHT_FRACTION = 0.4;
 const PORT_SEGMENTS = 12;
+/** Rings between the oval's centre and its edge; enough that chords stay within ~0.02 mm of the curved rim. */
+const PORT_RINGS = 3;
+/** The grommet strip sits this far below GROMMET_OUT so the o-port insets (at GROMMET_OUT) show above it. */
+const PORT_LIFT = 0.00002;
+/** Linear-RGB scale of a port against the grommet colour. */
+const PORT_DARKEN = 0.15;
 
 const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
 
@@ -131,7 +137,8 @@ function trimContext(spec: RacquetSpec, layout: Layout): TrimContext {
 
 /** A fin ridge across the rim at fractional index f: base, peak, base. */
 function fin(m: RawMesh, spec: RacquetSpec, tc: TrimContext, f: number, side: 1 | -1): void {
-  const fs = [f - FIN_HALF_SAMPLES, f, f + FIN_HALF_SAMPLES];
+  const half = FIN_HALF_WIDTH / (tc.ctx.arc[1] - tc.ctx.arc[0]); // outline samples are evenly spaced
+  const fs = [f - half, f, f + half];
   const pts = fs.map((q) => rimAt(tc.ctx, Math.max(0, q), side, tc.sJ));
   // Keep the sweep clockwise: the left side runs up toward the tip.
   const infl: [number, number][] = [[BUMPER_OUT, BUMPER_FACE], [FIN_OUT, FIN_FACE], [BUMPER_OUT, BUMPER_FACE]];
@@ -167,50 +174,66 @@ function xAtZ(points: Vec2[], z: number): number {
   return points.reduce((best, p) => Math.max(best, p.x), -Infinity);
 }
 
-/** O-port: a shallow oval dome on the outer wall at fractional index f (right side, mirrored later). */
-function oPort(m: RawMesh, spec: RacquetSpec, tc: TrimContext, f: number): void {
+/** Point on the grommet shell (right side) at fractional index f and height z. */
+function shellPoint(m: RawMesh, spec: RacquetSpec, tc: TrimContext, f: number, z: number): number {
   const p = rimAt(tc.ctx, f, 1, tc.sJ);
   const { points, centre } = outerSection(spec, p.u, GROMMET_OUT, GROMMET_FACE);
-  const t = beamThicknessAt(spec, p.u);
+  const x = centre + xAtZ(points, z);
+  return m.vertex(p.x + p.nx * x, p.y + p.ny * x, z);
+}
+
+/** O-port: a flush oval on the grommet shell at fractional index f (right side; mirrored by the caller). */
+function oPort(m: RawMesh, spec: RacquetSpec, tc: TrimContext, f: number): void {
+  const t = beamThicknessAt(spec, rimAt(tc.ctx, f, 1, tc.sJ).u);
   const hz = (PORT_HALF_HEIGHT_FRACTION * t) / 2;
-  // Tangent along the hoop (clockwise), so the oval's long axis follows the rim.
-  const tx = p.ny;
-  const ty = -p.nx;
-  const at = (n: number, along: number, z: number) =>
-    m.vertex(p.x + p.nx * (centre + n) + tx * along, p.y + p.ny * (centre + n) + ty * along, z);
-  const c = at(Math.max(...points.map((q) => q.x)) + (PORT_OUT - GROMMET_OUT), 0, 0);
-  const ring = Array.from({ length: PORT_SEGMENTS }, (_, k) => {
-    const phi = (2 * Math.PI * k) / PORT_SEGMENTS;
-    const z = hz * Math.sin(phi);
-    return at(xAtZ(points, z) + 0.0001, PORT_HALF_LENGTH * Math.cos(phi), z);
-  });
-  for (let k = 0; k < PORT_SEGMENTS; k++) m.tri(c, ring[(k + 1) % PORT_SEGMENTS], ring[k]);
+  const step = tc.ctx.arc[Math.floor(f) + 1] - tc.ctx.arc[Math.floor(f)];
+  const c = shellPoint(m, spec, tc, f, 0);
+  let prev: number[] = [];
+  for (let r = 1; r <= PORT_RINGS; r++) {
+    const rho = r / PORT_RINGS;
+    const ring = Array.from({ length: PORT_SEGMENTS }, (_, k) => {
+      const phi = (2 * Math.PI * k) / PORT_SEGMENTS;
+      return shellPoint(m, spec, tc, f + (rho * PORT_HALF_LENGTH * Math.cos(phi)) / step, rho * hz * Math.sin(phi));
+    });
+    for (let k = 0; k < PORT_SEGMENTS; k++) {
+      const k1 = (k + 1) % PORT_SEGMENTS;
+      if (r === 1) m.tri(c, ring[k1], ring[k]);
+      else {
+        m.tri(prev[k], ring[k1], ring[k]);
+        m.tri(prev[k], prev[k1], ring[k1]);
+      }
+    }
+    prev = ring;
+  }
 }
 
 /**
  * Grommet strip: the outer rim from the bumper's end down to the throat junction, both sides.
- * With `o-ports`, two oval domes at 3 and 9 o'clock, kept as geometry group 1 (strip is group 0) so
- * a style can darken them.
+ * With `o-ports` the geometry also carries a `color` attribute (linear RGB, itemSize 3): the
+ * grommet colour on the strip and a near-black on the two flush oval insets at 3 and 9 o'clock.
+ * Without o-ports there is no `color` attribute. The build step must set `vertexColors: true` on
+ * the grommets material exactly when the attribute exists.
  */
 export function buildGrommets(spec: RacquetSpec, layout: Layout): THREE.BufferGeometry {
   const tc = trimContext(spec, layout);
   const m = new RawMesh();
   const fEnd = Math.floor(tc.fJ);
-  const flat: [number, number][] = Array.from({ length: GROMMET_GAPS_PER_SIDE + 1 }, () => [GROMMET_OUT, GROMMET_FACE]);
+  const flat: [number, number][] = Array.from({ length: GROMMET_GAPS_PER_SIDE + 1 }, () => [GROMMET_OUT - PORT_LIFT, GROMMET_FACE - PORT_LIFT]);
   strip(m, spec, ringsBetween(tc.ctx, tc.fB, fEnd, GROMMET_GAPS_PER_SIDE, 1, tc.sJ), flat);
   strip(m, spec, ringsBetween(tc.ctx, tc.fB, fEnd, GROMMET_GAPS_PER_SIDE, -1, tc.sJ).reverse(), flat);
-  const stripIndices = m.indices.length;
-  if (spec.geometry.features.includes('o-ports')) {
-    const ports = new RawMesh();
-    let widest = 0;
-    for (let i = 1; i < tc.ctx.inner.length; i++) if (tc.ctx.inner[i].x > tc.ctx.inner[widest].x) widest = i;
-    oPort(ports, spec, tc, widest);
-    ports.appendMirrorX();
-    m.append(ports);
-  }
+  const stripVerts = m.vertexCount;
+  if (!spec.geometry.features.includes('o-ports')) return m.build();
+  const ports = new RawMesh();
+  let widest = 0;
+  for (let i = 1; i < tc.ctx.inner.length; i++) if (tc.ctx.inner[i].x > tc.ctx.inner[widest].x) widest = i;
+  oPort(ports, spec, tc, widest);
+  ports.appendMirrorX();
+  m.append(ports);
   const g = m.build();
-  g.addGroup(0, stripIndices, 0);
-  if (m.indices.length > stripIndices) g.addGroup(stripIndices, m.indices.length - stripIndices, 1);
+  const base = hexToLinear(spec.parts.grommets.color);
+  const colors: number[] = [];
+  for (let i = 0; i < m.vertexCount; i++) colors.push(...base.map((v) => (i < stripVerts ? v : v * PORT_DARKEN)));
+  g.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
   return g;
 }
 
@@ -220,28 +243,47 @@ const DAMPENER_DEPTH = 0.007;
 const DAMPENER_CORNER = 0.0025;
 const DAMPENER_SEGMENTS = 3;
 
-/** Dampener: a small rounded block between the two centre mains, just above the bridge. */
+/**
+ * Dampener: a small rounded block between the two centre mains, just above the bridge. For odd
+ * main counts "the centre two" are the middle string and the one to its right.
+ */
 export function buildDampener(spec: RacquetSpec, layout: Layout): THREE.BufferGeometry | null {
   if (!spec.parts.dampener) return null;
   const bed = stringBed(spec, layout);
   const xs = mainPositions(spec.specs.stringPattern[0], bed.width * 0.9);
   const mid = xs.length >> 1;
-  const xc = xs.length % 2 === 0 ? (xs[mid - 1] + xs[mid]) / 2 : (xs[mid] + xs[mid + 1]) / 2;
-  const gap = xs.length % 2 === 0 ? xs[mid] - xs[mid - 1] : xs[mid + 1] - xs[mid];
-  const w = Math.min(DAMPENER_WIDTH, gap * 0.7);
+  const [x0, x1] = xs.length % 2 === 0 ? [xs[mid - 1], xs[mid]] : [xs[mid], xs[mid + 1]];
+  const xc = (x0 + x1) / 2;
+  const w = Math.min(DAMPENER_WIDTH, (x1 - x0) * 0.7);
   const h = DAMPENER_HEIGHT;
   const r = Math.min(DAMPENER_CORNER, w / 3);
-  const s = new THREE.Shape();
-  s.moveTo(-w / 2 + r, -h / 2);
-  s.lineTo(w / 2 - r, -h / 2);
-  s.quadraticCurveTo(w / 2, -h / 2, w / 2, -h / 2 + r);
-  s.lineTo(w / 2, h / 2 - r);
-  s.quadraticCurveTo(w / 2, h / 2, w / 2 - r, h / 2);
-  s.lineTo(-w / 2 + r, h / 2);
-  s.quadraticCurveTo(-w / 2, h / 2, -w / 2, h / 2 - r);
-  s.lineTo(-w / 2, -h / 2 + r);
-  s.quadraticCurveTo(-w / 2, -h / 2, -w / 2 + r, -h / 2);
-  const g = new THREE.ExtrudeGeometry(s, { depth: DAMPENER_DEPTH, bevelEnabled: false, curveSegments: DAMPENER_SEGMENTS });
-  g.translate(xc, bed.lowerY(xc) + 0.004 + h / 2, -DAMPENER_DEPTH / 2);
-  return g;
+  const yc = bed.lowerY(xc) + 0.004 + h / 2;
+  // Rounded rectangle outline, counter-clockwise seen from +Z.
+  const corners: [number, number, number][] = [[w / 2 - r, -h / 2 + r, -Math.PI / 2], [w / 2 - r, h / 2 - r, 0], [-w / 2 + r, h / 2 - r, Math.PI / 2], [-w / 2 + r, -h / 2 + r, Math.PI]];
+  const outline: [number, number][] = [];
+  for (const [cx, cy, a0] of corners) {
+    for (let k = 0; k <= DAMPENER_SEGMENTS; k++) {
+      const a = a0 + ((Math.PI / 2) * k) / DAMPENER_SEGMENTS;
+      outline.push([xc + cx + r * Math.cos(a), yc + cy + r * Math.sin(a)]);
+    }
+  }
+  const m = new RawMesh();
+  const n = outline.length;
+  const zs = [-DAMPENER_DEPTH / 2, DAMPENER_DEPTH / 2];
+  for (let i = 0; i < n; i++) {
+    const [ax, ay] = outline[i];
+    const [bx, by] = outline[(i + 1) % n];
+    const q = [m.vertex(ax, ay, zs[0]), m.vertex(bx, by, zs[0]), m.vertex(bx, by, zs[1]), m.vertex(ax, ay, zs[1])];
+    m.tri(q[0], q[1], q[2]);
+    m.tri(q[0], q[2], q[3]);
+  }
+  for (const [z, front] of [[zs[1], true], [zs[0], false]] as const) {
+    const c = m.vertex(xc, yc, z);
+    const ring = outline.map(([x, y]) => m.vertex(x, y, z));
+    for (let i = 0; i < n; i++) {
+      if (front) m.tri(c, ring[i], ring[(i + 1) % n]);
+      else m.tri(c, ring[(i + 1) % n], ring[i]);
+    }
+  }
+  return m.build();
 }
