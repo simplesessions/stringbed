@@ -1,7 +1,7 @@
 # Racquet roster (v1)
 
-Twenty-seven racquets: fifteen original (three each for Yonex, Babolat, Wilson and Prince, two for
-Solinco, one Head) and twelve promoted from the placeholder roster on 2026-11-20 (see "Added
+Forty-seven racquets: fifteen original (three each for Yonex, Babolat, Wilson and Prince, two for
+Solinco, one Head) and thirty-two promoted from the placeholder roster on 2026-11-20 (see "Added
 2026-11-20" at the end). This is the
 research input for the spec files in `racquets/`.
 
@@ -95,7 +95,7 @@ with white hoop-side panels and a white grip. No logos or "SPEED" wordmark.
 |---|---|---|---|---|---|---|---|
 | Speed MP (2026) | 100 | 16×19 | 23 / 23 / 23 | ellipse | Charcoal, almost black, with white panels on the upper hoop sides and a white lower shaft that runs all the way to the throat fork, its edge cutting diagonally across the bottom of each arm; **white grip** and white collar | Constant 23 mm rounded beam; rounded 100 sq in head; white side panels and the white fork are the fastest cues | Specs verified 2026-11-20 (TW page and review); colourway checked against product photos 2026-11-20 (TW HSPMP6 and Midwest 232026, six views) |
 
-With the Speed MP added, the library had 15 racquets; it now has 27 (see below).
+With the Speed MP added, the library had 15 racquets; it now has 47 (see below).
 
 ## Prince
 
@@ -146,3 +146,23 @@ only). Placeholder records for these were removed.
 | Head Boom MP (2026) | 100 | 16×19 | Light blue with navy shaft base and upper-hoop panels, navy grip | The placeholder says "Coral/Black (also Purple)"; the photo is blue, so the placeholder colour needs a second look |
 | Prince Ripcord 100 280g (2025) | 100 | 16×19 | Light blue with royal-blue throat, upper hoop and grip | |
 | Babolat Pure Aero 98 (2026) | 98 | 16×20 | Slate with two neon-yellow bands, same placement as the Pure Aero 100 | Bands copied from the Aero 100, not re-measured |
+
+### Second batch (20 more, same day)
+
+Same method, with two changes after review: paint is only placed where a photo shows it, and
+parts that are not visible (bridge underside, inner edges, far side) follow the frame's visible
+colouring instead of an accent. Mistakes found and fixed in the first batch: the Wilson Defyer
+100 had a white sliver under the bridge (the photo's white band is on the throat arms), and the
+Pure Aero 98 had a bridge line copied from the Aero 100 that no photo of the 98 shows.
+
+Wilson Blade Pro 98 16×19 v10, Pro Staff 97 Classic, Ultra 99 Pro v5, Defyer 98 Pro; Head Speed
+Pro 2026, Speed Tour 2026, Extreme Pro 2026, Boom Pro 2026, Prestige Pro, Prestige MP L,
+Gravity Tour 2025, Radical Pro 2025; Babolat Pure Strike 100, Pure Strike 97, Pure Drive 98;
+Prince Tour 98 2026, ATS Textreme Tour 98 Carbon, Ripstick 98, Warrior 100 285g, Phantom 100X 305g.
+
+Caveats: the Speed Pro / Speed Tour paint copies the Speed MP's panel placement; the Strike 100
+and 97 and the Drive 98 reuse the Strike 98 and Drive 100 band positions (same cosmetic family;
+the photos agree but positions were not re-measured); the Prince Tour 98 orange lettering is a
+block, not letters; the ATS Tour 98's grey graphics are approximated as grey zones. Candidates
+skipped because the Tennis Warehouse photo looked like an older cosmetic than the record says
+(VCORE 98, EZONE 98, EZONE Alpha, Percept 100 olive): they stay placeholders.

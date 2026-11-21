@@ -4,7 +4,7 @@ import { loadAllSpecs } from '../src/core/spec';
 const specs = loadAllSpecs();
 
 test('every spec parses and ids are unique', () => {
-  expect(specs.length).toBe(27);
+  expect(specs.length).toBe(47);
   expect(new Set(specs.map((s) => s.id)).size).toBe(specs.length);
 });
 test('six brands, at least one racquet each', () => {

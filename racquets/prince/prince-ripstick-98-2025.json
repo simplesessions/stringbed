@@ -1,0 +1,81 @@
+{
+  "id": "prince-ripstick-98-2025",
+  "brand": "Prince",
+  "line": "Ripstick",
+  "model": "Ripstick 98",
+  "generation": "2025",
+  "year": 2025,
+  "specs": {
+    "headSizeSqIn": 98,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      18
+    ],
+    "beamMm": [
+      27,
+      25.5,
+      22
+    ]
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.33
+    },
+    "beam": {
+      "profile": "ellipse"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "flat"
+    },
+    "features": [
+      "o-ports"
+    ]
+  },
+  "paint": {
+    "base": "#dd3a40",
+    "finish": "gloss",
+    "zones": [
+      {
+        "from": 0.12,
+        "to": 0.35,
+        "color": "#c92f35"
+      },
+      {
+        "from": 0.55,
+        "to": 0.8,
+        "color": "#e24a4c"
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#e04a4f"
+    },
+    "collar": {
+      "color": "#c92f35"
+    },
+    "buttCap": {
+      "color": "#c8343a"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#c2262e",
+      "channel": 0.45
+    },
+    "bumper": {
+      "color": "#c2262e"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://www.tennis-warehouse.com/Prince_Ripstick_98/descpageRCTWABG-2RIP98.html"
+  ],
+  "verified": true,
+  "colourway": "Red"
+}

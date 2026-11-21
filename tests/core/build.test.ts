@@ -81,9 +81,11 @@ function visiblyDifferent(a: RacquetSpec, b: RacquetSpec): boolean {
 }
 
 test('no two racquets with visibly different geometry share a silhouette', () => {
+  const sigs = new Map<string, string>(); // building a frame is slow; do it once per spec
+  const sig = (s: RacquetSpec) => { if (!sigs.has(s.id)) sigs.set(s.id, signature(s)); return sigs.get(s.id)!; };
   for (let i = 0; i < specs.length; i++) for (let j = i + 1; j < specs.length; j++) {
     if (!visiblyDifferent(specs[i], specs[j])) continue;
-    expect(signature(specs[i]), `${specs[i].id} vs ${specs[j].id}`).not.toBe(signature(specs[j]));
+    expect(sig(specs[i]), `${specs[i].id} vs ${specs[j].id}`).not.toBe(sig(specs[j]));
   }
 });
 

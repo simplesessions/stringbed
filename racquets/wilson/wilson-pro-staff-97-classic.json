@@ -1,0 +1,89 @@
+{
+  "id": "wilson-pro-staff-97-classic",
+  "brand": "Wilson",
+  "line": "Pro Staff",
+  "model": "Pro Staff 97 Classic",
+  "generation": "Classic",
+  "year": 2025,
+  "specs": {
+    "headSizeSqIn": 97,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      21.5,
+      21.5,
+      21.5
+    ]
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.3
+    },
+    "beam": {
+      "profile": "box"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "curved"
+    },
+    "features": []
+  },
+  "paint": {
+    "base": "#222427",
+    "finish": "gloss",
+    "zones": [
+      {
+        "from": 0.015,
+        "to": 0.025,
+        "color": "#c8302f"
+      },
+      {
+        "from": 0.025,
+        "to": 0.035,
+        "color": "#e8b923"
+      },
+      {
+        "from": 0.585,
+        "to": 0.595,
+        "color": "#e8b923"
+      },
+      {
+        "from": 0.595,
+        "to": 0.61,
+        "color": "#c8302f"
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#1b1b1d"
+    },
+    "collar": {
+      "color": "#222427"
+    },
+    "buttCap": {
+      "color": "#1b1b1d"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#141416",
+      "channel": 0.45
+    },
+    "bumper": {
+      "color": "#141416"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://www.tennis-warehouse.com/Wilson_Pro_Staff_97_Classic_Racquet/descpageRCWILSON-WPS97C.html"
+  ],
+  "verified": true,
+  "colourway": "Black"
+}

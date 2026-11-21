@@ -1,0 +1,83 @@
+{
+  "id": "head-boom-pro-2026",
+  "brand": "Head",
+  "line": "Boom",
+  "model": "Boom Pro",
+  "generation": "2026",
+  "year": 2026,
+  "specs": {
+    "headSizeSqIn": 98,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      22,
+      22,
+      21.5
+    ]
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.31
+    },
+    "beam": {
+      "profile": "ellipse"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "curved"
+    },
+    "features": []
+  },
+  "paint": {
+    "base": "#3cb6e8",
+    "finish": "satin",
+    "zones": [
+      {
+        "from": 0,
+        "to": 0.12,
+        "color": "#1b2440"
+      },
+      {
+        "from": 0.6,
+        "to": 0.9,
+        "color": "#1b2440",
+        "faces": [
+          "inner",
+          "outer"
+        ]
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#232a44"
+    },
+    "collar": {
+      "color": "#1b2440"
+    },
+    "buttCap": {
+      "color": "#232a44"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#38b8e6",
+      "channel": 0.45
+    },
+    "bumper": {
+      "color": "#38b8e6"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://www.tennis-warehouse.com/Head_Boom_Pro_2026/descpageRCHEAD-HBOOP6.html"
+  ],
+  "verified": true,
+  "colourway": "Light blue/Navy"
+}
