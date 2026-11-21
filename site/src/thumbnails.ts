@@ -5,6 +5,8 @@
 // canvases (no GPU readback); otherwise they are copied with a 2D drawImage.
 import { OrthographicCamera, type Object3D, type WebGLRenderer, type Scene } from 'three';
 import { bounds, createRenderer, createStudio, loadModel, prefersReducedMotion } from './studio';
+import { LookPainter, type LookScale } from './look-passes';
+import type { Look } from './look';
 
 export type ThumbState = 'idle' | 'loading' | 'ready' | 'failed';
 
@@ -27,6 +29,8 @@ interface Entry {
 const REST_YAW = -0.38;
 const TURN_SPEED = 1.1; // radians per second while hovered
 const MAX_DPR = 2;
+/** Bay-sized cells and lines, in CSS px. */
+const LOOK_SCALE: LookScale = { cell: 4, outline: 1 };
 
 export class Thumbnails {
   private readonly scene: Scene;
@@ -34,6 +38,7 @@ export class Thumbnails {
   private readonly entries = new Map<Element, Entry>();
   private readonly seen: IntersectionObserver;
   private readonly resized: ResizeObserver;
+  private readonly painter: LookPainter;
   private frame = 0;
   private last = 0;
 
@@ -49,6 +54,7 @@ export class Thumbnails {
   ) {
     renderer.setPixelRatio(1); // we size the drawing buffer in device pixels ourselves
     this.scene = createStudio(renderer);
+    this.painter = new LookPainter(renderer);
     this.camera.position.set(0, 0, 3);
     this.seen = new IntersectionObserver((records) => {
       for (const r of records) {
@@ -89,6 +95,12 @@ export class Thumbnails {
     hoverTarget.addEventListener('pointerleave', stop);
     hoverTarget.addEventListener('focus', start);
     hoverTarget.addEventListener('blur', stop);
+  }
+
+  /** Redraw every loaded bay in `look`. Models stay loaded. */
+  setLook(look: Look): void {
+    this.painter.setLook(look);
+    for (const e of this.entries.values()) if (e.state === 'ready') this.mark(e);
   }
 
   /** Load again after a failure. */
@@ -183,7 +195,7 @@ export class Thumbnails {
     cam.updateProjectionMatrix();
 
     this.scene.add(model);
-    this.renderer.render(this.scene, cam);
+    this.painter.render(this.scene, cam, dpr, LOOK_SCALE);
     this.scene.remove(model);
     const t = e.target;
     if (t.kind === 'bitmap') {

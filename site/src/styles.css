@@ -113,6 +113,15 @@ code { font-family: var(--mono); }
 /* Size: a quieter second filter beside the brand signs, joined into one segmented pill. */
 .sizes { gap: 0; margin-inline: 0; padding: 2px; border: 1.5px solid var(--line); border-radius: 999px; }
 .sign-size { min-height: 30px; padding: 4px 12px 3px; font-size: 0.875rem; }
+/* Look: how the previews are drawn. Same segmented pill, with a quiet label in front. */
+.looks { display: flex; align-items: center; padding: 2px; border: 1.5px solid var(--line); border-radius: 999px; }
+.looks-label { padding: 0 6px 0 10px; color: var(--ink-2); font-size: 0.8125rem; font-weight: 620; font-stretch: 84%; }
+/* Look and Search share the right end of the strip and wrap together. */
+.strip-end { display: flex; align-items: center; gap: 12px; margin-inline-start: auto; }
+.looks .sign-size { padding-inline: 10px; }
+.stage-controls .looks { display: none; }
+/* Keep the header on one row at common desktop widths: the pill's words carry the meaning. */
+@media (max-width: 1559px) { .looks-label { display: none; } }
 
 /* ---------- main ---------- */
 
@@ -620,6 +629,12 @@ body[data-view='detail'] .signs { display: none; }
   .signs:not(.sizes) .sign { flex: none; }
   .sizes { display: grid; grid-template-columns: repeat(3, 1fr); width: 100%; }
   .sign-size { justify-content: center; min-height: 34px; }
+  /* No room for a third header row: on phones the look lives in the detail stage. */
+  .strip-end { display: contents; }
+  .strip .looks { display: none; }
+  .stage:not(.stage-empty) { --controls-h: 104px; }
+  .stage-controls .looks { display: flex; margin-inline-start: auto; }
+  .stage-controls .stage-hint { width: 100%; }
 
   /* No model: the outline is a stand-in, not the content, so it gets a short stage. */
   .stage-empty { height: 34svh; min-height: 240px; }

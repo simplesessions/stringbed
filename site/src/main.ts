@@ -28,6 +28,7 @@ import {
   type Style,
 } from './catalog-view';
 import { el, icon, silhouette } from './dom';
+import { LOOKS, LOOK_LABEL, storedLook, storeLook, type Look } from './look';
 import type { Thumbnails, ThumbState, Viewer } from './gl';
 
 const BASE = import.meta.env.BASE_URL;
@@ -63,6 +64,7 @@ interface App {
   stockOrder: Placeholder[];
   brand: string | null;
   age: Age;
+  look: Look;
   gl: GL | null;
   thumbs: Thumbnails | null;
   viewer: Viewer | null | undefined; // undefined: not tried yet
@@ -103,6 +105,7 @@ async function boot() {
     stockOrder: stock.flatMap((g) => g.years.flatMap((y) => y.items)),
     brand: null,
     age: storedAge(),
+    look: storedLook(),
     gl: null,
     thumbs: null,
     viewer: undefined,
@@ -113,6 +116,7 @@ async function boot() {
   buildWall(a);
   a.gl = await loadGL();
   a.thumbs = a.gl?.Thumbnails.create() ?? null;
+  a.thumbs?.setLook(a.look);
   for (const attach of pendingBays) attach(a.thumbs);
   pendingBays = [];
   ready = true;
@@ -189,8 +193,45 @@ function buildHeader(a: App) {
     return b;
   }));
   if (!sizes.isConnected) signs.after(sizes);
+  if (!headerLook) {
+    headerLook = lookControl(a);
+    searchOpen.before(headerLook);
+  }
   signs.hidden = false;
   searchOpen.hidden = false;
+}
+
+// Look: how the 3D previews are drawn. Viewer-only, unrelated to the catalog's asset styles.
+// The header carries it on wider screens; on phones it sits in the detail stage's controls.
+let headerLook: HTMLElement | null = null;
+const lookControls = new Set<HTMLElement>();
+
+function lookControl(a: App): HTMLElement {
+  const group = el('div', { class: 'looks', role: 'group', 'aria-label': 'Look of the 3D previews' },
+    el('span', { class: 'looks-label', 'aria-hidden': 'true' }, 'Look'));
+  for (const look of LOOKS) {
+    const b = el('button', { class: 'sign sign-size', type: 'button', 'data-look': look, 'aria-pressed': String(look === a.look) }, LOOK_LABEL[look]);
+    b.addEventListener('click', () => setLook(a, look));
+    group.append(b);
+  }
+  lookControls.add(group);
+  return group;
+}
+
+function setLook(a: App, look: Look) {
+  if (a.look === look) return;
+  a.look = look;
+  storeLook(look);
+  for (const group of lookControls) {
+    if (!group.isConnected && group !== headerLook) {
+      lookControls.delete(group);
+      continue;
+    }
+    for (const b of group.querySelectorAll<HTMLElement>('[data-look]')) b.setAttribute('aria-pressed', String(b.dataset.look === look));
+  }
+  a.thumbs?.setLook(look);
+  if (a.viewer) a.viewer.setLook(look);
+  announce.textContent = `${LOOK_LABEL[look]} look.`;
 }
 
 function announceShown(a: App) {
@@ -465,7 +506,10 @@ function stage(a: App, r: Racquet): HTMLElement {
   const hintId = `hint-${r.id}`;
   const host = el('div', { class: 'stage', 'data-state': 'loading' }, silhouette(r.specs.headSizeSqIn));
 
-  if (a.viewer === undefined && a.thumbs && a.gl) a.viewer = a.gl.Viewer.create();
+  if (a.viewer === undefined && a.thumbs && a.gl) {
+    a.viewer = a.gl.Viewer.create();
+    a.viewer?.setLook(a.look);
+  }
   const viewer = a.viewer;
   if (!viewer || !asset) {
     // Coming from another detail view: stop drawing the previous racquet.
@@ -490,6 +534,7 @@ function stage(a: App, r: Racquet): HTMLElement {
   const fault = el('div', { class: 'stage-fault', hidden: true }, el('p', {}, 'The model did not load.'), retry);
   const controls = el('div', { class: 'stage-controls' },
     reset,
+    lookControl(a),
     el('p', { class: 'stage-hint', id: hintId },
       el('span', { class: 'hint-fine' }, 'Drag to turn. Scroll to zoom. Arrow keys and + / − work too.'),
       el('span', { class: 'hint-coarse' }, 'Swipe sideways to turn. Pinch to zoom.'),
