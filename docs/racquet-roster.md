@@ -1,7 +1,8 @@
 # Racquet roster (v1)
 
-Fifteen racquets: three each for Yonex, Babolat, Wilson and Prince, two for Solinco and one
-Head (the Speed MP 2026, promoted from the placeholder roster on 2026-11-20). This is the
+Twenty-seven racquets: fifteen original (three each for Yonex, Babolat, Wilson and Prince, two for
+Solinco, one Head) and twelve promoted from the placeholder roster on 2026-11-20 (see "Added
+2026-11-20" at the end). This is the
 research input for the spec files in `racquets/`.
 
 **Read the trust column.** Specs (head, pattern, beam, weight, generation) were checked against
