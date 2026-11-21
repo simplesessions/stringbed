@@ -394,7 +394,9 @@ function aisle(a: App, x: Aisle, k: number): HTMLLIElement {
   });
   const centre = x.fan[Math.floor(x.fan.length / 2)];
   link.append(
-    el('span', { class: 'aisle-sign', style: `view-transition-name: brand-${slug}` }, x.brand),
+    // The morph is named on the word itself, not the full-width sign: the boxes on both ends
+    // must hug the lettering, or the snapshot scales by box width and overshoots the title.
+    el('span', { class: 'aisle-sign' }, el('span', { class: 'aisle-name', style: `view-transition-name: brand-${slug}; view-transition-class: brand` }, x.brand)),
     fan,
     el('span', { class: 'aisle-rail', style: `--swatch: ${centre?.swatch ?? 'var(--rail)'}` }),
     el('span', { class: 'aisle-tag' },
@@ -412,7 +414,7 @@ function brandFloor(a: App, brand: string): HTMLElement[] {
   const x = aislesOf(a.catalog, a.age).find((y) => y.brand === brand);
   const head = el('header', { class: 'floor-head' },
     el('a', { class: 'back', href: routeFor(null) }, icon('back'), 'All brands'),
-    el('h1', { class: 'floor-sign', style: `view-transition-name: brand-${brandSlug(brand)}` }, brand),
+    el('h1', { class: 'floor-sign' }, el('span', { class: 'floor-name', style: `view-transition-name: brand-${brandSlug(brand)}; view-transition-class: brand` }, brand)),
     x
       ? el('p', { class: 'floor-tally' }, `${x.lines} ${x.lines === 1 ? 'line' : 'lines'} · ${x.racquets} racquets${x.colourways ? ` · ${x.colourways} colourways` : ''}`)
       : null,

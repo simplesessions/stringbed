@@ -175,6 +175,7 @@ main { flex: 1; padding: 6px var(--pad) 72px; }
   transition: font-stretch 0.6s var(--ease-out), letter-spacing 0.6s var(--ease-out);
 }
 .aisle-link:hover .aisle-sign, .aisle-link:focus-visible .aisle-sign { font-stretch: 125%; letter-spacing: 0; }
+.aisle-name, .floor-name { display: inline-block; line-height: 0.9; }
 
 /* The fan: current flagships held at the butt caps like a hand of cards. */
 .fan { position: relative; display: block; height: var(--fan-h); margin-top: 0; }
@@ -233,8 +234,10 @@ main { flex: 1; padding: 6px var(--pad) 72px; }
   font-size: clamp(3rem, 1.4rem + 5.6vw, 6rem);
   font-weight: 800;
   font-stretch: 125%;
-  letter-spacing: -0.02em;
-  line-height: 0.85;
+  /* Same proportions as a hovered aisle sign (wdth 125, no tracking, line-height 0.9), so the
+     word scales from one into the other without two outlines showing mid-morph. */
+  letter-spacing: 0;
+  line-height: 0.9;
   text-transform: uppercase;
 }
 .floor-tally { margin: 0; color: var(--ink-2); font-variant-numeric: tabular-nums; }
@@ -874,6 +877,11 @@ main { flex: 1; padding: 6px var(--pad) 72px; }
 ::view-transition-new(root) { animation: 0.5s var(--ease-out) both vt-arrive; }
 @keyframes vt-leave { to { opacity: 0; transform: translateY(-10px) scale(0.99); filter: blur(3px); } }
 @keyframes vt-arrive { from { opacity: 0; transform: translateY(18px); filter: blur(3px); } }
+/* The brand word grows from the aisle sign into the floor title (and back): keep its aspect
+   while the box moves, so it reads as one word scaling, not two words swapping. */
+::view-transition-old(*):only-child, ::view-transition-new(*):only-child { animation-duration: 0.3s; }
+::view-transition-old(*.brand), ::view-transition-new(*.brand) { height: 100%; object-fit: contain; object-position: left center; }
+::view-transition-group(*.brand) { animation-duration: 0.6s; animation-timing-function: cubic-bezier(0.2, 0.9, 0.1, 1); }
 /* The racquet you opened lifts off the rail into the stage (and back). */
 ::view-transition-group(racquet) { animation-duration: 0.6s; animation-timing-function: cubic-bezier(0.2, 0.9, 0.1, 1); }
 ::view-transition-old(racquet), ::view-transition-new(racquet) { height: 100%; object-fit: contain; }
