@@ -89,5 +89,71 @@
     "https://www.tennis-warehouse.com/Yonex_EZONE_Ace/descpageRCYONEX-EZACBB.html"
   ],
   "verified": true,
-  "colourway": "Blue"
+  "colourway": "Blue",
+  "variants": [
+    {
+      "id": "yonex-ezone-alpha",
+      "label": "Alpha",
+      "model": "EZONE Alpha (275g)",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          18
+        ],
+        "beamMm": [
+          25,
+          27,
+          24
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Yonex_EZONE_Alpha_275g/descpageRCYONEX-EZAPR.html"
+      ]
+    },
+    {
+      "id": "yonex-ezone-alpha-l",
+      "label": "Alpha L",
+      "model": "EZONE Alpha L (260g)",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          18
+        ],
+        "beamMm": [
+          25,
+          27,
+          24
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Yonex_EZONE_Alpha_L_260g/descpageRCYONEX-EZAPLR.html"
+      ]
+    },
+    {
+      "id": "yonex-ezone-alpha-sl",
+      "label": "Alpha SL",
+      "model": "EZONE Alpha SL (245g)",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          18
+        ],
+        "beamMm": [
+          25,
+          27,
+          24
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Yonex_EZONE_Alpha_SL_245g/descpageRCYONEX-EZASLB.html"
+      ]
+    }
+  ],
+  "variantLabel": "Ace"
 }

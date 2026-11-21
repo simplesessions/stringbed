@@ -1,0 +1,74 @@
+{
+  "id": "wilson-clash-25-v2",
+  "brand": "Wilson",
+  "line": "Clash",
+  "model": "Clash 25 v2",
+  "generation": "v2",
+  "year": 2022,
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 25,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      22,
+      22,
+      22
+    ]
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.31
+    },
+    "beam": {
+      "profile": "ellipse"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "curved"
+    },
+    "features": []
+  },
+  "paint": {
+    "base": "#b3202a",
+    "finish": "satin",
+    "zones": [
+      {
+        "from": 0.82,
+        "to": 1,
+        "color": "#1a1a1d"
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#1c1c1e"
+    },
+    "collar": {
+      "color": "#b3202a"
+    },
+    "buttCap": {
+      "color": "#1c1c1e"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#1a1a1d",
+      "channel": 0.45
+    },
+    "bumper": {
+      "color": "#1a1a1d"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://www.tennis-warehouse.com/Wilson_Clash_25_v2_Junior_Racquet/descpageRCWILSON-WC25V2.html"
+  ],
+  "verified": true,
+  "colourway": "Red/Black"
+}

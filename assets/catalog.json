@@ -2863,6 +2863,18 @@
         {
           "id": "babolat-pure-drive-plus-2025",
           "label": "Plus"
+        },
+        {
+          "id": "babolat-pure-drive-super-lite-2025",
+          "label": "Super Lite"
+        },
+        {
+          "id": "babolat-pure-drive-junior-25-light-blue-2025",
+          "label": "Junior 25 Light Blue"
+        },
+        {
+          "id": "babolat-pure-drive-junior-26-light-blue-2025",
+          "label": "Junior 26 Light Blue"
         }
       ]
     },
@@ -3200,6 +3212,48 @@
       "variantOf": "babolat-pure-drive-100"
     },
     {
+      "id": "babolat-pure-drive-junior-25-light-blue-2025",
+      "brand": "Babolat",
+      "line": "Pure Drive",
+      "model": "Pure Drive Junior 25 Light Blue",
+      "generation": "Gen 11",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 25,
+        "stringPattern": [
+          16,
+          17
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "swatch": "#3cc4de",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-pure-drive-junior-25-light-blue-2025.glb",
+          "bytes": 120304,
+          "triangles": 4964
+        }
+      },
+      "variantLabel": "Junior 25 Light Blue",
+      "variantOf": "babolat-pure-drive-100",
+      "colourway": "Light Blue"
+    },
+    {
       "id": "babolat-pure-drive-junior-26-2020",
       "brand": "Babolat",
       "line": "Pure Drive",
@@ -3281,6 +3335,48 @@
       },
       "variantLabel": "Junior 26",
       "variantOf": "babolat-pure-drive-100"
+    },
+    {
+      "id": "babolat-pure-drive-junior-26-light-blue-2025",
+      "brand": "Babolat",
+      "line": "Pure Drive",
+      "model": "Pure Drive Junior 26 Light Blue",
+      "generation": "Gen 11",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 26,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "swatch": "#3cc4de",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-pure-drive-junior-26-light-blue-2025.glb",
+          "bytes": 121172,
+          "triangles": 4980
+        }
+      },
+      "variantLabel": "Junior 26 Light Blue",
+      "variantOf": "babolat-pure-drive-100",
+      "colourway": "Light Blue"
     },
     {
       "id": "babolat-pure-drive-lite-2021",
@@ -3446,6 +3542,48 @@
         }
       },
       "variantLabel": "Plus",
+      "variantOf": "babolat-pure-drive-100"
+    },
+    {
+      "id": "babolat-pure-drive-super-lite-2025",
+      "brand": "Babolat",
+      "line": "Pure Drive",
+      "model": "Pure Drive Super Lite",
+      "generation": "Gen 11",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 255
+      },
+      "swatch": "#4aa3d6",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-pure-drive-super-lite-2025.glb",
+          "bytes": 121164,
+          "triangles": 4980
+        }
+      },
+      "variantLabel": "Super Lite",
       "variantOf": "babolat-pure-drive-100"
     },
     {
@@ -6758,6 +6896,46 @@
       "variantOf": "head-radical-mp-2025"
     },
     {
+      "id": "head-ig-radical-xceed",
+      "brand": "Head",
+      "line": "Radical",
+      "model": "Radical XCeed",
+      "generation": "XCeed",
+      "year": 2023,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "swatch": "#f26b1d",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/head-ig-radical-xceed.glb",
+          "bytes": 109616,
+          "triangles": 4404
+        }
+      },
+      "colourway": "Orange/Navy"
+    },
+    {
       "id": "head-speed-elite-2026",
       "brand": "Head",
       "line": "Speed",
@@ -7649,6 +7827,10 @@
         {
           "id": "prince-ats-textreme-tour-100p-2022",
           "label": "100P White"
+        },
+        {
+          "id": "prince-tour-25-junior",
+          "label": "Tour 25 Junior White"
         }
       ],
       "colourway": "Carbon"
@@ -8864,6 +9046,48 @@
       },
       "variantLabel": "100P",
       "variantOf": "prince-tour-100-290g"
+    },
+    {
+      "id": "prince-tour-25-junior",
+      "brand": "Prince",
+      "line": "ATS Textreme Tour",
+      "model": "Tour 25\" Junior",
+      "generation": "Carbon",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 25,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          23,
+          20
+        ]
+      },
+      "swatch": "#f4f4f4",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/prince-tour-25-junior.glb",
+          "bytes": 148604,
+          "triangles": 4984
+        }
+      },
+      "variantLabel": "Tour 25 Junior White",
+      "variantOf": "prince-ats-textreme-tour-98-carbon",
+      "colourway": "White"
     },
     {
       "id": "prince-tour-98-2026",
@@ -10357,6 +10581,46 @@
       },
       "variantLabel": "108",
       "variantOf": "wilson-clash-100-v3"
+    },
+    {
+      "id": "wilson-clash-25-v2",
+      "brand": "Wilson",
+      "line": "Clash",
+      "model": "Clash 25 v2",
+      "generation": "v2",
+      "year": 2022,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 25,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          22,
+          22,
+          22
+        ]
+      },
+      "swatch": "#b3202a",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/wilson-clash-25-v2.glb",
+          "bytes": 108332,
+          "triangles": 4340
+        }
+      },
+      "colourway": "Red/Black"
     },
     {
       "id": "wilson-defyer-100",
@@ -11961,7 +12225,149 @@
           "triangles": 4852
         }
       },
+      "variantLabel": "Ace",
+      "variants": [
+        {
+          "id": "yonex-ezone-ace",
+          "label": "Ace"
+        },
+        {
+          "id": "yonex-ezone-alpha",
+          "label": "Alpha"
+        },
+        {
+          "id": "yonex-ezone-alpha-l",
+          "label": "Alpha L"
+        },
+        {
+          "id": "yonex-ezone-alpha-sl",
+          "label": "Alpha SL"
+        }
+      ],
       "colourway": "Blue"
+    },
+    {
+      "id": "yonex-ezone-alpha",
+      "brand": "Yonex",
+      "line": "EZONE",
+      "model": "EZONE Alpha (275g)",
+      "generation": "Ace",
+      "year": 2024,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          18
+        ],
+        "beamMm": [
+          25,
+          27,
+          24
+        ]
+      },
+      "swatch": "#2d5ad6",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/yonex-ezone-alpha.glb",
+          "bytes": 118136,
+          "triangles": 4844
+        }
+      },
+      "variantLabel": "Alpha",
+      "variantOf": "yonex-ezone-ace"
+    },
+    {
+      "id": "yonex-ezone-alpha-l",
+      "brand": "Yonex",
+      "line": "EZONE",
+      "model": "EZONE Alpha L (260g)",
+      "generation": "Ace",
+      "year": 2024,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          18
+        ],
+        "beamMm": [
+          25,
+          27,
+          24
+        ]
+      },
+      "swatch": "#2d5ad6",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/yonex-ezone-alpha-l.glb",
+          "bytes": 118140,
+          "triangles": 4844
+        }
+      },
+      "variantLabel": "Alpha L",
+      "variantOf": "yonex-ezone-ace"
+    },
+    {
+      "id": "yonex-ezone-alpha-sl",
+      "brand": "Yonex",
+      "line": "EZONE",
+      "model": "EZONE Alpha SL (245g)",
+      "generation": "Ace",
+      "year": 2024,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          18
+        ],
+        "beamMm": [
+          25,
+          27,
+          24
+        ]
+      },
+      "swatch": "#2d5ad6",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/yonex-ezone-alpha-sl.glb",
+          "bytes": 118140,
+          "triangles": 4844
+        }
+      },
+      "variantLabel": "Alpha SL",
+      "variantOf": "yonex-ezone-ace"
     },
     {
       "id": "yonex-ezone-jr-25",
@@ -13831,62 +14237,6 @@
       "researched": "2026-11-20"
     },
     {
-      "id": "babolat-pure-drive-junior-25-light-blue-2025",
-      "brand": "Babolat",
-      "line": "Pure Drive",
-      "model": "Pure Drive Junior 25 Light Blue",
-      "generation": null,
-      "releaseYear": null,
-      "category": "junior",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 98,
-        "lengthIn": 25,
-        "stringPattern": [
-          16,
-          17
-        ],
-        "beamMm": null,
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Light Blue",
-      "sources": [
-        "https://www.tennis-warehouse.com/Babolat_Pure_Drive_25_Junior_Light_Blue/descpageRCBAB-BJPD25.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-pure-drive-junior-26-light-blue-2025",
-      "brand": "Babolat",
-      "line": "Pure Drive",
-      "model": "Pure Drive Junior 26 Light Blue",
-      "generation": null,
-      "releaseYear": null,
-      "category": "junior",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 26,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": null,
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Light Blue",
-      "sources": [
-        "https://www.tennis-warehouse.com/Babolat_Pure_Drive_26_Junior_Light_Blue/descpageRCBAB-BPJ26LB.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
       "id": "babolat-pure-drive-spectra-edition-2026",
       "brand": "Babolat",
       "line": "Pure Drive",
@@ -13915,40 +14265,6 @@
       "colourway": "Iridescent/Black",
       "sources": [
         "https://www.babolat.com/us/pure-drive-gen11-spectra-edition-unstrung/101584.html",
-        "https://www.babolat.com/us/tennis/racquets/adults.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-pure-drive-super-lite-2025",
-      "brand": "Babolat",
-      "line": "Pure Drive",
-      "model": "Pure Drive Super Lite",
-      "generation": "Gen11",
-      "releaseYear": 2025,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          23,
-          26,
-          23
-        ],
-        "unstrungWeightG": 255,
-        "balanceMm": 330
-      },
-      "colourway": "Yellow/Black",
-      "sources": [
-        "https://www.tennis-warehouse.com/Babolat_Pure_Drive_Super_Lite_2025/descpageRCBAB-BPDSLR.html",
-        "https://www.tenniswarehouse-europe.com/descpageRCQBA-BPDSLR-EN.html",
         "https://www.babolat.com/us/tennis/racquets/adults.html"
       ],
       "researched": "2026-11-20"
@@ -14375,38 +14691,6 @@
       "researched": "2026-11-20"
     },
     {
-      "id": "head-ig-radical-xceed",
-      "brand": "Head",
-      "line": "Radical",
-      "model": "IG Radical XCeed",
-      "generation": null,
-      "releaseYear": null,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          23,
-          26,
-          23
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Orange/Blue",
-      "sources": [
-        "https://www.tennis-warehouse.com/Head_IG_Radical_XCeed/descpageRCHEAD-XCEEDR.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
       "id": "head-ig-speed-junior-25-2026",
       "brand": "Head",
       "line": "Speed",
@@ -14688,34 +14972,6 @@
       "researched": "2026-11-20"
     },
     {
-      "id": "prince-tour-25-junior",
-      "brand": "Prince",
-      "line": "Tour",
-      "model": "Tour 25\" Junior",
-      "generation": null,
-      "releaseYear": null,
-      "category": "junior",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 25,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": null,
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "White",
-      "sources": [
-        "https://www.tennis-warehouse.com/Prince_Tour_25_Junior/descpageRCPRINCE-PTOUR25.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
       "id": "prince-warrior-100-265g",
       "brand": "Prince",
       "line": "Warrior",
@@ -14866,34 +15122,6 @@
       "researched": "2026-11-20"
     },
     {
-      "id": "wilson-clash-25-v2",
-      "brand": "Wilson",
-      "line": "Clash",
-      "model": "Clash 25\" Junior",
-      "generation": "v2",
-      "releaseYear": null,
-      "category": "junior",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 25,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": null,
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Black/Red",
-      "sources": [
-        "https://www.tennis-warehouse.com/Wilson_Clash_25_v2_Junior_Racquet/descpageRCWILSON-WC25V2.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
       "id": "wilson-us-open-21",
       "brand": "Wilson",
       "line": "US Open",
@@ -14915,102 +15143,6 @@
       "colourway": "Red/Orange",
       "sources": [
         "https://www.tennis-warehouse.com/Wilson_US_Open_21_Junior/descpageRCWILSON-WSB21.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "yonex-ezone-alpha-l",
-      "brand": "Yonex",
-      "line": "EZONE",
-      "model": "EZONE Alpha L (260g)",
-      "generation": null,
-      "releaseYear": null,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          18
-        ],
-        "beamMm": [
-          25,
-          27,
-          24
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Blue",
-      "sources": [
-        "https://www.tennis-warehouse.com/Yonex_EZONE_Alpha_L_260g/descpageRCYONEX-EZAPLR.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "yonex-ezone-alpha-sl",
-      "brand": "Yonex",
-      "line": "EZONE",
-      "model": "EZONE Alpha SL (245g)",
-      "generation": null,
-      "releaseYear": null,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          18
-        ],
-        "beamMm": [
-          25,
-          27,
-          24
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Blue",
-      "sources": [
-        "https://www.tennis-warehouse.com/Yonex_EZONE_Alpha_SL_245g/descpageRCYONEX-EZASLB.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "yonex-ezone-alpha",
-      "brand": "Yonex",
-      "line": "EZONE",
-      "model": "EZONE Alpha (275g)",
-      "generation": null,
-      "releaseYear": null,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          18
-        ],
-        "beamMm": [
-          25,
-          27,
-          24
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Blue",
-      "sources": [
-        "https://www.tennis-warehouse.com/Yonex_EZONE_Alpha_275g/descpageRCYONEX-EZAPR.html"
       ],
       "researched": "2026-11-20"
     },

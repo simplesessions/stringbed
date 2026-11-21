@@ -344,6 +344,86 @@
         "dampener": null
       },
       "colourway": "White"
+    },
+    {
+      "id": "prince-tour-25-junior",
+      "label": "Tour 25 Junior White",
+      "model": "Tour 25\" Junior",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 25,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          23,
+          20
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Prince_Tour_25_Junior/descpageRCPRINCE-PTOUR25.html"
+      ],
+      "paint": {
+        "base": "#f4f4f4",
+        "finish": "gloss",
+        "zones": [
+          {
+            "from": 0,
+            "to": 0.1,
+            "color": "#1c1d20"
+          },
+          {
+            "from": 0.4,
+            "to": 0.5,
+            "color": "#3bb8b0",
+            "faces": [
+              "front",
+              "back"
+            ]
+          },
+          {
+            "from": 0.55,
+            "to": 1,
+            "color": "#1c1d20",
+            "faces": [
+              "inner"
+            ]
+          },
+          {
+            "from": 0.88,
+            "to": 0.96,
+            "color": "#ef5a3a",
+            "faces": [
+              "outer"
+            ]
+          }
+        ]
+      },
+      "parts": {
+        "grip": {
+          "color": "#1e1e1e"
+        },
+        "collar": {
+          "color": "#f4f4f4"
+        },
+        "buttCap": {
+          "color": "#1e1e1e"
+        },
+        "strings": {
+          "color": "#f2f2f2",
+          "gaugeMm": 1.25
+        },
+        "grommets": {
+          "color": "#1c1d20"
+        },
+        "bumper": {
+          "color": "#1c1d20"
+        },
+        "dampener": null
+      },
+      "colourway": "White"
     }
   ],
   "variantLabel": "98"

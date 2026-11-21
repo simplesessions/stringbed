@@ -313,6 +313,176 @@
       "sources": [
         "https://www.tennis-warehouse.com/Babolat_Pure_Drive_Plus_2025/descpageRCBAB-BPDP25.html"
       ]
+    },
+    {
+      "id": "babolat-pure-drive-super-lite-2025",
+      "label": "Super Lite",
+      "model": "Pure Drive Super Lite",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 255
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Babolat_Pure_Drive_Super_Lite_2025/descpageRCBAB-BPDSLR.html"
+      ]
+    },
+    {
+      "id": "babolat-pure-drive-junior-25-light-blue-2025",
+      "label": "Junior 25 Light Blue",
+      "model": "Pure Drive Junior 25 Light Blue",
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 25,
+        "stringPattern": [
+          16,
+          17
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Babolat_Pure_Drive_25_Junior_Light_Blue/descpageRCBAB-BJPD25.html"
+      ],
+      "paint": {
+        "base": "#3cc4de",
+        "finish": "satin",
+        "zones": [
+          {
+            "from": 0.36,
+            "to": 0.415,
+            "color": "#1f7bc2"
+          },
+          {
+            "from": 0.44,
+            "to": 0.52,
+            "color": "#1f7bc2"
+          },
+          {
+            "from": 0.71,
+            "to": 1,
+            "color": "#1f7bc2"
+          },
+          {
+            "from": 0.53,
+            "to": 0.71,
+            "color": "#1f7bc2",
+            "faces": [
+              "outer"
+            ]
+          }
+        ]
+      },
+      "parts": {
+        "grip": {
+          "color": "#efefef"
+        },
+        "collar": {
+          "color": "#1f7bc2"
+        },
+        "buttCap": {
+          "color": "#efefef"
+        },
+        "strings": {
+          "color": "#f2f2f2",
+          "gaugeMm": 1.25
+        },
+        "grommets": {
+          "color": "#1f7bc2",
+          "channel": 0.45
+        },
+        "bumper": {
+          "color": "#1f7bc2"
+        },
+        "dampener": null
+      },
+      "colourway": "Light Blue"
+    },
+    {
+      "id": "babolat-pure-drive-junior-26-light-blue-2025",
+      "label": "Junior 26 Light Blue",
+      "model": "Pure Drive Junior 26 Light Blue",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 26,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Babolat_Pure_Drive_26_Junior_Light_Blue/descpageRCBAB-BPJ26LB.html"
+      ],
+      "paint": {
+        "base": "#3cc4de",
+        "finish": "satin",
+        "zones": [
+          {
+            "from": 0.36,
+            "to": 0.415,
+            "color": "#1f7bc2"
+          },
+          {
+            "from": 0.44,
+            "to": 0.52,
+            "color": "#1f7bc2"
+          },
+          {
+            "from": 0.71,
+            "to": 1,
+            "color": "#1f7bc2"
+          },
+          {
+            "from": 0.53,
+            "to": 0.71,
+            "color": "#1f7bc2",
+            "faces": [
+              "outer"
+            ]
+          }
+        ]
+      },
+      "parts": {
+        "grip": {
+          "color": "#efefef"
+        },
+        "collar": {
+          "color": "#1f7bc2"
+        },
+        "buttCap": {
+          "color": "#efefef"
+        },
+        "strings": {
+          "color": "#f2f2f2",
+          "gaugeMm": 1.25
+        },
+        "grommets": {
+          "color": "#1f7bc2",
+          "channel": 0.45
+        },
+        "bumper": {
+          "color": "#1f7bc2"
+        },
+        "dampener": null
+      },
+      "colourway": "Light Blue"
     }
   ]
 }

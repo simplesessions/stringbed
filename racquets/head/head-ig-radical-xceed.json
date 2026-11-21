@@ -1,0 +1,82 @@
+{
+  "id": "head-ig-radical-xceed",
+  "brand": "Head",
+  "line": "Radical",
+  "model": "Radical XCeed",
+  "generation": "XCeed",
+  "year": 2023,
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      23,
+      26,
+      23
+    ]
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.31
+    },
+    "beam": {
+      "profile": "ellipse"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "curved"
+    },
+    "features": []
+  },
+  "paint": {
+    "base": "#f26b1d",
+    "finish": "satin",
+    "zones": [
+      {
+        "from": 0,
+        "to": 0.35,
+        "color": "#23304f"
+      },
+      {
+        "from": 0.9,
+        "to": 1,
+        "color": "#17171a",
+        "faces": [
+          "inner"
+        ]
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#1c1c1e"
+    },
+    "collar": {
+      "color": "#23304f"
+    },
+    "buttCap": {
+      "color": "#1c1c1e"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#23304f",
+      "channel": 0.45
+    },
+    "bumper": {
+      "color": "#17171a"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://www.tennis-warehouse.com/Head_IG_Radical_XCeed/descpageRCHEAD-XCEEDR.html"
+  ],
+  "verified": true,
+  "colourway": "Orange/Navy"
+}

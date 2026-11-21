@@ -4,9 +4,9 @@ import { loadAllSpecs } from '../src/core/spec';
 const specs = loadAllSpecs();
 
 test('every spec parses and ids are unique', () => {
-  // 77 frames on the wall; 214 more are their variants (other sizes of the same frame).
-  expect(specs.length).toBe(291);
-  expect(specs.filter((s) => !s.variantOf)).toHaveLength(77);
+  // 79 frames on the wall; 221 more are their variants (other sizes of the same frame).
+  expect(specs.length).toBe(300);
+  expect(specs.filter((s) => !s.variantOf)).toHaveLength(79);
   expect(new Set(specs.map((s) => s.id)).size).toBe(specs.length);
 });
 test('variants share brand and line with their family and have a label', () => {

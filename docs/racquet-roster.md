@@ -1,7 +1,7 @@
 # Racquet roster (v1)
 
-Two hundred and seven racquets (62 frames): fifteen original (three each for Yonex, Babolat, Wilson and Prince, two for
-Solinco, one Head) and one hundred and ninety-two promoted from the placeholder roster on 2026-11-20 (see "Added
+Three hundred racquets (79 frames): fifteen original (three each for Yonex, Babolat, Wilson and Prince, two for
+Solinco, one Head) and two hundred and eighty-five promoted from the placeholder roster on 2026-11-20 (see "Added
 2026-11-20" at the end). This is the
 research input for the spec files in `racquets/`.
 
@@ -260,3 +260,35 @@ the record gives no beam, at 26 in; real junior frames are lighter and thinner.
 
 Skipped on purpose: Graphene XT Speed S (the photo is a tiny, older racquet), pink and white
 cosmetics of existing frames, and records with `null` specs.
+
+### Sixth batch (the rest of the placeholders that could be modelled)
+
+Limited and event editions are now in (the rule above was lifted for this batch), and so are
+juniors from 17 to 25 in: the schema now accepts racquets from 16 in and heads from 55 sq in.
+This batch added 87 racquets: 11 new frames, 45 variants, 3 colourways and the white and
+"Classic" cosmetics as variants with their own paint. The library is now 300 racquets on 79
+frames (80 bays counting the colourways).
+
+- Rafa: Pure Aero Rafa 2021 (Team, Lite, four junior sizes) and 2023 (Origin, Junior 26), Boost
+  Aero Rafa. Gradients and the Rafa artwork are approximated with flat bands.
+- Juniors: Babolat Aero, Carlitos, Drive, Pure Aero, Pure Drive (incl. Light Blue), Pure Strike,
+  Rafa Nadal and B Fly (25, 23, 21, 19); Head Paw Patrol (the cartoon characters are not
+  modelled), Instinct, Speed, Boom and Radical; Yonex Junior 17 to 26 and EZONE Junior; Prince
+  Ripcord and Tour 25; Wilson Blade, Ultra and Clash 25. Junior beams are the adult frame's where
+  the record gives none; real junior frames are thinner.
+- Special editions: Prestige MP Limited, Beast Smiley (the smiley faces are not modelled),
+  O3 Legacy 120 and 105 (gold), Burn Pink 105S, Warrior 100 300g, white ATS Tour 98/100/100P,
+  Pro Staff 97L and Team Classic, Boost Drive White Coral, Boost Aero Raspberry Pink, Evo Drive
+  White (colourways).
+- Older frames: Evo Aero 2022 and Evo Drive 2021 (and their Lite), Head Radical XCeed.
+
+Not modelled (54 placeholders remain):
+- No head size or other spec in the record: Hydrogen Neon (3) and Skulls, Beast Ltd and Pink,
+  Beast Smiley 265g, Warrior 100 265g, Cream and White Edition, Warrior Elite 25, Blackout V2 245
+  and 265, Aero Junior 25, Boost Aero Rafa Lite, Pure Strike Japan, Rafa Nadal Junior 19, Drive
+  Team Wimbledon, Gravity MP XL, VCORE 98L and VCORE 26 Junior.
+- No usable photo (the Tennis Warehouse image was missing, or it shows a much older racquet than
+  the record): Wimbledon editions (Boost, Boost Drive, Evo Drive 115, Pure Drive), Spectra (2),
+  Evo Aero Pink (2), Graphene XT Radical/Speed (4), IG Speed juniors (2), Speed Junior 21 and 23,
+  B Fly previous generation (4), Boost A, D, Aero, Drive 2021, Drive USA and Strike, Drive Junior
+  23, Rafa Nadal Junior previous generation (2), Pure Drive 2018 (2), Ballfighter 17 and US Open 21.
