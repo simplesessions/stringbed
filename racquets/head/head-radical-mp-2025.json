@@ -194,6 +194,27 @@
       "sources": [
         "https://www.tennis-warehouse.com/Head_Radical_Junior_21/descpageRCHEAD-HARJ21.html"
       ]
+    },
+    {
+      "id": "head-radical-tour-2025",
+      "label": "Tour",
+      "model": "Radical Tour",
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          18,
+          20
+        ],
+        "beamMm": [
+          20,
+          23,
+          21
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Radical_Tour_2025/descpageRCHEAD-HRTOUR.html"
+      ]
     }
   ]
 }

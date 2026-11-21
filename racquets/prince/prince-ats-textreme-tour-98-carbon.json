@@ -104,6 +104,246 @@
       "sources": [
         "https://www.tennis-warehouse.com/Prince_ATS_Textreme_Tour_100_290_Carbon/descpageRCTWABG-PTC290.html"
       ]
+    },
+    {
+      "id": "prince-ats-textreme-tour-98",
+      "label": "98 White",
+      "model": "ATS Textreme Tour 98",
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          23,
+          20
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Prince_ATS_Textreme_Tour_98/descpageRCTWABG-ATR98.html"
+      ],
+      "paint": {
+        "base": "#f4f4f4",
+        "finish": "gloss",
+        "zones": [
+          {
+            "from": 0,
+            "to": 0.1,
+            "color": "#1c1d20"
+          },
+          {
+            "from": 0.4,
+            "to": 0.5,
+            "color": "#3bb8b0",
+            "faces": [
+              "front",
+              "back"
+            ]
+          },
+          {
+            "from": 0.55,
+            "to": 1,
+            "color": "#1c1d20",
+            "faces": [
+              "inner"
+            ]
+          },
+          {
+            "from": 0.88,
+            "to": 0.96,
+            "color": "#ef5a3a",
+            "faces": [
+              "outer"
+            ]
+          }
+        ]
+      },
+      "parts": {
+        "grip": {
+          "color": "#1e1e1e"
+        },
+        "collar": {
+          "color": "#f4f4f4"
+        },
+        "buttCap": {
+          "color": "#1e1e1e"
+        },
+        "strings": {
+          "color": "#f2f2f2",
+          "gaugeMm": 1.25
+        },
+        "grommets": {
+          "color": "#1c1d20"
+        },
+        "bumper": {
+          "color": "#1c1d20"
+        },
+        "dampener": null
+      },
+      "colourway": "White"
+    },
+    {
+      "id": "prince-ats-textreme-tour-100-310-2022",
+      "label": "100 310 White",
+      "model": "ATS Textreme Tour 100 310",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          18
+        ],
+        "beamMm": [
+          22,
+          23,
+          20
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Prince_ATS_Textreme_Tour_100_310/descpageRCTWABG-ATR310.html"
+      ],
+      "paint": {
+        "base": "#f4f4f4",
+        "finish": "gloss",
+        "zones": [
+          {
+            "from": 0,
+            "to": 0.1,
+            "color": "#1c1d20"
+          },
+          {
+            "from": 0.4,
+            "to": 0.5,
+            "color": "#3bb8b0",
+            "faces": [
+              "front",
+              "back"
+            ]
+          },
+          {
+            "from": 0.55,
+            "to": 1,
+            "color": "#1c1d20",
+            "faces": [
+              "inner"
+            ]
+          },
+          {
+            "from": 0.88,
+            "to": 0.96,
+            "color": "#ef5a3a",
+            "faces": [
+              "outer"
+            ]
+          }
+        ]
+      },
+      "parts": {
+        "grip": {
+          "color": "#1e1e1e"
+        },
+        "collar": {
+          "color": "#f4f4f4"
+        },
+        "buttCap": {
+          "color": "#1e1e1e"
+        },
+        "strings": {
+          "color": "#f2f2f2",
+          "gaugeMm": 1.25
+        },
+        "grommets": {
+          "color": "#1c1d20"
+        },
+        "bumper": {
+          "color": "#1c1d20"
+        },
+        "dampener": null
+      },
+      "colourway": "White"
+    },
+    {
+      "id": "prince-ats-textreme-tour-100p-2022",
+      "label": "100P White",
+      "model": "ATS Textreme Tour 100P",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          18,
+          20
+        ],
+        "beamMm": [
+          22,
+          23,
+          20
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Prince_ATS_Textreme_Tour_100P/descpageRCTWABG-ATR10P.html"
+      ],
+      "paint": {
+        "base": "#f4f4f4",
+        "finish": "gloss",
+        "zones": [
+          {
+            "from": 0,
+            "to": 0.1,
+            "color": "#1c1d20"
+          },
+          {
+            "from": 0.4,
+            "to": 0.5,
+            "color": "#3bb8b0",
+            "faces": [
+              "front",
+              "back"
+            ]
+          },
+          {
+            "from": 0.55,
+            "to": 1,
+            "color": "#1c1d20",
+            "faces": [
+              "inner"
+            ]
+          },
+          {
+            "from": 0.88,
+            "to": 0.96,
+            "color": "#ef5a3a",
+            "faces": [
+              "outer"
+            ]
+          }
+        ]
+      },
+      "parts": {
+        "grip": {
+          "color": "#1e1e1e"
+        },
+        "collar": {
+          "color": "#f4f4f4"
+        },
+        "buttCap": {
+          "color": "#1e1e1e"
+        },
+        "strings": {
+          "color": "#f2f2f2",
+          "gaugeMm": 1.25
+        },
+        "grommets": {
+          "color": "#1c1d20"
+        },
+        "bumper": {
+          "color": "#1c1d20"
+        },
+        "dampener": null
+      },
+      "colourway": "White"
     }
   ],
   "variantLabel": "98"

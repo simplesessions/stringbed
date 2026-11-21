@@ -1,0 +1,122 @@
+{
+  "id": "head-instinct-junior-25",
+  "brand": "Head",
+  "line": "Instinct",
+  "model": "Instinct Junior 25",
+  "generation": "Junior",
+  "year": 2023,
+  "specs": {
+    "headSizeSqIn": 105,
+    "lengthIn": 25,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      20,
+      20,
+      20
+    ]
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.3
+    },
+    "beam": {
+      "profile": "ellipse"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "curved"
+    },
+    "features": []
+  },
+  "paint": {
+    "base": "#b79cf0",
+    "finish": "satin",
+    "zones": [
+      {
+        "from": 0.85,
+        "to": 1,
+        "color": "#17171a",
+        "faces": [
+          "inner"
+        ]
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#f2f2f2"
+    },
+    "collar": {
+      "color": "#17171a"
+    },
+    "buttCap": {
+      "color": "#f2f2f2"
+    },
+    "strings": {
+      "color": "#9fe3ea",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#17171a",
+      "channel": 0.45
+    },
+    "bumper": {
+      "color": "#17171a"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://www.tennis-warehouse.com/Head_Instinct_25_Junior_Racquet/descpageRCHEAD-INST25.html"
+  ],
+  "verified": true,
+  "colourway": "Purple",
+  "variants": [
+    {
+      "id": "head-instinct-junior-23",
+      "label": "23",
+      "model": "Instinct Junior 23",
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 23,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          20,
+          20,
+          20
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Instinct_23_Junior_Racquet/descpageRCHEAD-INST23.html"
+      ]
+    },
+    {
+      "id": "head-instinct-junior-21",
+      "label": "21",
+      "model": "Instinct Junior 21",
+      "specs": {
+        "headSizeSqIn": 81,
+        "lengthIn": 21,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          20,
+          20,
+          20
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Instinct_21_Junior/descpageRCHEAD-INST21.html"
+      ]
+    }
+  ],
+  "variantLabel": "25"
+}

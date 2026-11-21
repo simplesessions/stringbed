@@ -1,0 +1,103 @@
+{
+  "id": "prince-o3-legacy-120-2024",
+  "brand": "Prince",
+  "line": "O3 Legacy",
+  "model": "O3 Legacy 120",
+  "generation": "Legacy",
+  "year": 2024,
+  "specs": {
+    "headSizeSqIn": 120,
+    "lengthIn": 27.25,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      27.5,
+      29.5,
+      27
+    ]
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.25
+    },
+    "beam": {
+      "profile": "ellipse"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "curved"
+    },
+    "features": [
+      "o-ports"
+    ]
+  },
+  "paint": {
+    "base": "#a89868",
+    "finish": "satin",
+    "zones": [
+      {
+        "from": 0.9,
+        "to": 1,
+        "color": "#8c7e58",
+        "faces": [
+          "inner"
+        ]
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#b3a07e"
+    },
+    "collar": {
+      "color": "#a89868"
+    },
+    "buttCap": {
+      "color": "#b3a07e"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#8c7e58",
+      "channel": 0.45
+    },
+    "bumper": {
+      "color": "#8c7e58"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://www.tennis-warehouse.com/Prince_O3_Legacy_120/descpageRCLEADER-PLEG2.html"
+  ],
+  "verified": true,
+  "colourway": "Gold",
+  "variants": [
+    {
+      "id": "prince-o3-legacy-105",
+      "label": "105",
+      "model": "O3 Legacy 105",
+      "specs": {
+        "headSizeSqIn": 105,
+        "lengthIn": 27.25,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23.5,
+          25,
+          23
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Prince_O3_Legacy_105/descpageRCLEADER-PLEG5.html"
+      ]
+    }
+  ],
+  "variantLabel": "120"
+}

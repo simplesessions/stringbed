@@ -137,5 +137,150 @@
         "https://www.tennis-warehouse.com/Wilson_Pro_Staff_97_Classic_Racquet/descpageRCWILSON-WPS97C.html"
       ]
     }
-  ]
+  ],
+  "variants": [
+    {
+      "id": "wilson-pro-staff-97l-classic",
+      "label": "97L Classic",
+      "model": "Pro Staff 97L Classic",
+      "specs": {
+        "headSizeSqIn": 97,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23.5,
+          23.5,
+          23.5
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Wilson_Pro_Staff_97L_Classic/descpageRCWILSON-WPS97L.html"
+      ],
+      "paint": {
+        "base": "#222427",
+        "finish": "gloss",
+        "zones": [
+          {
+            "from": 0.015,
+            "to": 0.025,
+            "color": "#c8302f"
+          },
+          {
+            "from": 0.025,
+            "to": 0.035,
+            "color": "#e8b923"
+          },
+          {
+            "from": 0.585,
+            "to": 0.595,
+            "color": "#e8b923"
+          },
+          {
+            "from": 0.595,
+            "to": 0.61,
+            "color": "#c8302f"
+          }
+        ]
+      },
+      "parts": {
+        "grip": {
+          "color": "#1b1b1d"
+        },
+        "collar": {
+          "color": "#222427"
+        },
+        "buttCap": {
+          "color": "#1b1b1d"
+        },
+        "strings": {
+          "color": "#f2f2f2",
+          "gaugeMm": 1.25
+        },
+        "grommets": {
+          "color": "#141416",
+          "channel": 0.45
+        },
+        "bumper": {
+          "color": "#141416"
+        },
+        "dampener": null
+      },
+      "colourway": "Classic"
+    },
+    {
+      "id": "wilson-pro-staff-team-classic",
+      "label": "Team Classic",
+      "model": "Pro Staff Team Classic",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23.5,
+          23.5,
+          23.5
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Wilson_Pro_Staff_Team_Classic/descpageRCWILSON-WPSTMC.html"
+      ],
+      "paint": {
+        "base": "#222427",
+        "finish": "gloss",
+        "zones": [
+          {
+            "from": 0.015,
+            "to": 0.025,
+            "color": "#c8302f"
+          },
+          {
+            "from": 0.025,
+            "to": 0.035,
+            "color": "#e8b923"
+          },
+          {
+            "from": 0.585,
+            "to": 0.595,
+            "color": "#e8b923"
+          },
+          {
+            "from": 0.595,
+            "to": 0.61,
+            "color": "#c8302f"
+          }
+        ]
+      },
+      "parts": {
+        "grip": {
+          "color": "#1b1b1d"
+        },
+        "collar": {
+          "color": "#222427"
+        },
+        "buttCap": {
+          "color": "#1b1b1d"
+        },
+        "strings": {
+          "color": "#f2f2f2",
+          "gaugeMm": 1.25
+        },
+        "grommets": {
+          "color": "#141416",
+          "channel": 0.45
+        },
+        "bumper": {
+          "color": "#141416"
+        },
+        "dampener": null
+      },
+      "colourway": "Classic"
+    }
+  ],
+  "variantLabel": "97"
 }

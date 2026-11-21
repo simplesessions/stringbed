@@ -1,0 +1,101 @@
+{
+  "id": "prince-beast-smiley-edition-280g",
+  "brand": "Prince",
+  "line": "Beast",
+  "model": "Beast Smiley Edition 280g",
+  "generation": "Smiley",
+  "year": 2025,
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      24,
+      25.5,
+      23
+    ]
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.3
+    },
+    "beam": {
+      "profile": "ellipse"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "curved"
+    },
+    "features": []
+  },
+  "paint": {
+    "base": "#1b1b1d",
+    "finish": "matte",
+    "zones": [
+      {
+        "from": 0.42,
+        "to": 0.5,
+        "color": "#c8e63c",
+        "faces": [
+          "outer"
+        ]
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#1e1e1e"
+    },
+    "collar": {
+      "color": "#1b1b1d"
+    },
+    "buttCap": {
+      "color": "#1e1e1e"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#1b1b1d",
+      "channel": 0.45
+    },
+    "bumper": {
+      "color": "#1b1b1d"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://www.tennis-warehouse.com/Prince_Beast_Smiley_Edition_280g/descpageRCPRINCE-PBS280.html"
+  ],
+  "verified": true,
+  "colourway": "Black",
+  "variants": [
+    {
+      "id": "prince-beast-smiley-edition-300g",
+      "label": "300g",
+      "model": "Beast Smiley Edition (300g)",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          24,
+          25.5,
+          22
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Prince_Beast_Smiley_Edition_300g/descpageRCPRINCE-PBS300.html"
+      ]
+    }
+  ],
+  "variantLabel": "280g"
+}

@@ -1,0 +1,77 @@
+{
+  "id": "head-speed-junior-25",
+  "brand": "Head",
+  "line": "Speed",
+  "model": "Speed Junior 25",
+  "generation": "Junior",
+  "year": 2022,
+  "specs": {
+    "headSizeSqIn": 105,
+    "lengthIn": 25,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      20,
+      20,
+      20
+    ]
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.3
+    },
+    "beam": {
+      "profile": "ellipse"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "curved"
+    },
+    "features": []
+  },
+  "paint": {
+    "base": "#232c50",
+    "finish": "satin",
+    "zones": [
+      {
+        "from": 0.85,
+        "to": 1,
+        "color": "#17171a",
+        "faces": [
+          "inner"
+        ]
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#f2f2f2"
+    },
+    "collar": {
+      "color": "#17171a"
+    },
+    "buttCap": {
+      "color": "#f2f2f2"
+    },
+    "strings": {
+      "color": "#d8f23c",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#17171a",
+      "channel": 0.45
+    },
+    "bumper": {
+      "color": "#17171a"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://www.tennis-warehouse.com/Head_Speed_25_Junior_Racquet/descpageRCHEAD-SPED25.html"
+  ],
+  "verified": true,
+  "colourway": "Navy/Green"
+}

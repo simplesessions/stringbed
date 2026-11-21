@@ -84,5 +84,29 @@
     "https://www.tennis-warehouse.com/Head_Boom_Pro/descpageRCHEAD-HBOOMP.html"
   ],
   "verified": true,
-  "colourway": "Mint/Black"
+  "colourway": "Mint/Black",
+  "variants": [
+    {
+      "id": "head-ig-boom-xceed",
+      "label": "IG XCeed",
+      "model": "IG Boom XCeed",
+      "specs": {
+        "headSizeSqIn": 107,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_IG_Boom_XCeed/descpageRCHEAD-XCEEDB.html"
+      ]
+    }
+  ],
+  "variantLabel": "Boom Pro"
 }

@@ -1,0 +1,78 @@
+{
+  "id": "prince-warrior-100-300g-2025",
+  "brand": "Prince",
+  "line": "Warrior",
+  "model": "Warrior 100 300g",
+  "generation": "2025",
+  "year": 2025,
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      24,
+      26,
+      22
+    ]
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.3
+    },
+    "beam": {
+      "profile": "ellipse"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "curved"
+    },
+    "features": []
+  },
+  "paint": {
+    "base": "#16171c",
+    "finish": "satin",
+    "zones": [
+      {
+        "from": 0.45,
+        "to": 0.9,
+        "color": "#1f2e4d",
+        "faces": [
+          "front",
+          "back"
+        ]
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#1e1e1e"
+    },
+    "collar": {
+      "color": "#16171c"
+    },
+    "buttCap": {
+      "color": "#1e1e1e"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#16171c",
+      "channel": 0.45
+    },
+    "bumper": {
+      "color": "#16171c"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://www.tennis-warehouse.com/Prince_Warrior_100_300g/descpageRCPRINCE-P5WA30.html"
+  ],
+  "verified": true,
+  "colourway": "Black/Navy"
+}

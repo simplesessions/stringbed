@@ -4948,6 +4948,17 @@
           "triangles": 4568
         }
       },
+      "variantLabel": "Boom Pro",
+      "variants": [
+        {
+          "id": "head-boom-pro-2024",
+          "label": "Boom Pro"
+        },
+        {
+          "id": "head-ig-boom-xceed",
+          "label": "IG XCeed"
+        }
+      ],
       "colourway": "Mint/Black"
     },
     {
@@ -5801,6 +5812,184 @@
       "colourway": "Black/Blue"
     },
     {
+      "id": "head-ig-boom-xceed",
+      "brand": "Head",
+      "line": "Boom",
+      "model": "IG Boom XCeed",
+      "generation": "2024",
+      "year": 2024,
+      "specs": {
+        "headSizeSqIn": 107,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "swatch": "#3fe0b0",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/head-ig-boom-xceed.glb",
+          "bytes": 112896,
+          "triangles": 4568
+        }
+      },
+      "variantLabel": "IG XCeed",
+      "variantOf": "head-boom-pro-2024"
+    },
+    {
+      "id": "head-instinct-junior-21",
+      "brand": "Head",
+      "line": "Instinct",
+      "model": "Instinct Junior 21",
+      "generation": "Junior",
+      "year": 2023,
+      "specs": {
+        "headSizeSqIn": 81,
+        "lengthIn": 21,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          20,
+          20,
+          20
+        ]
+      },
+      "swatch": "#b79cf0",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/head-instinct-junior-21.glb",
+          "bytes": 108328,
+          "triangles": 4340
+        }
+      },
+      "variantLabel": "21",
+      "variantOf": "head-instinct-junior-25"
+    },
+    {
+      "id": "head-instinct-junior-23",
+      "brand": "Head",
+      "line": "Instinct",
+      "model": "Instinct Junior 23",
+      "generation": "Junior",
+      "year": 2023,
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 23,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          20,
+          20,
+          20
+        ]
+      },
+      "swatch": "#b79cf0",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/head-instinct-junior-23.glb",
+          "bytes": 108332,
+          "triangles": 4340
+        }
+      },
+      "variantLabel": "23",
+      "variantOf": "head-instinct-junior-25"
+    },
+    {
+      "id": "head-instinct-junior-25",
+      "brand": "Head",
+      "line": "Instinct",
+      "model": "Instinct Junior 25",
+      "generation": "Junior",
+      "year": 2023,
+      "specs": {
+        "headSizeSqIn": 105,
+        "lengthIn": 25,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          20,
+          20,
+          20
+        ]
+      },
+      "swatch": "#b79cf0",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/head-instinct-junior-25.glb",
+          "bytes": 108328,
+          "triangles": 4340
+        }
+      },
+      "variantLabel": "25",
+      "variants": [
+        {
+          "id": "head-instinct-junior-25",
+          "label": "25"
+        },
+        {
+          "id": "head-instinct-junior-23",
+          "label": "23"
+        },
+        {
+          "id": "head-instinct-junior-21",
+          "label": "21"
+        }
+      ],
+      "colourway": "Purple"
+    },
+    {
       "id": "head-pwr-110",
       "brand": "Head",
       "line": "PWR",
@@ -5893,6 +6082,188 @@
       "variantOf": "head-pwr-110"
     },
     {
+      "id": "head-paw-patrol-junior-17",
+      "brand": "Head",
+      "line": "Paw Patrol",
+      "model": "Paw Patrol Junior 17",
+      "generation": "Junior",
+      "year": 2023,
+      "specs": {
+        "headSizeSqIn": 62,
+        "lengthIn": 17,
+        "stringPattern": [
+          14,
+          15
+        ],
+        "beamMm": [
+          20,
+          20,
+          20
+        ]
+      },
+      "swatch": "#2b3b7a",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/head-paw-patrol-junior-17.glb",
+          "bytes": 105756,
+          "triangles": 4292
+        }
+      },
+      "variantLabel": "17",
+      "variantOf": "head-paw-patrol-junior-23"
+    },
+    {
+      "id": "head-paw-patrol-junior-19",
+      "brand": "Head",
+      "line": "Paw Patrol",
+      "model": "Paw Patrol Junior 19",
+      "generation": "Junior",
+      "year": 2023,
+      "specs": {
+        "headSizeSqIn": 81,
+        "lengthIn": 19,
+        "stringPattern": [
+          16,
+          17
+        ],
+        "beamMm": [
+          20,
+          20,
+          20
+        ]
+      },
+      "swatch": "#2b3b7a",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/head-paw-patrol-junior-19.glb",
+          "bytes": 107484,
+          "triangles": 4324
+        }
+      },
+      "variantLabel": "19",
+      "variantOf": "head-paw-patrol-junior-23"
+    },
+    {
+      "id": "head-paw-patrol-junior-21",
+      "brand": "Head",
+      "line": "Paw Patrol",
+      "model": "Paw Patrol Junior 21",
+      "generation": "Junior",
+      "year": 2023,
+      "specs": {
+        "headSizeSqIn": 81,
+        "lengthIn": 21,
+        "stringPattern": [
+          16,
+          17
+        ],
+        "beamMm": [
+          20,
+          20,
+          20
+        ]
+      },
+      "swatch": "#2b3b7a",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/head-paw-patrol-junior-21.glb",
+          "bytes": 107484,
+          "triangles": 4324
+        }
+      },
+      "variantLabel": "21",
+      "variantOf": "head-paw-patrol-junior-23"
+    },
+    {
+      "id": "head-paw-patrol-junior-23",
+      "brand": "Head",
+      "line": "Paw Patrol",
+      "model": "Paw Patrol Junior 23",
+      "generation": "Junior",
+      "year": 2023,
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 23,
+        "stringPattern": [
+          16,
+          18
+        ],
+        "beamMm": [
+          20,
+          20,
+          20
+        ]
+      },
+      "swatch": "#2b3b7a",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/head-paw-patrol-junior-23.glb",
+          "bytes": 107916,
+          "triangles": 4332
+        }
+      },
+      "variantLabel": "23",
+      "variants": [
+        {
+          "id": "head-paw-patrol-junior-23",
+          "label": "23"
+        },
+        {
+          "id": "head-paw-patrol-junior-21",
+          "label": "21"
+        },
+        {
+          "id": "head-paw-patrol-junior-19",
+          "label": "19"
+        },
+        {
+          "id": "head-paw-patrol-junior-17",
+          "label": "17"
+        }
+      ],
+      "colourway": "Blue"
+    },
+    {
       "id": "head-prestige-mp-l",
       "brand": "Head",
       "line": "Prestige",
@@ -5932,6 +6303,46 @@
       },
       "variantLabel": "MP L",
       "variantOf": "head-prestige-pro-2023"
+    },
+    {
+      "id": "head-prestige-mp-limited",
+      "brand": "Head",
+      "line": "Prestige",
+      "model": "Prestige MP Limited",
+      "generation": "25 Years",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 99,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          21.5,
+          21.5,
+          21.5
+        ]
+      },
+      "swatch": "#c4c6cb",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/head-prestige-mp-limited.glb",
+          "bytes": 130180,
+          "triangles": 4216
+        }
+      },
+      "colourway": "Silver/Black"
     },
     {
       "id": "head-prestige-pro-2023",
@@ -6215,6 +6626,10 @@
         {
           "id": "head-radical-junior-21",
           "label": "Junior 21"
+        },
+        {
+          "id": "head-radical-tour-2025",
+          "label": "Tour"
         }
       ],
       "colourway": "Orange"
@@ -6302,6 +6717,47 @@
       "variantOf": "head-radical-mp-2025"
     },
     {
+      "id": "head-radical-tour-2025",
+      "brand": "Head",
+      "line": "Radical",
+      "model": "Radical Tour",
+      "generation": "2025",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          18,
+          20
+        ],
+        "beamMm": [
+          20,
+          23,
+          21
+        ]
+      },
+      "swatch": "#f26a4c",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/head-radical-tour-2025.glb",
+          "bytes": 120584,
+          "triangles": 4912
+        }
+      },
+      "variantLabel": "Tour",
+      "variantOf": "head-radical-mp-2025"
+    },
+    {
       "id": "head-speed-elite-2026",
       "brand": "Head",
       "line": "Speed",
@@ -6341,6 +6797,46 @@
       },
       "variantLabel": "Elite",
       "variantOf": "head-speed-mp-2026"
+    },
+    {
+      "id": "head-speed-junior-25",
+      "brand": "Head",
+      "line": "Speed",
+      "model": "Speed Junior 25",
+      "generation": "Junior",
+      "year": 2022,
+      "specs": {
+        "headSizeSqIn": 105,
+        "lengthIn": 25,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          20,
+          20,
+          20
+        ]
+      },
+      "swatch": "#232c50",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/head-speed-junior-25.glb",
+          "bytes": 108328,
+          "triangles": 4340
+        }
+      },
+      "colourway": "Navy/Green"
     },
     {
       "id": "head-speed-junior-25-2026",
@@ -6969,6 +7465,132 @@
       "variantOf": "prince-ats-textreme-tour-98-carbon"
     },
     {
+      "id": "prince-ats-textreme-tour-100-310-2022",
+      "brand": "Prince",
+      "line": "ATS Textreme Tour",
+      "model": "ATS Textreme Tour 100 310",
+      "generation": "Carbon",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          18
+        ],
+        "beamMm": [
+          22,
+          23,
+          20
+        ]
+      },
+      "swatch": "#f4f4f4",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/prince-ats-textreme-tour-100-310-2022.glb",
+          "bytes": 148208,
+          "triangles": 4976
+        }
+      },
+      "variantLabel": "100 310 White",
+      "variantOf": "prince-ats-textreme-tour-98-carbon",
+      "colourway": "White"
+    },
+    {
+      "id": "prince-ats-textreme-tour-100p-2022",
+      "brand": "Prince",
+      "line": "ATS Textreme Tour",
+      "model": "ATS Textreme Tour 100P",
+      "generation": "Carbon",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          18,
+          20
+        ],
+        "beamMm": [
+          22,
+          23,
+          20
+        ]
+      },
+      "swatch": "#f4f4f4",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/prince-ats-textreme-tour-100p-2022.glb",
+          "bytes": 149928,
+          "triangles": 5008
+        }
+      },
+      "variantLabel": "100P White",
+      "variantOf": "prince-ats-textreme-tour-98-carbon",
+      "colourway": "White"
+    },
+    {
+      "id": "prince-ats-textreme-tour-98",
+      "brand": "Prince",
+      "line": "ATS Textreme Tour",
+      "model": "ATS Textreme Tour 98",
+      "generation": "Carbon",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          23,
+          20
+        ]
+      },
+      "swatch": "#f4f4f4",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/prince-ats-textreme-tour-98.glb",
+          "bytes": 148624,
+          "triangles": 4984
+        }
+      },
+      "variantLabel": "98 White",
+      "variantOf": "prince-ats-textreme-tour-98-carbon",
+      "colourway": "White"
+    },
+    {
       "id": "prince-ats-textreme-tour-98-carbon",
       "brand": "Prince",
       "line": "ATS Textreme Tour",
@@ -7015,9 +7637,154 @@
         {
           "id": "prince-ats-textreme-tour-100-290-carbon",
           "label": "100 290"
+        },
+        {
+          "id": "prince-ats-textreme-tour-98",
+          "label": "98 White"
+        },
+        {
+          "id": "prince-ats-textreme-tour-100-310-2022",
+          "label": "100 310 White"
+        },
+        {
+          "id": "prince-ats-textreme-tour-100p-2022",
+          "label": "100P White"
         }
       ],
       "colourway": "Carbon"
+    },
+    {
+      "id": "prince-beast-smiley-edition-300g",
+      "brand": "Prince",
+      "line": "Beast",
+      "model": "Beast Smiley Edition (300g)",
+      "generation": "Smiley",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          24,
+          25.5,
+          22
+        ]
+      },
+      "swatch": "#1b1b1d",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/prince-beast-smiley-edition-300g.glb",
+          "bytes": 110928,
+          "triangles": 4468
+        }
+      },
+      "variantLabel": "300g",
+      "variantOf": "prince-beast-smiley-edition-280g"
+    },
+    {
+      "id": "prince-beast-smiley-edition-280g",
+      "brand": "Prince",
+      "line": "Beast",
+      "model": "Beast Smiley Edition 280g",
+      "generation": "Smiley",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          24,
+          25.5,
+          23
+        ]
+      },
+      "swatch": "#1b1b1d",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/prince-beast-smiley-edition-280g.glb",
+          "bytes": 110928,
+          "triangles": 4468
+        }
+      },
+      "variantLabel": "280g",
+      "variants": [
+        {
+          "id": "prince-beast-smiley-edition-280g",
+          "label": "280g"
+        },
+        {
+          "id": "prince-beast-smiley-edition-300g",
+          "label": "300g"
+        }
+      ],
+      "colourway": "Black"
+    },
+    {
+      "id": "prince-o3-legacy-105",
+      "brand": "Prince",
+      "line": "O3 Legacy",
+      "model": "O3 Legacy 105",
+      "generation": "Legacy",
+      "year": 2024,
+      "specs": {
+        "headSizeSqIn": 105,
+        "lengthIn": 27.25,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23.5,
+          25,
+          23
+        ]
+      },
+      "swatch": "#a89868",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/prince-o3-legacy-105.glb",
+          "bytes": 116556,
+          "triangles": 4640
+        }
+      },
+      "variantLabel": "105",
+      "variantOf": "prince-o3-legacy-120-2024"
     },
     {
       "id": "prince-o3-legacy-110",
@@ -7058,6 +7825,57 @@
         }
       },
       "colourway": "Blue"
+    },
+    {
+      "id": "prince-o3-legacy-120-2024",
+      "brand": "Prince",
+      "line": "O3 Legacy",
+      "model": "O3 Legacy 120",
+      "generation": "Legacy",
+      "year": 2024,
+      "specs": {
+        "headSizeSqIn": 120,
+        "lengthIn": 27.25,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          27.5,
+          29.5,
+          27
+        ]
+      },
+      "swatch": "#a89868",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/prince-o3-legacy-120-2024.glb",
+          "bytes": 116560,
+          "triangles": 4640
+        }
+      },
+      "variantLabel": "120",
+      "variants": [
+        {
+          "id": "prince-o3-legacy-120-2024",
+          "label": "120"
+        },
+        {
+          "id": "prince-o3-legacy-105",
+          "label": "105"
+        }
+      ],
+      "colourway": "Gold"
     },
     {
       "id": "prince-o3-phantom-100x",
@@ -8128,6 +8946,46 @@
         }
       },
       "colourway": "Black/Grey"
+    },
+    {
+      "id": "prince-warrior-100-300g-2025",
+      "brand": "Prince",
+      "line": "Warrior",
+      "model": "Warrior 100 300g",
+      "generation": "2025",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          24,
+          26,
+          22
+        ]
+      },
+      "swatch": "#16171c",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/prince-warrior-100-300g-2025.glb",
+          "bytes": 110920,
+          "triangles": 4468
+        }
+      },
+      "colourway": "Black/Navy"
     },
     {
       "id": "prince-warrior-107-275g-2025",
@@ -9262,6 +10120,46 @@
       "colourway": "Orange/Black"
     },
     {
+      "id": "wilson-burn-pink-105s-v6-2026",
+      "brand": "Wilson",
+      "line": "Burn",
+      "model": "Burn Pink 105S",
+      "generation": "v6",
+      "year": 2026,
+      "specs": {
+        "headSizeSqIn": 105,
+        "lengthIn": 27,
+        "stringPattern": [
+          18,
+          16
+        ],
+        "beamMm": [
+          23.5,
+          25,
+          23.5
+        ]
+      },
+      "swatch": "#ff3d9e",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/wilson-burn-pink-105s-v6-2026.glb",
+          "bytes": 107904,
+          "triangles": 4332
+        }
+      },
+      "colourway": "Pink"
+    },
+    {
       "id": "wilson-clash-100-v3",
       "brand": "Wilson",
       "line": "Clash",
@@ -9721,6 +10619,21 @@
           "triangles": 4536
         }
       },
+      "variantLabel": "97",
+      "variants": [
+        {
+          "id": "wilson-pro-staff-97-v14",
+          "label": "97"
+        },
+        {
+          "id": "wilson-pro-staff-97l-classic",
+          "label": "97L Classic"
+        },
+        {
+          "id": "wilson-pro-staff-team-classic",
+          "label": "Team Classic"
+        }
+      ],
       "colourway": "Copper Iridescent",
       "colourways": [
         {
@@ -9737,6 +10650,90 @@
           }
         }
       ]
+    },
+    {
+      "id": "wilson-pro-staff-97l-classic",
+      "brand": "Wilson",
+      "line": "Pro Staff",
+      "model": "Pro Staff 97L Classic",
+      "generation": "v14",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 97,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23.5,
+          23.5,
+          23.5
+        ]
+      },
+      "swatch": "#222427",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/wilson-pro-staff-97l-classic.glb",
+          "bytes": 139692,
+          "triangles": 4568
+        }
+      },
+      "variantLabel": "97L Classic",
+      "variantOf": "wilson-pro-staff-97-v14",
+      "colourway": "Classic"
+    },
+    {
+      "id": "wilson-pro-staff-team-classic",
+      "brand": "Wilson",
+      "line": "Pro Staff",
+      "model": "Pro Staff Team Classic",
+      "generation": "v14",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23.5,
+          23.5,
+          23.5
+        ]
+      },
+      "swatch": "#222427",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/wilson-pro-staff-team-classic.glb",
+          "bytes": 139700,
+          "triangles": 4568
+        }
+      },
+      "variantLabel": "Team Classic",
+      "variantOf": "wilson-pro-staff-97-v14",
+      "colourway": "Classic"
     },
     {
       "id": "wilson-rf-01",
@@ -11008,6 +12005,73 @@
       "variantOf": "yonex-ezone-100"
     },
     {
+      "id": "yonex-junior-25",
+      "brand": "Yonex",
+      "line": "Junior",
+      "model": "Junior 25",
+      "generation": "Junior",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 25,
+        "stringPattern": [
+          16,
+          17
+        ],
+        "beamMm": [
+          20,
+          20,
+          20
+        ]
+      },
+      "swatch": "#4ab8ea",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/yonex-junior-25.glb",
+          "bytes": 117696,
+          "triangles": 4836
+        }
+      },
+      "variantLabel": "25",
+      "variants": [
+        {
+          "id": "yonex-junior-25",
+          "label": "25"
+        },
+        {
+          "id": "yonex-junior-26",
+          "label": "26"
+        },
+        {
+          "id": "yonex-junior-23",
+          "label": "23"
+        },
+        {
+          "id": "yonex-junior-21",
+          "label": "21"
+        },
+        {
+          "id": "yonex-junior-19",
+          "label": "19"
+        },
+        {
+          "id": "yonex-junior-17",
+          "label": "17"
+        }
+      ],
+      "colourway": "Ocean Blue"
+    },
+    {
       "id": "yonex-muse-100-2026",
       "brand": "Yonex",
       "line": "Muse",
@@ -11963,6 +13027,211 @@
       },
       "variantLabel": "98 Plus",
       "variantOf": "yonex-vcore-100"
+    },
+    {
+      "id": "yonex-junior-17",
+      "brand": "Yonex",
+      "line": "Junior",
+      "model": "Yonex Junior 17\"",
+      "generation": "Junior",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 58,
+        "lengthIn": 17,
+        "stringPattern": [
+          14,
+          14
+        ],
+        "beamMm": [
+          20,
+          20,
+          20
+        ]
+      },
+      "swatch": "#4ab8ea",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/yonex-junior-17.glb",
+          "bytes": 115544,
+          "triangles": 4796
+        }
+      },
+      "variantLabel": "17",
+      "variantOf": "yonex-junior-25"
+    },
+    {
+      "id": "yonex-junior-19",
+      "brand": "Yonex",
+      "line": "Junior",
+      "model": "Yonex Junior 19\"",
+      "generation": "Junior",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 80,
+        "lengthIn": 19,
+        "stringPattern": [
+          14,
+          15
+        ],
+        "beamMm": [
+          20,
+          20,
+          20
+        ]
+      },
+      "swatch": "#4ab8ea",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/yonex-junior-19.glb",
+          "bytes": 115980,
+          "triangles": 4804
+        }
+      },
+      "variantLabel": "19",
+      "variantOf": "yonex-junior-25"
+    },
+    {
+      "id": "yonex-junior-21",
+      "brand": "Yonex",
+      "line": "Junior",
+      "model": "Yonex Junior 21\"",
+      "generation": "Junior",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 85,
+        "lengthIn": 21,
+        "stringPattern": [
+          16,
+          16
+        ],
+        "beamMm": [
+          20,
+          20,
+          20
+        ]
+      },
+      "swatch": "#4ab8ea",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/yonex-junior-21.glb",
+          "bytes": 117276,
+          "triangles": 4828
+        }
+      },
+      "variantLabel": "21",
+      "variantOf": "yonex-junior-25"
+    },
+    {
+      "id": "yonex-junior-23",
+      "brand": "Yonex",
+      "line": "Junior",
+      "model": "Yonex Junior 23\"",
+      "generation": "Junior",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 23,
+        "stringPattern": [
+          16,
+          17
+        ],
+        "beamMm": [
+          20,
+          20,
+          20
+        ]
+      },
+      "swatch": "#4ab8ea",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/yonex-junior-23.glb",
+          "bytes": 117708,
+          "triangles": 4836
+        }
+      },
+      "variantLabel": "23",
+      "variantOf": "yonex-junior-25"
+    },
+    {
+      "id": "yonex-junior-26",
+      "brand": "Yonex",
+      "line": "Junior",
+      "model": "Yonex Junior 26\"",
+      "generation": "Junior",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 26,
+        "stringPattern": [
+          16,
+          18
+        ],
+        "beamMm": [
+          20,
+          20,
+          20
+        ]
+      },
+      "swatch": "#4ab8ea",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/yonex-junior-26.glb",
+          "bytes": 118136,
+          "triangles": 4844
+        }
+      },
+      "variantLabel": "26",
+      "variantOf": "yonex-junior-25"
     }
   ],
   "placeholders": [
@@ -13106,38 +14375,6 @@
       "researched": "2026-11-20"
     },
     {
-      "id": "head-ig-boom-xceed",
-      "brand": "Head",
-      "line": "Boom",
-      "model": "IG Boom XCeed",
-      "generation": null,
-      "releaseYear": null,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 107,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          23,
-          26,
-          23
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Mint/Black",
-      "sources": [
-        "https://www.tennis-warehouse.com/Head_IG_Boom_XCeed/descpageRCHEAD-XCEEDB.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
       "id": "head-ig-radical-xceed",
       "brand": "Head",
       "line": "Radical",
@@ -13226,264 +14463,6 @@
       "researched": "2026-11-20"
     },
     {
-      "id": "head-instinct-junior-21",
-      "brand": "Head",
-      "line": "Instinct",
-      "model": "Instinct Junior 21",
-      "generation": null,
-      "releaseYear": null,
-      "category": "junior",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 81,
-        "lengthIn": 21,
-        "stringPattern": null,
-        "beamMm": null,
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Purple",
-      "sources": [
-        "https://www.tennis-warehouse.com/Head_Instinct_21_Junior/descpageRCHEAD-INST21.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "head-instinct-junior-23",
-      "brand": "Head",
-      "line": "Instinct",
-      "model": "Instinct Junior 23",
-      "generation": null,
-      "releaseYear": null,
-      "category": "junior",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 98,
-        "lengthIn": 23,
-        "stringPattern": null,
-        "beamMm": null,
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Purple",
-      "sources": [
-        "https://www.tennis-warehouse.com/Head_Instinct_23_Junior_Racquet/descpageRCHEAD-INST23.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "head-instinct-junior-25",
-      "brand": "Head",
-      "line": "Instinct",
-      "model": "Instinct Junior 25",
-      "generation": null,
-      "releaseYear": null,
-      "category": "junior",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 105,
-        "lengthIn": 25,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": null,
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Purple/Blue",
-      "sources": [
-        "https://www.tennis-warehouse.com/Head_Instinct_25_Junior_Racquet/descpageRCHEAD-INST25.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "head-paw-patrol-junior-17",
-      "brand": "Head",
-      "line": "Paw Patrol",
-      "model": "Paw Patrol Junior 17",
-      "generation": null,
-      "releaseYear": null,
-      "category": "junior",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 62,
-        "lengthIn": 17,
-        "stringPattern": [
-          14,
-          15
-        ],
-        "beamMm": null,
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Blue (also White)",
-      "sources": [
-        "https://www.tennis-warehouse.com/Head_Paw_Patrol_17_Junior_Racquet_Blue/descpageRCHEAD-PAW17B.html",
-        "https://www.tennis-warehouse.com/Head_Paw_Patrol_17_Junior_Racquet_White/descpageRCHEAD-PAW17W.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "head-paw-patrol-junior-19",
-      "brand": "Head",
-      "line": "Paw Patrol",
-      "model": "Paw Patrol Junior 19",
-      "generation": null,
-      "releaseYear": null,
-      "category": "junior",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 81,
-        "lengthIn": 19,
-        "stringPattern": [
-          16,
-          17
-        ],
-        "beamMm": null,
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Blue (also White)",
-      "sources": [
-        "https://www.tennis-warehouse.com/Head_Paw_Patrol_19_Junior_Racquet_Blue/descpageRCHEAD-PAW19B.html",
-        "https://www.tennis-warehouse.com/Head_Paw_Patrol_19_Junior_Racquet_White/descpageRCHEAD-PAW19W.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "head-paw-patrol-junior-21",
-      "brand": "Head",
-      "line": "Paw Patrol",
-      "model": "Paw Patrol Junior 21",
-      "generation": null,
-      "releaseYear": null,
-      "category": "junior",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 81,
-        "lengthIn": 21,
-        "stringPattern": [
-          16,
-          17
-        ],
-        "beamMm": null,
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Blue (also White)",
-      "sources": [
-        "https://www.tennis-warehouse.com/Head_Paw_Patrol_21_Junior_Racquet_Blue/descpageRCHEAD-PAW21B.html",
-        "https://www.tennis-warehouse.com/Head_Paw_Patrol_21_Junior_Racquet_White/descpageRCHEAD-PAW21W.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "head-paw-patrol-junior-23",
-      "brand": "Head",
-      "line": "Paw Patrol",
-      "model": "Paw Patrol Junior 23",
-      "generation": null,
-      "releaseYear": null,
-      "category": "junior",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 98,
-        "lengthIn": 23,
-        "stringPattern": [
-          16,
-          18
-        ],
-        "beamMm": null,
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Blue (also White)",
-      "sources": [
-        "https://www.tennis-warehouse.com/Head_Paw_Patrol_23_Junior_Racquet_Blue/descpageRCHEAD-PAW23B.html",
-        "https://www.tennis-warehouse.com/Head_Paw_Patrol_23_Junior_Racquet_White/descpageRCHEAD-PAW23W.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "head-prestige-mp-limited",
-      "brand": "Head",
-      "line": "Prestige",
-      "model": "Prestige MP Limited",
-      "generation": null,
-      "releaseYear": null,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 99,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          21.5,
-          21.5,
-          21.5
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Silver",
-      "sources": [
-        "https://www.tennis-warehouse.com/Head_Prestige_MP_Limited/descpageRCHEAD-HPMPL6.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "head-radical-tour-2025",
-      "brand": "Head",
-      "line": "Radical",
-      "model": "Radical Tour",
-      "generation": "2025",
-      "releaseYear": 2025,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 98,
-        "lengthIn": 27,
-        "stringPattern": [
-          18,
-          20
-        ],
-        "beamMm": [
-          20,
-          23,
-          21
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Orange/Blue",
-      "sources": [
-        "https://www.tennis-warehouse.com/Head_Radical_Tour_2025/descpageRCHEAD-HRTOUR.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
       "id": "head-speed-junior-21",
       "brand": "Head",
       "line": "Speed",
@@ -13530,130 +14509,6 @@
       "colourway": "Green",
       "sources": [
         "https://www.tennis-warehouse.com/Head_Speed_23_Junior_Racquet/descpageRCHEAD-SPED23.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "head-speed-junior-25",
-      "brand": "Head",
-      "line": "Speed",
-      "model": "Speed Junior 25",
-      "generation": null,
-      "releaseYear": null,
-      "category": "junior",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 105,
-        "lengthIn": 25,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": null,
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Blue/Green",
-      "sources": [
-        "https://www.tennis-warehouse.com/Head_Speed_25_Junior_Racquet/descpageRCHEAD-SPED25.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "prince-ats-textreme-tour-100-310-2022",
-      "brand": "Prince",
-      "line": "ATS Textreme Tour",
-      "model": "ATS Textreme Tour 100 310",
-      "generation": null,
-      "releaseYear": 2022,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          18
-        ],
-        "beamMm": [
-          22,
-          23,
-          20
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "White",
-      "sources": [
-        "https://www.tennis-warehouse.com/Prince_ATS_Textreme_Tour_100_310/descpageRCTWABG-ATR310.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "prince-ats-textreme-tour-100p-2022",
-      "brand": "Prince",
-      "line": "ATS Textreme Tour",
-      "model": "ATS Textreme Tour 100P",
-      "generation": null,
-      "releaseYear": 2022,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27,
-        "stringPattern": [
-          18,
-          20
-        ],
-        "beamMm": [
-          22,
-          23,
-          20
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "White",
-      "sources": [
-        "https://www.tennis-warehouse.com/Prince_ATS_Textreme_Tour_100P/descpageRCTWABG-ATR10P.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "prince-ats-textreme-tour-98",
-      "brand": "Prince",
-      "line": "ATS Textreme Tour",
-      "model": "ATS Textreme Tour 98",
-      "generation": null,
-      "releaseYear": null,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 98,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          23,
-          23,
-          20
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "White",
-      "sources": [
-        "https://www.tennis-warehouse.com/Prince_ATS_Textreme_Tour_98/descpageRCTWABG-ATR98.html"
       ],
       "researched": "2026-11-20"
     },
@@ -13728,72 +14583,6 @@
       },
       "colourway": null,
       "sources": [
-        "https://www.tenniswarehouse-europe.com/catpage-PRINCERAC-EN.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "prince-beast-smiley-edition-280g",
-      "brand": "Prince",
-      "line": "Beast",
-      "model": "Beast Smiley Edition (280g)",
-      "generation": null,
-      "releaseYear": null,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          24,
-          25.5,
-          23
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Black",
-      "sources": [
-        "https://www.tennis-warehouse.com/Prince_Beast_Smiley_Edition_280g/descpageRCPRINCE-PBS280.html",
-        "https://www.tenniswarehouse-europe.com/catpage-PRINCERAC-EN.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "prince-beast-smiley-edition-300g",
-      "brand": "Prince",
-      "line": "Beast",
-      "model": "Beast Smiley Edition (300g)",
-      "generation": null,
-      "releaseYear": null,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          24,
-          25.5,
-          22
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Black",
-      "sources": [
-        "https://www.tennis-warehouse.com/Prince_Beast_Smiley_Edition_300g/descpageRCPRINCE-PBS300.html",
         "https://www.tenniswarehouse-europe.com/catpage-PRINCERAC-EN.html"
       ],
       "researched": "2026-11-20"
@@ -13899,72 +14688,6 @@
       "researched": "2026-11-20"
     },
     {
-      "id": "prince-o3-legacy-105",
-      "brand": "Prince",
-      "line": "Legacy",
-      "model": "O3 Legacy 105",
-      "generation": "2024",
-      "releaseYear": null,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 105,
-        "lengthIn": 27.25,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          23.5,
-          25,
-          23
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Gold",
-      "sources": [
-        "https://www.tennis-warehouse.com/Prince_O3_Legacy_105/descpageRCLEADER-PLEG5.html",
-        "https://www.tenniswarehouse-europe.com/catpage-PRINCERAC-EN.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "prince-o3-legacy-120-2024",
-      "brand": "Prince",
-      "line": "Legacy",
-      "model": "O3 Legacy 120",
-      "generation": "2024",
-      "releaseYear": 2024,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 120,
-        "lengthIn": 27.25,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          27.5,
-          29.5,
-          27
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Gold",
-      "sources": [
-        "https://www.tennis-warehouse.com/Prince_O3_Legacy_120/descpageRCLEADER-PLEG2.html",
-        "https://www.tenniswarehouse-europe.com/catpage-PRINCERAC-EN.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
       "id": "prince-tour-25-junior",
       "brand": "Prince",
       "line": "Tour",
@@ -14014,38 +14737,6 @@
       "colourway": null,
       "sources": [
         "https://www.tenniswarehouse-europe.com/catpage-PRINCERAC-EN.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "prince-warrior-100-300g-2025",
-      "brand": "Prince",
-      "line": "Warrior",
-      "model": "Warrior 100 (300g)",
-      "generation": null,
-      "releaseYear": 2025,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          24,
-          26,
-          22
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Blue, Black",
-      "sources": [
-        "https://www.tennis-warehouse.com/Prince_Warrior_100_300g/descpageRCPRINCE-P5WA30.html"
       ],
       "researched": "2026-11-20"
     },
@@ -14175,38 +14866,6 @@
       "researched": "2026-11-20"
     },
     {
-      "id": "wilson-burn-pink-105s-v6-2026",
-      "brand": "Wilson",
-      "line": "Burn",
-      "model": "Burn Pink 105S",
-      "generation": "v6",
-      "releaseYear": 2026,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 105,
-        "lengthIn": 27,
-        "stringPattern": [
-          18,
-          16
-        ],
-        "beamMm": [
-          23.5,
-          25,
-          23.5
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Orange (per TW colour field; model name says Pink)",
-      "sources": [
-        "https://www.tennis-warehouse.com/Wilson_Burn_Pink_105S_v6/descpageRCWILSON-BRNP15.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
       "id": "wilson-clash-25-v2",
       "brand": "Wilson",
       "line": "Clash",
@@ -14231,70 +14890,6 @@
       "colourway": "Black/Red",
       "sources": [
         "https://www.tennis-warehouse.com/Wilson_Clash_25_v2_Junior_Racquet/descpageRCWILSON-WC25V2.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "wilson-pro-staff-97l-classic",
-      "brand": "Wilson",
-      "line": "Pro Staff",
-      "model": "Pro Staff 97L Classic",
-      "generation": null,
-      "releaseYear": null,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 97,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          23.5,
-          23.5,
-          23.5
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Black",
-      "sources": [
-        "https://www.tennis-warehouse.com/Wilson_Pro_Staff_97L_Classic/descpageRCWILSON-WPS97L.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "wilson-pro-staff-team-classic",
-      "brand": "Wilson",
-      "line": "Pro Staff",
-      "model": "Pro Staff Team Classic",
-      "generation": null,
-      "releaseYear": null,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          23.5,
-          23.5,
-          23.5
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Black",
-      "sources": [
-        "https://www.tennis-warehouse.com/Wilson_Pro_Staff_Team_Classic/descpageRCWILSON-WPSTMC.html"
       ],
       "researched": "2026-11-20"
     },
@@ -14416,174 +15011,6 @@
       "colourway": "Blue",
       "sources": [
         "https://www.tennis-warehouse.com/Yonex_EZONE_Alpha_275g/descpageRCYONEX-EZAPR.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "yonex-junior-17",
-      "brand": "Yonex",
-      "line": "Junior",
-      "model": "Yonex Junior 17\"",
-      "generation": null,
-      "releaseYear": null,
-      "category": "junior",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 58,
-        "lengthIn": 17,
-        "stringPattern": [
-          14,
-          14
-        ],
-        "beamMm": null,
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Ocean Blue",
-      "sources": [
-        "https://www.tennis-warehouse.com/Yonex_Junior_17_Racquet_Ocean_Blue/descpageRCYONEX-YONJ17OB.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "yonex-junior-19",
-      "brand": "Yonex",
-      "line": "Junior",
-      "model": "Yonex Junior 19\"",
-      "generation": null,
-      "releaseYear": null,
-      "category": "junior",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 80,
-        "lengthIn": 19,
-        "stringPattern": [
-          14,
-          15
-        ],
-        "beamMm": null,
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Coral Orange or Ocean Blue",
-      "sources": [
-        "https://www.tennis-warehouse.com/Yonex_Junior_19_Racquet_Coral_Orange/descpageRCYONEX-YONJ19CO.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "yonex-junior-21",
-      "brand": "Yonex",
-      "line": "Junior",
-      "model": "Yonex Junior 21\"",
-      "generation": null,
-      "releaseYear": null,
-      "category": "junior",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 85,
-        "lengthIn": 21,
-        "stringPattern": [
-          16,
-          16
-        ],
-        "beamMm": null,
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Coral Orange or Ocean Blue",
-      "sources": [
-        "https://www.tennis-warehouse.com/Yonex_Junior_21_Racquet_Ocean_Blue/descpageRCYONEX-YONJ21OB.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "yonex-junior-23",
-      "brand": "Yonex",
-      "line": "Junior",
-      "model": "Yonex Junior 23\"",
-      "generation": null,
-      "releaseYear": null,
-      "category": "junior",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 98,
-        "lengthIn": 23,
-        "stringPattern": [
-          16,
-          17
-        ],
-        "beamMm": null,
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Coral Orange or Ocean Blue",
-      "sources": [
-        "https://www.tennis-warehouse.com/Yonex_Junior_23_Racquet_Coral_Orange/descpageRCYONEX-YONJ23CO.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "yonex-junior-25",
-      "brand": "Yonex",
-      "line": "Junior",
-      "model": "Yonex Junior 25\"",
-      "generation": null,
-      "releaseYear": null,
-      "category": "junior",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 25,
-        "stringPattern": [
-          16,
-          17
-        ],
-        "beamMm": null,
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Coral Orange or Ocean Blue",
-      "sources": [
-        "https://www.tennis-warehouse.com/Yonex_Junior_25_Racquet_Ocean_Blue/descpageRCYONEX-YONJ25OB.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "yonex-junior-26",
-      "brand": "Yonex",
-      "line": "Junior",
-      "model": "Yonex Junior 26\"",
-      "generation": null,
-      "releaseYear": null,
-      "category": "junior",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 26,
-        "stringPattern": [
-          16,
-          18
-        ],
-        "beamMm": null,
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Coral Orange or Ocean Blue",
-      "sources": [
-        "https://www.tennis-warehouse.com/Yonex_Junior_26_Racquet_Coral_Orange/descpageRCYONEX-YONJ26CO.html"
       ],
       "researched": "2026-11-20"
     },
