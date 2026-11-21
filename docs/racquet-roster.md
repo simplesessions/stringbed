@@ -24,6 +24,15 @@ Example (Babolat Pure Aero 2026): the inner edge is slate, yellow only inside th
 the bands wrap the face and outer edge with the dark grommet channel running through them; a
 thin yellow line runs under the bridge; the throat-arm yellow is lettering, so it is left out.
 
+**Variants (one frame, several sizes).** Racquets of the same line and generation that differ
+only in head size, string pattern, beam or weight (Speed MP / Pro / Tour, Pure Aero 100 / 98)
+are one spec file: the flagship is the base, with a `variantLabel` ("MP", "100"), and the others
+are listed in `variants`, each with an `id`, a `label` and only the top-level fields that differ
+(usually `model`, `specs`, sometimes `geometry`, `paint`, `sources`). Every variant is still
+built and published under its own id and file name. The gallery shows one bay per frame and a
+version picker on its page. A different generation (Phantom 100X 2024 vs O3 Phantom 100X 2025)
+is a different frame, not a variant; the same frame in other paint is a colourway.
+
 **Official colourways.** A spec names its own colourway in `colourway` (e.g. "Blast Blue") and
 lists other official ones in `colourways`: each has an id, name, optional year, its own `paint`,
 optional part-colour overrides and sources. Geometry is shared. Each colourway is generated as

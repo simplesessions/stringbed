@@ -87,5 +87,152 @@
     "https://racquetguys.ca/products/babolat-pure-strike-98-16x19-4th-gen",
     "https://www.tennis-warehouse.com/Babolat_Pure_Strike_98_16x19_Carbon_Grey/descpageRCBAB-PS9816.html"
   ],
-  "verified": true
+  "verified": true,
+  "variantLabel": "98",
+  "variants": [
+    {
+      "id": "babolat-pure-strike-97-2024",
+      "label": "97",
+      "model": "Pure Strike 97",
+      "generation": "Gen4",
+      "specs": {
+        "headSizeSqIn": 97,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          20
+        ],
+        "beamMm": [
+          21,
+          22,
+          21
+        ]
+      },
+      "paint": {
+        "base": "#8f98a3",
+        "finish": "satin",
+        "zones": [
+          {
+            "from": 0,
+            "to": 0.35,
+            "color": "#5f6771"
+          },
+          {
+            "from": 0.36,
+            "to": 0.405,
+            "color": "#f55a46"
+          },
+          {
+            "from": 0.425,
+            "to": 0.535,
+            "color": "#f55a46"
+          },
+          {
+            "from": 0.79,
+            "to": 1,
+            "color": "#4c5158"
+          }
+        ]
+      },
+      "parts": {
+        "grip": {
+          "color": "#b87a42"
+        },
+        "collar": {
+          "color": "#16161a"
+        },
+        "buttCap": {
+          "color": "#b87a42"
+        },
+        "strings": {
+          "color": "#f2f2f2",
+          "gaugeMm": 1.25
+        },
+        "grommets": {
+          "color": "#3a3e44",
+          "channel": 0.45
+        },
+        "bumper": {
+          "color": "#3a3e44"
+        },
+        "dampener": null
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Babolat_Pure_Strike_97_Carbon_Grey/descpageRCBAB-PS97SN.html"
+      ],
+      "colourway": "Grey/Neon Red"
+    },
+    {
+      "id": "babolat-pure-strike-100-2024",
+      "label": "100",
+      "model": "Pure Strike 100",
+      "generation": "Gen4",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          21,
+          23,
+          21
+        ]
+      },
+      "paint": {
+        "base": "#8f98a3",
+        "finish": "satin",
+        "zones": [
+          {
+            "from": 0,
+            "to": 0.35,
+            "color": "#5f6771"
+          },
+          {
+            "from": 0.36,
+            "to": 0.405,
+            "color": "#f55a46"
+          },
+          {
+            "from": 0.425,
+            "to": 0.535,
+            "color": "#f55a46"
+          },
+          {
+            "from": 0.79,
+            "to": 1,
+            "color": "#4c5158"
+          }
+        ]
+      },
+      "parts": {
+        "grip": {
+          "color": "#e6e7e8"
+        },
+        "collar": {
+          "color": "#3a3e44"
+        },
+        "buttCap": {
+          "color": "#e6e7e8"
+        },
+        "strings": {
+          "color": "#f2f2f2",
+          "gaugeMm": 1.25
+        },
+        "grommets": {
+          "color": "#3a3e44",
+          "channel": 0.45
+        },
+        "bumper": {
+          "color": "#3a3e44"
+        },
+        "dampener": null
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Babolat_Pure_Strike_100_Carbon_Grey/descpageRCBAB-PS1019.html"
+      ],
+      "colourway": "Grey/Neon Red"
+    }
+  ]
 }

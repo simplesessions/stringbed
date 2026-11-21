@@ -9,6 +9,11 @@ export type Feature = 'o-ports' | 'aero-fins';
 export type HexColor = string; // "#rrggbb"
 export type BeamFace = 'outer' | 'inner' | 'front' | 'back';
 
+export interface Variant extends Partial<Pick<RacquetSpec, 'model' | 'generation' | 'year' | 'specs' | 'geometry' | 'paint' | 'parts' | 'sources' | 'verified' | 'colourway' | 'colourways'>> {
+  id: string;
+  label: string;
+}
+
 export interface Colourway {
   id: string; // kebab-case, e.g. "espresso-brown"
   name: string; // "Espresso Brown"
@@ -71,6 +76,16 @@ export interface RacquetSpec {
   verified: boolean;
   /** Name of the colourway the spec itself describes, e.g. "Blast Blue". */
   colourway?: string;
+  /** Short name of this size or version within its frame family, e.g. "MP", "100", "Pro 98". */
+  variantLabel?: string;
+  /**
+   * Other sizes or versions of the same frame (same line and generation): each lists only the
+   * top-level fields that differ, which replace the base's. `loadAllSpecs` expands them into
+   * full specs, so every variant is built and published under its own id.
+   */
+  variants?: Variant[];
+  /** Set by `loadAllSpecs` on an expanded variant: the id of the family's base spec. Not in files. */
+  variantOf?: string;
   /**
    * Other official colourways of the same frame. Each replaces the paint and overrides any part
    * colours it lists; geometry is shared. Built as its own file: `<id>--<colourway id>.glb`.
@@ -108,7 +123,7 @@ const paintSchema = z
   })
   .strict();
 
-export const racquetSpecSchema = z
+const baseSpecSchema = z
   .object({
     id: z.string().regex(/^[a-z0-9]+(-[a-z0-9]+)*$/, 'expected kebab-case'),
     brand: z.string().min(1),
@@ -181,7 +196,29 @@ export const racquetSpecSchema = z
       )
       .optional(),
   })
-  .strict() satisfies z.ZodType<RacquetSpec, unknown>;
+  .strict();
+
+const variantSchema = z
+  .object({
+    id: z.string().regex(/^[a-z0-9]+(-[a-z0-9]+)*$/, 'expected kebab-case'),
+    label: z.string().min(1),
+  })
+  .extend(
+    baseSpecSchema
+      .pick({ model: true, generation: true, year: true, specs: true, geometry: true, paint: true, parts: true, sources: true, verified: true, colourway: true, colourways: true })
+      .partial().shape,
+  )
+  .strict();
+
+export const racquetSpecSchema = baseSpecSchema
+  .extend({ variantLabel: z.string().min(1).optional(), variants: z.array(variantSchema).optional() })
+  .strict() satisfies z.ZodType<Omit<RacquetSpec, 'variantOf'>, unknown>;
+
+/** A family's variant as a full spec: the base with the variant's fields in place of its own. */
+export function withVariant(base: RacquetSpec, v: Variant): RacquetSpec {
+  const { id, label, ...fields } = v;
+  return { ...base, colourway: undefined, colourways: undefined, ...fields, id, variantLabel: label, variants: undefined, variantOf: base.id };
+}
 
 /** The spec as it would read for one of its colourways: that paint, those part colours. */
 export function withColourway(spec: RacquetSpec, cw: Colourway): RacquetSpec {
@@ -227,7 +264,7 @@ export function loadAllSpecs(dir = 'racquets'): RacquetSpec[] {
       if (spec.id !== basename(file, '.json')) {
         throw new Error(`${label}: id: "${spec.id}" does not match file name`);
       }
-      specs.push(spec);
+      specs.push(spec, ...(spec.variants ?? []).map((v) => withVariant(spec, v)));
     }
   }
   return specs.sort((a, b) => cmp(a.brand, b.brand) || cmp(a.model, b.model) || cmp(a.id, b.id));

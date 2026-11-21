@@ -87,5 +87,29 @@
     "https://www.tennis-warehouse.com/Head_Radical_MP_2025/descpageRCHEAD-HRMP.html"
   ],
   "verified": true,
-  "colourway": "Orange"
+  "colourway": "Orange",
+  "variantLabel": "MP",
+  "variants": [
+    {
+      "id": "head-radical-pro-2025",
+      "label": "Pro",
+      "model": "Radical Pro",
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          20,
+          21.5,
+          21
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Radical_Pro_2025/descpageRCHEAD-HPRR.html"
+      ]
+    }
+  ]
 }

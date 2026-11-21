@@ -58,6 +58,9 @@ export async function generateInMemory(): Promise<Generated> {
       swatch: spec.paint.base,
       parts: model.parts.map((p) => p.name),
       assets,
+      ...(spec.variantLabel ? { variantLabel: spec.variantLabel } : {}),
+      ...(spec.variantOf ? { variantOf: spec.variantOf } : {}),
+      ...(spec.variants?.length ? { variants: [{ id: spec.id, label: spec.variantLabel ?? spec.model }, ...spec.variants.map((v) => ({ id: v.id, label: v.label }))] } : {}),
       ...(spec.colourway ? { colourway: spec.colourway } : {}),
       ...(colourways.length ? { colourways } : {}),
     });

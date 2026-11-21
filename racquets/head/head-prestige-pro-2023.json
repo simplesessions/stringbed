@@ -70,5 +70,29 @@
     "https://www.tennis-warehouse.com/Head_Prestige_Pro/descpageRCHEAD-PRPROR.html"
   ],
   "verified": true,
-  "colourway": "Charcoal/Maroon"
+  "colourway": "Charcoal/Maroon",
+  "variantLabel": "Pro",
+  "variants": [
+    {
+      "id": "head-prestige-mp-l",
+      "label": "MP L",
+      "model": "Prestige MP L",
+      "specs": {
+        "headSizeSqIn": 99,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          21.5,
+          21.5,
+          21.5
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Prestige_MP_L/descpageRCHEAD-HPRMPL.html"
+      ]
+    }
+  ]
 }

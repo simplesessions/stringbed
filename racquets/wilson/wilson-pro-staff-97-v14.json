@@ -82,5 +82,60 @@
     "https://racquetguys.com/products/wilson-pro-staff-97-v14",
     "https://racquetguys.ca/products/wilson-pro-staff-97-v14"
   ],
-  "verified": true
+  "verified": true,
+  "colourway": "Copper Iridescent",
+  "colourways": [
+    {
+      "id": "classic",
+      "name": "Classic",
+      "year": 2025,
+      "paint": {
+        "base": "#222427",
+        "finish": "gloss",
+        "zones": [
+          {
+            "from": 0.015,
+            "to": 0.025,
+            "color": "#c8302f"
+          },
+          {
+            "from": 0.025,
+            "to": 0.035,
+            "color": "#e8b923"
+          },
+          {
+            "from": 0.585,
+            "to": 0.595,
+            "color": "#e8b923"
+          },
+          {
+            "from": 0.595,
+            "to": 0.61,
+            "color": "#c8302f"
+          }
+        ]
+      },
+      "parts": {
+        "grip": {
+          "color": "#1b1b1d"
+        },
+        "collar": {
+          "color": "#222427"
+        },
+        "buttCap": {
+          "color": "#1b1b1d"
+        },
+        "grommets": {
+          "color": "#141416",
+          "channel": 0.45
+        },
+        "bumper": {
+          "color": "#141416"
+        }
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Wilson_Pro_Staff_97_Classic_Racquet/descpageRCWILSON-WPS97C.html"
+      ]
+    }
+  ]
 }

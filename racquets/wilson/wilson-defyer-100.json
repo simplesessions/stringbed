@@ -75,5 +75,63 @@
     "https://www.tennis-warehouse.com/Wilson_Defyer_100_Racquet/descpageRCWILSON-WRL100.html"
   ],
   "verified": true,
-  "colourway": "Red"
+  "colourway": "Red",
+  "variantLabel": "100",
+  "variants": [
+    {
+      "id": "wilson-defyer-98-pro",
+      "label": "98 Pro",
+      "model": "Defyer 98 Pro",
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          20
+        ],
+        "beamMm": [
+          22,
+          23.5,
+          22
+        ]
+      },
+      "paint": {
+        "base": "#f0381c",
+        "finish": "gloss",
+        "zones": [
+          {
+            "from": 0.295,
+            "to": 0.33,
+            "color": "#f1f1ee"
+          }
+        ]
+      },
+      "parts": {
+        "grip": {
+          "color": "#1c1c1e"
+        },
+        "collar": {
+          "color": "#f0381c"
+        },
+        "buttCap": {
+          "color": "#1c1c1e"
+        },
+        "strings": {
+          "color": "#f2f2f2",
+          "gaugeMm": 1.25
+        },
+        "grommets": {
+          "color": "#e8402e",
+          "channel": 0.45
+        },
+        "bumper": {
+          "color": "#e8402e"
+        },
+        "dampener": null
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Wilson_Defyer_98_Pro_Racquet/descpageRCWILSON-WRL98.html"
+      ]
+    }
+  ]
 }

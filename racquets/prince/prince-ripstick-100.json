@@ -78,5 +78,53 @@
     "https://www.merchantoftennis.com/products/prince-o3-ripstick-100-300g",
     "https://www.tennis-warehouse.com/Prince_Ripstick_100_300g/descpageRCTWABG-25RIPH.html"
   ],
-  "verified": true
+  "verified": true,
+  "variantLabel": "100",
+  "variants": [
+    {
+      "id": "prince-ripstick-98-2025",
+      "label": "98",
+      "model": "Ripstick 98",
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          18
+        ],
+        "beamMm": [
+          27,
+          25.5,
+          22
+        ]
+      },
+      "parts": {
+        "grip": {
+          "color": "#e04a4f"
+        },
+        "collar": {
+          "color": "#c92f35"
+        },
+        "buttCap": {
+          "color": "#c8343a"
+        },
+        "strings": {
+          "color": "#f2f2f2",
+          "gaugeMm": 1.25
+        },
+        "grommets": {
+          "color": "#c2262e",
+          "channel": 0.45
+        },
+        "bumper": {
+          "color": "#c2262e"
+        },
+        "dampener": null
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Prince_Ripstick_98/descpageRCTWABG-2RIP98.html"
+      ],
+      "colourway": "Red"
+    }
+  ]
 }

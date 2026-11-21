@@ -17,6 +17,12 @@ export interface Catalog {
     parts: PartName[];
     /** Keyed by style id; path is relative to assets/, e.g. "realistic/babolat-pure-aero-100.glb". */
     assets: Record<string, { path: string; bytes: number; triangles: number }>;
+    /** Short name within its frame family ("MP", "98"), when the frame comes in variants. */
+    variantLabel?: string;
+    /** On a variant: the id of its family's main entry (the one the wall shows). */
+    variantOf?: string;
+    /** On a family's main entry: every variant in display order, itself first. */
+    variants?: Array<{ id: string; label: string }>;
     /** Name of the default colourway (the one in `swatch` and `assets`), when the spec names it. */
     colourway?: string;
     /** Other official colourways, each with its own files ("realistic/<id>--<colourway>.glb"). */

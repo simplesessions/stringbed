@@ -76,5 +76,45 @@
     "https://www.tennis-warehouse.com/Prince_Tour_100_290g_2026/descpage-PTR629.html",
     "https://www.tenniswarehouse-europe.com/Prince_Tour_100_Rackets_290g_2026/descpageRCPRINCEH-PTR629-EN.html"
   ],
-  "verified": true
+  "verified": true,
+  "variantLabel": "100 290g",
+  "variants": [
+    {
+      "id": "prince-tour-98-2026",
+      "label": "98",
+      "model": "Tour 98",
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          23,
+          20
+        ]
+      },
+      "paint": {
+        "base": "#141416",
+        "finish": "gloss",
+        "zones": [
+          {
+            "from": 0.38,
+            "to": 0.5,
+            "color": "#e2772a",
+            "faces": [
+              "front",
+              "back"
+            ]
+          }
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Prince_Tour_98_2026/descpageRCTWABG-PTR698.html"
+      ],
+      "colourway": "Black/Orange"
+    }
+  ]
 }

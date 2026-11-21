@@ -587,7 +587,25 @@ body[data-view='detail'] .signs { display: none; }
 .search-empty { margin: 0; padding: 14px 16px; color: var(--ink-2); font-size: 0.9375rem; }
 .search-empty:empty { display: none; }
 
-/* ---------- colourways ---------- */
+/* ---------- variants and colourways ---------- */
+
+.pickers { display: grid; gap: 8px; margin: 4px 0 18px; }
+.pickers .colourways { margin: 0; }
+.variants { display: flex; flex-wrap: wrap; gap: 6px; }
+.variant {
+  display: inline-flex; align-items: center;
+  min-height: 36px;
+  padding: 6px 14px;
+  border: 1.5px solid var(--line);
+  border-radius: 999px;
+  color: var(--ink);
+  font-size: 0.875rem; font-weight: 640; font-stretch: 86%; font-variant-numeric: tabular-nums;
+  text-decoration: none;
+  transition: background-color 0.2s var(--ease-out), border-color 0.2s var(--ease-out);
+}
+.variant:hover { background: var(--wall-2); }
+.variant[aria-current='true'] { background: var(--ink); border-color: var(--ink); color: var(--wall); }
+.tag-variants { color: var(--ink-2); font-size: 0.75rem; font-weight: 600; font-stretch: 86%; letter-spacing: 0.01em; }
 
 .colourways { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 18px; }
 .colourway {

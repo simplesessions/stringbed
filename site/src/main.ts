@@ -19,6 +19,8 @@ import {
   pickStyle,
   routeFor,
   inColourway,
+  familyOf,
+  wallName,
   searchRacquets,
   AGES,
   type Age,
@@ -341,8 +343,9 @@ function bay(a: App, r: Racquet): HTMLLIElement {
   const link = el('a', { class: 'bay-link', href: routeFor(r.id) },
     el('span', { class: 'bay-stage' }, silhouette(r.specs.headSizeSqIn), canvas),
     el('span', { class: 'tag' },
-      el('span', { class: 'tag-model' }, r.model),
+      el('span', { class: 'tag-model' }, wallName(r)),
       el('span', { class: 'tag-meta' }, `${r.brand} · ${generationLabel(r)}`),
+      r.variants?.length ? el('span', { class: 'tag-variants' }, r.variants.map((v) => v.label).join(' · ')) : null,
     ),
   );
   const item = el('li', { class: 'bay', style: `--swatch: ${r.swatch}`, 'data-id': r.id }, link);
@@ -411,7 +414,7 @@ function showDetail(a: App, r: Racquet, colourway: string | null = null) {
   // Switching colourway on the same racquet keeps the scroll position and focus where they are.
   const same = !detail.hidden && detail.dataset.id === r.id;
   detail.dataset.id = r.id;
-  a.lastOpened = r.id;
+  a.lastOpened = familyOf(a.catalog, r).id; // the wall shows the family, so return to its bay
   wall.hidden = true;
   detail.hidden = false;
   document.body.dataset.view = 'detail';
@@ -496,18 +499,30 @@ function sourceLabel(u: string): string {
 // ---------- detail ----------
 
 function detailView(a: App, base: Racquet, colourwayId: string | null = null): Node[] {
-  const i = a.order.indexOf(base);
+  const family = familyOf(a.catalog, base);
+  const i = a.order.indexOf(family);
   const { shown: r, colourway } = inColourway(base, colourwayId);
   const prev = a.order[(i - 1 + a.order.length) % a.order.length];
   const next = a.order[(i + 1) % a.order.length];
   const nav = el('nav', { class: 'detail-nav', 'aria-label': 'Racquet' },
     el('a', { class: 'back', href: routeFor(null) }, icon('back'), 'All racquets'),
     el('span', { class: 'stepper' },
-      el('a', { href: routeFor(prev.id), 'aria-label': `Previous: ${prev.model}` }, icon('prev'), el('span', { class: 'stepper-name' }, prev.model)),
-      el('a', { href: routeFor(next.id), 'aria-label': `Next: ${next.model}` }, el('span', { class: 'stepper-name' }, next.model), icon('next')),
+      el('a', { href: routeFor(prev.id), 'aria-label': `Previous: ${wallName(prev)}` }, icon('prev'), el('span', { class: 'stepper-name' }, wallName(prev))),
+      el('a', { href: routeFor(next.id), 'aria-label': `Next: ${wallName(next)}` }, el('span', { class: 'stepper-name' }, wallName(next)), icon('next')),
     ),
   );
-  return [nav, el('div', { class: 'detail-body', style: `--swatch: ${r.swatch}` }, stage(a, r), sheet(a, r, colourwayPicker(base, colourway)))];
+  const pickers = [variantPicker(family, base.id), colourwayPicker(base, colourway)].filter((x): x is HTMLElement => x !== null);
+  return [nav, el('div', { class: 'detail-body', style: `--swatch: ${r.swatch}` }, stage(a, r), sheet(a, r, pickers.length ? el('div', { class: 'pickers' }, ...pickers) : null))];
+}
+
+/** The sizes or versions of a frame; none when it comes in one. */
+function variantPicker(family: Racquet, current: string): HTMLElement | null {
+  if (!family.variants?.length) return null;
+  return el('div', { class: 'variants', role: 'group', 'aria-label': 'Version' },
+    ...family.variants.map((v) =>
+      el('a', { class: 'variant', href: routeFor(v.id), 'aria-current': String(v.id === current) }, v.label),
+    ),
+  );
 }
 
 /** Swatches for a racquet's official colourways; none when it has only one. */

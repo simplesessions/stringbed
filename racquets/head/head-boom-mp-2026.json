@@ -79,5 +79,43 @@
     "https://www.tennis-warehouse.com/Head_Boom_MP_2026/descpageRCHEAD-HBOMP6.html"
   ],
   "verified": true,
-  "colourway": "Light blue/Navy"
+  "colourway": "Light blue/Navy",
+  "variantLabel": "MP",
+  "variants": [
+    {
+      "id": "head-boom-pro-2026",
+      "label": "Pro",
+      "model": "Boom Pro",
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          22,
+          22,
+          21.5
+        ]
+      },
+      "geometry": {
+        "head": {
+          "shape": "oval",
+          "aspect": 1.31
+        },
+        "beam": {
+          "profile": "ellipse"
+        },
+        "throat": {
+          "style": "open-v",
+          "bridge": "curved"
+        },
+        "features": []
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Boom_Pro_2026/descpageRCHEAD-HBOOP6.html"
+      ]
+    }
+  ]
 }

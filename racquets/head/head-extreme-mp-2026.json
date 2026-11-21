@@ -79,5 +79,29 @@
     "https://www.tennis-warehouse.com/Head_Extreme_MP_Racquet/descpageRCHEAD-HREM26.html"
   ],
   "verified": true,
-  "colourway": "Lime/Black"
+  "colourway": "Lime/Black",
+  "variantLabel": "MP",
+  "variants": [
+    {
+      "id": "head-extreme-pro-2026",
+      "label": "Pro",
+      "model": "Extreme Pro",
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          22,
+          23,
+          21
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Extreme_Pro_Racquet/descpageRCHEAD-HEXP26.html"
+      ]
+    }
+  ]
 }

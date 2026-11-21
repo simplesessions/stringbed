@@ -75,5 +75,69 @@
     "https://www.tennis-warehouse.com/Head_Gravity_MP_2025/descpageRCHEAD-HGMPG.html"
   ],
   "verified": true,
-  "colourway": "Blue/Black"
+  "colourway": "Blue/Black",
+  "variantLabel": "MP",
+  "variants": [
+    {
+      "id": "head-gravity-tour-2025",
+      "label": "Tour",
+      "model": "Gravity Tour",
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          22,
+          22,
+          22
+        ]
+      },
+      "paint": {
+        "base": "#14171b",
+        "finish": "gloss",
+        "zones": [
+          {
+            "from": 0.24,
+            "to": 0.76,
+            "color": "#2aa0b8",
+            "faces": [
+              "outer",
+              "front",
+              "back"
+            ]
+          }
+        ]
+      },
+      "parts": {
+        "grip": {
+          "color": "#1c1c1e"
+        },
+        "collar": {
+          "color": "#14171b"
+        },
+        "buttCap": {
+          "color": "#1c1c1e"
+        },
+        "strings": {
+          "color": "#f2f2f2",
+          "gaugeMm": 1.25
+        },
+        "grommets": {
+          "color": "#101215",
+          "channel": 0.45
+        },
+        "bumper": {
+          "color": "#101215"
+        },
+        "dampener": null
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Gravity_Tour_2025/descpageRCHEAD-HGTRR.html"
+      ],
+      "colourway": "Black/Blue"
+    }
+  ]
 }

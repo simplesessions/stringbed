@@ -78,5 +78,144 @@
     "https://www.head.com/en_US/product/speed-mp-2026-232026",
     "https://www.midwestracquetsports.com/head-speed-mp-2026-tennis-racquet-black-white/p/232026/"
   ],
-  "verified": true
+  "verified": true,
+  "variantLabel": "MP",
+  "variants": [
+    {
+      "id": "head-speed-pro-2026",
+      "label": "Pro",
+      "model": "Speed Pro",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          18,
+          20
+        ],
+        "beamMm": [
+          23,
+          23,
+          23
+        ]
+      },
+      "paint": {
+        "base": "#3b424a",
+        "finish": "satin",
+        "zones": [
+          {
+            "from": 0,
+            "to": 0.155,
+            "color": "#ecece8"
+          },
+          {
+            "from": 0.55,
+            "to": 0.88,
+            "color": "#ecece8"
+          }
+        ]
+      },
+      "parts": {
+        "grip": {
+          "color": "#ecece8"
+        },
+        "collar": {
+          "color": "#ecece8"
+        },
+        "buttCap": {
+          "color": "#ecece8"
+        },
+        "strings": {
+          "color": "#1d1f21",
+          "gaugeMm": 1.25
+        },
+        "grommets": {
+          "color": "#2a2e33",
+          "channel": 0.45
+        },
+        "bumper": {
+          "color": "#2a2e33"
+        },
+        "dampener": null
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Speed_Pro_2026/descpageRCHEAD-HSPDP6.html"
+      ],
+      "colourway": "Charcoal/White"
+    },
+    {
+      "id": "head-speed-tour-2026",
+      "label": "Tour",
+      "model": "Speed Tour",
+      "specs": {
+        "headSizeSqIn": 97,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          23,
+          23
+        ]
+      },
+      "geometry": {
+        "head": {
+          "shape": "oval",
+          "aspect": 1.31
+        },
+        "beam": {
+          "profile": "ellipse"
+        },
+        "throat": {
+          "style": "open-v",
+          "bridge": "curved"
+        },
+        "features": []
+      },
+      "paint": {
+        "base": "#3b424a",
+        "finish": "satin",
+        "zones": [
+          {
+            "from": 0,
+            "to": 0.155,
+            "color": "#ecece8"
+          },
+          {
+            "from": 0.55,
+            "to": 0.88,
+            "color": "#ecece8"
+          }
+        ]
+      },
+      "parts": {
+        "grip": {
+          "color": "#ecece8"
+        },
+        "collar": {
+          "color": "#ecece8"
+        },
+        "buttCap": {
+          "color": "#ecece8"
+        },
+        "strings": {
+          "color": "#1d1f21",
+          "gaugeMm": 1.25
+        },
+        "grommets": {
+          "color": "#2a2e33",
+          "channel": 0.45
+        },
+        "bumper": {
+          "color": "#2a2e33"
+        },
+        "dampener": null
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Speed_Tour_2026/descpageRCHEAD-HSPDT6.html"
+      ],
+      "colourway": "Charcoal/White"
+    }
+  ]
 }

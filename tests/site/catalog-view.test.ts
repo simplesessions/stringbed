@@ -21,6 +21,7 @@ import {
   groupPlaceholders,
   placeholderLabel,
   searchRacquets,
+  wallName,
 } from '../../site/src/catalog-view';
 
 const catalog: Catalog = JSON.parse(readFileSync(join(__dirname, '../../assets/catalog.json'), 'utf8'));
@@ -60,13 +61,13 @@ test('groupByBrand sorts brands', () => {
   expect(groupByBrand(catalog).map((g) => g.brand)).toEqual(['Babolat', 'Head', 'Prince', 'Solinco', 'Wilson', 'Yonex']);
 });
 
-test('groupByBrand keeps every racquet exactly once and sorts models within a brand', () => {
+test('groupByBrand keeps every family once (variants left out) and sorts within a brand', () => {
   const groups = groupByBrand(catalog);
   const ids = groups.flatMap((g) => g.racquets.map((r) => r.id));
-  expect(ids.sort()).toEqual(catalog.racquets.map((r) => r.id).sort());
+  expect(ids.sort()).toEqual(catalog.racquets.filter((r) => !r.variantOf).map((r) => r.id).sort());
   for (const g of groups) {
     expect(g.racquets.every((r) => r.brand === g.brand)).toBe(true);
-    const models = g.racquets.map((r) => r.model);
+    const models = g.racquets.map((r) => wallName(r));
     expect(models).toEqual([...models].sort((a, b) => a.localeCompare(b)));
   }
 });

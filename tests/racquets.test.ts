@@ -4,8 +4,20 @@ import { loadAllSpecs } from '../src/core/spec';
 const specs = loadAllSpecs();
 
 test('every spec parses and ids are unique', () => {
-  expect(specs.length).toBe(47);
+  // 29 frames on the wall; 17 more are their variants (other sizes of the same frame).
+  expect(specs.length).toBe(46);
+  expect(specs.filter((s) => !s.variantOf)).toHaveLength(29);
   expect(new Set(specs.map((s) => s.id)).size).toBe(specs.length);
+});
+test('variants share brand and line with their family and have a label', () => {
+  const byId = new Map(specs.map((s) => [s.id, s]));
+  for (const v of specs.filter((s) => s.variantOf)) {
+    const base = byId.get(v.variantOf!)!;
+    expect(base, v.id).toBeDefined();
+    expect([v.brand, v.line]).toEqual([base.brand, base.line]);
+    expect(v.variantLabel, v.id).toBeTruthy();
+    expect(base.variantLabel, base.id).toBeTruthy();
+  }
 });
 test('six brands, at least one racquet each', () => {
   const byBrand = Object.groupBy(specs, (s) => s.brand);

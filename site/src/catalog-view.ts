@@ -14,17 +14,28 @@ export const DEFAULT_STYLE = 'realistic';
 
 const byText = (a: string, b: string) => a.localeCompare(b, 'en');
 
-/** Brands alphabetical; models alphabetical within a brand. */
+/** The wall's name for a racquet: the line when it is a family of variants, else the model. */
+export function wallName(r: Racquet): string {
+  return r.variants?.length ? r.line : r.model;
+}
+
+/** The family's main entry for a variant (or the racquet itself). */
+export function familyOf(c: Catalog, r: Racquet): Racquet {
+  return (r.variantOf && c.racquets.find((x) => x.id === r.variantOf)) || r;
+}
+
+/** Brands alphabetical; families alphabetical within a brand. Variants are left out. */
 export function groupByBrand(c: Catalog): BrandGroup[] {
   const groups = new Map<string, Racquet[]>();
   for (const r of c.racquets) {
+    if (r.variantOf) continue; // variants live on their family's page, not on the wall
     const list = groups.get(r.brand) ?? [];
     list.push(r);
     groups.set(r.brand, list);
   }
   return [...groups.keys()].sort(byText).map((brand) => ({
     brand,
-    racquets: [...groups.get(brand)!].sort((a, b) => byText(a.model, b.model)),
+    racquets: [...groups.get(brand)!].sort((a, b) => byText(wallName(a), wallName(b))),
   }));
 }
 

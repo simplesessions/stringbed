@@ -47,7 +47,18 @@
           "bytes": 126596,
           "triangles": 4884
         }
-      }
+      },
+      "variantLabel": "100",
+      "variants": [
+        {
+          "id": "babolat-pure-aero-100",
+          "label": "100"
+        },
+        {
+          "id": "babolat-pure-aero-98-2026",
+          "label": "98"
+        }
+      ]
     },
     {
       "id": "babolat-pure-aero-98-2026",
@@ -87,6 +98,8 @@
           "triangles": 4636
         }
       },
+      "variantLabel": "98",
+      "variantOf": "babolat-pure-aero-100",
       "colourway": "Grey/Yellow"
     },
     {
@@ -127,7 +140,18 @@
           "bytes": 121140,
           "triangles": 4980
         }
-      }
+      },
+      "variantLabel": "100",
+      "variants": [
+        {
+          "id": "babolat-pure-drive-100",
+          "label": "100"
+        },
+        {
+          "id": "babolat-pure-drive-98-2025",
+          "label": "98"
+        }
+      ]
     },
     {
       "id": "babolat-pure-drive-98-2025",
@@ -167,6 +191,8 @@
           "triangles": 4988
         }
       },
+      "variantLabel": "98",
+      "variantOf": "babolat-pure-drive-100",
       "colourway": "Blue"
     },
     {
@@ -207,6 +233,8 @@
           "triangles": 4696
         }
       },
+      "variantLabel": "100",
+      "variantOf": "babolat-pure-strike-98",
       "colourway": "Grey/Neon Red"
     },
     {
@@ -247,6 +275,8 @@
           "triangles": 4704
         }
       },
+      "variantLabel": "97",
+      "variantOf": "babolat-pure-strike-98",
       "colourway": "Grey/Neon Red"
     },
     {
@@ -287,7 +317,22 @@
           "bytes": 143132,
           "triangles": 4696
         }
-      }
+      },
+      "variantLabel": "98",
+      "variants": [
+        {
+          "id": "babolat-pure-strike-98",
+          "label": "98"
+        },
+        {
+          "id": "babolat-pure-strike-97-2024",
+          "label": "97"
+        },
+        {
+          "id": "babolat-pure-strike-100-2024",
+          "label": "100"
+        }
+      ]
     },
     {
       "id": "head-boom-mp-2026",
@@ -327,6 +372,17 @@
           "triangles": 4468
         }
       },
+      "variantLabel": "MP",
+      "variants": [
+        {
+          "id": "head-boom-mp-2026",
+          "label": "MP"
+        },
+        {
+          "id": "head-boom-pro-2026",
+          "label": "Pro"
+        }
+      ],
       "colourway": "Light blue/Navy"
     },
     {
@@ -367,7 +423,8 @@
           "triangles": 4468
         }
       },
-      "colourway": "Light blue/Navy"
+      "variantLabel": "Pro",
+      "variantOf": "head-boom-mp-2026"
     },
     {
       "id": "head-extreme-mp-2026",
@@ -407,6 +464,17 @@
           "triangles": 4540
         }
       },
+      "variantLabel": "MP",
+      "variants": [
+        {
+          "id": "head-extreme-mp-2026",
+          "label": "MP"
+        },
+        {
+          "id": "head-extreme-pro-2026",
+          "label": "Pro"
+        }
+      ],
       "colourway": "Lime/Black"
     },
     {
@@ -447,7 +515,8 @@
           "triangles": 4540
         }
       },
-      "colourway": "Lime/Black"
+      "variantLabel": "Pro",
+      "variantOf": "head-extreme-mp-2026"
     },
     {
       "id": "head-gravity-mp-2025",
@@ -487,6 +556,17 @@
           "triangles": 4476
         }
       },
+      "variantLabel": "MP",
+      "variants": [
+        {
+          "id": "head-gravity-mp-2025",
+          "label": "MP"
+        },
+        {
+          "id": "head-gravity-tour-2025",
+          "label": "Tour"
+        }
+      ],
       "colourway": "Blue/Black"
     },
     {
@@ -527,6 +607,8 @@
           "triangles": 4468
         }
       },
+      "variantLabel": "Tour",
+      "variantOf": "head-gravity-mp-2025",
       "colourway": "Black/Blue"
     },
     {
@@ -567,7 +649,8 @@
           "triangles": 4248
         }
       },
-      "colourway": "Charcoal/Maroon"
+      "variantLabel": "MP L",
+      "variantOf": "head-prestige-pro-2023"
     },
     {
       "id": "head-prestige-pro-2023",
@@ -607,6 +690,17 @@
           "triangles": 4272
         }
       },
+      "variantLabel": "Pro",
+      "variants": [
+        {
+          "id": "head-prestige-pro-2023",
+          "label": "Pro"
+        },
+        {
+          "id": "head-prestige-mp-l",
+          "label": "MP L"
+        }
+      ],
       "colourway": "Charcoal/Maroon"
     },
     {
@@ -647,6 +741,17 @@
           "triangles": 4788
         }
       },
+      "variantLabel": "MP",
+      "variants": [
+        {
+          "id": "head-radical-mp-2025",
+          "label": "MP"
+        },
+        {
+          "id": "head-radical-pro-2025",
+          "label": "Pro"
+        }
+      ],
       "colourway": "Orange"
     },
     {
@@ -687,7 +792,8 @@
           "triangles": 4788
         }
       },
-      "colourway": "Orange"
+      "variantLabel": "Pro",
+      "variantOf": "head-radical-mp-2025"
     },
     {
       "id": "head-speed-mp-2026",
@@ -727,7 +833,22 @@
           "bytes": 113440,
           "triangles": 4596
         }
-      }
+      },
+      "variantLabel": "MP",
+      "variants": [
+        {
+          "id": "head-speed-mp-2026",
+          "label": "MP"
+        },
+        {
+          "id": "head-speed-pro-2026",
+          "label": "Pro"
+        },
+        {
+          "id": "head-speed-tour-2026",
+          "label": "Tour"
+        }
+      ]
     },
     {
       "id": "head-speed-pro-2026",
@@ -767,6 +888,8 @@
           "triangles": 4620
         }
       },
+      "variantLabel": "Pro",
+      "variantOf": "head-speed-mp-2026",
       "colourway": "Charcoal/White"
     },
     {
@@ -807,6 +930,8 @@
           "triangles": 4596
         }
       },
+      "variantLabel": "Tour",
+      "variantOf": "head-speed-mp-2026",
       "colourway": "Charcoal/White"
     },
     {
@@ -1007,7 +1132,18 @@
           "bytes": 124036,
           "triangles": 5016
         }
-      }
+      },
+      "variantLabel": "100",
+      "variants": [
+        {
+          "id": "prince-ripstick-100",
+          "label": "100"
+        },
+        {
+          "id": "prince-ripstick-98-2025",
+          "label": "98"
+        }
+      ]
     },
     {
       "id": "prince-ripstick-98-2025",
@@ -1047,6 +1183,8 @@
           "triangles": 4824
         }
       },
+      "variantLabel": "98",
+      "variantOf": "prince-ripstick-100",
       "colourway": "Red"
     },
     {
@@ -1087,7 +1225,18 @@
           "bytes": 132336,
           "triangles": 4304
         }
-      }
+      },
+      "variantLabel": "100 290g",
+      "variants": [
+        {
+          "id": "prince-tour-100-290g",
+          "label": "100 290g"
+        },
+        {
+          "id": "prince-tour-98-2026",
+          "label": "98"
+        }
+      ]
     },
     {
       "id": "prince-tour-98-2026",
@@ -1127,6 +1276,8 @@
           "triangles": 4248
         }
       },
+      "variantLabel": "98",
+      "variantOf": "prince-tour-100-290g",
       "colourway": "Black/Orange"
     },
     {
@@ -1287,7 +1438,18 @@
           "bytes": 132756,
           "triangles": 4312
         }
-      }
+      },
+      "variantLabel": "98",
+      "variants": [
+        {
+          "id": "wilson-blade-98-v10",
+          "label": "98"
+        },
+        {
+          "id": "wilson-blade-pro-98-16x19-v10-2026",
+          "label": "Pro 98"
+        }
+      ]
     },
     {
       "id": "wilson-blade-pro-98-16x19-v10-2026",
@@ -1327,6 +1489,8 @@
           "triangles": 4248
         }
       },
+      "variantLabel": "Pro 98",
+      "variantOf": "wilson-blade-98-v10",
       "colourway": "Green"
     },
     {
@@ -1408,6 +1572,17 @@
           "triangles": 4724
         }
       },
+      "variantLabel": "100",
+      "variants": [
+        {
+          "id": "wilson-clash-100-v3",
+          "label": "100"
+        },
+        {
+          "id": "wilson-clash-100-pro-v3-2025",
+          "label": "100 Pro"
+        }
+      ],
       "colourway": "Black/Orange",
       "colourways": [
         {
@@ -1463,6 +1638,8 @@
           "triangles": 4476
         }
       },
+      "variantLabel": "100 Pro",
+      "variantOf": "wilson-clash-100-v3",
       "colourway": "Black/Red"
     },
     {
@@ -1503,6 +1680,17 @@
           "triangles": 4596
         }
       },
+      "variantLabel": "100",
+      "variants": [
+        {
+          "id": "wilson-defyer-100",
+          "label": "100"
+        },
+        {
+          "id": "wilson-defyer-98-pro",
+          "label": "98 Pro"
+        }
+      ],
       "colourway": "Red"
     },
     {
@@ -1543,7 +1731,8 @@
           "triangles": 4476
         }
       },
-      "colourway": "Red"
+      "variantLabel": "98 Pro",
+      "variantOf": "wilson-defyer-100"
     },
     {
       "id": "wilson-pro-staff-97-v14",
@@ -1583,47 +1772,23 @@
           "bytes": 136220,
           "triangles": 4440
         }
-      }
-    },
-    {
-      "id": "wilson-pro-staff-97-classic",
-      "brand": "Wilson",
-      "line": "Pro Staff",
-      "model": "Pro Staff 97 Classic",
-      "generation": "Classic",
-      "year": 2025,
-      "specs": {
-        "headSizeSqIn": 97,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          21.5,
-          21.5,
-          21.5
-        ]
       },
-      "swatch": "#222427",
-      "parts": [
-        "frame",
-        "bumper",
-        "grommets",
-        "strings_mains",
-        "strings_crosses",
-        "grip",
-        "collar",
-        "butt_cap"
-      ],
-      "assets": {
-        "realistic": {
-          "path": "realistic/wilson-pro-staff-97-classic.glb",
-          "bytes": 139692,
-          "triangles": 4568
+      "colourway": "Copper Iridescent",
+      "colourways": [
+        {
+          "id": "classic",
+          "name": "Classic",
+          "year": 2025,
+          "swatch": "#222427",
+          "assets": {
+            "realistic": {
+              "path": "realistic/wilson-pro-staff-97-v14--classic.glb",
+              "bytes": 139684,
+              "triangles": 4568
+            }
+          }
         }
-      },
-      "colourway": "Black"
+      ]
     },
     {
       "id": "wilson-rf-01-pro",
@@ -1703,6 +1868,17 @@
           "triangles": 4276
         }
       },
+      "variantLabel": "100",
+      "variants": [
+        {
+          "id": "wilson-ultra-100-v5-2025",
+          "label": "100"
+        },
+        {
+          "id": "wilson-ultra-99-pro-v5",
+          "label": "99 Pro"
+        }
+      ],
       "colourway": "Blue"
     },
     {
@@ -1743,7 +1919,8 @@
           "triangles": 4268
         }
       },
-      "colourway": "Blue"
+      "variantLabel": "99 Pro",
+      "variantOf": "wilson-ultra-100-v5-2025"
     },
     {
       "id": "yonex-ezone-100",
