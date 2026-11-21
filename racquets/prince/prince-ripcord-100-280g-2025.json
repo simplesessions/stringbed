@@ -87,5 +87,29 @@
     "https://www.tennis-warehouse.com/Prince_Ripcord_100_280g/descpageRCTWABG-RPCDM.html"
   ],
   "verified": true,
-  "colourway": "Blue"
+  "colourway": "Blue",
+  "variants": [
+    {
+      "id": "prince-ripcord-98-xs",
+      "label": "98 XS",
+      "model": "Ripcord 98 XS",
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          18
+        ],
+        "beamMm": [
+          25,
+          23,
+          21
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Prince_Ripcord_98_XS/descpageRCTWABG-PRIPXS.html"
+      ]
+    }
+  ],
+  "variantLabel": "100 280g"
 }

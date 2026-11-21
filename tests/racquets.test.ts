@@ -4,9 +4,9 @@ import { loadAllSpecs } from '../src/core/spec';
 const specs = loadAllSpecs();
 
 test('every spec parses and ids are unique', () => {
-  // 29 frames on the wall; 17 more are their variants (other sizes of the same frame).
-  expect(specs.length).toBe(46);
-  expect(specs.filter((s) => !s.variantOf)).toHaveLength(29);
+  // 46 frames on the wall; 30 more are their variants (other sizes of the same frame).
+  expect(specs.length).toBe(76);
+  expect(specs.filter((s) => !s.variantOf)).toHaveLength(46);
   expect(new Set(specs.map((s) => s.id)).size).toBe(specs.length);
 });
 test('variants share brand and line with their family and have a label', () => {
@@ -29,8 +29,8 @@ test('six brands, at least one racquet each', () => {
 test('every Yonex head is isometric', () => {
   for (const s of specs.filter((s) => s.brand === 'Yonex')) expect(s.geometry.head.shape).toBe('isometric');
 });
-test('every Solinco has a camo pattern', () => {
-  for (const s of specs.filter((s) => s.brand === 'Solinco')) expect(s.paint.pattern?.type).toBe('camo');
+test('every Solinco Blackout and Whiteout has a camo pattern', () => {
+  for (const s of specs.filter((s) => s.brand === 'Solinco' && s.line !== 'Prizm')) expect(s.paint.pattern?.type).toBe('camo');
 });
 test('every spec is verified and sourced', () => {
   for (const s of specs) { expect(s.verified, s.id).toBe(true); expect(s.sources.length).toBeGreaterThan(0); }

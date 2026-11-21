@@ -126,6 +126,28 @@
         "https://www.tennis-warehouse.com/Babolat_Pure_Aero_98_2026/descpageRCBAB-BPA98R.html"
       ],
       "colourway": "Grey/Yellow"
+    },
+    {
+      "id": "babolat-pure-aero-team-2026",
+      "label": "Team",
+      "model": "Pure Aero Team",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 285
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Babolat_Pure_Aero_Team_2026/descpageRCBAB-BPAT26.html"
+      ]
     }
   ]
 }

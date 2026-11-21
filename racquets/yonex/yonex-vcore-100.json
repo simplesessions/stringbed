@@ -83,5 +83,50 @@
     "https://www.tennis-warehouse.com/Yonex_VCORE_100_8th_Gen/descpageRCYONEX-VC108GD.html",
     "https://www.tennis-warehouse.com/Yonex_VCORE_100_8th_Gen/descpageRCYONEX-VC108G.html"
   ],
-  "verified": true
+  "verified": true,
+  "variants": [
+    {
+      "id": "yonex-vcore-98-2026",
+      "label": "98",
+      "model": "VCORE 98",
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          23.5,
+          22
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Yonex_VCORE_98_8th_Gen/descpageRCYONEX-VC988G.html"
+      ]
+    },
+    {
+      "id": "yonex-vcore-98-tour-2026",
+      "label": "98 Tour",
+      "model": "VCORE 98 Tour",
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          23.5,
+          22
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Yonex_VCORE_98_Tour_8th_Gen/descpageRCYONEX-VC9T8G.html"
+      ]
+    }
+  ],
+  "variantLabel": "100"
 }

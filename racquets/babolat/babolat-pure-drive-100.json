@@ -116,6 +116,50 @@
         "https://www.tennis-warehouse.com/Babolat_Pure_Drive_98_2025/descpageRCBAB-PD98R.html"
       ],
       "colourway": "Blue"
+    },
+    {
+      "id": "babolat-pure-drive-team-2025",
+      "label": "Team",
+      "model": "Pure Drive Team",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 285
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Babolat_Pure_Drive_Team_2025/descpageRCBAB-BRPTR.html"
+      ]
+    },
+    {
+      "id": "babolat-pure-drive-lite-2025",
+      "label": "Lite",
+      "model": "Pure Drive Lite",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 270
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Babolat_Pure_Drive_Lite_2025/descpageRCBAB-BPDLR.html"
+      ]
     }
   ]
 }

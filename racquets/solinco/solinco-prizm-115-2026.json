@@ -1,0 +1,77 @@
+{
+  "id": "solinco-prizm-115-2026",
+  "brand": "Solinco",
+  "line": "Prizm",
+  "model": "Prizm 115",
+  "generation": "1st gen",
+  "year": 2026,
+  "specs": {
+    "headSizeSqIn": 115,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      28,
+      30,
+      28
+    ]
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.27
+    },
+    "beam": {
+      "profile": "ellipse"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "curved"
+    },
+    "features": []
+  },
+  "paint": {
+    "base": "#f2f3f4",
+    "finish": "gloss",
+    "zones": [
+      {
+        "from": 0.9,
+        "to": 1,
+        "color": "#202225",
+        "faces": [
+          "inner"
+        ]
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#1c1c1e"
+    },
+    "collar": {
+      "color": "#f2f3f4"
+    },
+    "buttCap": {
+      "color": "#1c1c1e"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#202225",
+      "channel": 0.45
+    },
+    "bumper": {
+      "color": "#202225"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://www.tennis-warehouse.com/Solinco_Prizm_115/descpageRCSOLINCO-SPRIZ5.html"
+  ],
+  "verified": true,
+  "colourway": "White"
+}

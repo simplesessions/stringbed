@@ -1,0 +1,74 @@
+{
+  "id": "wilson-ultra-pro-16x19-v4",
+  "brand": "Wilson",
+  "line": "Ultra",
+  "model": "Ultra Pro 16x19",
+  "generation": "v4",
+  "year": 2022,
+  "specs": {
+    "headSizeSqIn": 97,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      20.6,
+      20.6,
+      20.6
+    ]
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.3
+    },
+    "beam": {
+      "profile": "ellipse"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "curved"
+    },
+    "features": []
+  },
+  "paint": {
+    "base": "#2394c8",
+    "finish": "gloss",
+    "zones": [
+      {
+        "from": 0.84,
+        "to": 1,
+        "color": "#121316"
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#2b2d30"
+    },
+    "collar": {
+      "color": "#2394c8"
+    },
+    "buttCap": {
+      "color": "#2b2d30"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#121316",
+      "channel": 0.45
+    },
+    "bumper": {
+      "color": "#121316"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://www.tennis-warehouse.com/Wilson_Ultra_Pro_16x19_v4/descpageRCWILSON-WUPRO6.html"
+  ],
+  "verified": true,
+  "colourway": "Blue"
+}

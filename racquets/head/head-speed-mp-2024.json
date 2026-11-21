@@ -1,0 +1,79 @@
+{
+  "id": "head-speed-mp-2024",
+  "brand": "Head",
+  "line": "Speed",
+  "model": "Speed MP",
+  "generation": "2024",
+  "year": 2024,
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      23,
+      23,
+      23
+    ]
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.32
+    },
+    "beam": {
+      "profile": "ellipse"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "curved"
+    },
+    "features": []
+  },
+  "paint": {
+    "base": "#ecece9",
+    "finish": "satin",
+    "zones": [
+      {
+        "from": 0,
+        "to": 0.26,
+        "color": "#2a2d33"
+      },
+      {
+        "from": 0.84,
+        "to": 1,
+        "color": "#2a2d33"
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#1c1c1e"
+    },
+    "collar": {
+      "color": "#2a2d33"
+    },
+    "buttCap": {
+      "color": "#1c1c1e"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#1d1f21",
+      "channel": 0.45
+    },
+    "bumper": {
+      "color": "#1d1f21"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://www.tennis-warehouse.com/Head_Speed_MP_2024/descpageRCHEAD-HSPDM.html"
+  ],
+  "verified": true,
+  "colourway": "White/Black"
+}

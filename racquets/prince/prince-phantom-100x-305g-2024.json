@@ -86,5 +86,50 @@
     "https://www.tennis-warehouse.com/Prince_Phantom_100X_305g/descpageRCTWABG-PHNX5.html"
   ],
   "verified": true,
-  "colourway": "Olive green"
+  "colourway": "Olive green",
+  "variants": [
+    {
+      "id": "prince-phantom-100p-2024",
+      "label": "100P",
+      "model": "Phantom 100P",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          18
+        ],
+        "beamMm": [
+          20.5,
+          19.5,
+          16.5
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Prince_Phantom_100P/descpageRCPRINCE-PHNP1.html"
+      ]
+    },
+    {
+      "id": "prince-phantom-107g-2024",
+      "label": "107G",
+      "model": "Phantom 107G",
+      "specs": {
+        "headSizeSqIn": 107,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          21.5,
+          20,
+          17.5
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Prince_Phantom_107G/descpageRCPRINCE-PHN7G.html"
+      ]
+    }
+  ],
+  "variantLabel": "100X 305g"
 }

@@ -220,5 +220,50 @@
         "https://www.tennis-warehouse.com/Yonex_EZONE_100_Espresso_Brown/descpageRCYONEX-EZ10EB.html"
       ]
     }
-  ]
+  ],
+  "variants": [
+    {
+      "id": "yonex-ezone-98-2025",
+      "label": "98",
+      "model": "EZONE 98",
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23.8,
+          24.5,
+          19.5
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Yonex_EZONE_98_2025/descpageRCYONEX-EZ98BB.html"
+      ]
+    },
+    {
+      "id": "yonex-ezone-98-tour-2025",
+      "label": "98 Tour",
+      "model": "EZONE 98 Tour",
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23.8,
+          24.5,
+          19.5
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Yonex_EZONE_98_Tour_2025/descpageRCYONEX-TEZ98B.html"
+      ]
+    }
+  ],
+  "variantLabel": "100"
 }

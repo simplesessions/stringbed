@@ -70,5 +70,29 @@
     "https://www.tennis-warehouse.com/Wilson_Burn_100S_v6/descpageRCWILSON-WB1SV6.html"
   ],
   "verified": true,
-  "colourway": "Orange/Black"
+  "colourway": "Orange/Black",
+  "variants": [
+    {
+      "id": "wilson-burn-100ls-v6-2026",
+      "label": "100LS",
+      "model": "Burn 100LS",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          18,
+          16
+        ],
+        "beamMm": [
+          23.5,
+          25,
+          23.5
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Wilson_Burn_100_LS_v6/descpageRCWILSON-BRNLS6.html"
+      ]
+    }
+  ],
+  "variantLabel": "100S"
 }

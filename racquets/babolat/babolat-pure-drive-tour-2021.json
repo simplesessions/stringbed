@@ -1,0 +1,92 @@
+{
+  "id": "babolat-pure-drive-tour-2021",
+  "brand": "Babolat",
+  "line": "Pure Drive",
+  "model": "Pure Drive Tour",
+  "generation": "Gen10",
+  "year": 2021,
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      23,
+      26,
+      23
+    ]
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.32
+    },
+    "beam": {
+      "profile": "ellipse"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "curved"
+    },
+    "features": []
+  },
+  "paint": {
+    "base": "#2a86e2",
+    "finish": "gloss",
+    "zones": [
+      {
+        "from": 0.36,
+        "to": 0.415,
+        "color": "#1c2438"
+      },
+      {
+        "from": 0.44,
+        "to": 0.52,
+        "color": "#1c2438"
+      },
+      {
+        "from": 0.71,
+        "to": 1,
+        "color": "#1c2438"
+      },
+      {
+        "from": 0.53,
+        "to": 0.71,
+        "color": "#1c2438",
+        "faces": [
+          "outer"
+        ]
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#1e1e1e"
+    },
+    "collar": {
+      "color": "#1c2438"
+    },
+    "buttCap": {
+      "color": "#1e1e1e"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#1c2438",
+      "channel": 0.45
+    },
+    "bumper": {
+      "color": "#1c2438"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://web.archive.org/web/20230410175747/https://www.tennis-warehouse.com/Babolat_Pure_Drive_Tour_2021/descpageRCBAB-BRPDT.html"
+  ],
+  "verified": true,
+  "colourway": "Blue/Navy"
+}

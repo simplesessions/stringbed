@@ -88,5 +88,30 @@
     "https://www.tennis-warehouse.com/Best_Racquets_of_2026/catpage-BESTRAC26.html",
     "https://www.tennis-warehouse.com/Yonex_Percept_97_Midnight_Navy/descpageRCYONEX-PERM97.html"
   ],
-  "verified": true
+  "verified": true,
+  "variants": [
+    {
+      "id": "yonex-percept-100-2023",
+      "label": "100",
+      "model": "Percept 100",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          23,
+          23
+        ],
+        "unstrungWeightG": 300
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Yonex_Percept_100/descpageRCYONEX-PERC.html"
+      ]
+    }
+  ],
+  "variantLabel": "97"
 }

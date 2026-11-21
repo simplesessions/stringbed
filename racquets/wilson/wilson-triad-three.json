@@ -1,0 +1,74 @@
+{
+  "id": "wilson-triad-three",
+  "brand": "Wilson",
+  "line": "Triad",
+  "model": "Triad Three",
+  "generation": "Triad",
+  "year": 2025,
+  "specs": {
+    "headSizeSqIn": 113,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      26,
+      30,
+      26
+    ]
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.27
+    },
+    "beam": {
+      "profile": "ellipse"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "curved"
+    },
+    "features": []
+  },
+  "paint": {
+    "base": "#1f3f8f",
+    "finish": "gloss",
+    "zones": [
+      {
+        "from": 0.86,
+        "to": 1,
+        "color": "#101428"
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#f0f0f0"
+    },
+    "collar": {
+      "color": "#1f3f8f"
+    },
+    "buttCap": {
+      "color": "#f0f0f0"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#16296a",
+      "channel": 0.45
+    },
+    "bumper": {
+      "color": "#16296a"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://www.tennis-warehouse.com/Wilson_Triad_Three/descpageRCWILSON-WTRI3.html"
+  ],
+  "verified": true,
+  "colourway": "Blue"
+}

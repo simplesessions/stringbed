@@ -1,0 +1,88 @@
+{
+  "id": "head-boom-pro-2024",
+  "brand": "Head",
+  "line": "Boom",
+  "model": "Boom Pro",
+  "generation": "2024",
+  "year": 2024,
+  "specs": {
+    "headSizeSqIn": 98,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      22,
+      22,
+      21.5
+    ]
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.31
+    },
+    "beam": {
+      "profile": "ellipse"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "curved"
+    },
+    "features": []
+  },
+  "paint": {
+    "base": "#3fe0b0",
+    "finish": "satin",
+    "zones": [
+      {
+        "from": 0,
+        "to": 0.12,
+        "color": "#1c2028"
+      },
+      {
+        "from": 0.62,
+        "to": 0.84,
+        "color": "#1c2028",
+        "faces": [
+          "inner",
+          "outer"
+        ]
+      },
+      {
+        "from": 0.84,
+        "to": 1,
+        "color": "#1c2028"
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#1c1c1e"
+    },
+    "collar": {
+      "color": "#1c2028"
+    },
+    "buttCap": {
+      "color": "#1c1c1e"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#1c2028",
+      "channel": 0.45
+    },
+    "bumper": {
+      "color": "#3fe0b0"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://www.tennis-warehouse.com/Head_Boom_Pro/descpageRCHEAD-HBOOMP.html"
+  ],
+  "verified": true,
+  "colourway": "Mint/Black"
+}

@@ -1,0 +1,74 @@
+{
+  "id": "head-extreme-mp-2024",
+  "brand": "Head",
+  "line": "Extreme",
+  "model": "Extreme MP",
+  "generation": "2024",
+  "year": 2024,
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      23,
+      26,
+      21
+    ]
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.31
+    },
+    "beam": {
+      "profile": "ellipse"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "curved"
+    },
+    "features": []
+  },
+  "paint": {
+    "base": "#d2e1c2",
+    "finish": "satin",
+    "zones": [
+      {
+        "from": 0.3,
+        "to": 0.68,
+        "color": "#b8f23c"
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#c6e0a4"
+    },
+    "collar": {
+      "color": "#d2e1c2"
+    },
+    "buttCap": {
+      "color": "#c6e0a4"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#a9c08e",
+      "channel": 0.45
+    },
+    "bumper": {
+      "color": "#a9c08e"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://www.tennis-warehouse.com/Head_Extreme_MP_2024/descpageRCHEAD-HREM24.html"
+  ],
+  "verified": true,
+  "colourway": "Sage/Lime"
+}

@@ -196,6 +196,27 @@
         "https://www.tennis-warehouse.com/Wilson_Clash_100_Pro_v3/descpageRCWILSON-CL1P3V.html"
       ],
       "colourway": "Black/Red"
+    },
+    {
+      "id": "wilson-clash-108-v3-2025",
+      "label": "108",
+      "model": "Clash 108",
+      "specs": {
+        "headSizeSqIn": 108,
+        "lengthIn": 27.25,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          24.5,
+          24.5,
+          24.5
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Wilson_Clash_108_v3/descpageRCWILSON-CL183V.html"
+      ]
     }
   ]
 }

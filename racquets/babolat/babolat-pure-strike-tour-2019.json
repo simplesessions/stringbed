@@ -1,0 +1,79 @@
+{
+  "id": "babolat-pure-strike-tour-2019",
+  "brand": "Babolat",
+  "line": "Pure Strike",
+  "model": "Pure Strike Tour",
+  "generation": "3rd Gen",
+  "year": 2019,
+  "specs": {
+    "headSizeSqIn": 98,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      21,
+      23,
+      21
+    ]
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.33
+    },
+    "beam": {
+      "profile": "box"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "curved"
+    },
+    "features": []
+  },
+  "paint": {
+    "base": "#ecedee",
+    "finish": "satin",
+    "zones": [
+      {
+        "from": 0.4,
+        "to": 0.56,
+        "color": "#ef4f38"
+      },
+      {
+        "from": 0.9,
+        "to": 1,
+        "color": "#ef4f38"
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#ececec"
+    },
+    "collar": {
+      "color": "#d9dadb"
+    },
+    "buttCap": {
+      "color": "#ececec"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#2a2a2c",
+      "channel": 0.45
+    },
+    "bumper": {
+      "color": "#ef4f38"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://web.archive.org/web/20230410173836/https://www.tennis-warehouse.com/Babolat_Pure_Strike_Tour_3rd_Gen/descpageRCBAB-BPSTTO.html"
+  ],
+  "verified": true,
+  "colourway": "White/Coral"
+}

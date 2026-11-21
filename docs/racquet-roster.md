@@ -1,7 +1,7 @@
 # Racquet roster (v1)
 
-Forty-seven racquets: fifteen original (three each for Yonex, Babolat, Wilson and Prince, two for
-Solinco, one Head) and thirty-two promoted from the placeholder roster on 2026-11-20 (see "Added
+Seventy-six racquets (46 frames): fifteen original (three each for Yonex, Babolat, Wilson and Prince, two for
+Solinco, one Head) and sixty-one promoted from the placeholder roster on 2026-11-20 (see "Added
 2026-11-20" at the end). This is the
 research input for the spec files in `racquets/`.
 
@@ -175,3 +175,30 @@ the photos agree but positions were not re-measured); the Prince Tour 98 orange 
 block, not letters; the ATS Tour 98's grey graphics are approximated as grey zones. Candidates
 skipped because the Tennis Warehouse photo looked like an older cosmetic than the record says
 (VCORE 98, EZONE 98, EZONE Alpha, Percept 100 olive): they stay placeholders.
+
+### Third batch (30 more, same day)
+
+Seventeen new frames and thirteen new variants of existing frames (the wall is now 46 bays, 76
+racquets in all). Method as in the second batch: a Tennis Warehouse photo was viewed for each new
+frame and only visible paint was used. Variants reuse their family's paint and take specs from
+the placeholder record.
+
+New frames: Babolat Pure Aero Team (2023 gen), Pure Drive Tour (Gen10, 2021), Pure Strike Tour
+(3rd gen, 2019), Evo Aero, Evo Drive, Evo Strike, Boost Drive; Head Extreme MP 2024, Boom Pro
+2024, Graphene 360+ Extreme MP, Speed MP 2024, Squared; Prince Premier 110; Wilson Blade 98S
+v9, Triad Three, Ultra Pro 16x19 v4; Solinco Prizm 115.
+
+New variants: Clash 108, Pure Aero Team 2026, Pure Drive Team and Lite, VCORE 98 and 98 Tour,
+EZONE 98 and 98 Tour, Percept 100, Phantom 100P and 107G, Ripcord 98 XS, Burn 100LS.
+
+Caveats:
+- The Boom Pro 2024 photo is mint and black; the placeholder said Black/Coral. Painted from the
+  photo.
+- Several Babolat cosmetics (Pure Aero Team, Pure Strike Tour, Evo Aero, Boost Drive) are
+  asymmetric or camouflage-like; the model uses symmetric bands, so they are approximations.
+- Years for the Evo, Boost, Squared, Premier and Triad frames are the retail listing's, not
+  confirmed launch years.
+- Skipped because the photo did not match the record: Head Graphene XT Radical MP (the photo is a
+  2016 racquet), Hyper Hammer 5.3 (low-resolution dated photo). Not photographed: Triad Five.
+- Variants were not checked against their own photos; the VCORE 98 and EZONE 98 Tennis Warehouse
+  photos show older cosmetics than their records, so those two variants keep the flagship paint.

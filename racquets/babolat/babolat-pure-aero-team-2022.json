@@ -1,0 +1,79 @@
+{
+  "id": "babolat-pure-aero-team-2022",
+  "brand": "Babolat",
+  "line": "Pure Aero",
+  "model": "Pure Aero Team",
+  "generation": "2023",
+  "year": 2022,
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      23,
+      26,
+      23
+    ]
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.32
+    },
+    "beam": {
+      "profile": "aero"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "curved"
+    },
+    "features": []
+  },
+  "paint": {
+    "base": "#4a5258",
+    "finish": "gloss",
+    "zones": [
+      {
+        "from": 0.36,
+        "to": 0.415,
+        "color": "#d6ee2c"
+      },
+      {
+        "from": 0.44,
+        "to": 0.56,
+        "color": "#d6ee2c"
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#ececec"
+    },
+    "collar": {
+      "color": "#3a4449"
+    },
+    "buttCap": {
+      "color": "#ececec"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#3a4449",
+      "channel": 0.45
+    },
+    "bumper": {
+      "color": "#3a4449"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://web.archive.org/web/20230410180926/https://www.tennis-warehouse.com/Babolat_Pure_Aero_Team_2023/descpageRCBAB-BAROTM.html"
+  ],
+  "verified": true,
+  "colourway": "Grey/Yellow"
+}
