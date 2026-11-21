@@ -1,0 +1,91 @@
+{
+  "id": "prince-ripcord-100-280g-2025",
+  "brand": "Prince",
+  "line": "Ripcord",
+  "model": "Ripcord 100 280g",
+  "generation": "2025",
+  "year": 2025,
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      27,
+      25,
+      22
+    ]
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.3
+    },
+    "beam": {
+      "profile": "ellipse"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "curved"
+    },
+    "features": []
+  },
+  "paint": {
+    "base": "#1fa2ec",
+    "finish": "satin",
+    "zones": [
+      {
+        "from": 0.12,
+        "to": 0.35,
+        "color": "#3a4fc6"
+      },
+      {
+        "from": 0.55,
+        "to": 0.8,
+        "color": "#3a4fc6",
+        "faces": [
+          "outer"
+        ]
+      },
+      {
+        "from": 0.88,
+        "to": 1,
+        "color": "#3a4fc6",
+        "faces": [
+          "inner",
+          "outer"
+        ]
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#3b52cf"
+    },
+    "collar": {
+      "color": "#3a4fc6"
+    },
+    "buttCap": {
+      "color": "#3b52cf"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#3a4fc6",
+      "channel": 0.45
+    },
+    "bumper": {
+      "color": "#3a4fc6"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://www.tennis-warehouse.com/Prince_Ripcord_100_280g/descpageRCTWABG-RPCDM.html"
+  ],
+  "verified": true,
+  "colourway": "Blue"
+}

@@ -1,0 +1,74 @@
+{
+  "id": "wilson-ultra-100-v5-2025",
+  "brand": "Wilson",
+  "line": "Ultra",
+  "model": "Ultra 100",
+  "generation": "v5",
+  "year": 2025,
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      24,
+      26.5,
+      24.5
+    ]
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.31
+    },
+    "beam": {
+      "profile": "ellipse"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "curved"
+    },
+    "features": []
+  },
+  "paint": {
+    "base": "#2f52dc",
+    "finish": "satin",
+    "zones": [
+      {
+        "from": 0.12,
+        "to": 0.35,
+        "color": "#2d4fd0"
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#1c1c1e"
+    },
+    "collar": {
+      "color": "#2f52dc"
+    },
+    "buttCap": {
+      "color": "#1c1c1e"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#3cc6b6",
+      "channel": 0.45
+    },
+    "bumper": {
+      "color": "#3cc6b6"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://www.tennis-warehouse.com/Wilson_Ultra_100_v5/descpageRCWILSON-WU1005.html"
+  ],
+  "verified": true,
+  "colourway": "Blue"
+}

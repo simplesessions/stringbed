@@ -1,0 +1,82 @@
+{
+  "id": "wilson-defyer-100",
+  "brand": "Wilson",
+  "line": "Defyer",
+  "model": "Defyer 100",
+  "generation": "1st gen",
+  "year": 2026,
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      23.8,
+      25,
+      23
+    ]
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.3
+    },
+    "beam": {
+      "profile": "ellipse"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "curved"
+    },
+    "features": []
+  },
+  "paint": {
+    "base": "#ee3b26",
+    "finish": "gloss",
+    "zones": [
+      {
+        "from": 0.8,
+        "to": 1,
+        "color": "#f2503f"
+      },
+      {
+        "from": 0.3397,
+        "to": 0.3403,
+        "color": "#f1f1ee",
+        "faces": [
+          "outer"
+        ]
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#1c1c1e"
+    },
+    "collar": {
+      "color": "#ee3b26"
+    },
+    "buttCap": {
+      "color": "#1c1c1e"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#e8402e",
+      "channel": 0.45
+    },
+    "bumper": {
+      "color": "#e8402e"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://www.tennis-warehouse.com/Wilson_Defyer_100_Racquet/descpageRCWILSON-WRL100.html"
+  ],
+  "verified": true,
+  "colourway": "Red"
+}

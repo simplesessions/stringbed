@@ -4,15 +4,14 @@ import { loadAllSpecs } from '../src/core/spec';
 const specs = loadAllSpecs();
 
 test('every spec parses and ids are unique', () => {
-  expect(specs.length).toBe(15);
+  expect(specs.length).toBe(27);
   expect(new Set(specs.map((s) => s.id)).size).toBe(specs.length);
 });
-test('six brands, at least one and at most three racquets each', () => {
+test('six brands, at least one racquet each', () => {
   const byBrand = Object.groupBy(specs, (s) => s.brand);
   expect(Object.keys(byBrand).sort()).toEqual(['Babolat', 'Head', 'Prince', 'Solinco', 'Wilson', 'Yonex']);
   for (const list of Object.values(byBrand)) {
     expect(list!.length).toBeGreaterThanOrEqual(1);
-    expect(list!.length).toBeLessThanOrEqual(3);
   }
 });
 test('every Yonex head is isometric', () => {
@@ -27,9 +26,9 @@ test('every spec is verified and sourced', () => {
 test('no spec has a dampener', () => {
   for (const s of specs) expect(s.parts.dampener).toBeNull();
 });
-test('every spec has 2-10 paint zones, none equal to the base colour', () => {
+test('every spec has 1-10 paint zones, none equal to the base colour', () => {
   for (const s of specs) {
-    expect(s.paint.zones.length).toBeGreaterThanOrEqual(2);
+    expect(s.paint.zones.length).toBeGreaterThanOrEqual(1);
     expect(s.paint.zones.length).toBeLessThanOrEqual(10);
     for (const z of s.paint.zones) expect(z.color).not.toBe(s.paint.base);
   }

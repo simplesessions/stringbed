@@ -1,0 +1,74 @@
+{
+  "id": "yonex-muse-100-2026",
+  "brand": "Yonex",
+  "line": "Muse",
+  "model": "Muse 100",
+  "generation": "1st gen",
+  "year": 2026,
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      18
+    ],
+    "beamMm": [
+      24.5,
+      24.5,
+      18
+    ]
+  },
+  "geometry": {
+    "head": {
+      "shape": "isometric",
+      "aspect": 1.37
+    },
+    "beam": {
+      "profile": "ellipse"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "flat"
+    },
+    "features": []
+  },
+  "paint": {
+    "base": "#c9d3df",
+    "finish": "satin",
+    "zones": [
+      {
+        "from": 0.12,
+        "to": 0.3,
+        "color": "#b9c4d2"
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#e9eae6"
+    },
+    "collar": {
+      "color": "#bcc7d4"
+    },
+    "buttCap": {
+      "color": "#e3e4e0"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#9fb7da",
+      "channel": 0.45
+    },
+    "bumper": {
+      "color": "#9fb7da"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://www.tennis-warehouse.com/Yonex_Muse_100/descpageRCYONEX-YMUS10.html"
+  ],
+  "verified": true,
+  "colourway": "Silver"
+}

@@ -1,0 +1,91 @@
+{
+  "id": "head-radical-mp-2025",
+  "brand": "Head",
+  "line": "Radical",
+  "model": "Radical MP",
+  "generation": "2025",
+  "year": 2025,
+  "specs": {
+    "headSizeSqIn": 98,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      20,
+      23,
+      21
+    ]
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.3
+    },
+    "beam": {
+      "profile": "ellipse"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "flat"
+    },
+    "features": []
+  },
+  "paint": {
+    "base": "#f26a4c",
+    "finish": "satin",
+    "zones": [
+      {
+        "from": 0.12,
+        "to": 0.35,
+        "color": "#e8412a"
+      },
+      {
+        "from": 0.55,
+        "to": 0.8,
+        "color": "#e83e28",
+        "faces": [
+          "outer",
+          "inner"
+        ]
+      },
+      {
+        "from": 0.9,
+        "to": 0.97,
+        "color": "#1b1b1e",
+        "faces": [
+          "inner"
+        ]
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#f0634d"
+    },
+    "collar": {
+      "color": "#f26a4c"
+    },
+    "buttCap": {
+      "color": "#ee5a46"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#e4452e",
+      "channel": 0.45
+    },
+    "bumper": {
+      "color": "#e4452e"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://www.tennis-warehouse.com/Head_Radical_MP_2025/descpageRCHEAD-HRMP.html"
+  ],
+  "verified": true,
+  "colourway": "Orange"
+}

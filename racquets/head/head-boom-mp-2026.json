@@ -1,0 +1,83 @@
+{
+  "id": "head-boom-mp-2026",
+  "brand": "Head",
+  "line": "Boom",
+  "model": "Boom MP",
+  "generation": "2026",
+  "year": 2026,
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      23,
+      24,
+      22
+    ]
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.3
+    },
+    "beam": {
+      "profile": "ellipse"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "curved"
+    },
+    "features": []
+  },
+  "paint": {
+    "base": "#3cb6e8",
+    "finish": "satin",
+    "zones": [
+      {
+        "from": 0,
+        "to": 0.12,
+        "color": "#1b2440"
+      },
+      {
+        "from": 0.6,
+        "to": 0.9,
+        "color": "#1b2440",
+        "faces": [
+          "inner",
+          "outer"
+        ]
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#232a44"
+    },
+    "collar": {
+      "color": "#1b2440"
+    },
+    "buttCap": {
+      "color": "#232a44"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#38b8e6",
+      "channel": 0.45
+    },
+    "bumper": {
+      "color": "#38b8e6"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://www.tennis-warehouse.com/Head_Boom_MP_2026/descpageRCHEAD-HBOMP6.html"
+  ],
+  "verified": true,
+  "colourway": "Light blue/Navy"
+}

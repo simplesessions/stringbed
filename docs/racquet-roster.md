@@ -94,7 +94,7 @@ with white hoop-side panels and a white grip. No logos or "SPEED" wordmark.
 |---|---|---|---|---|---|---|---|
 | Speed MP (2026) | 100 | 16×19 | 23 / 23 / 23 | ellipse | Charcoal, almost black, with white panels on the upper hoop sides and a white lower shaft that runs all the way to the throat fork, its edge cutting diagonally across the bottom of each arm; **white grip** and white collar | Constant 23 mm rounded beam; rounded 100 sq in head; white side panels and the white fork are the fastest cues | Specs verified 2026-11-20 (TW page and review); colourway checked against product photos 2026-11-20 (TW HSPMP6 and Midwest 232026, six views) |
 
-With the Speed MP added, the library has **15** racquets.
+With the Speed MP added, the library had 15 racquets; it now has 27 (see below).
 
 ## Prince
 
@@ -120,3 +120,28 @@ Note: the tip / mid / shaft ordering of the O3 Phantom (19 / 20 / 20) and Tour 1
 - Prince racquet guide: https://www.tennis-warehouse.com/learning_center/Gear_Guides/Tennis_Racquets/best_prince_racquet_for_me.html
 - Prince Tour 100 290g 2026: https://www.tennis-warehouse.com/Prince_Tour_100_290g_2026/descpage-PTR629.html
 - Yonex Percept navy: https://tennisexpress.com/blogs/news/yonex-percept-tennis-racquets-midnight-navy
+
+## Added 2026-11-20 (promoted from the placeholder roster)
+
+Twelve more current racquets, chosen as different frames rather than weight variants of
+racquets already here. Specs come from the placeholder records (Tennis Warehouse US); colourway
+and colour placement come from the Tennis Warehouse product photo (face-on and side-on in one
+image) and were then checked against gallery renders at one angle only. **Not yet checked
+against more angled photos** (see the rule above). Beam order, head aspect, bridge shape and
+cross-section are judged by eye, not measured. Unstrung weights are omitted (TW lists strung
+only). Placeholder records for these were removed.
+
+| Model | Head | Pattern | Colourway as modelled | Notes |
+|---|---|---|---|---|
+| Yonex Muse 100 (2026) | 100 | 16×18 | Pearl silver, light blue grommets, cream grip | New isometric family; 16×18 per TW (TennisNerd said 16×19) |
+| Wilson Ultra 100 v5 (2025) | 100 | 16×19 | Electric blue, teal grommets, black grip | |
+| Wilson Burn 100S v6 (2026) | 100 | 18×16 | Copper orange with a charcoal top of the hoop, black grip | Pattern kept as the placeholder lists it (mains×crosses 18×16) |
+| Wilson Defyer 100 | 100 | 16×19 | Red-orange, lighter at the hoop top, thin white line under the bridge | New line, no generation |
+| Wilson Clash 100 Pro v3 (2025) | 100 | 16×20 | Black, red under the bridge and in the grommets | |
+| Wilson RF 01 Pro | 98 | 16×19 | Matte graphite, tan leather-look grip | Federer signature frame; no monogram modelled |
+| Head Extreme MP (2026) | 100 | 16×19 | Lime green, black inner and outer panels on the upper hoop, black grip | The placeholder says "Yellow"; the photo is lime |
+| Head Radical MP (2025) | 98 | 16×19 | Coral orange, redder throat and hoop sides, coral grip | |
+| Head Gravity MP (2025) | 100 | 16×20 | Black with a teal lower hoop | |
+| Head Boom MP (2026) | 100 | 16×19 | Light blue with navy shaft base and upper-hoop panels, navy grip | The placeholder says "Coral/Black (also Purple)"; the photo is blue, so the placeholder colour needs a second look |
+| Prince Ripcord 100 280g (2025) | 100 | 16×19 | Light blue with royal-blue throat, upper hoop and grip | |
+| Babolat Pure Aero 98 (2026) | 98 | 16×20 | Slate with two neon-yellow bands, same placement as the Pure Aero 100 | Bands copied from the Aero 100, not re-measured |

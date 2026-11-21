@@ -5,7 +5,7 @@ Parametric tennis racquet asset library. Public repo: `simplesessions/stringbed`
 Start here, in this order:
 
 1. `docs/superpowers/specs/2026-11-19-stringbed-design.md` — the approved design
-2. `docs/racquet-roster.md` — the 15 racquets, their sources and trust notes
+2. `docs/racquet-roster.md` — the 27 racquets, their sources and trust notes
 3. `docs/superpowers/plans/2026-11-19-stringbed-v1.md` — the build plan
 4. `docs/roadmap.md` — future customization and visual styles
 

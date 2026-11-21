@@ -1,0 +1,83 @@
+{
+  "id": "head-extreme-mp-2026",
+  "brand": "Head",
+  "line": "Extreme",
+  "model": "Extreme MP",
+  "generation": "2026",
+  "year": 2026,
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      23,
+      26,
+      21
+    ]
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.31
+    },
+    "beam": {
+      "profile": "ellipse"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "curved"
+    },
+    "features": []
+  },
+  "paint": {
+    "base": "#a6e63f",
+    "finish": "satin",
+    "zones": [
+      {
+        "from": 0,
+        "to": 0.1,
+        "color": "#16181a"
+      },
+      {
+        "from": 0.62,
+        "to": 0.9,
+        "color": "#17191b",
+        "faces": [
+          "inner",
+          "outer"
+        ]
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#1c1c1e"
+    },
+    "collar": {
+      "color": "#16181a"
+    },
+    "buttCap": {
+      "color": "#1c1c1e"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#14161a",
+      "channel": 0.45
+    },
+    "bumper": {
+      "color": "#14161a"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://www.tennis-warehouse.com/Head_Extreme_MP_Racquet/descpageRCHEAD-HREM26.html"
+  ],
+  "verified": true,
+  "colourway": "Lime/Black"
+}

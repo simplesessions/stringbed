@@ -1,0 +1,74 @@
+{
+  "id": "wilson-burn-100s-v6-2026",
+  "brand": "Wilson",
+  "line": "Burn",
+  "model": "Burn 100S",
+  "generation": "v6",
+  "year": 2026,
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27,
+    "stringPattern": [
+      18,
+      16
+    ],
+    "beamMm": [
+      23.5,
+      25,
+      23.5
+    ]
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.3
+    },
+    "beam": {
+      "profile": "ellipse"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "curved"
+    },
+    "features": []
+  },
+  "paint": {
+    "base": "#d8721f",
+    "finish": "satin",
+    "zones": [
+      {
+        "from": 0.82,
+        "to": 1,
+        "color": "#2b2e33"
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#1c1c1e"
+    },
+    "collar": {
+      "color": "#d8721f"
+    },
+    "buttCap": {
+      "color": "#1c1c1e"
+    },
+    "strings": {
+      "color": "#ece7d6",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#1d1f22",
+      "channel": 0.45
+    },
+    "bumper": {
+      "color": "#1d1f22"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://www.tennis-warehouse.com/Wilson_Burn_100S_v6/descpageRCWILSON-WB1SV6.html"
+  ],
+  "verified": true,
+  "colourway": "Orange/Black"
+}
