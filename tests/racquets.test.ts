@@ -4,14 +4,14 @@ import { loadAllSpecs } from '../src/core/spec';
 const specs = loadAllSpecs();
 
 test('every spec parses and ids are unique', () => {
-  expect(specs.length).toBe(14);
+  expect(specs.length).toBe(15);
   expect(new Set(specs.map((s) => s.id)).size).toBe(specs.length);
 });
-test('five brands, at least two and at most three racquets each', () => {
+test('six brands, at least one and at most three racquets each', () => {
   const byBrand = Object.groupBy(specs, (s) => s.brand);
-  expect(Object.keys(byBrand).sort()).toEqual(['Babolat', 'Prince', 'Solinco', 'Wilson', 'Yonex']);
+  expect(Object.keys(byBrand).sort()).toEqual(['Babolat', 'Head', 'Prince', 'Solinco', 'Wilson', 'Yonex']);
   for (const list of Object.values(byBrand)) {
-    expect(list!.length).toBeGreaterThanOrEqual(2);
+    expect(list!.length).toBeGreaterThanOrEqual(1);
     expect(list!.length).toBeLessThanOrEqual(3);
   }
 });

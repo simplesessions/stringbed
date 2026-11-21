@@ -130,6 +130,46 @@
       }
     },
     {
+      "id": "head-speed-mp-2026",
+      "brand": "Head",
+      "line": "Speed",
+      "model": "Speed MP",
+      "generation": "2026",
+      "year": 2026,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          23,
+          23
+        ],
+        "unstrungWeightG": 300
+      },
+      "swatch": "#2d3134",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/head-speed-mp-2026.glb",
+          "bytes": 110656,
+          "triangles": 4468
+        }
+      }
+    },
+    {
       "id": "prince-o3-phantom-100x",
       "brand": "Prince",
       "line": "Phantom",
@@ -6895,38 +6935,6 @@
       "colourway": "White/Black",
       "sources": [
         "https://www.tennis-warehouse.com/Head_Speed_MP_2024/descpageRCHEAD-HSPDM.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "head-speed-mp-2026",
-      "brand": "Head",
-      "line": "Speed",
-      "model": "Speed MP",
-      "generation": "2026",
-      "releaseYear": 2026,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          23,
-          23,
-          23
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "White/Black",
-      "sources": [
-        "https://www.tennis-warehouse.com/Head_Speed_MP_2026/descpageRCHEAD-HSPMP6.html"
       ],
       "researched": "2026-11-20"
     },

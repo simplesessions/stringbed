@@ -1,7 +1,8 @@
 # Racquet roster (v1)
 
-Fourteen racquets: three each for Yonex, Babolat, Wilson and Prince, two for Solinco. This is the research input for the spec files in
-`racquets/`.
+Fifteen racquets: three each for Yonex, Babolat, Wilson and Prince, two for Solinco and one
+Head (the Speed MP 2026, promoted from the placeholder roster on 2026-11-20). This is the
+research input for the spec files in `racquets/`.
 
 **Read the trust column.** Specs (head, pattern, beam, weight, generation) were checked against
 retailer pages and search snippets on 2026-11-19 (Tennis Warehouse and others; manufacturer sites were mostly
@@ -64,7 +65,19 @@ exists in the spec.
 **Shadow dropped.** Solinco's current line has no Shadow (only a discontinued 2018-2020
 model). The Blackout V2 285 has geometry identical to the 300 (100 sq in, 23.5 / 26 / 23,
 16×19), differing only in weight and balance, so it is not a visibly different icon.
-Solinco therefore ships with **two** racquets, and the library has **14**.
+Solinco therefore ships with **two** racquets.
+
+## Head
+
+Shared identity: rounded heads and constant-thickness beams, darker cosmetic bases than the
+other brands with large white panels; the 2026 Speed line pairs a near-black charcoal frame
+with white hoop-side panels and a white grip. No logos or "SPEED" wordmark.
+
+| Model | Head | Pattern | Beam | Cross-section | Colourway | Identity cues | Trust |
+|---|---|---|---|---|---|---|---|
+| Speed MP (2026) | 100 | 16×19 | 23 / 23 / 23 | ellipse | Charcoal, almost black, with broad white panels on the mid-to-upper hoop sides and a white band at the bottom of the shaft; **white grip** and white collar | Constant 23 mm rounded beam; rounded 100 sq in head; white side panels are the fastest cue | Specs verified 2026-11-20 (TW page and review); colourway checked against product photos 2026-11-20 (TW HSPMP6, five views) |
+
+With the Speed MP added, the library has **15** racquets.
 
 ## Prince
 

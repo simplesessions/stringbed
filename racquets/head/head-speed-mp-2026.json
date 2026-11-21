@@ -1,0 +1,82 @@
+{
+  "id": "head-speed-mp-2026",
+  "brand": "Head",
+  "line": "Speed",
+  "model": "Speed MP",
+  "generation": "2026",
+  "year": 2026,
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      23,
+      23,
+      23
+    ],
+    "unstrungWeightG": 300
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.32
+    },
+    "beam": {
+      "profile": "ellipse"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "curved"
+    },
+    "features": []
+  },
+  "paint": {
+    "base": "#2d3134",
+    "finish": "satin",
+    "zones": [
+      {
+        "from": 0,
+        "to": 0.06,
+        "color": "#f1f1ec",
+        "blend": 0.02
+      },
+      {
+        "from": 0.48,
+        "to": 0.88,
+        "color": "#f1f1ec",
+        "blend": 0.015
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#f1f1ec"
+    },
+    "collar": {
+      "color": "#f1f1ec"
+    },
+    "buttCap": {
+      "color": "#f1f1ec"
+    },
+    "strings": {
+      "color": "#1d1f21",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#23272a"
+    },
+    "bumper": {
+      "color": "#23272a"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://www.tennis-warehouse.com/Head_Speed_MP_2026/descpageRCHEAD-HSPMP6.html",
+    "https://www.tennis-warehouse.com/learning_center/racquet_reviews/HSPMP6review.html",
+    "https://www.head.com/en_US/product/speed-mp-2026-232026"
+  ],
+  "verified": true
+}

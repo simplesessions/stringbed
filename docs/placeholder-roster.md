@@ -18,13 +18,14 @@ every frame listed there has a record.
 | Brand | Current (on sale late 2026) | On sale in 2023 | Total |
 |---|---|---|---|
 | Babolat | 59 (22 junior) | 81 (28 junior) | 133 (7 in both) |
-| Head | 72 (18 junior) | — | 72 |
+| Head | 71 (18 junior) | — | 71 |
 | Prince | 45 (5 junior) | — | 45 |
 | Wilson | 41 (5 junior) | — | 41 |
 | Yonex | 43 (10 junior) | — | 43 |
 | Solinco | 10 (1 junior) | — | 10 |
 
-The 14 library racquets are not repeated here.
+The 15 library racquets are not repeated here. The Head Speed MP 2026 was promoted into
+`racquets/` on 2026-11-20 and its record was removed.
 
 ## Fields
 

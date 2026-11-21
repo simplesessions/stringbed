@@ -55,7 +55,7 @@ test('routeFor round-trips through parseRoute', () => {
 });
 
 test('groupByBrand sorts brands', () => {
-  expect(groupByBrand(catalog).map((g) => g.brand)).toEqual(['Babolat', 'Prince', 'Solinco', 'Wilson', 'Yonex']);
+  expect(groupByBrand(catalog).map((g) => g.brand)).toEqual(['Babolat', 'Head', 'Prince', 'Solinco', 'Wilson', 'Yonex']);
 });
 
 test('groupByBrand keeps every racquet exactly once and sorts models within a brand', () => {
