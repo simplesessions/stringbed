@@ -244,15 +244,35 @@ function smax(a: number, b: number, k: number): [number, number] {
 class MeshBuilder {
   positions: number[] = [];
   us: number[] = [];
+  /**
+   * Where each vertex sits on its section, for paint that targets one face of the beam: x is -1
+   * (inner, facing the strings or the throat opening) to +1 (outer edge), y is -1 (back) to +1
+   * (front). At a crease each copy leans toward the face it belongs to, so a face boundary there
+   * is crisp. Not exported.
+   */
+  sides: number[] = [];
   indices: number[] = [];
 
-  /** Sweep sections along rings. Every ring's section must share point count and creases. */
-  sweep(rings: Ring[], sectionOf: (r: Ring) => BeamSectionLoop): void {
+  /**
+   * Sweep sections along rings. Every ring's section must share point count and creases.
+   * `centre` is the head centre: the in-plane side facing away from it is "outer" (null: both are).
+   */
+  sweep(rings: Ring[], sectionOf: (r: Ring) => BeamSectionLoop, centre: Vec2 | null = null): void {
     let prev: { inIdx: number[]; outIdx: number[] } | null = null;
     for (const ring of rings) {
       const sec = sectionOf(ring);
       const nx = -ring.t.y; // N = Z x T: in-plane, to the right of the sweep direction
       const ny = ring.t.x;
+      const flip = centre && nx * (ring.c.x - centre.x) + ny * (ring.c.y - centre.y) < 0 ? -1 : 1;
+      let hx = 0, hz = 0;
+      for (const p of sec.points) { hx = Math.max(hx, Math.abs(p.x)); hz = Math.max(hz, Math.abs(p.y)); }
+      const n = sec.points.length;
+      const side = (q: Vec2) => [(flip * q.x) / (hx || 1), q.y / (hz || 1)];
+      const lean = (j: number, k: number) => {
+        const p = sec.points[j];
+        const q = sec.points[(j + k + n) % n];
+        return side({ x: p.x + (q.x - p.x) * 0.05, y: p.y + (q.y - p.y) * 0.05 });
+      };
       const inIdx: number[] = [];
       const outIdx: number[] = [];
       for (let j = 0; j < sec.points.length; j++) {
@@ -264,6 +284,7 @@ class MeshBuilder {
         for (let k = 0; k < copies; k++) {
           this.positions.push(x, y, p.y);
           this.us.push(ring.u);
+          this.sides.push(...(copies === 1 ? side(p) : lean(j, k === 0 ? -1 : 1)));
         }
         inIdx.push(first);
         outIdx.push(first + copies - 1);
@@ -295,9 +316,11 @@ class MeshBuilder {
     const centre = this.us.length;
     this.positions.push(ring.c.x, ring.c.y, 0);
     this.us.push(ring.u);
+    this.sides.push(1, 0);
     for (const p of sec.points) {
       this.positions.push(ring.c.x + nx * p.x, ring.c.y + ny * p.x, p.y);
       this.us.push(ring.u);
+      this.sides.push(1, 0);
     }
     const n = sec.points.length;
     for (let j = 0; j < n; j++) {
@@ -313,6 +336,7 @@ class MeshBuilder {
     const g = new THREE.BufferGeometry();
     g.setAttribute('position', new THREE.Float32BufferAttribute(this.positions, 3));
     g.setAttribute('u', new THREE.Float32BufferAttribute(this.us, 1));
+    g.setAttribute('side', new THREE.Float32BufferAttribute(this.sides, 2));
     g.setIndex(this.indices);
     g.computeVertexNormals();
     return g;
@@ -525,17 +549,20 @@ export function buildFrame(spec: RacquetSpec, layout: Layout): THREE.BufferGeome
   const right = [...hoop, ...armRings(ctx, hoop[hoop.length - 1])];
   const seams = paintSeams(spec);
 
+  // Head centre: the in-plane side of the beam facing away from it is the "outer" face.
+  const centre = { x: 0, y: hoop.reduce((sum, r) => sum + r.c.y, 0) / hoop.length };
   const mesh = new MeshBuilder();
-  mesh.sweep(withSeams([...right.slice(1).reverse().map(mirror), ...right], seams), sectionOf);
+  mesh.sweep(withSeams([...right.slice(1).reverse().map(mirror), ...right], seams), sectionOf, centre);
   // The bridge is one constant u, so it takes no seam: it paints like the top of the arms it joins.
-  mesh.sweep(bridgeRings(ctx, fJ), sectionOf);
+  mesh.sweep(bridgeRings(ctx, fJ), sectionOf, centre);
 
   // The shaft holds both arms side by side. The arms stand on its top cap, which closes the
   // floor of the V; the bottom cap closes it inside the grip.
   const { armR } = ctx;
   const shaftLoop = (r: Ring) => stretchSection(beamSectionLoop(profile, r.thickness, armR, detail), armR / 2 + SHAFT_CLEARANCE);
   const shaft = withSeams(shaftRings(ctx), seams);
-  mesh.sweep(shaft, shaftLoop);
+  // The shaft has no inside: both in-plane sides count as outer.
+  mesh.sweep(shaft, shaftLoop, null);
   mesh.cap(shaft[0], shaftLoop(shaft[0]), -1);
   mesh.cap(shaft[shaft.length - 1], shaftLoop(shaft[shaft.length - 1]), 1);
 

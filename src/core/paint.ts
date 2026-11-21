@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { hexToLinear } from './color';
-import type { RacquetSpec } from './spec';
+import type { BeamFace, RacquetSpec } from './spec';
 
 export { hexToLinear } from './color';
 
@@ -22,15 +22,23 @@ function zoneWeight(z: Paint['zones'][number], u: number): number {
   return clamp01(w);
 }
 
+/** The face of the beam a section position (see the frame's "side" attribute) lies on. */
+export function faceAt(sx: number, sz: number): BeamFace {
+  if (Math.abs(sx) >= Math.abs(sz)) return sx >= 0 ? 'outer' : 'inner';
+  return sz >= 0 ? 'front' : 'back';
+}
+
 /**
  * Linear-RGB colour at frame coordinate u, before any pattern: base, overridden by zones in order
- * (later wins). A zone's `blend` fades it in and out *inside* its [from, to] edges, so a zone never
+ * (later wins). A zone with `faces` applies only where `face` is one of them; with no face given
+ * (trim parts) such zones are skipped. A zone's `blend` fades it in and out *inside* its [from, to] edges, so a zone never
  * reaches past the published extent. An edge sitting on the frame end (from <= 0, to >= 1) does not
  * fade, since there is nothing beyond it to fade into.
  */
-export function paintColorAt(paint: Paint, u: number): RGB {
+export function paintColorAt(paint: Paint, u: number, face?: BeamFace): RGB {
   let c = hexToLinear(paint.base);
   for (const z of paint.zones) {
+    if (z.faces && !(face && z.faces.includes(face))) continue;
     const w = zoneWeight(z, u);
     if (w > 0) c = mix(c, hexToLinear(z.color), w);
   }
@@ -38,8 +46,8 @@ export function paintColorAt(paint: Paint, u: number): RGB {
 }
 
 /** True where a zone covers u at least half strength. The pattern paints only the base, never a zone. */
-export function zonedAt(paint: Paint, u: number): boolean {
-  return paint.zones.some((z) => zoneWeight(z, u) >= 0.5);
+export function zonedAt(paint: Paint, u: number, face?: BeamFace): boolean {
+  return paint.zones.some((z) => (!z.faces || (face !== undefined && z.faces.includes(face))) && zoneWeight(z, u) >= 0.5);
 }
 
 /** 32-bit integer hash of a lattice point and seed (no Math.random; fully deterministic). */
@@ -87,14 +95,16 @@ function camoField(x: number, y: number, z: number, scale: number, seed: number)
 export function applyPaint(frame: THREE.BufferGeometry, paint: Paint): void {
   const pos = frame.getAttribute('position');
   const uAttr = frame.getAttribute('u');
+  const sideAttr = frame.getAttribute('side');
   if (!uAttr) throw new Error('applyPaint: frame needs a "u" attribute (use buildFrame output)');
   const out = new Float32Array(pos.count * 3);
   const pat = paint.pattern;
   const patColor = pat ? hexToLinear(pat.color) : null;
   for (let i = 0; i < pos.count; i++) {
     const u = uAttr.getX(i);
-    let c = paintColorAt(paint, u);
-    if (pat && patColor && !zonedAt(paint, u) && camoField(pos.getX(i), pos.getY(i), pos.getZ(i), pat.scale, pat.seed) > CAMO_THRESHOLD) c = patColor;
+    const face = sideAttr ? faceAt(sideAttr.getX(i), sideAttr.getY(i)) : undefined;
+    let c = paintColorAt(paint, u, face);
+    if (pat && patColor && !zonedAt(paint, u, face) && camoField(pos.getX(i), pos.getY(i), pos.getZ(i), pat.scale, pat.seed) > CAMO_THRESHOLD) c = patColor;
     out[i * 3] = c[0]; out[i * 3 + 1] = c[1]; out[i * 3 + 2] = c[2];
   }
   frame.setAttribute('color', new THREE.BufferAttribute(out, 3));

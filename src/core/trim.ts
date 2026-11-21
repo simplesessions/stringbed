@@ -99,8 +99,11 @@ function indexAtAngle(ctx: FrameContext, angle: number): number {
   return ctx.inner.length - 1;
 }
 
-/** The outer half of a hoop section (radial x >= 0), inflated by (ex, ez) at its extremes. */
-function outerSection(spec: RacquetSpec, u: number, ex: number, ez: number): { points: Vec2[]; centre: number } {
+/**
+ * The outer half of a hoop section (radial x >= 0), inflated by (ex, ez) at its extremes. With
+ * `channel` < 1 only the band |z| <= channel x t/2 is kept, cut cleanly at its edges.
+ */
+function outerSection(spec: RacquetSpec, u: number, ex: number, ez: number, channel = 1): { points: Vec2[]; centre: number } {
   const t = beamThicknessAt(spec, u);
   const r = beamRadialAt(spec, u);
   const loop = beamSectionLoop(spec.geometry.beam.profile, t, r, { roundPoints: ROUND_SECTION_POINTS, boxCornerSegments: BOX_CORNER_SEGMENTS });
@@ -113,14 +116,30 @@ function outerSection(spec: RacquetSpec, u: number, ex: number, ez: number): { p
     const p = loop.points[j % n];
     points.push({ x: p.x + (ex * p.x) / (r / 2), y: p.y + (ez * p.y) / (t / 2) });
   }
-  return { points, centre: r / 2 };
+  if (channel >= 1) return { points, centre: r / 2 };
+  // Clip to the channel band. The outer half runs monotonically in z, so the band is one run.
+  const lim = (channel * (t / 2)) + ez * channel;
+  const band: Vec2[] = [];
+  for (let j = 0; j < points.length; j++) {
+    const a = points[j];
+    if (Math.abs(a.y) <= lim) band.push(a);
+    const b = points[j + 1];
+    if (!b) break;
+    for (const edge of [lim, -lim]) {
+      if ((a.y - edge) * (b.y - edge) < 0) {
+        const k = (edge - a.y) / (b.y - a.y);
+        band.push({ x: a.x + (b.x - a.x) * k, y: edge });
+      }
+    }
+  }
+  return { points: band, centre: r / 2 };
 }
 
 /** Sweep an open strip over the outer rim through the given points; `infl` gives (ex, ez) per point. */
-function strip(m: RawMesh, spec: RacquetSpec, pts: RimPoint[], infl: [number, number][], paint?: PaintFn): void {
+function strip(m: RawMesh, spec: RacquetSpec, pts: RimPoint[], infl: [number, number][], paint?: PaintFn, channel = 1): void {
   let prev: number[] | null = null;
   pts.forEach((p, k) => {
-    const { points, centre } = outerSection(spec, p.u, infl[k][0], infl[k][1]);
+    const { points, centre } = outerSection(spec, p.u, infl[k][0], infl[k][1], channel);
     const row = points.map((s) => m.vertex(p.x + p.nx * (centre + s.x), p.y + p.ny * (centre + s.x), s.y));
     if (paint) {
       const c = paint(p.u);
@@ -283,8 +302,9 @@ export function buildGrommets(spec: RacquetSpec, layout: Layout): THREE.BufferGe
   const m = new RawMesh();
   const fEnd = Math.floor(tc.fJ);
   const flat: [number, number][] = Array.from({ length: GROMMET_GAPS_PER_SIDE + 1 }, () => [GROMMET_OUT - PORT_LIFT, GROMMET_FACE - PORT_LIFT]);
-  strip(m, spec, ringsBetween(tc, tc.fB, fEnd, GROMMET_GAPS_PER_SIDE, 1, seams), flat, paint);
-  strip(m, spec, ringsBetween(tc, tc.fB, fEnd, GROMMET_GAPS_PER_SIDE, -1, seams).reverse(), flat, paint);
+  const channel = spec.parts.grommets.channel ?? 1;
+  strip(m, spec, ringsBetween(tc, tc.fB, fEnd, GROMMET_GAPS_PER_SIDE, 1, seams), flat, paint, channel);
+  strip(m, spec, ringsBetween(tc, tc.fB, fEnd, GROMMET_GAPS_PER_SIDE, -1, seams).reverse(), flat, paint, channel);
   const stripVerts = m.vertexCount;
   if (!spec.geometry.features.includes('o-ports')) return m.build();
   const ports = new RawMesh();

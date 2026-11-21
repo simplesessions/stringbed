@@ -7,11 +7,18 @@ export type BeamProfile = 'box' | 'ellipse' | 'aero' | 'tapered-box';
 export type Finish = 'matte' | 'satin' | 'gloss';
 export type Feature = 'o-ports' | 'aero-fins';
 export type HexColor = string; // "#rrggbb"
+export type BeamFace = 'outer' | 'inner' | 'front' | 'back';
 
 export interface TrimPart {
   color: HexColor;
   /** "frame": the part carries the frame's paint zones as vertex colours (its own colour is unused). */
   paint?: 'frame';
+  /**
+   * Grommets only: the strip covers this fraction of the beam's thickness, centred on the outer
+   * edge, like the channel on a real frame; the painted frame shows either side. Default: the
+   * whole outer half of the section.
+   */
+  channel?: number;
 }
 
 export interface RacquetSpec {
@@ -37,7 +44,9 @@ export interface RacquetSpec {
   paint: {
     base: HexColor;
     finish: Finish;
-    zones: Array<{ from: number; to: number; color: HexColor; blend?: number }>; // from/to are frame coordinate u, 0..1
+    // from/to are frame coordinate u, 0..1. `faces` limits a zone to some faces of the beam:
+    // outer (the edge away from the strings), inner (the string side), front, back. Default: all.
+    zones: Array<{ from: number; to: number; color: HexColor; blend?: number; faces?: BeamFace[] }>;
     pattern?: { type: 'camo'; color: HexColor; scale: number; seed: number };
   };
   parts: {
@@ -55,13 +64,19 @@ export interface RacquetSpec {
 
 const hex = z.string().regex(/^#[0-9a-f]{6}$/, 'expected a #rrggbb colour');
 const color = z.object({ color: hex }).strict();
-const trimPart = z.object({ color: hex, paint: z.literal('frame').optional() }).strict();
+const trimPart = z.object({ color: hex, paint: z.literal('frame').optional(), channel: z.number().min(0.2).max(1).optional() }).strict();
 const patternCount = z.number().int().min(12).max(22);
 const beam = z.number().min(14).max(32);
 const unit = z.number().min(0).max(1);
 
 const zone = z
-  .object({ from: unit, to: unit, color: hex, blend: z.number().min(0).max(0.5).optional() })
+  .object({
+    from: unit,
+    to: unit,
+    color: hex,
+    blend: z.number().min(0).max(0.5).optional(),
+    faces: z.array(z.enum(['outer', 'inner', 'front', 'back'])).min(1).optional(),
+  })
   .strict()
   .refine((z) => z.from < z.to, { message: 'from must be less than to', path: ['to'] });
 
