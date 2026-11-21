@@ -74,12 +74,10 @@ scene.add(gltf.scene);
 
 ## Using it as a library
 
-Releases are git tags (`v1.0.0`, …) with the package tarball attached; see `CHANGELOG.md`.
-Pin a version from another project:
+Releases are git tags (`v1.0.0`, …) with the built package tarball attached; see `CHANGELOG.md`.
+Pin a version from another project (a bare `github:` install does not work: the built `lib/` is only in the tarball):
 
 ```sh
-bun add github:simplesessions/stringbed#v1.0.0 three
-# or, from a release's tarball:
 bun add https://github.com/simplesessions/stringbed/releases/download/v1.0.0/stringbed-1.0.0.tgz three
 ```
 
