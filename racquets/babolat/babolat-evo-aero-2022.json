@@ -1,0 +1,112 @@
+{
+  "id": "babolat-evo-aero-2022",
+  "brand": "Babolat",
+  "line": "Evo Aero",
+  "model": "Evo Aero",
+  "generation": "2022",
+  "year": 2022,
+  "specs": {
+    "headSizeSqIn": 102,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      18
+    ],
+    "beamMm": [
+      23,
+      26,
+      23
+    ]
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.32
+    },
+    "beam": {
+      "profile": "aero"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "curved"
+    },
+    "features": []
+  },
+  "paint": {
+    "base": "#8b9399",
+    "finish": "satin",
+    "zones": [
+      {
+        "from": 0.4,
+        "to": 0.52,
+        "color": "#f0f0f0"
+      },
+      {
+        "from": 0.56,
+        "to": 0.72,
+        "color": "#c8f23c"
+      },
+      {
+        "from": 0.88,
+        "to": 1,
+        "color": "#1e2124",
+        "faces": [
+          "inner"
+        ]
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#1e1e1e"
+    },
+    "collar": {
+      "color": "#8b9399"
+    },
+    "buttCap": {
+      "color": "#1e1e1e"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#1e2124",
+      "channel": 0.45
+    },
+    "bumper": {
+      "color": "#1e2124"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://web.archive.org/web/20221108061113/https://www.tennis-warehouse.com/Babolat_EVO_Aero/descpageRCBAB-BEAR.html"
+  ],
+  "verified": true,
+  "colourway": "Grey/White/Yellow",
+  "variants": [
+    {
+      "id": "babolat-evo-aero-lite-2023",
+      "label": "Lite",
+      "model": "Evo Aero Lite",
+      "specs": {
+        "headSizeSqIn": 102,
+        "lengthIn": 27.0,
+        "stringPattern": [
+          16,
+          18
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 260
+      },
+      "sources": [
+        "https://web.archive.org/web/20231208014842/https://www.tennis-warehouse.com/Babolat_EVO_Aero_Lite/descpageRCBAB-BEARL.html"
+      ]
+    }
+  ],
+  "variantLabel": "Evo Aero"
+}

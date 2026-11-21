@@ -156,5 +156,56 @@
       ]
     }
   ],
-  "variantLabel": "Evo Drive"
+  "variantLabel": "Evo Drive",
+  "colourways": [
+    {
+      "id": "white",
+      "name": "White",
+      "year": 2025,
+      "paint": {
+        "base": "#f2f2f0",
+        "finish": "satin",
+        "zones": [
+          {
+            "from": 0.4,
+            "to": 0.52,
+            "color": "#1f2540"
+          },
+          {
+            "from": 0.56,
+            "to": 0.7,
+            "color": "#6cc3c0"
+          },
+          {
+            "from": 0.88,
+            "to": 1,
+            "color": "#1f2540",
+            "faces": [
+              "inner"
+            ]
+          }
+        ]
+      },
+      "parts": {
+        "grip": {
+          "color": "#efeeea"
+        },
+        "collar": {
+          "color": "#f2f2f0"
+        },
+        "buttCap": {
+          "color": "#efeeea"
+        },
+        "grommets": {
+          "color": "#1f2540"
+        },
+        "bumper": {
+          "color": "#1f2540"
+        }
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Babolat_Evo_Drive_Lite_White/descpageRCBAB-BELWR.html"
+      ]
+    }
+  ]
 }

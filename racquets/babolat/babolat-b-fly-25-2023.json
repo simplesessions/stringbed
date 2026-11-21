@@ -1,0 +1,148 @@
+{
+  "id": "babolat-b-fly-25-2023",
+  "brand": "Babolat",
+  "line": "B Fly",
+  "model": "B Fly 25",
+  "generation": "2023",
+  "year": 2023,
+  "specs": {
+    "headSizeSqIn": 106,
+    "lengthIn": 25,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      20,
+      20,
+      20
+    ]
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.3
+    },
+    "beam": {
+      "profile": "ellipse"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "curved"
+    },
+    "features": []
+  },
+  "paint": {
+    "base": "#2a2560",
+    "finish": "gloss",
+    "zones": [
+      {
+        "from": 0.4,
+        "to": 0.52,
+        "color": "#f2f2f2"
+      },
+      {
+        "from": 0.56,
+        "to": 0.8,
+        "color": "#e8308c"
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#f2f2f2"
+    },
+    "collar": {
+      "color": "#2a2560"
+    },
+    "buttCap": {
+      "color": "#f2f2f2"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#1e1a48",
+      "channel": 0.45
+    },
+    "bumper": {
+      "color": "#1e1a48"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://web.archive.org/web/20251228031302/https://www.tennis-warehouse.com/Babolat_B_Fly_25_2023_Junior/descpageRCBAB-BABFLY25.html"
+  ],
+  "verified": true,
+  "colourway": "Navy/Pink",
+  "variants": [
+    {
+      "id": "babolat-b-fly-23-2023",
+      "label": "23",
+      "model": "B Fly 23",
+      "specs": {
+        "headSizeSqIn": 96,
+        "lengthIn": 23.0,
+        "stringPattern": [
+          16,
+          16
+        ],
+        "beamMm": [
+          19,
+          19,
+          19
+        ],
+        "unstrungWeightG": 198
+      },
+      "sources": [
+        "https://web.archive.org/web/20240823062343/https://www.tennis-warehouse.com/Babolat_B_Fly_23_2023_Junior/descpageRCBAB-BABFLY23.html"
+      ]
+    },
+    {
+      "id": "babolat-b-fly-21-2023",
+      "label": "21",
+      "model": "B Fly 21",
+      "specs": {
+        "headSizeSqIn": 95,
+        "lengthIn": 21.0,
+        "stringPattern": [
+          14,
+          15
+        ],
+        "beamMm": [
+          19,
+          19,
+          19
+        ],
+        "unstrungWeightG": 180
+      },
+      "sources": [
+        "https://web.archive.org/web/20251218002302/https://www.tennis-warehouse.com/Babolat_B_Fly_21_2023_Junior/descpageRCBAB-BABFLY21.html"
+      ]
+    },
+    {
+      "id": "babolat-b-fly-19-2023",
+      "label": "19",
+      "model": "B Fly 19",
+      "specs": {
+        "headSizeSqIn": 81,
+        "lengthIn": 19.0,
+        "stringPattern": [
+          14,
+          14
+        ],
+        "beamMm": [
+          17,
+          17,
+          17
+        ],
+        "unstrungWeightG": 155
+      },
+      "sources": [
+        "https://web.archive.org/web/20240823062343/https://www.tennis-warehouse.com/Babolat_B_Fly_19_2023_Junior/descpageRCBAB-BABFLY19.html"
+      ]
+    }
+  ],
+  "variantLabel": "25"
+}

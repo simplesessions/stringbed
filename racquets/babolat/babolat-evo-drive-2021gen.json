@@ -1,0 +1,108 @@
+{
+  "id": "babolat-evo-drive-2021gen",
+  "brand": "Babolat",
+  "line": "Evo Drive",
+  "model": "Evo Drive",
+  "generation": "2021",
+  "year": 2021,
+  "specs": {
+    "headSizeSqIn": 104,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      17
+    ],
+    "beamMm": [
+      23,
+      26,
+      23
+    ]
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.32
+    },
+    "beam": {
+      "profile": "ellipse"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "curved"
+    },
+    "features": []
+  },
+  "paint": {
+    "base": "#1a72e0",
+    "finish": "gloss",
+    "zones": [
+      {
+        "from": 0.38,
+        "to": 0.52,
+        "color": "#1d2640"
+      },
+      {
+        "from": 0.56,
+        "to": 0.72,
+        "color": "#f0f0f0"
+      },
+      {
+        "from": 0.85,
+        "to": 1,
+        "color": "#1d2640"
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#f0f0f0"
+    },
+    "collar": {
+      "color": "#1d2640"
+    },
+    "buttCap": {
+      "color": "#f0f0f0"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#1d2640",
+      "channel": 0.45
+    },
+    "bumper": {
+      "color": "#1d2640"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://web.archive.org/web/20230130101206/https://www.tennis-warehouse.com/Babolat_EVO_Drive/descpageRCBAB-BEVODR.html"
+  ],
+  "verified": true,
+  "colourway": "Blue/White",
+  "variants": [
+    {
+      "id": "babolat-evo-drive-lite-2021gen",
+      "label": "Lite",
+      "model": "Evo Drive Lite",
+      "specs": {
+        "headSizeSqIn": 104,
+        "lengthIn": 27.0,
+        "stringPattern": [
+          16,
+          17
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "sources": [
+        "https://web.archive.org/web/20230130101219/https://www.tennis-warehouse.com/Babolat_EVO_Drive_Lite/descpageRCBAB-BEVODL.html"
+      ]
+    }
+  ],
+  "variantLabel": "Evo Drive"
+}

@@ -70,5 +70,51 @@
     "https://www.tennis-warehouse.com/Babolat_Boost_Aero_2026/descpageRCBAB-BBOASR.html"
   ],
   "verified": true,
-  "colourway": "Grey/Fluorescent yellow"
+  "colourway": "Grey/Fluorescent yellow",
+  "colourways": [
+    {
+      "id": "raspberry-pink",
+      "name": "Raspberry Pink",
+      "year": 2026,
+      "paint": {
+        "base": "#a9adb3",
+        "finish": "satin",
+        "zones": [
+          {
+            "from": 0.44,
+            "to": 0.58,
+            "color": "#b91f58"
+          },
+          {
+            "from": 0.88,
+            "to": 1,
+            "color": "#1e1e20",
+            "faces": [
+              "inner"
+            ]
+          }
+        ]
+      },
+      "parts": {
+        "grip": {
+          "color": "#ececec"
+        },
+        "collar": {
+          "color": "#a9adb3"
+        },
+        "buttCap": {
+          "color": "#ececec"
+        },
+        "grommets": {
+          "color": "#7a7e85"
+        },
+        "bumper": {
+          "color": "#1e1e20"
+        }
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Babolat_Boost_Aero_Pink_2026/descpageRCBAB-BBOAPS.html"
+      ]
+    }
+  ]
 }

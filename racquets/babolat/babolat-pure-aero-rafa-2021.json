@@ -1,0 +1,215 @@
+{
+  "id": "babolat-pure-aero-rafa-2021",
+  "brand": "Babolat",
+  "line": "Pure Aero",
+  "model": "Pure Aero Rafa",
+  "generation": "Rafa 2021",
+  "year": 2021,
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      23,
+      26,
+      23
+    ]
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.32
+    },
+    "beam": {
+      "profile": "aero"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "curved"
+    },
+    "features": []
+  },
+  "paint": {
+    "base": "#f6e53a",
+    "finish": "gloss",
+    "zones": [
+      {
+        "from": 0.4,
+        "to": 0.54,
+        "color": "#2b2a2e"
+      },
+      {
+        "from": 0.56,
+        "to": 0.72,
+        "color": "#d535a8"
+      },
+      {
+        "from": 0.8,
+        "to": 1,
+        "color": "#f39a1e"
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#1e1e1e"
+    },
+    "collar": {
+      "color": "#f6e53a"
+    },
+    "buttCap": {
+      "color": "#1e1e1e"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#2b2a2e",
+      "channel": 0.45
+    },
+    "bumper": {
+      "color": "#2b2a2e"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://web.archive.org/web/20230410173810/https://www.tennis-warehouse.com/Babolat_Pure_Aero_Rafa/descpageRCBAB-BPARR.html"
+  ],
+  "verified": true,
+  "colourway": "Yellow/Orange/Purple",
+  "variants": [
+    {
+      "id": "babolat-pure-aero-rafa-team-2021",
+      "label": "Team",
+      "model": "Pure Aero Rafa Team",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27.0,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 285
+      },
+      "sources": [
+        "https://web.archive.org/web/20230130100912/https://www.tennis-warehouse.com/Babolat_Pure_Aero_Rafa_Team/descpageRCBAB-BPARTR.html"
+      ]
+    },
+    {
+      "id": "babolat-pure-aero-rafa-lite-2021",
+      "label": "Lite",
+      "model": "Pure Aero Rafa Lite",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27.0,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 270
+      },
+      "sources": [
+        "https://web.archive.org/web/20230410173828/https://www.tennis-warehouse.com/Babolat_Pure_Aero_Rafa_Lite/descpageRCBAB-BPARLR.html"
+      ]
+    },
+    {
+      "id": "babolat-rafa-nadal-junior-26-2021gen",
+      "label": "Junior 26",
+      "model": "Rafa Nadal Junior 26",
+      "specs": {
+        "headSizeSqIn": 108,
+        "lengthIn": 26.0,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "sources": [
+        "https://web.archive.org/web/20230130100857/https://www.tennis-warehouse.com/Babolat_Rafa_Nadal_26_Junior/descpageRCBAB-BNADJR26.html"
+      ]
+    },
+    {
+      "id": "babolat-rafa-nadal-junior-25-2021gen",
+      "label": "Junior 25",
+      "model": "Rafa Nadal Junior 25",
+      "specs": {
+        "headSizeSqIn": 108,
+        "lengthIn": 25.0,
+        "stringPattern": [
+          16,
+          17
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "sources": [
+        "https://web.archive.org/web/20230130100923/https://www.tennis-warehouse.com/Babolat_Rafa_Nadal_25_Junior/descpageRCBAB-BNADJR25.html"
+      ]
+    },
+    {
+      "id": "babolat-rafa-nadal-junior-23-2021gen",
+      "label": "Junior 23",
+      "model": "Rafa Nadal Junior 23",
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 23.0,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "sources": [
+        "https://web.archive.org/web/20230130100941/https://www.tennis-warehouse.com/Babolat_Rafa_Nadal_23_Junior/descpageRCBAB-BNADJR23.html"
+      ]
+    },
+    {
+      "id": "babolat-rafa-nadal-junior-21-2021gen",
+      "label": "Junior 21",
+      "model": "Rafa Nadal Junior 21",
+      "specs": {
+        "headSizeSqIn": 85,
+        "lengthIn": 21.0,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "sources": [
+        "https://web.archive.org/web/20230130100938/https://www.tennis-warehouse.com/Babolat_Rafa_Nadal_21_Junior/descpageRCBAB-BNADJR21.html"
+      ]
+    }
+  ],
+  "variantLabel": "100"
+}

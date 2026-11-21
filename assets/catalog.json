@@ -135,6 +135,191 @@
       "variantOf": "babolat-pure-aero-100"
     },
     {
+      "id": "babolat-b-fly-19-2023",
+      "brand": "Babolat",
+      "line": "B Fly",
+      "model": "B Fly 19",
+      "generation": "2023",
+      "year": 2023,
+      "specs": {
+        "headSizeSqIn": 81,
+        "lengthIn": 19,
+        "stringPattern": [
+          14,
+          14
+        ],
+        "beamMm": [
+          17,
+          17,
+          17
+        ],
+        "unstrungWeightG": 155
+      },
+      "swatch": "#2a2560",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-b-fly-19-2023.glb",
+          "bytes": 112984,
+          "triangles": 4668
+        }
+      },
+      "variantLabel": "19",
+      "variantOf": "babolat-b-fly-25-2023"
+    },
+    {
+      "id": "babolat-b-fly-21-2023",
+      "brand": "Babolat",
+      "line": "B Fly",
+      "model": "B Fly 21",
+      "generation": "2023",
+      "year": 2023,
+      "specs": {
+        "headSizeSqIn": 95,
+        "lengthIn": 21,
+        "stringPattern": [
+          14,
+          15
+        ],
+        "beamMm": [
+          19,
+          19,
+          19
+        ],
+        "unstrungWeightG": 180
+      },
+      "swatch": "#2a2560",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-b-fly-21-2023.glb",
+          "bytes": 113416,
+          "triangles": 4676
+        }
+      },
+      "variantLabel": "21",
+      "variantOf": "babolat-b-fly-25-2023"
+    },
+    {
+      "id": "babolat-b-fly-23-2023",
+      "brand": "Babolat",
+      "line": "B Fly",
+      "model": "B Fly 23",
+      "generation": "2023",
+      "year": 2023,
+      "specs": {
+        "headSizeSqIn": 96,
+        "lengthIn": 23,
+        "stringPattern": [
+          16,
+          16
+        ],
+        "beamMm": [
+          19,
+          19,
+          19
+        ],
+        "unstrungWeightG": 198
+      },
+      "swatch": "#2a2560",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-b-fly-23-2023.glb",
+          "bytes": 114716,
+          "triangles": 4700
+        }
+      },
+      "variantLabel": "23",
+      "variantOf": "babolat-b-fly-25-2023"
+    },
+    {
+      "id": "babolat-b-fly-25-2023",
+      "brand": "Babolat",
+      "line": "B Fly",
+      "model": "B Fly 25",
+      "generation": "2023",
+      "year": 2023,
+      "specs": {
+        "headSizeSqIn": 106,
+        "lengthIn": 25,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          20,
+          20,
+          20
+        ]
+      },
+      "swatch": "#2a2560",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-b-fly-25-2023.glb",
+          "bytes": 116000,
+          "triangles": 4724
+        }
+      },
+      "variantLabel": "25",
+      "variants": [
+        {
+          "id": "babolat-b-fly-25-2023",
+          "label": "25"
+        },
+        {
+          "id": "babolat-b-fly-23-2023",
+          "label": "23"
+        },
+        {
+          "id": "babolat-b-fly-21-2023",
+          "label": "21"
+        },
+        {
+          "id": "babolat-b-fly-19-2023",
+          "label": "19"
+        }
+      ],
+      "colourway": "Navy/Pink"
+    },
+    {
       "id": "babolat-boost-aero-2026",
       "brand": "Babolat",
       "line": "Boost Aero",
@@ -172,7 +357,62 @@
           "triangles": 4372
         }
       },
-      "colourway": "Grey/Fluorescent yellow"
+      "colourway": "Grey/Fluorescent yellow",
+      "colourways": [
+        {
+          "id": "raspberry-pink",
+          "name": "Raspberry Pink",
+          "year": 2026,
+          "swatch": "#a9adb3",
+          "assets": {
+            "realistic": {
+              "path": "realistic/babolat-boost-aero-2026--raspberry-pink.glb",
+              "bytes": 118216,
+              "triangles": 4500
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "babolat-boost-aero-rafa",
+      "brand": "Babolat",
+      "line": "Boost Aero",
+      "model": "Boost Aero Rafa",
+      "generation": "Rafa",
+      "year": 2021,
+      "specs": {
+        "headSizeSqIn": 102,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "swatch": "#f2e42c",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-boost-aero-rafa.glb",
+          "bytes": 123808,
+          "triangles": 4756
+        }
+      },
+      "colourway": "Yellow/Orange/Purple"
     },
     {
       "id": "babolat-boost-drive-2025",
@@ -212,7 +452,22 @@
           "triangles": 4468
         }
       },
-      "colourway": "Black/Orange/White"
+      "colourway": "Black/Orange/White",
+      "colourways": [
+        {
+          "id": "white-coral",
+          "name": "White Coral",
+          "year": 2025,
+          "swatch": "#f2f2f2",
+          "assets": {
+            "realistic": {
+              "path": "realistic/babolat-boost-drive-2025--white-coral.glb",
+              "bytes": 116004,
+              "triangles": 4724
+            }
+          }
+        }
+      ]
     },
     {
       "id": "babolat-boost-strike-current",
@@ -590,6 +845,57 @@
       "variantOf": "babolat-pure-drive-100"
     },
     {
+      "id": "babolat-evo-aero-2022",
+      "brand": "Babolat",
+      "line": "Evo Aero",
+      "model": "Evo Aero",
+      "generation": "2022",
+      "year": 2022,
+      "specs": {
+        "headSizeSqIn": 102,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          18
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "swatch": "#8b9399",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-evo-aero-2022.glb",
+          "bytes": 123372,
+          "triangles": 4748
+        }
+      },
+      "variantLabel": "Evo Aero",
+      "variants": [
+        {
+          "id": "babolat-evo-aero-2022",
+          "label": "Evo Aero"
+        },
+        {
+          "id": "babolat-evo-aero-lite-2023",
+          "label": "Lite"
+        }
+      ],
+      "colourway": "Grey/White/Yellow"
+    },
+    {
       "id": "babolat-evo-aero-2026",
       "brand": "Babolat",
       "line": "Evo Aero",
@@ -641,6 +947,48 @@
       "colourway": "Grey/Fluorescent yellow"
     },
     {
+      "id": "babolat-evo-aero-lite-2023",
+      "brand": "Babolat",
+      "line": "Evo Aero",
+      "model": "Evo Aero Lite",
+      "generation": "2022",
+      "year": 2022,
+      "specs": {
+        "headSizeSqIn": 102,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          18
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 260
+      },
+      "swatch": "#8b9399",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-evo-aero-lite-2023.glb",
+          "bytes": 123384,
+          "triangles": 4748
+        }
+      },
+      "variantLabel": "Lite",
+      "variantOf": "babolat-evo-aero-2022"
+    },
+    {
       "id": "babolat-evo-aero-lite-2026",
       "brand": "Babolat",
       "line": "Evo Aero",
@@ -681,6 +1029,57 @@
       },
       "variantLabel": "Lite",
       "variantOf": "babolat-evo-aero-2026"
+    },
+    {
+      "id": "babolat-evo-drive-2021gen",
+      "brand": "Babolat",
+      "line": "Evo Drive",
+      "model": "Evo Drive",
+      "generation": "2021",
+      "year": 2021,
+      "specs": {
+        "headSizeSqIn": 104,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          17
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "swatch": "#1a72e0",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-evo-drive-2021gen.glb",
+          "bytes": 117716,
+          "triangles": 4836
+        }
+      },
+      "variantLabel": "Evo Drive",
+      "variants": [
+        {
+          "id": "babolat-evo-drive-2021gen",
+          "label": "Evo Drive"
+        },
+        {
+          "id": "babolat-evo-drive-lite-2021gen",
+          "label": "Lite"
+        }
+      ],
+      "colourway": "Blue/White"
     },
     {
       "id": "babolat-evo-drive-2025",
@@ -739,7 +1138,22 @@
           "label": "115"
         }
       ],
-      "colourway": "Blue"
+      "colourway": "Blue",
+      "colourways": [
+        {
+          "id": "white",
+          "name": "White",
+          "year": 2025,
+          "swatch": "#f2f2f0",
+          "assets": {
+            "realistic": {
+              "path": "realistic/babolat-evo-drive-2025--white.glb",
+              "bytes": 118564,
+              "triangles": 4852
+            }
+          }
+        }
+      ]
     },
     {
       "id": "babolat-evo-drive-115",
@@ -781,6 +1195,47 @@
       },
       "variantLabel": "115",
       "variantOf": "babolat-evo-drive-2025"
+    },
+    {
+      "id": "babolat-evo-drive-lite-2021gen",
+      "brand": "Babolat",
+      "line": "Evo Drive",
+      "model": "Evo Drive Lite",
+      "generation": "2021",
+      "year": 2021,
+      "specs": {
+        "headSizeSqIn": 104,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          17
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "swatch": "#1a72e0",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-evo-drive-lite-2021gen.glb",
+          "bytes": 117724,
+          "triangles": 4836
+        }
+      },
+      "variantLabel": "Lite",
+      "variantOf": "babolat-evo-drive-2021gen"
     },
     {
       "id": "babolat-evo-drive-lite-2025",
@@ -1762,6 +2217,299 @@
       },
       "variantLabel": "Plus",
       "variantOf": "babolat-pure-aero-100"
+    },
+    {
+      "id": "babolat-pure-aero-rafa-2021",
+      "brand": "Babolat",
+      "line": "Pure Aero",
+      "model": "Pure Aero Rafa",
+      "generation": "Rafa 2021",
+      "year": 2021,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "swatch": "#f6e53a",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-pure-aero-rafa-2021.glb",
+          "bytes": 123820,
+          "triangles": 4756
+        }
+      },
+      "variantLabel": "100",
+      "variants": [
+        {
+          "id": "babolat-pure-aero-rafa-2021",
+          "label": "100"
+        },
+        {
+          "id": "babolat-pure-aero-rafa-team-2021",
+          "label": "Team"
+        },
+        {
+          "id": "babolat-pure-aero-rafa-lite-2021",
+          "label": "Lite"
+        },
+        {
+          "id": "babolat-rafa-nadal-junior-26-2021gen",
+          "label": "Junior 26"
+        },
+        {
+          "id": "babolat-rafa-nadal-junior-25-2021gen",
+          "label": "Junior 25"
+        },
+        {
+          "id": "babolat-rafa-nadal-junior-23-2021gen",
+          "label": "Junior 23"
+        },
+        {
+          "id": "babolat-rafa-nadal-junior-21-2021gen",
+          "label": "Junior 21"
+        }
+      ],
+      "colourway": "Yellow/Orange/Purple"
+    },
+    {
+      "id": "babolat-pure-aero-rafa-2023",
+      "brand": "Babolat",
+      "line": "Pure Aero",
+      "model": "Pure Aero Rafa",
+      "generation": "Rafa 2023",
+      "year": 2023,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "swatch": "#f27cc0",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-pure-aero-rafa-2023.glb",
+          "bytes": 123812,
+          "triangles": 4756
+        }
+      },
+      "variantLabel": "100",
+      "variants": [
+        {
+          "id": "babolat-pure-aero-rafa-2023",
+          "label": "100"
+        },
+        {
+          "id": "babolat-pure-aero-rafa-origin-2023",
+          "label": "Origin"
+        },
+        {
+          "id": "babolat-pure-aero-rafa-junior-26-2023",
+          "label": "Junior 26"
+        }
+      ],
+      "colourway": "Pink/Yellow/Blue"
+    },
+    {
+      "id": "babolat-pure-aero-rafa-junior-26-2023",
+      "brand": "Babolat",
+      "line": "Pure Aero",
+      "model": "Pure Aero Rafa Junior 26",
+      "generation": "Rafa 2023",
+      "year": 2023,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 26,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "swatch": "#f27cc0",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-pure-aero-rafa-junior-26-2023.glb",
+          "bytes": 123836,
+          "triangles": 4756
+        }
+      },
+      "variantLabel": "Junior 26",
+      "variantOf": "babolat-pure-aero-rafa-2023"
+    },
+    {
+      "id": "babolat-pure-aero-rafa-lite-2021",
+      "brand": "Babolat",
+      "line": "Pure Aero",
+      "model": "Pure Aero Rafa Lite",
+      "generation": "Rafa 2021",
+      "year": 2021,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 270
+      },
+      "swatch": "#f6e53a",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-pure-aero-rafa-lite-2021.glb",
+          "bytes": 123832,
+          "triangles": 4756
+        }
+      },
+      "variantLabel": "Lite",
+      "variantOf": "babolat-pure-aero-rafa-2021"
+    },
+    {
+      "id": "babolat-pure-aero-rafa-origin-2023",
+      "brand": "Babolat",
+      "line": "Pure Aero",
+      "model": "Pure Aero Rafa Origin",
+      "generation": "Rafa 2023",
+      "year": 2023,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 317
+      },
+      "swatch": "#f27cc0",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-pure-aero-rafa-origin-2023.glb",
+          "bytes": 123828,
+          "triangles": 4756
+        }
+      },
+      "variantLabel": "Origin",
+      "variantOf": "babolat-pure-aero-rafa-2023"
+    },
+    {
+      "id": "babolat-pure-aero-rafa-team-2021",
+      "brand": "Babolat",
+      "line": "Pure Aero",
+      "model": "Pure Aero Rafa Team",
+      "generation": "Rafa 2021",
+      "year": 2021,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 285
+      },
+      "swatch": "#f6e53a",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-pure-aero-rafa-team-2021.glb",
+          "bytes": 123832,
+          "triangles": 4756
+        }
+      },
+      "variantLabel": "Team",
+      "variantOf": "babolat-pure-aero-rafa-2021"
     },
     {
       "id": "babolat-pure-aero-super-lite-2026",
@@ -3677,6 +4425,170 @@
         }
       },
       "colourway": "Black/Orange"
+    },
+    {
+      "id": "babolat-rafa-nadal-junior-21-2021gen",
+      "brand": "Babolat",
+      "line": "Pure Aero",
+      "model": "Rafa Nadal Junior 21",
+      "generation": "Rafa 2021",
+      "year": 2021,
+      "specs": {
+        "headSizeSqIn": 85,
+        "lengthIn": 21,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "swatch": "#f6e53a",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-rafa-nadal-junior-21-2021gen.glb",
+          "bytes": 123840,
+          "triangles": 4756
+        }
+      },
+      "variantLabel": "Junior 21",
+      "variantOf": "babolat-pure-aero-rafa-2021"
+    },
+    {
+      "id": "babolat-rafa-nadal-junior-23-2021gen",
+      "brand": "Babolat",
+      "line": "Pure Aero",
+      "model": "Rafa Nadal Junior 23",
+      "generation": "Rafa 2021",
+      "year": 2021,
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 23,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "swatch": "#f6e53a",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-rafa-nadal-junior-23-2021gen.glb",
+          "bytes": 123848,
+          "triangles": 4756
+        }
+      },
+      "variantLabel": "Junior 23",
+      "variantOf": "babolat-pure-aero-rafa-2021"
+    },
+    {
+      "id": "babolat-rafa-nadal-junior-25-2021gen",
+      "brand": "Babolat",
+      "line": "Pure Aero",
+      "model": "Rafa Nadal Junior 25",
+      "generation": "Rafa 2021",
+      "year": 2021,
+      "specs": {
+        "headSizeSqIn": 108,
+        "lengthIn": 25,
+        "stringPattern": [
+          16,
+          17
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "swatch": "#f6e53a",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-rafa-nadal-junior-25-2021gen.glb",
+          "bytes": 122976,
+          "triangles": 4740
+        }
+      },
+      "variantLabel": "Junior 25",
+      "variantOf": "babolat-pure-aero-rafa-2021"
+    },
+    {
+      "id": "babolat-rafa-nadal-junior-26-2021gen",
+      "brand": "Babolat",
+      "line": "Pure Aero",
+      "model": "Rafa Nadal Junior 26",
+      "generation": "Rafa 2021",
+      "year": 2021,
+      "specs": {
+        "headSizeSqIn": 108,
+        "lengthIn": 26,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "swatch": "#f6e53a",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-rafa-nadal-junior-26-2021gen.glb",
+          "bytes": 123844,
+          "triangles": 4756
+        }
+      },
+      "variantLabel": "Junior 26",
+      "variantOf": "babolat-pure-aero-rafa-2021"
     },
     {
       "id": "babolat-pure-strike-evo",
@@ -11081,42 +11993,6 @@
       "researched": "2026-11-20"
     },
     {
-      "id": "babolat-b-fly-19-2023",
-      "brand": "Babolat",
-      "line": "B Fly",
-      "model": "B Fly 19",
-      "generation": "2023",
-      "releaseYear": 2023,
-      "category": "junior",
-      "onSaleIn": [
-        2023,
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 81,
-        "lengthIn": 19,
-        "stringPattern": [
-          14,
-          14
-        ],
-        "beamMm": [
-          17,
-          17,
-          17
-        ],
-        "unstrungWeightG": 155,
-        "balanceMm": 232
-      },
-      "colourway": "Blue/Pink",
-      "sources": [
-        "https://web.archive.org/web/20240823062343/https://www.tennis-warehouse.com/Babolat_B_Fly_19_2023_Junior/descpageRCBAB-BABFLY19.html",
-        "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://www.tennis-warehouse.com/Babolat_B_Fly_19_2023_Junior/descpageRCBAB-BABFLY19.html",
-        "https://www.babolat.com/us/b-fly-19/140490.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
       "id": "babolat-b-fly-19-prev",
       "brand": "Babolat",
       "line": "B Fly",
@@ -11140,42 +12016,6 @@
         "https://web.archive.org/web/20221108061113/https://www.tennis-warehouse.com/Babolat_B_Fly_19_Junior/descpageRCBAB-BFLY1922.html",
         "https://web.archive.org/web/20230608223519/https://www.tennisexpress.com/babolat-tennis-racquets",
         "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-b-fly-21-2023",
-      "brand": "Babolat",
-      "line": "B Fly",
-      "model": "B Fly 21",
-      "generation": "2023",
-      "releaseYear": 2023,
-      "category": "junior",
-      "onSaleIn": [
-        2023,
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 95,
-        "lengthIn": 21,
-        "stringPattern": [
-          14,
-          15
-        ],
-        "beamMm": [
-          19,
-          19,
-          19
-        ],
-        "unstrungWeightG": 180,
-        "balanceMm": 256
-      },
-      "colourway": "Purple/Pink",
-      "sources": [
-        "https://web.archive.org/web/20251218002302/https://www.tennis-warehouse.com/Babolat_B_Fly_21_2023_Junior/descpageRCBAB-BABFLY21.html",
-        "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://www.tennis-warehouse.com/Babolat_B_Fly_21_2023_Junior/descpageRCBAB-BABFLY21.html",
-        "https://www.babolat.com/us/b-fly-21/140491.html"
       ],
       "researched": "2026-11-20"
     },
@@ -11208,42 +12048,6 @@
       "researched": "2026-11-20"
     },
     {
-      "id": "babolat-b-fly-23-2023",
-      "brand": "Babolat",
-      "line": "B Fly",
-      "model": "B Fly 23",
-      "generation": "2023",
-      "releaseYear": 2023,
-      "category": "junior",
-      "onSaleIn": [
-        2023,
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 96,
-        "lengthIn": 23,
-        "stringPattern": [
-          16,
-          16
-        ],
-        "beamMm": [
-          19,
-          19,
-          19
-        ],
-        "unstrungWeightG": 198,
-        "balanceMm": 285
-      },
-      "colourway": "White/Pink",
-      "sources": [
-        "https://web.archive.org/web/20240823062343/https://www.tennis-warehouse.com/Babolat_B_Fly_23_2023_Junior/descpageRCBAB-BABFLY23.html",
-        "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://www.tennis-warehouse.com/Babolat_B_Fly_23_2023_Junior/descpageRCBAB-BABFLY23.html",
-        "https://www.babolat.com/us/b-fly-23/140492.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
       "id": "babolat-b-fly-23-prev",
       "brand": "Babolat",
       "line": "B Fly",
@@ -11266,42 +12070,6 @@
       "sources": [
         "https://web.archive.org/web/20230130100932/https://www.tennis-warehouse.com/Babolat_B_Fly_23_Junior/descpageRCBAB-BFLY2322.html",
         "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-b-fly-25-2023",
-      "brand": "Babolat",
-      "line": "B Fly",
-      "model": "B Fly 25",
-      "generation": "2023",
-      "releaseYear": 2023,
-      "category": "junior",
-      "onSaleIn": [
-        2023,
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 106,
-        "lengthIn": 25,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          20,
-          20,
-          20
-        ],
-        "unstrungWeightG": 218,
-        "balanceMm": 305
-      },
-      "colourway": "Blue/Pink",
-      "sources": [
-        "https://web.archive.org/web/20251228031302/https://www.tennis-warehouse.com/Babolat_B_Fly_25_2023_Junior/descpageRCBAB-BABFLY25.html",
-        "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://www.tennis-warehouse.com/Babolat_B_Fly_25_2023_Junior/descpageRCBAB-BABFLY25.html",
-        "https://www.babolat.com/us/b-fly-25/140493.html"
       ],
       "researched": "2026-11-20"
     },
@@ -11399,39 +12167,6 @@
       "researched": "2026-11-20"
     },
     {
-      "id": "babolat-boost-aero-pink-2026",
-      "brand": "Babolat",
-      "line": "Boost Aero",
-      "model": "Boost Aero Pink",
-      "generation": null,
-      "releaseYear": 2026,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 102,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          23,
-          26,
-          23
-        ],
-        "unstrungWeightG": 260,
-        "balanceMm": 340
-      },
-      "colourway": "Grey/Raspberry Pink",
-      "sources": [
-        "https://www.tennis-warehouse.com/Babolat_Boost_Aero_Pink_2026/descpageRCBAB-BBOAPS.html",
-        "https://www.babolat.com/us/boost-aero-pink-strung/121267.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
       "id": "babolat-boost-aero-rafa-lite-2022",
       "brand": "Babolat",
       "line": "Boost",
@@ -11454,40 +12189,6 @@
       "sources": [
         "https://web.archive.org/web/20230203092200/https://www.tennisexpress.com/babolat-2022-boost-aero-rafa-lite-prestrung-tennis-racquet-94278",
         "https://web.archive.org/web/20230608223519/https://www.tennisexpress.com/babolat-tennis-racquets"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-boost-aero-rafa",
-      "brand": "Babolat",
-      "line": "Boost",
-      "model": "Boost Aero Rafa",
-      "generation": null,
-      "releaseYear": null,
-      "category": "adult",
-      "onSaleIn": [
-        2023
-      ],
-      "specs": {
-        "headSizeSqIn": 102,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          23,
-          26,
-          23
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Black/Yellow/Purple",
-      "sources": [
-        "https://web.archive.org/web/20230130101237/https://www.tennis-warehouse.com/Babolat_Boost_Aero_Rafa/descpageRCBAB-BABOARR.html",
-        "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html"
       ],
       "researched": "2026-11-20"
     },
@@ -11632,39 +12333,6 @@
       "researched": "2026-11-20"
     },
     {
-      "id": "babolat-boost-drive-white-2025",
-      "brand": "Babolat",
-      "line": "Boost Drive",
-      "model": "Boost Drive White",
-      "generation": null,
-      "releaseYear": 2025,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 105,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          23,
-          26,
-          23
-        ],
-        "unstrungWeightG": 260,
-        "balanceMm": 345
-      },
-      "colourway": "White Coral",
-      "sources": [
-        "https://www.tennis-warehouse.com/Babolat_Boost_Drive_W/descpageRCBAB-BBDWR.html",
-        "https://www.babolat.com/us/boost-drive-white-strung/121265.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
       "id": "babolat-boost-drive-wimbledon",
       "brand": "Babolat",
       "line": "Boost",
@@ -11793,83 +12461,6 @@
       "researched": "2026-11-20"
     },
     {
-      "id": "babolat-evo-aero-2022",
-      "brand": "Babolat",
-      "line": "Evo",
-      "model": "Evo Aero",
-      "generation": null,
-      "releaseYear": 2022,
-      "category": "adult",
-      "onSaleIn": [
-        2023
-      ],
-      "specs": {
-        "headSizeSqIn": 102,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          18
-        ],
-        "beamMm": [
-          23,
-          26,
-          23
-        ],
-        "unstrungWeightG": 275,
-        "balanceMm": null
-      },
-      "colourway": "White/Grey; also a Pink variant",
-      "sources": [
-        "https://web.archive.org/web/20221108061113/https://www.tennis-warehouse.com/Babolat_EVO_Aero/descpageRCBAB-BEAR.html",
-        "https://web.archive.org/web/20230608223519/https://www.tennisexpress.com/babolat-tennis-racquets",
-        "https://web.archive.org/web/20231002042710/https://www.tennisexpress.com/babolat-evo-aero-prestrung-tennis-racquet-99817",
-        "https://web.archive.org/web/20221109041442/https://www.tennis-warehouse.com/Babolat_EVO_Aero_Pink/descpageRCBAB-BEARP.html",
-        "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://www.babolat.com/us/news-articles-blog-evo-2022/evo-2022.html",
-        "https://www.tennis.com/baseline/articles/babolat-expands-popular-evo-line-with-two-new-racquet-models"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-evo-aero-lite-2023",
-      "brand": "Babolat",
-      "line": "Evo",
-      "model": "Evo Aero Lite",
-      "generation": null,
-      "releaseYear": 2023,
-      "category": "adult",
-      "onSaleIn": [
-        2023
-      ],
-      "specs": {
-        "headSizeSqIn": 102,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          18
-        ],
-        "beamMm": [
-          23,
-          26,
-          23
-        ],
-        "unstrungWeightG": 260,
-        "balanceMm": 320
-      },
-      "colourway": "White/Yellow/Grey; also a Pink variant",
-      "sources": [
-        "https://web.archive.org/web/20231208014842/https://www.tennis-warehouse.com/Babolat_EVO_Aero_Lite/descpageRCBAB-BEARL.html",
-        "https://web.archive.org/web/20230608223519/https://www.tennisexpress.com/babolat-evo-aero-lite-prestrung-tennis-racquet-pink-99826",
-        "https://web.archive.org/web/20230608223519/https://www.tennisexpress.com/babolat-evo-aero-lite-prestrung-tennis-racquet-99819",
-        "https://web.archive.org/web/20231208014842/https://www.tennis-warehouse.com/Babolat_EVO_Aero_Lite_Pink/descpageRCBAB-BEARLP.html",
-        "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://www.tennis.com/baseline/articles/babolat-expands-popular-evo-line-with-two-new-racquet-models",
-        "https://www.merchantoftennis.com/a/llms/products/babolat-evo-aero-lite-pink"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
       "id": "babolat-evo-aero-lite-pink-2026",
       "brand": "Babolat",
       "line": "Evo Aero",
@@ -11967,316 +12558,6 @@
         "https://web.archive.org/web/20230608223519/https://www.tennisexpress.com/babolat-tennis-racquets",
         "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html",
         "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-evo-drive-2021gen",
-      "brand": "Babolat",
-      "line": "Evo",
-      "model": "Evo Drive",
-      "generation": "2021",
-      "releaseYear": null,
-      "category": "adult",
-      "onSaleIn": [
-        2023
-      ],
-      "specs": {
-        "headSizeSqIn": 104,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          17
-        ],
-        "beamMm": [
-          23,
-          26,
-          23
-        ],
-        "unstrungWeightG": 270,
-        "balanceMm": null
-      },
-      "colourway": "Blue",
-      "sources": [
-        "https://web.archive.org/web/20230130101206/https://www.tennis-warehouse.com/Babolat_EVO_Drive/descpageRCBAB-BEVODR.html",
-        "https://web.archive.org/web/20231208020551/https://www.tennisexpress.com/babolat-evo-drive-prestrung-tennis-racquet-87970",
-        "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-evo-drive-lite-2021gen",
-      "brand": "Babolat",
-      "line": "Evo",
-      "model": "Evo Drive Lite",
-      "generation": "2021",
-      "releaseYear": null,
-      "category": "adult",
-      "onSaleIn": [
-        2023
-      ],
-      "specs": {
-        "headSizeSqIn": 104,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          17
-        ],
-        "beamMm": [
-          23,
-          26,
-          23
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Blue; also a white 'Evo Drive Lite W' variant",
-      "sources": [
-        "https://web.archive.org/web/20230130101219/https://www.tennis-warehouse.com/Babolat_EVO_Drive_Lite/descpageRCBAB-BEVODL.html",
-        "https://web.archive.org/web/20230608223519/https://www.tennisexpress.com/babolat-tennis-racquets",
-        "https://web.archive.org/web/20230130101215/https://www.tennis-warehouse.com/Babolat_EVO_Drive_Lite_W/descpageRCBAB-BEVODW.html",
-        "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-evo-drive-lite-white-2025",
-      "brand": "Babolat",
-      "line": "Evo Drive",
-      "model": "Evo Drive Lite White",
-      "generation": "Gen2",
-      "releaseYear": 2025,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 104,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          17
-        ],
-        "beamMm": [
-          23,
-          26,
-          23
-        ],
-        "unstrungWeightG": 255,
-        "balanceMm": 325
-      },
-      "colourway": "White/Blue",
-      "sources": [
-        "https://www.tennis-warehouse.com/Babolat_Evo_Drive_Lite_White/descpageRCBAB-BELWR.html",
-        "https://www.babolat.com/us/evo-drive-lite-white-gen2-strung/102548.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-pure-aero-rafa-2021",
-      "brand": "Babolat",
-      "line": "Pure Aero",
-      "model": "Pure Aero Rafa",
-      "generation": null,
-      "releaseYear": 2021,
-      "category": "adult",
-      "onSaleIn": [
-        2023
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          23,
-          26,
-          23
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Yellow/Black/Purple",
-      "sources": [
-        "https://web.archive.org/web/20230410173810/https://www.tennis-warehouse.com/Babolat_Pure_Aero_Rafa/descpageRCBAB-BPARR.html",
-        "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://tennisnerd.net/players/babolat-pure-aero-rafa-the-best-looking-racquet/24316",
-        "https://tennisnerd.net/gear/racquets/the-babolat-pure-aero-rafa-collection/25784"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-pure-aero-rafa-2023",
-      "brand": "Babolat",
-      "line": "Pure Aero",
-      "model": "Pure Aero Rafa",
-      "generation": "2023",
-      "releaseYear": 2023,
-      "category": "adult",
-      "onSaleIn": [
-        2023
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          23,
-          26,
-          23
-        ],
-        "unstrungWeightG": 290,
-        "balanceMm": 330
-      },
-      "colourway": "Pink/Yellow/Black",
-      "sources": [
-        "https://web.archive.org/web/20230811041314/https://www.tennis-warehouse.com/Babolat_Pure_Aero_Rafa/descpageRCBAB-PARRA.html",
-        "https://web.archive.org/web/20230419012707/https://www.tennisexpress.com/babolat-pure-aero-rafa-2023-tennis-racquet-103701",
-        "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://www.babolat.com/us/news-articles-blog-tennis-pure-aero-rafa-origin/tennis-pure-aero-rafa-origin.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-pure-aero-rafa-junior-26-2023",
-      "brand": "Babolat",
-      "line": "Pure Aero",
-      "model": "Pure Aero Rafa Junior 26",
-      "generation": "2023",
-      "releaseYear": 2023,
-      "category": "junior",
-      "onSaleIn": [
-        2023
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 26,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": null,
-        "unstrungWeightG": null,
-        "balanceMm": 325
-      },
-      "colourway": null,
-      "sources": [
-        "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://web.archive.org/web/20230419012706/https://www.tennisexpress.com/babolat-pure-aero-rafa-junior-26-2023-prestrung-tennis-racquet-103702"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-pure-aero-rafa-lite-2021",
-      "brand": "Babolat",
-      "line": "Pure Aero",
-      "model": "Pure Aero Rafa Lite",
-      "generation": null,
-      "releaseYear": 2021,
-      "category": "adult",
-      "onSaleIn": [
-        2023
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          23,
-          26,
-          23
-        ],
-        "unstrungWeightG": 270,
-        "balanceMm": 330
-      },
-      "colourway": "Black/Yellow/Purple",
-      "sources": [
-        "https://web.archive.org/web/20230410173828/https://www.tennis-warehouse.com/Babolat_Pure_Aero_Rafa_Lite/descpageRCBAB-BPARLR.html",
-        "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://tennisnerd.net/gear/racquets/the-babolat-pure-aero-rafa-collection/25784"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-pure-aero-rafa-origin-2023",
-      "brand": "Babolat",
-      "line": "Pure Aero",
-      "model": "Pure Aero Rafa Origin",
-      "generation": "2023",
-      "releaseYear": 2023,
-      "category": "adult",
-      "onSaleIn": [
-        2023
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          23,
-          26,
-          23
-        ],
-        "unstrungWeightG": 317,
-        "balanceMm": 330
-      },
-      "colourway": "Pink/Yellow/Black",
-      "sources": [
-        "https://web.archive.org/web/20230811045948/https://www.tennis-warehouse.com/Babolat_Pure_Aero_Rafa_Origin/descpageRCBAB-BAROR.html",
-        "https://web.archive.org/web/20230419012708/https://www.tennisexpress.com/babolat-pure-aero-rafa-origin-tennis-racquet-103700",
-        "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://www.babolat.com/us/news-articles-blog-tennis-pure-aero-rafa-origin/tennis-pure-aero-rafa-origin.html",
-        "https://tennisnerd.net/gear/racquets/babolat-pure-aero-rafa-origin/31148"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-pure-aero-rafa-team-2021",
-      "brand": "Babolat",
-      "line": "Pure Aero",
-      "model": "Pure Aero Rafa Team",
-      "generation": null,
-      "releaseYear": 2021,
-      "category": "adult",
-      "onSaleIn": [
-        2023
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          23,
-          26,
-          23
-        ],
-        "unstrungWeightG": 285,
-        "balanceMm": 320
-      },
-      "colourway": "Yellow/Black/Purple",
-      "sources": [
-        "https://web.archive.org/web/20230130100912/https://www.tennis-warehouse.com/Babolat_Pure_Aero_Rafa_Team/descpageRCBAB-BPARTR.html",
-        "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://tennisnerd.net/gear/racquets/the-babolat-pure-aero-rafa-collection/25784"
       ],
       "researched": "2026-11-20"
     },
@@ -12616,61 +12897,6 @@
       "researched": "2026-11-20"
     },
     {
-      "id": "babolat-rafa-nadal-junior-21-2021gen",
-      "brand": "Babolat",
-      "line": "Rafa Nadal Junior",
-      "model": "Rafa Nadal Junior 21",
-      "generation": "2021",
-      "releaseYear": null,
-      "category": "junior",
-      "onSaleIn": [
-        2023
-      ],
-      "specs": {
-        "headSizeSqIn": 85,
-        "lengthIn": 21,
-        "stringPattern": null,
-        "beamMm": null,
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Black/Yellow/Purple",
-      "sources": [
-        "https://web.archive.org/web/20230130100938/https://www.tennis-warehouse.com/Babolat_Rafa_Nadal_21_Junior/descpageRCBAB-BNADJR21.html",
-        "https://web.archive.org/web/20230608223519/https://www.tennisexpress.com/babolat-tennis-racquets",
-        "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-rafa-nadal-junior-23-2021gen",
-      "brand": "Babolat",
-      "line": "Rafa Nadal Junior",
-      "model": "Rafa Nadal Junior 23",
-      "generation": "2021",
-      "releaseYear": null,
-      "category": "junior",
-      "onSaleIn": [
-        2023
-      ],
-      "specs": {
-        "headSizeSqIn": 98,
-        "lengthIn": 23,
-        "stringPattern": null,
-        "beamMm": null,
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Black/Yellow/Purple",
-      "sources": [
-        "https://web.archive.org/web/20230130100941/https://www.tennis-warehouse.com/Babolat_Rafa_Nadal_23_Junior/descpageRCBAB-BNADJR23.html",
-        "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
       "id": "babolat-rafa-nadal-junior-23-prev",
       "brand": "Babolat",
       "line": "Rafa Nadal Junior",
@@ -12693,37 +12919,6 @@
       "sources": [
         "https://web.archive.org/web/20230130100937/https://www.tennis-warehouse.com/Babolat_Rafa_Nadal_23_Junior/descpageRCBAB-BNJR23.html",
         "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-rafa-nadal-junior-25-2021gen",
-      "brand": "Babolat",
-      "line": "Rafa Nadal Junior",
-      "model": "Rafa Nadal Junior 25",
-      "generation": "2021",
-      "releaseYear": null,
-      "category": "junior",
-      "onSaleIn": [
-        2023
-      ],
-      "specs": {
-        "headSizeSqIn": 108,
-        "lengthIn": 25,
-        "stringPattern": [
-          16,
-          17
-        ],
-        "beamMm": null,
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Black/Yellow/Purple",
-      "sources": [
-        "https://web.archive.org/web/20230130100923/https://www.tennis-warehouse.com/Babolat_Rafa_Nadal_25_Junior/descpageRCBAB-BNADJR25.html",
-        "https://web.archive.org/web/20230608223519/https://www.tennisexpress.com/babolat-tennis-racquets",
-        "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html"
       ],
       "researched": "2026-11-20"
     },
@@ -12752,37 +12947,6 @@
       "colourway": "Yellow/Black",
       "sources": [
         "https://web.archive.org/web/20230130100922/https://www.tennis-warehouse.com/Babolat_Rafa_Nadal_25_Junior/descpageRCBAB-BNJR25.html",
-        "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-rafa-nadal-junior-26-2021gen",
-      "brand": "Babolat",
-      "line": "Rafa Nadal Junior",
-      "model": "Rafa Nadal Junior 26",
-      "generation": "2021",
-      "releaseYear": null,
-      "category": "junior",
-      "onSaleIn": [
-        2023
-      ],
-      "specs": {
-        "headSizeSqIn": 108,
-        "lengthIn": 26,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": null,
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Black/Yellow/Purple",
-      "sources": [
-        "https://web.archive.org/web/20230130100857/https://www.tennis-warehouse.com/Babolat_Rafa_Nadal_26_Junior/descpageRCBAB-BNADJR26.html",
-        "https://web.archive.org/web/20230608223519/https://www.tennisexpress.com/babolat-tennis-racquets",
         "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html",
         "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html"
       ],
