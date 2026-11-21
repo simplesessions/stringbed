@@ -12,7 +12,7 @@ colourway.
 
 - 300 modelled racquets from Babolat, Head, Prince, Solinco, Wilson and Yonex, as 72 frames
   (one per generation of a line) with their sizes as variants, plus official colourways
-- One binary glTF (`.glb`) per racquet and colourway, under 150 KB each, with no textures
+- One binary glTF (`.glb`) per racquet and colourway, about 35 KB each, meshopt-compressed, with no textures
 - Researched racquets without a model yet (`placeholders/`), listed in the gallery
 - A static gallery to browse, turn and download every model, in Realistic, Pixel or Line looks
 
@@ -28,6 +28,10 @@ https://simplesessions.github.io/stringbed/catalog.json
 `catalog.json` lists every racquet with its specs, a base colour swatch, its part names and
 the path, size and triangle count of each file. Read paths from it rather than building them.
 Each racquet page in the gallery also shows its file URL and a loader snippet to copy.
+
+**Meshopt:** the files use `EXT_meshopt_compression` and `KHR_mesh_quantization`, so the loader
+needs a meshopt decoder (`setMeshoptDecoder` in three.js, as above; most other engines and
+viewers support it, or run `gltf-transform copy in.glb out.glb` to get a plain file).
 
 ### Importing exactly the racquet you want
 
@@ -45,7 +49,8 @@ const pick = files
   .filter((f) => f.lineage === 'babolat-pure-aero' && f.variant === '98' && !f.colourway)
   .sort((a, b) => b.year - a.year)[0];
 
-const gltf = await new GLTFLoader().loadAsync(base + pick.path);
+const loader = new GLTFLoader().setMeshoptDecoder(MeshoptDecoder);
+const gltf = await loader.loadAsync(base + pick.path);
 ```
 
 File names follow the racquet id, so a link you already use keeps working:
@@ -65,8 +70,10 @@ The frame's paint is stored as vertex colours. Recolour any other part at runtim
 
 ```js
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js';
 
-const gltf = await new GLTFLoader().loadAsync(
+const loader = new GLTFLoader().setMeshoptDecoder(MeshoptDecoder);
+const gltf = await loader.loadAsync(
   'https://simplesessions.github.io/stringbed/realistic/wilson-blade-98-v10.glb');
 gltf.scene.getObjectByName('grip').material.color.set('#f4f1ea');
 scene.add(gltf.scene);
@@ -90,7 +97,7 @@ const model = buildRacquet(parseSpec(spec, 'pure-aero'));   // three.js geometry
 // Ready-made files: stringbed/assets/<path from catalog.json>
 ```
 
-`three` is a peer dependency. The package is about 17 MB packed, almost all of it GLB files.
+`three` is a peer dependency. The package is about 5 MB packed, almost all of it GLB files.
 
 ## Adding a racquet
 

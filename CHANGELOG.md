@@ -9,6 +9,8 @@ bump; new racquets, new colourways and fixes to existing models are minor or pat
 
 First tagged release.
 
+- GLBs are meshopt-compressed (`EXT_meshopt_compression` + `KHR_mesh_quantization`), about
+  3.5x smaller: readers need a meshopt decoder.
 - 300 racquets across the brands in `docs/racquet-roster.md`, generated as GLB in the realistic
   style, plus research-only placeholders.
 - Package entry `stringbed`: `buildRacquet`, `parseSpec`, `modelToGlb`, `styles`, and the spec

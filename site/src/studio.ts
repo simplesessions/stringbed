@@ -11,6 +11,7 @@ import {
   type Object3D,
 } from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 
 /** Creates a renderer, or returns null when the browser cannot give us WebGL. */
@@ -49,7 +50,7 @@ export function createStudio(renderer: WebGLRenderer): Scene {
   return scene;
 }
 
-const loader = new GLTFLoader();
+const loader = new GLTFLoader().setMeshoptDecoder(MeshoptDecoder);
 const cache = new Map<string, Promise<Object3D>>();
 
 /** Loads a model once per URL. A failed load is forgotten so a retry fetches again. */

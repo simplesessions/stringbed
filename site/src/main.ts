@@ -836,7 +836,7 @@ function stage(a: App, r: Racquet): HTMLElement {
 /** The file's absolute URL and a loader snippet, each with a copy button. */
 function useInCode(r: Racquet, path: string): HTMLElement[] {
   const url = new URL(assetUrl(BASE, path), location.href).href;
-  const snippet = `import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';\n\nconst gltf = await new GLTFLoader().loadAsync(\n  '${url}',\n);\nscene.add(gltf.scene);`;
+  const snippet = `import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';\nimport { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js';\n\nconst loader = new GLTFLoader().setMeshoptDecoder(MeshoptDecoder);\nconst gltf = await loader.loadAsync(\n  '${url}',\n);\nscene.add(gltf.scene);`;
   const copyable = (text: string, label: string, block: boolean) => {
     const button = el('button', { class: 'copy', type: 'button', 'aria-label': `Copy ${label}` }, 'Copy');
     button.addEventListener('click', () => {

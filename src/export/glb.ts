@@ -1,4 +1,7 @@
-import { Document, NodeIO } from '@gltf-transform/core';
+import { Document, Logger, NodeIO } from '@gltf-transform/core';
+import { EXTMeshoptCompression, KHRMeshQuantization } from '@gltf-transform/extensions';
+import { meshopt, reorder } from '@gltf-transform/functions';
+import { MeshoptDecoder, MeshoptEncoder } from 'meshoptimizer';
 import type { Part, RacquetModel } from '../core/build';
 
 export interface PbrMaterial {
@@ -17,7 +20,7 @@ function quantised(src: ArrayLike<number>): Float32Array<ArrayBuffer> {
 
 /** Write a model to binary glTF: one root node, one node/mesh/material per part, no textures. */
 export async function modelToGlb(model: RacquetModel, materialFor: (part: Part) => PbrMaterial): Promise<Uint8Array> {
-  const doc = new Document();
+  const doc = new Document().setLogger(new Logger(Logger.Verbosity.WARN));
   doc.getRoot().getAsset().generator = 'stringbed';
   const buffer = doc.createBuffer();
   const scene = doc.createScene(model.spec.id);
@@ -62,5 +65,13 @@ export async function modelToGlb(model: RacquetModel, materialFor: (part: Part) 
     root.addChild(doc.createNode(part.name).setMesh(mesh));
   }
 
-  return new NodeIO().writeBinary(doc);
+  // Meshopt-compressed (EXT_meshopt_compression): about 3.5x smaller. Readers need a meshopt
+  // decoder, e.g. three's GLTFLoader.setMeshoptDecoder(MeshoptDecoder).
+  await MeshoptEncoder.ready;
+  await doc.transform(reorder({ encoder: MeshoptEncoder }), meshopt({ encoder: MeshoptEncoder, level: 'high' }));
+  await MeshoptDecoder.ready;
+  const io = new NodeIO()
+    .registerExtensions([EXTMeshoptCompression, KHRMeshQuantization])
+    .registerDependencies({ 'meshopt.encoder': MeshoptEncoder, 'meshopt.decoder': MeshoptDecoder });
+  return io.writeBinary(doc);
 }

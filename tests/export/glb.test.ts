@@ -1,14 +1,17 @@
 import { test, expect } from 'bun:test';
 import { NodeIO } from '@gltf-transform/core';
+import { EXTMeshoptCompression, KHRMeshQuantization } from '@gltf-transform/extensions';
+import { MeshoptDecoder } from 'meshoptimizer';
 import { buildRacquet } from '../../src/core/build';
 import { loadAllSpecs } from '../../src/core/spec';
 import { realistic } from '../../src/styles/realistic';
 
 const spec = loadAllSpecs()[0];
+const reader = () => new NodeIO().registerExtensions([EXTMeshoptCompression, KHRMeshQuantization]).registerDependencies({ 'meshopt.decoder': MeshoptDecoder });
 
 test('GLB round-trips with named nodes and materials', async () => {
   const bytes = await realistic.render(buildRacquet(spec));
-  const doc = await new NodeIO().readBinary(bytes);
+  const doc = await reader().readBinary(bytes);
   const names = doc.getRoot().listNodes().map((n) => n.getName());
   expect(names).toEqual(expect.arrayContaining(['frame', 'grip', 'strings_mains', 'strings_crosses', 'butt_cap', 'collar', 'bumper', 'grommets']));
   expect(names).toContain(spec.id);
@@ -21,9 +24,9 @@ test('GLB round-trips with named nodes and materials', async () => {
   expect(grip.getMesh()!.listPrimitives()[0].getAttribute('COLOR_0')).toBeNull();
 });
 
-test('GLB is deterministic and under 150 KB', async () => {
+test('GLB is deterministic and under 60 KB', async () => {
   const a = await realistic.render(buildRacquet(spec));
   const b = await realistic.render(buildRacquet(spec));
   expect(Buffer.from(a).equals(Buffer.from(b))).toBe(true);
-  expect(a.byteLength).toBeLessThanOrEqual(150 * 1024);
+  expect(a.byteLength).toBeLessThanOrEqual(60 * 1024);
 });

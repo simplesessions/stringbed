@@ -44,7 +44,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-aero-junior-25-2026.glb",
-          "bytes": 125744,
+          "bytes": 35532,
           "triangles": 4868
         }
       },
@@ -86,7 +86,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-aero-junior-26.glb",
-          "bytes": 122956,
+          "bytes": 36224,
           "triangles": 4740
         }
       },
@@ -129,7 +129,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-aero-junior-26-2026.glb",
-          "bytes": 125744,
+          "bytes": 36780,
           "triangles": 4868
         }
       },
@@ -172,7 +172,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-b-fly-19-2023.glb",
-          "bytes": 112984,
+          "bytes": 33888,
           "triangles": 4668
         }
       },
@@ -215,7 +215,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-b-fly-21-2023.glb",
-          "bytes": 113416,
+          "bytes": 34172,
           "triangles": 4676
         }
       },
@@ -258,7 +258,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-b-fly-23-2023.glb",
-          "bytes": 114716,
+          "bytes": 34132,
           "triangles": 4700
         }
       },
@@ -300,7 +300,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-b-fly-25-2023.glb",
-          "bytes": 116000,
+          "bytes": 34296,
           "triangles": 4724
         }
       },
@@ -360,7 +360,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-boost-aero-2026.glb",
-          "bytes": 115456,
+          "bytes": 34380,
           "triangles": 4372
         }
       },
@@ -375,7 +375,7 @@
           "assets": {
             "realistic": {
               "path": "realistic/babolat-boost-aero-2026--raspberry-pink.glb",
-              "bytes": 118216,
+              "bytes": 34984,
               "triangles": 4500
             }
           }
@@ -416,7 +416,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-boost-aero-rafa.glb",
-          "bytes": 123808,
+          "bytes": 36612,
           "triangles": 4756
         }
       },
@@ -457,7 +457,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-boost-drive-2025.glb",
-          "bytes": 110900,
+          "bytes": 33300,
           "triangles": 4468
         }
       },
@@ -472,7 +472,7 @@
           "assets": {
             "realistic": {
               "path": "realistic/babolat-boost-drive-2025--white-coral.glb",
-              "bytes": 116004,
+              "bytes": 34396,
               "triangles": 4724
             }
           }
@@ -513,7 +513,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-boost-strike-current.glb",
-          "bytes": 131024,
+          "bytes": 37696,
           "triangles": 4248
         }
       },
@@ -555,7 +555,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-carlitos-junior-19.glb",
-          "bytes": 123588,
+          "bytes": 35084,
           "triangles": 4828
         }
       },
@@ -598,7 +598,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-carlitos-junior-21.glb",
-          "bytes": 124016,
+          "bytes": 35368,
           "triangles": 4836
         }
       },
@@ -641,7 +641,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-carlitos-junior-23.glb",
-          "bytes": 125312,
+          "bytes": 35416,
           "triangles": 4860
         }
       },
@@ -684,7 +684,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-carlitos-junior-25.glb",
-          "bytes": 125736,
+          "bytes": 35508,
           "triangles": 4868
         }
       },
@@ -727,7 +727,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-carlitos-junior-26.glb",
-          "bytes": 125740,
+          "bytes": 35540,
           "triangles": 4868
         }
       },
@@ -770,7 +770,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-drive-junior-23-2025.glb",
-          "bytes": 120284,
+          "bytes": 35660,
           "triangles": 4964
         }
       },
@@ -812,7 +812,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-drive-junior-24-2025.glb",
-          "bytes": 120292,
+          "bytes": 35852,
           "triangles": 4964
         }
       },
@@ -855,7 +855,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-drive-junior-25-2025.glb",
-          "bytes": 119012,
+          "bytes": 35404,
           "triangles": 4900
         }
       },
@@ -897,7 +897,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-evo-aero-2022.glb",
-          "bytes": 123372,
+          "bytes": 36356,
           "triangles": 4748
         }
       },
@@ -949,7 +949,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-evo-aero-2026.glb",
-          "bytes": 115452,
+          "bytes": 34372,
           "triangles": 4372
         }
       },
@@ -1002,7 +1002,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-evo-aero-lite-2023.glb",
-          "bytes": 123384,
+          "bytes": 36368,
           "triangles": 4748
         }
       },
@@ -1045,7 +1045,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-evo-aero-lite-2026.glb",
-          "bytes": 115464,
+          "bytes": 34384,
           "triangles": 4372
         }
       },
@@ -1087,7 +1087,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-evo-drive-2021gen.glb",
-          "bytes": 117716,
+          "bytes": 34804,
           "triangles": 4836
         }
       },
@@ -1139,7 +1139,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-evo-drive-2025.glb",
-          "bytes": 121132,
+          "bytes": 35976,
           "triangles": 4980
         }
       },
@@ -1173,7 +1173,7 @@
           "assets": {
             "realistic": {
               "path": "realistic/babolat-evo-drive-2025--white.glb",
-              "bytes": 118564,
+              "bytes": 35264,
               "triangles": 4852
             }
           }
@@ -1214,7 +1214,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-evo-drive-115.glb",
-          "bytes": 120268,
+          "bytes": 35976,
           "triangles": 4964
         }
       },
@@ -1256,7 +1256,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-evo-drive-lite-2021gen.glb",
-          "bytes": 117724,
+          "bytes": 34812,
           "triangles": 4836
         }
       },
@@ -1299,7 +1299,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-evo-drive-lite-2025.glb",
-          "bytes": 120280,
+          "bytes": 35736,
           "triangles": 4964
         }
       },
@@ -1342,7 +1342,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-evo-drive-tour-2025.glb",
-          "bytes": 121140,
+          "bytes": 35988,
           "triangles": 4980
         }
       },
@@ -1384,7 +1384,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-evo-strike-gen2.glb",
-          "bytes": 134468,
+          "bytes": 38276,
           "triangles": 4376
         }
       },
@@ -1425,7 +1425,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-evoke-102.glb",
-          "bytes": 110888,
+          "bytes": 33212,
           "triangles": 4468
         }
       },
@@ -1467,7 +1467,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-evoke-105.glb",
-          "bytes": 110896,
+          "bytes": 33380,
           "triangles": 4468
         }
       },
@@ -1520,7 +1520,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-aero-100.glb",
-          "bytes": 126596,
+          "bytes": 36864,
           "triangles": 4884
         }
       },
@@ -1623,7 +1623,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-aero-100-2018.glb",
-          "bytes": 123824,
+          "bytes": 36360,
           "triangles": 4756
         }
       },
@@ -1699,7 +1699,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-aero-100-2022.glb",
-          "bytes": 126604,
+          "bytes": 36912,
           "triangles": 4884
         }
       },
@@ -1770,7 +1770,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-aero-98-2023.glb",
-          "bytes": 124256,
+          "bytes": 36284,
           "triangles": 4764
         }
       },
@@ -1813,7 +1813,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-aero-98-2026.glb",
-          "bytes": 121468,
+          "bytes": 35316,
           "triangles": 4636
         }
       },
@@ -1856,7 +1856,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-aero-junior-25-2019gen.glb",
-          "bytes": 123844,
+          "bytes": 36404,
           "triangles": 4756
         }
       },
@@ -1898,7 +1898,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-aero-junior-25-2023gen.glb",
-          "bytes": 123844,
+          "bytes": 36404,
           "triangles": 4756
         }
       },
@@ -1941,7 +1941,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-aero-junior-25-2026.glb",
-          "bytes": 125752,
+          "bytes": 36448,
           "triangles": 4868
         }
       },
@@ -1983,7 +1983,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-aero-junior-26-2019gen.glb",
-          "bytes": 123844,
+          "bytes": 36444,
           "triangles": 4756
         }
       },
@@ -2025,7 +2025,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-aero-junior-26-2023gen.glb",
-          "bytes": 123844,
+          "bytes": 36444,
           "triangles": 4756
         }
       },
@@ -2068,7 +2068,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-aero-junior-26-2026.glb",
-          "bytes": 126620,
+          "bytes": 36984,
           "triangles": 4884
         }
       },
@@ -2110,7 +2110,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-aero-lite-2018.glb",
-          "bytes": 123828,
+          "bytes": 36364,
           "triangles": 4756
         }
       },
@@ -2153,7 +2153,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-aero-lite-2022.glb",
-          "bytes": 126608,
+          "bytes": 36912,
           "triangles": 4884
         }
       },
@@ -2196,7 +2196,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-aero-lite-2026.glb",
-          "bytes": 126608,
+          "bytes": 36876,
           "triangles": 4884
         }
       },
@@ -2238,7 +2238,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-aero-plus-2019gen.glb",
-          "bytes": 123828,
+          "bytes": 36284,
           "triangles": 4756
         }
       },
@@ -2280,7 +2280,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-aero-plus-2023gen.glb",
-          "bytes": 126608,
+          "bytes": 36816,
           "triangles": 4884
         }
       },
@@ -2323,7 +2323,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-aero-plus-2026.glb",
-          "bytes": 126600,
+          "bytes": 36788,
           "triangles": 4884
         }
       },
@@ -2365,7 +2365,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-aero-rafa-2021.glb",
-          "bytes": 123820,
+          "bytes": 36652,
           "triangles": 4756
         }
       },
@@ -2437,7 +2437,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-aero-rafa-2023.glb",
-          "bytes": 123812,
+          "bytes": 36644,
           "triangles": 4756
         }
       },
@@ -2493,7 +2493,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-aero-rafa-junior-26-2023.glb",
-          "bytes": 123836,
+          "bytes": 36712,
           "triangles": 4756
         }
       },
@@ -2536,7 +2536,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-aero-rafa-lite-2021.glb",
-          "bytes": 123832,
+          "bytes": 36664,
           "triangles": 4756
         }
       },
@@ -2579,7 +2579,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-aero-rafa-origin-2023.glb",
-          "bytes": 123828,
+          "bytes": 36656,
           "triangles": 4756
         }
       },
@@ -2622,7 +2622,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-aero-rafa-team-2021.glb",
-          "bytes": 123832,
+          "bytes": 36664,
           "triangles": 4756
         }
       },
@@ -2665,7 +2665,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-aero-super-lite-2026.glb",
-          "bytes": 126620,
+          "bytes": 36888,
           "triangles": 4884
         }
       },
@@ -2708,7 +2708,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-aero-team-2018.glb",
-          "bytes": 123828,
+          "bytes": 36364,
           "triangles": 4756
         }
       },
@@ -2750,7 +2750,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-aero-team-2022.glb",
-          "bytes": 126608,
+          "bytes": 36912,
           "triangles": 4884
         }
       },
@@ -2794,7 +2794,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-aero-team-2026.glb",
-          "bytes": 126608,
+          "bytes": 36876,
           "triangles": 4884
         }
       },
@@ -2836,7 +2836,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-aero-tour-2019.glb",
-          "bytes": 123828,
+          "bytes": 36364,
           "triangles": 4756
         }
       },
@@ -2880,7 +2880,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-drive-100.glb",
-          "bytes": 121140,
+          "bytes": 35960,
           "triangles": 4980
         }
       },
@@ -2980,7 +2980,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-drive-100-2020.glb",
-          "bytes": 121156,
+          "bytes": 35972,
           "triangles": 4980
         }
       },
@@ -3063,7 +3063,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-drive-107-2021.glb",
-          "bytes": 121152,
+          "bytes": 35932,
           "triangles": 4980
         }
       },
@@ -3106,7 +3106,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-drive-107-2025.glb",
-          "bytes": 121148,
+          "bytes": 35928,
           "triangles": 4980
         }
       },
@@ -3148,7 +3148,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-drive-110-2021.glb",
-          "bytes": 121156,
+          "bytes": 36196,
           "triangles": 4980
         }
       },
@@ -3191,7 +3191,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-drive-98-2023.glb",
-          "bytes": 121152,
+          "bytes": 35932,
           "triangles": 4980
         }
       },
@@ -3233,7 +3233,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-drive-98-2025.glb",
-          "bytes": 121580,
+          "bytes": 36012,
           "triangles": 4988
         }
       },
@@ -3276,7 +3276,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-drive-junior-25-2020.glb",
-          "bytes": 120300,
+          "bytes": 35772,
           "triangles": 4964
         }
       },
@@ -3319,7 +3319,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-drive-junior-25-2025.glb",
-          "bytes": 120300,
+          "bytes": 35768,
           "triangles": 4964
         }
       },
@@ -3361,7 +3361,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-drive-junior-25-light-blue-2025.glb",
-          "bytes": 120304,
+          "bytes": 35776,
           "triangles": 4964
         }
       },
@@ -3404,7 +3404,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-drive-junior-26-2020.glb",
-          "bytes": 121168,
+          "bytes": 36056,
           "triangles": 4980
         }
       },
@@ -3447,7 +3447,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-drive-junior-26-2025.glb",
-          "bytes": 121164,
+          "bytes": 36056,
           "triangles": 4980
         }
       },
@@ -3489,7 +3489,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-drive-junior-26-light-blue-2025.glb",
-          "bytes": 121172,
+          "bytes": 36060,
           "triangles": 4980
         }
       },
@@ -3532,7 +3532,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-drive-lite-2021.glb",
-          "bytes": 121156,
+          "bytes": 35972,
           "triangles": 4980
         }
       },
@@ -3575,7 +3575,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-drive-lite-2025.glb",
-          "bytes": 121152,
+          "bytes": 35972,
           "triangles": 4980
         }
       },
@@ -3617,7 +3617,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-drive-plus-2021.glb",
-          "bytes": 121156,
+          "bytes": 35984,
           "triangles": 4980
         }
       },
@@ -3660,7 +3660,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-drive-plus-2025.glb",
-          "bytes": 121156,
+          "bytes": 35980,
           "triangles": 4980
         }
       },
@@ -3703,7 +3703,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-drive-super-lite-2025.glb",
-          "bytes": 121164,
+          "bytes": 35984,
           "triangles": 4980
         }
       },
@@ -3745,7 +3745,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-drive-team-2021.glb",
-          "bytes": 121156,
+          "bytes": 35972,
           "triangles": 4980
         }
       },
@@ -3788,7 +3788,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-drive-team-2025.glb",
-          "bytes": 121152,
+          "bytes": 35972,
           "triangles": 4980
         }
       },
@@ -3830,7 +3830,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-drive-tour-2021.glb",
-          "bytes": 121156,
+          "bytes": 35972,
           "triangles": 4980
         }
       },
@@ -3873,7 +3873,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-drive-vs-2019.glb",
-          "bytes": 110908,
+          "bytes": 33700,
           "triangles": 4468
         }
       },
@@ -3914,7 +3914,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-strike-100-2019.glb",
-          "bytes": 134476,
+          "bytes": 38412,
           "triangles": 4376
         }
       },
@@ -3956,7 +3956,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-strike-100-2024.glb",
-          "bytes": 143132,
+          "bytes": 40456,
           "triangles": 4696
         }
       },
@@ -4000,7 +4000,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-strike-100-16x20-2024.glb",
-          "bytes": 143592,
+          "bytes": 40560,
           "triangles": 4704
         }
       },
@@ -4042,7 +4042,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-strike-103-2022.glb",
-          "bytes": 134476,
+          "bytes": 38328,
           "triangles": 4376
         }
       },
@@ -4084,7 +4084,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-strike-97-2024.glb",
-          "bytes": 143568,
+          "bytes": 40116,
           "triangles": 4704
         }
       },
@@ -4128,7 +4128,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-strike-98.glb",
-          "bytes": 143132,
+          "bytes": 40464,
           "triangles": 4696
         }
       },
@@ -4204,7 +4204,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-strike-98-16x19-2019.glb",
-          "bytes": 134484,
+          "bytes": 38420,
           "triangles": 4376
         }
       },
@@ -4279,7 +4279,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-strike-98-18x20-2019.glb",
-          "bytes": 135780,
+          "bytes": 38632,
           "triangles": 4400
         }
       },
@@ -4322,7 +4322,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-strike-98-18x20-2024.glb",
-          "bytes": 144452,
+          "bytes": 40696,
           "triangles": 4720
         }
       },
@@ -4364,7 +4364,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-strike-junior-25-2019gen.glb",
-          "bytes": 134492,
+          "bytes": 38564,
           "triangles": 4376
         }
       },
@@ -4406,7 +4406,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-strike-junior-26-2019gen.glb",
-          "bytes": 134496,
+          "bytes": 38528,
           "triangles": 4376
         }
       },
@@ -4449,7 +4449,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-strike-junior-26-gen4.glb",
-          "bytes": 143160,
+          "bytes": 40588,
           "triangles": 4696
         }
       },
@@ -4492,7 +4492,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-strike-lite-2024.glb",
-          "bytes": 143148,
+          "bytes": 40472,
           "triangles": 4696
         }
       },
@@ -4534,7 +4534,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-strike-team-2019.glb",
-          "bytes": 134480,
+          "bytes": 38412,
           "triangles": 4376
         }
       },
@@ -4577,7 +4577,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-strike-team-2024.glb",
-          "bytes": 143148,
+          "bytes": 40472,
           "triangles": 4696
         }
       },
@@ -4619,7 +4619,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-strike-tour-2019.glb",
-          "bytes": 134476,
+          "bytes": 38412,
           "triangles": 4376
         }
       },
@@ -4662,7 +4662,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-strike-vs-2022.glb",
-          "bytes": 131472,
+          "bytes": 37036,
           "triangles": 4256
         }
       },
@@ -4703,7 +4703,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-rafa-nadal-junior-21-2021gen.glb",
-          "bytes": 123840,
+          "bytes": 36968,
           "triangles": 4756
         }
       },
@@ -4745,7 +4745,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-rafa-nadal-junior-23-2021gen.glb",
-          "bytes": 123848,
+          "bytes": 36636,
           "triangles": 4756
         }
       },
@@ -4787,7 +4787,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-rafa-nadal-junior-25-2021gen.glb",
-          "bytes": 122976,
+          "bytes": 36516,
           "triangles": 4740
         }
       },
@@ -4829,7 +4829,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-rafa-nadal-junior-26-2021gen.glb",
-          "bytes": 123844,
+          "bytes": 36712,
           "triangles": 4756
         }
       },
@@ -4871,7 +4871,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-strike-evo.glb",
-          "bytes": 134484,
+          "bytes": 38324,
           "triangles": 4376
         }
       },
@@ -4912,7 +4912,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-boom-elite-2026.glb",
-          "bytes": 112884,
+          "bytes": 34584,
           "triangles": 4568
         }
       },
@@ -4954,7 +4954,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-boom-junior-25-2026.glb",
-          "bytes": 112896,
+          "bytes": 34680,
           "triangles": 4568
         }
       },
@@ -4996,7 +4996,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-boom-junior-26-2026.glb",
-          "bytes": 112896,
+          "bytes": 34672,
           "triangles": 4568
         }
       },
@@ -5038,7 +5038,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-boom-mp-2026.glb",
-          "bytes": 112884,
+          "bytes": 34600,
           "triangles": 4568
         }
       },
@@ -5114,7 +5114,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-boom-mp-l-2026.glb",
-          "bytes": 112888,
+          "bytes": 34604,
           "triangles": 4568
         }
       },
@@ -5156,7 +5156,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-boom-mp-ul-2026.glb",
-          "bytes": 112888,
+          "bytes": 34604,
           "triangles": 4568
         }
       },
@@ -5198,7 +5198,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-boom-pro-2024.glb",
-          "bytes": 112900,
+          "bytes": 34288,
           "triangles": 4568
         }
       },
@@ -5250,7 +5250,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-boom-pro-2026.glb",
-          "bytes": 112888,
+          "bytes": 34488,
           "triangles": 4568
         }
       },
@@ -5292,7 +5292,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-boom-team-2026.glb",
-          "bytes": 112888,
+          "bytes": 34452,
           "triangles": 4568
         }
       },
@@ -5334,7 +5334,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-extreme-elite-2026.glb",
-          "bytes": 112348,
+          "bytes": 34480,
           "triangles": 4540
         }
       },
@@ -5376,7 +5376,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-extreme-mp-2024.glb",
-          "bytes": 110872,
+          "bytes": 33388,
           "triangles": 4468
         }
       },
@@ -5436,7 +5436,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-extreme-mp-2026.glb",
-          "bytes": 112340,
+          "bytes": 34472,
           "triangles": 4540
         }
       },
@@ -5508,7 +5508,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-extreme-mp-l-2024.glb",
-          "bytes": 110876,
+          "bytes": 33392,
           "triangles": 4468
         }
       },
@@ -5550,7 +5550,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-extreme-mp-l-2026.glb",
-          "bytes": 112344,
+          "bytes": 34476,
           "triangles": 4540
         }
       },
@@ -5592,7 +5592,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-extreme-mp-ul-2026.glb",
-          "bytes": 112348,
+          "bytes": 34476,
           "triangles": 4540
         }
       },
@@ -5634,7 +5634,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-extreme-mp-xl.glb",
-          "bytes": 112340,
+          "bytes": 34476,
           "triangles": 4540
         }
       },
@@ -5676,7 +5676,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-extreme-pro-2024.glb",
-          "bytes": 110880,
+          "bytes": 33364,
           "triangles": 4468
         }
       },
@@ -5718,7 +5718,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-extreme-pro-2026.glb",
-          "bytes": 112348,
+          "bytes": 34448,
           "triangles": 4540
         }
       },
@@ -5760,7 +5760,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-extreme-team-2024.glb",
-          "bytes": 110880,
+          "bytes": 33388,
           "triangles": 4468
         }
       },
@@ -5802,7 +5802,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-extreme-team-2026.glb",
-          "bytes": 112348,
+          "bytes": 34480,
           "triangles": 4540
         }
       },
@@ -5844,7 +5844,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-graphene-360-extreme-mp.glb",
-          "bytes": 108328,
+          "bytes": 32852,
           "triangles": 4340
         }
       },
@@ -5885,7 +5885,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-gravity-mp-2025.glb",
-          "bytes": 111336,
+          "bytes": 33920,
           "triangles": 4476
         }
       },
@@ -5949,7 +5949,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-gravity-mp-l-2025.glb",
-          "bytes": 111340,
+          "bytes": 33924,
           "triangles": 4476
         }
       },
@@ -5991,7 +5991,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-gravity-pro-2025.glb",
-          "bytes": 112200,
+          "bytes": 34080,
           "triangles": 4492
         }
       },
@@ -6034,7 +6034,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-gravity-team-2025.glb",
-          "bytes": 111336,
+          "bytes": 33936,
           "triangles": 4476
         }
       },
@@ -6076,7 +6076,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-gravity-tour-2025.glb",
-          "bytes": 110908,
+          "bytes": 34420,
           "triangles": 4468
         }
       },
@@ -6119,7 +6119,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-ig-boom-xceed.glb",
-          "bytes": 112896,
+          "bytes": 34400,
           "triangles": 4568
         }
       },
@@ -6161,7 +6161,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-instinct-junior-21.glb",
-          "bytes": 108328,
+          "bytes": 33320,
           "triangles": 4340
         }
       },
@@ -6203,7 +6203,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-instinct-junior-23.glb",
-          "bytes": 108332,
+          "bytes": 33040,
           "triangles": 4340
         }
       },
@@ -6245,7 +6245,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-instinct-junior-25.glb",
-          "bytes": 108328,
+          "bytes": 33124,
           "triangles": 4340
         }
       },
@@ -6301,7 +6301,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-pwr-110.glb",
-          "bytes": 109016,
+          "bytes": 32952,
           "triangles": 4376
         }
       },
@@ -6353,7 +6353,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-pwr-115-2026.glb",
-          "bytes": 109024,
+          "bytes": 33060,
           "triangles": 4376
         }
       },
@@ -6395,7 +6395,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-paw-patrol-junior-17.glb",
-          "bytes": 105756,
+          "bytes": 32960,
           "triangles": 4292
         }
       },
@@ -6437,7 +6437,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-paw-patrol-junior-19.glb",
-          "bytes": 107484,
+          "bytes": 33136,
           "triangles": 4324
         }
       },
@@ -6479,7 +6479,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-paw-patrol-junior-21.glb",
-          "bytes": 107484,
+          "bytes": 33168,
           "triangles": 4324
         }
       },
@@ -6521,7 +6521,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-paw-patrol-junior-23.glb",
-          "bytes": 107916,
+          "bytes": 33012,
           "triangles": 4332
         }
       },
@@ -6581,7 +6581,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-prestige-mp-l.glb",
-          "bytes": 131032,
+          "bytes": 36340,
           "triangles": 4248
         }
       },
@@ -6623,7 +6623,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-prestige-mp-limited.glb",
-          "bytes": 130180,
+          "bytes": 36024,
           "triangles": 4216
         }
       },
@@ -6664,7 +6664,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-prestige-pro-2023.glb",
-          "bytes": 132336,
+          "bytes": 36688,
           "triangles": 4272
         }
       },
@@ -6720,7 +6720,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-prestige-tour-2023.glb",
-          "bytes": 131040,
+          "bytes": 36660,
           "triangles": 4248
         }
       },
@@ -6762,7 +6762,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-radical-elite-2025.glb",
-          "bytes": 119284,
+          "bytes": 36220,
           "triangles": 4888
         }
       },
@@ -6804,7 +6804,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-radical-junior-21.glb",
-          "bytes": 119292,
+          "bytes": 36440,
           "triangles": 4888
         }
       },
@@ -6846,7 +6846,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-radical-junior-26-2025.glb",
-          "bytes": 119300,
+          "bytes": 36300,
           "triangles": 4888
         }
       },
@@ -6888,7 +6888,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-radical-mp-2025.glb",
-          "bytes": 119284,
+          "bytes": 36192,
           "triangles": 4888
         }
       },
@@ -6960,7 +6960,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-radical-pro-2025.glb",
-          "bytes": 119288,
+          "bytes": 36208,
           "triangles": 4888
         }
       },
@@ -7002,7 +7002,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-radical-team-2025.glb",
-          "bytes": 119284,
+          "bytes": 36220,
           "triangles": 4888
         }
       },
@@ -7044,7 +7044,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-radical-tour-2025.glb",
-          "bytes": 120584,
+          "bytes": 36464,
           "triangles": 4912
         }
       },
@@ -7086,7 +7086,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-ig-radical-xceed.glb",
-          "bytes": 109616,
+          "bytes": 33228,
           "triangles": 4404
         }
       },
@@ -7127,7 +7127,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-speed-elite-2026.glb",
-          "bytes": 113448,
+          "bytes": 33840,
           "triangles": 4596
         }
       },
@@ -7169,7 +7169,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-speed-junior-25.glb",
-          "bytes": 108328,
+          "bytes": 33124,
           "triangles": 4340
         }
       },
@@ -7210,7 +7210,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-speed-junior-25-2026.glb",
-          "bytes": 113452,
+          "bytes": 33876,
           "triangles": 4596
         }
       },
@@ -7252,7 +7252,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-speed-junior-26-2026.glb",
-          "bytes": 113456,
+          "bytes": 33892,
           "triangles": 4596
         }
       },
@@ -7294,7 +7294,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-speed-mp-2024.glb",
-          "bytes": 110896,
+          "bytes": 33280,
           "triangles": 4468
         }
       },
@@ -7347,7 +7347,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-speed-mp-2026.glb",
-          "bytes": 113440,
+          "bytes": 33796,
           "triangles": 4596
         }
       },
@@ -7430,7 +7430,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-speed-mp-l-2026.glb",
-          "bytes": 113444,
+          "bytes": 33800,
           "triangles": 4596
         }
       },
@@ -7472,7 +7472,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-speed-mp-ul-2026.glb",
-          "bytes": 113448,
+          "bytes": 33804,
           "triangles": 4596
         }
       },
@@ -7514,7 +7514,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-speed-pro-2024.glb",
-          "bytes": 112196,
+          "bytes": 33524,
           "triangles": 4492
         }
       },
@@ -7556,7 +7556,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-speed-pro-2026.glb",
-          "bytes": 114736,
+          "bytes": 34040,
           "triangles": 4620
         }
       },
@@ -7599,7 +7599,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-speed-sinner.glb",
-          "bytes": 113440,
+          "bytes": 33792,
           "triangles": 4596
         }
       },
@@ -7641,7 +7641,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-speed-team-2026.glb",
-          "bytes": 113440,
+          "bytes": 33728,
           "triangles": 4596
         }
       },
@@ -7683,7 +7683,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-speed-tour-2026.glb",
-          "bytes": 113444,
+          "bytes": 34004,
           "triangles": 4596
         }
       },
@@ -7726,7 +7726,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-squared.glb",
-          "bytes": 110428,
+          "bytes": 33892,
           "triangles": 4460
         }
       },
@@ -7767,7 +7767,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-ti-s6.glb",
-          "bytes": 108312,
+          "bytes": 32824,
           "triangles": 4340
         }
       },
@@ -7808,7 +7808,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/prince-ats-textreme-tour-100-290-carbon.glb",
-          "bytes": 137560,
+          "bytes": 38424,
           "triangles": 4496
         }
       },
@@ -7850,7 +7850,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/prince-ats-textreme-tour-100-310-2022.glb",
-          "bytes": 148208,
+          "bytes": 40884,
           "triangles": 4976
         }
       },
@@ -7893,7 +7893,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/prince-ats-textreme-tour-100p-2022.glb",
-          "bytes": 149928,
+          "bytes": 41164,
           "triangles": 5008
         }
       },
@@ -7936,7 +7936,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/prince-ats-textreme-tour-98.glb",
-          "bytes": 148624,
+          "bytes": 40596,
           "triangles": 4984
         }
       },
@@ -7979,7 +7979,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/prince-ats-textreme-tour-98-carbon.glb",
-          "bytes": 137984,
+          "bytes": 38172,
           "triangles": 4504
         }
       },
@@ -8047,7 +8047,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/prince-beast-smiley-edition-300g.glb",
-          "bytes": 110928,
+          "bytes": 33572,
           "triangles": 4468
         }
       },
@@ -8089,7 +8089,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/prince-beast-smiley-edition-280g.glb",
-          "bytes": 110928,
+          "bytes": 33576,
           "triangles": 4468
         }
       },
@@ -8141,7 +8141,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/prince-o3-legacy-105.glb",
-          "bytes": 116556,
+          "bytes": 34940,
           "triangles": 4640
         }
       },
@@ -8183,7 +8183,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/prince-o3-legacy-110.glb",
-          "bytes": 116564,
+          "bytes": 34848,
           "triangles": 4640
         }
       },
@@ -8226,7 +8226,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/prince-o3-legacy-120-2024.glb",
-          "bytes": 116560,
+          "bytes": 35136,
           "triangles": 4640
         }
       },
@@ -8283,7 +8283,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/prince-o3-phantom-100x.glb",
-          "bytes": 153252,
+          "bytes": 42604,
           "triangles": 5148
         }
       },
@@ -8323,7 +8323,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/prince-o3-ripstick-26-junior.glb",
-          "bytes": 126484,
+          "bytes": 37252,
           "triangles": 5124
         }
       },
@@ -8365,7 +8365,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/prince-phantom-100p-2024.glb",
-          "bytes": 140972,
+          "bytes": 38748,
           "triangles": 4624
         }
       },
@@ -8407,7 +8407,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/prince-phantom-100x-18x20-2024.glb",
-          "bytes": 142712,
+          "bytes": 39224,
           "triangles": 4656
         }
       },
@@ -8449,7 +8449,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/prince-phantom-100x-290g-2024.glb",
-          "bytes": 140980,
+          "bytes": 38944,
           "triangles": 4624
         }
       },
@@ -8491,7 +8491,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/prince-phantom-100x-305g-2024.glb",
-          "bytes": 140980,
+          "bytes": 38944,
           "triangles": 4624
         }
       },
@@ -8555,7 +8555,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/prince-phantom-107g-2024.glb",
-          "bytes": 141404,
+          "bytes": 38956,
           "triangles": 4632
         }
       },
@@ -8597,7 +8597,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/prince-premier-105.glb",
-          "bytes": 107888,
+          "bytes": 32856,
           "triangles": 4332
         }
       },
@@ -8649,7 +8649,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/prince-premier-110.glb",
-          "bytes": 110444,
+          "bytes": 33860,
           "triangles": 4460
         }
       },
@@ -8692,7 +8692,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/prince-ripcord-100-265g-2025.glb",
-          "bytes": 116744,
+          "bytes": 35504,
           "triangles": 4760
         }
       },
@@ -8734,7 +8734,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/prince-ripcord-100-280g-2025.glb",
-          "bytes": 116744,
+          "bytes": 35504,
           "triangles": 4760
         }
       },
@@ -8802,7 +8802,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/prince-ripcord-100-300g-2025.glb",
-          "bytes": 116744,
+          "bytes": 35504,
           "triangles": 4760
         }
       },
@@ -8844,7 +8844,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/prince-ripcord-25-junior.glb",
-          "bytes": 116736,
+          "bytes": 35556,
           "triangles": 4760
         }
       },
@@ -8886,7 +8886,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/prince-ripcord-26-junior.glb",
-          "bytes": 116736,
+          "bytes": 35540,
           "triangles": 4760
         }
       },
@@ -8928,7 +8928,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/prince-ripcord-98-xs.glb",
-          "bytes": 116300,
+          "bytes": 35412,
           "triangles": 4752
         }
       },
@@ -8971,7 +8971,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/prince-ripstick-100.glb",
-          "bytes": 126036,
+          "bytes": 37148,
           "triangles": 5116
         }
       },
@@ -9030,7 +9030,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/prince-ripstick-100-280g-2025.glb",
-          "bytes": 126056,
+          "bytes": 37168,
           "triangles": 5116
         }
       },
@@ -9072,7 +9072,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/prince-ripstick-98-2025.glb",
-          "bytes": 121972,
+          "bytes": 36240,
           "triangles": 4924
         }
       },
@@ -9115,7 +9115,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/prince-tour-100-275g-2026.glb",
-          "bytes": 132348,
+          "bytes": 38148,
           "triangles": 4304
         }
       },
@@ -9158,7 +9158,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/prince-tour-100-290g.glb",
-          "bytes": 132336,
+          "bytes": 37972,
           "triangles": 4304
         }
       },
@@ -9221,7 +9221,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/prince-tour-100-310g-2026.glb",
-          "bytes": 132348,
+          "bytes": 37984,
           "triangles": 4304
         }
       },
@@ -9263,7 +9263,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/prince-tour-100p-2026.glb",
-          "bytes": 134064,
+          "bytes": 38260,
           "triangles": 4336
         }
       },
@@ -9305,7 +9305,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/prince-tour-25-junior.glb",
-          "bytes": 148604,
+          "bytes": 40656,
           "triangles": 4984
         }
       },
@@ -9348,7 +9348,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/prince-tour-98-2026.glb",
-          "bytes": 131040,
+          "bytes": 36652,
           "triangles": 4248
         }
       },
@@ -9391,7 +9391,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/prince-warrior-100-285g-2025.glb",
-          "bytes": 110356,
+          "bytes": 33284,
           "triangles": 4440
         }
       },
@@ -9434,7 +9434,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/prince-warrior-100-300g-2025.glb",
-          "bytes": 110920,
+          "bytes": 34296,
           "triangles": 4468
         }
       },
@@ -9490,7 +9490,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/prince-warrior-107-275g-2025.glb",
-          "bytes": 110356,
+          "bytes": 33224,
           "triangles": 4440
         }
       },
@@ -9534,7 +9534,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/solinco-blackout-v2-300.glb",
-          "bytes": 110908,
+          "bytes": 35460,
           "triangles": 4468
         }
       },
@@ -9594,7 +9594,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/solinco-blackout-v2-110-2026.glb",
-          "bytes": 110920,
+          "bytes": 35548,
           "triangles": 4468
         }
       },
@@ -9637,7 +9637,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/solinco-blackout-v2-285-2025.glb",
-          "bytes": 110920,
+          "bytes": 35472,
           "triangles": 4468
         }
       },
@@ -9680,7 +9680,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/solinco-blackout-v2-300-xtd-2025.glb",
-          "bytes": 110928,
+          "bytes": 35296,
           "triangles": 4468
         }
       },
@@ -9722,7 +9722,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/solinco-prizm-115-2026.glb",
-          "bytes": 108332,
+          "bytes": 33172,
           "triangles": 4340
         }
       },
@@ -9764,7 +9764,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/solinco-whiteout-v2-305.glb",
-          "bytes": 131036,
+          "bytes": 39408,
           "triangles": 4248
         }
       },
@@ -9828,7 +9828,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/solinco-whiteout-v2-290-2025.glb",
-          "bytes": 131044,
+          "bytes": 39416,
           "triangles": 4248
         }
       },
@@ -9871,7 +9871,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/solinco-whiteout-v2-305-18x20-2025.glb",
-          "bytes": 132352,
+          "bytes": 39640,
           "triangles": 4272
         }
       },
@@ -9914,7 +9914,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/solinco-whiteout-v2-305-xtd-2025.glb",
-          "bytes": 131056,
+          "bytes": 39272,
           "triangles": 4248
         }
       },
@@ -9956,7 +9956,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/solinco-whiteout-v2-305-xtd-18x20-2025.glb",
-          "bytes": 132364,
+          "bytes": 39492,
           "triangles": 4272
         }
       },
@@ -9999,7 +9999,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-blade-100-v10-2026.glb",
-          "bytes": 132764,
+          "bytes": 36584,
           "triangles": 4312
         }
       },
@@ -10042,7 +10042,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-blade-100l-v10-2026.glb",
-          "bytes": 132768,
+          "bytes": 36588,
           "triangles": 4312
         }
       },
@@ -10085,7 +10085,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-blade-100ul-v10-2026.glb",
-          "bytes": 132768,
+          "bytes": 36588,
           "triangles": 4312
         }
       },
@@ -10128,7 +10128,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-blade-104-v10-2026.glb",
-          "bytes": 132768,
+          "bytes": 36524,
           "triangles": 4312
         }
       },
@@ -10170,7 +10170,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-blade-25-v10-2026.glb",
-          "bytes": 132760,
+          "bytes": 36916,
           "triangles": 4312
         }
       },
@@ -10212,7 +10212,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-blade-26-v10-2026.glb",
-          "bytes": 132764,
+          "bytes": 36928,
           "triangles": 4312
         }
       },
@@ -10255,7 +10255,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-blade-98-v10.glb",
-          "bytes": 132756,
+          "bytes": 36764,
           "triangles": 4312
         }
       },
@@ -10343,7 +10343,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-blade-98-18x20-v10-2026.glb",
-          "bytes": 134076,
+          "bytes": 37016,
           "triangles": 4336
         }
       },
@@ -10385,7 +10385,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-blade-98s-v9.glb",
-          "bytes": 127148,
+          "bytes": 35204,
           "triangles": 4112
         }
       },
@@ -10427,7 +10427,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-blade-pro-100-v10.glb",
-          "bytes": 133192,
+          "bytes": 36704,
           "triangles": 4320
         }
       },
@@ -10469,7 +10469,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-blade-pro-98-16x19-v10-2026.glb",
-          "bytes": 131056,
+          "bytes": 36080,
           "triangles": 4248
         }
       },
@@ -10513,7 +10513,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-blade-pro-98-18x20-v10-2026.glb",
-          "bytes": 134084,
+          "bytes": 36708,
           "triangles": 4336
         }
       },
@@ -10555,7 +10555,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-burn-100ls-v6-2026.glb",
-          "bytes": 107908,
+          "bytes": 32732,
           "triangles": 4332
         }
       },
@@ -10597,7 +10597,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-burn-100s-v6-2026.glb",
-          "bytes": 107904,
+          "bytes": 32732,
           "triangles": 4332
         }
       },
@@ -10653,7 +10653,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-burn-pink-105s-v6-2026.glb",
-          "bytes": 107904,
+          "bytes": 33188,
           "triangles": 4332
         }
       },
@@ -10697,7 +10697,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-clash-100-v3.glb",
-          "bytes": 118020,
+          "bytes": 34944,
           "triangles": 4824
         }
       },
@@ -10731,7 +10731,7 @@
           "assets": {
             "realistic": {
               "path": "realistic/wilson-clash-100-v3--reverse.glb",
-              "bytes": 110316,
+              "bytes": 33080,
               "triangles": 4440
             }
           }
@@ -10772,7 +10772,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-clash-100-pro-v3-2025.glb",
-          "bytes": 111344,
+          "bytes": 33352,
           "triangles": 4476
         }
       },
@@ -10815,7 +10815,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-clash-100l-v3-2025.glb",
-          "bytes": 118032,
+          "bytes": 34956,
           "triangles": 4824
         }
       },
@@ -10857,7 +10857,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-clash-108-v3-2025.glb",
-          "bytes": 118028,
+          "bytes": 34980,
           "triangles": 4824
         }
       },
@@ -10899,7 +10899,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-clash-25-v2.glb",
-          "bytes": 108332,
+          "bytes": 32688,
           "triangles": 4340
         }
       },
@@ -10940,7 +10940,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-defyer-100.glb",
-          "bytes": 113448,
+          "bytes": 33928,
           "triangles": 4596
         }
       },
@@ -11000,7 +11000,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-defyer-100l.glb",
-          "bytes": 113452,
+          "bytes": 33928,
           "triangles": 4596
         }
       },
@@ -11042,7 +11042,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-defyer-100ul.glb",
-          "bytes": 113452,
+          "bytes": 33932,
           "triangles": 4596
         }
       },
@@ -11084,7 +11084,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-defyer-98-pro.glb",
-          "bytes": 111328,
+          "bytes": 33464,
           "triangles": 4476
         }
       },
@@ -11126,7 +11126,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-hyper-hammer-5-3-stretch-os.glb",
-          "bytes": 111364,
+          "bytes": 33568,
           "triangles": 4476
         }
       },
@@ -11168,7 +11168,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-pro-staff-97-v14.glb",
-          "bytes": 138812,
+          "bytes": 38788,
           "triangles": 4536
         }
       },
@@ -11198,7 +11198,7 @@
           "assets": {
             "realistic": {
               "path": "realistic/wilson-pro-staff-97-v14--classic.glb",
-              "bytes": 139684,
+              "bytes": 38060,
               "triangles": 4568
             }
           }
@@ -11239,7 +11239,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-pro-staff-97l-classic.glb",
-          "bytes": 139692,
+          "bytes": 38272,
           "triangles": 4568
         }
       },
@@ -11282,7 +11282,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-pro-staff-team-classic.glb",
-          "bytes": 139700,
+          "bytes": 38048,
           "triangles": 4568
         }
       },
@@ -11325,7 +11325,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-rf-01.glb",
-          "bytes": 125828,
+          "bytes": 35452,
           "triangles": 4056
         }
       },
@@ -11367,7 +11367,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-rf-01-future.glb",
-          "bytes": 125840,
+          "bytes": 35464,
           "triangles": 4056
         }
       },
@@ -11409,7 +11409,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-rf-01-pro.glb",
-          "bytes": 125836,
+          "bytes": 35460,
           "triangles": 4056
         }
       },
@@ -11465,7 +11465,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-triad-five.glb",
-          "bytes": 108756,
+          "bytes": 32692,
           "triangles": 4348
         }
       },
@@ -11517,7 +11517,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-triad-three.glb",
-          "bytes": 108316,
+          "bytes": 32776,
           "triangles": 4340
         }
       },
@@ -11560,7 +11560,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-ultra-100-v5-2025.glb",
-          "bytes": 109052,
+          "bytes": 32936,
           "triangles": 4376
         }
       },
@@ -11632,7 +11632,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-ultra-100l-v5-2025.glb",
-          "bytes": 109056,
+          "bytes": 32940,
           "triangles": 4376
         }
       },
@@ -11674,7 +11674,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-ultra-100ul-v5-2025.glb",
-          "bytes": 109056,
+          "bytes": 32940,
           "triangles": 4376
         }
       },
@@ -11716,7 +11716,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-ultra-111-v5-2025.glb",
-          "bytes": 108616,
+          "bytes": 33084,
           "triangles": 4368
         }
       },
@@ -11758,7 +11758,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-ultra-25-v5.glb",
-          "bytes": 109036,
+          "bytes": 33012,
           "triangles": 4376
         }
       },
@@ -11800,7 +11800,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-ultra-99-pro-v5.glb",
-          "bytes": 108624,
+          "bytes": 32908,
           "triangles": 4368
         }
       },
@@ -11842,7 +11842,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-ultra-pro-16x19-v4.glb",
-          "bytes": 108340,
+          "bytes": 32900,
           "triangles": 4340
         }
       },
@@ -11894,7 +11894,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-ultra-pro-18x20-v4.glb",
-          "bytes": 109636,
+          "bytes": 33140,
           "triangles": 4364
         }
       },
@@ -11936,7 +11936,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-ultra-team-v5-2025.glb",
-          "bytes": 109052,
+          "bytes": 32936,
           "triangles": 4376
         }
       },
@@ -11979,7 +11979,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-ezone-100.glb",
-          "bytes": 130796,
+          "bytes": 38440,
           "triangles": 5464
         }
       },
@@ -12049,7 +12049,7 @@
           "assets": {
             "realistic": {
               "path": "realistic/yonex-ezone-100--espresso-brown.glb",
-              "bytes": 130812,
+              "bytes": 38408,
               "triangles": 5464
             }
           }
@@ -12090,7 +12090,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-ezone-100-sl-2025.glb",
-          "bytes": 130380,
+          "bytes": 38412,
           "triangles": 5456
         }
       },
@@ -12132,7 +12132,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-ezone-100-plus-2025.glb",
-          "bytes": 130816,
+          "bytes": 38452,
           "triangles": 5464
         }
       },
@@ -12174,7 +12174,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-ezone-100l-2025.glb",
-          "bytes": 130808,
+          "bytes": 38452,
           "triangles": 5464
         }
       },
@@ -12216,7 +12216,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-ezone-105-2025.glb",
-          "bytes": 130808,
+          "bytes": 38264,
           "triangles": 5464
         }
       },
@@ -12258,7 +12258,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-ezone-110-2025.glb",
-          "bytes": 130376,
+          "bytes": 38088,
           "triangles": 5456
         }
       },
@@ -12300,7 +12300,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-ezone-115-2025.glb",
-          "bytes": 130372,
+          "bytes": 38152,
           "triangles": 5456
         }
       },
@@ -12342,7 +12342,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-ezone-junior-25.glb",
-          "bytes": 130376,
+          "bytes": 38464,
           "triangles": 5456
         }
       },
@@ -12384,7 +12384,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-ezone-junior-26.glb",
-          "bytes": 130376,
+          "bytes": 38460,
           "triangles": 5456
         }
       },
@@ -12426,7 +12426,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-ezone-98-2025.glb",
-          "bytes": 130808,
+          "bytes": 38432,
           "triangles": 5464
         }
       },
@@ -12468,7 +12468,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-ezone-98-tour-2025.glb",
-          "bytes": 130816,
+          "bytes": 38444,
           "triangles": 5464
         }
       },
@@ -12510,7 +12510,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-ezone-98-plus-2025.glb",
-          "bytes": 130816,
+          "bytes": 38400,
           "triangles": 5464
         }
       },
@@ -12552,7 +12552,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-ezone-ace.glb",
-          "bytes": 118564,
+          "bytes": 35464,
           "triangles": 4852
         }
       },
@@ -12612,7 +12612,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-ezone-alpha.glb",
-          "bytes": 118136,
+          "bytes": 35628,
           "triangles": 4844
         }
       },
@@ -12654,7 +12654,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-ezone-alpha-l.glb",
-          "bytes": 118140,
+          "bytes": 35632,
           "triangles": 4844
         }
       },
@@ -12696,7 +12696,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-ezone-alpha-sl.glb",
-          "bytes": 118140,
+          "bytes": 35632,
           "triangles": 4844
         }
       },
@@ -12738,7 +12738,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-ezone-jr-25.glb",
-          "bytes": 130368,
+          "bytes": 38456,
           "triangles": 5456
         }
       },
@@ -12780,7 +12780,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-junior-25.glb",
-          "bytes": 117696,
+          "bytes": 35808,
           "triangles": 4836
         }
       },
@@ -12848,7 +12848,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-muse-100-2026.glb",
-          "bytes": 109880,
+          "bytes": 33248,
           "triangles": 4432
         }
       },
@@ -12912,7 +12912,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-muse-100l-2026.glb",
-          "bytes": 109880,
+          "bytes": 33248,
           "triangles": 4432
         }
       },
@@ -12954,7 +12954,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-muse-100sl-2026.glb",
-          "bytes": 109884,
+          "bytes": 33252,
           "triangles": 4432
         }
       },
@@ -12996,7 +12996,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-muse-107-2026.glb",
-          "bytes": 109880,
+          "bytes": 33172,
           "triangles": 4432
         }
       },
@@ -13038,7 +13038,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-muse-98-2026.glb",
-          "bytes": 109876,
+          "bytes": 33272,
           "triangles": 4432
         }
       },
@@ -13081,7 +13081,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-percept-100-2023.glb",
-          "bytes": 139672,
+          "bytes": 38584,
           "triangles": 4568
         }
       },
@@ -13124,7 +13124,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-percept-100d-2023.glb",
-          "bytes": 140540,
+          "bytes": 38692,
           "triangles": 4584
         }
       },
@@ -13167,7 +13167,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-percept-100l-2023.glb",
-          "bytes": 139676,
+          "bytes": 38588,
           "triangles": 4568
         }
       },
@@ -13210,7 +13210,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-percept-97.glb",
-          "bytes": 139660,
+          "bytes": 38576,
           "triangles": 4568
         }
       },
@@ -13287,7 +13287,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-percept-97d-2023.glb",
-          "bytes": 140972,
+          "bytes": 38808,
           "triangles": 4592
         }
       },
@@ -13330,7 +13330,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-percept-97h-2023.glb",
-          "bytes": 139672,
+          "bytes": 38588,
           "triangles": 4568
         }
       },
@@ -13372,7 +13372,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-percept-97l-2023.glb",
-          "bytes": 139672,
+          "bytes": 38588,
           "triangles": 4568
         }
       },
@@ -13415,7 +13415,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-percept-game-2025.glb",
-          "bytes": 139676,
+          "bytes": 38388,
           "triangles": 4568
         }
       },
@@ -13458,7 +13458,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-vcore-100.glb",
-          "bytes": 126868,
+          "bytes": 37940,
           "triangles": 4856
         }
       },
@@ -13533,7 +13533,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-vcore-100-plus-2026.glb",
-          "bytes": 126880,
+          "bytes": 37896,
           "triangles": 4856
         }
       },
@@ -13575,7 +13575,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-vcore-100d-2026.glb",
-          "bytes": 127312,
+          "bytes": 38040,
           "triangles": 4864
         }
       },
@@ -13617,7 +13617,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-vcore-100l-2026.glb",
-          "bytes": 126880,
+          "bytes": 37952,
           "triangles": 4856
         }
       },
@@ -13659,7 +13659,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-vcore-95-2026.glb",
-          "bytes": 127308,
+          "bytes": 36900,
           "triangles": 4864
         }
       },
@@ -13701,7 +13701,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-vcore-98-2026.glb",
-          "bytes": 126876,
+          "bytes": 37424,
           "triangles": 4856
         }
       },
@@ -13743,7 +13743,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-vcore-98-tour-2026.glb",
-          "bytes": 126888,
+          "bytes": 37432,
           "triangles": 4856
         }
       },
@@ -13785,7 +13785,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-vcore-98-plus-2026.glb",
-          "bytes": 126884,
+          "bytes": 37404,
           "triangles": 4856
         }
       },
@@ -13827,7 +13827,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-junior-17.glb",
-          "bytes": 115544,
+          "bytes": 35396,
           "triangles": 4796
         }
       },
@@ -13869,7 +13869,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-junior-19.glb",
-          "bytes": 115980,
+          "bytes": 35644,
           "triangles": 4804
         }
       },
@@ -13911,7 +13911,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-junior-21.glb",
-          "bytes": 117276,
+          "bytes": 35596,
           "triangles": 4828
         }
       },
@@ -13953,7 +13953,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-junior-23.glb",
-          "bytes": 117708,
+          "bytes": 35908,
           "triangles": 4836
         }
       },
@@ -13995,7 +13995,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-junior-26.glb",
-          "bytes": 118136,
+          "bytes": 35956,
           "triangles": 4844
         }
       },
@@ -14018,7 +14018,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-aero-junior-25-2026.glb",
-      "bytes": 125744
+      "bytes": 35532
     },
     {
       "id": "babolat-aero-junior-26",
@@ -14033,7 +14033,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-aero-junior-26.glb",
-      "bytes": 122956
+      "bytes": 36224
     },
     {
       "id": "babolat-aero-junior-26-2026",
@@ -14048,7 +14048,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-aero-junior-26-2026.glb",
-      "bytes": 125744
+      "bytes": 36780
     },
     {
       "id": "babolat-b-fly-19-2023",
@@ -14063,7 +14063,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-b-fly-19-2023.glb",
-      "bytes": 112984
+      "bytes": 33888
     },
     {
       "id": "babolat-b-fly-21-2023",
@@ -14078,7 +14078,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-b-fly-21-2023.glb",
-      "bytes": 113416
+      "bytes": 34172
     },
     {
       "id": "babolat-b-fly-23-2023",
@@ -14093,7 +14093,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-b-fly-23-2023.glb",
-      "bytes": 114716
+      "bytes": 34132
     },
     {
       "id": "babolat-b-fly-25-2023",
@@ -14108,7 +14108,7 @@
       "colourwayName": "Navy/Pink",
       "style": "realistic",
       "path": "realistic/babolat-b-fly-25-2023.glb",
-      "bytes": 116000
+      "bytes": 34296
     },
     {
       "id": "babolat-boost-aero-2026",
@@ -14123,7 +14123,7 @@
       "colourwayName": "Grey/Fluorescent yellow",
       "style": "realistic",
       "path": "realistic/babolat-boost-aero-2026.glb",
-      "bytes": 115456
+      "bytes": 34380
     },
     {
       "id": "babolat-boost-aero-2026",
@@ -14138,7 +14138,7 @@
       "colourwayName": "Raspberry Pink",
       "style": "realistic",
       "path": "realistic/babolat-boost-aero-2026--raspberry-pink.glb",
-      "bytes": 118216
+      "bytes": 34984
     },
     {
       "id": "babolat-boost-aero-rafa",
@@ -14153,7 +14153,7 @@
       "colourwayName": "Yellow/Orange/Purple",
       "style": "realistic",
       "path": "realistic/babolat-boost-aero-rafa.glb",
-      "bytes": 123808
+      "bytes": 36612
     },
     {
       "id": "babolat-boost-drive-2025",
@@ -14168,7 +14168,7 @@
       "colourwayName": "Black/Orange/White",
       "style": "realistic",
       "path": "realistic/babolat-boost-drive-2025.glb",
-      "bytes": 110900
+      "bytes": 33300
     },
     {
       "id": "babolat-boost-drive-2025",
@@ -14183,7 +14183,7 @@
       "colourwayName": "White Coral",
       "style": "realistic",
       "path": "realistic/babolat-boost-drive-2025--white-coral.glb",
-      "bytes": 116004
+      "bytes": 34396
     },
     {
       "id": "babolat-boost-strike-current",
@@ -14198,7 +14198,7 @@
       "colourwayName": "Grey/Red",
       "style": "realistic",
       "path": "realistic/babolat-boost-strike-current.glb",
-      "bytes": 131024
+      "bytes": 37696
     },
     {
       "id": "babolat-carlitos-junior-19",
@@ -14213,7 +14213,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-carlitos-junior-19.glb",
-      "bytes": 123588
+      "bytes": 35084
     },
     {
       "id": "babolat-carlitos-junior-21",
@@ -14228,7 +14228,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-carlitos-junior-21.glb",
-      "bytes": 124016
+      "bytes": 35368
     },
     {
       "id": "babolat-carlitos-junior-23",
@@ -14243,7 +14243,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-carlitos-junior-23.glb",
-      "bytes": 125312
+      "bytes": 35416
     },
     {
       "id": "babolat-carlitos-junior-25",
@@ -14258,7 +14258,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-carlitos-junior-25.glb",
-      "bytes": 125736
+      "bytes": 35508
     },
     {
       "id": "babolat-carlitos-junior-26",
@@ -14273,7 +14273,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-carlitos-junior-26.glb",
-      "bytes": 125740
+      "bytes": 35540
     },
     {
       "id": "babolat-drive-junior-23-2025",
@@ -14288,7 +14288,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-drive-junior-23-2025.glb",
-      "bytes": 120284
+      "bytes": 35660
     },
     {
       "id": "babolat-drive-junior-24-2025",
@@ -14303,7 +14303,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-drive-junior-24-2025.glb",
-      "bytes": 120292
+      "bytes": 35852
     },
     {
       "id": "babolat-drive-junior-25-2025",
@@ -14318,7 +14318,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-drive-junior-25-2025.glb",
-      "bytes": 119012
+      "bytes": 35404
     },
     {
       "id": "babolat-evo-aero-2022",
@@ -14333,7 +14333,7 @@
       "colourwayName": "Grey/White/Yellow",
       "style": "realistic",
       "path": "realistic/babolat-evo-aero-2022.glb",
-      "bytes": 123372
+      "bytes": 36356
     },
     {
       "id": "babolat-evo-aero-2026",
@@ -14348,7 +14348,7 @@
       "colourwayName": "Grey/Fluorescent yellow",
       "style": "realistic",
       "path": "realistic/babolat-evo-aero-2026.glb",
-      "bytes": 115452
+      "bytes": 34372
     },
     {
       "id": "babolat-evo-aero-lite-2023",
@@ -14363,7 +14363,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-evo-aero-lite-2023.glb",
-      "bytes": 123384
+      "bytes": 36368
     },
     {
       "id": "babolat-evo-aero-lite-2026",
@@ -14378,7 +14378,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-evo-aero-lite-2026.glb",
-      "bytes": 115464
+      "bytes": 34384
     },
     {
       "id": "babolat-evo-drive-2021gen",
@@ -14393,7 +14393,7 @@
       "colourwayName": "Blue/White",
       "style": "realistic",
       "path": "realistic/babolat-evo-drive-2021gen.glb",
-      "bytes": 117716
+      "bytes": 34804
     },
     {
       "id": "babolat-evo-drive-2025",
@@ -14408,7 +14408,7 @@
       "colourwayName": "Blue",
       "style": "realistic",
       "path": "realistic/babolat-evo-drive-2025.glb",
-      "bytes": 121132
+      "bytes": 35976
     },
     {
       "id": "babolat-evo-drive-2025",
@@ -14423,7 +14423,7 @@
       "colourwayName": "White",
       "style": "realistic",
       "path": "realistic/babolat-evo-drive-2025--white.glb",
-      "bytes": 118564
+      "bytes": 35264
     },
     {
       "id": "babolat-evo-drive-115",
@@ -14438,7 +14438,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-evo-drive-115.glb",
-      "bytes": 120268
+      "bytes": 35976
     },
     {
       "id": "babolat-evo-drive-lite-2021gen",
@@ -14453,7 +14453,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-evo-drive-lite-2021gen.glb",
-      "bytes": 117724
+      "bytes": 34812
     },
     {
       "id": "babolat-evo-drive-lite-2025",
@@ -14468,7 +14468,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-evo-drive-lite-2025.glb",
-      "bytes": 120280
+      "bytes": 35736
     },
     {
       "id": "babolat-evo-drive-tour-2025",
@@ -14483,7 +14483,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-evo-drive-tour-2025.glb",
-      "bytes": 121140
+      "bytes": 35988
     },
     {
       "id": "babolat-evo-strike-gen2",
@@ -14498,7 +14498,7 @@
       "colourwayName": "White/Red/Grey",
       "style": "realistic",
       "path": "realistic/babolat-evo-strike-gen2.glb",
-      "bytes": 134468
+      "bytes": 38276
     },
     {
       "id": "babolat-evoke-102",
@@ -14513,7 +14513,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-evoke-102.glb",
-      "bytes": 110888
+      "bytes": 33212
     },
     {
       "id": "babolat-evoke-105",
@@ -14528,7 +14528,7 @@
       "colourwayName": "Black/Red",
       "style": "realistic",
       "path": "realistic/babolat-evoke-105.glb",
-      "bytes": 110896
+      "bytes": 33380
     },
     {
       "id": "babolat-pure-aero-100",
@@ -14543,7 +14543,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-pure-aero-100.glb",
-      "bytes": 126596
+      "bytes": 36864
     },
     {
       "id": "babolat-pure-aero-100-2018",
@@ -14558,7 +14558,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-pure-aero-100-2018.glb",
-      "bytes": 123824
+      "bytes": 36360
     },
     {
       "id": "babolat-pure-aero-100-2022",
@@ -14573,7 +14573,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-pure-aero-100-2022.glb",
-      "bytes": 126604
+      "bytes": 36912
     },
     {
       "id": "babolat-pure-aero-98-2023",
@@ -14588,7 +14588,7 @@
       "colourwayName": "Black/Yellow",
       "style": "realistic",
       "path": "realistic/babolat-pure-aero-98-2023.glb",
-      "bytes": 124256
+      "bytes": 36284
     },
     {
       "id": "babolat-pure-aero-98-2026",
@@ -14603,7 +14603,7 @@
       "colourwayName": "Grey/Yellow",
       "style": "realistic",
       "path": "realistic/babolat-pure-aero-98-2026.glb",
-      "bytes": 121468
+      "bytes": 35316
     },
     {
       "id": "babolat-pure-aero-junior-25-2019gen",
@@ -14618,7 +14618,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-pure-aero-junior-25-2019gen.glb",
-      "bytes": 123844
+      "bytes": 36404
     },
     {
       "id": "babolat-pure-aero-junior-25-2023gen",
@@ -14633,7 +14633,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-pure-aero-junior-25-2023gen.glb",
-      "bytes": 123844
+      "bytes": 36404
     },
     {
       "id": "babolat-pure-aero-junior-25-2026",
@@ -14648,7 +14648,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-pure-aero-junior-25-2026.glb",
-      "bytes": 125752
+      "bytes": 36448
     },
     {
       "id": "babolat-pure-aero-junior-26-2019gen",
@@ -14663,7 +14663,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-pure-aero-junior-26-2019gen.glb",
-      "bytes": 123844
+      "bytes": 36444
     },
     {
       "id": "babolat-pure-aero-junior-26-2023gen",
@@ -14678,7 +14678,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-pure-aero-junior-26-2023gen.glb",
-      "bytes": 123844
+      "bytes": 36444
     },
     {
       "id": "babolat-pure-aero-junior-26-2026",
@@ -14693,7 +14693,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-pure-aero-junior-26-2026.glb",
-      "bytes": 126620
+      "bytes": 36984
     },
     {
       "id": "babolat-pure-aero-lite-2018",
@@ -14708,7 +14708,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-pure-aero-lite-2018.glb",
-      "bytes": 123828
+      "bytes": 36364
     },
     {
       "id": "babolat-pure-aero-lite-2022",
@@ -14723,7 +14723,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-pure-aero-lite-2022.glb",
-      "bytes": 126608
+      "bytes": 36912
     },
     {
       "id": "babolat-pure-aero-lite-2026",
@@ -14738,7 +14738,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-pure-aero-lite-2026.glb",
-      "bytes": 126608
+      "bytes": 36876
     },
     {
       "id": "babolat-pure-aero-plus-2019gen",
@@ -14753,7 +14753,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-pure-aero-plus-2019gen.glb",
-      "bytes": 123828
+      "bytes": 36284
     },
     {
       "id": "babolat-pure-aero-plus-2023gen",
@@ -14768,7 +14768,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-pure-aero-plus-2023gen.glb",
-      "bytes": 126608
+      "bytes": 36816
     },
     {
       "id": "babolat-pure-aero-plus-2026",
@@ -14783,7 +14783,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-pure-aero-plus-2026.glb",
-      "bytes": 126600
+      "bytes": 36788
     },
     {
       "id": "babolat-pure-aero-rafa-2021",
@@ -14798,7 +14798,7 @@
       "colourwayName": "Yellow/Orange/Purple",
       "style": "realistic",
       "path": "realistic/babolat-pure-aero-rafa-2021.glb",
-      "bytes": 123820
+      "bytes": 36652
     },
     {
       "id": "babolat-pure-aero-rafa-2023",
@@ -14813,7 +14813,7 @@
       "colourwayName": "Pink/Yellow/Blue",
       "style": "realistic",
       "path": "realistic/babolat-pure-aero-rafa-2023.glb",
-      "bytes": 123812
+      "bytes": 36644
     },
     {
       "id": "babolat-pure-aero-rafa-junior-26-2023",
@@ -14828,7 +14828,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-pure-aero-rafa-junior-26-2023.glb",
-      "bytes": 123836
+      "bytes": 36712
     },
     {
       "id": "babolat-pure-aero-rafa-lite-2021",
@@ -14843,7 +14843,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-pure-aero-rafa-lite-2021.glb",
-      "bytes": 123832
+      "bytes": 36664
     },
     {
       "id": "babolat-pure-aero-rafa-origin-2023",
@@ -14858,7 +14858,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-pure-aero-rafa-origin-2023.glb",
-      "bytes": 123828
+      "bytes": 36656
     },
     {
       "id": "babolat-pure-aero-rafa-team-2021",
@@ -14873,7 +14873,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-pure-aero-rafa-team-2021.glb",
-      "bytes": 123832
+      "bytes": 36664
     },
     {
       "id": "babolat-pure-aero-super-lite-2026",
@@ -14888,7 +14888,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-pure-aero-super-lite-2026.glb",
-      "bytes": 126620
+      "bytes": 36888
     },
     {
       "id": "babolat-pure-aero-team-2018",
@@ -14903,7 +14903,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-pure-aero-team-2018.glb",
-      "bytes": 123828
+      "bytes": 36364
     },
     {
       "id": "babolat-pure-aero-team-2022",
@@ -14918,7 +14918,7 @@
       "colourwayName": "Grey/Yellow",
       "style": "realistic",
       "path": "realistic/babolat-pure-aero-team-2022.glb",
-      "bytes": 126608
+      "bytes": 36912
     },
     {
       "id": "babolat-pure-aero-team-2026",
@@ -14933,7 +14933,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-pure-aero-team-2026.glb",
-      "bytes": 126608
+      "bytes": 36876
     },
     {
       "id": "babolat-pure-aero-tour-2019",
@@ -14948,7 +14948,7 @@
       "colourwayName": "Yellow/Black",
       "style": "realistic",
       "path": "realistic/babolat-pure-aero-tour-2019.glb",
-      "bytes": 123828
+      "bytes": 36364
     },
     {
       "id": "babolat-pure-drive-100",
@@ -14963,7 +14963,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-pure-drive-100.glb",
-      "bytes": 121140
+      "bytes": 35960
     },
     {
       "id": "babolat-pure-drive-100-2020",
@@ -14978,7 +14978,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-pure-drive-100-2020.glb",
-      "bytes": 121156
+      "bytes": 35972
     },
     {
       "id": "babolat-pure-drive-107-2021",
@@ -14993,7 +14993,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-pure-drive-107-2021.glb",
-      "bytes": 121152
+      "bytes": 35932
     },
     {
       "id": "babolat-pure-drive-107-2025",
@@ -15008,7 +15008,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-pure-drive-107-2025.glb",
-      "bytes": 121148
+      "bytes": 35928
     },
     {
       "id": "babolat-pure-drive-110-2021",
@@ -15023,7 +15023,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-pure-drive-110-2021.glb",
-      "bytes": 121156
+      "bytes": 36196
     },
     {
       "id": "babolat-pure-drive-98-2023",
@@ -15038,7 +15038,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-pure-drive-98-2023.glb",
-      "bytes": 121152
+      "bytes": 35932
     },
     {
       "id": "babolat-pure-drive-98-2025",
@@ -15053,7 +15053,7 @@
       "colourwayName": "Blue",
       "style": "realistic",
       "path": "realistic/babolat-pure-drive-98-2025.glb",
-      "bytes": 121580
+      "bytes": 36012
     },
     {
       "id": "babolat-pure-drive-junior-25-2020",
@@ -15068,7 +15068,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-pure-drive-junior-25-2020.glb",
-      "bytes": 120300
+      "bytes": 35772
     },
     {
       "id": "babolat-pure-drive-junior-25-2025",
@@ -15083,7 +15083,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-pure-drive-junior-25-2025.glb",
-      "bytes": 120300
+      "bytes": 35768
     },
     {
       "id": "babolat-pure-drive-junior-25-light-blue-2025",
@@ -15098,7 +15098,7 @@
       "colourwayName": "Light Blue",
       "style": "realistic",
       "path": "realistic/babolat-pure-drive-junior-25-light-blue-2025.glb",
-      "bytes": 120304
+      "bytes": 35776
     },
     {
       "id": "babolat-pure-drive-junior-26-2020",
@@ -15113,7 +15113,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-pure-drive-junior-26-2020.glb",
-      "bytes": 121168
+      "bytes": 36056
     },
     {
       "id": "babolat-pure-drive-junior-26-2025",
@@ -15128,7 +15128,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-pure-drive-junior-26-2025.glb",
-      "bytes": 121164
+      "bytes": 36056
     },
     {
       "id": "babolat-pure-drive-junior-26-light-blue-2025",
@@ -15143,7 +15143,7 @@
       "colourwayName": "Light Blue",
       "style": "realistic",
       "path": "realistic/babolat-pure-drive-junior-26-light-blue-2025.glb",
-      "bytes": 121172
+      "bytes": 36060
     },
     {
       "id": "babolat-pure-drive-lite-2021",
@@ -15158,7 +15158,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-pure-drive-lite-2021.glb",
-      "bytes": 121156
+      "bytes": 35972
     },
     {
       "id": "babolat-pure-drive-lite-2025",
@@ -15173,7 +15173,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-pure-drive-lite-2025.glb",
-      "bytes": 121152
+      "bytes": 35972
     },
     {
       "id": "babolat-pure-drive-plus-2021",
@@ -15188,7 +15188,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-pure-drive-plus-2021.glb",
-      "bytes": 121156
+      "bytes": 35984
     },
     {
       "id": "babolat-pure-drive-plus-2025",
@@ -15203,7 +15203,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-pure-drive-plus-2025.glb",
-      "bytes": 121156
+      "bytes": 35980
     },
     {
       "id": "babolat-pure-drive-super-lite-2025",
@@ -15218,7 +15218,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-pure-drive-super-lite-2025.glb",
-      "bytes": 121164
+      "bytes": 35984
     },
     {
       "id": "babolat-pure-drive-team-2021",
@@ -15233,7 +15233,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-pure-drive-team-2021.glb",
-      "bytes": 121156
+      "bytes": 35972
     },
     {
       "id": "babolat-pure-drive-team-2025",
@@ -15248,7 +15248,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-pure-drive-team-2025.glb",
-      "bytes": 121152
+      "bytes": 35972
     },
     {
       "id": "babolat-pure-drive-tour-2021",
@@ -15263,7 +15263,7 @@
       "colourwayName": "Blue/Navy",
       "style": "realistic",
       "path": "realistic/babolat-pure-drive-tour-2021.glb",
-      "bytes": 121156
+      "bytes": 35972
     },
     {
       "id": "babolat-pure-drive-vs-2019",
@@ -15278,7 +15278,7 @@
       "colourwayName": "Anthracite/Blue",
       "style": "realistic",
       "path": "realistic/babolat-pure-drive-vs-2019.glb",
-      "bytes": 110908
+      "bytes": 33700
     },
     {
       "id": "babolat-pure-strike-100-2019",
@@ -15293,7 +15293,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-pure-strike-100-2019.glb",
-      "bytes": 134476
+      "bytes": 38412
     },
     {
       "id": "babolat-pure-strike-100-2024",
@@ -15308,7 +15308,7 @@
       "colourwayName": "Grey/Neon Red",
       "style": "realistic",
       "path": "realistic/babolat-pure-strike-100-2024.glb",
-      "bytes": 143132
+      "bytes": 40456
     },
     {
       "id": "babolat-pure-strike-100-16x20-2024",
@@ -15323,7 +15323,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-pure-strike-100-16x20-2024.glb",
-      "bytes": 143592
+      "bytes": 40560
     },
     {
       "id": "babolat-pure-strike-103-2022",
@@ -15338,7 +15338,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-pure-strike-103-2022.glb",
-      "bytes": 134476
+      "bytes": 38328
     },
     {
       "id": "babolat-pure-strike-97-2024",
@@ -15353,7 +15353,7 @@
       "colourwayName": "Grey/Neon Red",
       "style": "realistic",
       "path": "realistic/babolat-pure-strike-97-2024.glb",
-      "bytes": 143568
+      "bytes": 40116
     },
     {
       "id": "babolat-pure-strike-98",
@@ -15368,7 +15368,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-pure-strike-98.glb",
-      "bytes": 143132
+      "bytes": 40464
     },
     {
       "id": "babolat-pure-strike-98-16x19-2019",
@@ -15383,7 +15383,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-pure-strike-98-16x19-2019.glb",
-      "bytes": 134484
+      "bytes": 38420
     },
     {
       "id": "babolat-pure-strike-98-18x20-2019",
@@ -15398,7 +15398,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-pure-strike-98-18x20-2019.glb",
-      "bytes": 135780
+      "bytes": 38632
     },
     {
       "id": "babolat-pure-strike-98-18x20-2024",
@@ -15413,7 +15413,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-pure-strike-98-18x20-2024.glb",
-      "bytes": 144452
+      "bytes": 40696
     },
     {
       "id": "babolat-pure-strike-junior-25-2019gen",
@@ -15428,7 +15428,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-pure-strike-junior-25-2019gen.glb",
-      "bytes": 134492
+      "bytes": 38564
     },
     {
       "id": "babolat-pure-strike-junior-26-2019gen",
@@ -15443,7 +15443,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-pure-strike-junior-26-2019gen.glb",
-      "bytes": 134496
+      "bytes": 38528
     },
     {
       "id": "babolat-pure-strike-junior-26-gen4",
@@ -15458,7 +15458,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-pure-strike-junior-26-gen4.glb",
-      "bytes": 143160
+      "bytes": 40588
     },
     {
       "id": "babolat-pure-strike-lite-2024",
@@ -15473,7 +15473,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-pure-strike-lite-2024.glb",
-      "bytes": 143148
+      "bytes": 40472
     },
     {
       "id": "babolat-pure-strike-team-2019",
@@ -15488,7 +15488,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-pure-strike-team-2019.glb",
-      "bytes": 134480
+      "bytes": 38412
     },
     {
       "id": "babolat-pure-strike-team-2024",
@@ -15503,7 +15503,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-pure-strike-team-2024.glb",
-      "bytes": 143148
+      "bytes": 40472
     },
     {
       "id": "babolat-pure-strike-tour-2019",
@@ -15518,7 +15518,7 @@
       "colourwayName": "White/Coral",
       "style": "realistic",
       "path": "realistic/babolat-pure-strike-tour-2019.glb",
-      "bytes": 134476
+      "bytes": 38412
     },
     {
       "id": "babolat-pure-strike-vs-2022",
@@ -15533,7 +15533,7 @@
       "colourwayName": "Black/Orange",
       "style": "realistic",
       "path": "realistic/babolat-pure-strike-vs-2022.glb",
-      "bytes": 131472
+      "bytes": 37036
     },
     {
       "id": "babolat-rafa-nadal-junior-21-2021gen",
@@ -15548,7 +15548,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-rafa-nadal-junior-21-2021gen.glb",
-      "bytes": 123840
+      "bytes": 36968
     },
     {
       "id": "babolat-rafa-nadal-junior-23-2021gen",
@@ -15563,7 +15563,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-rafa-nadal-junior-23-2021gen.glb",
-      "bytes": 123848
+      "bytes": 36636
     },
     {
       "id": "babolat-rafa-nadal-junior-25-2021gen",
@@ -15578,7 +15578,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-rafa-nadal-junior-25-2021gen.glb",
-      "bytes": 122976
+      "bytes": 36516
     },
     {
       "id": "babolat-rafa-nadal-junior-26-2021gen",
@@ -15593,7 +15593,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-rafa-nadal-junior-26-2021gen.glb",
-      "bytes": 123844
+      "bytes": 36712
     },
     {
       "id": "babolat-pure-strike-evo",
@@ -15608,7 +15608,7 @@
       "colourwayName": "White/Coral",
       "style": "realistic",
       "path": "realistic/babolat-pure-strike-evo.glb",
-      "bytes": 134484
+      "bytes": 38324
     },
     {
       "id": "head-boom-elite-2026",
@@ -15623,7 +15623,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/head-boom-elite-2026.glb",
-      "bytes": 112884
+      "bytes": 34584
     },
     {
       "id": "head-boom-junior-25-2026",
@@ -15638,7 +15638,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/head-boom-junior-25-2026.glb",
-      "bytes": 112896
+      "bytes": 34680
     },
     {
       "id": "head-boom-junior-26-2026",
@@ -15653,7 +15653,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/head-boom-junior-26-2026.glb",
-      "bytes": 112896
+      "bytes": 34672
     },
     {
       "id": "head-boom-mp-2026",
@@ -15668,7 +15668,7 @@
       "colourwayName": "Light blue/Navy",
       "style": "realistic",
       "path": "realistic/head-boom-mp-2026.glb",
-      "bytes": 112884
+      "bytes": 34600
     },
     {
       "id": "head-boom-mp-l-2026",
@@ -15683,7 +15683,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/head-boom-mp-l-2026.glb",
-      "bytes": 112888
+      "bytes": 34604
     },
     {
       "id": "head-boom-mp-ul-2026",
@@ -15698,7 +15698,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/head-boom-mp-ul-2026.glb",
-      "bytes": 112888
+      "bytes": 34604
     },
     {
       "id": "head-boom-pro-2024",
@@ -15713,7 +15713,7 @@
       "colourwayName": "Mint/Black",
       "style": "realistic",
       "path": "realistic/head-boom-pro-2024.glb",
-      "bytes": 112900
+      "bytes": 34288
     },
     {
       "id": "head-boom-pro-2026",
@@ -15728,7 +15728,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/head-boom-pro-2026.glb",
-      "bytes": 112888
+      "bytes": 34488
     },
     {
       "id": "head-boom-team-2026",
@@ -15743,7 +15743,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/head-boom-team-2026.glb",
-      "bytes": 112888
+      "bytes": 34452
     },
     {
       "id": "head-extreme-elite-2026",
@@ -15758,7 +15758,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/head-extreme-elite-2026.glb",
-      "bytes": 112348
+      "bytes": 34480
     },
     {
       "id": "head-extreme-mp-2024",
@@ -15773,7 +15773,7 @@
       "colourwayName": "Sage/Lime",
       "style": "realistic",
       "path": "realistic/head-extreme-mp-2024.glb",
-      "bytes": 110872
+      "bytes": 33388
     },
     {
       "id": "head-extreme-mp-2026",
@@ -15788,7 +15788,7 @@
       "colourwayName": "Lime/Black",
       "style": "realistic",
       "path": "realistic/head-extreme-mp-2026.glb",
-      "bytes": 112340
+      "bytes": 34472
     },
     {
       "id": "head-extreme-mp-l-2024",
@@ -15803,7 +15803,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/head-extreme-mp-l-2024.glb",
-      "bytes": 110876
+      "bytes": 33392
     },
     {
       "id": "head-extreme-mp-l-2026",
@@ -15818,7 +15818,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/head-extreme-mp-l-2026.glb",
-      "bytes": 112344
+      "bytes": 34476
     },
     {
       "id": "head-extreme-mp-ul-2026",
@@ -15833,7 +15833,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/head-extreme-mp-ul-2026.glb",
-      "bytes": 112348
+      "bytes": 34476
     },
     {
       "id": "head-extreme-mp-xl",
@@ -15848,7 +15848,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/head-extreme-mp-xl.glb",
-      "bytes": 112340
+      "bytes": 34476
     },
     {
       "id": "head-extreme-pro-2024",
@@ -15863,7 +15863,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/head-extreme-pro-2024.glb",
-      "bytes": 110880
+      "bytes": 33364
     },
     {
       "id": "head-extreme-pro-2026",
@@ -15878,7 +15878,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/head-extreme-pro-2026.glb",
-      "bytes": 112348
+      "bytes": 34448
     },
     {
       "id": "head-extreme-team-2024",
@@ -15893,7 +15893,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/head-extreme-team-2024.glb",
-      "bytes": 110880
+      "bytes": 33388
     },
     {
       "id": "head-extreme-team-2026",
@@ -15908,7 +15908,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/head-extreme-team-2026.glb",
-      "bytes": 112348
+      "bytes": 34480
     },
     {
       "id": "head-graphene-360-extreme-mp",
@@ -15923,7 +15923,7 @@
       "colourwayName": "Grey/Yellow",
       "style": "realistic",
       "path": "realistic/head-graphene-360-extreme-mp.glb",
-      "bytes": 108328
+      "bytes": 32852
     },
     {
       "id": "head-gravity-mp-2025",
@@ -15938,7 +15938,7 @@
       "colourwayName": "Blue/Black",
       "style": "realistic",
       "path": "realistic/head-gravity-mp-2025.glb",
-      "bytes": 111336
+      "bytes": 33920
     },
     {
       "id": "head-gravity-mp-l-2025",
@@ -15953,7 +15953,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/head-gravity-mp-l-2025.glb",
-      "bytes": 111340
+      "bytes": 33924
     },
     {
       "id": "head-gravity-pro-2025",
@@ -15968,7 +15968,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/head-gravity-pro-2025.glb",
-      "bytes": 112200
+      "bytes": 34080
     },
     {
       "id": "head-gravity-team-2025",
@@ -15983,7 +15983,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/head-gravity-team-2025.glb",
-      "bytes": 111336
+      "bytes": 33936
     },
     {
       "id": "head-gravity-tour-2025",
@@ -15998,7 +15998,7 @@
       "colourwayName": "Black/Blue",
       "style": "realistic",
       "path": "realistic/head-gravity-tour-2025.glb",
-      "bytes": 110908
+      "bytes": 34420
     },
     {
       "id": "head-ig-boom-xceed",
@@ -16013,7 +16013,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/head-ig-boom-xceed.glb",
-      "bytes": 112896
+      "bytes": 34400
     },
     {
       "id": "head-instinct-junior-21",
@@ -16028,7 +16028,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/head-instinct-junior-21.glb",
-      "bytes": 108328
+      "bytes": 33320
     },
     {
       "id": "head-instinct-junior-23",
@@ -16043,7 +16043,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/head-instinct-junior-23.glb",
-      "bytes": 108332
+      "bytes": 33040
     },
     {
       "id": "head-instinct-junior-25",
@@ -16058,7 +16058,7 @@
       "colourwayName": "Purple",
       "style": "realistic",
       "path": "realistic/head-instinct-junior-25.glb",
-      "bytes": 108328
+      "bytes": 33124
     },
     {
       "id": "head-pwr-110",
@@ -16073,7 +16073,7 @@
       "colourwayName": "White",
       "style": "realistic",
       "path": "realistic/head-pwr-110.glb",
-      "bytes": 109016
+      "bytes": 32952
     },
     {
       "id": "head-pwr-115-2026",
@@ -16088,7 +16088,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/head-pwr-115-2026.glb",
-      "bytes": 109024
+      "bytes": 33060
     },
     {
       "id": "head-paw-patrol-junior-17",
@@ -16103,7 +16103,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/head-paw-patrol-junior-17.glb",
-      "bytes": 105756
+      "bytes": 32960
     },
     {
       "id": "head-paw-patrol-junior-19",
@@ -16118,7 +16118,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/head-paw-patrol-junior-19.glb",
-      "bytes": 107484
+      "bytes": 33136
     },
     {
       "id": "head-paw-patrol-junior-21",
@@ -16133,7 +16133,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/head-paw-patrol-junior-21.glb",
-      "bytes": 107484
+      "bytes": 33168
     },
     {
       "id": "head-paw-patrol-junior-23",
@@ -16148,7 +16148,7 @@
       "colourwayName": "Blue",
       "style": "realistic",
       "path": "realistic/head-paw-patrol-junior-23.glb",
-      "bytes": 107916
+      "bytes": 33012
     },
     {
       "id": "head-prestige-mp-l",
@@ -16163,7 +16163,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/head-prestige-mp-l.glb",
-      "bytes": 131032
+      "bytes": 36340
     },
     {
       "id": "head-prestige-mp-limited",
@@ -16178,7 +16178,7 @@
       "colourwayName": "Silver/Black",
       "style": "realistic",
       "path": "realistic/head-prestige-mp-limited.glb",
-      "bytes": 130180
+      "bytes": 36024
     },
     {
       "id": "head-prestige-pro-2023",
@@ -16193,7 +16193,7 @@
       "colourwayName": "Charcoal/Maroon",
       "style": "realistic",
       "path": "realistic/head-prestige-pro-2023.glb",
-      "bytes": 132336
+      "bytes": 36688
     },
     {
       "id": "head-prestige-tour-2023",
@@ -16208,7 +16208,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/head-prestige-tour-2023.glb",
-      "bytes": 131040
+      "bytes": 36660
     },
     {
       "id": "head-radical-elite-2025",
@@ -16223,7 +16223,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/head-radical-elite-2025.glb",
-      "bytes": 119284
+      "bytes": 36220
     },
     {
       "id": "head-radical-junior-21",
@@ -16238,7 +16238,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/head-radical-junior-21.glb",
-      "bytes": 119292
+      "bytes": 36440
     },
     {
       "id": "head-radical-junior-26-2025",
@@ -16253,7 +16253,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/head-radical-junior-26-2025.glb",
-      "bytes": 119300
+      "bytes": 36300
     },
     {
       "id": "head-radical-mp-2025",
@@ -16268,7 +16268,7 @@
       "colourwayName": "Orange",
       "style": "realistic",
       "path": "realistic/head-radical-mp-2025.glb",
-      "bytes": 119284
+      "bytes": 36192
     },
     {
       "id": "head-radical-pro-2025",
@@ -16283,7 +16283,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/head-radical-pro-2025.glb",
-      "bytes": 119288
+      "bytes": 36208
     },
     {
       "id": "head-radical-team-2025",
@@ -16298,7 +16298,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/head-radical-team-2025.glb",
-      "bytes": 119284
+      "bytes": 36220
     },
     {
       "id": "head-radical-tour-2025",
@@ -16313,7 +16313,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/head-radical-tour-2025.glb",
-      "bytes": 120584
+      "bytes": 36464
     },
     {
       "id": "head-ig-radical-xceed",
@@ -16328,7 +16328,7 @@
       "colourwayName": "Orange/Navy",
       "style": "realistic",
       "path": "realistic/head-ig-radical-xceed.glb",
-      "bytes": 109616
+      "bytes": 33228
     },
     {
       "id": "head-speed-elite-2026",
@@ -16343,7 +16343,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/head-speed-elite-2026.glb",
-      "bytes": 113448
+      "bytes": 33840
     },
     {
       "id": "head-speed-junior-25",
@@ -16358,7 +16358,7 @@
       "colourwayName": "Navy/Green",
       "style": "realistic",
       "path": "realistic/head-speed-junior-25.glb",
-      "bytes": 108328
+      "bytes": 33124
     },
     {
       "id": "head-speed-junior-25-2026",
@@ -16373,7 +16373,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/head-speed-junior-25-2026.glb",
-      "bytes": 113452
+      "bytes": 33876
     },
     {
       "id": "head-speed-junior-26-2026",
@@ -16388,7 +16388,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/head-speed-junior-26-2026.glb",
-      "bytes": 113456
+      "bytes": 33892
     },
     {
       "id": "head-speed-mp-2024",
@@ -16403,7 +16403,7 @@
       "colourwayName": "White/Black",
       "style": "realistic",
       "path": "realistic/head-speed-mp-2024.glb",
-      "bytes": 110896
+      "bytes": 33280
     },
     {
       "id": "head-speed-mp-2026",
@@ -16418,7 +16418,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/head-speed-mp-2026.glb",
-      "bytes": 113440
+      "bytes": 33796
     },
     {
       "id": "head-speed-mp-l-2026",
@@ -16433,7 +16433,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/head-speed-mp-l-2026.glb",
-      "bytes": 113444
+      "bytes": 33800
     },
     {
       "id": "head-speed-mp-ul-2026",
@@ -16448,7 +16448,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/head-speed-mp-ul-2026.glb",
-      "bytes": 113448
+      "bytes": 33804
     },
     {
       "id": "head-speed-pro-2024",
@@ -16463,7 +16463,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/head-speed-pro-2024.glb",
-      "bytes": 112196
+      "bytes": 33524
     },
     {
       "id": "head-speed-pro-2026",
@@ -16478,7 +16478,7 @@
       "colourwayName": "Charcoal/White",
       "style": "realistic",
       "path": "realistic/head-speed-pro-2026.glb",
-      "bytes": 114736
+      "bytes": 34040
     },
     {
       "id": "head-speed-sinner",
@@ -16493,7 +16493,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/head-speed-sinner.glb",
-      "bytes": 113440
+      "bytes": 33792
     },
     {
       "id": "head-speed-team-2026",
@@ -16508,7 +16508,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/head-speed-team-2026.glb",
-      "bytes": 113440
+      "bytes": 33728
     },
     {
       "id": "head-speed-tour-2026",
@@ -16523,7 +16523,7 @@
       "colourwayName": "Charcoal/White",
       "style": "realistic",
       "path": "realistic/head-speed-tour-2026.glb",
-      "bytes": 113444
+      "bytes": 34004
     },
     {
       "id": "head-squared",
@@ -16538,7 +16538,7 @@
       "colourwayName": "Silver",
       "style": "realistic",
       "path": "realistic/head-squared.glb",
-      "bytes": 110428
+      "bytes": 33892
     },
     {
       "id": "head-ti-s6",
@@ -16553,7 +16553,7 @@
       "colourwayName": "Silver/Charcoal",
       "style": "realistic",
       "path": "realistic/head-ti-s6.glb",
-      "bytes": 108312
+      "bytes": 32824
     },
     {
       "id": "prince-ats-textreme-tour-100-290-carbon",
@@ -16568,7 +16568,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/prince-ats-textreme-tour-100-290-carbon.glb",
-      "bytes": 137560
+      "bytes": 38424
     },
     {
       "id": "prince-ats-textreme-tour-100-310-2022",
@@ -16583,7 +16583,7 @@
       "colourwayName": "White",
       "style": "realistic",
       "path": "realistic/prince-ats-textreme-tour-100-310-2022.glb",
-      "bytes": 148208
+      "bytes": 40884
     },
     {
       "id": "prince-ats-textreme-tour-100p-2022",
@@ -16598,7 +16598,7 @@
       "colourwayName": "White",
       "style": "realistic",
       "path": "realistic/prince-ats-textreme-tour-100p-2022.glb",
-      "bytes": 149928
+      "bytes": 41164
     },
     {
       "id": "prince-ats-textreme-tour-98",
@@ -16613,7 +16613,7 @@
       "colourwayName": "White",
       "style": "realistic",
       "path": "realistic/prince-ats-textreme-tour-98.glb",
-      "bytes": 148624
+      "bytes": 40596
     },
     {
       "id": "prince-ats-textreme-tour-98-carbon",
@@ -16628,7 +16628,7 @@
       "colourwayName": "Carbon",
       "style": "realistic",
       "path": "realistic/prince-ats-textreme-tour-98-carbon.glb",
-      "bytes": 137984
+      "bytes": 38172
     },
     {
       "id": "prince-beast-smiley-edition-300g",
@@ -16643,7 +16643,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/prince-beast-smiley-edition-300g.glb",
-      "bytes": 110928
+      "bytes": 33572
     },
     {
       "id": "prince-beast-smiley-edition-280g",
@@ -16658,7 +16658,7 @@
       "colourwayName": "Black",
       "style": "realistic",
       "path": "realistic/prince-beast-smiley-edition-280g.glb",
-      "bytes": 110928
+      "bytes": 33576
     },
     {
       "id": "prince-o3-legacy-105",
@@ -16673,7 +16673,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/prince-o3-legacy-105.glb",
-      "bytes": 116556
+      "bytes": 34940
     },
     {
       "id": "prince-o3-legacy-110",
@@ -16688,7 +16688,7 @@
       "colourwayName": "Blue",
       "style": "realistic",
       "path": "realistic/prince-o3-legacy-110.glb",
-      "bytes": 116564
+      "bytes": 34848
     },
     {
       "id": "prince-o3-legacy-120-2024",
@@ -16703,7 +16703,7 @@
       "colourwayName": "Gold",
       "style": "realistic",
       "path": "realistic/prince-o3-legacy-120-2024.glb",
-      "bytes": 116560
+      "bytes": 35136
     },
     {
       "id": "prince-o3-phantom-100x",
@@ -16718,7 +16718,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/prince-o3-phantom-100x.glb",
-      "bytes": 153252
+      "bytes": 42604
     },
     {
       "id": "prince-o3-ripstick-26-junior",
@@ -16733,7 +16733,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/prince-o3-ripstick-26-junior.glb",
-      "bytes": 126484
+      "bytes": 37252
     },
     {
       "id": "prince-phantom-100p-2024",
@@ -16748,7 +16748,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/prince-phantom-100p-2024.glb",
-      "bytes": 140972
+      "bytes": 38748
     },
     {
       "id": "prince-phantom-100x-18x20-2024",
@@ -16763,7 +16763,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/prince-phantom-100x-18x20-2024.glb",
-      "bytes": 142712
+      "bytes": 39224
     },
     {
       "id": "prince-phantom-100x-290g-2024",
@@ -16778,7 +16778,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/prince-phantom-100x-290g-2024.glb",
-      "bytes": 140980
+      "bytes": 38944
     },
     {
       "id": "prince-phantom-100x-305g-2024",
@@ -16793,7 +16793,7 @@
       "colourwayName": "Olive green",
       "style": "realistic",
       "path": "realistic/prince-phantom-100x-305g-2024.glb",
-      "bytes": 140980
+      "bytes": 38944
     },
     {
       "id": "prince-phantom-107g-2024",
@@ -16808,7 +16808,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/prince-phantom-107g-2024.glb",
-      "bytes": 141404
+      "bytes": 38956
     },
     {
       "id": "prince-premier-105",
@@ -16823,7 +16823,7 @@
       "colourwayName": "Red",
       "style": "realistic",
       "path": "realistic/prince-premier-105.glb",
-      "bytes": 107888
+      "bytes": 32856
     },
     {
       "id": "prince-premier-110",
@@ -16838,7 +16838,7 @@
       "colourwayName": "Blue",
       "style": "realistic",
       "path": "realistic/prince-premier-110.glb",
-      "bytes": 110444
+      "bytes": 33860
     },
     {
       "id": "prince-ripcord-100-265g-2025",
@@ -16853,7 +16853,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/prince-ripcord-100-265g-2025.glb",
-      "bytes": 116744
+      "bytes": 35504
     },
     {
       "id": "prince-ripcord-100-280g-2025",
@@ -16868,7 +16868,7 @@
       "colourwayName": "Blue",
       "style": "realistic",
       "path": "realistic/prince-ripcord-100-280g-2025.glb",
-      "bytes": 116744
+      "bytes": 35504
     },
     {
       "id": "prince-ripcord-100-300g-2025",
@@ -16883,7 +16883,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/prince-ripcord-100-300g-2025.glb",
-      "bytes": 116744
+      "bytes": 35504
     },
     {
       "id": "prince-ripcord-25-junior",
@@ -16898,7 +16898,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/prince-ripcord-25-junior.glb",
-      "bytes": 116736
+      "bytes": 35556
     },
     {
       "id": "prince-ripcord-26-junior",
@@ -16913,7 +16913,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/prince-ripcord-26-junior.glb",
-      "bytes": 116736
+      "bytes": 35540
     },
     {
       "id": "prince-ripcord-98-xs",
@@ -16928,7 +16928,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/prince-ripcord-98-xs.glb",
-      "bytes": 116300
+      "bytes": 35412
     },
     {
       "id": "prince-ripstick-100",
@@ -16943,7 +16943,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/prince-ripstick-100.glb",
-      "bytes": 126036
+      "bytes": 37148
     },
     {
       "id": "prince-ripstick-100-280g-2025",
@@ -16958,7 +16958,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/prince-ripstick-100-280g-2025.glb",
-      "bytes": 126056
+      "bytes": 37168
     },
     {
       "id": "prince-ripstick-98-2025",
@@ -16973,7 +16973,7 @@
       "colourwayName": "Red",
       "style": "realistic",
       "path": "realistic/prince-ripstick-98-2025.glb",
-      "bytes": 121972
+      "bytes": 36240
     },
     {
       "id": "prince-tour-100-275g-2026",
@@ -16988,7 +16988,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/prince-tour-100-275g-2026.glb",
-      "bytes": 132348
+      "bytes": 38148
     },
     {
       "id": "prince-tour-100-290g",
@@ -17003,7 +17003,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/prince-tour-100-290g.glb",
-      "bytes": 132336
+      "bytes": 37972
     },
     {
       "id": "prince-tour-100-310g-2026",
@@ -17018,7 +17018,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/prince-tour-100-310g-2026.glb",
-      "bytes": 132348
+      "bytes": 37984
     },
     {
       "id": "prince-tour-100p-2026",
@@ -17033,7 +17033,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/prince-tour-100p-2026.glb",
-      "bytes": 134064
+      "bytes": 38260
     },
     {
       "id": "prince-tour-25-junior",
@@ -17048,7 +17048,7 @@
       "colourwayName": "White",
       "style": "realistic",
       "path": "realistic/prince-tour-25-junior.glb",
-      "bytes": 148604
+      "bytes": 40656
     },
     {
       "id": "prince-tour-98-2026",
@@ -17063,7 +17063,7 @@
       "colourwayName": "Black/Orange",
       "style": "realistic",
       "path": "realistic/prince-tour-98-2026.glb",
-      "bytes": 131040
+      "bytes": 36652
     },
     {
       "id": "prince-warrior-100-285g-2025",
@@ -17078,7 +17078,7 @@
       "colourwayName": "Black/Grey",
       "style": "realistic",
       "path": "realistic/prince-warrior-100-285g-2025.glb",
-      "bytes": 110356
+      "bytes": 33284
     },
     {
       "id": "prince-warrior-100-300g-2025",
@@ -17093,7 +17093,7 @@
       "colourwayName": "Black/Navy",
       "style": "realistic",
       "path": "realistic/prince-warrior-100-300g-2025.glb",
-      "bytes": 110920
+      "bytes": 34296
     },
     {
       "id": "prince-warrior-107-275g-2025",
@@ -17108,7 +17108,7 @@
       "colourwayName": "Black/Bronze",
       "style": "realistic",
       "path": "realistic/prince-warrior-107-275g-2025.glb",
-      "bytes": 110356
+      "bytes": 33224
     },
     {
       "id": "solinco-blackout-v2-300",
@@ -17123,7 +17123,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/solinco-blackout-v2-300.glb",
-      "bytes": 110908
+      "bytes": 35460
     },
     {
       "id": "solinco-blackout-v2-110-2026",
@@ -17138,7 +17138,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/solinco-blackout-v2-110-2026.glb",
-      "bytes": 110920
+      "bytes": 35548
     },
     {
       "id": "solinco-blackout-v2-285-2025",
@@ -17153,7 +17153,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/solinco-blackout-v2-285-2025.glb",
-      "bytes": 110920
+      "bytes": 35472
     },
     {
       "id": "solinco-blackout-v2-300-xtd-2025",
@@ -17168,7 +17168,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/solinco-blackout-v2-300-xtd-2025.glb",
-      "bytes": 110928
+      "bytes": 35296
     },
     {
       "id": "solinco-prizm-115-2026",
@@ -17183,7 +17183,7 @@
       "colourwayName": "White",
       "style": "realistic",
       "path": "realistic/solinco-prizm-115-2026.glb",
-      "bytes": 108332
+      "bytes": 33172
     },
     {
       "id": "solinco-whiteout-v2-305",
@@ -17198,7 +17198,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/solinco-whiteout-v2-305.glb",
-      "bytes": 131036
+      "bytes": 39408
     },
     {
       "id": "solinco-whiteout-v2-290-2025",
@@ -17213,7 +17213,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/solinco-whiteout-v2-290-2025.glb",
-      "bytes": 131044
+      "bytes": 39416
     },
     {
       "id": "solinco-whiteout-v2-305-18x20-2025",
@@ -17228,7 +17228,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/solinco-whiteout-v2-305-18x20-2025.glb",
-      "bytes": 132352
+      "bytes": 39640
     },
     {
       "id": "solinco-whiteout-v2-305-xtd-2025",
@@ -17243,7 +17243,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/solinco-whiteout-v2-305-xtd-2025.glb",
-      "bytes": 131056
+      "bytes": 39272
     },
     {
       "id": "solinco-whiteout-v2-305-xtd-18x20-2025",
@@ -17258,7 +17258,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/solinco-whiteout-v2-305-xtd-18x20-2025.glb",
-      "bytes": 132364
+      "bytes": 39492
     },
     {
       "id": "wilson-blade-100-v10-2026",
@@ -17273,7 +17273,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/wilson-blade-100-v10-2026.glb",
-      "bytes": 132764
+      "bytes": 36584
     },
     {
       "id": "wilson-blade-100l-v10-2026",
@@ -17288,7 +17288,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/wilson-blade-100l-v10-2026.glb",
-      "bytes": 132768
+      "bytes": 36588
     },
     {
       "id": "wilson-blade-100ul-v10-2026",
@@ -17303,7 +17303,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/wilson-blade-100ul-v10-2026.glb",
-      "bytes": 132768
+      "bytes": 36588
     },
     {
       "id": "wilson-blade-104-v10-2026",
@@ -17318,7 +17318,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/wilson-blade-104-v10-2026.glb",
-      "bytes": 132768
+      "bytes": 36524
     },
     {
       "id": "wilson-blade-25-v10-2026",
@@ -17333,7 +17333,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/wilson-blade-25-v10-2026.glb",
-      "bytes": 132760
+      "bytes": 36916
     },
     {
       "id": "wilson-blade-26-v10-2026",
@@ -17348,7 +17348,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/wilson-blade-26-v10-2026.glb",
-      "bytes": 132764
+      "bytes": 36928
     },
     {
       "id": "wilson-blade-98-v10",
@@ -17363,7 +17363,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/wilson-blade-98-v10.glb",
-      "bytes": 132756
+      "bytes": 36764
     },
     {
       "id": "wilson-blade-98-18x20-v10-2026",
@@ -17378,7 +17378,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/wilson-blade-98-18x20-v10-2026.glb",
-      "bytes": 134076
+      "bytes": 37016
     },
     {
       "id": "wilson-blade-98s-v9",
@@ -17393,7 +17393,7 @@
       "colourwayName": "Green",
       "style": "realistic",
       "path": "realistic/wilson-blade-98s-v9.glb",
-      "bytes": 127148
+      "bytes": 35204
     },
     {
       "id": "wilson-blade-pro-100-v10",
@@ -17408,7 +17408,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/wilson-blade-pro-100-v10.glb",
-      "bytes": 133192
+      "bytes": 36704
     },
     {
       "id": "wilson-blade-pro-98-16x19-v10-2026",
@@ -17423,7 +17423,7 @@
       "colourwayName": "Green",
       "style": "realistic",
       "path": "realistic/wilson-blade-pro-98-16x19-v10-2026.glb",
-      "bytes": 131056
+      "bytes": 36080
     },
     {
       "id": "wilson-blade-pro-98-18x20-v10-2026",
@@ -17438,7 +17438,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/wilson-blade-pro-98-18x20-v10-2026.glb",
-      "bytes": 134084
+      "bytes": 36708
     },
     {
       "id": "wilson-burn-100ls-v6-2026",
@@ -17453,7 +17453,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/wilson-burn-100ls-v6-2026.glb",
-      "bytes": 107908
+      "bytes": 32732
     },
     {
       "id": "wilson-burn-100s-v6-2026",
@@ -17468,7 +17468,7 @@
       "colourwayName": "Orange/Black",
       "style": "realistic",
       "path": "realistic/wilson-burn-100s-v6-2026.glb",
-      "bytes": 107904
+      "bytes": 32732
     },
     {
       "id": "wilson-burn-pink-105s-v6-2026",
@@ -17483,7 +17483,7 @@
       "colourwayName": "Pink",
       "style": "realistic",
       "path": "realistic/wilson-burn-pink-105s-v6-2026.glb",
-      "bytes": 107904
+      "bytes": 33188
     },
     {
       "id": "wilson-clash-100-v3",
@@ -17498,7 +17498,7 @@
       "colourwayName": "Black/Orange",
       "style": "realistic",
       "path": "realistic/wilson-clash-100-v3.glb",
-      "bytes": 118020
+      "bytes": 34944
     },
     {
       "id": "wilson-clash-100-v3",
@@ -17513,7 +17513,7 @@
       "colourwayName": "Reverse",
       "style": "realistic",
       "path": "realistic/wilson-clash-100-v3--reverse.glb",
-      "bytes": 110316
+      "bytes": 33080
     },
     {
       "id": "wilson-clash-100-pro-v3-2025",
@@ -17528,7 +17528,7 @@
       "colourwayName": "Black/Red",
       "style": "realistic",
       "path": "realistic/wilson-clash-100-pro-v3-2025.glb",
-      "bytes": 111344
+      "bytes": 33352
     },
     {
       "id": "wilson-clash-100l-v3-2025",
@@ -17543,7 +17543,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/wilson-clash-100l-v3-2025.glb",
-      "bytes": 118032
+      "bytes": 34956
     },
     {
       "id": "wilson-clash-108-v3-2025",
@@ -17558,7 +17558,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/wilson-clash-108-v3-2025.glb",
-      "bytes": 118028
+      "bytes": 34980
     },
     {
       "id": "wilson-clash-25-v2",
@@ -17573,7 +17573,7 @@
       "colourwayName": "Red/Black",
       "style": "realistic",
       "path": "realistic/wilson-clash-25-v2.glb",
-      "bytes": 108332
+      "bytes": 32688
     },
     {
       "id": "wilson-defyer-100",
@@ -17588,7 +17588,7 @@
       "colourwayName": "Red",
       "style": "realistic",
       "path": "realistic/wilson-defyer-100.glb",
-      "bytes": 113448
+      "bytes": 33928
     },
     {
       "id": "wilson-defyer-100l",
@@ -17603,7 +17603,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/wilson-defyer-100l.glb",
-      "bytes": 113452
+      "bytes": 33928
     },
     {
       "id": "wilson-defyer-100ul",
@@ -17618,7 +17618,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/wilson-defyer-100ul.glb",
-      "bytes": 113452
+      "bytes": 33932
     },
     {
       "id": "wilson-defyer-98-pro",
@@ -17633,7 +17633,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/wilson-defyer-98-pro.glb",
-      "bytes": 111328
+      "bytes": 33464
     },
     {
       "id": "wilson-hyper-hammer-5-3-stretch-os",
@@ -17648,7 +17648,7 @@
       "colourwayName": "Black/Gold",
       "style": "realistic",
       "path": "realistic/wilson-hyper-hammer-5-3-stretch-os.glb",
-      "bytes": 111364
+      "bytes": 33568
     },
     {
       "id": "wilson-pro-staff-97-v14",
@@ -17663,7 +17663,7 @@
       "colourwayName": "Copper Iridescent",
       "style": "realistic",
       "path": "realistic/wilson-pro-staff-97-v14.glb",
-      "bytes": 138812
+      "bytes": 38788
     },
     {
       "id": "wilson-pro-staff-97-v14",
@@ -17678,7 +17678,7 @@
       "colourwayName": "Classic",
       "style": "realistic",
       "path": "realistic/wilson-pro-staff-97-v14--classic.glb",
-      "bytes": 139684
+      "bytes": 38060
     },
     {
       "id": "wilson-pro-staff-97l-classic",
@@ -17693,7 +17693,7 @@
       "colourwayName": "Classic",
       "style": "realistic",
       "path": "realistic/wilson-pro-staff-97l-classic.glb",
-      "bytes": 139692
+      "bytes": 38272
     },
     {
       "id": "wilson-pro-staff-team-classic",
@@ -17708,7 +17708,7 @@
       "colourwayName": "Classic",
       "style": "realistic",
       "path": "realistic/wilson-pro-staff-team-classic.glb",
-      "bytes": 139700
+      "bytes": 38048
     },
     {
       "id": "wilson-rf-01",
@@ -17723,7 +17723,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/wilson-rf-01.glb",
-      "bytes": 125828
+      "bytes": 35452
     },
     {
       "id": "wilson-rf-01-future",
@@ -17738,7 +17738,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/wilson-rf-01-future.glb",
-      "bytes": 125840
+      "bytes": 35464
     },
     {
       "id": "wilson-rf-01-pro",
@@ -17753,7 +17753,7 @@
       "colourwayName": "Black",
       "style": "realistic",
       "path": "realistic/wilson-rf-01-pro.glb",
-      "bytes": 125836
+      "bytes": 35460
     },
     {
       "id": "wilson-triad-five",
@@ -17768,7 +17768,7 @@
       "colourwayName": "Red",
       "style": "realistic",
       "path": "realistic/wilson-triad-five.glb",
-      "bytes": 108756
+      "bytes": 32692
     },
     {
       "id": "wilson-triad-three",
@@ -17783,7 +17783,7 @@
       "colourwayName": "Blue",
       "style": "realistic",
       "path": "realistic/wilson-triad-three.glb",
-      "bytes": 108316
+      "bytes": 32776
     },
     {
       "id": "wilson-ultra-100-v5-2025",
@@ -17798,7 +17798,7 @@
       "colourwayName": "Blue",
       "style": "realistic",
       "path": "realistic/wilson-ultra-100-v5-2025.glb",
-      "bytes": 109052
+      "bytes": 32936
     },
     {
       "id": "wilson-ultra-100l-v5-2025",
@@ -17813,7 +17813,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/wilson-ultra-100l-v5-2025.glb",
-      "bytes": 109056
+      "bytes": 32940
     },
     {
       "id": "wilson-ultra-100ul-v5-2025",
@@ -17828,7 +17828,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/wilson-ultra-100ul-v5-2025.glb",
-      "bytes": 109056
+      "bytes": 32940
     },
     {
       "id": "wilson-ultra-111-v5-2025",
@@ -17843,7 +17843,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/wilson-ultra-111-v5-2025.glb",
-      "bytes": 108616
+      "bytes": 33084
     },
     {
       "id": "wilson-ultra-25-v5",
@@ -17858,7 +17858,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/wilson-ultra-25-v5.glb",
-      "bytes": 109036
+      "bytes": 33012
     },
     {
       "id": "wilson-ultra-99-pro-v5",
@@ -17873,7 +17873,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/wilson-ultra-99-pro-v5.glb",
-      "bytes": 108624
+      "bytes": 32908
     },
     {
       "id": "wilson-ultra-pro-16x19-v4",
@@ -17888,7 +17888,7 @@
       "colourwayName": "Blue",
       "style": "realistic",
       "path": "realistic/wilson-ultra-pro-16x19-v4.glb",
-      "bytes": 108340
+      "bytes": 32900
     },
     {
       "id": "wilson-ultra-pro-18x20-v4",
@@ -17903,7 +17903,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/wilson-ultra-pro-18x20-v4.glb",
-      "bytes": 109636
+      "bytes": 33140
     },
     {
       "id": "wilson-ultra-team-v5-2025",
@@ -17918,7 +17918,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/wilson-ultra-team-v5-2025.glb",
-      "bytes": 109052
+      "bytes": 32936
     },
     {
       "id": "yonex-ezone-100",
@@ -17933,7 +17933,7 @@
       "colourwayName": "Blast Blue",
       "style": "realistic",
       "path": "realistic/yonex-ezone-100.glb",
-      "bytes": 130796
+      "bytes": 38440
     },
     {
       "id": "yonex-ezone-100",
@@ -17948,7 +17948,7 @@
       "colourwayName": "Espresso Brown",
       "style": "realistic",
       "path": "realistic/yonex-ezone-100--espresso-brown.glb",
-      "bytes": 130812
+      "bytes": 38408
     },
     {
       "id": "yonex-ezone-100-sl-2025",
@@ -17963,7 +17963,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/yonex-ezone-100-sl-2025.glb",
-      "bytes": 130380
+      "bytes": 38412
     },
     {
       "id": "yonex-ezone-100-plus-2025",
@@ -17978,7 +17978,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/yonex-ezone-100-plus-2025.glb",
-      "bytes": 130816
+      "bytes": 38452
     },
     {
       "id": "yonex-ezone-100l-2025",
@@ -17993,7 +17993,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/yonex-ezone-100l-2025.glb",
-      "bytes": 130808
+      "bytes": 38452
     },
     {
       "id": "yonex-ezone-105-2025",
@@ -18008,7 +18008,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/yonex-ezone-105-2025.glb",
-      "bytes": 130808
+      "bytes": 38264
     },
     {
       "id": "yonex-ezone-110-2025",
@@ -18023,7 +18023,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/yonex-ezone-110-2025.glb",
-      "bytes": 130376
+      "bytes": 38088
     },
     {
       "id": "yonex-ezone-115-2025",
@@ -18038,7 +18038,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/yonex-ezone-115-2025.glb",
-      "bytes": 130372
+      "bytes": 38152
     },
     {
       "id": "yonex-ezone-junior-25",
@@ -18053,7 +18053,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/yonex-ezone-junior-25.glb",
-      "bytes": 130376
+      "bytes": 38464
     },
     {
       "id": "yonex-ezone-junior-26",
@@ -18068,7 +18068,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/yonex-ezone-junior-26.glb",
-      "bytes": 130376
+      "bytes": 38460
     },
     {
       "id": "yonex-ezone-98-2025",
@@ -18083,7 +18083,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/yonex-ezone-98-2025.glb",
-      "bytes": 130808
+      "bytes": 38432
     },
     {
       "id": "yonex-ezone-98-tour-2025",
@@ -18098,7 +18098,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/yonex-ezone-98-tour-2025.glb",
-      "bytes": 130816
+      "bytes": 38444
     },
     {
       "id": "yonex-ezone-98-plus-2025",
@@ -18113,7 +18113,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/yonex-ezone-98-plus-2025.glb",
-      "bytes": 130816
+      "bytes": 38400
     },
     {
       "id": "yonex-ezone-ace",
@@ -18128,7 +18128,7 @@
       "colourwayName": "Blue",
       "style": "realistic",
       "path": "realistic/yonex-ezone-ace.glb",
-      "bytes": 118564
+      "bytes": 35464
     },
     {
       "id": "yonex-ezone-alpha",
@@ -18143,7 +18143,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/yonex-ezone-alpha.glb",
-      "bytes": 118136
+      "bytes": 35628
     },
     {
       "id": "yonex-ezone-alpha-l",
@@ -18158,7 +18158,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/yonex-ezone-alpha-l.glb",
-      "bytes": 118140
+      "bytes": 35632
     },
     {
       "id": "yonex-ezone-alpha-sl",
@@ -18173,7 +18173,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/yonex-ezone-alpha-sl.glb",
-      "bytes": 118140
+      "bytes": 35632
     },
     {
       "id": "yonex-ezone-jr-25",
@@ -18188,7 +18188,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/yonex-ezone-jr-25.glb",
-      "bytes": 130368
+      "bytes": 38456
     },
     {
       "id": "yonex-junior-25",
@@ -18203,7 +18203,7 @@
       "colourwayName": "Ocean Blue",
       "style": "realistic",
       "path": "realistic/yonex-junior-25.glb",
-      "bytes": 117696
+      "bytes": 35808
     },
     {
       "id": "yonex-muse-100-2026",
@@ -18218,7 +18218,7 @@
       "colourwayName": "Silver",
       "style": "realistic",
       "path": "realistic/yonex-muse-100-2026.glb",
-      "bytes": 109880
+      "bytes": 33248
     },
     {
       "id": "yonex-muse-100l-2026",
@@ -18233,7 +18233,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/yonex-muse-100l-2026.glb",
-      "bytes": 109880
+      "bytes": 33248
     },
     {
       "id": "yonex-muse-100sl-2026",
@@ -18248,7 +18248,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/yonex-muse-100sl-2026.glb",
-      "bytes": 109884
+      "bytes": 33252
     },
     {
       "id": "yonex-muse-107-2026",
@@ -18263,7 +18263,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/yonex-muse-107-2026.glb",
-      "bytes": 109880
+      "bytes": 33172
     },
     {
       "id": "yonex-muse-98-2026",
@@ -18278,7 +18278,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/yonex-muse-98-2026.glb",
-      "bytes": 109876
+      "bytes": 33272
     },
     {
       "id": "yonex-percept-100-2023",
@@ -18293,7 +18293,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/yonex-percept-100-2023.glb",
-      "bytes": 139672
+      "bytes": 38584
     },
     {
       "id": "yonex-percept-100d-2023",
@@ -18308,7 +18308,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/yonex-percept-100d-2023.glb",
-      "bytes": 140540
+      "bytes": 38692
     },
     {
       "id": "yonex-percept-100l-2023",
@@ -18323,7 +18323,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/yonex-percept-100l-2023.glb",
-      "bytes": 139676
+      "bytes": 38588
     },
     {
       "id": "yonex-percept-97",
@@ -18338,7 +18338,7 @@
       "colourwayName": "Midnight Navy",
       "style": "realistic",
       "path": "realistic/yonex-percept-97.glb",
-      "bytes": 139660
+      "bytes": 38576
     },
     {
       "id": "yonex-percept-97d-2023",
@@ -18353,7 +18353,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/yonex-percept-97d-2023.glb",
-      "bytes": 140972
+      "bytes": 38808
     },
     {
       "id": "yonex-percept-97h-2023",
@@ -18368,7 +18368,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/yonex-percept-97h-2023.glb",
-      "bytes": 139672
+      "bytes": 38588
     },
     {
       "id": "yonex-percept-97l-2023",
@@ -18383,7 +18383,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/yonex-percept-97l-2023.glb",
-      "bytes": 139672
+      "bytes": 38588
     },
     {
       "id": "yonex-percept-game-2025",
@@ -18398,7 +18398,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/yonex-percept-game-2025.glb",
-      "bytes": 139676
+      "bytes": 38388
     },
     {
       "id": "yonex-vcore-100",
@@ -18413,7 +18413,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/yonex-vcore-100.glb",
-      "bytes": 126868
+      "bytes": 37940
     },
     {
       "id": "yonex-vcore-100-plus-2026",
@@ -18428,7 +18428,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/yonex-vcore-100-plus-2026.glb",
-      "bytes": 126880
+      "bytes": 37896
     },
     {
       "id": "yonex-vcore-100d-2026",
@@ -18443,7 +18443,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/yonex-vcore-100d-2026.glb",
-      "bytes": 127312
+      "bytes": 38040
     },
     {
       "id": "yonex-vcore-100l-2026",
@@ -18458,7 +18458,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/yonex-vcore-100l-2026.glb",
-      "bytes": 126880
+      "bytes": 37952
     },
     {
       "id": "yonex-vcore-95-2026",
@@ -18473,7 +18473,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/yonex-vcore-95-2026.glb",
-      "bytes": 127308
+      "bytes": 36900
     },
     {
       "id": "yonex-vcore-98-2026",
@@ -18488,7 +18488,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/yonex-vcore-98-2026.glb",
-      "bytes": 126876
+      "bytes": 37424
     },
     {
       "id": "yonex-vcore-98-tour-2026",
@@ -18503,7 +18503,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/yonex-vcore-98-tour-2026.glb",
-      "bytes": 126888
+      "bytes": 37432
     },
     {
       "id": "yonex-vcore-98-plus-2026",
@@ -18518,7 +18518,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/yonex-vcore-98-plus-2026.glb",
-      "bytes": 126884
+      "bytes": 37404
     },
     {
       "id": "yonex-junior-17",
@@ -18533,7 +18533,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/yonex-junior-17.glb",
-      "bytes": 115544
+      "bytes": 35396
     },
     {
       "id": "yonex-junior-19",
@@ -18548,7 +18548,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/yonex-junior-19.glb",
-      "bytes": 115980
+      "bytes": 35644
     },
     {
       "id": "yonex-junior-21",
@@ -18563,7 +18563,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/yonex-junior-21.glb",
-      "bytes": 117276
+      "bytes": 35596
     },
     {
       "id": "yonex-junior-23",
@@ -18578,7 +18578,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/yonex-junior-23.glb",
-      "bytes": 117708
+      "bytes": 35908
     },
     {
       "id": "yonex-junior-26",
@@ -18593,7 +18593,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/yonex-junior-26.glb",
-      "bytes": 118136
+      "bytes": 35956
     }
   ],
   "placeholders": [

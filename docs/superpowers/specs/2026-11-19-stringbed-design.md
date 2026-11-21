@@ -52,7 +52,7 @@ string pattern, and colourway.
 - Gallery must work as a static site on GitHub Pages under the `/stringbed/` base path.
 - The gallery is designed with the Impeccable skill (installed at
   `.claude/skills/impeccable`).
-- Per-racquet budget: at most 15,000 triangles and 150 KB per `.glb`. No textures in v1.
+- Per-racquet budget: at most 15,000 triangles and 150 KB per `.glb`. No textures in v1. (v1.0.0 files are meshopt-compressed, about 35 KB each; the 150 KB cap now guards the compressed size.)
 - Generation is deterministic: the same data file always produces a byte-identical `.glb`.
 
 ## Approaches considered
