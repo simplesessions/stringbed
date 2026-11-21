@@ -3,9 +3,13 @@
 import { PerspectiveCamera, type Object3D, type Scene, type WebGLRenderer } from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { bounds, createRenderer, createStudio, loadModel, prefersReducedMotion } from './studio';
+import { LookPainter, type LookScale } from './look-passes';
+import type { Look } from './look';
 
 const FOV = 28;
 const KEY_TURN = Math.PI / 24;
+/** Stage-sized cells and lines, in CSS px. */
+const LOOK_SCALE: LookScale = { cell: 6, outline: 1.5 };
 
 export class Viewer {
   readonly canvas: HTMLCanvasElement;
@@ -13,6 +17,7 @@ export class Viewer {
   private readonly camera = new PerspectiveCamera(FOV, 1, 0.01, 20);
   private readonly controls: OrbitControls;
   private readonly resized: ResizeObserver;
+  private readonly painter: LookPainter;
   private model: Object3D | null = null;
   private frame = 0;
   private dirty = true;
@@ -27,6 +32,7 @@ export class Viewer {
     this.canvas = renderer.domElement;
     this.canvas.setAttribute('aria-hidden', 'true');
     this.scene = createStudio(renderer);
+    this.painter = new LookPainter(renderer);
     const c = new OrbitControls(this.camera, this.canvas);
     c.enableDamping = true;
     c.dampingFactor = 0.08;
@@ -68,6 +74,12 @@ export class Viewer {
     this.model = source.clone();
     this.scene.add(this.model);
     this.frameModel();
+  }
+
+  /** Draw in `look` from the next frame. */
+  setLook(look: Look): void {
+    this.painter.setLook(look);
+    this.dirty = true;
   }
 
   clear(): void {
@@ -141,6 +153,6 @@ export class Viewer {
     if (this.controls.autoRotate && this.model) this.dirty = true;
     if (!this.dirty) return;
     this.dirty = false;
-    this.renderer.render(this.scene, this.camera);
+    this.painter.render(this.scene, this.camera, this.renderer.getPixelRatio(), LOOK_SCALE);
   };
 }
