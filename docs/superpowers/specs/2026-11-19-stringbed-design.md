@@ -199,7 +199,7 @@ project-context setup first, then design the page with it.
 
 ## Open items for the owner
 
-1. **Licence.** The repo has none yet, which legally means "all rights reserved" even though
+1. **Licence.** (Resolved: MIT, see `LICENSE`.) The repo had none, which legally means "all rights reserved" even though
    it is public. Pick one (MIT is the usual choice for an asset library you want to reuse
    freely) before promoting it.
 2. **Solinco Shadow.** Could not be confirmed as a current model during design research. The

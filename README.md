@@ -126,6 +126,10 @@ more). See the [roadmap](docs/roadmap.md).
 | [Implementation plan](docs/superpowers/plans/2026-11-19-stringbed-v1.md) | Task-by-task build plan for v1 |
 | [Roadmap](docs/roadmap.md) | Customization, visual styles and what comes after |
 
+## Licence
+
+MIT, see `LICENSE`.
+
 ## Trademarks
 
 Racquet and brand names are trademarks of their owners and are used here only to identify

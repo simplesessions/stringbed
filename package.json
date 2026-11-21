@@ -2,6 +2,7 @@
   "name": "stringbed",
   "version": "1.0.0",
   "description": "Parametric tennis racquet asset library: specs, a model builder and generated GLB files.",
+  "license": "MIT",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "exports": {
@@ -19,7 +20,8 @@
     "assets",
     "racquets",
     "placeholders",
-    "CHANGELOG.md"
+    "CHANGELOG.md",
+    "LICENSE"
   ],
   "sideEffects": false,
   "scripts": {
