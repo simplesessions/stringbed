@@ -44,8 +44,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-aero-100.glb",
-          "bytes": 129380,
-          "triangles": 5012
+          "bytes": 126596,
+          "triangles": 4884
         }
       }
     },

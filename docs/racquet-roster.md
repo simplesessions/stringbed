@@ -13,6 +13,16 @@ colourway, colour placement, grip and trim colours in every spec were corrected 
 spec now carries `verified: true` and lists that photo page in `sources`. Head aspect ratios were
 compared by eye only; beam widths were not changed (no photo contradicted them).
 
+**Check every angle, not just the face.** A face-on photo hides most of the paint: the beam's
+outer edge (either side of the grommet channel), the inner string-side edge, and the underside
+of the bridge. Before calling a colourway right, look at angled and side-on photos too (product
+galleries usually have them), and compare the model turned to the same angles in the gallery.
+Paint zones can target single faces (`faces`: outer, inner, front, back) and the grommet strip
+can be a channel (`parts.grommets.channel`), so these differences can be modelled.
+Example (Babolat Pure Aero 2026): the inner edge is slate, yellow only inside the two bands;
+the bands wrap the face and outer edge with the dark grommet channel running through them; a
+thin yellow line runs under the bridge; the throat-arm yellow is lettering, so it is left out.
+
 Beam widths are tip / mid / shaft in mm. All racquets are 27 in long unless noted.
 
 ## Yonex

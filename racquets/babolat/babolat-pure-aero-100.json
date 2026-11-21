@@ -44,23 +44,15 @@
       },
       {
         "from": 0.44,
-        "to": 0.53,
+        "to": 0.56,
         "color": "#d2f53a"
       },
       {
-        "from": 0.18,
-        "to": 0.33,
+        "from": 0.3397,
+        "to": 0.3403,
         "color": "#d2f53a",
         "faces": [
           "outer"
-        ]
-      },
-      {
-        "from": 0.34,
-        "to": 0.53,
-        "color": "#d2f53a",
-        "faces": [
-          "inner"
         ]
       }
     ]
