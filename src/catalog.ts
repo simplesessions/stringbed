@@ -17,6 +17,16 @@ export interface Catalog {
     parts: PartName[];
     /** Keyed by style id; path is relative to assets/, e.g. "realistic/babolat-pure-aero-100.glb". */
     assets: Record<string, { path: string; bytes: number; triangles: number }>;
+    /** Name of the default colourway (the one in `swatch` and `assets`), when the spec names it. */
+    colourway?: string;
+    /** Other official colourways, each with its own files ("realistic/<id>--<colourway>.glb"). */
+    colourways?: Array<{
+      id: string;
+      name: string;
+      year?: number;
+      swatch: HexColor;
+      assets: Record<string, { path: string; bytes: number; triangles: number }>;
+    }>;
   }>;
   /** Researched racquets with no model yet (placeholders/), without their research notes. */
   placeholders: Array<Omit<Placeholder, 'status' | 'notes' | 'verified'>>;

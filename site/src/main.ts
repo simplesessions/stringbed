@@ -18,6 +18,7 @@ import {
   parseRoute,
   pickStyle,
   routeFor,
+  inColourway,
   searchRacquets,
   AGES,
   type Age,
@@ -376,12 +377,12 @@ function watch(thumbs: Thumbnails, item: HTMLLIElement, link: HTMLAnchorElement,
 
 function route() {
   if (!app || !ready) return;
-  const { racquetId } = parseRoute(location.hash);
+  const { racquetId, colourway } = parseRoute(location.hash);
   const r = racquetId ? app.catalog.racquets.find((x) => x.id === racquetId) : undefined;
   const p = racquetId && !r ? app.stockOrder.find((x) => x.id === racquetId) : undefined;
   const missing = racquetId && !r && !p ? `There is no racquet with the id “${racquetId}”. Here is the full lineup.` : '';
   notice.textContent = [missing, baseNotice].filter(Boolean).join(' ');
-  if (r) showDetail(app, r);
+  if (r) showDetail(app, r, colourway);
   else if (p) showPlaceholder(app, p);
   else showWall(app);
 }
@@ -406,13 +407,20 @@ function showWall(a: App) {
   }
 }
 
-function showDetail(a: App, r: Racquet) {
+function showDetail(a: App, r: Racquet, colourway: string | null = null) {
+  // Switching colourway on the same racquet keeps the scroll position and focus where they are.
+  const same = !detail.hidden && detail.dataset.id === r.id;
+  detail.dataset.id = r.id;
   a.lastOpened = r.id;
   wall.hidden = true;
   detail.hidden = false;
   document.body.dataset.view = 'detail';
   document.title = `${r.model} · ${baseTitle.split(':')[0]}`;
-  detail.replaceChildren(...detailView(a, r));
+  detail.replaceChildren(...detailView(a, r, colourway));
+  if (same) {
+    detail.querySelector<HTMLElement>('.colourway[aria-current="true"]')?.focus({ preventScroll: true });
+    return;
+  }
   window.scrollTo(0, 0);
   detail.querySelector<HTMLElement>('h1')?.focus({ preventScroll: true });
 }
@@ -487,8 +495,9 @@ function sourceLabel(u: string): string {
 
 // ---------- detail ----------
 
-function detailView(a: App, r: Racquet): Node[] {
-  const i = a.order.indexOf(r);
+function detailView(a: App, base: Racquet, colourwayId: string | null = null): Node[] {
+  const i = a.order.indexOf(base);
+  const { shown: r, colourway } = inColourway(base, colourwayId);
   const prev = a.order[(i - 1 + a.order.length) % a.order.length];
   const next = a.order[(i + 1) % a.order.length];
   const nav = el('nav', { class: 'detail-nav', 'aria-label': 'Racquet' },
@@ -498,7 +507,19 @@ function detailView(a: App, r: Racquet): Node[] {
       el('a', { href: routeFor(next.id), 'aria-label': `Next: ${next.model}` }, el('span', { class: 'stepper-name' }, next.model), icon('next')),
     ),
   );
-  return [nav, el('div', { class: 'detail-body', style: `--swatch: ${r.swatch}` }, stage(a, r), sheet(a, r))];
+  return [nav, el('div', { class: 'detail-body', style: `--swatch: ${r.swatch}` }, stage(a, r), sheet(a, r, colourwayPicker(base, colourway)))];
+}
+
+/** Swatches for a racquet's official colourways; none when it has only one. */
+function colourwayPicker(r: Racquet, current: string | null): HTMLElement | null {
+  if (!r.colourways?.length) return null;
+  const options = [{ id: null as string | null, name: r.colourway ?? 'Standard', swatch: r.swatch }, ...r.colourways];
+  return el('div', { class: 'colourways', role: 'group', 'aria-label': 'Colourway' },
+    ...options.map((o) =>
+      el('a', { class: 'colourway', href: routeFor(r.id, o.id), 'aria-current': String(o.id === current), style: `--chip: ${o.swatch}` },
+        el('span', { class: 'colourway-chip', 'aria-hidden': 'true' }), o.name),
+    ),
+  );
 }
 
 function stage(a: App, r: Racquet): HTMLElement {
@@ -562,7 +583,7 @@ function stage(a: App, r: Racquet): HTMLElement {
   return host;
 }
 
-function sheet(a: App, r: Racquet): HTMLElement {
+function sheet(a: App, r: Racquet, picker: HTMLElement | null = null): HTMLElement {
   const s = r.specs;
   const head = formatHeadSize(s.headSizeSqIn);
   const len = formatLength(s.lengthIn);
@@ -601,7 +622,8 @@ function sheet(a: App, r: Racquet): HTMLElement {
 
   return el('div', { class: 'sheet' },
     el('h1', { class: 'sheet-title', tabindex: '-1' }, r.model),
-    el('p', { class: 'sheet-sub' }, `${r.brand} · ${generationLabel(r)}`),
+    el('p', { class: 'sheet-sub' }, `${r.brand} · ${generationLabel(r)}${r.colourway ? ` · ${r.colourway}` : ''}`),
+    picker,
     download,
     el('h2', { class: 'sheet-head' }, 'Specs'),
     specs,

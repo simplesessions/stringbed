@@ -524,10 +524,26 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-ezone-100.glb",
-          "bytes": 122396,
-          "triangles": 5044
+          "bytes": 128796,
+          "triangles": 5364
         }
-      }
+      },
+      "colourway": "Blast Blue",
+      "colourways": [
+        {
+          "id": "espresso-brown",
+          "name": "Espresso Brown",
+          "year": 2026,
+          "swatch": "#3e2c25",
+          "assets": {
+            "realistic": {
+              "path": "realistic/yonex-ezone-100--espresso-brown.glb",
+              "bytes": 128812,
+              "triangles": 5364
+            }
+          }
+        }
+      ]
     },
     {
       "id": "yonex-percept-97",

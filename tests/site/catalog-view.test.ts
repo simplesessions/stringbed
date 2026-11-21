@@ -36,21 +36,23 @@ test('assetUrl tolerates a base without a trailing slash and a path with a leadi
 });
 
 test('parseRoute', () => {
-  expect(parseRoute('#/wilson-blade-98-v10')).toEqual({ racquetId: 'wilson-blade-98-v10' });
-  expect(parseRoute('')).toEqual({ racquetId: null });
+  expect(parseRoute('#/wilson-blade-98-v10')).toEqual({ racquetId: 'wilson-blade-98-v10', colourway: null });
+  expect(parseRoute('')).toEqual({ racquetId: null, colourway: null });
+  expect(parseRoute('#/yonex-ezone-100/espresso-brown')).toEqual({ racquetId: 'yonex-ezone-100', colourway: 'espresso-brown' });
+  expect(routeFor('yonex-ezone-100', 'espresso-brown')).toBe('#/yonex-ezone-100/espresso-brown');
 });
 
 test('parseRoute ignores hashes that are not racquet routes', () => {
-  expect(parseRoute('#')).toEqual({ racquetId: null });
-  expect(parseRoute('#/')).toEqual({ racquetId: null });
-  expect(parseRoute('#main')).toEqual({ racquetId: null });
-  expect(parseRoute('#/wilson-blade-98-v10/')).toEqual({ racquetId: 'wilson-blade-98-v10' });
-  expect(parseRoute('#/Not%20An%20Id')).toEqual({ racquetId: null });
+  expect(parseRoute('#')).toEqual({ racquetId: null, colourway: null });
+  expect(parseRoute('#/')).toEqual({ racquetId: null, colourway: null });
+  expect(parseRoute('#main')).toEqual({ racquetId: null, colourway: null });
+  expect(parseRoute('#/wilson-blade-98-v10/')).toEqual({ racquetId: 'wilson-blade-98-v10', colourway: null });
+  expect(parseRoute('#/Not%20An%20Id')).toEqual({ racquetId: null, colourway: null });
 });
 
 test('routeFor round-trips through parseRoute', () => {
   expect(routeFor('yonex-ezone-100')).toBe('#/yonex-ezone-100');
-  expect(parseRoute(routeFor('yonex-ezone-100'))).toEqual({ racquetId: 'yonex-ezone-100' });
+  expect(parseRoute(routeFor('yonex-ezone-100'))).toEqual({ racquetId: 'yonex-ezone-100', colourway: null });
   expect(routeFor(null)).toBe('#/');
 });
 

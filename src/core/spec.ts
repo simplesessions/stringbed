@@ -9,6 +9,15 @@ export type Feature = 'o-ports' | 'aero-fins';
 export type HexColor = string; // "#rrggbb"
 export type BeamFace = 'outer' | 'inner' | 'front' | 'back';
 
+export interface Colourway {
+  id: string; // kebab-case, e.g. "espresso-brown"
+  name: string; // "Espresso Brown"
+  year?: number;
+  paint: RacquetSpec['paint'];
+  parts?: { [K in Exclude<keyof RacquetSpec['parts'], 'dampener'>]?: Partial<RacquetSpec['parts'][K]> };
+  sources: string[];
+}
+
 export interface TrimPart {
   color: HexColor;
   /** "frame": the part carries the frame's paint zones as vertex colours (its own colour is unused). */
@@ -60,6 +69,13 @@ export interface RacquetSpec {
   };
   sources: string[]; // URLs
   verified: boolean;
+  /** Name of the colourway the spec itself describes, e.g. "Blast Blue". */
+  colourway?: string;
+  /**
+   * Other official colourways of the same frame. Each replaces the paint and overrides any part
+   * colours it lists; geometry is shared. Built as its own file: `<id>--<colourway id>.glb`.
+   */
+  colourways?: Colourway[];
 }
 
 const hex = z.string().regex(/^#[0-9a-f]{6}$/, 'expected a #rrggbb colour');
@@ -79,6 +95,18 @@ const zone = z
   })
   .strict()
   .refine((z) => z.from < z.to, { message: 'from must be less than to', path: ['to'] });
+
+const paintSchema = z
+  .object({
+    base: hex,
+    finish: z.enum(['matte', 'satin', 'gloss']),
+    zones: z.array(zone),
+    pattern: z
+      .object({ type: z.literal('camo'), color: hex, scale: z.number().positive(), seed: z.number().int() })
+      .strict()
+      .optional(),
+  })
+  .strict();
 
 export const racquetSpecSchema = z
   .object({
@@ -112,17 +140,7 @@ export const racquetSpecSchema = z
         features: z.array(z.enum(['o-ports', 'aero-fins'])),
       })
       .strict(),
-    paint: z
-      .object({
-        base: hex,
-        finish: z.enum(['matte', 'satin', 'gloss']),
-        zones: z.array(zone),
-        pattern: z
-          .object({ type: z.literal('camo'), color: hex, scale: z.number().positive(), seed: z.number().int() })
-          .strict()
-          .optional(),
-      })
-      .strict(),
+    paint: paintSchema,
     parts: z
       .object({
         grip: color,
@@ -136,8 +154,43 @@ export const racquetSpecSchema = z
       .strict(),
     sources: z.array(z.string().url()),
     verified: z.boolean(),
+    colourway: z.string().min(1).optional(),
+    colourways: z
+      .array(
+        z
+          .object({
+            id: z.string().regex(/^[a-z0-9]+(-[a-z0-9]+)*$/, 'expected kebab-case'),
+            name: z.string().min(1),
+            year: z.number().int().optional(),
+            paint: paintSchema,
+            parts: z
+              .object({
+                grip: color.partial(),
+                collar: color.partial(),
+                buttCap: color.partial(),
+                strings: z.object({ color: hex, gaugeMm: z.number().min(1.0).max(1.4) }).strict().partial(),
+                grommets: trimPart.partial(),
+                bumper: trimPart.partial(),
+              })
+              .strict()
+              .partial()
+              .optional(),
+            sources: z.array(z.string().url()).min(1),
+          })
+          .strict(),
+      )
+      .optional(),
   })
   .strict() satisfies z.ZodType<RacquetSpec, unknown>;
+
+/** The spec as it would read for one of its colourways: that paint, those part colours. */
+export function withColourway(spec: RacquetSpec, cw: Colourway): RacquetSpec {
+  const parts = { ...spec.parts };
+  for (const [k, v] of Object.entries(cw.parts ?? {})) {
+    (parts as Record<string, unknown>)[k] = { ...(spec.parts as Record<string, object>)[k], ...v };
+  }
+  return { ...spec, paint: cw.paint, parts, colourway: cw.name, colourways: undefined };
+}
 
 export function parseSpec(data: unknown, fileName: string): RacquetSpec {
   const result = racquetSpecSchema.safeParse(data);

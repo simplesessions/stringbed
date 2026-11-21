@@ -3,7 +3,7 @@ import { dirname, join } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import type { Catalog } from '../src/catalog';
 import { buildRacquet, triangleCount } from '../src/core/build';
-import { loadAllSpecs } from '../src/core/spec';
+import { loadAllSpecs, withColourway, type RacquetSpec } from '../src/core/spec';
 import { loadPlaceholders } from '../src/placeholders';
 import { styles } from '../src/styles';
 
@@ -26,16 +26,26 @@ export async function generateInMemory(): Promise<Generated> {
     racquets: [],
     placeholders: loadPlaceholders().map(({ status: _s, notes: _n, verified: _v, ...p }) => p),
   };
-  for (const spec of specs) {
+  /** Build one spec (a racquet or one of its colourways) into every style; file stem `stem`. */
+  const render = async (spec: RacquetSpec, stem: string) => {
     const model = buildRacquet(spec);
     const triangles = triangleCount(model);
     const assets: Catalog['racquets'][number]['assets'] = {};
     for (const style of styles) {
       const bytes = await style.render(model);
-      const path = `${style.id}/${spec.id}.${style.extension}`;
+      const path = `${style.id}/${stem}.${style.extension}`;
       files.set(path, bytes);
       assets[style.id] = { path, bytes: bytes.byteLength, triangles };
-      rows.push({ id: spec.id, triangles, bytes: bytes.byteLength, style: style.id });
+      rows.push({ id: stem, triangles, bytes: bytes.byteLength, style: style.id });
+    }
+    return { model, assets };
+  };
+  for (const spec of specs) {
+    const { model, assets } = await render(spec, spec.id);
+    const colourways: NonNullable<Catalog['racquets'][number]['colourways']> = [];
+    for (const cw of spec.colourways ?? []) {
+      const { assets: cwAssets } = await render(withColourway(spec, cw), `${spec.id}--${cw.id}`);
+      colourways.push({ id: cw.id, name: cw.name, ...(cw.year ? { year: cw.year } : {}), swatch: cw.paint.base, assets: cwAssets });
     }
     catalog.racquets.push({
       id: spec.id,
@@ -48,6 +58,8 @@ export async function generateInMemory(): Promise<Generated> {
       swatch: spec.paint.base,
       parts: model.parts.map((p) => p.name),
       assets,
+      ...(spec.colourway ? { colourway: spec.colourway } : {}),
+      ...(colourways.length ? { colourways } : {}),
     });
   }
   files.set('catalog.json', new TextEncoder().encode(JSON.stringify(catalog, null, 2) + '\n'));

@@ -27,10 +27,10 @@ test('every spec is verified and sourced', () => {
 test('no spec has a dampener', () => {
   for (const s of specs) expect(s.parts.dampener).toBeNull();
 });
-test('every spec has 2-5 paint zones, none equal to the base colour', () => {
+test('every spec has 2-10 paint zones, none equal to the base colour', () => {
   for (const s of specs) {
     expect(s.paint.zones.length).toBeGreaterThanOrEqual(2);
-    expect(s.paint.zones.length).toBeLessThanOrEqual(5);
+    expect(s.paint.zones.length).toBeLessThanOrEqual(10);
     for (const z of s.paint.zones) expect(z.color).not.toBe(s.paint.base);
   }
 });

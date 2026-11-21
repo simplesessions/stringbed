@@ -23,6 +23,13 @@ Example (Babolat Pure Aero 2026): the inner edge is slate, yellow only inside th
 the bands wrap the face and outer edge with the dark grommet channel running through them; a
 thin yellow line runs under the bridge; the throat-arm yellow is lettering, so it is left out.
 
+**Official colourways.** A spec names its own colourway in `colourway` (e.g. "Blast Blue") and
+lists other official ones in `colourways`: each has an id, name, optional year, its own `paint`,
+optional part-colour overrides and sources. Geometry is shared. Each colourway is generated as
+`assets/<style>/<id>--<colourway>.glb`, listed under the racquet in `catalog.json`, and offered
+as swatches on the racquet's page (`#/<id>/<colourway>`). Limited and event editions stay out;
+only colourways the maker sells as standard. First one: Yonex EZONE 100 Espresso Brown (2026).
+
 Beam widths are tip / mid / shaft in mm. All racquets are 27 in long unless noted.
 
 ## Yonex

@@ -37,15 +37,25 @@ export function assetUrl(base: string, path: string): string {
   return `${base.replace(/\/+$/, '')}/${path.replace(/^\/+/, '')}`;
 }
 
-const ROUTE = /^#\/([a-z0-9]+(?:-[a-z0-9]+)*)\/?$/;
+const ROUTE = /^#\/([a-z0-9]+(?:-[a-z0-9]+)*)(?:\/([a-z0-9]+(?:-[a-z0-9]+)*))?\/?$/;
 
-export function parseRoute(hash: string): { racquetId: string | null } {
+/** "#/<racquet>" or "#/<racquet>/<colourway>". */
+export function parseRoute(hash: string): { racquetId: string | null; colourway: string | null } {
   const m = ROUTE.exec(hash);
-  return { racquetId: m ? m[1] : null };
+  return { racquetId: m ? m[1] : null, colourway: m?.[2] ?? null };
 }
 
-export function routeFor(racquetId: string | null): string {
-  return racquetId === null ? '#/' : `#/${racquetId}`;
+export function routeFor(racquetId: string | null, colourway?: string | null): string {
+  return racquetId === null ? '#/' : colourway ? `#/${racquetId}/${colourway}` : `#/${racquetId}`;
+}
+
+/**
+ * The racquet as shown in one of its colourways: that swatch and those files, everything else
+ * shared. Unknown or missing colourway: the racquet itself.
+ */
+export function inColourway(r: Racquet, colourway: string | null): { shown: Racquet; colourway: string | null } {
+  const cw = colourway ? r.colourways?.find((c) => c.id === colourway) : undefined;
+  return cw ? { shown: { ...r, swatch: cw.swatch, assets: cw.assets, colourway: cw.name }, colourway: cw.id } : { shown: r, colourway: null };
 }
 
 /** The requested style if the catalog has it, else the default style, else the first listed. */

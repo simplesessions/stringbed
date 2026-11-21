@@ -1,6 +1,7 @@
 // Alternative render looks, drawn with the renderer that already exists (no new WebGL
 // context). Realistic is a plain render. Pixel renders to a small target and blows it up
-// with nearest-neighbour cells. Line renders view normals plus coverage, then inks edges.
+// with nearest-neighbour cells. Line renders view normals plus coverage and a flat, unlit
+// colour pass, then fills each part with its own colour in two tones and inks the edges.
 // Materials are never changed: line swaps mesh materials for one draw and puts them back,
 // because clones share materials with the cached source.
 import {
@@ -8,6 +9,8 @@ import {
   DoubleSide,
   HalfFloatType,
   Mesh,
+  MeshBasicMaterial,
+  type MeshStandardMaterial,
   NearestFilter,
   NoBlending,
   OrthographicCamera,
@@ -45,18 +48,33 @@ const fullscreenVertex = /* glsl */ `
 
 const pixelFragment = /* glsl */ `
   uniform sampler2D tColor;
+  uniform sampler2D tStrings;
   uniform vec2 resolution;
   uniform float cell;
   uniform float levels;
   void main() {
     // Every canvas pixel in a cell reads the same low-res texel: crisp squares.
-    vec2 uv = clamp((floor(gl_FragCoord.xy / cell) + 0.5) * cell / resolution, 0.0, 1.0);
+    vec2 base = floor(gl_FragCoord.xy / cell) * cell;
+    vec2 uv = clamp((base + 0.5 * cell) / resolution, 0.0, 1.0);
     vec4 c = texture2D(tColor, uv);
-    if (c.a < 0.5) { gl_FragColor = vec4(0.0); return; }
+    float alpha = 1.0;
+    if (c.a < 0.5) {
+      // Strings are thinner than a cell, so they are drawn separately at 4x and averaged per
+      // cell: the string bed becomes an even, light fill instead of a few stray bars.
+      vec4 sum = vec4(0.0);
+      for (int i = 0; i < 4; i++) for (int j = 0; j < 4; j++) {
+        sum += texture2D(tStrings, clamp((base + (vec2(float(i), float(j)) + 0.5) * cell * 0.25) / resolution, 0.0, 1.0));
+      }
+      sum /= 16.0;
+      if (sum.a < 0.04) { gl_FragColor = vec4(0.0); return; }
+      c = vec4(sum.rgb / sum.a, 1.0);
+      alpha = 0.4;
+    }
     gl_FragColor = vec4(c.rgb / c.a, 1.0);
     #include <tonemapping_fragment>
     #include <colorspace_fragment>
     gl_FragColor.rgb = floor(gl_FragColor.rgb * levels + 0.5) / levels;
+    gl_FragColor = vec4(gl_FragColor.rgb * alpha, alpha);
   }`;
 
 const gbufferVertex = /* glsl */ `
@@ -87,7 +105,12 @@ const lineFragment = /* glsl */ `
   uniform float crease;
   uniform float depthStep;
   uniform vec3 ink;
+  uniform sampler2D tFill;
   varying vec2 vUv;
+
+  vec3 toSRGB(vec3 c) {
+    return mix(c * 12.92, 1.055 * pow(max(c, vec3(0.0)), vec3(1.0 / 2.4)) - 0.055, step(0.0031308, c));
+  }
 
   float viewZ(vec2 uv) {
     float d = texture2D(tDepth, uv).x;
@@ -132,9 +155,16 @@ const lineFragment = /* glsl */ `
 
     // Strings: their own coverage, in a light ink.
     float s = isString(g0.a) * 0.4;
-
     float a = max(sil, max(c * crease, s));
-    gl_FragColor = vec4(ink * a, a);
+
+    // Fill: each part's own flat colour in two tones (lit / shade, split on the view normal),
+    // so the drawing keeps the racquet's colourway. Strings get a light wash of theirs.
+    vec3 fill = texture2D(tFill, vUv).rgb;
+    float tone = mix(0.78, 1.0, smoothstep(0.28, 0.36, n0.z));
+    float fa = max(b0, isString(g0.a) * 0.55);
+    vec3 base = toSRGB(fill * (b0 > 0.5 ? tone : 1.0));
+    // Ink over fill, premultiplied (the canvas is premultiplied alpha).
+    gl_FragColor = vec4(ink * a + base * fa * (1.0 - a), a + fa * (1.0 - a));
   }`;
 
 function fullscreen(material: ShaderMaterial): { scene: Scene; material: ShaderMaterial } {
@@ -155,7 +185,7 @@ export class LookPainter {
   private colorTarget: WebGLRenderTarget | null = null;
   private gTarget: WebGLRenderTarget | null = null;
   private readonly pixel = fullscreen(new ShaderMaterial({
-    uniforms: { tColor: { value: null }, resolution: { value: new Vector2() }, cell: { value: 4 }, levels: { value: LEVELS } },
+    uniforms: { tColor: { value: null }, tStrings: { value: null }, resolution: { value: new Vector2() }, cell: { value: 4 }, levels: { value: LEVELS } },
     vertexShader: fullscreenVertex,
     fragmentShader: pixelFragment,
   }));
@@ -171,6 +201,7 @@ export class LookPainter {
       crease: { value: 0.75 },
       depthStep: { value: 0.015 },
       ink: { value: INK },
+      tFill: { value: null },
     },
     vertexShader: fullscreenVertex,
     fragmentShader: lineFragment,
@@ -179,6 +210,20 @@ export class LookPainter {
   private readonly bodyMaterial = new ShaderMaterial({ uniforms: { marker: { value: 1 } }, vertexShader: gbufferVertex, fragmentShader: gbufferFragment, side: DoubleSide, blending: NoBlending, toneMapped: false });
   private readonly stringMaterial = new ShaderMaterial({ uniforms: { marker: { value: 0.5 } }, vertexShader: gbufferVertex, fragmentShader: gbufferFragment, side: DoubleSide, blending: NoBlending, toneMapped: false });
   private readonly swapped: Array<[Mesh, Material | Material[]]> = [];
+  private fillTarget: WebGLRenderTarget | null = null;
+  private stringTarget: WebGLRenderTarget | null = null;
+  /** Unlit copies of the models' materials (same colour, same vertex colours), made once each. */
+  private readonly flat = new WeakMap<Material, MeshBasicMaterial>();
+
+  private flatFor(material: Material): MeshBasicMaterial {
+    let f = this.flat.get(material);
+    if (!f) {
+      const m = material as MeshStandardMaterial;
+      f = new MeshBasicMaterial({ color: m.color, vertexColors: m.vertexColors, side: DoubleSide, toneMapped: false });
+      this.flat.set(material, f);
+    }
+    return f;
+  }
 
   constructor(private readonly renderer: WebGLRenderer) {}
 
@@ -210,11 +255,27 @@ export class LookPainter {
     this.colorTarget ??= new WebGLRenderTarget(lw, lh, { type: HalfFloatType, minFilter: NearestFilter, magFilter: NearestFilter, depthBuffer: true });
     const t = this.colorTarget;
     if (t.width !== lw || t.height !== lh) t.setSize(lw, lh);
+    // Pass 1: everything but the strings at cell resolution. Pass 2: only the strings at 4x.
+    const strings: Object3D[] = [];
+    const others: Object3D[] = [];
+    scene.traverse((o: Object3D) => {
+      if ((o as Mesh).isMesh && o.visible) (o.name.startsWith('strings') ? strings : others).push(o);
+    });
+    for (const o of strings) o.visible = false;
     r.setRenderTarget(t);
     r.render(scene, camera);
+    for (const o of strings) o.visible = true;
+    for (const o of others) o.visible = false;
+    this.stringTarget ??= new WebGLRenderTarget(lw * 4, lh * 4, { type: HalfFloatType, depthBuffer: true });
+    const st = this.stringTarget;
+    if (st.width !== lw * 4 || st.height !== lh * 4) st.setSize(lw * 4, lh * 4);
+    r.setRenderTarget(st);
+    r.render(scene, camera);
+    for (const o of others) o.visible = true;
     r.setRenderTarget(null);
     const u = this.pixel.material.uniforms;
     u.tColor.value = t.texture;
+    u.tStrings.value = st.texture;
     u.resolution.value.set(w, h);
     u.cell.value = cell;
     r.render(this.pixel.scene, this.quadCamera);
@@ -242,10 +303,27 @@ export class LookPainter {
     for (const [m, material] of this.swapped) m.material = material;
     this.swapped.length = 0;
 
+    // Flat colour pass: the same scene unlit, in linear colour (converted in the line shader).
+    this.fillTarget ??= new WebGLRenderTarget(w, h, { type: HalfFloatType, minFilter: NearestFilter, magFilter: NearestFilter, depthBuffer: true });
+    const f = this.fillTarget;
+    if (f.width !== w || f.height !== h) f.setSize(w, h);
+    scene.traverse((o: Object3D) => {
+      const m = o as Mesh;
+      if (!m.isMesh || Array.isArray(m.material)) return;
+      this.swapped.push([m, m.material]);
+      m.material = this.flatFor(m.material);
+    });
+    r.setRenderTarget(f);
+    r.render(scene, camera);
+    r.setRenderTarget(null);
+    for (const [m, material] of this.swapped) m.material = material;
+    this.swapped.length = 0;
+
     const cam = camera as Camera & { near: number; far: number; isPerspectiveCamera?: boolean };
     const u = this.line.material.uniforms;
     u.tG.value = t.texture;
     u.tDepth.value = t.depthTexture;
+    u.tFill.value = f.texture;
     u.resolution.value.set(w, h);
     u.cameraNear.value = cam.near;
     u.cameraFar.value = cam.far;

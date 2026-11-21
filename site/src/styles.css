@@ -587,6 +587,24 @@ body[data-view='detail'] .signs { display: none; }
 .search-empty { margin: 0; padding: 14px 16px; color: var(--ink-2); font-size: 0.9375rem; }
 .search-empty:empty { display: none; }
 
+/* ---------- colourways ---------- */
+
+.colourways { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 18px; }
+.colourway {
+  display: inline-flex; align-items: center; gap: 8px;
+  min-height: 36px;
+  padding: 5px 12px 5px 6px;
+  border: 1.5px solid var(--line);
+  border-radius: 999px;
+  color: var(--ink);
+  font-size: 0.875rem; font-weight: 600; font-stretch: 88%;
+  text-decoration: none;
+  transition: background-color 0.2s var(--ease-out), border-color 0.2s var(--ease-out);
+}
+.colourway:hover { background: var(--wall-2); }
+.colourway[aria-current='true'] { border-color: var(--ink); }
+.colourway-chip { width: 22px; height: 22px; border-radius: 50%; background: var(--chip); box-shadow: inset 0 0 0 1px oklch(0.23 0.01 75 / 0.25); }
+
 @media (max-width: 1099px) {
   :root { --bay-w: min(calc((100vw - 2 * var(--pad) - var(--group-gap) - 4 * var(--bay-gap) - 1px) / 6), 156px); }
 }
