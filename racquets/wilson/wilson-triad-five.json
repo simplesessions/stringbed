@@ -1,0 +1,74 @@
+{
+  "id": "wilson-triad-five",
+  "brand": "Wilson",
+  "line": "Triad",
+  "model": "Triad Five",
+  "generation": "Triad",
+  "year": 2025,
+  "specs": {
+    "headSizeSqIn": 103,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      20
+    ],
+    "beamMm": [
+      26,
+      26,
+      26
+    ]
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.27
+    },
+    "beam": {
+      "profile": "ellipse"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "curved"
+    },
+    "features": []
+  },
+  "paint": {
+    "base": "#8f1a24",
+    "finish": "satin",
+    "zones": [
+      {
+        "from": 0.85,
+        "to": 1,
+        "color": "#1b1b1f"
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#f0f0f0"
+    },
+    "collar": {
+      "color": "#8f1a24"
+    },
+    "buttCap": {
+      "color": "#f0f0f0"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#1b1b1f",
+      "channel": 0.45
+    },
+    "bumper": {
+      "color": "#1b1b1f"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://www.tennis-warehouse.com/Wilson_Triad_Five/descpageRCWILSON-WTRI5.html"
+  ],
+  "verified": true,
+  "colourway": "Red"
+}

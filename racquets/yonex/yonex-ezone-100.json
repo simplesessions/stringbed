@@ -263,6 +263,111 @@
       "sources": [
         "https://www.tennis-warehouse.com/Yonex_EZONE_98_Tour_2025/descpageRCYONEX-TEZ98B.html"
       ]
+    },
+    {
+      "id": "yonex-ezone-105-2025",
+      "label": "105",
+      "model": "EZONE 105",
+      "specs": {
+        "headSizeSqIn": 105,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          24,
+          26.5,
+          23
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Yonex_EZONE_105_2025/descpageRCYONEX-EZ105B.html"
+      ]
+    },
+    {
+      "id": "yonex-ezone-110-2025",
+      "label": "110",
+      "model": "EZONE 110",
+      "specs": {
+        "headSizeSqIn": 110,
+        "lengthIn": 27.5,
+        "stringPattern": [
+          16,
+          18
+        ],
+        "beamMm": [
+          26,
+          29,
+          24
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Yonex_EZONE_110_2025/descpageRCYONEX-EZ110B.html"
+      ]
+    },
+    {
+      "id": "yonex-ezone-115-2025",
+      "label": "115",
+      "model": "EZONE 115",
+      "specs": {
+        "headSizeSqIn": 115,
+        "lengthIn": 27.25,
+        "stringPattern": [
+          16,
+          18
+        ],
+        "beamMm": [
+          27,
+          29.5,
+          25
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Yonex_EZONE_115_2025/descpageRCYONEX-EZ115B.html"
+      ]
+    },
+    {
+      "id": "yonex-ezone-100-plus-2025",
+      "label": "100 Plus",
+      "model": "EZONE 100+",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27.5,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          24.5,
+          26.5,
+          23
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Yonex_EZONE_100_2025/descpageRCYONEX-LEZ10B.html"
+      ]
+    },
+    {
+      "id": "yonex-ezone-98-plus-2025",
+      "label": "98 Plus",
+      "model": "EZONE 98+",
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27.5,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23.8,
+          24.5,
+          19.5
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Yonex_EZONE_98_2025/descpageRCYONEX-LEZ98B.html"
+      ]
     }
   ],
   "variantLabel": "100"

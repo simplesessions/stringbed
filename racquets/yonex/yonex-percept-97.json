@@ -111,6 +111,28 @@
       "sources": [
         "https://www.tennis-warehouse.com/Yonex_Percept_100/descpageRCYONEX-PERC.html"
       ]
+    },
+    {
+      "id": "yonex-percept-97d-2023",
+      "label": "97D",
+      "model": "Percept 97D",
+      "specs": {
+        "headSizeSqIn": 97,
+        "lengthIn": 27,
+        "stringPattern": [
+          18,
+          20
+        ],
+        "beamMm": [
+          21,
+          21,
+          21
+        ],
+        "unstrungWeightG": 320
+      },
+      "sources": [
+        "https://tennisexpress.com/blogs/news/yonex-percept-tennis-racquets-midnight-navy"
+      ]
     }
   ],
   "variantLabel": "97"

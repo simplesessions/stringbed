@@ -141,6 +141,69 @@
       "sources": [
         "https://www.tennis-warehouse.com/Wilson_Ultra_99_Pro_v5/descpageRCWILSON-WU99P5.html"
       ]
+    },
+    {
+      "id": "wilson-ultra-100l-v5-2025",
+      "label": "100L",
+      "model": "Ultra 100L",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          24,
+          26.5,
+          24.5
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Wilson_Ultra_100L_v5/descpageRCWILSON-WU10L5.html"
+      ]
+    },
+    {
+      "id": "wilson-ultra-111-v5-2025",
+      "label": "111",
+      "model": "Ultra 111",
+      "specs": {
+        "headSizeSqIn": 111,
+        "lengthIn": 27.25,
+        "stringPattern": [
+          16,
+          18
+        ],
+        "beamMm": [
+          26,
+          27.5,
+          25
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Wilson_Ultra_111_v5/descpageRCWILSON-WU1115.html"
+      ]
+    },
+    {
+      "id": "wilson-ultra-team-v5-2025",
+      "label": "Team",
+      "model": "Ultra Team",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          21
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Wilson_Ultra_Team_v5/descpageRCWILSON-WUTEV5.html"
+      ]
     }
   ]
 }

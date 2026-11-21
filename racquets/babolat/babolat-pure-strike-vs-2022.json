@@ -1,0 +1,74 @@
+{
+  "id": "babolat-pure-strike-vs-2022",
+  "brand": "Babolat",
+  "line": "Pure Strike",
+  "model": "Pure Strike VS",
+  "generation": "VS",
+  "year": 2022,
+  "specs": {
+    "headSizeSqIn": 97,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      20
+    ],
+    "beamMm": [
+      21,
+      22,
+      21
+    ]
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.33
+    },
+    "beam": {
+      "profile": "box"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "curved"
+    },
+    "features": []
+  },
+  "paint": {
+    "base": "#5d5a58",
+    "finish": "gloss",
+    "zones": [
+      {
+        "from": 0.4,
+        "to": 0.56,
+        "color": "#ee4a2c"
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#b9783f"
+    },
+    "collar": {
+      "color": "#2a2a2e"
+    },
+    "buttCap": {
+      "color": "#b9783f"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#3a3836",
+      "channel": 0.45
+    },
+    "bumper": {
+      "color": "#3a3836"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://web.archive.org/web/20230410175204/https://www.tennis-warehouse.com/Babolat_Pure_Strike_VS/descpageRCBAB-PSVSIN.html"
+  ],
+  "verified": true,
+  "colourway": "Black/Orange"
+}

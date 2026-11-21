@@ -88,5 +88,30 @@
     "https://web.archive.org/web/20230410175747/https://www.tennis-warehouse.com/Babolat_Pure_Drive_Tour_2021/descpageRCBAB-BRPDT.html"
   ],
   "verified": true,
-  "colourway": "Blue/Navy"
+  "colourway": "Blue/Navy",
+  "variants": [
+    {
+      "id": "babolat-pure-drive-100-2020",
+      "label": "100",
+      "model": "Pure Drive 100",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27.0,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 301
+      },
+      "sources": [
+        "https://web.archive.org/web/20230410174451/https://www.tennis-warehouse.com/Babolat_Pure_Drive_2021/descpageRCBAB-BRPDR.html"
+      ]
+    }
+  ],
+  "variantLabel": "Tour"
 }

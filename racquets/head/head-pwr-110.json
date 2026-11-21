@@ -1,0 +1,74 @@
+{
+  "id": "head-pwr-110",
+  "brand": "Head",
+  "line": "PWR",
+  "model": "PWR 110",
+  "generation": "PWR",
+  "year": 2026,
+  "specs": {
+    "headSizeSqIn": 110,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      26,
+      25,
+      23
+    ]
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.27
+    },
+    "beam": {
+      "profile": "ellipse"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "curved"
+    },
+    "features": []
+  },
+  "paint": {
+    "base": "#eef0ee",
+    "finish": "gloss",
+    "zones": [
+      {
+        "from": 0.12,
+        "to": 0.35,
+        "color": "#e3e9e9"
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#f2f2f0"
+    },
+    "collar": {
+      "color": "#eef0ee"
+    },
+    "buttCap": {
+      "color": "#f2f2f0"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#d9dedd",
+      "channel": 0.45
+    },
+    "bumper": {
+      "color": "#d9dedd"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://www.tennis-warehouse.com/Head_PWR_110/descpageRCHEAD-HPWR10.html"
+  ],
+  "verified": true,
+  "colourway": "White"
+}

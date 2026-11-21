@@ -150,6 +150,72 @@
         "https://www.tennis-warehouse.com/Wilson_Blade_Pro_98_16x19_v10/descpageRCWILSON-WB98P1.html"
       ],
       "colourway": "Green"
+    },
+    {
+      "id": "wilson-blade-98-18x20-v10-2026",
+      "label": "98 18x20",
+      "model": "Blade 98 18x20",
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          18,
+          20
+        ],
+        "beamMm": [
+          21.5,
+          21.5,
+          20.5
+        ],
+        "unstrungWeightG": 305
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Wilson_Blade_98_18x20_v10/descpageRCWILSON-WB9818.html"
+      ]
+    },
+    {
+      "id": "wilson-blade-100-v10-2026",
+      "label": "100",
+      "model": "Blade 100",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          22,
+          22,
+          22
+        ],
+        "unstrungWeightG": 300
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Wilson_Blade_100_v10/descpageRCWILSON-WB1001.html"
+      ]
+    },
+    {
+      "id": "wilson-blade-104-v10-2026",
+      "label": "104",
+      "model": "Blade 104",
+      "specs": {
+        "headSizeSqIn": 104,
+        "lengthIn": 27.5,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          22,
+          22,
+          22
+        ],
+        "unstrungWeightG": 290
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Wilson_Blade_104_v10/descpageRCWILSON-WB104V.html"
+      ]
     }
   ]
 }

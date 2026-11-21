@@ -138,6 +138,49 @@
         "https://www.tennis-warehouse.com/Head_Gravity_Tour_2025/descpageRCHEAD-HGTRR.html"
       ],
       "colourway": "Black/Blue"
+    },
+    {
+      "id": "head-gravity-pro-2025",
+      "label": "Pro",
+      "model": "Gravity Pro",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          18,
+          20
+        ],
+        "beamMm": [
+          20,
+          20,
+          20
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Gravity_Pro_2025/descpageRCHEAD-HGPRR.html"
+      ]
+    },
+    {
+      "id": "head-gravity-team-2025",
+      "label": "Team",
+      "model": "Gravity Team",
+      "specs": {
+        "headSizeSqIn": 104,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          20
+        ],
+        "beamMm": [
+          24,
+          24,
+          24
+        ],
+        "unstrungWeightG": 270
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Gravity_Team_2025/descpageRCHEAD-HRTMPG.html"
+      ]
     }
   ]
 }

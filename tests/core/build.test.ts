@@ -76,7 +76,8 @@ function visiblyDifferent(a: RacquetSpec, b: RacquetSpec): boolean {
     a.geometry.throat.bridge !== b.geometry.throat.bridge ||
     Math.abs(a.specs.headSizeSqIn - b.specs.headSizeSqIn) >= 2 ||
     Math.abs(a.geometry.head.aspect - b.geometry.head.aspect) >= 0.03 ||
-    a.specs.beamMm.some((v, i) => Math.abs(v - b.specs.beamMm[i]) >= 1)
+    // the signature sees only the thickest section (zMm), so compare that, not each of tip/mid/shaft
+    Math.abs(Math.max(...a.specs.beamMm) - Math.max(...b.specs.beamMm)) >= 1
   );
 }
 

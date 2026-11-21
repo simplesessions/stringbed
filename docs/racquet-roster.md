@@ -1,7 +1,7 @@
 # Racquet roster (v1)
 
-Seventy-six racquets (46 frames): fifteen original (three each for Yonex, Babolat, Wilson and Prince, two for
-Solinco, one Head) and sixty-one promoted from the placeholder roster on 2026-11-20 (see "Added
+One hundred and thirty-seven racquets (54 frames): fifteen original (three each for Yonex, Babolat, Wilson and Prince, two for
+Solinco, one Head) and one hundred and twenty-two promoted from the placeholder roster on 2026-11-20 (see "Added
 2026-11-20" at the end). This is the
 research input for the spec files in `racquets/`.
 
@@ -202,3 +202,35 @@ Caveats:
   2016 racquet), Hyper Hammer 5.3 (low-resolution dated photo). Not photographed: Triad Five.
 - Variants were not checked against their own photos; the VCORE 98 and EZONE 98 Tennis Warehouse
   photos show older cosmetics than their records, so those two variants keep the flagship paint.
+
+### Fourth batch (61 more, same day)
+
+Eight new frames and 53 new variants (the wall is now 54 bays, 137 racquets in all). Method as
+before: each new frame was painted from a viewed Tennis Warehouse photo, using only visible
+paint; variants reuse their family's paint and take head size, pattern, beam, length and weight
+from the placeholder record.
+
+New frames: Wilson Triad Five; Babolat Evoke 105, Pure Aero 98 (2023 gen), Pure Strike VS,
+Pure Drive VS, Pure Aero Tour (2019); Head PWR 110; Prince Warrior 107 275g.
+
+Variants (by frame): Pure Drive 107; Pure Strike 98 18x20, 100 16x20, Team; Pure Drive Tour 100
+(2020); Pure Aero Team 100 (2022); Boom Team, Elite; Extreme (2026) Team, Elite; Extreme 2024
+Pro, Team; Gravity Pro, Team; Prestige Tour; Radical Elite, Team; Speed (2026) Elite, Team; Speed
+Pro 2024; Tour 100 310g, 100P; Ripstick 100 280g; Ripcord 100 300g; Phantom 100X 18x20; ATS Tour
+100 290; Blade 98 18x20, 100, 104; Clash 100L; Defyer 100L; Ultra 100L, 111, Team; RF 01, RF 01
+Future; Ultra Pro 18x20; EZONE 105, 110, 115, 100 Plus, 98 Plus; Muse 98, 107; VCORE 100 Plus,
+95, 98 Plus; Percept 97D; Blackout V2 285, 110, 300 XTD; Whiteout V2 305 18x20, 305 XTD.
+
+Caveats:
+- Variants were not checked against their own photos (the same cosmetic is assumed). Where a
+  record names a different colour for a size (for example Pure Drive Plus, Pure Aero Plus,
+  Warrior 100 300g) it was left out rather than painted by guess.
+- Pure Strike VS and Pure Drive VS use older cosmetics than the 2024 frames; the photos match
+  their records. Pure Strike VS has a leather-look grip in the photo.
+- Babolat's asymmetric cosmetics are again approximated with symmetric bands (see the third
+  batch). The Warrior 107's black shaft and bronze hoop are approximate: the photo is asymmetric.
+- The silhouette test now compares only the thickest beam section when deciding whether two
+  frames are visibly different; the check sees nothing else of the beam (Boom Elite vs Team
+  differ only at the tip and shaft).
+- Not added: colourways (for example the white ATS Tour 98) and anything whose Tennis Warehouse
+  photo showed a different generation than its record.

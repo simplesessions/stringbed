@@ -217,6 +217,27 @@
       "sources": [
         "https://www.tennis-warehouse.com/Wilson_Clash_108_v3/descpageRCWILSON-CL183V.html"
       ]
+    },
+    {
+      "id": "wilson-clash-100l-v3-2025",
+      "label": "100L",
+      "model": "Clash 100L",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          24.5,
+          24.5,
+          24.5
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Wilson_Clash_100L_v3/descpageRCWILSON-CL1L3V.html"
+      ]
     }
   ]
 }

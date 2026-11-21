@@ -75,5 +75,29 @@
     "https://www.tennis-warehouse.com/Head_Speed_MP_2024/descpageRCHEAD-HSPDM.html"
   ],
   "verified": true,
-  "colourway": "White/Black"
+  "colourway": "White/Black",
+  "variants": [
+    {
+      "id": "head-speed-pro-2024",
+      "label": "Pro",
+      "model": "Speed Pro",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          18,
+          20
+        ],
+        "beamMm": [
+          23,
+          23,
+          23
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Speed_Pro_2024/descpageRCHEAD-HSPDP.html"
+      ]
+    }
+  ],
+  "variantLabel": "MP"
 }

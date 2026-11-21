@@ -109,6 +109,27 @@
       "sources": [
         "https://www.tennis-warehouse.com/Prince_Ripcord_98_XS/descpageRCTWABG-PRIPXS.html"
       ]
+    },
+    {
+      "id": "prince-ripcord-100-300g-2025",
+      "label": "100 300g",
+      "model": "Ripcord 100 300g",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          27,
+          25,
+          22
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Prince_Ripcord_100_300g/descpageRCTWABG-RPCDH.html"
+      ]
     }
   ],
   "variantLabel": "100 280g"

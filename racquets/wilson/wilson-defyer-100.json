@@ -132,6 +132,27 @@
       "sources": [
         "https://www.tennis-warehouse.com/Wilson_Defyer_98_Pro_Racquet/descpageRCWILSON-WRL98.html"
       ]
+    },
+    {
+      "id": "wilson-defyer-100l",
+      "label": "100L",
+      "model": "Defyer 100L",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23.8,
+          25,
+          23
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Wilson_Defyer_100L_Racquet/descpageRCWILSON-RL100L.html"
+      ]
     }
   ]
 }

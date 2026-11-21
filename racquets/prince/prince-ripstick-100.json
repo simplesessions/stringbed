@@ -125,6 +125,27 @@
         "https://www.tennis-warehouse.com/Prince_Ripstick_98/descpageRCTWABG-2RIP98.html"
       ],
       "colourway": "Red"
+    },
+    {
+      "id": "prince-ripstick-100-280g-2025",
+      "label": "100 280g",
+      "model": "Ripstick 100 280g",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          18
+        ],
+        "beamMm": [
+          27,
+          25.5,
+          22
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Prince_Ripstick_100_280g/descpageRCTWABG-25RIPL.html"
+      ]
     }
   ]
 }

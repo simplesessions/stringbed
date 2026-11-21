@@ -70,5 +70,50 @@
     "https://www.tennis-warehouse.com/Head_Extreme_MP_2024/descpageRCHEAD-HREM24.html"
   ],
   "verified": true,
-  "colourway": "Sage/Lime"
+  "colourway": "Sage/Lime",
+  "variants": [
+    {
+      "id": "head-extreme-pro-2024",
+      "label": "Pro",
+      "model": "Extreme Pro",
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          22,
+          23,
+          21
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Extreme_Pro_2024/descpageRCHEAD-HREP24.html"
+      ]
+    },
+    {
+      "id": "head-extreme-team-2024",
+      "label": "Team",
+      "model": "Extreme Team",
+      "specs": {
+        "headSizeSqIn": 105,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          21
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Extreme_Team_2024/descpageRCHEAD-HRET24.html"
+      ]
+    }
+  ],
+  "variantLabel": "MP"
 }

@@ -82,5 +82,29 @@
     "https://www.tennis-warehouse.com/Prince_ATS_Textreme_Tour_98_Carbon/descpageRCTWABG-PTC98.html"
   ],
   "verified": true,
-  "colourway": "Carbon"
+  "colourway": "Carbon",
+  "variants": [
+    {
+      "id": "prince-ats-textreme-tour-100-290-carbon",
+      "label": "100 290",
+      "model": "ATS Textreme Tour 100 290 Carbon",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          18
+        ],
+        "beamMm": [
+          22,
+          23,
+          20
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Prince_ATS_Textreme_Tour_100_290_Carbon/descpageRCTWABG-PTC290.html"
+      ]
+    }
+  ],
+  "variantLabel": "98"
 }

@@ -93,6 +93,27 @@
       "sources": [
         "https://www.tennis-warehouse.com/Head_Prestige_MP_L/descpageRCHEAD-HPRMPL.html"
       ]
+    },
+    {
+      "id": "head-prestige-tour-2023",
+      "label": "Tour",
+      "model": "Prestige Tour",
+      "specs": {
+        "headSizeSqIn": 95,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          22,
+          22,
+          22
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Prestige_Tour/descpageRCHEAD-THPRTR.html"
+      ]
     }
   ]
 }

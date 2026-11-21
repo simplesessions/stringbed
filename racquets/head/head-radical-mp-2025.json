@@ -110,6 +110,48 @@
       "sources": [
         "https://www.tennis-warehouse.com/Head_Radical_Pro_2025/descpageRCHEAD-HPRR.html"
       ]
+    },
+    {
+      "id": "head-radical-elite-2025",
+      "label": "Elite",
+      "model": "Radical Elite",
+      "specs": {
+        "headSizeSqIn": 102,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          22,
+          25,
+          23
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Radical_Elite_2025/descpageRCHEAD-RADELT.html"
+      ]
+    },
+    {
+      "id": "head-radical-team-2025",
+      "label": "Team",
+      "model": "Radical Team",
+      "specs": {
+        "headSizeSqIn": 102,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          22,
+          25,
+          23
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Radical_Team_2025/descpageRCHEAD-HRRT.html"
+      ]
     }
   ]
 }

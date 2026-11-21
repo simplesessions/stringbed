@@ -70,5 +70,50 @@
     "https://www.tennis-warehouse.com/Wilson_RF_01_Pro/descpageRCWILSON-WRFPR.html"
   ],
   "verified": true,
-  "colourway": "Black"
+  "colourway": "Black",
+  "variants": [
+    {
+      "id": "wilson-rf-01",
+      "label": "RF 01",
+      "model": "RF 01",
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23.2,
+          23,
+          22
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Wilson_RF_01/descpageRCWILSON-WRF1R.html"
+      ]
+    },
+    {
+      "id": "wilson-rf-01-future",
+      "label": "Future",
+      "model": "RF 01 Future",
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23.2,
+          23,
+          22
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Wilson_RF_01_Future/descpageRCWILSON-WRFFR.html"
+      ]
+    }
+  ],
+  "variantLabel": "Pro"
 }

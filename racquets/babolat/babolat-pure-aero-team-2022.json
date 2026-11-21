@@ -75,5 +75,30 @@
     "https://web.archive.org/web/20230410180926/https://www.tennis-warehouse.com/Babolat_Pure_Aero_Team_2023/descpageRCBAB-BAROTM.html"
   ],
   "verified": true,
-  "colourway": "Grey/Yellow"
+  "colourway": "Grey/Yellow",
+  "variants": [
+    {
+      "id": "babolat-pure-aero-100-2022",
+      "label": "100",
+      "model": "Pure Aero 100",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27.0,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 300
+      },
+      "sources": [
+        "https://web.archive.org/web/20230603173019/https://www.tennis-warehouse.com/Babolat_Pure_Aero_2023/descpageRCBAB-BARO.html"
+      ]
+    }
+  ],
+  "variantLabel": "Team"
 }

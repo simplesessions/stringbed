@@ -129,6 +129,27 @@
       "sources": [
         "https://www.tennis-warehouse.com/Prince_Phantom_107G/descpageRCPRINCE-PHN7G.html"
       ]
+    },
+    {
+      "id": "prince-phantom-100x-18x20-2024",
+      "label": "100X 18x20",
+      "model": "Phantom 100X 18x20",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          18,
+          20
+        ],
+        "beamMm": [
+          22,
+          20.5,
+          18
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Prince_Phantom_100X_18x20/descpageRCTWABG-PHNX2.html"
+      ]
     }
   ],
   "variantLabel": "100X 305g"

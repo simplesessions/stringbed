@@ -116,6 +116,48 @@
       "sources": [
         "https://www.tennis-warehouse.com/Head_Boom_Pro_2026/descpageRCHEAD-HBOOP6.html"
       ]
+    },
+    {
+      "id": "head-boom-team-2026",
+      "label": "Team",
+      "model": "Boom Team",
+      "specs": {
+        "headSizeSqIn": 107,
+        "lengthIn": 27.4,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          26,
+          26,
+          23
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Boom_Team_2026/descpageRCHEAD-HBOT26.html"
+      ]
+    },
+    {
+      "id": "head-boom-elite-2026",
+      "label": "Elite",
+      "model": "Boom Elite",
+      "specs": {
+        "headSizeSqIn": 107,
+        "lengthIn": 27.2,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          22
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Boom_Elite_2026/descpageRCHEAD-HBMELT.html"
+      ]
     }
   ]
 }

@@ -83,5 +83,74 @@
     "https://www.tennisnerd.net/gear/racquets/racquet-reviews/solinco-blackout-v2-review/61196",
     "https://www.tennis-warehouse.com/Solinco_Blackout_300_v2_Camo/descpageRCSOLINCO-BKOCAH.html"
   ],
-  "verified": true
+  "verified": true,
+  "variants": [
+    {
+      "id": "solinco-blackout-v2-285-2025",
+      "label": "285",
+      "model": "Blackout V2 285",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23.5,
+          26,
+          23
+        ],
+        "unstrungWeightG": 285
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Solinco_Blackout_285_v2_Camo/descpageRCSOLINCO-BKOCAL.html"
+      ]
+    },
+    {
+      "id": "solinco-blackout-v2-110-2026",
+      "label": "110",
+      "model": "Blackout V2 110",
+      "specs": {
+        "headSizeSqIn": 110,
+        "lengthIn": 27.5,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23.5,
+          26,
+          23
+        ],
+        "unstrungWeightG": 268
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Solinco_Blackout_110_v2/descpageRCSOLINCO-SBO110.html"
+      ]
+    },
+    {
+      "id": "solinco-blackout-v2-300-xtd-2025",
+      "label": "300 XTD",
+      "model": "Blackout V2 300 XTD",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27.5,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23.5,
+          26,
+          23
+        ],
+        "unstrungWeightG": 300
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Solinco_Blackout_300_XTD_v2_Camo/descpageRCSOLINCO-BKOCAX.html"
+      ]
+    }
+  ],
+  "variantLabel": "300"
 }

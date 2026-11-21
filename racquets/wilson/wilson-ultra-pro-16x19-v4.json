@@ -70,5 +70,29 @@
     "https://www.tennis-warehouse.com/Wilson_Ultra_Pro_16x19_v4/descpageRCWILSON-WUPRO6.html"
   ],
   "verified": true,
-  "colourway": "Blue"
+  "colourway": "Blue",
+  "variants": [
+    {
+      "id": "wilson-ultra-pro-18x20-v4",
+      "label": "18x20",
+      "model": "Ultra Pro 18x20",
+      "specs": {
+        "headSizeSqIn": 97,
+        "lengthIn": 27,
+        "stringPattern": [
+          18,
+          20
+        ],
+        "beamMm": [
+          20.6,
+          20.6,
+          20.6
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Wilson_Ultra_Pro_18x20_v4/descpageRCWILSON-WUPRO8.html"
+      ]
+    }
+  ],
+  "variantLabel": "16x19"
 }

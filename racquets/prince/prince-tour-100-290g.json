@@ -115,6 +115,48 @@
         "https://www.tennis-warehouse.com/Prince_Tour_98_2026/descpageRCTWABG-PTR698.html"
       ],
       "colourway": "Black/Orange"
+    },
+    {
+      "id": "prince-tour-100-310g-2026",
+      "label": "100 310g",
+      "model": "Tour 100 310g",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          18
+        ],
+        "beamMm": [
+          22,
+          23,
+          20
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Prince_Tour_100_310g_2026/descpageRCTWABG-PTR631.html"
+      ]
+    },
+    {
+      "id": "prince-tour-100p-2026",
+      "label": "100P",
+      "model": "Tour 100P",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          18,
+          20
+        ],
+        "beamMm": [
+          22,
+          23,
+          20
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Prince_Tour_100P_2026/descpageRCTWABG-PTR61P.html"
+      ]
     }
   ]
 }

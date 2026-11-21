@@ -216,6 +216,48 @@
         "https://www.tennis-warehouse.com/Head_Speed_Tour_2026/descpageRCHEAD-HSPDT6.html"
       ],
       "colourway": "Charcoal/White"
+    },
+    {
+      "id": "head-speed-elite-2026",
+      "label": "Elite",
+      "model": "Speed Elite",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          25,
+          25,
+          25
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Speed_Elite_2026/descpageRCHEAD-HSPELT.html"
+      ]
+    },
+    {
+      "id": "head-speed-team-2026",
+      "label": "Team",
+      "model": "Speed Team",
+      "specs": {
+        "headSizeSqIn": 105,
+        "lengthIn": 27.4,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          24,
+          24,
+          24
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Speed_Team_2026/descpageRCHEAD-HSPTM6.html"
+      ]
     }
   ]
 }

@@ -102,6 +102,48 @@
       "sources": [
         "https://www.tennis-warehouse.com/Head_Extreme_Pro_Racquet/descpageRCHEAD-HEXP26.html"
       ]
+    },
+    {
+      "id": "head-extreme-team-2026",
+      "label": "Team",
+      "model": "Extreme Team",
+      "specs": {
+        "headSizeSqIn": 105,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          21
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Extreme_Team_Racquet/descpageRCHEAD-HEXT26.html"
+      ]
+    },
+    {
+      "id": "head-extreme-elite-2026",
+      "label": "Elite",
+      "model": "Extreme Elite",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          24,
+          26,
+          21
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Extreme_Elite_2026_Racquet/descpageRCHEAD-HELT26.html"
+      ]
     }
   ]
 }
