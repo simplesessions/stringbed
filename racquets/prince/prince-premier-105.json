@@ -1,0 +1,77 @@
+{
+  "id": "prince-premier-105",
+  "brand": "Prince",
+  "line": "Premier",
+  "model": "Premier 105",
+  "generation": "1st gen",
+  "year": 2025,
+  "specs": {
+    "headSizeSqIn": 105,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      18
+    ],
+    "beamMm": [
+      23,
+      24,
+      24
+    ]
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.28
+    },
+    "beam": {
+      "profile": "ellipse"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "curved"
+    },
+    "features": []
+  },
+  "paint": {
+    "base": "#8a1626",
+    "finish": "gloss",
+    "zones": [
+      {
+        "from": 0.88,
+        "to": 1,
+        "color": "#17171a",
+        "faces": [
+          "inner"
+        ]
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#efefec"
+    },
+    "collar": {
+      "color": "#8a1626"
+    },
+    "buttCap": {
+      "color": "#efefec"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#17171a",
+      "channel": 0.45
+    },
+    "bumper": {
+      "color": "#17171a"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://www.tennis-warehouse.com/Prince_Premier_105/descpageRCPRINCE-PREM05.html"
+  ],
+  "verified": true,
+  "colourway": "Red"
+}

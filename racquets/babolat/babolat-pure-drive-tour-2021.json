@@ -111,6 +111,111 @@
       "sources": [
         "https://web.archive.org/web/20230410174451/https://www.tennis-warehouse.com/Babolat_Pure_Drive_2021/descpageRCBAB-BRPDR.html"
       ]
+    },
+    {
+      "id": "babolat-pure-drive-team-2021",
+      "label": "Team",
+      "model": "Pure Drive Team",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27.0,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "sources": [
+        "https://web.archive.org/web/20230410193047/https://www.tennis-warehouse.com/Babolat_Pure_Drive_Team_2021/descpageRCBAB-BRPTE.html"
+      ]
+    },
+    {
+      "id": "babolat-pure-drive-lite-2021",
+      "label": "Lite",
+      "model": "Pure Drive Lite",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27.0,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "sources": [
+        "https://web.archive.org/web/20240823062343/https://www.tennis-warehouse.com/Babolat_Pure_Drive_Lite_2021/descpageRCBAB-BRPDL.html"
+      ]
+    },
+    {
+      "id": "babolat-pure-drive-107-2021",
+      "label": "107",
+      "model": "Pure Drive 107",
+      "specs": {
+        "headSizeSqIn": 107,
+        "lengthIn": 27.2,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "sources": [
+        "https://web.archive.org/web/20221104074927/https://www.tennis-warehouse.com/Babolat_Pure_Drive_107_2021/descpageRCBAB-BRPD17.html"
+      ]
+    },
+    {
+      "id": "babolat-pure-drive-110-2021",
+      "label": "110",
+      "model": "Pure Drive 110",
+      "specs": {
+        "headSizeSqIn": 110,
+        "lengthIn": 27.6,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          24,
+          26.5,
+          23.5
+        ]
+      },
+      "sources": [
+        "https://web.archive.org/web/20230410175435/https://www.tennis-warehouse.com/Babolat_Pure_Drive_110_2021/descpageRCBAB-BRPD11.html"
+      ]
+    },
+    {
+      "id": "babolat-pure-drive-plus-2021",
+      "label": "Plus",
+      "model": "Pure Drive Plus",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27.5,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "sources": [
+        "https://web.archive.org/web/20230410175146/https://www.tennis-warehouse.com/Babolat_Pure_Drive_Plus_2021/descpageRCBAB-BRPDP.html"
+      ]
     }
   ],
   "variantLabel": "Tour"

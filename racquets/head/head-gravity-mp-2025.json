@@ -181,6 +181,27 @@
       "sources": [
         "https://www.tennis-warehouse.com/Head_Gravity_Team_2025/descpageRCHEAD-HRTMPG.html"
       ]
+    },
+    {
+      "id": "head-gravity-mp-l-2025",
+      "label": "MP L",
+      "model": "Gravity MP L",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          20
+        ],
+        "beamMm": [
+          22,
+          22,
+          22
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Gravity_MP_L_2025/descpageRCHEAD-HGMLPG.html"
+      ]
     }
   ]
 }

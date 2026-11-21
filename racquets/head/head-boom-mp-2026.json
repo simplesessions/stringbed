@@ -158,6 +158,69 @@
       "sources": [
         "https://www.tennis-warehouse.com/Head_Boom_Elite_2026/descpageRCHEAD-HBMELT.html"
       ]
+    },
+    {
+      "id": "head-boom-mp-l-2026",
+      "label": "MP L",
+      "model": "Boom MP L",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          24,
+          22
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Boom_MP_L_2026/descpageRCHEAD-HBMPL6.html"
+      ]
+    },
+    {
+      "id": "head-boom-mp-ul-2026",
+      "label": "MP UL",
+      "model": "Boom MP UL",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          24,
+          22
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Boom_MP_UL_2026/descpageRCHEAD-HBMPUL.html"
+      ]
+    },
+    {
+      "id": "head-boom-junior-26-2026",
+      "label": "Junior 26",
+      "model": "Boom Junior 26",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 26,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          24,
+          22
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Boom_26_Junior/descpageRCHEAD-HBMJR6.html"
+      ]
     }
   ]
 }

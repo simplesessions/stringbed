@@ -1,7 +1,7 @@
 # Racquet roster (v1)
 
-One hundred and thirty-seven racquets (54 frames): fifteen original (three each for Yonex, Babolat, Wilson and Prince, two for
-Solinco, one Head) and one hundred and twenty-two promoted from the placeholder roster on 2026-11-20 (see "Added
+Two hundred and seven racquets (62 frames): fifteen original (three each for Yonex, Babolat, Wilson and Prince, two for
+Solinco, one Head) and one hundred and ninety-two promoted from the placeholder roster on 2026-11-20 (see "Added
 2026-11-20" at the end). This is the
 research input for the spec files in `racquets/`.
 
@@ -234,3 +234,29 @@ Caveats:
   differ only at the tip and shaft).
 - Not added: colourways (for example the white ATS Tour 98) and anything whose Tennis Warehouse
   photo showed a different generation than its record.
+
+### Fifth batch (70 more, same day; asked for 100)
+
+Eight new frames and 62 variants (the wall is now 62 bays, 207 racquets in all). 70 is every
+remaining placeholder that fits the library's rules; the other ~80 adult records are limited or
+special editions (Rafa, Wimbledon, Spectra, Smiley, Hydrogen, US/Wimbledon flag cosmetics, pink
+and white editions), records with no specs, older generations whose Tennis Warehouse photo does
+not match the record, or racquets shorter than the 26 in the schema allows (juniors at 19 to 25
+in). See the rule at the top: limited and event editions stay out.
+
+New frames: Babolat Boost Aero, Boost Strike, Strike Evo; Prince O3 Legacy 110 (O-ports), Premier
+105; Head Ti.S6; Yonex EZONE Ace; Wilson Hyper Hammer 5.3 Stretch OS. Each was painted from a
+viewed photo; the Hyper Hammer photo is small and the gold trim is approximate.
+
+Variants: Head Boom, Extreme (2026 and 2024), Gravity, Speed L/UL/XL sizes and PWR 115; Babolat
+Pure Aero (Lite, Super Lite, 2018 Team/100/Plus), Pure Drive Gen10 (Team, Lite, 107, 110, Plus),
+Pure Strike 2019 (100, 18x20, Team, 103) and Lite, Evo Aero Lite, Evo Drive (Lite, Tour, 115),
+Evoke 102; Prince Tour 275g, Ripcord 265g, Phantom 290g; Wilson Blade (100L, 100UL, Pro 98
+18x20, Pro 100), Defyer 100UL, Ultra 100UL; Yonex EZONE 100 SL and 100L, Muse 100L and 100SL,
+VCORE 100L and 100D, Percept (97H, 97L, 100D, 100L, Game); Solinco Whiteout 290 and 305 XTD
+18x20; and ten 26-inch juniors (Pure Aero, Pure Drive, Pure Strike, Boom, Speed, Radical,
+Ripcord, Ripstick, Blade, EZONE). A junior reuses its adult frame's geometry, paint and beam where
+the record gives no beam, at 26 in; real junior frames are lighter and thinner.
+
+Skipped on purpose: Graphene XT Speed S (the photo is a tiny, older racquet), pink and white
+cosmetics of existing frames, and records with `null` specs.

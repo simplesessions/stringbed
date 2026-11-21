@@ -146,6 +146,27 @@
       "sources": [
         "https://www.tennis-warehouse.com/Prince_Ripstick_100_280g/descpageRCTWABG-25RIPL.html"
       ]
+    },
+    {
+      "id": "prince-o3-ripstick-26-junior",
+      "label": "Junior 26",
+      "model": "O3 Ripstick 26\" Junior",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 26,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          27,
+          25.5,
+          22
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Prince_O3_Ripstick_26_Junior/descpageRCPRINCE-PRIPSJ26.html"
+      ]
     }
   ]
 }

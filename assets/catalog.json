@@ -10,6 +10,46 @@
   ],
   "racquets": [
     {
+      "id": "babolat-boost-aero-2026",
+      "brand": "Babolat",
+      "line": "Boost Aero",
+      "model": "Boost Aero",
+      "generation": "2026",
+      "year": 2026,
+      "specs": {
+        "headSizeSqIn": 102,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "swatch": "#3a3f45",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-boost-aero-2026.glb",
+          "bytes": 115456,
+          "triangles": 4372
+        }
+      },
+      "colourway": "Grey/Fluorescent yellow"
+    },
+    {
       "id": "babolat-boost-drive-2025",
       "brand": "Babolat",
       "line": "Boost Drive",
@@ -50,6 +90,46 @@
       "colourway": "Black/Orange/White"
     },
     {
+      "id": "babolat-boost-strike-current",
+      "brand": "Babolat",
+      "line": "Boost Strike",
+      "model": "Boost Strike",
+      "generation": "Boost",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 102,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "swatch": "#2b2a2e",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-boost-strike-current.glb",
+          "bytes": 131024,
+          "triangles": 4248
+        }
+      },
+      "colourway": "Grey/Red"
+    },
+    {
       "id": "babolat-evo-aero-2026",
       "brand": "Babolat",
       "line": "Evo Aero",
@@ -87,7 +167,60 @@
           "triangles": 4372
         }
       },
+      "variantLabel": "Evo Aero",
+      "variants": [
+        {
+          "id": "babolat-evo-aero-2026",
+          "label": "Evo Aero"
+        },
+        {
+          "id": "babolat-evo-aero-lite-2026",
+          "label": "Lite"
+        }
+      ],
       "colourway": "Grey/Fluorescent yellow"
+    },
+    {
+      "id": "babolat-evo-aero-lite-2026",
+      "brand": "Babolat",
+      "line": "Evo Aero",
+      "model": "Evo Aero Lite",
+      "generation": "Gen2",
+      "year": 2026,
+      "specs": {
+        "headSizeSqIn": 102,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 260
+      },
+      "swatch": "#6c7e79",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-evo-aero-lite-2026.glb",
+          "bytes": 115464,
+          "triangles": 4372
+        }
+      },
+      "variantLabel": "Lite",
+      "variantOf": "babolat-evo-aero-2026"
     },
     {
       "id": "babolat-evo-drive-2025",
@@ -127,7 +260,151 @@
           "triangles": 4980
         }
       },
+      "variantLabel": "Evo Drive",
+      "variants": [
+        {
+          "id": "babolat-evo-drive-2025",
+          "label": "Evo Drive"
+        },
+        {
+          "id": "babolat-evo-drive-lite-2025",
+          "label": "Lite"
+        },
+        {
+          "id": "babolat-evo-drive-tour-2025",
+          "label": "Tour"
+        },
+        {
+          "id": "babolat-evo-drive-115",
+          "label": "115"
+        }
+      ],
       "colourway": "Blue"
+    },
+    {
+      "id": "babolat-evo-drive-115",
+      "brand": "Babolat",
+      "line": "Evo Drive",
+      "model": "Evo Drive 115",
+      "generation": "Gen2",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 115,
+        "lengthIn": 27.6,
+        "stringPattern": [
+          16,
+          17
+        ],
+        "beamMm": [
+          25,
+          28,
+          24
+        ]
+      },
+      "swatch": "#4fa9a2",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-evo-drive-115.glb",
+          "bytes": 120268,
+          "triangles": 4964
+        }
+      },
+      "variantLabel": "115",
+      "variantOf": "babolat-evo-drive-2025"
+    },
+    {
+      "id": "babolat-evo-drive-lite-2025",
+      "brand": "Babolat",
+      "line": "Evo Drive",
+      "model": "Evo Drive Lite",
+      "generation": "Gen2",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 104,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          17
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 255
+      },
+      "swatch": "#4fa9a2",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-evo-drive-lite-2025.glb",
+          "bytes": 120280,
+          "triangles": 4964
+        }
+      },
+      "variantLabel": "Lite",
+      "variantOf": "babolat-evo-drive-2025"
+    },
+    {
+      "id": "babolat-evo-drive-tour-2025",
+      "brand": "Babolat",
+      "line": "Evo Drive",
+      "model": "Evo Drive Tour",
+      "generation": "Gen2",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 102,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 285
+      },
+      "swatch": "#4fa9a2",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-evo-drive-tour-2025.glb",
+          "bytes": 121140,
+          "triangles": 4980
+        }
+      },
+      "variantLabel": "Tour",
+      "variantOf": "babolat-evo-drive-2025"
     },
     {
       "id": "babolat-evo-strike-gen2",
@@ -170,6 +447,47 @@
       "colourway": "White/Red/Grey"
     },
     {
+      "id": "babolat-evoke-102",
+      "brand": "Babolat",
+      "line": "Evoke",
+      "model": "Evoke 102",
+      "generation": "Evoke",
+      "year": 2023,
+      "specs": {
+        "headSizeSqIn": 102,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          22,
+          22,
+          25
+        ]
+      },
+      "swatch": "#1c1c20",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-evoke-102.glb",
+          "bytes": 110888,
+          "triangles": 4468
+        }
+      },
+      "variantLabel": "102",
+      "variantOf": "babolat-evoke-105"
+    },
+    {
       "id": "babolat-evoke-105",
       "brand": "Babolat",
       "line": "Evoke",
@@ -207,6 +525,17 @@
           "triangles": 4468
         }
       },
+      "variantLabel": "105",
+      "variants": [
+        {
+          "id": "babolat-evoke-105",
+          "label": "105"
+        },
+        {
+          "id": "babolat-evoke-102",
+          "label": "102"
+        }
+      ],
       "colourway": "Black/Red"
     },
     {
@@ -261,8 +590,61 @@
         {
           "id": "babolat-pure-aero-team-2026",
           "label": "Team"
+        },
+        {
+          "id": "babolat-pure-aero-lite-2026",
+          "label": "Lite"
+        },
+        {
+          "id": "babolat-pure-aero-super-lite-2026",
+          "label": "Super Lite"
+        },
+        {
+          "id": "babolat-pure-aero-junior-26-2026",
+          "label": "Junior 26"
         }
       ]
+    },
+    {
+      "id": "babolat-pure-aero-100-2018",
+      "brand": "Babolat",
+      "line": "Pure Aero",
+      "model": "Pure Aero 100",
+      "generation": "2019",
+      "year": 2019,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "swatch": "#f2e82a",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-pure-aero-100-2018.glb",
+          "bytes": 123824,
+          "triangles": 4756
+        }
+      },
+      "variantLabel": "100",
+      "variantOf": "babolat-pure-aero-tour-2019"
     },
     {
       "id": "babolat-pure-aero-100-2022",
@@ -387,6 +769,215 @@
       "variantLabel": "98",
       "variantOf": "babolat-pure-aero-100",
       "colourway": "Grey/Yellow"
+    },
+    {
+      "id": "babolat-pure-aero-junior-26-2026",
+      "brand": "Babolat",
+      "line": "Pure Aero",
+      "model": "Pure Aero Junior 26",
+      "generation": "2026",
+      "year": 2026,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 26,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 250
+      },
+      "swatch": "#55626a",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-pure-aero-junior-26-2026.glb",
+          "bytes": 126620,
+          "triangles": 4884
+        }
+      },
+      "variantLabel": "Junior 26",
+      "variantOf": "babolat-pure-aero-100"
+    },
+    {
+      "id": "babolat-pure-aero-lite-2026",
+      "brand": "Babolat",
+      "line": "Pure Aero",
+      "model": "Pure Aero Lite",
+      "generation": "2026",
+      "year": 2026,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 270
+      },
+      "swatch": "#55626a",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-pure-aero-lite-2026.glb",
+          "bytes": 126608,
+          "triangles": 4884
+        }
+      },
+      "variantLabel": "Lite",
+      "variantOf": "babolat-pure-aero-100"
+    },
+    {
+      "id": "babolat-pure-aero-plus-2019gen",
+      "brand": "Babolat",
+      "line": "Pure Aero",
+      "model": "Pure Aero Plus",
+      "generation": "2019",
+      "year": 2019,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27.5,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "swatch": "#f2e82a",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-pure-aero-plus-2019gen.glb",
+          "bytes": 123828,
+          "triangles": 4756
+        }
+      },
+      "variantLabel": "Plus",
+      "variantOf": "babolat-pure-aero-tour-2019"
+    },
+    {
+      "id": "babolat-pure-aero-super-lite-2026",
+      "brand": "Babolat",
+      "line": "Pure Aero",
+      "model": "Pure Aero Super Lite",
+      "generation": "2026",
+      "year": 2026,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 255
+      },
+      "swatch": "#55626a",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-pure-aero-super-lite-2026.glb",
+          "bytes": 126620,
+          "triangles": 4884
+        }
+      },
+      "variantLabel": "Super Lite",
+      "variantOf": "babolat-pure-aero-100"
+    },
+    {
+      "id": "babolat-pure-aero-team-2018",
+      "brand": "Babolat",
+      "line": "Pure Aero",
+      "model": "Pure Aero Team",
+      "generation": "2019",
+      "year": 2019,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 286
+      },
+      "swatch": "#f2e82a",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-pure-aero-team-2018.glb",
+          "bytes": 123828,
+          "triangles": 4756
+        }
+      },
+      "variantLabel": "Team",
+      "variantOf": "babolat-pure-aero-tour-2019"
     },
     {
       "id": "babolat-pure-aero-team-2022",
@@ -519,6 +1110,25 @@
           "triangles": 4756
         }
       },
+      "variantLabel": "Tour",
+      "variants": [
+        {
+          "id": "babolat-pure-aero-tour-2019",
+          "label": "Tour"
+        },
+        {
+          "id": "babolat-pure-aero-100-2018",
+          "label": "100"
+        },
+        {
+          "id": "babolat-pure-aero-team-2018",
+          "label": "Team"
+        },
+        {
+          "id": "babolat-pure-aero-plus-2019gen",
+          "label": "Plus"
+        }
+      ],
       "colourway": "Yellow/Black"
     },
     {
@@ -581,6 +1191,10 @@
         {
           "id": "babolat-pure-drive-107-2025",
           "label": "107"
+        },
+        {
+          "id": "babolat-pure-drive-junior-26-2025",
+          "label": "Junior 26"
         }
       ]
     },
@@ -627,6 +1241,47 @@
       "variantOf": "babolat-pure-drive-tour-2021"
     },
     {
+      "id": "babolat-pure-drive-107-2021",
+      "brand": "Babolat",
+      "line": "Pure Drive",
+      "model": "Pure Drive 107",
+      "generation": "Gen10",
+      "year": 2021,
+      "specs": {
+        "headSizeSqIn": 107,
+        "lengthIn": 27.2,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "swatch": "#2a86e2",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-pure-drive-107-2021.glb",
+          "bytes": 121152,
+          "triangles": 4980
+        }
+      },
+      "variantLabel": "107",
+      "variantOf": "babolat-pure-drive-tour-2021"
+    },
+    {
       "id": "babolat-pure-drive-107-2025",
       "brand": "Babolat",
       "line": "Pure Drive",
@@ -667,6 +1322,47 @@
       },
       "variantLabel": "107",
       "variantOf": "babolat-pure-drive-100"
+    },
+    {
+      "id": "babolat-pure-drive-110-2021",
+      "brand": "Babolat",
+      "line": "Pure Drive",
+      "model": "Pure Drive 110",
+      "generation": "Gen10",
+      "year": 2021,
+      "specs": {
+        "headSizeSqIn": 110,
+        "lengthIn": 27.6,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          24,
+          26.5,
+          23.5
+        ]
+      },
+      "swatch": "#2a86e2",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-pure-drive-110-2021.glb",
+          "bytes": 121156,
+          "triangles": 4980
+        }
+      },
+      "variantLabel": "110",
+      "variantOf": "babolat-pure-drive-tour-2021"
     },
     {
       "id": "babolat-pure-drive-98-2025",
@@ -711,6 +1407,89 @@
       "colourway": "Blue"
     },
     {
+      "id": "babolat-pure-drive-junior-26-2025",
+      "brand": "Babolat",
+      "line": "Pure Drive",
+      "model": "Pure Drive Junior 26",
+      "generation": "Gen 11",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 26,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 250
+      },
+      "swatch": "#4aa3d6",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-pure-drive-junior-26-2025.glb",
+          "bytes": 121164,
+          "triangles": 4980
+        }
+      },
+      "variantLabel": "Junior 26",
+      "variantOf": "babolat-pure-drive-100"
+    },
+    {
+      "id": "babolat-pure-drive-lite-2021",
+      "brand": "Babolat",
+      "line": "Pure Drive",
+      "model": "Pure Drive Lite",
+      "generation": "Gen10",
+      "year": 2021,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "swatch": "#2a86e2",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-pure-drive-lite-2021.glb",
+          "bytes": 121156,
+          "triangles": 4980
+        }
+      },
+      "variantLabel": "Lite",
+      "variantOf": "babolat-pure-drive-tour-2021"
+    },
+    {
       "id": "babolat-pure-drive-lite-2025",
       "brand": "Babolat",
       "line": "Pure Drive",
@@ -751,6 +1530,88 @@
       },
       "variantLabel": "Lite",
       "variantOf": "babolat-pure-drive-100"
+    },
+    {
+      "id": "babolat-pure-drive-plus-2021",
+      "brand": "Babolat",
+      "line": "Pure Drive",
+      "model": "Pure Drive Plus",
+      "generation": "Gen10",
+      "year": 2021,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27.5,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "swatch": "#2a86e2",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-pure-drive-plus-2021.glb",
+          "bytes": 121156,
+          "triangles": 4980
+        }
+      },
+      "variantLabel": "Plus",
+      "variantOf": "babolat-pure-drive-tour-2021"
+    },
+    {
+      "id": "babolat-pure-drive-team-2021",
+      "brand": "Babolat",
+      "line": "Pure Drive",
+      "model": "Pure Drive Team",
+      "generation": "Gen10",
+      "year": 2021,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "swatch": "#2a86e2",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-pure-drive-team-2021.glb",
+          "bytes": 121156,
+          "triangles": 4980
+        }
+      },
+      "variantLabel": "Team",
+      "variantOf": "babolat-pure-drive-tour-2021"
     },
     {
       "id": "babolat-pure-drive-team-2025",
@@ -841,6 +1702,26 @@
         {
           "id": "babolat-pure-drive-100-2020",
           "label": "100"
+        },
+        {
+          "id": "babolat-pure-drive-team-2021",
+          "label": "Team"
+        },
+        {
+          "id": "babolat-pure-drive-lite-2021",
+          "label": "Lite"
+        },
+        {
+          "id": "babolat-pure-drive-107-2021",
+          "label": "107"
+        },
+        {
+          "id": "babolat-pure-drive-110-2021",
+          "label": "110"
+        },
+        {
+          "id": "babolat-pure-drive-plus-2021",
+          "label": "Plus"
         }
       ],
       "colourway": "Blue/Navy"
@@ -884,6 +1765,47 @@
         }
       },
       "colourway": "Anthracite/Blue"
+    },
+    {
+      "id": "babolat-pure-strike-100-2019",
+      "brand": "Babolat",
+      "line": "Pure Strike",
+      "model": "Pure Strike 100",
+      "generation": "3rd Gen",
+      "year": 2019,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          21,
+          23,
+          21
+        ]
+      },
+      "swatch": "#ecedee",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-pure-strike-100-2019.glb",
+          "bytes": 134476,
+          "triangles": 4376
+        }
+      },
+      "variantLabel": "100",
+      "variantOf": "babolat-pure-strike-tour-2019"
     },
     {
       "id": "babolat-pure-strike-100-2024",
@@ -968,6 +1890,47 @@
       },
       "variantLabel": "100 16x20",
       "variantOf": "babolat-pure-strike-98"
+    },
+    {
+      "id": "babolat-pure-strike-103-2022",
+      "brand": "Babolat",
+      "line": "Pure Strike",
+      "model": "Pure Strike 103",
+      "generation": "3rd Gen",
+      "year": 2019,
+      "specs": {
+        "headSizeSqIn": 103,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          21,
+          23,
+          21
+        ]
+      },
+      "swatch": "#ecedee",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-pure-strike-103-2022.glb",
+          "bytes": 134476,
+          "triangles": 4376
+        }
+      },
+      "variantLabel": "103",
+      "variantOf": "babolat-pure-strike-tour-2019"
     },
     {
       "id": "babolat-pure-strike-97-2024",
@@ -1075,8 +2038,57 @@
         {
           "id": "babolat-pure-strike-team-2024",
           "label": "Team"
+        },
+        {
+          "id": "babolat-pure-strike-lite-2024",
+          "label": "Lite"
+        },
+        {
+          "id": "babolat-pure-strike-junior-26-gen4",
+          "label": "Junior 26"
         }
       ]
+    },
+    {
+      "id": "babolat-pure-strike-98-18x20-2019",
+      "brand": "Babolat",
+      "line": "Pure Strike",
+      "model": "Pure Strike 98 18x20",
+      "generation": "3rd Gen",
+      "year": 2019,
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          18,
+          20
+        ],
+        "beamMm": [
+          21,
+          23,
+          21
+        ]
+      },
+      "swatch": "#ecedee",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-pure-strike-98-18x20-2019.glb",
+          "bytes": 135780,
+          "triangles": 4400
+        }
+      },
+      "variantLabel": "18x20",
+      "variantOf": "babolat-pure-strike-tour-2019"
     },
     {
       "id": "babolat-pure-strike-98-18x20-2024",
@@ -1119,6 +2131,131 @@
       },
       "variantLabel": "98 18x20",
       "variantOf": "babolat-pure-strike-98"
+    },
+    {
+      "id": "babolat-pure-strike-junior-26-gen4",
+      "brand": "Babolat",
+      "line": "Pure Strike",
+      "model": "Pure Strike Junior 26",
+      "generation": "Gen 4",
+      "year": 2024,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 26,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          21,
+          23,
+          21
+        ],
+        "unstrungWeightG": 250
+      },
+      "swatch": "#8a929b",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-pure-strike-junior-26-gen4.glb",
+          "bytes": 143160,
+          "triangles": 4696
+        }
+      },
+      "variantLabel": "Junior 26",
+      "variantOf": "babolat-pure-strike-98"
+    },
+    {
+      "id": "babolat-pure-strike-lite-2024",
+      "brand": "Babolat",
+      "line": "Pure Strike",
+      "model": "Pure Strike Lite",
+      "generation": "Gen 4",
+      "year": 2024,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          21,
+          23,
+          21
+        ],
+        "unstrungWeightG": 265
+      },
+      "swatch": "#8a929b",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-pure-strike-lite-2024.glb",
+          "bytes": 143148,
+          "triangles": 4696
+        }
+      },
+      "variantLabel": "Lite",
+      "variantOf": "babolat-pure-strike-98"
+    },
+    {
+      "id": "babolat-pure-strike-team-2019",
+      "brand": "Babolat",
+      "line": "Pure Strike",
+      "model": "Pure Strike Team",
+      "generation": "3rd Gen",
+      "year": 2019,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          21,
+          23,
+          21
+        ]
+      },
+      "swatch": "#ecedee",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-pure-strike-team-2019.glb",
+          "bytes": 134480,
+          "triangles": 4376
+        }
+      },
+      "variantLabel": "Team",
+      "variantOf": "babolat-pure-strike-tour-2019"
     },
     {
       "id": "babolat-pure-strike-team-2024",
@@ -1200,6 +2337,29 @@
           "triangles": 4376
         }
       },
+      "variantLabel": "Tour",
+      "variants": [
+        {
+          "id": "babolat-pure-strike-tour-2019",
+          "label": "Tour"
+        },
+        {
+          "id": "babolat-pure-strike-100-2019",
+          "label": "100"
+        },
+        {
+          "id": "babolat-pure-strike-98-18x20-2019",
+          "label": "18x20"
+        },
+        {
+          "id": "babolat-pure-strike-team-2019",
+          "label": "Team"
+        },
+        {
+          "id": "babolat-pure-strike-103-2022",
+          "label": "103"
+        }
+      ],
       "colourway": "White/Coral"
     },
     {
@@ -1243,6 +2403,46 @@
       "colourway": "Black/Orange"
     },
     {
+      "id": "babolat-pure-strike-evo",
+      "brand": "Babolat",
+      "line": "Pure Strike",
+      "model": "Strike Evo",
+      "generation": "Evo",
+      "year": 2023,
+      "specs": {
+        "headSizeSqIn": 102,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          25,
+          23
+        ]
+      },
+      "swatch": "#eeefef",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-pure-strike-evo.glb",
+          "bytes": 134484,
+          "triangles": 4376
+        }
+      },
+      "colourway": "White/Coral"
+    },
+    {
       "id": "head-boom-elite-2026",
       "brand": "Head",
       "line": "Boom",
@@ -1281,6 +2481,47 @@
         }
       },
       "variantLabel": "Elite",
+      "variantOf": "head-boom-mp-2026"
+    },
+    {
+      "id": "head-boom-junior-26-2026",
+      "brand": "Head",
+      "line": "Boom",
+      "model": "Boom Junior 26",
+      "generation": "2026",
+      "year": 2026,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 26,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          24,
+          22
+        ]
+      },
+      "swatch": "#3cb6e8",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/head-boom-junior-26-2026.glb",
+          "bytes": 110896,
+          "triangles": 4468
+        }
+      },
+      "variantLabel": "Junior 26",
       "variantOf": "head-boom-mp-2026"
     },
     {
@@ -1338,9 +2579,103 @@
         {
           "id": "head-boom-elite-2026",
           "label": "Elite"
+        },
+        {
+          "id": "head-boom-mp-l-2026",
+          "label": "MP L"
+        },
+        {
+          "id": "head-boom-mp-ul-2026",
+          "label": "MP UL"
+        },
+        {
+          "id": "head-boom-junior-26-2026",
+          "label": "Junior 26"
         }
       ],
       "colourway": "Light blue/Navy"
+    },
+    {
+      "id": "head-boom-mp-l-2026",
+      "brand": "Head",
+      "line": "Boom",
+      "model": "Boom MP L",
+      "generation": "2026",
+      "year": 2026,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          24,
+          22
+        ]
+      },
+      "swatch": "#3cb6e8",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/head-boom-mp-l-2026.glb",
+          "bytes": 110884,
+          "triangles": 4468
+        }
+      },
+      "variantLabel": "MP L",
+      "variantOf": "head-boom-mp-2026"
+    },
+    {
+      "id": "head-boom-mp-ul-2026",
+      "brand": "Head",
+      "line": "Boom",
+      "model": "Boom MP UL",
+      "generation": "2026",
+      "year": 2026,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          24,
+          22
+        ]
+      },
+      "swatch": "#3cb6e8",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/head-boom-mp-ul-2026.glb",
+          "bytes": 110888,
+          "triangles": 4468
+        }
+      },
+      "variantLabel": "MP UL",
+      "variantOf": "head-boom-mp-2026"
     },
     {
       "id": "head-boom-pro-2024",
@@ -1556,6 +2891,10 @@
         {
           "id": "head-extreme-team-2024",
           "label": "Team"
+        },
+        {
+          "id": "head-extreme-mp-l-2024",
+          "label": "MP L"
         }
       ],
       "colourway": "Sage/Lime"
@@ -1615,9 +2954,185 @@
         {
           "id": "head-extreme-elite-2026",
           "label": "Elite"
+        },
+        {
+          "id": "head-extreme-mp-l-2026",
+          "label": "MP L"
+        },
+        {
+          "id": "head-extreme-mp-ul-2026",
+          "label": "MP UL"
+        },
+        {
+          "id": "head-extreme-mp-xl",
+          "label": "MP XL"
         }
       ],
       "colourway": "Lime/Black"
+    },
+    {
+      "id": "head-extreme-mp-l-2024",
+      "brand": "Head",
+      "line": "Extreme",
+      "model": "Extreme MP L",
+      "generation": "2024",
+      "year": 2024,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          21
+        ]
+      },
+      "swatch": "#d2e1c2",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/head-extreme-mp-l-2024.glb",
+          "bytes": 110876,
+          "triangles": 4468
+        }
+      },
+      "variantLabel": "MP L",
+      "variantOf": "head-extreme-mp-2024"
+    },
+    {
+      "id": "head-extreme-mp-l-2026",
+      "brand": "Head",
+      "line": "Extreme",
+      "model": "Extreme MP L",
+      "generation": "2026",
+      "year": 2026,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          21
+        ]
+      },
+      "swatch": "#a6e63f",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/head-extreme-mp-l-2026.glb",
+          "bytes": 112344,
+          "triangles": 4540
+        }
+      },
+      "variantLabel": "MP L",
+      "variantOf": "head-extreme-mp-2026"
+    },
+    {
+      "id": "head-extreme-mp-ul-2026",
+      "brand": "Head",
+      "line": "Extreme",
+      "model": "Extreme MP UL",
+      "generation": "2026",
+      "year": 2026,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          21
+        ]
+      },
+      "swatch": "#a6e63f",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/head-extreme-mp-ul-2026.glb",
+          "bytes": 112348,
+          "triangles": 4540
+        }
+      },
+      "variantLabel": "MP UL",
+      "variantOf": "head-extreme-mp-2026"
+    },
+    {
+      "id": "head-extreme-mp-xl",
+      "brand": "Head",
+      "line": "Extreme",
+      "model": "Extreme MP XL",
+      "generation": "2026",
+      "year": 2026,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27.5,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          21
+        ]
+      },
+      "swatch": "#a6e63f",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/head-extreme-mp-xl.glb",
+          "bytes": 112340,
+          "triangles": 4540
+        }
+      },
+      "variantLabel": "MP XL",
+      "variantOf": "head-extreme-mp-2026"
     },
     {
       "id": "head-extreme-pro-2024",
@@ -1878,9 +3393,54 @@
         {
           "id": "head-gravity-team-2025",
           "label": "Team"
+        },
+        {
+          "id": "head-gravity-mp-l-2025",
+          "label": "MP L"
         }
       ],
       "colourway": "Blue/Black"
+    },
+    {
+      "id": "head-gravity-mp-l-2025",
+      "brand": "Head",
+      "line": "Gravity",
+      "model": "Gravity MP L",
+      "generation": "2025",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          20
+        ],
+        "beamMm": [
+          22,
+          22,
+          22
+        ]
+      },
+      "swatch": "#15181c",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/head-gravity-mp-l-2025.glb",
+          "bytes": 111340,
+          "triangles": 4476
+        }
+      },
+      "variantLabel": "MP L",
+      "variantOf": "head-gravity-mp-2025"
     },
     {
       "id": "head-gravity-pro-2025",
@@ -2045,7 +3605,59 @@
           "triangles": 4276
         }
       },
+      "variantLabel": "110",
+      "variants": [
+        {
+          "id": "head-pwr-110",
+          "label": "110"
+        },
+        {
+          "id": "head-pwr-115-2026",
+          "label": "115"
+        }
+      ],
       "colourway": "White"
+    },
+    {
+      "id": "head-pwr-115-2026",
+      "brand": "Head",
+      "line": "PWR",
+      "model": "PWR 115",
+      "generation": "PWR",
+      "year": 2026,
+      "specs": {
+        "headSizeSqIn": 115,
+        "lengthIn": 27.7,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          29,
+          29,
+          29
+        ]
+      },
+      "swatch": "#eef0ee",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/head-pwr-115-2026.glb",
+          "bytes": 107020,
+          "triangles": 4276
+        }
+      },
+      "variantLabel": "115",
+      "variantOf": "head-pwr-110"
     },
     {
       "id": "head-prestige-mp-l",
@@ -2226,6 +3838,47 @@
       "variantOf": "head-radical-mp-2025"
     },
     {
+      "id": "head-radical-junior-26-2025",
+      "brand": "Head",
+      "line": "Radical",
+      "model": "Radical Junior 26",
+      "generation": "2025",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 26,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          20,
+          23,
+          21
+        ]
+      },
+      "swatch": "#f26a4c",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/head-radical-junior-26-2025.glb",
+          "bytes": 117296,
+          "triangles": 4788
+        }
+      },
+      "variantLabel": "Junior 26",
+      "variantOf": "head-radical-mp-2025"
+    },
+    {
       "id": "head-radical-mp-2025",
       "brand": "Head",
       "line": "Radical",
@@ -2280,6 +3933,10 @@
         {
           "id": "head-radical-team-2025",
           "label": "Team"
+        },
+        {
+          "id": "head-radical-junior-26-2025",
+          "label": "Junior 26"
         }
       ],
       "colourway": "Orange"
@@ -2408,6 +4065,47 @@
       "variantOf": "head-speed-mp-2026"
     },
     {
+      "id": "head-speed-junior-26-2026",
+      "brand": "Head",
+      "line": "Speed",
+      "model": "Speed Junior 26",
+      "generation": "2026",
+      "year": 2026,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 26,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          23,
+          23
+        ]
+      },
+      "swatch": "#2d3134",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/head-speed-junior-26-2026.glb",
+          "bytes": 113456,
+          "triangles": 4596
+        }
+      },
+      "variantLabel": "Junior 26",
+      "variantOf": "head-speed-mp-2026"
+    },
+    {
       "id": "head-speed-mp-2024",
       "brand": "Head",
       "line": "Speed",
@@ -2518,8 +4216,102 @@
         {
           "id": "head-speed-team-2026",
           "label": "Team"
+        },
+        {
+          "id": "head-speed-mp-l-2026",
+          "label": "MP L"
+        },
+        {
+          "id": "head-speed-mp-ul-2026",
+          "label": "MP UL"
+        },
+        {
+          "id": "head-speed-junior-26-2026",
+          "label": "Junior 26"
         }
       ]
+    },
+    {
+      "id": "head-speed-mp-l-2026",
+      "brand": "Head",
+      "line": "Speed",
+      "model": "Speed MP L",
+      "generation": "2026",
+      "year": 2026,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          23,
+          23
+        ]
+      },
+      "swatch": "#2d3134",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/head-speed-mp-l-2026.glb",
+          "bytes": 113444,
+          "triangles": 4596
+        }
+      },
+      "variantLabel": "MP L",
+      "variantOf": "head-speed-mp-2026"
+    },
+    {
+      "id": "head-speed-mp-ul-2026",
+      "brand": "Head",
+      "line": "Speed",
+      "model": "Speed MP UL",
+      "generation": "2026",
+      "year": 2026,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          23,
+          23
+        ]
+      },
+      "swatch": "#2d3134",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/head-speed-mp-ul-2026.glb",
+          "bytes": 113448,
+          "triangles": 4596
+        }
+      },
+      "variantLabel": "MP UL",
+      "variantOf": "head-speed-mp-2026"
     },
     {
       "id": "head-speed-pro-2024",
@@ -2728,6 +4520,46 @@
       "colourway": "Silver"
     },
     {
+      "id": "head-ti-s6",
+      "brand": "Head",
+      "line": "Ti",
+      "model": "Ti.S6",
+      "generation": "S6",
+      "year": 2024,
+      "specs": {
+        "headSizeSqIn": 115,
+        "lengthIn": 27.75,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          27,
+          28,
+          27
+        ]
+      },
+      "swatch": "#3b3f44",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/head-ti-s6.glb",
+          "bytes": 108312,
+          "triangles": 4340
+        }
+      },
+      "colourway": "Silver/Charcoal"
+    },
+    {
       "id": "prince-ats-textreme-tour-100-290-carbon",
       "brand": "Prince",
       "line": "ATS Textreme Tour",
@@ -2820,6 +4652,46 @@
       "colourway": "Carbon"
     },
     {
+      "id": "prince-o3-legacy-110",
+      "brand": "Prince",
+      "line": "O3 Legacy",
+      "model": "O3 Legacy 110",
+      "generation": "Legacy",
+      "year": 2024,
+      "specs": {
+        "headSizeSqIn": 110,
+        "lengthIn": 27.25,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          25,
+          27,
+          26
+        ]
+      },
+      "swatch": "#24405e",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/prince-o3-legacy-110.glb",
+          "bytes": 116564,
+          "triangles": 4640
+        }
+      },
+      "colourway": "Blue"
+    },
+    {
       "id": "prince-o3-phantom-100x",
       "brand": "Prince",
       "line": "Phantom",
@@ -2858,6 +4730,47 @@
           "triangles": 5148
         }
       }
+    },
+    {
+      "id": "prince-o3-ripstick-26-junior",
+      "brand": "Prince",
+      "line": "Ripstick",
+      "model": "O3 Ripstick 26\" Junior",
+      "generation": "2025",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 26,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          27,
+          25.5,
+          22
+        ]
+      },
+      "swatch": "#dd3a40",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/prince-o3-ripstick-26-junior.glb",
+          "bytes": 124480,
+          "triangles": 5024
+        }
+      },
+      "variantLabel": "Junior 26",
+      "variantOf": "prince-ripstick-100"
     },
     {
       "id": "prince-phantom-100p-2024",
@@ -2942,6 +4855,47 @@
       "variantOf": "prince-phantom-100x-305g-2024"
     },
     {
+      "id": "prince-phantom-100x-290g-2024",
+      "brand": "Prince",
+      "line": "Phantom",
+      "model": "Phantom 100X 290g",
+      "generation": "2024",
+      "year": 2024,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          18
+        ],
+        "beamMm": [
+          22,
+          20.5,
+          18
+        ]
+      },
+      "swatch": "#66783a",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/prince-phantom-100x-290g-2024.glb",
+          "bytes": 140980,
+          "triangles": 4624
+        }
+      },
+      "variantLabel": "100X 290g",
+      "variantOf": "prince-phantom-100x-305g-2024"
+    },
+    {
       "id": "prince-phantom-100x-305g-2024",
       "brand": "Prince",
       "line": "Phantom",
@@ -2996,6 +4950,10 @@
         {
           "id": "prince-phantom-100x-18x20-2024",
           "label": "100X 18x20"
+        },
+        {
+          "id": "prince-phantom-100x-290g-2024",
+          "label": "100X 290g"
         }
       ],
       "colourway": "Olive green"
@@ -3042,6 +5000,46 @@
       "variantOf": "prince-phantom-100x-305g-2024"
     },
     {
+      "id": "prince-premier-105",
+      "brand": "Prince",
+      "line": "Premier",
+      "model": "Premier 105",
+      "generation": "1st gen",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 105,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          18
+        ],
+        "beamMm": [
+          23,
+          24,
+          24
+        ]
+      },
+      "swatch": "#8a1626",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/prince-premier-105.glb",
+          "bytes": 107888,
+          "triangles": 4332
+        }
+      },
+      "colourway": "Red"
+    },
+    {
       "id": "prince-premier-110",
       "brand": "Prince",
       "line": "Premier",
@@ -3080,6 +5078,47 @@
         }
       },
       "colourway": "Blue"
+    },
+    {
+      "id": "prince-ripcord-100-265g-2025",
+      "brand": "Prince",
+      "line": "Ripcord",
+      "model": "Ripcord 100 265g",
+      "generation": "2025",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          27,
+          25,
+          22
+        ]
+      },
+      "swatch": "#1fa2ec",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/prince-ripcord-100-265g-2025.glb",
+          "bytes": 114744,
+          "triangles": 4660
+        }
+      },
+      "variantLabel": "100 265g",
+      "variantOf": "prince-ripcord-100-280g-2025"
     },
     {
       "id": "prince-ripcord-100-280g-2025",
@@ -3132,6 +5171,14 @@
         {
           "id": "prince-ripcord-100-300g-2025",
           "label": "100 300g"
+        },
+        {
+          "id": "prince-ripcord-100-265g-2025",
+          "label": "100 265g"
+        },
+        {
+          "id": "prince-ripcord-26-junior",
+          "label": "Junior 26"
         }
       ],
       "colourway": "Blue"
@@ -3175,6 +5222,47 @@
         }
       },
       "variantLabel": "100 300g",
+      "variantOf": "prince-ripcord-100-280g-2025"
+    },
+    {
+      "id": "prince-ripcord-26-junior",
+      "brand": "Prince",
+      "line": "Ripcord",
+      "model": "Ripcord 26\" Junior",
+      "generation": "2025",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 26,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          27,
+          25,
+          22
+        ]
+      },
+      "swatch": "#1fa2ec",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/prince-ripcord-26-junior.glb",
+          "bytes": 114736,
+          "triangles": 4660
+        }
+      },
+      "variantLabel": "Junior 26",
       "variantOf": "prince-ripcord-100-280g-2025"
     },
     {
@@ -3270,6 +5358,10 @@
         {
           "id": "prince-ripstick-100-280g-2025",
           "label": "100 280g"
+        },
+        {
+          "id": "prince-o3-ripstick-26-junior",
+          "label": "Junior 26"
         }
       ]
     },
@@ -3357,6 +5449,47 @@
       "colourway": "Red"
     },
     {
+      "id": "prince-tour-100-275g-2026",
+      "brand": "Prince",
+      "line": "Tour",
+      "model": "Tour 100 275g",
+      "generation": "2026",
+      "year": 2026,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          18
+        ],
+        "beamMm": [
+          24,
+          25,
+          22
+        ]
+      },
+      "swatch": "#141416",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/prince-tour-100-275g-2026.glb",
+          "bytes": 132348,
+          "triangles": 4304
+        }
+      },
+      "variantLabel": "100 275g",
+      "variantOf": "prince-tour-100-290g"
+    },
+    {
       "id": "prince-tour-100-290g",
       "brand": "Prince",
       "line": "Tour",
@@ -3412,6 +5545,10 @@
         {
           "id": "prince-tour-100p-2026",
           "label": "100P"
+        },
+        {
+          "id": "prince-tour-100-275g-2026",
+          "label": "100 275g"
         }
       ]
     },
@@ -3896,8 +6033,58 @@
         {
           "id": "solinco-whiteout-v2-305-xtd-2025",
           "label": "305 XTD"
+        },
+        {
+          "id": "solinco-whiteout-v2-290-2025",
+          "label": "290"
+        },
+        {
+          "id": "solinco-whiteout-v2-305-xtd-18x20-2025",
+          "label": "305 XTD 18x20"
         }
       ]
+    },
+    {
+      "id": "solinco-whiteout-v2-290-2025",
+      "brand": "Solinco",
+      "line": "Whiteout",
+      "model": "Whiteout V2 290",
+      "generation": "V2",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          21.7,
+          21.7,
+          21.7
+        ],
+        "unstrungWeightG": 290
+      },
+      "swatch": "#f3f3f1",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/solinco-whiteout-v2-290-2025.glb",
+          "bytes": 131044,
+          "triangles": 4248
+        }
+      },
+      "variantLabel": "290",
+      "variantOf": "solinco-whiteout-v2-305"
     },
     {
       "id": "solinco-whiteout-v2-305-18x20-2025",
@@ -3984,6 +6171,47 @@
       "variantOf": "solinco-whiteout-v2-305"
     },
     {
+      "id": "solinco-whiteout-v2-305-xtd-18x20-2025",
+      "brand": "Solinco",
+      "line": "Whiteout",
+      "model": "Whiteout V2 305 XTD 18x20",
+      "generation": "V2",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27.5,
+        "stringPattern": [
+          18,
+          20
+        ],
+        "beamMm": [
+          21.7,
+          21.7,
+          21.7
+        ]
+      },
+      "swatch": "#f3f3f1",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/solinco-whiteout-v2-305-xtd-18x20-2025.glb",
+          "bytes": 132364,
+          "triangles": 4272
+        }
+      },
+      "variantLabel": "305 XTD 18x20",
+      "variantOf": "solinco-whiteout-v2-305"
+    },
+    {
       "id": "wilson-blade-100-v10-2026",
       "brand": "Wilson",
       "line": "Blade",
@@ -4026,6 +6254,90 @@
       "variantOf": "wilson-blade-98-v10"
     },
     {
+      "id": "wilson-blade-100l-v10-2026",
+      "brand": "Wilson",
+      "line": "Blade",
+      "model": "Blade 100L",
+      "generation": "v10",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          22,
+          22,
+          22
+        ],
+        "unstrungWeightG": 285
+      },
+      "swatch": "#2e8c66",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/wilson-blade-100l-v10-2026.glb",
+          "bytes": 132768,
+          "triangles": 4312
+        }
+      },
+      "variantLabel": "100L",
+      "variantOf": "wilson-blade-98-v10"
+    },
+    {
+      "id": "wilson-blade-100ul-v10-2026",
+      "brand": "Wilson",
+      "line": "Blade",
+      "model": "Blade 100UL",
+      "generation": "v10",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          22,
+          22,
+          22
+        ],
+        "unstrungWeightG": 265
+      },
+      "swatch": "#2e8c66",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/wilson-blade-100ul-v10-2026.glb",
+          "bytes": 132768,
+          "triangles": 4312
+        }
+      },
+      "variantLabel": "100UL",
+      "variantOf": "wilson-blade-98-v10"
+    },
+    {
       "id": "wilson-blade-104-v10-2026",
       "brand": "Wilson",
       "line": "Blade",
@@ -4065,6 +6377,47 @@
         }
       },
       "variantLabel": "104",
+      "variantOf": "wilson-blade-98-v10"
+    },
+    {
+      "id": "wilson-blade-26-v10-2026",
+      "brand": "Wilson",
+      "line": "Blade",
+      "model": "Blade 26\" Junior",
+      "generation": "v10",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 26,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          21.5,
+          21.5,
+          20.5
+        ]
+      },
+      "swatch": "#2e8c66",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/wilson-blade-26-v10-2026.glb",
+          "bytes": 132764,
+          "triangles": 4312
+        }
+      },
+      "variantLabel": "Junior 26",
       "variantOf": "wilson-blade-98-v10"
     },
     {
@@ -4127,6 +6480,26 @@
         {
           "id": "wilson-blade-104-v10-2026",
           "label": "104"
+        },
+        {
+          "id": "wilson-blade-100l-v10-2026",
+          "label": "100L"
+        },
+        {
+          "id": "wilson-blade-100ul-v10-2026",
+          "label": "100UL"
+        },
+        {
+          "id": "wilson-blade-pro-98-18x20-v10-2026",
+          "label": "Pro 98 18x20"
+        },
+        {
+          "id": "wilson-blade-pro-100-v10",
+          "label": "Pro 100"
+        },
+        {
+          "id": "wilson-blade-26-v10-2026",
+          "label": "Junior 26"
         }
       ]
     },
@@ -4213,6 +6586,48 @@
       "colourway": "Green"
     },
     {
+      "id": "wilson-blade-pro-100-v10",
+      "brand": "Wilson",
+      "line": "Blade",
+      "model": "Blade Pro 100",
+      "generation": "v10",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27.25,
+        "stringPattern": [
+          16,
+          20
+        ],
+        "beamMm": [
+          23,
+          23,
+          23
+        ],
+        "unstrungWeightG": 295
+      },
+      "swatch": "#2e8c66",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/wilson-blade-pro-100-v10.glb",
+          "bytes": 133192,
+          "triangles": 4320
+        }
+      },
+      "variantLabel": "Pro 100",
+      "variantOf": "wilson-blade-98-v10"
+    },
+    {
       "id": "wilson-blade-pro-98-16x19-v10-2026",
       "brand": "Wilson",
       "line": "Blade",
@@ -4253,6 +6668,48 @@
       "variantLabel": "Pro 98",
       "variantOf": "wilson-blade-98-v10",
       "colourway": "Green"
+    },
+    {
+      "id": "wilson-blade-pro-98-18x20-v10-2026",
+      "brand": "Wilson",
+      "line": "Blade",
+      "model": "Blade Pro 98 18x20",
+      "generation": "v10",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          18,
+          20
+        ],
+        "beamMm": [
+          21.5,
+          21.5,
+          21.5
+        ],
+        "unstrungWeightG": 305
+      },
+      "swatch": "#2e8c66",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/wilson-blade-pro-98-18x20-v10-2026.glb",
+          "bytes": 134084,
+          "triangles": 4336
+        }
+      },
+      "variantLabel": "Pro 98 18x20",
+      "variantOf": "wilson-blade-98-v10"
     },
     {
       "id": "wilson-burn-100ls-v6-2026",
@@ -4596,6 +7053,10 @@
         {
           "id": "wilson-defyer-100l",
           "label": "100L"
+        },
+        {
+          "id": "wilson-defyer-100ul",
+          "label": "100UL"
         }
       ],
       "colourway": "Red"
@@ -4642,6 +7103,47 @@
       "variantOf": "wilson-defyer-100"
     },
     {
+      "id": "wilson-defyer-100ul",
+      "brand": "Wilson",
+      "line": "Defyer",
+      "model": "Defyer 100UL",
+      "generation": "1st gen",
+      "year": 2026,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23.8,
+          25,
+          23
+        ]
+      },
+      "swatch": "#ee3b26",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/wilson-defyer-100ul.glb",
+          "bytes": 113452,
+          "triangles": 4596
+        }
+      },
+      "variantLabel": "100UL",
+      "variantOf": "wilson-defyer-100"
+    },
+    {
       "id": "wilson-defyer-98-pro",
       "brand": "Wilson",
       "line": "Defyer",
@@ -4681,6 +7183,46 @@
       },
       "variantLabel": "98 Pro",
       "variantOf": "wilson-defyer-100"
+    },
+    {
+      "id": "wilson-hyper-hammer-5-3-stretch-os",
+      "brand": "Wilson",
+      "line": "Hyper Hammer",
+      "model": "Hyper Hammer 5.3 Stretch OS",
+      "generation": "5.3",
+      "year": 2020,
+      "specs": {
+        "headSizeSqIn": 110,
+        "lengthIn": 27.5,
+        "stringPattern": [
+          16,
+          20
+        ],
+        "beamMm": [
+          28,
+          25,
+          25
+        ]
+      },
+      "swatch": "#2a2a2e",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/wilson-hyper-hammer-5-3-stretch-os.glb",
+          "bytes": 111364,
+          "triangles": 4476
+        }
+      },
+      "colourway": "Black/Gold"
     },
     {
       "id": "wilson-pro-staff-97-v14",
@@ -5014,6 +7556,10 @@
         {
           "id": "wilson-ultra-team-v5-2025",
           "label": "Team"
+        },
+        {
+          "id": "wilson-ultra-100ul-v5-2025",
+          "label": "100UL"
         }
       ],
       "colourway": "Blue"
@@ -5057,6 +7603,47 @@
         }
       },
       "variantLabel": "100L",
+      "variantOf": "wilson-ultra-100-v5-2025"
+    },
+    {
+      "id": "wilson-ultra-100ul-v5-2025",
+      "brand": "Wilson",
+      "line": "Ultra",
+      "model": "Ultra 100UL",
+      "generation": "v5",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          24,
+          26.5,
+          24.5
+        ]
+      },
+      "swatch": "#2f52dc",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/wilson-ultra-100ul-v5-2025.glb",
+          "bytes": 107056,
+          "triangles": 4276
+        }
+      },
+      "variantLabel": "100UL",
       "variantOf": "wilson-ultra-100-v5-2025"
     },
     {
@@ -5346,6 +7933,18 @@
         {
           "id": "yonex-ezone-98-plus-2025",
           "label": "98 Plus"
+        },
+        {
+          "id": "yonex-ezone-100-sl-2025",
+          "label": "100 SL"
+        },
+        {
+          "id": "yonex-ezone-100l-2025",
+          "label": "100L"
+        },
+        {
+          "id": "yonex-ezone-junior-26",
+          "label": "Junior 26"
         }
       ],
       "colourway": "Blast Blue",
@@ -5364,6 +7963,47 @@
           }
         }
       ]
+    },
+    {
+      "id": "yonex-ezone-100-sl-2025",
+      "brand": "Yonex",
+      "line": "EZONE",
+      "model": "EZONE 100 SL",
+      "generation": "8th gen",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          18
+        ],
+        "beamMm": [
+          24.5,
+          26.5,
+          23
+        ]
+      },
+      "swatch": "#3a62bf",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/yonex-ezone-100-sl-2025.glb",
+          "bytes": 128380,
+          "triangles": 5356
+        }
+      },
+      "variantLabel": "100 SL",
+      "variantOf": "yonex-ezone-100"
     },
     {
       "id": "yonex-ezone-100-plus-2025",
@@ -5404,6 +8044,47 @@
         }
       },
       "variantLabel": "100 Plus",
+      "variantOf": "yonex-ezone-100"
+    },
+    {
+      "id": "yonex-ezone-100l-2025",
+      "brand": "Yonex",
+      "line": "EZONE",
+      "model": "EZONE 100L",
+      "generation": "8th gen",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          24.5,
+          26.5,
+          23
+        ]
+      },
+      "swatch": "#3a62bf",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/yonex-ezone-100l-2025.glb",
+          "bytes": 128808,
+          "triangles": 5364
+        }
+      },
+      "variantLabel": "100L",
       "variantOf": "yonex-ezone-100"
     },
     {
@@ -5530,6 +8211,47 @@
       "variantOf": "yonex-ezone-100"
     },
     {
+      "id": "yonex-ezone-junior-26",
+      "brand": "Yonex",
+      "line": "EZONE",
+      "model": "EZONE 26\" Junior",
+      "generation": "8th gen",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 26,
+        "stringPattern": [
+          16,
+          18
+        ],
+        "beamMm": [
+          24.5,
+          26.5,
+          23
+        ]
+      },
+      "swatch": "#3a62bf",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/yonex-ezone-junior-26.glb",
+          "bytes": 128376,
+          "triangles": 5356
+        }
+      },
+      "variantLabel": "Junior 26",
+      "variantOf": "yonex-ezone-100"
+    },
+    {
       "id": "yonex-ezone-98-2025",
       "brand": "Yonex",
       "line": "EZONE",
@@ -5653,6 +8375,46 @@
       "variantOf": "yonex-ezone-100"
     },
     {
+      "id": "yonex-ezone-ace",
+      "brand": "Yonex",
+      "line": "EZONE",
+      "model": "EZONE Ace",
+      "generation": "Ace",
+      "year": 2024,
+      "specs": {
+        "headSizeSqIn": 102,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          24,
+          26.5,
+          23
+        ]
+      },
+      "swatch": "#2d5ad6",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/yonex-ezone-ace.glb",
+          "bytes": 118564,
+          "triangles": 4852
+        }
+      },
+      "colourway": "Blue"
+    },
+    {
       "id": "yonex-muse-100-2026",
       "brand": "Yonex",
       "line": "Muse",
@@ -5703,9 +8465,99 @@
         {
           "id": "yonex-muse-107-2026",
           "label": "107"
+        },
+        {
+          "id": "yonex-muse-100l-2026",
+          "label": "100L"
+        },
+        {
+          "id": "yonex-muse-100sl-2026",
+          "label": "100SL"
         }
       ],
       "colourway": "Silver"
+    },
+    {
+      "id": "yonex-muse-100l-2026",
+      "brand": "Yonex",
+      "line": "Muse",
+      "model": "Muse 100L",
+      "generation": "1st gen",
+      "year": 2026,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          18
+        ],
+        "beamMm": [
+          24.5,
+          24.5,
+          18
+        ]
+      },
+      "swatch": "#c9d3df",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/yonex-muse-100l-2026.glb",
+          "bytes": 107880,
+          "triangles": 4332
+        }
+      },
+      "variantLabel": "100L",
+      "variantOf": "yonex-muse-100-2026"
+    },
+    {
+      "id": "yonex-muse-100sl-2026",
+      "brand": "Yonex",
+      "line": "Muse",
+      "model": "Muse 100SL",
+      "generation": "1st gen",
+      "year": 2026,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          18
+        ],
+        "beamMm": [
+          24.5,
+          24.5,
+          18
+        ]
+      },
+      "swatch": "#c9d3df",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/yonex-muse-100sl-2026.glb",
+          "bytes": 107880,
+          "triangles": 4332
+        }
+      },
+      "variantLabel": "100SL",
+      "variantOf": "yonex-muse-100-2026"
     },
     {
       "id": "yonex-muse-107-2026",
@@ -5832,6 +8684,90 @@
       "variantOf": "yonex-percept-97"
     },
     {
+      "id": "yonex-percept-100d-2023",
+      "brand": "Yonex",
+      "line": "Percept",
+      "model": "Percept 100D",
+      "generation": "2025",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          18,
+          19
+        ],
+        "beamMm": [
+          23,
+          23,
+          23
+        ],
+        "unstrungWeightG": 305
+      },
+      "swatch": "#66688a",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/yonex-percept-100d-2023.glb",
+          "bytes": 140540,
+          "triangles": 4584
+        }
+      },
+      "variantLabel": "100D",
+      "variantOf": "yonex-percept-97"
+    },
+    {
+      "id": "yonex-percept-100l-2023",
+      "brand": "Yonex",
+      "line": "Percept",
+      "model": "Percept 100L",
+      "generation": "2025",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          23,
+          23
+        ],
+        "unstrungWeightG": 280
+      },
+      "swatch": "#66688a",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/yonex-percept-100l-2023.glb",
+          "bytes": 139676,
+          "triangles": 4568
+        }
+      },
+      "variantLabel": "100L",
+      "variantOf": "yonex-percept-97"
+    },
+    {
       "id": "yonex-percept-97",
       "brand": "Yonex",
       "line": "Percept",
@@ -5883,6 +8819,26 @@
         {
           "id": "yonex-percept-97d-2023",
           "label": "97D"
+        },
+        {
+          "id": "yonex-percept-97h-2023",
+          "label": "97H"
+        },
+        {
+          "id": "yonex-percept-97l-2023",
+          "label": "97L"
+        },
+        {
+          "id": "yonex-percept-100d-2023",
+          "label": "100D"
+        },
+        {
+          "id": "yonex-percept-100l-2023",
+          "label": "100L"
+        },
+        {
+          "id": "yonex-percept-game-2025",
+          "label": "Game"
         }
       ]
     },
@@ -5926,6 +8882,131 @@
         }
       },
       "variantLabel": "97D",
+      "variantOf": "yonex-percept-97"
+    },
+    {
+      "id": "yonex-percept-97h-2023",
+      "brand": "Yonex",
+      "line": "Percept",
+      "model": "Percept 97H",
+      "generation": "2025",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 97,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          21,
+          21,
+          21
+        ],
+        "unstrungWeightG": 330
+      },
+      "swatch": "#66688a",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/yonex-percept-97h-2023.glb",
+          "bytes": 139672,
+          "triangles": 4568
+        }
+      },
+      "variantLabel": "97H",
+      "variantOf": "yonex-percept-97"
+    },
+    {
+      "id": "yonex-percept-97l-2023",
+      "brand": "Yonex",
+      "line": "Percept",
+      "model": "Percept 97L",
+      "generation": "2025",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 97,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          21,
+          21,
+          21
+        ]
+      },
+      "swatch": "#66688a",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/yonex-percept-97l-2023.glb",
+          "bytes": 139672,
+          "triangles": 4568
+        }
+      },
+      "variantLabel": "97L",
+      "variantOf": "yonex-percept-97"
+    },
+    {
+      "id": "yonex-percept-game-2025",
+      "brand": "Yonex",
+      "line": "Percept",
+      "model": "Percept Game",
+      "generation": "2025",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          21,
+          21,
+          21
+        ],
+        "unstrungWeightG": 270
+      },
+      "swatch": "#66688a",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/yonex-percept-game-2025.glb",
+          "bytes": 139676,
+          "triangles": 4568
+        }
+      },
+      "variantLabel": "Game",
       "variantOf": "yonex-percept-97"
     },
     {
@@ -5992,6 +9073,14 @@
         {
           "id": "yonex-vcore-98-plus-2026",
           "label": "98 Plus"
+        },
+        {
+          "id": "yonex-vcore-100l-2026",
+          "label": "100L"
+        },
+        {
+          "id": "yonex-vcore-100d-2026",
+          "label": "100D"
         }
       ]
     },
@@ -6034,6 +9123,88 @@
         }
       },
       "variantLabel": "100 Plus",
+      "variantOf": "yonex-vcore-100"
+    },
+    {
+      "id": "yonex-vcore-100d-2026",
+      "brand": "Yonex",
+      "line": "VCORE",
+      "model": "VCORE 100D",
+      "generation": "8th gen",
+      "year": 2026,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          20
+        ],
+        "beamMm": [
+          24,
+          26,
+          23
+        ]
+      },
+      "swatch": "#c41f3a",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/yonex-vcore-100d-2026.glb",
+          "bytes": 125088,
+          "triangles": 4764
+        }
+      },
+      "variantLabel": "100D",
+      "variantOf": "yonex-vcore-100"
+    },
+    {
+      "id": "yonex-vcore-100l-2026",
+      "brand": "Yonex",
+      "line": "VCORE",
+      "model": "VCORE 100L",
+      "generation": "8th gen",
+      "year": 2026,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          24,
+          26,
+          23
+        ]
+      },
+      "swatch": "#c41f3a",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/yonex-vcore-100l-2026.glb",
+          "bytes": 124656,
+          "triangles": 4756
+        }
+      },
+      "variantLabel": "100L",
       "variantOf": "yonex-vcore-100"
     },
     {
@@ -6643,39 +9814,6 @@
       "researched": "2026-11-20"
     },
     {
-      "id": "babolat-boost-aero-2026",
-      "brand": "Babolat",
-      "line": "Boost Aero",
-      "model": "Boost Aero",
-      "generation": null,
-      "releaseYear": 2026,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 102,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          23,
-          26,
-          23
-        ],
-        "unstrungWeightG": 260,
-        "balanceMm": 340
-      },
-      "colourway": "Grey/Fluorescent yellow",
-      "sources": [
-        "https://www.tennis-warehouse.com/Babolat_Boost_Aero_2026/descpageRCBAB-BBOASR.html",
-        "https://www.babolat.com/us/boost-aero-strung/121266.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
       "id": "babolat-boost-aero-pink-2026",
       "brand": "Babolat",
       "line": "Boost Aero",
@@ -6973,39 +10111,6 @@
         "https://web.archive.org/web/20230608223519/https://www.tennisexpress.com/babolat-tennis-racquets",
         "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html",
         "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-boost-strike-current",
-      "brand": "Babolat",
-      "line": "Boost Strike",
-      "model": "Boost Strike",
-      "generation": null,
-      "releaseYear": null,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 102,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          23,
-          26,
-          23
-        ],
-        "unstrungWeightG": 285,
-        "balanceMm": 330
-      },
-      "colourway": "Grey/Red",
-      "sources": [
-        "https://www.tennis-warehouse.com/Babolat_Boost_Strike/descpageRCBAB-BSTRRKT.html",
-        "https://www.babolat.com/us/boost-strike-strung/121247.html"
       ],
       "researched": "2026-11-20"
     },
@@ -7439,39 +10544,6 @@
       "researched": "2026-11-20"
     },
     {
-      "id": "babolat-evo-aero-lite-2026",
-      "brand": "Babolat",
-      "line": "Evo Aero",
-      "model": "Evo Aero Lite",
-      "generation": "Gen2",
-      "releaseYear": null,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 102,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          23,
-          26,
-          23
-        ],
-        "unstrungWeightG": 260,
-        "balanceMm": 325
-      },
-      "colourway": "Grey/Fluorescent yellow",
-      "sources": [
-        "https://www.babolat.com/gb/evo-aero-lite-gen2-strung/102564.html",
-        "https://www.babolat.com/gb/tennis/racquets/adults.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
       "id": "babolat-evo-aero-lite-pink-2026",
       "brand": "Babolat",
       "line": "Evo Aero",
@@ -7573,41 +10645,6 @@
       "researched": "2026-11-20"
     },
     {
-      "id": "babolat-evo-drive-115",
-      "brand": "Babolat",
-      "line": "Evo",
-      "model": "Evo Drive 115",
-      "generation": null,
-      "releaseYear": null,
-      "category": "adult",
-      "onSaleIn": [
-        2023
-      ],
-      "specs": {
-        "headSizeSqIn": 115,
-        "lengthIn": 27.6,
-        "stringPattern": [
-          16,
-          17
-        ],
-        "beamMm": [
-          25,
-          28,
-          24
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Blue",
-      "sources": [
-        "https://web.archive.org/web/20230410180218/https://www.tennis-warehouse.com/Babolat_EVO_Drive_115/descpageRCBAB-BEVODO.html",
-        "https://web.archive.org/web/20230608223519/https://www.tennisexpress.com/babolat-tennis-racquets",
-        "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
       "id": "babolat-evo-drive-2021gen",
       "brand": "Babolat",
       "line": "Evo",
@@ -7679,39 +10716,6 @@
       "researched": "2026-11-20"
     },
     {
-      "id": "babolat-evo-drive-lite-2025",
-      "brand": "Babolat",
-      "line": "Evo Drive",
-      "model": "Evo Drive Lite",
-      "generation": "Gen2",
-      "releaseYear": 2025,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 104,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          17
-        ],
-        "beamMm": [
-          23,
-          26,
-          23
-        ],
-        "unstrungWeightG": 255,
-        "balanceMm": 325
-      },
-      "colourway": "Blue",
-      "sources": [
-        "https://www.tennis-warehouse.com/Babolat_Evo_Drive_Lite/descpageRCBAB-BEDLR.html",
-        "https://www.babolat.com/us/evo-drive-lite-gen2-strung/102547.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
       "id": "babolat-evo-drive-lite-white-2025",
       "brand": "Babolat",
       "line": "Evo Drive",
@@ -7741,109 +10745,6 @@
       "sources": [
         "https://www.tennis-warehouse.com/Babolat_Evo_Drive_Lite_White/descpageRCBAB-BELWR.html",
         "https://www.babolat.com/us/evo-drive-lite-white-gen2-strung/102548.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-evo-drive-tour-2025",
-      "brand": "Babolat",
-      "line": "Evo Drive",
-      "model": "Evo Drive Tour",
-      "generation": "Gen2",
-      "releaseYear": null,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 102,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          23,
-          26,
-          23
-        ],
-        "unstrungWeightG": 285,
-        "balanceMm": 320
-      },
-      "colourway": "Blue",
-      "sources": [
-        "https://www.babolat.com/gb/evo-drive-tour-gen2-strung/102549.html",
-        "https://www.babolat.com/gb/tennis/racquets/adults.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-evoke-102",
-      "brand": "Babolat",
-      "line": "Evoke",
-      "model": "Evoke 102",
-      "generation": null,
-      "releaseYear": null,
-      "category": "adult",
-      "onSaleIn": [
-        2023
-      ],
-      "specs": {
-        "headSizeSqIn": 102,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          22,
-          22,
-          25
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Black/Red; also a white 'Evoke 102 W' variant",
-      "sources": [
-        "https://web.archive.org/web/20230130101235/https://www.tennis-warehouse.com/Babolat_EVOKE_102/descpageRCBAB-EVOKE2.html",
-        "https://web.archive.org/web/20230608223519/https://www.tennisexpress.com/babolat-tennis-racquets",
-        "https://web.archive.org/web/20230130101246/https://www.tennis-warehouse.com/Babolat_EVOKE_102_W/descpageRCBAB-EVOKEW.html",
-        "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-pure-aero-100-2018",
-      "brand": "Babolat",
-      "line": "Pure Aero",
-      "model": "Pure Aero 100",
-      "generation": "2019",
-      "releaseYear": 2018,
-      "category": "adult",
-      "onSaleIn": [
-        2023
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          23,
-          26,
-          23
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Yellow/Black",
-      "sources": [
-        "https://web.archive.org/web/20230410174449/https://www.tennis-warehouse.com/Babolat_Pure_Aero/descpageRCBAB-BPAR.html",
-        "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://mijnracket.nl/en/blogs/blogposts/babolat-pure-aero-2019"
       ],
       "researched": "2026-11-20"
     },
@@ -8002,39 +10903,6 @@
       "researched": "2026-11-20"
     },
     {
-      "id": "babolat-pure-aero-junior-26-2026",
-      "brand": "Babolat",
-      "line": "Pure Aero",
-      "model": "Pure Aero Junior 26",
-      "generation": "Gen9",
-      "releaseYear": 2026,
-      "category": "junior",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 26,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          23,
-          26,
-          23
-        ],
-        "unstrungWeightG": 250,
-        "balanceMm": 325
-      },
-      "colourway": "Metallic Grey/Fluo Yellow",
-      "sources": [
-        "https://www.tennis-warehouse.com/Babolat_Pure_Aero_Junior_26/descpageRCBAB-BPAJR6.html",
-        "https://www.babolat.com/us/pure-aero-junior-26-gen9/140520.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
       "id": "babolat-pure-aero-lite-2018",
       "brand": "Babolat",
       "line": "Pure Aero",
@@ -8106,75 +10974,6 @@
         "https://www.babolat.com/us/news-articles-blog-pure-aero-98/pure-aero-98.html",
         "https://www.tennis-warehouse.com/Babolat_Pure_Aero_Lite_2023/descpage-BAROL.html",
         "https://www.tennis-warehouse.com/Babolat_Pure_Aero_Lite_2023/descpageRCBAB-BAROL.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-pure-aero-lite-2026",
-      "brand": "Babolat",
-      "line": "Pure Aero",
-      "model": "Pure Aero Lite",
-      "generation": "Gen9",
-      "releaseYear": 2026,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          23,
-          26,
-          23
-        ],
-        "unstrungWeightG": 270,
-        "balanceMm": 330
-      },
-      "colourway": "Grey/Yellow",
-      "sources": [
-        "https://www.tennis-warehouse.com/Babolat_Pure_Aero_Lite_2026/descpageRCBAB-BPALTR.html",
-        "https://www.tenniswarehouse-europe.com/descpageRCQBA-BPALTR-EN.html",
-        "https://www.babolat.com/us/tennis/racquets/adults.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-pure-aero-plus-2019gen",
-      "brand": "Babolat",
-      "line": "Pure Aero",
-      "model": "Pure Aero Plus",
-      "generation": "2019",
-      "releaseYear": null,
-      "category": "adult",
-      "onSaleIn": [
-        2023
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27.5,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          23,
-          26,
-          23
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Yellow/Black",
-      "sources": [
-        "https://web.archive.org/web/20230410175143/https://www.tennis-warehouse.com/Babolat_Pure_Aero_Plus/descpageRCBAB-BPAPR.html",
-        "https://web.archive.org/web/20230608223519/https://www.tennisexpress.com/babolat-tennis-racquets",
-        "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html"
       ],
       "researched": "2026-11-20"
     },
@@ -8455,148 +11254,6 @@
       "researched": "2026-11-20"
     },
     {
-      "id": "babolat-pure-aero-super-lite-2026",
-      "brand": "Babolat",
-      "line": "Pure Aero",
-      "model": "Pure Aero Super Lite",
-      "generation": "Gen9",
-      "releaseYear": 2026,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          23,
-          26,
-          23
-        ],
-        "unstrungWeightG": 255,
-        "balanceMm": 330
-      },
-      "colourway": "Grey/Yellow",
-      "sources": [
-        "https://www.tennis-warehouse.com/Babolat_Pure_Aero_Super_Lite_2026/descpageRCBAB-BPARSL.html",
-        "https://www.tenniswarehouse-europe.com/descpageRCQBA-BPARSL-EN.html",
-        "https://www.babolat.com/us/tennis/racquets/adults.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-pure-aero-team-2018",
-      "brand": "Babolat",
-      "line": "Pure Aero",
-      "model": "Pure Aero Team",
-      "generation": "2019",
-      "releaseYear": 2018,
-      "category": "adult",
-      "onSaleIn": [
-        2023
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          23,
-          26,
-          23
-        ],
-        "unstrungWeightG": 286,
-        "balanceMm": null
-      },
-      "colourway": "Yellow/Black",
-      "sources": [
-        "https://web.archive.org/web/20230410175149/https://www.tennis-warehouse.com/Babolat_Pure_Aero_Team/descpageRCBAB-BPART.html",
-        "https://web.archive.org/web/20220929142513/https://www.tennisexpress.com/babolat-2019-pure-aero-team-tennis-racquet-70084",
-        "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://mijnracket.nl/en/blogs/blogposts/babolat-pure-aero-2019"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-pure-drive-107-2021",
-      "brand": "Babolat",
-      "line": "Pure Drive",
-      "model": "Pure Drive 107",
-      "generation": "2021",
-      "releaseYear": 2021,
-      "category": "adult",
-      "onSaleIn": [
-        2023
-      ],
-      "specs": {
-        "headSizeSqIn": 107,
-        "lengthIn": 27.2,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          23,
-          26,
-          23
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Blue",
-      "sources": [
-        "https://web.archive.org/web/20221104074927/https://www.tennis-warehouse.com/Babolat_Pure_Drive_107_2021/descpageRCBAB-BRPD17.html",
-        "https://web.archive.org/web/20230608223519/https://www.tennisexpress.com/babolat-tennis-racquets",
-        "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://www.babolat.com/us/news-articles-blog-pure-drive-news/pure-drive-news.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-pure-drive-110-2021",
-      "brand": "Babolat",
-      "line": "Pure Drive",
-      "model": "Pure Drive 110",
-      "generation": "2021",
-      "releaseYear": 2021,
-      "category": "adult",
-      "onSaleIn": [
-        2023
-      ],
-      "specs": {
-        "headSizeSqIn": 110,
-        "lengthIn": 27.6,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          24,
-          26.5,
-          23.5
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Blue",
-      "sources": [
-        "https://web.archive.org/web/20230410175435/https://www.tennis-warehouse.com/Babolat_Pure_Drive_110_2021/descpageRCBAB-BRPD11.html",
-        "https://web.archive.org/web/20230608223519/https://www.tennisexpress.com/babolat-tennis-racquets",
-        "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://www.babolat.com/us/news-articles-blog-pure-drive-news/pure-drive-news.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
       "id": "babolat-pure-drive-98-2023",
       "brand": "Babolat",
       "line": "Pure Drive",
@@ -8762,39 +11419,6 @@
       "researched": "2026-11-20"
     },
     {
-      "id": "babolat-pure-drive-junior-26-2025",
-      "brand": "Babolat",
-      "line": "Pure Drive",
-      "model": "Pure Drive Junior 26",
-      "generation": "Gen11",
-      "releaseYear": 2025,
-      "category": "junior",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 26,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          23,
-          26,
-          23
-        ],
-        "unstrungWeightG": 250,
-        "balanceMm": 325
-      },
-      "colourway": "Blue",
-      "sources": [
-        "https://www.tennis-warehouse.com/Babolat_Pure_Drive_26_Junior/descpageRCBAB-BPJ26R.html",
-        "https://www.babolat.com/us/pure-drive-junior-26-gen11/140531.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
       "id": "babolat-pure-drive-junior-26-light-blue-2025",
       "brand": "Babolat",
       "line": "Pure Drive",
@@ -8819,78 +11443,6 @@
       "colourway": "Light Blue",
       "sources": [
         "https://www.tennis-warehouse.com/Babolat_Pure_Drive_26_Junior_Light_Blue/descpageRCBAB-BPJ26LB.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-pure-drive-lite-2021",
-      "brand": "Babolat",
-      "line": "Pure Drive",
-      "model": "Pure Drive Lite",
-      "generation": "2021",
-      "releaseYear": 2021,
-      "category": "adult",
-      "onSaleIn": [
-        2023
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          23,
-          26,
-          23
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Blue",
-      "sources": [
-        "https://web.archive.org/web/20240823062343/https://www.tennis-warehouse.com/Babolat_Pure_Drive_Lite_2021/descpageRCBAB-BRPDL.html",
-        "https://web.archive.org/web/20230608223519/https://www.tennisexpress.com/babolat-tennis-racquets",
-        "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://www.babolat.com/us/news-articles-blog-pure-drive-news/pure-drive-news.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-pure-drive-plus-2021",
-      "brand": "Babolat",
-      "line": "Pure Drive",
-      "model": "Pure Drive Plus",
-      "generation": "2021",
-      "releaseYear": 2021,
-      "category": "adult",
-      "onSaleIn": [
-        2023
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27.5,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          23,
-          26,
-          23
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Blue",
-      "sources": [
-        "https://web.archive.org/web/20230410175146/https://www.tennis-warehouse.com/Babolat_Pure_Drive_Plus_2021/descpageRCBAB-BRPDP.html",
-        "https://web.archive.org/web/20230608223519/https://www.tennisexpress.com/babolat-tennis-racquets",
-        "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://www.babolat.com/us/news-articles-blog-pure-drive-news/pure-drive-news.html"
       ],
       "researched": "2026-11-20"
     },
@@ -9030,42 +11582,6 @@
       "researched": "2026-11-20"
     },
     {
-      "id": "babolat-pure-drive-team-2021",
-      "brand": "Babolat",
-      "line": "Pure Drive",
-      "model": "Pure Drive Team",
-      "generation": "2021",
-      "releaseYear": 2021,
-      "category": "adult",
-      "onSaleIn": [
-        2023
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          23,
-          26,
-          23
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Blue",
-      "sources": [
-        "https://web.archive.org/web/20230410193047/https://www.tennis-warehouse.com/Babolat_Pure_Drive_Team_2021/descpageRCBAB-BRPTE.html",
-        "https://web.archive.org/web/20230608223519/https://www.tennisexpress.com/babolat-tennis-racquets",
-        "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://www.babolat.com/us/news-articles-blog-pure-drive-news/pure-drive-news.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
       "id": "babolat-pure-drive-team-spectra-edition-2026",
       "brand": "Babolat",
       "line": "Pure Drive",
@@ -9192,77 +11708,6 @@
       "researched": "2026-11-20"
     },
     {
-      "id": "babolat-pure-strike-100-2019",
-      "brand": "Babolat",
-      "line": "Pure Strike",
-      "model": "Pure Strike 100",
-      "generation": "3rd Gen",
-      "releaseYear": 2019,
-      "category": "adult",
-      "onSaleIn": [
-        2023
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          21,
-          23,
-          21
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "White/Coral",
-      "sources": [
-        "https://web.archive.org/web/20230130101136/https://www.tennis-warehouse.com/Babolat_Pure_Strike_100_3rd_Gen/descpageRCBAB-BPSTRI.html",
-        "https://web.archive.org/web/20230608223519/https://www.tennisexpress.com/babolat-tennis-racquets",
-        "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-pure-strike-103-2022",
-      "brand": "Babolat",
-      "line": "Pure Strike",
-      "model": "Pure Strike 103",
-      "generation": "3rd Gen",
-      "releaseYear": 2022,
-      "category": "adult",
-      "onSaleIn": [
-        2023
-      ],
-      "specs": {
-        "headSizeSqIn": 103,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          21,
-          23,
-          21
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "White/Coral",
-      "sources": [
-        "https://web.archive.org/web/20230410174449/https://www.tennis-warehouse.com/Babolat_Pure_Strike_103/descpageRCBAB-BPS103.html",
-        "https://web.archive.org/web/20230608223519/https://www.tennisexpress.com/babolat-tennis-racquets",
-        "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://prod.tennis.com/news/articles/2022-gear-guide-babolat-racquets-pure-strike-103-and-pure-strike-vs"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
       "id": "babolat-pure-strike-98-16x19-2019",
       "brand": "Babolat",
       "line": "Pure Strike",
@@ -9324,76 +11769,6 @@
       "researched": "2026-11-20"
     },
     {
-      "id": "babolat-pure-strike-98-18x20-2019",
-      "brand": "Babolat",
-      "line": "Pure Strike",
-      "model": "Pure Strike 98 18x20",
-      "generation": "3rd Gen",
-      "releaseYear": 2019,
-      "category": "adult",
-      "onSaleIn": [
-        2023
-      ],
-      "specs": {
-        "headSizeSqIn": 98,
-        "lengthIn": 27,
-        "stringPattern": [
-          18,
-          20
-        ],
-        "beamMm": [
-          21,
-          23,
-          21
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "White/Coral",
-      "sources": [
-        "https://web.archive.org/web/20230410174452/https://www.tennis-warehouse.com/Babolat_Pure_Strike_18x20_3rd_Gen/descpageRCBAB-PS182.html",
-        "https://web.archive.org/web/20230608223519/https://www.tennisexpress.com/babolat-tennis-racquets",
-        "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-pure-strike-evo",
-      "brand": "Babolat",
-      "line": "Pure Strike",
-      "model": "Pure Strike EVO",
-      "generation": null,
-      "releaseYear": null,
-      "category": "adult",
-      "onSaleIn": [
-        2023
-      ],
-      "specs": {
-        "headSizeSqIn": 102,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          23,
-          25,
-          23
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "White/Coral",
-      "sources": [
-        "https://web.archive.org/web/20230410181957/https://www.tennis-warehouse.com/Babolat_Pure_Strike_EVO/descpageRCBAB-PSEVO.html",
-        "https://web.archive.org/web/20230608223519/https://www.tennisexpress.com/babolat-tennis-racquets",
-        "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
       "id": "babolat-pure-strike-junior-25-2019gen",
       "brand": "Babolat",
       "line": "Pure Strike",
@@ -9448,107 +11823,6 @@
       "colourway": "White/Coral",
       "sources": [
         "https://web.archive.org/web/20230130100833/https://www.tennis-warehouse.com/Babolat_Pure_Strike_3rd_Gen_26_Junior/descpageRCBAB-PSJ26R.html",
-        "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-pure-strike-junior-26-gen4",
-      "brand": "Babolat",
-      "line": "Pure Strike",
-      "model": "Pure Strike Junior 26",
-      "generation": "Gen4",
-      "releaseYear": null,
-      "category": "junior",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 26,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          21,
-          23,
-          21
-        ],
-        "unstrungWeightG": 250,
-        "balanceMm": 320
-      },
-      "colourway": "Carbon Grey (Grey/Neon Red)",
-      "sources": [
-        "https://www.tennis-warehouse.com/Babolat_Pure_Strike_26_Junior_Carbon_Grey/descpageRCBAB-BPSJ26.html",
-        "https://www.babolat.com/us/pure-strike-junior-26-gen4/140526.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-pure-strike-lite-2024",
-      "brand": "Babolat",
-      "line": "Pure Strike",
-      "model": "Pure Strike Lite",
-      "generation": "Gen4",
-      "releaseYear": 2024,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          21,
-          23,
-          21
-        ],
-        "unstrungWeightG": 265,
-        "balanceMm": 330
-      },
-      "colourway": "Grey/Neon Red",
-      "sources": [
-        "https://www.babolat.com/gb/pure-strike-lite-gen4-unstrung/101581.html",
-        "https://www.babolat.com/gb/tennis/racquets/adults.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-pure-strike-team-2019",
-      "brand": "Babolat",
-      "line": "Pure Strike",
-      "model": "Pure Strike Team",
-      "generation": "3rd Gen",
-      "releaseYear": 2019,
-      "category": "adult",
-      "onSaleIn": [
-        2023
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          21,
-          23,
-          21
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "White/Coral",
-      "sources": [
-        "https://web.archive.org/web/20230410174451/https://www.tennis-warehouse.com/Babolat_Pure_Strike_Team_3rd_Gen/descpageRCBAB-BPSTRT.html",
-        "https://web.archive.org/web/20230608223519/https://www.tennisexpress.com/babolat-tennis-racquets",
         "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html",
         "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html"
       ],
@@ -9784,229 +12058,6 @@
       "researched": "2026-11-20"
     },
     {
-      "id": "head-boom-junior-26-2026",
-      "brand": "Head",
-      "line": "Boom",
-      "model": "Boom Junior 26",
-      "generation": "2026",
-      "releaseYear": 2026,
-      "category": "junior",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 26,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": null,
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Black/Coral (also Purple)",
-      "sources": [
-        "https://www.tennis-warehouse.com/Head_Boom_26_Junior/descpageRCHEAD-HBMJR6.html",
-        "https://www.tennis-warehouse.com/Head_Boom_26_Junior_Purple/descpageRCHEAD-HBJRA6.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "head-boom-mp-l-2026",
-      "brand": "Head",
-      "line": "Boom",
-      "model": "Boom MP L",
-      "generation": "2026",
-      "releaseYear": 2026,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          23,
-          24,
-          22
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Coral/Black (also Purple)",
-      "sources": [
-        "https://www.tennis-warehouse.com/Head_Boom_MP_L_2026/descpageRCHEAD-HBMPL6.html",
-        "https://www.tennis-warehouse.com/Head_Boom_MP_L_2026_Purple/descpageRCHEAD-BMPLA6.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "head-boom-mp-ul-2026",
-      "brand": "Head",
-      "line": "Boom",
-      "model": "Boom MP UL",
-      "generation": "2026",
-      "releaseYear": 2026,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          23,
-          24,
-          22
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Coral/Black (also Purple)",
-      "sources": [
-        "https://www.tennis-warehouse.com/Head_Boom_MP_UL_2026/descpageRCHEAD-HBMPUL.html",
-        "https://www.tennis-warehouse.com/Head_Boom_MP_UL_2026_Purple/descpageRCHEAD-BMPULA.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "head-extreme-mp-l-2024",
-      "brand": "Head",
-      "line": "Extreme",
-      "model": "Extreme MP L",
-      "generation": "2024",
-      "releaseYear": 2024,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          23,
-          26,
-          21
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Yellow",
-      "sources": [
-        "https://www.tennis-warehouse.com/Head_Extreme_MP_L_2024/descpageRCHEAD-HEMPL24.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "head-extreme-mp-l-2026",
-      "brand": "Head",
-      "line": "Extreme",
-      "model": "Extreme MP L",
-      "generation": "2026",
-      "releaseYear": 2026,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          23,
-          26,
-          21
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Yellow",
-      "sources": [
-        "https://www.tennis-warehouse.com/Head_Extreme_MP_L_Racquet/descpageRCHEAD-HEMPL6.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "head-extreme-mp-ul-2026",
-      "brand": "Head",
-      "line": "Extreme",
-      "model": "Extreme MP UL",
-      "generation": "2026",
-      "releaseYear": 2026,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          23,
-          26,
-          21
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Yellow",
-      "sources": [
-        "https://www.tennis-warehouse.com/Head_Extreme_MP_UL_Racquet/descpageRCHEAD-HEMPUL.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "head-extreme-mp-xl",
-      "brand": "Head",
-      "line": "Extreme",
-      "model": "Extreme MP XL",
-      "generation": null,
-      "releaseYear": null,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27.5,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          23,
-          26,
-          21
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Yellow",
-      "sources": [
-        "https://www.tennis-warehouse.com/Head_Extreme_MP_XL_Racquet/descpageRCHEAD-HEMPXL.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
       "id": "head-graphene-xt-radical-mp",
       "brand": "Head",
       "line": "Radical",
@@ -10131,38 +12182,6 @@
       "colourway": "Black/White",
       "sources": [
         "https://www.tennis-warehouse.com/Head_Graphene_XT_Speed_S/descpageRCHEAD-GXSS.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "head-gravity-mp-l-2025",
-      "brand": "Head",
-      "line": "Gravity",
-      "model": "Gravity MP L",
-      "generation": "2025",
-      "releaseYear": 2025,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          20
-        ],
-        "beamMm": [
-          22,
-          22,
-          22
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Blue/Black",
-      "sources": [
-        "https://www.tennis-warehouse.com/Head_Gravity_MP_L_2025/descpageRCHEAD-HGMLPG.html"
       ],
       "researched": "2026-11-20"
     },
@@ -10538,38 +12557,6 @@
       "researched": "2026-11-20"
     },
     {
-      "id": "head-pwr-115-2026",
-      "brand": "Head",
-      "line": "PWR",
-      "model": "PWR 115",
-      "generation": "2026",
-      "releaseYear": 2026,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 115,
-        "lengthIn": 27.7,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          29,
-          29,
-          29
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Black",
-      "sources": [
-        "https://www.tennis-warehouse.com/Head_PWR_115/descpageRCHEAD-HPWR15.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
       "id": "head-radical-junior-21",
       "brand": "Head",
       "line": "Radical",
@@ -10591,34 +12578,6 @@
       "colourway": "Orange",
       "sources": [
         "https://www.tennis-warehouse.com/Head_Radical_Junior_21/descpageRCHEAD-HARJ21.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "head-radical-junior-26-2025",
-      "brand": "Head",
-      "line": "Radical",
-      "model": "Radical Junior 26",
-      "generation": "2025",
-      "releaseYear": 2025,
-      "category": "junior",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 26,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": null,
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Orange",
-      "sources": [
-        "https://www.tennis-warehouse.com/Head_Radical_Junior_2025/descpageRCHEAD-HRJR26.html"
       ],
       "researched": "2026-11-20"
     },
@@ -10761,98 +12720,6 @@
       "researched": "2026-11-20"
     },
     {
-      "id": "head-speed-junior-26-2026",
-      "brand": "Head",
-      "line": "Speed",
-      "model": "Speed Junior 26",
-      "generation": "2026",
-      "releaseYear": 2026,
-      "category": "junior",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 26,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": null,
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "White/Black",
-      "sources": [
-        "https://www.tennis-warehouse.com/Head_Speed_Junior_26_2026/descpageRCHEAD-HSPJR6.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "head-speed-mp-l-2026",
-      "brand": "Head",
-      "line": "Speed",
-      "model": "Speed MP L",
-      "generation": "2026",
-      "releaseYear": 2026,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          23,
-          23,
-          23
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "White/Black",
-      "sources": [
-        "https://www.tennis-warehouse.com/Head_Speed_MP_L_2026/descpageRCHEAD-HSMPL6.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "head-speed-mp-ul-2026",
-      "brand": "Head",
-      "line": "Speed",
-      "model": "Speed MP UL",
-      "generation": "2026",
-      "releaseYear": 2026,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          23,
-          23,
-          23
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "White/Black",
-      "sources": [
-        "https://www.tennis-warehouse.com/Head_Speed_MP_UL_2026/descpageRCHEAD-HSMPUL.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
       "id": "head-speed-sinner",
       "brand": "Head",
       "line": "Speed",
@@ -10881,38 +12748,6 @@
       "colourway": "White/Black",
       "sources": [
         "https://www.tennis-warehouse.com/Head_Speed_Sinner/descpageRCHEAD-HSPSIN.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "head-ti-s6",
-      "brand": "Head",
-      "line": "Titanium",
-      "model": "Ti.S6",
-      "generation": null,
-      "releaseYear": null,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 115,
-        "lengthIn": 27.75,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          27,
-          28,
-          27
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Silver & Blue",
-      "sources": [
-        "https://www.tennis-warehouse.com/Head_Titanium_TiS6_Strung/descpageRCHEAD-TIS6.html"
       ],
       "researched": "2026-11-20"
     },
@@ -11287,38 +13122,6 @@
       "researched": "2026-11-20"
     },
     {
-      "id": "prince-o3-legacy-110",
-      "brand": "Prince",
-      "line": "Legacy",
-      "model": "O3 Legacy 110",
-      "generation": null,
-      "releaseYear": null,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 110,
-        "lengthIn": 27.25,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          25,
-          27,
-          26
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Blue",
-      "sources": [
-        "https://www.tennis-warehouse.com/Prince_O3_Legacy_110/descpageRCTWABG-P3LY11.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
       "id": "prince-o3-legacy-120-2024",
       "brand": "Prince",
       "line": "Legacy",
@@ -11352,132 +13155,6 @@
       "researched": "2026-11-20"
     },
     {
-      "id": "prince-o3-ripstick-26-junior",
-      "brand": "Prince",
-      "line": "Ripstick",
-      "model": "O3 Ripstick 26\" Junior",
-      "generation": null,
-      "releaseYear": null,
-      "category": "junior",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 26,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": null,
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Red",
-      "sources": [
-        "https://www.tennis-warehouse.com/Prince_O3_Ripstick_26_Junior/descpageRCPRINCE-PRIPSJ26.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "prince-phantom-100x-290g-2024",
-      "brand": "Prince",
-      "line": "Phantom",
-      "model": "Phantom 100X 290g",
-      "generation": "2024",
-      "releaseYear": 2024,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          18
-        ],
-        "beamMm": [
-          22,
-          20.5,
-          18
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Green",
-      "sources": [
-        "https://www.tennis-warehouse.com/Prince_Phantom_100X_290g/descpageRCTWABG-PHNX9.html",
-        "https://www.tenniswarehouse-europe.com/catpage-PRINCERAC-EN.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "prince-premier-105",
-      "brand": "Prince",
-      "line": "Premier",
-      "model": "Premier 105",
-      "generation": null,
-      "releaseYear": null,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 105,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          18
-        ],
-        "beamMm": [
-          23,
-          24,
-          24
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Red",
-      "sources": [
-        "https://www.tennis-warehouse.com/Prince_Premier_105/descpageRCPRINCE-PREM05.html",
-        "https://www.tenniswarehouse-europe.com/catpage-PRINCERAC-EN.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "prince-ripcord-100-265g-2025",
-      "brand": "Prince",
-      "line": "Ripcord",
-      "model": "Ripcord 100 265g",
-      "generation": null,
-      "releaseYear": 2025,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          27,
-          25,
-          22
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Blue",
-      "sources": [
-        "https://www.tennis-warehouse.com/Prince_Ripcord_100_265g/descpageRCTWABG-RPCDL.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
       "id": "prince-ripcord-25-junior",
       "brand": "Prince",
       "line": "Ripcord",
@@ -11502,66 +13179,6 @@
       "colourway": "Blue",
       "sources": [
         "https://www.tennis-warehouse.com/Prince_Ripcord_25_Junior/descpageRCPRINCE-PRIPCJ25.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "prince-ripcord-26-junior",
-      "brand": "Prince",
-      "line": "Ripcord",
-      "model": "Ripcord 26\" Junior",
-      "generation": null,
-      "releaseYear": null,
-      "category": "junior",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 26,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": null,
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Blue",
-      "sources": [
-        "https://www.tennis-warehouse.com/Prince_Ripcord_26_Junior/descpageRCPRINCE-PRIPCJ26.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "prince-tour-100-275g-2026",
-      "brand": "Prince",
-      "line": "Tour",
-      "model": "Tour 100 275g",
-      "generation": "2026",
-      "releaseYear": 2026,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          18
-        ],
-        "beamMm": [
-          24,
-          25,
-          22
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Black",
-      "sources": [
-        "https://www.tennis-warehouse.com/Prince_Tour_100_275g_2026/descpageRCTWABG-PTR627.html"
       ],
       "researched": "2026-11-20"
     },
@@ -11776,138 +13393,6 @@
       "researched": "2026-11-20"
     },
     {
-      "id": "solinco-whiteout-v2-290-2025",
-      "brand": "Solinco",
-      "line": "Whiteout",
-      "model": "Whiteout V2 290",
-      "generation": "V2",
-      "releaseYear": 2025,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 98,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          21.7,
-          21.7,
-          21.7
-        ],
-        "unstrungWeightG": 290,
-        "balanceMm": 325
-      },
-      "colourway": "White with tiger camo",
-      "sources": [
-        "https://www.tennis-warehouse.com/Solinco_Whiteout_290_v2_Camo/descpageRCSOLINCO-WTOCAL.html",
-        "https://www.tennisdirect.com.au/solinco-whiteout-v2-290",
-        "https://prod.tennis.com/news/articles/tennis-racquet-preview-solinco-whiteout-v2-more-power-stability-camo-design"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "solinco-whiteout-v2-305-xtd-18x20-2025",
-      "brand": "Solinco",
-      "line": "Whiteout",
-      "model": "Whiteout V2 305 XTD 18x20",
-      "generation": "V2",
-      "releaseYear": 2025,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 98,
-        "lengthIn": 27.5,
-        "stringPattern": [
-          18,
-          20
-        ],
-        "beamMm": [
-          21.7,
-          21.7,
-          21.7
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "White with tiger camo",
-      "sources": [
-        "https://www.tennis-warehouse.com/Solinco_Whiteout_305_XTD_18x20_v2_Camo/descpageRCSOLINCO-SWO2X8.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "wilson-blade-100l-v10-2026",
-      "brand": "Wilson",
-      "line": "Blade",
-      "model": "Blade 100L",
-      "generation": "v10",
-      "releaseYear": 2026,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          22,
-          22,
-          22
-        ],
-        "unstrungWeightG": 285,
-        "balanceMm": null
-      },
-      "colourway": "Green",
-      "sources": [
-        "https://www.tennis-warehouse.com/Wilson_Blade_100L_v10/descpageRCWILSON-WB10L1.html",
-        "https://tennisexpress.com/blogs/news/wilson-blade-v10-racquet-review"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "wilson-blade-100ul-v10-2026",
-      "brand": "Wilson",
-      "line": "Blade",
-      "model": "Blade 100UL",
-      "generation": "v10",
-      "releaseYear": 2026,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          22,
-          22,
-          22
-        ],
-        "unstrungWeightG": 265,
-        "balanceMm": null
-      },
-      "colourway": "Green",
-      "sources": [
-        "https://www.tennis-warehouse.com/Wilson_Blade_100UL_v10/descpageRCWILSON-WB1UL1.html",
-        "https://tennisexpress.com/blogs/news/wilson-blade-v10-racquet-review"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
       "id": "wilson-blade-25-v10-2026",
       "brand": "Wilson",
       "line": "Blade",
@@ -11932,100 +13417,6 @@
       "colourway": null,
       "sources": [
         "https://www.tennis-warehouse.com/Wilson_Blade_25_v10_Junior/descpageRCWILSON-WB25J1.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "wilson-blade-26-v10-2026",
-      "brand": "Wilson",
-      "line": "Blade",
-      "model": "Blade 26\" Junior",
-      "generation": "v10",
-      "releaseYear": 2026,
-      "category": "junior",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 26,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": null,
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": null,
-      "sources": [
-        "https://www.tennis-warehouse.com/Wilson_Blade_26_v10_Junior/descpageRCWILSON-WB26J1.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "wilson-blade-pro-100-v10",
-      "brand": "Wilson",
-      "line": "Blade",
-      "model": "Blade Pro 100",
-      "generation": "v10",
-      "releaseYear": null,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27.25,
-        "stringPattern": [
-          16,
-          20
-        ],
-        "beamMm": [
-          23,
-          23,
-          23
-        ],
-        "unstrungWeightG": 295,
-        "balanceMm": null
-      },
-      "colourway": "Green",
-      "sources": [
-        "https://www.tennis-warehouse.com/Wilson_Blade_Pro_100_v10/descpageRCWILSON-WB100P.html",
-        "https://tennisexpress.com/blogs/news/wilson-blade-v10-racquet-review"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "wilson-blade-pro-98-18x20-v10-2026",
-      "brand": "Wilson",
-      "line": "Blade",
-      "model": "Blade Pro 98 18x20",
-      "generation": "v10",
-      "releaseYear": 2026,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 98,
-        "lengthIn": 27,
-        "stringPattern": [
-          18,
-          20
-        ],
-        "beamMm": [
-          21.5,
-          21.5,
-          21.5
-        ],
-        "unstrungWeightG": 305,
-        "balanceMm": null
-      },
-      "colourway": "Green",
-      "sources": [
-        "https://www.tennis-warehouse.com/Wilson_Blade_Pro_98_18x20_v10/descpageRCWILSON-WB98P8.html",
-        "https://tennisexpress.com/blogs/news/wilson-blade-v10-racquet-review"
       ],
       "researched": "2026-11-20"
     },
@@ -12086,70 +13477,6 @@
       "colourway": "Black/Red",
       "sources": [
         "https://www.tennis-warehouse.com/Wilson_Clash_25_v2_Junior_Racquet/descpageRCWILSON-WC25V2.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "wilson-defyer-100ul",
-      "brand": "Wilson",
-      "line": "Defyer",
-      "model": "Defyer 100UL",
-      "generation": null,
-      "releaseYear": null,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          23.8,
-          25,
-          23
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Red",
-      "sources": [
-        "https://www.tennis-warehouse.com/Wilson_Defyer_100UL_Racquet/descpageRCWILSON-WR10UL.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "wilson-hyper-hammer-5-3-stretch-os",
-      "brand": "Wilson",
-      "line": "Hyper Hammer",
-      "model": "Hyper Hammer 5.3 Stretch OS",
-      "generation": null,
-      "releaseYear": null,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 110,
-        "lengthIn": 27.5,
-        "stringPattern": [
-          16,
-          20
-        ],
-        "beamMm": [
-          28,
-          25,
-          25
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Black & White w/ Gold highlights",
-      "sources": [
-        "https://www.tennis-warehouse.com/Wilson_Hyper_Hammer_53_Stretch_OS/descpageRCWILSON-53OS.html"
       ],
       "researched": "2026-11-20"
     },
@@ -12218,38 +13545,6 @@
       "researched": "2026-11-20"
     },
     {
-      "id": "wilson-ultra-100ul-v5-2025",
-      "brand": "Wilson",
-      "line": "Ultra",
-      "model": "Ultra 100UL",
-      "generation": "v5",
-      "releaseYear": 2025,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          24,
-          26.5,
-          24.5
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Blue",
-      "sources": [
-        "https://www.tennis-warehouse.com/Wilson_Ultra_100UL_v5/descpageRCWILSON-WU1UL5.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
       "id": "wilson-ultra-25-v5",
       "brand": "Wilson",
       "line": "Ultra",
@@ -12299,103 +13594,6 @@
       "colourway": "Red/Orange",
       "sources": [
         "https://www.tennis-warehouse.com/Wilson_US_Open_21_Junior/descpageRCWILSON-WSB21.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "yonex-ezone-100-sl-2025",
-      "brand": "Yonex",
-      "line": "EZONE",
-      "model": "EZONE 100 SL",
-      "generation": "2025",
-      "releaseYear": 2025,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          18
-        ],
-        "beamMm": [
-          24.5,
-          26.5,
-          23
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Blue",
-      "sources": [
-        "https://www.tennis-warehouse.com/Yonex_EZONE_100_SL_2025/descpageRCYONEX-EZ1SLB.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "yonex-ezone-100l-2025",
-      "brand": "Yonex",
-      "line": "EZONE",
-      "model": "EZONE 100L",
-      "generation": "2025",
-      "releaseYear": 2025,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          24.5,
-          26.5,
-          23
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Blue; Espresso Brown 2026 colourway",
-      "sources": [
-        "https://www.tennis-warehouse.com/Yonex_EZONE_100L_2025/descpageRCYONEX-EZ1LBB.html",
-        "https://www.tennis-warehouse.com/Yonex_EZONE_100L_Espresso_Brown/descpageRCYONEX-EZ1LEB.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "yonex-ezone-ace",
-      "brand": "Yonex",
-      "line": "EZONE",
-      "model": "EZONE Ace",
-      "generation": null,
-      "releaseYear": null,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 102,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          24,
-          26.5,
-          23
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Blue",
-      "sources": [
-        "https://www.tennis-warehouse.com/Yonex_EZONE_Ace/descpageRCYONEX-EZACBB.html"
       ],
       "researched": "2026-11-20"
     },
@@ -12548,34 +13746,6 @@
       "colourway": "Blue",
       "sources": [
         "https://www.tennis-warehouse.com/Yonex_EZONE_25_Junior/descpageRCYONEX-EZOJ25.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "yonex-ezone-junior-26",
-      "brand": "Yonex",
-      "line": "EZONE",
-      "model": "EZONE 26\" Junior",
-      "generation": null,
-      "releaseYear": null,
-      "category": "junior",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 26,
-        "stringPattern": [
-          16,
-          18
-        ],
-        "beamMm": null,
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Blue",
-      "sources": [
-        "https://www.tennis-warehouse.com/Yonex_EZONE_26_Junior/descpageRCYONEX-EZOJ26.html"
       ],
       "researched": "2026-11-20"
     },
@@ -12744,299 +13914,6 @@
       "colourway": "Coral Orange or Ocean Blue",
       "sources": [
         "https://www.tennis-warehouse.com/Yonex_Junior_26_Racquet_Coral_Orange/descpageRCYONEX-YONJ26CO.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "yonex-muse-100l-2026",
-      "brand": "Yonex",
-      "line": "Muse",
-      "model": "Muse 100L",
-      "generation": null,
-      "releaseYear": 2026,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          18
-        ],
-        "beamMm": [
-          24.5,
-          24.5,
-          18
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Silver",
-      "sources": [
-        "https://www.tennis-warehouse.com/Yonex_Muse_100L/descpageRCYONEX-YMU10L.html",
-        "https://www.tennisnerd.net/gear/racquets/yonex-muse-a-new-racquet-line-built-for-pure-playability/63848"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "yonex-muse-100sl-2026",
-      "brand": "Yonex",
-      "line": "Muse",
-      "model": "Muse 100SL",
-      "generation": null,
-      "releaseYear": 2026,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          18
-        ],
-        "beamMm": [
-          24.5,
-          24.5,
-          18
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Silver",
-      "sources": [
-        "https://www.tennis-warehouse.com/Yonex_Muse_100SL/descpageRCYONEX-YMU1SL.html",
-        "https://www.tennisnerd.net/gear/racquets/yonex-muse-a-new-racquet-line-built-for-pure-playability/63848"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "yonex-percept-100d-2023",
-      "brand": "Yonex",
-      "line": "Percept",
-      "model": "Percept 100D",
-      "generation": null,
-      "releaseYear": 2023,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": null,
-        "stringPattern": [
-          18,
-          19
-        ],
-        "beamMm": [
-          23,
-          23,
-          23
-        ],
-        "unstrungWeightG": 305,
-        "balanceMm": 315
-      },
-      "colourway": "Midnight Navy (2025 colourway; original 2023 colourway olive green)",
-      "sources": [
-        "https://tennisexpress.com/blogs/news/yonex-percept-tennis-racquets-midnight-navy",
-        "https://www.tennisnuts.com/shop/tennis/tennis-rackets/yonex/percept.html",
-        "https://www.tennisnerd.net/gear/racquets/yonex-launching-the-percept-midnight-navy/57688"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "yonex-percept-100l-2023",
-      "brand": "Yonex",
-      "line": "Percept",
-      "model": "Percept 100L",
-      "generation": null,
-      "releaseYear": 2023,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": null,
-        "stringPattern": null,
-        "beamMm": [
-          23,
-          23,
-          23
-        ],
-        "unstrungWeightG": 280,
-        "balanceMm": 335
-      },
-      "colourway": "Midnight Navy (2025 colourway; original 2023 colourway olive green)",
-      "sources": [
-        "https://tennisexpress.com/blogs/news/yonex-percept-tennis-racquets-midnight-navy",
-        "https://www.tennisnuts.com/shop/tennis/tennis-rackets/yonex/percept.html",
-        "https://www.tennisnerd.net/gear/racquets/yonex-launching-the-percept-midnight-navy/57688"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "yonex-percept-97h-2023",
-      "brand": "Yonex",
-      "line": "Percept",
-      "model": "Percept 97H",
-      "generation": null,
-      "releaseYear": 2023,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 97,
-        "lengthIn": null,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          21,
-          21,
-          21
-        ],
-        "unstrungWeightG": 330,
-        "balanceMm": 310
-      },
-      "colourway": "Midnight Navy (2025 colourway; original 2023 colourway olive green)",
-      "sources": [
-        "https://tennisexpress.com/blogs/news/yonex-percept-tennis-racquets-midnight-navy",
-        "https://www.tennisnuts.com/shop/tennis/tennis-rackets/yonex/percept.html",
-        "https://www.tennisnerd.net/gear/racquets/yonex-launching-the-percept-midnight-navy/57688"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "yonex-percept-97l-2023",
-      "brand": "Yonex",
-      "line": "Percept",
-      "model": "Percept 97L",
-      "generation": null,
-      "releaseYear": 2023,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 97,
-        "lengthIn": null,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          21,
-          21,
-          21
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": 325
-      },
-      "colourway": "Midnight Navy (2025 colourway; original 2023 colourway olive green)",
-      "sources": [
-        "https://tennisexpress.com/blogs/news/yonex-percept-tennis-racquets-midnight-navy",
-        "https://www.tennisnuts.com/yonex-percept-97l-tennis-racket-frame-only-2025-1731565.html",
-        "https://www.tennisnerd.net/gear/racquets/yonex-launching-the-percept-midnight-navy/57688"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "yonex-percept-game-2025",
-      "brand": "Yonex",
-      "line": "Percept",
-      "model": "Percept Game",
-      "generation": null,
-      "releaseYear": 2025,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": null,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": null,
-        "unstrungWeightG": 270,
-        "balanceMm": null
-      },
-      "colourway": "Midnight Navy",
-      "sources": [
-        "https://www.tennisnuts.com/shop/tennis/tennis-rackets/yonex/percept.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "yonex-vcore-100d-2026",
-      "brand": "Yonex",
-      "line": "VCORE",
-      "model": "VCORE 100D",
-      "generation": "8th gen",
-      "releaseYear": 2026,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          20
-        ],
-        "beamMm": [
-          24,
-          26,
-          23
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Red (ruby red)",
-      "sources": [
-        "https://www.tennis-warehouse.com/Yonex_VCORE_100D_8th_Gen/descpageRCYONEX-VC1D8G.html",
-        "https://www.tennis-warehouse.com/catpage-YONEXVCORE.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "yonex-vcore-100l-2026",
-      "brand": "Yonex",
-      "line": "VCORE",
-      "model": "VCORE 100L",
-      "generation": "8th gen",
-      "releaseYear": 2026,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          24,
-          26,
-          23
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Red (ruby red)",
-      "sources": [
-        "https://www.tennis-warehouse.com/Yonex_VCORE_100L_8th_Gen/descpageRCYONEX-VC1L8G.html",
-        "https://www.tennis-warehouse.com/catpage-YONEXVCORE.html"
       ],
       "researched": "2026-11-20"
     },

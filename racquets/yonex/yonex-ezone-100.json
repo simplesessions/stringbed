@@ -368,6 +368,69 @@
       "sources": [
         "https://www.tennis-warehouse.com/Yonex_EZONE_98_2025/descpageRCYONEX-LEZ98B.html"
       ]
+    },
+    {
+      "id": "yonex-ezone-100-sl-2025",
+      "label": "100 SL",
+      "model": "EZONE 100 SL",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          18
+        ],
+        "beamMm": [
+          24.5,
+          26.5,
+          23
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Yonex_EZONE_100_SL_2025/descpageRCYONEX-EZ1SLB.html"
+      ]
+    },
+    {
+      "id": "yonex-ezone-100l-2025",
+      "label": "100L",
+      "model": "EZONE 100L",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          24.5,
+          26.5,
+          23
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Yonex_EZONE_100L_2025/descpageRCYONEX-EZ1LBB.html"
+      ]
+    },
+    {
+      "id": "yonex-ezone-junior-26",
+      "label": "Junior 26",
+      "model": "EZONE 26\" Junior",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 26,
+        "stringPattern": [
+          16,
+          18
+        ],
+        "beamMm": [
+          24.5,
+          26.5,
+          23
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Yonex_EZONE_26_Junior/descpageRCYONEX-EZOJ26.html"
+      ]
     }
   ],
   "variantLabel": "100"

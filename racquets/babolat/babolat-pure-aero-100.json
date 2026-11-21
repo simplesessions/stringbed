@@ -148,6 +148,72 @@
       "sources": [
         "https://www.tennis-warehouse.com/Babolat_Pure_Aero_Team_2026/descpageRCBAB-BPAT26.html"
       ]
+    },
+    {
+      "id": "babolat-pure-aero-lite-2026",
+      "label": "Lite",
+      "model": "Pure Aero Lite",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 270
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Babolat_Pure_Aero_Lite_2026/descpageRCBAB-BPALTR.html"
+      ]
+    },
+    {
+      "id": "babolat-pure-aero-super-lite-2026",
+      "label": "Super Lite",
+      "model": "Pure Aero Super Lite",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 255
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Babolat_Pure_Aero_Super_Lite_2026/descpageRCBAB-BPARSL.html"
+      ]
+    },
+    {
+      "id": "babolat-pure-aero-junior-26-2026",
+      "label": "Junior 26",
+      "model": "Pure Aero Junior 26",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 26,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 250
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Babolat_Pure_Aero_Junior_26/descpageRCBAB-BPAJR6.html"
+      ]
     }
   ]
 }

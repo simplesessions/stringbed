@@ -182,6 +182,28 @@
       "sources": [
         "https://www.tennis-warehouse.com/Babolat_Pure_Drive_107_2025/descpageRCBAB-BPD17R.html"
       ]
+    },
+    {
+      "id": "babolat-pure-drive-junior-26-2025",
+      "label": "Junior 26",
+      "model": "Pure Drive Junior 26",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 26,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 250
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Babolat_Pure_Drive_26_Junior/descpageRCBAB-BPJ26R.html"
+      ]
     }
   ]
 }

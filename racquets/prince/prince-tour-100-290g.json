@@ -157,6 +157,27 @@
       "sources": [
         "https://www.tennis-warehouse.com/Prince_Tour_100P_2026/descpageRCTWABG-PTR61P.html"
       ]
+    },
+    {
+      "id": "prince-tour-100-275g-2026",
+      "label": "100 275g",
+      "model": "Tour 100 275g",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          18
+        ],
+        "beamMm": [
+          24,
+          25,
+          22
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Prince_Tour_100_275g_2026/descpageRCTWABG-PTR627.html"
+      ]
     }
   ]
 }

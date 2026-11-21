@@ -66,7 +66,7 @@ function signature(s: RacquetSpec): string {
   const frame = buildRacquet(s).parts[0].geometry;
   frame.computeBoundingBox();
   const zMm = Math.round((frame.boundingBox!.max.z - frame.boundingBox!.min.z) * 2000) / 2; // 0.5 mm steps
-  return JSON.stringify([widthMm, lengthMm, zMm, s.geometry.head.shape, s.geometry.beam.profile]);
+  return JSON.stringify([widthMm, lengthMm, zMm, s.geometry.head.shape, s.geometry.beam.profile, s.geometry.throat.style, s.geometry.throat.bridge]);
 }
 function visiblyDifferent(a: RacquetSpec, b: RacquetSpec): boolean {
   return (

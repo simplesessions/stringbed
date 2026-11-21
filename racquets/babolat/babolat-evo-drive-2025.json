@@ -88,5 +88,73 @@
     "https://www.tennis-warehouse.com/Babolat_Evo_Drive/descpageRCBAB-BEDR.html"
   ],
   "verified": true,
-  "colourway": "Blue"
+  "colourway": "Blue",
+  "variants": [
+    {
+      "id": "babolat-evo-drive-lite-2025",
+      "label": "Lite",
+      "model": "Evo Drive Lite",
+      "specs": {
+        "headSizeSqIn": 104,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          17
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 255
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Babolat_Evo_Drive_Lite/descpageRCBAB-BEDLR.html"
+      ]
+    },
+    {
+      "id": "babolat-evo-drive-tour-2025",
+      "label": "Tour",
+      "model": "Evo Drive Tour",
+      "specs": {
+        "headSizeSqIn": 102,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 285
+      },
+      "sources": [
+        "https://www.babolat.com/gb/evo-drive-tour-gen2-strung/102549.html"
+      ]
+    },
+    {
+      "id": "babolat-evo-drive-115",
+      "label": "115",
+      "model": "Evo Drive 115",
+      "specs": {
+        "headSizeSqIn": 115,
+        "lengthIn": 27.6,
+        "stringPattern": [
+          16,
+          17
+        ],
+        "beamMm": [
+          25,
+          28,
+          24
+        ]
+      },
+      "sources": [
+        "https://web.archive.org/web/20230410180218/https://www.tennis-warehouse.com/Babolat_EVO_Drive_115/descpageRCBAB-BEVODO.html"
+      ]
+    }
+  ],
+  "variantLabel": "Evo Drive"
 }

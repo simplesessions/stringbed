@@ -1,0 +1,79 @@
+{
+  "id": "prince-o3-legacy-110",
+  "brand": "Prince",
+  "line": "O3 Legacy",
+  "model": "O3 Legacy 110",
+  "generation": "Legacy",
+  "year": 2024,
+  "specs": {
+    "headSizeSqIn": 110,
+    "lengthIn": 27.25,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      25,
+      27,
+      26
+    ]
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.27
+    },
+    "beam": {
+      "profile": "ellipse"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "curved"
+    },
+    "features": [
+      "o-ports"
+    ]
+  },
+  "paint": {
+    "base": "#24405e",
+    "finish": "satin",
+    "zones": [
+      {
+        "from": 0.9,
+        "to": 1,
+        "color": "#14161a",
+        "faces": [
+          "inner"
+        ]
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#1c1c1e"
+    },
+    "collar": {
+      "color": "#24405e"
+    },
+    "buttCap": {
+      "color": "#1c1c1e"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#1a2a40",
+      "channel": 0.45
+    },
+    "bumper": {
+      "color": "#1a2a40"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://www.tennis-warehouse.com/Prince_O3_Legacy_110/descpageRCTWABG-P3LY11.html"
+  ],
+  "verified": true,
+  "colourway": "Blue"
+}

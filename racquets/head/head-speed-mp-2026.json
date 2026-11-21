@@ -258,6 +258,69 @@
       "sources": [
         "https://www.tennis-warehouse.com/Head_Speed_Team_2026/descpageRCHEAD-HSPTM6.html"
       ]
+    },
+    {
+      "id": "head-speed-mp-l-2026",
+      "label": "MP L",
+      "model": "Speed MP L",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          23,
+          23
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Speed_MP_L_2026/descpageRCHEAD-HSMPL6.html"
+      ]
+    },
+    {
+      "id": "head-speed-mp-ul-2026",
+      "label": "MP UL",
+      "model": "Speed MP UL",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          23,
+          23
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Speed_MP_UL_2026/descpageRCHEAD-HSMPUL.html"
+      ]
+    },
+    {
+      "id": "head-speed-junior-26-2026",
+      "label": "Junior 26",
+      "model": "Speed Junior 26",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 26,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          23,
+          23
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Speed_Junior_26_2026/descpageRCHEAD-HSPJR6.html"
+      ]
     }
   ]
 }

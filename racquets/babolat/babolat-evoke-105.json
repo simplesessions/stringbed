@@ -70,5 +70,29 @@
     "https://web.archive.org/web/20230410182005/https://www.tennis-warehouse.com/Babolat_EVOKE_105/descpageRCBAB-EVOKE5.html"
   ],
   "verified": true,
-  "colourway": "Black/Red"
+  "colourway": "Black/Red",
+  "variants": [
+    {
+      "id": "babolat-evoke-102",
+      "label": "102",
+      "model": "Evoke 102",
+      "specs": {
+        "headSizeSqIn": 102,
+        "lengthIn": 27.0,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          22,
+          22,
+          25
+        ]
+      },
+      "sources": [
+        "https://web.archive.org/web/20230130101235/https://www.tennis-warehouse.com/Babolat_EVOKE_102/descpageRCBAB-EVOKE2.html"
+      ]
+    }
+  ],
+  "variantLabel": "105"
 }

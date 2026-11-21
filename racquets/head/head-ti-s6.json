@@ -1,0 +1,74 @@
+{
+  "id": "head-ti-s6",
+  "brand": "Head",
+  "line": "Ti",
+  "model": "Ti.S6",
+  "generation": "S6",
+  "year": 2024,
+  "specs": {
+    "headSizeSqIn": 115,
+    "lengthIn": 27.75,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      27,
+      28,
+      27
+    ]
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.25
+    },
+    "beam": {
+      "profile": "ellipse"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "curved"
+    },
+    "features": []
+  },
+  "paint": {
+    "base": "#3b3f44",
+    "finish": "gloss",
+    "zones": [
+      {
+        "from": 0,
+        "to": 0.3,
+        "color": "#b9bcc2"
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#1c1c1e"
+    },
+    "collar": {
+      "color": "#b9bcc2"
+    },
+    "buttCap": {
+      "color": "#1c1c1e"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#2a2d31",
+      "channel": 0.45
+    },
+    "bumper": {
+      "color": "#2a2d31"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://www.tennis-warehouse.com/Head_Titanium_TiS6_Strung/descpageRCHEAD-TIS6.html"
+  ],
+  "verified": true,
+  "colourway": "Silver/Charcoal"
+}

@@ -1,0 +1,77 @@
+{
+  "id": "wilson-hyper-hammer-5-3-stretch-os",
+  "brand": "Wilson",
+  "line": "Hyper Hammer",
+  "model": "Hyper Hammer 5.3 Stretch OS",
+  "generation": "5.3",
+  "year": 2020,
+  "specs": {
+    "headSizeSqIn": 110,
+    "lengthIn": 27.5,
+    "stringPattern": [
+      16,
+      20
+    ],
+    "beamMm": [
+      28,
+      25,
+      25
+    ]
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.27
+    },
+    "beam": {
+      "profile": "ellipse"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "curved"
+    },
+    "features": []
+  },
+  "paint": {
+    "base": "#2a2a2e",
+    "finish": "satin",
+    "zones": [
+      {
+        "from": 0.86,
+        "to": 0.93,
+        "color": "#b8923a",
+        "faces": [
+          "outer"
+        ]
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#1c1c1e"
+    },
+    "collar": {
+      "color": "#2a2a2e"
+    },
+    "buttCap": {
+      "color": "#1c1c1e"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#1c1c1e",
+      "channel": 0.45
+    },
+    "bumper": {
+      "color": "#1c1c1e"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://www.tennis-warehouse.com/Wilson_Hyper_Hammer_53_Stretch_OS/descpageRCWILSON-53OS.html"
+  ],
+  "verified": true,
+  "colourway": "Black/Gold"
+}

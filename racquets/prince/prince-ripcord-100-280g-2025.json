@@ -130,6 +130,48 @@
       "sources": [
         "https://www.tennis-warehouse.com/Prince_Ripcord_100_300g/descpageRCTWABG-RPCDH.html"
       ]
+    },
+    {
+      "id": "prince-ripcord-100-265g-2025",
+      "label": "100 265g",
+      "model": "Ripcord 100 265g",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          27,
+          25,
+          22
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Prince_Ripcord_100_265g/descpageRCTWABG-RPCDL.html"
+      ]
+    },
+    {
+      "id": "prince-ripcord-26-junior",
+      "label": "Junior 26",
+      "model": "Ripcord 26\" Junior",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 26,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          27,
+          25,
+          22
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Prince_Ripcord_26_Junior/descpageRCPRINCE-PRIPCJ26.html"
+      ]
     }
   ],
   "variantLabel": "100 280g"

@@ -70,5 +70,30 @@
     "https://www.tennis-warehouse.com/Babolat_Evo_Aero_2026/descpageRCBAB-BEA26R.html"
   ],
   "verified": true,
-  "colourway": "Grey/Fluorescent yellow"
+  "colourway": "Grey/Fluorescent yellow",
+  "variants": [
+    {
+      "id": "babolat-evo-aero-lite-2026",
+      "label": "Lite",
+      "model": "Evo Aero Lite",
+      "specs": {
+        "headSizeSqIn": 102,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 260
+      },
+      "sources": [
+        "https://www.babolat.com/gb/evo-aero-lite-gen2-strung/102564.html"
+      ]
+    }
+  ],
+  "variantLabel": "Evo Aero"
 }

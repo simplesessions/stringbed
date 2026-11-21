@@ -216,6 +216,115 @@
       "sources": [
         "https://www.tennis-warehouse.com/Wilson_Blade_104_v10/descpageRCWILSON-WB104V.html"
       ]
+    },
+    {
+      "id": "wilson-blade-100l-v10-2026",
+      "label": "100L",
+      "model": "Blade 100L",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          22,
+          22,
+          22
+        ],
+        "unstrungWeightG": 285
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Wilson_Blade_100L_v10/descpageRCWILSON-WB10L1.html"
+      ]
+    },
+    {
+      "id": "wilson-blade-100ul-v10-2026",
+      "label": "100UL",
+      "model": "Blade 100UL",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          22,
+          22,
+          22
+        ],
+        "unstrungWeightG": 265
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Wilson_Blade_100UL_v10/descpageRCWILSON-WB1UL1.html"
+      ]
+    },
+    {
+      "id": "wilson-blade-pro-98-18x20-v10-2026",
+      "label": "Pro 98 18x20",
+      "model": "Blade Pro 98 18x20",
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          18,
+          20
+        ],
+        "beamMm": [
+          21.5,
+          21.5,
+          21.5
+        ],
+        "unstrungWeightG": 305
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Wilson_Blade_Pro_98_18x20_v10/descpageRCWILSON-WB98P8.html"
+      ]
+    },
+    {
+      "id": "wilson-blade-pro-100-v10",
+      "label": "Pro 100",
+      "model": "Blade Pro 100",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27.25,
+        "stringPattern": [
+          16,
+          20
+        ],
+        "beamMm": [
+          23,
+          23,
+          23
+        ],
+        "unstrungWeightG": 295
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Wilson_Blade_Pro_100_v10/descpageRCWILSON-WB100P.html"
+      ]
+    },
+    {
+      "id": "wilson-blade-26-v10-2026",
+      "label": "Junior 26",
+      "model": "Blade 26\" Junior",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 26,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          21.5,
+          21.5,
+          20.5
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Wilson_Blade_26_v10_Junior/descpageRCWILSON-WB26J1.html"
+      ]
     }
   ]
 }

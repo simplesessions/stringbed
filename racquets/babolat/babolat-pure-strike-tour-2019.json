@@ -75,5 +75,92 @@
     "https://web.archive.org/web/20230410173836/https://www.tennis-warehouse.com/Babolat_Pure_Strike_Tour_3rd_Gen/descpageRCBAB-BPSTTO.html"
   ],
   "verified": true,
-  "colourway": "White/Coral"
+  "colourway": "White/Coral",
+  "variants": [
+    {
+      "id": "babolat-pure-strike-100-2019",
+      "label": "100",
+      "model": "Pure Strike 100",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27.0,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          21,
+          23,
+          21
+        ]
+      },
+      "sources": [
+        "https://web.archive.org/web/20230130101136/https://www.tennis-warehouse.com/Babolat_Pure_Strike_100_3rd_Gen/descpageRCBAB-BPSTRI.html"
+      ]
+    },
+    {
+      "id": "babolat-pure-strike-98-18x20-2019",
+      "label": "18x20",
+      "model": "Pure Strike 98 18x20",
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27.0,
+        "stringPattern": [
+          18,
+          20
+        ],
+        "beamMm": [
+          21,
+          23,
+          21
+        ]
+      },
+      "sources": [
+        "https://web.archive.org/web/20230410174452/https://www.tennis-warehouse.com/Babolat_Pure_Strike_18x20_3rd_Gen/descpageRCBAB-PS182.html"
+      ]
+    },
+    {
+      "id": "babolat-pure-strike-team-2019",
+      "label": "Team",
+      "model": "Pure Strike Team",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27.0,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          21,
+          23,
+          21
+        ]
+      },
+      "sources": [
+        "https://web.archive.org/web/20230410174451/https://www.tennis-warehouse.com/Babolat_Pure_Strike_Team_3rd_Gen/descpageRCBAB-BPSTRT.html"
+      ]
+    },
+    {
+      "id": "babolat-pure-strike-103-2022",
+      "label": "103",
+      "model": "Pure Strike 103",
+      "specs": {
+        "headSizeSqIn": 103,
+        "lengthIn": 27.0,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          21,
+          23,
+          21
+        ]
+      },
+      "sources": [
+        "https://web.archive.org/web/20230410174449/https://www.tennis-warehouse.com/Babolat_Pure_Strike_103/descpageRCBAB-BPS103.html"
+      ]
+    }
+  ],
+  "variantLabel": "Tour"
 }

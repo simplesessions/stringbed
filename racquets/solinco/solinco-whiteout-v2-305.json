@@ -128,6 +128,49 @@
       "sources": [
         "https://www.tennis-warehouse.com/Solinco_Whiteout_305_XTD_v2_Camo/descpageRCSOLINCO-WTOCAX.html"
       ]
+    },
+    {
+      "id": "solinco-whiteout-v2-290-2025",
+      "label": "290",
+      "model": "Whiteout V2 290",
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          21.7,
+          21.7,
+          21.7
+        ],
+        "unstrungWeightG": 290
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Solinco_Whiteout_290_v2_Camo/descpageRCSOLINCO-WTOCAL.html"
+      ]
+    },
+    {
+      "id": "solinco-whiteout-v2-305-xtd-18x20-2025",
+      "label": "305 XTD 18x20",
+      "model": "Whiteout V2 305 XTD 18x20",
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27.5,
+        "stringPattern": [
+          18,
+          20
+        ],
+        "beamMm": [
+          21.7,
+          21.7,
+          21.7
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Solinco_Whiteout_305_XTD_18x20_v2_Camo/descpageRCSOLINCO-SWO2X8.html"
+      ]
     }
   ],
   "variantLabel": "305"

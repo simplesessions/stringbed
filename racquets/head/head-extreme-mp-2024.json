@@ -113,6 +113,27 @@
       "sources": [
         "https://www.tennis-warehouse.com/Head_Extreme_Team_2024/descpageRCHEAD-HRET24.html"
       ]
+    },
+    {
+      "id": "head-extreme-mp-l-2024",
+      "label": "MP L",
+      "model": "Extreme MP L",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          21
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Extreme_MP_L_2024/descpageRCHEAD-HEMPL24.html"
+      ]
     }
   ],
   "variantLabel": "MP"

@@ -70,5 +70,29 @@
     "https://www.tennis-warehouse.com/Head_PWR_110/descpageRCHEAD-HPWR10.html"
   ],
   "verified": true,
-  "colourway": "White"
+  "colourway": "White",
+  "variants": [
+    {
+      "id": "head-pwr-115-2026",
+      "label": "115",
+      "model": "PWR 115",
+      "specs": {
+        "headSizeSqIn": 115,
+        "lengthIn": 27.7,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          29,
+          29,
+          29
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_PWR_115/descpageRCHEAD-HPWR15.html"
+      ]
+    }
+  ],
+  "variantLabel": "110"
 }

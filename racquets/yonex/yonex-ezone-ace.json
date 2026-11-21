@@ -1,0 +1,93 @@
+{
+  "id": "yonex-ezone-ace",
+  "brand": "Yonex",
+  "line": "EZONE",
+  "model": "EZONE Ace",
+  "generation": "Ace",
+  "year": 2024,
+  "specs": {
+    "headSizeSqIn": 102,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      24,
+      26.5,
+      23
+    ]
+  },
+  "geometry": {
+    "head": {
+      "shape": "isometric",
+      "aspect": 1.35
+    },
+    "beam": {
+      "profile": "ellipse"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "flat"
+    },
+    "features": []
+  },
+  "paint": {
+    "base": "#2d5ad6",
+    "finish": "satin",
+    "zones": [
+      {
+        "from": 0.43,
+        "to": 0.58,
+        "color": "#3a3fb8",
+        "faces": [
+          "outer"
+        ]
+      },
+      {
+        "from": 0.5,
+        "to": 0.56,
+        "color": "#2fd0b0",
+        "faces": [
+          "outer"
+        ]
+      },
+      {
+        "from": 0.9,
+        "to": 1,
+        "color": "#14161a",
+        "faces": [
+          "inner"
+        ]
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#1c1c1e"
+    },
+    "collar": {
+      "color": "#2d5ad6"
+    },
+    "buttCap": {
+      "color": "#1c1c1e"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#1a2f7a",
+      "channel": 0.45
+    },
+    "bumper": {
+      "color": "#1a2f7a"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://www.tennis-warehouse.com/Yonex_EZONE_Ace/descpageRCYONEX-EZACBB.html"
+  ],
+  "verified": true,
+  "colourway": "Blue"
+}

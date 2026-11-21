@@ -133,6 +133,115 @@
       "sources": [
         "https://tennisexpress.com/blogs/news/yonex-percept-tennis-racquets-midnight-navy"
       ]
+    },
+    {
+      "id": "yonex-percept-97h-2023",
+      "label": "97H",
+      "model": "Percept 97H",
+      "specs": {
+        "headSizeSqIn": 97,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          21,
+          21,
+          21
+        ],
+        "unstrungWeightG": 330
+      },
+      "sources": [
+        "https://tennisexpress.com/blogs/news/yonex-percept-tennis-racquets-midnight-navy"
+      ]
+    },
+    {
+      "id": "yonex-percept-97l-2023",
+      "label": "97L",
+      "model": "Percept 97L",
+      "specs": {
+        "headSizeSqIn": 97,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          21,
+          21,
+          21
+        ]
+      },
+      "sources": [
+        "https://tennisexpress.com/blogs/news/yonex-percept-tennis-racquets-midnight-navy"
+      ]
+    },
+    {
+      "id": "yonex-percept-100d-2023",
+      "label": "100D",
+      "model": "Percept 100D",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          18,
+          19
+        ],
+        "beamMm": [
+          23,
+          23,
+          23
+        ],
+        "unstrungWeightG": 305
+      },
+      "sources": [
+        "https://tennisexpress.com/blogs/news/yonex-percept-tennis-racquets-midnight-navy"
+      ]
+    },
+    {
+      "id": "yonex-percept-100l-2023",
+      "label": "100L",
+      "model": "Percept 100L",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          23,
+          23
+        ],
+        "unstrungWeightG": 280
+      },
+      "sources": [
+        "https://tennisexpress.com/blogs/news/yonex-percept-tennis-racquets-midnight-navy"
+      ]
+    },
+    {
+      "id": "yonex-percept-game-2025",
+      "label": "Game",
+      "model": "Percept Game",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          21,
+          21,
+          21
+        ],
+        "unstrungWeightG": 270
+      },
+      "sources": [
+        "https://www.tennisnuts.com/shop/tennis/tennis-rackets/yonex/percept.html"
+      ]
     }
   ],
   "variantLabel": "97"

@@ -144,6 +144,69 @@
       "sources": [
         "https://www.tennis-warehouse.com/Head_Extreme_Elite_2026_Racquet/descpageRCHEAD-HELT26.html"
       ]
+    },
+    {
+      "id": "head-extreme-mp-l-2026",
+      "label": "MP L",
+      "model": "Extreme MP L",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          21
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Extreme_MP_L_Racquet/descpageRCHEAD-HEMPL6.html"
+      ]
+    },
+    {
+      "id": "head-extreme-mp-ul-2026",
+      "label": "MP UL",
+      "model": "Extreme MP UL",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          21
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Extreme_MP_UL_Racquet/descpageRCHEAD-HEMPUL.html"
+      ]
+    },
+    {
+      "id": "head-extreme-mp-xl",
+      "label": "MP XL",
+      "model": "Extreme MP XL",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27.5,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          21
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Extreme_MP_XL_Racquet/descpageRCHEAD-HEMPXL.html"
+      ]
     }
   ]
 }
