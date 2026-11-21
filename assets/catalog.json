@@ -582,8 +582,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-drive-junior-25-2025.glb",
-          "bytes": 117732,
-          "triangles": 4836
+          "bytes": 119012,
+          "triangles": 4900
         }
       },
       "variantLabel": "Drive Junior 25",
@@ -3752,8 +3752,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-boom-elite-2026.glb",
-          "bytes": 110884,
-          "triangles": 4468
+          "bytes": 112884,
+          "triangles": 4568
         }
       },
       "variantLabel": "Elite",
@@ -3793,8 +3793,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-boom-junior-25-2026.glb",
-          "bytes": 110896,
-          "triangles": 4468
+          "bytes": 112896,
+          "triangles": 4568
         }
       },
       "variantLabel": "Junior 25",
@@ -3834,8 +3834,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-boom-junior-26-2026.glb",
-          "bytes": 110896,
-          "triangles": 4468
+          "bytes": 112896,
+          "triangles": 4568
         }
       },
       "variantLabel": "Junior 26",
@@ -3875,8 +3875,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-boom-mp-2026.glb",
-          "bytes": 110880,
-          "triangles": 4468
+          "bytes": 112884,
+          "triangles": 4568
         }
       },
       "variantLabel": "MP",
@@ -3950,8 +3950,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-boom-mp-l-2026.glb",
-          "bytes": 110884,
-          "triangles": 4468
+          "bytes": 112888,
+          "triangles": 4568
         }
       },
       "variantLabel": "MP L",
@@ -3991,8 +3991,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-boom-mp-ul-2026.glb",
-          "bytes": 110888,
-          "triangles": 4468
+          "bytes": 112888,
+          "triangles": 4568
         }
       },
       "variantLabel": "MP UL",
@@ -4032,8 +4032,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-boom-pro-2024.glb",
-          "bytes": 110896,
-          "triangles": 4468
+          "bytes": 112900,
+          "triangles": 4568
         }
       },
       "colourway": "Mint/Black"
@@ -4072,8 +4072,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-boom-pro-2026.glb",
-          "bytes": 110888,
-          "triangles": 4468
+          "bytes": 112888,
+          "triangles": 4568
         }
       },
       "variantLabel": "Pro",
@@ -4113,8 +4113,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-boom-team-2026.glb",
-          "bytes": 110888,
-          "triangles": 4468
+          "bytes": 112888,
+          "triangles": 4568
         }
       },
       "variantLabel": "Team",
@@ -4922,8 +4922,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-pwr-110.glb",
-          "bytes": 107016,
-          "triangles": 4276
+          "bytes": 109016,
+          "triangles": 4376
         }
       },
       "variantLabel": "110",
@@ -4973,8 +4973,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-pwr-115-2026.glb",
-          "bytes": 107020,
-          "triangles": 4276
+          "bytes": 109024,
+          "triangles": 4376
         }
       },
       "variantLabel": "115",
@@ -5151,8 +5151,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-radical-elite-2025.glb",
-          "bytes": 117284,
-          "triangles": 4788
+          "bytes": 119284,
+          "triangles": 4888
         }
       },
       "variantLabel": "Elite",
@@ -5192,8 +5192,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-radical-junior-21.glb",
-          "bytes": 117288,
-          "triangles": 4788
+          "bytes": 119292,
+          "triangles": 4888
         }
       },
       "variantLabel": "Junior 21",
@@ -5233,8 +5233,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-radical-junior-26-2025.glb",
-          "bytes": 117296,
-          "triangles": 4788
+          "bytes": 119300,
+          "triangles": 4888
         }
       },
       "variantLabel": "Junior 26",
@@ -5274,8 +5274,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-radical-mp-2025.glb",
-          "bytes": 117284,
-          "triangles": 4788
+          "bytes": 119284,
+          "triangles": 4888
         }
       },
       "variantLabel": "MP",
@@ -5341,8 +5341,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-radical-pro-2025.glb",
-          "bytes": 117284,
-          "triangles": 4788
+          "bytes": 119288,
+          "triangles": 4888
         }
       },
       "variantLabel": "Pro",
@@ -5382,8 +5382,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-radical-team-2025.glb",
-          "bytes": 117280,
-          "triangles": 4788
+          "bytes": 119284,
+          "triangles": 4888
         }
       },
       "variantLabel": "Team",
@@ -6221,8 +6221,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/prince-o3-ripstick-26-junior.glb",
-          "bytes": 124480,
-          "triangles": 5024
+          "bytes": 126484,
+          "triangles": 5124
         }
       },
       "variantLabel": "Junior 26",
@@ -6569,8 +6569,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/prince-ripcord-100-265g-2025.glb",
-          "bytes": 114744,
-          "triangles": 4660
+          "bytes": 116744,
+          "triangles": 4760
         }
       },
       "variantLabel": "100 265g",
@@ -6610,8 +6610,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/prince-ripcord-100-280g-2025.glb",
-          "bytes": 114744,
-          "triangles": 4660
+          "bytes": 116744,
+          "triangles": 4760
         }
       },
       "variantLabel": "100 280g",
@@ -6677,8 +6677,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/prince-ripcord-100-300g-2025.glb",
-          "bytes": 114744,
-          "triangles": 4660
+          "bytes": 116744,
+          "triangles": 4760
         }
       },
       "variantLabel": "100 300g",
@@ -6718,8 +6718,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/prince-ripcord-25-junior.glb",
-          "bytes": 114736,
-          "triangles": 4660
+          "bytes": 116736,
+          "triangles": 4760
         }
       },
       "variantLabel": "Junior 25",
@@ -6759,8 +6759,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/prince-ripcord-26-junior.glb",
-          "bytes": 114736,
-          "triangles": 4660
+          "bytes": 116736,
+          "triangles": 4760
         }
       },
       "variantLabel": "Junior 26",
@@ -6800,8 +6800,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/prince-ripcord-98-xs.glb",
-          "bytes": 114300,
-          "triangles": 4652
+          "bytes": 116300,
+          "triangles": 4752
         }
       },
       "variantLabel": "98 XS",
@@ -6842,8 +6842,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/prince-ripstick-100.glb",
-          "bytes": 124036,
-          "triangles": 5016
+          "bytes": 126036,
+          "triangles": 5116
         }
       },
       "variantLabel": "100",
@@ -6900,8 +6900,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/prince-ripstick-100-280g-2025.glb",
-          "bytes": 124056,
-          "triangles": 5016
+          "bytes": 126056,
+          "triangles": 5116
         }
       },
       "variantLabel": "100 280g",
@@ -6941,8 +6941,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/prince-ripstick-98-2025.glb",
-          "bytes": 119972,
-          "triangles": 4824
+          "bytes": 121972,
+          "triangles": 4924
         }
       },
       "variantLabel": "98",
@@ -7211,8 +7211,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/prince-warrior-100-285g-2025.glb",
-          "bytes": 108352,
-          "triangles": 4340
+          "bytes": 110356,
+          "triangles": 4440
         }
       },
       "colourway": "Black/Grey"
@@ -7251,8 +7251,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/prince-warrior-107-275g-2025.glb",
-          "bytes": 108352,
-          "triangles": 4340
+          "bytes": 110356,
+          "triangles": 4440
         }
       },
       "colourway": "Black/Bronze"
@@ -8384,8 +8384,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-clash-100-v3.glb",
-          "bytes": 116020,
-          "triangles": 4724
+          "bytes": 118020,
+          "triangles": 4824
         }
       },
       "variantLabel": "100",
@@ -8417,8 +8417,8 @@
           "assets": {
             "realistic": {
               "path": "realistic/wilson-clash-100-v3--reverse.glb",
-              "bytes": 108312,
-              "triangles": 4340
+              "bytes": 110316,
+              "triangles": 4440
             }
           }
         }
@@ -8500,8 +8500,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-clash-100l-v3-2025.glb",
-          "bytes": 116032,
-          "triangles": 4724
+          "bytes": 118032,
+          "triangles": 4824
         }
       },
       "variantLabel": "100L",
@@ -8541,8 +8541,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-clash-108-v3-2025.glb",
-          "bytes": 116028,
-          "triangles": 4724
+          "bytes": 118028,
+          "triangles": 4824
         }
       },
       "variantLabel": "108",
@@ -8805,8 +8805,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-pro-staff-97-v14.glb",
-          "bytes": 136220,
-          "triangles": 4440
+          "bytes": 138812,
+          "triangles": 4536
         }
       },
       "colourway": "Copper Iridescent",
@@ -9077,8 +9077,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-ultra-100-v5-2025.glb",
-          "bytes": 107052,
-          "triangles": 4276
+          "bytes": 109052,
+          "triangles": 4376
         }
       },
       "variantLabel": "100",
@@ -9148,8 +9148,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-ultra-100l-v5-2025.glb",
-          "bytes": 107052,
-          "triangles": 4276
+          "bytes": 109056,
+          "triangles": 4376
         }
       },
       "variantLabel": "100L",
@@ -9189,8 +9189,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-ultra-100ul-v5-2025.glb",
-          "bytes": 107056,
-          "triangles": 4276
+          "bytes": 109056,
+          "triangles": 4376
         }
       },
       "variantLabel": "100UL",
@@ -9230,8 +9230,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-ultra-111-v5-2025.glb",
-          "bytes": 106616,
-          "triangles": 4268
+          "bytes": 108616,
+          "triangles": 4368
         }
       },
       "variantLabel": "111",
@@ -9271,8 +9271,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-ultra-25-v5.glb",
-          "bytes": 107032,
-          "triangles": 4276
+          "bytes": 109036,
+          "triangles": 4376
         }
       },
       "variantLabel": "Junior 25",
@@ -9312,8 +9312,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-ultra-99-pro-v5.glb",
-          "bytes": 106620,
-          "triangles": 4268
+          "bytes": 108624,
+          "triangles": 4368
         }
       },
       "variantLabel": "99 Pro",
@@ -9445,8 +9445,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-ultra-team-v5-2025.glb",
-          "bytes": 107052,
-          "triangles": 4276
+          "bytes": 109052,
+          "triangles": 4376
         }
       },
       "variantLabel": "Team",
@@ -9487,8 +9487,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-ezone-100.glb",
-          "bytes": 128796,
-          "triangles": 5364
+          "bytes": 130796,
+          "triangles": 5464
         }
       },
       "variantLabel": "100",
@@ -9556,8 +9556,8 @@
           "assets": {
             "realistic": {
               "path": "realistic/yonex-ezone-100--espresso-brown.glb",
-              "bytes": 128812,
-              "triangles": 5364
+              "bytes": 130812,
+              "triangles": 5464
             }
           }
         }
@@ -9597,8 +9597,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-ezone-100-sl-2025.glb",
-          "bytes": 128380,
-          "triangles": 5356
+          "bytes": 130380,
+          "triangles": 5456
         }
       },
       "variantLabel": "100 SL",
@@ -9638,8 +9638,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-ezone-100-plus-2025.glb",
-          "bytes": 128816,
-          "triangles": 5364
+          "bytes": 130816,
+          "triangles": 5464
         }
       },
       "variantLabel": "100 Plus",
@@ -9679,8 +9679,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-ezone-100l-2025.glb",
-          "bytes": 128808,
-          "triangles": 5364
+          "bytes": 130808,
+          "triangles": 5464
         }
       },
       "variantLabel": "100L",
@@ -9720,8 +9720,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-ezone-105-2025.glb",
-          "bytes": 128808,
-          "triangles": 5364
+          "bytes": 130808,
+          "triangles": 5464
         }
       },
       "variantLabel": "105",
@@ -9761,8 +9761,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-ezone-110-2025.glb",
-          "bytes": 128376,
-          "triangles": 5356
+          "bytes": 130376,
+          "triangles": 5456
         }
       },
       "variantLabel": "110",
@@ -9802,8 +9802,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-ezone-115-2025.glb",
-          "bytes": 128372,
-          "triangles": 5356
+          "bytes": 130372,
+          "triangles": 5456
         }
       },
       "variantLabel": "115",
@@ -9843,8 +9843,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-ezone-junior-25.glb",
-          "bytes": 128376,
-          "triangles": 5356
+          "bytes": 130376,
+          "triangles": 5456
         }
       },
       "variantLabel": "Junior 25",
@@ -9884,8 +9884,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-ezone-junior-26.glb",
-          "bytes": 128376,
-          "triangles": 5356
+          "bytes": 130376,
+          "triangles": 5456
         }
       },
       "variantLabel": "Junior 26",
@@ -9925,8 +9925,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-ezone-98-2025.glb",
-          "bytes": 128808,
-          "triangles": 5364
+          "bytes": 130808,
+          "triangles": 5464
         }
       },
       "variantLabel": "98",
@@ -9966,8 +9966,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-ezone-98-tour-2025.glb",
-          "bytes": 128816,
-          "triangles": 5364
+          "bytes": 130816,
+          "triangles": 5464
         }
       },
       "variantLabel": "98 Tour",
@@ -10007,8 +10007,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-ezone-98-plus-2025.glb",
-          "bytes": 128816,
-          "triangles": 5364
+          "bytes": 130816,
+          "triangles": 5464
         }
       },
       "variantLabel": "98 Plus",
@@ -10088,8 +10088,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-ezone-jr-25.glb",
-          "bytes": 128368,
-          "triangles": 5356
+          "bytes": 130368,
+          "triangles": 5456
         }
       },
       "variantLabel": "Junior 25 (JR)",
@@ -10129,8 +10129,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-muse-100-2026.glb",
-          "bytes": 107876,
-          "triangles": 4332
+          "bytes": 109880,
+          "triangles": 4432
         }
       },
       "variantLabel": "Muse 100",
@@ -10192,8 +10192,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-muse-100l-2026.glb",
-          "bytes": 107880,
-          "triangles": 4332
+          "bytes": 109880,
+          "triangles": 4432
         }
       },
       "variantLabel": "100L",
@@ -10233,8 +10233,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-muse-100sl-2026.glb",
-          "bytes": 107880,
-          "triangles": 4332
+          "bytes": 109884,
+          "triangles": 4432
         }
       },
       "variantLabel": "100SL",
@@ -10274,8 +10274,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-muse-107-2026.glb",
-          "bytes": 107876,
-          "triangles": 4332
+          "bytes": 109880,
+          "triangles": 4432
         }
       },
       "variantLabel": "107",
@@ -10315,8 +10315,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-muse-98-2026.glb",
-          "bytes": 107872,
-          "triangles": 4332
+          "bytes": 109876,
+          "triangles": 4432
         }
       },
       "variantLabel": "98",
@@ -10725,8 +10725,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-vcore-100.glb",
-          "bytes": 124644,
-          "triangles": 4756
+          "bytes": 126868,
+          "triangles": 4856
         }
       },
       "variantLabel": "100",
@@ -10799,8 +10799,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-vcore-100-plus-2026.glb",
-          "bytes": 124656,
-          "triangles": 4756
+          "bytes": 126880,
+          "triangles": 4856
         }
       },
       "variantLabel": "100 Plus",
@@ -10840,8 +10840,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-vcore-100d-2026.glb",
-          "bytes": 125088,
-          "triangles": 4764
+          "bytes": 127312,
+          "triangles": 4864
         }
       },
       "variantLabel": "100D",
@@ -10881,8 +10881,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-vcore-100l-2026.glb",
-          "bytes": 124656,
-          "triangles": 4756
+          "bytes": 126880,
+          "triangles": 4856
         }
       },
       "variantLabel": "100L",
@@ -10922,8 +10922,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-vcore-95-2026.glb",
-          "bytes": 125080,
-          "triangles": 4764
+          "bytes": 127308,
+          "triangles": 4864
         }
       },
       "variantLabel": "95",
@@ -10963,8 +10963,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-vcore-98-2026.glb",
-          "bytes": 124652,
-          "triangles": 4756
+          "bytes": 126876,
+          "triangles": 4856
         }
       },
       "variantLabel": "98",
@@ -11004,8 +11004,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-vcore-98-tour-2026.glb",
-          "bytes": 124664,
-          "triangles": 4756
+          "bytes": 126888,
+          "triangles": 4856
         }
       },
       "variantLabel": "98 Tour",
@@ -11045,8 +11045,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-vcore-98-plus-2026.glb",
-          "bytes": 124660,
-          "triangles": 4756
+          "bytes": 126884,
+          "triangles": 4856
         }
       },
       "variantLabel": "98 Plus",
