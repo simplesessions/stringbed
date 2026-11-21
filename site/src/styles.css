@@ -605,6 +605,13 @@ body[data-view='detail'] .signs { display: none; }
 }
 .variant:hover { background: var(--wall-2); }
 .variant[aria-current='true'] { background: var(--ink); border-color: var(--ink); color: var(--wall); }
+.variants-name {
+  align-self: center;
+  margin-inline-end: 4px;
+  color: var(--ink-2);
+  font-size: 0.75rem; font-weight: 720; font-stretch: 84%;
+  letter-spacing: 0.08em; text-transform: uppercase;
+}
 .tag-variants { color: var(--ink-2); font-size: 0.75rem; font-weight: 600; font-stretch: 86%; letter-spacing: 0.01em; }
 
 .colourways { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 18px; }

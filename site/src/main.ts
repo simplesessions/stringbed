@@ -570,7 +570,7 @@ function detailView(a: App, base: Racquet, colourwayId: string | null = null): N
       el('a', { href: routeFor(next.id), 'aria-label': `Next: ${wallName(next)}` }, el('span', { class: 'stepper-name' }, wallName(next)), icon('next')),
     ),
   );
-  const pickers = [generationPicker(a, family, base), variantPicker(family, base.id), colourwayPicker(base, colourway)].filter((x): x is HTMLElement => x !== null);
+  const pickers = [generationPicker(a, family, base), ...variantPicker(a, family, base.id), colourwayPicker(base, colourway)].filter((x): x is HTMLElement => x !== null);
   return [nav, el('div', { class: 'detail-body', style: `--swatch: ${r.swatch}` }, stage(a, r), sheet(a, r, pickers.length ? el('div', { class: 'pickers' }, ...pickers) : null))];
 }
 
@@ -586,13 +586,22 @@ function generationPicker(a: App, family: Racquet, current: Racquet): HTMLElemen
 }
 
 /** The sizes or versions of a frame; none when it comes in one. */
-function variantPicker(family: Racquet, current: string): HTMLElement | null {
-  if (!family.variants?.length) return null;
-  return el('div', { class: 'variants', role: 'group', 'aria-label': 'Version' },
-    ...family.variants.map((v) =>
-      el('a', { class: 'variant', href: routeFor(v.id), 'aria-current': String(v.id === current) }, v.label),
-    ),
-  );
+function variantPicker(a: App, family: Racquet, current: string): HTMLElement[] {
+  if (!family.variants?.length) return [];
+  const byId = new Map(a.catalog.racquets.map((r) => [r.id, r]));
+  const junior = (id: string) => isJunior(byId.get(id) ?? family);
+  const row = (label: string, list: Array<{ id: string; label: string }>, rowName?: string) =>
+    el('div', { class: 'variants', role: 'group', 'aria-label': label },
+      rowName ? el('span', { class: 'variants-name' }, rowName) : null,
+      ...list.map((v) => el('a', { class: 'variant', href: routeFor(v.id), 'aria-current': String(v.id === current) }, v.label)),
+    );
+  const adults = family.variants.filter((v) => !junior(v.id));
+  const juniors = family.variants.filter((v) => junior(v.id)).sort((x, y) => x.label.localeCompare(y.label, 'en', { numeric: true }));
+  // Juniors get their own row so a long list of junior sizes does not bury the adult ones.
+  return [
+    adults.length ? row('Version', adults) : null,
+    juniors.length ? row('Junior sizes', juniors, 'Junior') : null,
+  ].filter((x): x is HTMLDivElement => x !== null);
 }
 
 /** Swatches for a racquet's official colourways; none when it has only one. */
