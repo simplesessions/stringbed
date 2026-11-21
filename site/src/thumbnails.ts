@@ -30,7 +30,7 @@ const REST_YAW = -0.38;
 const TURN_SPEED = 1.1; // radians per second while hovered
 const MAX_DPR = 2;
 /** Bay-sized cells and lines, in CSS px. */
-const LOOK_SCALE: LookScale = { cell: 4, outline: 1 };
+const LOOK_SCALE: LookScale = { cell: 4, outline: 1, dot: 3.5 };
 
 /** Height every thumbnail frames, metres: 29 in, the longest frame the spec allows. */
 const FRAME_HEIGHT_M = 0.7366;

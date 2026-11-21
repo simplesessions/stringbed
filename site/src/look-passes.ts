@@ -33,6 +33,8 @@ export interface LookScale {
   cell: number;
   /** Line look: half-width of the outer silhouette. */
   outline: number;
+  /** Halftone look: dot pitch along the screen. */
+  dot: number;
 }
 
 /** The design system's ink, oklch(0.23 0.01 75), as sRGB 0..1 (written to the canvas as is). */
@@ -59,22 +61,58 @@ const pixelFragment = /* glsl */ `
     vec4 c = texture2D(tColor, uv);
     float alpha = 1.0;
     if (c.a < 0.5) {
-      // Strings are thinner than a cell, so they are drawn separately at 4x and averaged per
-      // cell: the string bed becomes an even, light fill instead of a few stray bars.
+      // Strings are thinner than a cell (at thumbnail size thinner than even the 4x pass can
+      // always catch), so the bed is found from a 7x7 sample over three cells around this one:
+      // wide enough to bridge the gaps, and the frame (thicker than a cell) hides the overreach.
+      // It is then drawn the way a sprite would: a faint fill with a crisp line every third cell.
       vec4 sum = vec4(0.0);
-      for (int i = 0; i < 4; i++) for (int j = 0; j < 4; j++) {
-        sum += texture2D(tStrings, clamp((base + (vec2(float(i), float(j)) + 0.5) * cell * 0.25) / resolution, 0.0, 1.0));
+      for (int i = 0; i < 7; i++) for (int j = 0; j < 7; j++) {
+        vec2 at = base + (vec2(float(i), float(j)) / 6.0 * 3.0 - 1.0) * cell;
+        sum += texture2D(tStrings, clamp(at / resolution, 0.0, 1.0));
       }
-      sum /= 16.0;
-      if (sum.a < 0.04) { gl_FragColor = vec4(0.0); return; }
+      sum /= 49.0;
+      if (sum.a < 0.01) { gl_FragColor = vec4(0.0); return; }
       c = vec4(sum.rgb / sum.a, 1.0);
-      alpha = 0.4;
+      // One flat string colour: keep the hue, drop the lighting, so the bed has no blotches.
+      c.rgb = c.rgb / max(max(c.r, max(c.g, c.b)), 1e-4) * 0.85;
+      vec2 idx = floor(gl_FragCoord.xy / cell);
+      bool line = mod(idx.x, 3.0) < 0.5 || mod(idx.y, 3.0) < 0.5;
+      alpha = line ? 0.6 : 0.14;
     }
     gl_FragColor = vec4(c.rgb / c.a, 1.0);
     #include <tonemapping_fragment>
     #include <colorspace_fragment>
     gl_FragColor.rgb = floor(gl_FragColor.rgb * levels + 0.5) / levels;
     gl_FragColor = vec4(gl_FragColor.rgb * alpha, alpha);
+  }`;
+
+// Halftone: a 45-degree dot screen. Each dot takes the colour under its centre; its size follows
+// how dark that colour is (shadow = big dots, highlight = small), so the racquet reads as if
+// printed in a catalogue, in its own colours, on the bare wall.
+const halftoneFragment = /* glsl */ `
+  uniform sampler2D tColor;
+  uniform vec2 resolution;
+  uniform float pitch;
+  const float ANGLE = 0.7853982;
+  void main() {
+    mat2 rot = mat2(cos(ANGLE), -sin(ANGLE), sin(ANGLE), cos(ANGLE));
+    vec2 p = rot * gl_FragCoord.xy;
+    vec2 cellCentre = (floor(p / pitch) + 0.5) * pitch;
+    vec2 centre = transpose(rot) * cellCentre;
+    vec4 c = texture2D(tColor, clamp(centre / resolution, 0.0, 1.0));
+    if (c.a < 0.3) { gl_FragColor = vec4(0.0); return; }
+    gl_FragColor = vec4(c.rgb / c.a, 1.0);
+    #include <tonemapping_fragment>
+    #include <colorspace_fragment>
+    vec3 ink = gl_FragColor.rgb;
+    float lum = dot(ink, vec3(0.2126, 0.7152, 0.0722));
+    // Radius as a fraction of the pitch: light colours still get a readable dot.
+    float r = pitch * mix(0.26, 0.66, sqrt(1.0 - lum)) * clamp(c.a, 0.0, 1.0);
+    float d = length(p - cellCentre);
+    float cover = 1.0 - smoothstep(r - 0.75, r + 0.75, d);
+    // Deepen the ink a touch so small dots keep their colour against the wall.
+    ink = mix(ink, ink * ink, 0.25);
+    gl_FragColor = vec4(ink * cover, cover);
   }`;
 
 const gbufferVertex = /* glsl */ `
@@ -189,6 +227,12 @@ export class LookPainter {
     vertexShader: fullscreenVertex,
     fragmentShader: pixelFragment,
   }));
+  private readonly halftone = fullscreen(new ShaderMaterial({
+    uniforms: { tColor: { value: null }, resolution: { value: new Vector2() }, pitch: { value: 5 } },
+    vertexShader: fullscreenVertex,
+    fragmentShader: halftoneFragment,
+  }));
+  private halftoneTarget: WebGLRenderTarget | null = null;
   private readonly line = fullscreen(new ShaderMaterial({
     uniforms: {
       tG: { value: null },
@@ -244,7 +288,24 @@ export class LookPainter {
     const h = this.size.y;
     if (w === 0 || h === 0) return;
     if (this.look === 'pixel') this.renderPixel(scene, camera, w, h, Math.max(1, Math.round(sizes.cell * scale)));
+    else if (this.look === 'halftone') this.renderHalftone(scene, camera, w, h, Math.max(3, sizes.dot * scale));
     else this.renderLine(scene, camera, w, h, scale, sizes);
+  }
+
+  private renderHalftone(scene: Scene, camera: Camera, w: number, h: number, pitch: number) {
+    const r = this.renderer;
+    // Full resolution, linear and half float: the screen samples it at each dot's centre.
+    this.halftoneTarget ??= new WebGLRenderTarget(w, h, { type: HalfFloatType, depthBuffer: true });
+    const t = this.halftoneTarget;
+    if (t.width !== w || t.height !== h) t.setSize(w, h);
+    r.setRenderTarget(t);
+    r.render(scene, camera);
+    r.setRenderTarget(null);
+    const u = this.halftone.material.uniforms;
+    u.tColor.value = t.texture;
+    u.resolution.value.set(w, h);
+    u.pitch.value = pitch;
+    r.render(this.halftone.scene, this.quadCamera);
   }
 
   private renderPixel(scene: Scene, camera: Camera, w: number, h: number, cell: number) {

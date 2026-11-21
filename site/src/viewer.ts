@@ -9,7 +9,7 @@ import type { Look } from './look';
 const FOV = 28;
 const KEY_TURN = Math.PI / 24;
 /** Stage-sized cells and lines, in CSS px. */
-const LOOK_SCALE: LookScale = { cell: 6, outline: 1.5 };
+const LOOK_SCALE: LookScale = { cell: 6, outline: 1.5, dot: 6 };
 
 export class Viewer {
   readonly canvas: HTMLCanvasElement;
