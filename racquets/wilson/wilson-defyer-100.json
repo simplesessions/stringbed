@@ -42,12 +42,9 @@
         "color": "#f2503f"
       },
       {
-        "from": 0.3397,
-        "to": 0.3403,
-        "color": "#f1f1ee",
-        "faces": [
-          "outer"
-        ]
+        "from": 0.295,
+        "to": 0.33,
+        "color": "#f1f1ee"
       }
     ]
   },

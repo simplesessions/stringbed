@@ -83,8 +83,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-aero-98-2026.glb",
-          "bytes": 127040,
-          "triangles": 4892
+          "bytes": 121468,
+          "triangles": 4636
         }
       },
       "colourway": "Grey/Yellow"
