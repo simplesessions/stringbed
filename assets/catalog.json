@@ -10,6 +10,131 @@
   ],
   "racquets": [
     {
+      "id": "babolat-aero-junior-25-2026",
+      "brand": "Babolat",
+      "line": "Pure Aero",
+      "model": "Aero Junior 25",
+      "generation": "2026",
+      "year": 2026,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 25,
+        "stringPattern": [
+          16,
+          17
+        ],
+        "beamMm": [
+          23,
+          23,
+          23
+        ],
+        "unstrungWeightG": 225
+      },
+      "swatch": "#55626a",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-aero-junior-25-2026.glb",
+          "bytes": 125744,
+          "triangles": 4868
+        }
+      },
+      "variantLabel": "Aero Junior 25",
+      "variantOf": "babolat-pure-aero-100"
+    },
+    {
+      "id": "babolat-aero-junior-26",
+      "brand": "Babolat",
+      "line": "Pure Aero",
+      "model": "Aero Junior 26",
+      "generation": "2019",
+      "year": 2019,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 26,
+        "stringPattern": [
+          16,
+          17
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "swatch": "#f2e82a",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-aero-junior-26.glb",
+          "bytes": 122956,
+          "triangles": 4740
+        }
+      },
+      "variantLabel": "Aero Junior 26 (old)",
+      "variantOf": "babolat-pure-aero-tour-2019"
+    },
+    {
+      "id": "babolat-aero-junior-26-2026",
+      "brand": "Babolat",
+      "line": "Pure Aero",
+      "model": "Aero Junior 26",
+      "generation": "2026",
+      "year": 2026,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 26,
+        "stringPattern": [
+          16,
+          17
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 240
+      },
+      "swatch": "#55626a",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-aero-junior-26-2026.glb",
+          "bytes": 125744,
+          "triangles": 4868
+        }
+      },
+      "variantLabel": "Aero Junior 26",
+      "variantOf": "babolat-pure-aero-100"
+    },
+    {
       "id": "babolat-boost-aero-2026",
       "brand": "Babolat",
       "line": "Boost Aero",
@@ -128,6 +253,341 @@
         }
       },
       "colourway": "Grey/Red"
+    },
+    {
+      "id": "babolat-carlitos-junior-19",
+      "brand": "Babolat",
+      "line": "Pure Aero",
+      "model": "Carlitos Junior 19",
+      "generation": "2026",
+      "year": 2026,
+      "specs": {
+        "headSizeSqIn": 81,
+        "lengthIn": 19,
+        "stringPattern": [
+          14,
+          14
+        ],
+        "beamMm": [
+          19,
+          19,
+          19
+        ],
+        "unstrungWeightG": 165
+      },
+      "swatch": "#55626a",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-carlitos-junior-19.glb",
+          "bytes": 123588,
+          "triangles": 4828
+        }
+      },
+      "variantLabel": "Carlitos 19",
+      "variantOf": "babolat-pure-aero-100"
+    },
+    {
+      "id": "babolat-carlitos-junior-21",
+      "brand": "Babolat",
+      "line": "Pure Aero",
+      "model": "Carlitos Junior 21",
+      "generation": "2026",
+      "year": 2026,
+      "specs": {
+        "headSizeSqIn": 86,
+        "lengthIn": 21,
+        "stringPattern": [
+          14,
+          15
+        ],
+        "beamMm": [
+          19,
+          19,
+          19
+        ],
+        "unstrungWeightG": 180
+      },
+      "swatch": "#55626a",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-carlitos-junior-21.glb",
+          "bytes": 124016,
+          "triangles": 4836
+        }
+      },
+      "variantLabel": "Carlitos 21",
+      "variantOf": "babolat-pure-aero-100"
+    },
+    {
+      "id": "babolat-carlitos-junior-23",
+      "brand": "Babolat",
+      "line": "Pure Aero",
+      "model": "Carlitos Junior 23",
+      "generation": "2026",
+      "year": 2026,
+      "specs": {
+        "headSizeSqIn": 92,
+        "lengthIn": 23,
+        "stringPattern": [
+          16,
+          16
+        ],
+        "beamMm": [
+          19,
+          19,
+          19
+        ],
+        "unstrungWeightG": 200
+      },
+      "swatch": "#55626a",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-carlitos-junior-23.glb",
+          "bytes": 125312,
+          "triangles": 4860
+        }
+      },
+      "variantLabel": "Carlitos 23",
+      "variantOf": "babolat-pure-aero-100"
+    },
+    {
+      "id": "babolat-carlitos-junior-25",
+      "brand": "Babolat",
+      "line": "Pure Aero",
+      "model": "Carlitos Junior 25",
+      "generation": "2026",
+      "year": 2026,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 25,
+        "stringPattern": [
+          16,
+          17
+        ],
+        "beamMm": [
+          20,
+          20,
+          20
+        ],
+        "unstrungWeightG": 230
+      },
+      "swatch": "#55626a",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-carlitos-junior-25.glb",
+          "bytes": 125736,
+          "triangles": 4868
+        }
+      },
+      "variantLabel": "Carlitos 25",
+      "variantOf": "babolat-pure-aero-100"
+    },
+    {
+      "id": "babolat-carlitos-junior-26",
+      "brand": "Babolat",
+      "line": "Pure Aero",
+      "model": "Carlitos Junior 26",
+      "generation": "2026",
+      "year": 2026,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 26,
+        "stringPattern": [
+          16,
+          17
+        ],
+        "beamMm": [
+          20,
+          20,
+          20
+        ],
+        "unstrungWeightG": 240
+      },
+      "swatch": "#55626a",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-carlitos-junior-26.glb",
+          "bytes": 125740,
+          "triangles": 4868
+        }
+      },
+      "variantLabel": "Carlitos 26",
+      "variantOf": "babolat-pure-aero-100"
+    },
+    {
+      "id": "babolat-drive-junior-23-2025",
+      "brand": "Babolat",
+      "line": "Pure Drive",
+      "model": "Drive Junior 23",
+      "generation": "Gen 11",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 23,
+        "stringPattern": [
+          16,
+          17
+        ],
+        "beamMm": [
+          20,
+          20,
+          19
+        ],
+        "unstrungWeightG": 215
+      },
+      "swatch": "#4aa3d6",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-drive-junior-23-2025.glb",
+          "bytes": 120284,
+          "triangles": 4964
+        }
+      },
+      "variantLabel": "Drive Junior 23",
+      "variantOf": "babolat-pure-drive-100"
+    },
+    {
+      "id": "babolat-drive-junior-24-2025",
+      "brand": "Babolat",
+      "line": "Pure Drive",
+      "model": "Drive Junior 24",
+      "generation": "Gen 11",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 24,
+        "stringPattern": [
+          16,
+          17
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "swatch": "#4aa3d6",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-drive-junior-24-2025.glb",
+          "bytes": 120292,
+          "triangles": 4964
+        }
+      },
+      "variantLabel": "Drive Junior 24",
+      "variantOf": "babolat-pure-drive-100"
+    },
+    {
+      "id": "babolat-drive-junior-25-2025",
+      "brand": "Babolat",
+      "line": "Pure Drive",
+      "model": "Drive Junior 25",
+      "generation": "Gen 11",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 25,
+        "stringPattern": [
+          16,
+          17
+        ],
+        "beamMm": [
+          23,
+          23,
+          21
+        ],
+        "unstrungWeightG": 230
+      },
+      "swatch": "#4aa3d6",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-drive-junior-25-2025.glb",
+          "bytes": 117732,
+          "triangles": 4836
+        }
+      },
+      "variantLabel": "Drive Junior 25",
+      "variantOf": "babolat-pure-drive-100"
     },
     {
       "id": "babolat-evo-aero-2026",
@@ -602,6 +1062,42 @@
         {
           "id": "babolat-pure-aero-junior-26-2026",
           "label": "Junior 26"
+        },
+        {
+          "id": "babolat-aero-junior-25-2026",
+          "label": "Aero Junior 25"
+        },
+        {
+          "id": "babolat-aero-junior-26-2026",
+          "label": "Aero Junior 26"
+        },
+        {
+          "id": "babolat-carlitos-junior-19",
+          "label": "Carlitos 19"
+        },
+        {
+          "id": "babolat-carlitos-junior-21",
+          "label": "Carlitos 21"
+        },
+        {
+          "id": "babolat-carlitos-junior-23",
+          "label": "Carlitos 23"
+        },
+        {
+          "id": "babolat-carlitos-junior-25",
+          "label": "Carlitos 25"
+        },
+        {
+          "id": "babolat-carlitos-junior-26",
+          "label": "Carlitos 26"
+        },
+        {
+          "id": "babolat-pure-aero-junior-25-2026",
+          "label": "Pure Aero Junior 25"
+        },
+        {
+          "id": "babolat-pure-aero-plus-2026",
+          "label": "Plus"
         }
       ]
     },
@@ -771,6 +1267,212 @@
       "colourway": "Grey/Yellow"
     },
     {
+      "id": "babolat-pure-aero-junior-25-2019gen",
+      "brand": "Babolat",
+      "line": "Pure Aero",
+      "model": "Pure Aero Junior 25",
+      "generation": "2019",
+      "year": 2019,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 25,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "swatch": "#f2e82a",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-pure-aero-junior-25-2019gen.glb",
+          "bytes": 123844,
+          "triangles": 4756
+        }
+      },
+      "variantLabel": "Junior 25 (2019)",
+      "variantOf": "babolat-pure-aero-tour-2019"
+    },
+    {
+      "id": "babolat-pure-aero-junior-25-2023gen",
+      "brand": "Babolat",
+      "line": "Pure Aero",
+      "model": "Pure Aero Junior 25",
+      "generation": "2019",
+      "year": 2019,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 25,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "swatch": "#f2e82a",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-pure-aero-junior-25-2023gen.glb",
+          "bytes": 123844,
+          "triangles": 4756
+        }
+      },
+      "variantLabel": "Junior 25 (2023)",
+      "variantOf": "babolat-pure-aero-tour-2019"
+    },
+    {
+      "id": "babolat-pure-aero-junior-25-2026",
+      "brand": "Babolat",
+      "line": "Pure Aero",
+      "model": "Pure Aero Junior 25",
+      "generation": "2026",
+      "year": 2026,
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 25,
+        "stringPattern": [
+          16,
+          17
+        ],
+        "beamMm": [
+          22,
+          24,
+          22
+        ],
+        "unstrungWeightG": 235
+      },
+      "swatch": "#55626a",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-pure-aero-junior-25-2026.glb",
+          "bytes": 125752,
+          "triangles": 4868
+        }
+      },
+      "variantLabel": "Pure Aero Junior 25",
+      "variantOf": "babolat-pure-aero-100"
+    },
+    {
+      "id": "babolat-pure-aero-junior-26-2019gen",
+      "brand": "Babolat",
+      "line": "Pure Aero",
+      "model": "Pure Aero Junior 26",
+      "generation": "2019",
+      "year": 2019,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 26,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "swatch": "#f2e82a",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-pure-aero-junior-26-2019gen.glb",
+          "bytes": 123844,
+          "triangles": 4756
+        }
+      },
+      "variantLabel": "Junior 26 (2019)",
+      "variantOf": "babolat-pure-aero-tour-2019"
+    },
+    {
+      "id": "babolat-pure-aero-junior-26-2023gen",
+      "brand": "Babolat",
+      "line": "Pure Aero",
+      "model": "Pure Aero Junior 26",
+      "generation": "2019",
+      "year": 2019,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 26,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "swatch": "#f2e82a",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-pure-aero-junior-26-2023gen.glb",
+          "bytes": 123844,
+          "triangles": 4756
+        }
+      },
+      "variantLabel": "Junior 26 (2023)",
+      "variantOf": "babolat-pure-aero-tour-2019"
+    },
+    {
       "id": "babolat-pure-aero-junior-26-2026",
       "brand": "Babolat",
       "line": "Pure Aero",
@@ -811,6 +1513,89 @@
       },
       "variantLabel": "Junior 26",
       "variantOf": "babolat-pure-aero-100"
+    },
+    {
+      "id": "babolat-pure-aero-lite-2018",
+      "brand": "Babolat",
+      "line": "Pure Aero",
+      "model": "Pure Aero Lite",
+      "generation": "2019",
+      "year": 2019,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "swatch": "#f2e82a",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-pure-aero-lite-2018.glb",
+          "bytes": 123828,
+          "triangles": 4756
+        }
+      },
+      "variantLabel": "Lite",
+      "variantOf": "babolat-pure-aero-tour-2019"
+    },
+    {
+      "id": "babolat-pure-aero-lite-2022",
+      "brand": "Babolat",
+      "line": "Pure Aero",
+      "model": "Pure Aero Lite",
+      "generation": "2023",
+      "year": 2022,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 270
+      },
+      "swatch": "#4a5258",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-pure-aero-lite-2022.glb",
+          "bytes": 121012,
+          "triangles": 4628
+        }
+      },
+      "variantLabel": "Lite",
+      "variantOf": "babolat-pure-aero-team-2022"
     },
     {
       "id": "babolat-pure-aero-lite-2026",
@@ -894,6 +1679,89 @@
       },
       "variantLabel": "Plus",
       "variantOf": "babolat-pure-aero-tour-2019"
+    },
+    {
+      "id": "babolat-pure-aero-plus-2023gen",
+      "brand": "Babolat",
+      "line": "Pure Aero",
+      "model": "Pure Aero Plus",
+      "generation": "2023",
+      "year": 2022,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27.5,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "swatch": "#4a5258",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-pure-aero-plus-2023gen.glb",
+          "bytes": 121012,
+          "triangles": 4628
+        }
+      },
+      "variantLabel": "Plus",
+      "variantOf": "babolat-pure-aero-team-2022"
+    },
+    {
+      "id": "babolat-pure-aero-plus-2026",
+      "brand": "Babolat",
+      "line": "Pure Aero",
+      "model": "Pure Aero Plus",
+      "generation": "2026",
+      "year": 2026,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27.5,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 300
+      },
+      "swatch": "#55626a",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-pure-aero-plus-2026.glb",
+          "bytes": 126600,
+          "triangles": 4884
+        }
+      },
+      "variantLabel": "Plus",
+      "variantOf": "babolat-pure-aero-100"
     },
     {
       "id": "babolat-pure-aero-super-lite-2026",
@@ -1026,6 +1894,14 @@
         {
           "id": "babolat-pure-aero-100-2022",
           "label": "100"
+        },
+        {
+          "id": "babolat-pure-aero-plus-2023gen",
+          "label": "Plus"
+        },
+        {
+          "id": "babolat-pure-aero-lite-2022",
+          "label": "Lite"
         }
       ],
       "colourway": "Grey/Yellow"
@@ -1127,6 +2003,30 @@
         {
           "id": "babolat-pure-aero-plus-2019gen",
           "label": "Plus"
+        },
+        {
+          "id": "babolat-aero-junior-26",
+          "label": "Aero Junior 26 (old)"
+        },
+        {
+          "id": "babolat-pure-aero-junior-25-2019gen",
+          "label": "Junior 25 (2019)"
+        },
+        {
+          "id": "babolat-pure-aero-junior-25-2023gen",
+          "label": "Junior 25 (2023)"
+        },
+        {
+          "id": "babolat-pure-aero-junior-26-2019gen",
+          "label": "Junior 26 (2019)"
+        },
+        {
+          "id": "babolat-pure-aero-junior-26-2023gen",
+          "label": "Junior 26 (2023)"
+        },
+        {
+          "id": "babolat-pure-aero-lite-2018",
+          "label": "Lite"
         }
       ],
       "colourway": "Yellow/Black"
@@ -1195,6 +2095,26 @@
         {
           "id": "babolat-pure-drive-junior-26-2025",
           "label": "Junior 26"
+        },
+        {
+          "id": "babolat-drive-junior-23-2025",
+          "label": "Drive Junior 23"
+        },
+        {
+          "id": "babolat-drive-junior-24-2025",
+          "label": "Drive Junior 24"
+        },
+        {
+          "id": "babolat-drive-junior-25-2025",
+          "label": "Drive Junior 25"
+        },
+        {
+          "id": "babolat-pure-drive-junior-25-2025",
+          "label": "Junior 25"
+        },
+        {
+          "id": "babolat-pure-drive-plus-2025",
+          "label": "Plus"
         }
       ]
     },
@@ -1365,6 +2285,48 @@
       "variantOf": "babolat-pure-drive-tour-2021"
     },
     {
+      "id": "babolat-pure-drive-98-2023",
+      "brand": "Babolat",
+      "line": "Pure Drive",
+      "model": "Pure Drive 98",
+      "generation": "Gen10",
+      "year": 2021,
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          21,
+          23,
+          21
+        ],
+        "unstrungWeightG": 305
+      },
+      "swatch": "#2a86e2",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-pure-drive-98-2023.glb",
+          "bytes": 121152,
+          "triangles": 4980
+        }
+      },
+      "variantLabel": "98",
+      "variantOf": "babolat-pure-drive-tour-2021"
+    },
+    {
       "id": "babolat-pure-drive-98-2025",
       "brand": "Babolat",
       "line": "Pure Drive",
@@ -1405,6 +2367,130 @@
       "variantLabel": "98",
       "variantOf": "babolat-pure-drive-100",
       "colourway": "Blue"
+    },
+    {
+      "id": "babolat-pure-drive-junior-25-2020",
+      "brand": "Babolat",
+      "line": "Pure Drive",
+      "model": "Pure Drive Junior 25",
+      "generation": "Gen10",
+      "year": 2021,
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 25,
+        "stringPattern": [
+          16,
+          17
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "swatch": "#2a86e2",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-pure-drive-junior-25-2020.glb",
+          "bytes": 120300,
+          "triangles": 4964
+        }
+      },
+      "variantLabel": "Junior 25 (2020)",
+      "variantOf": "babolat-pure-drive-tour-2021"
+    },
+    {
+      "id": "babolat-pure-drive-junior-25-2025",
+      "brand": "Babolat",
+      "line": "Pure Drive",
+      "model": "Pure Drive Junior 25",
+      "generation": "Gen 11",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 25,
+        "stringPattern": [
+          16,
+          17
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 240
+      },
+      "swatch": "#4aa3d6",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-pure-drive-junior-25-2025.glb",
+          "bytes": 120300,
+          "triangles": 4964
+        }
+      },
+      "variantLabel": "Junior 25",
+      "variantOf": "babolat-pure-drive-100"
+    },
+    {
+      "id": "babolat-pure-drive-junior-26-2020",
+      "brand": "Babolat",
+      "line": "Pure Drive",
+      "model": "Pure Drive Junior 26",
+      "generation": "Gen10",
+      "year": 2021,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 26,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "swatch": "#2a86e2",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-pure-drive-junior-26-2020.glb",
+          "bytes": 121168,
+          "triangles": 4980
+        }
+      },
+      "variantLabel": "Junior 26 (2020)",
+      "variantOf": "babolat-pure-drive-tour-2021"
     },
     {
       "id": "babolat-pure-drive-junior-26-2025",
@@ -1573,6 +2659,48 @@
       "variantOf": "babolat-pure-drive-tour-2021"
     },
     {
+      "id": "babolat-pure-drive-plus-2025",
+      "brand": "Babolat",
+      "line": "Pure Drive",
+      "model": "Pure Drive Plus",
+      "generation": "Gen 11",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27.5,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 300
+      },
+      "swatch": "#4aa3d6",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-pure-drive-plus-2025.glb",
+          "bytes": 121156,
+          "triangles": 4980
+        }
+      },
+      "variantLabel": "Plus",
+      "variantOf": "babolat-pure-drive-100"
+    },
+    {
       "id": "babolat-pure-drive-team-2021",
       "brand": "Babolat",
       "line": "Pure Drive",
@@ -1722,6 +2850,18 @@
         {
           "id": "babolat-pure-drive-plus-2021",
           "label": "Plus"
+        },
+        {
+          "id": "babolat-pure-drive-junior-25-2020",
+          "label": "Junior 25 (2020)"
+        },
+        {
+          "id": "babolat-pure-drive-junior-26-2020",
+          "label": "Junior 26 (2020)"
+        },
+        {
+          "id": "babolat-pure-drive-98-2023",
+          "label": "98"
         }
       ],
       "colourway": "Blue/Navy"
@@ -2050,6 +3190,48 @@
       ]
     },
     {
+      "id": "babolat-pure-strike-98-16x19-2019",
+      "brand": "Babolat",
+      "line": "Pure Strike",
+      "model": "Pure Strike 98 16x19",
+      "generation": "3rd Gen",
+      "year": 2019,
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          21,
+          23,
+          21
+        ],
+        "unstrungWeightG": 306
+      },
+      "swatch": "#ecedee",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-pure-strike-98-16x19-2019.glb",
+          "bytes": 134484,
+          "triangles": 4376
+        }
+      },
+      "variantLabel": "98 16x19",
+      "variantOf": "babolat-pure-strike-tour-2019"
+    },
+    {
       "id": "babolat-pure-strike-98-18x20-2019",
       "brand": "Babolat",
       "line": "Pure Strike",
@@ -2131,6 +3313,88 @@
       },
       "variantLabel": "98 18x20",
       "variantOf": "babolat-pure-strike-98"
+    },
+    {
+      "id": "babolat-pure-strike-junior-25-2019gen",
+      "brand": "Babolat",
+      "line": "Pure Strike",
+      "model": "Pure Strike Junior 25",
+      "generation": "3rd Gen",
+      "year": 2019,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 25,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          21,
+          23,
+          21
+        ]
+      },
+      "swatch": "#ecedee",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-pure-strike-junior-25-2019gen.glb",
+          "bytes": 134492,
+          "triangles": 4376
+        }
+      },
+      "variantLabel": "Junior 25",
+      "variantOf": "babolat-pure-strike-tour-2019"
+    },
+    {
+      "id": "babolat-pure-strike-junior-26-2019gen",
+      "brand": "Babolat",
+      "line": "Pure Strike",
+      "model": "Pure Strike Junior 26",
+      "generation": "3rd Gen",
+      "year": 2019,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 26,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          21,
+          23,
+          21
+        ]
+      },
+      "swatch": "#ecedee",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/babolat-pure-strike-junior-26-2019gen.glb",
+          "bytes": 134496,
+          "triangles": 4376
+        }
+      },
+      "variantLabel": "Junior 26",
+      "variantOf": "babolat-pure-strike-tour-2019"
     },
     {
       "id": "babolat-pure-strike-junior-26-gen4",
@@ -2358,6 +3622,18 @@
         {
           "id": "babolat-pure-strike-103-2022",
           "label": "103"
+        },
+        {
+          "id": "babolat-pure-strike-junior-25-2019gen",
+          "label": "Junior 25"
+        },
+        {
+          "id": "babolat-pure-strike-junior-26-2019gen",
+          "label": "Junior 26"
+        },
+        {
+          "id": "babolat-pure-strike-98-16x19-2019",
+          "label": "98 16x19"
         }
       ],
       "colourway": "White/Coral"
@@ -2484,6 +3760,47 @@
       "variantOf": "head-boom-mp-2026"
     },
     {
+      "id": "head-boom-junior-25-2026",
+      "brand": "Head",
+      "line": "Boom",
+      "model": "Boom Junior 25",
+      "generation": "2026",
+      "year": 2026,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 25,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          24,
+          22
+        ]
+      },
+      "swatch": "#3cb6e8",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/head-boom-junior-25-2026.glb",
+          "bytes": 110896,
+          "triangles": 4468
+        }
+      },
+      "variantLabel": "Junior 25",
+      "variantOf": "head-boom-mp-2026"
+    },
+    {
       "id": "head-boom-junior-26-2026",
       "brand": "Head",
       "line": "Boom",
@@ -2591,6 +3908,10 @@
         {
           "id": "head-boom-junior-26-2026",
           "label": "Junior 26"
+        },
+        {
+          "id": "head-boom-junior-25-2026",
+          "label": "Junior 25"
         }
       ],
       "colourway": "Light blue/Navy"
@@ -3838,6 +5159,47 @@
       "variantOf": "head-radical-mp-2025"
     },
     {
+      "id": "head-radical-junior-21",
+      "brand": "Head",
+      "line": "Radical",
+      "model": "Radical Junior 21",
+      "generation": "2025",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 81,
+        "lengthIn": 21,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          20,
+          23,
+          21
+        ]
+      },
+      "swatch": "#f26a4c",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/head-radical-junior-21.glb",
+          "bytes": 117288,
+          "triangles": 4788
+        }
+      },
+      "variantLabel": "Junior 21",
+      "variantOf": "head-radical-mp-2025"
+    },
+    {
       "id": "head-radical-junior-26-2025",
       "brand": "Head",
       "line": "Radical",
@@ -3937,6 +5299,10 @@
         {
           "id": "head-radical-junior-26-2025",
           "label": "Junior 26"
+        },
+        {
+          "id": "head-radical-junior-21",
+          "label": "Junior 21"
         }
       ],
       "colourway": "Orange"
@@ -4062,6 +5428,47 @@
         }
       },
       "variantLabel": "Elite",
+      "variantOf": "head-speed-mp-2026"
+    },
+    {
+      "id": "head-speed-junior-25-2026",
+      "brand": "Head",
+      "line": "Speed",
+      "model": "Speed Junior 25",
+      "generation": "2026",
+      "year": 2026,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 25,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          23,
+          23
+        ]
+      },
+      "swatch": "#2d3134",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/head-speed-junior-25-2026.glb",
+          "bytes": 113452,
+          "triangles": 4596
+        }
+      },
+      "variantLabel": "Junior 25",
       "variantOf": "head-speed-mp-2026"
     },
     {
@@ -4228,6 +5635,14 @@
         {
           "id": "head-speed-junior-26-2026",
           "label": "Junior 26"
+        },
+        {
+          "id": "head-speed-junior-25-2026",
+          "label": "Junior 25"
+        },
+        {
+          "id": "head-speed-sinner",
+          "label": "Sinner"
         }
       ]
     },
@@ -4395,6 +5810,47 @@
       "variantLabel": "Pro",
       "variantOf": "head-speed-mp-2026",
       "colourway": "Charcoal/White"
+    },
+    {
+      "id": "head-speed-sinner",
+      "brand": "Head",
+      "line": "Speed",
+      "model": "Speed Sinner",
+      "generation": "2026",
+      "year": 2026,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          22,
+          22,
+          22
+        ]
+      },
+      "swatch": "#2d3134",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/head-speed-sinner.glb",
+          "bytes": 113440,
+          "triangles": 4596
+        }
+      },
+      "variantLabel": "Sinner",
+      "variantOf": "head-speed-mp-2026"
     },
     {
       "id": "head-speed-team-2026",
@@ -5179,6 +6635,10 @@
         {
           "id": "prince-ripcord-26-junior",
           "label": "Junior 26"
+        },
+        {
+          "id": "prince-ripcord-25-junior",
+          "label": "Junior 25"
         }
       ],
       "colourway": "Blue"
@@ -5222,6 +6682,47 @@
         }
       },
       "variantLabel": "100 300g",
+      "variantOf": "prince-ripcord-100-280g-2025"
+    },
+    {
+      "id": "prince-ripcord-25-junior",
+      "brand": "Prince",
+      "line": "Ripcord",
+      "model": "Ripcord 25\" Junior",
+      "generation": "2025",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 25,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          27,
+          25,
+          22
+        ]
+      },
+      "swatch": "#1fa2ec",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/prince-ripcord-25-junior.glb",
+          "bytes": 114736,
+          "triangles": 4660
+        }
+      },
+      "variantLabel": "Junior 25",
       "variantOf": "prince-ripcord-100-280g-2025"
     },
     {
@@ -6380,6 +7881,47 @@
       "variantOf": "wilson-blade-98-v10"
     },
     {
+      "id": "wilson-blade-25-v10-2026",
+      "brand": "Wilson",
+      "line": "Blade",
+      "model": "Blade 25\" Junior",
+      "generation": "v10",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 25,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          21.5,
+          21.5,
+          20.5
+        ]
+      },
+      "swatch": "#2e8c66",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/wilson-blade-25-v10-2026.glb",
+          "bytes": 132760,
+          "triangles": 4312
+        }
+      },
+      "variantLabel": "Junior 25",
+      "variantOf": "wilson-blade-98-v10"
+    },
+    {
       "id": "wilson-blade-26-v10-2026",
       "brand": "Wilson",
       "line": "Blade",
@@ -6500,6 +8042,10 @@
         {
           "id": "wilson-blade-26-v10-2026",
           "label": "Junior 26"
+        },
+        {
+          "id": "wilson-blade-25-v10-2026",
+          "label": "Junior 25"
         }
       ]
     },
@@ -7560,6 +9106,10 @@
         {
           "id": "wilson-ultra-100ul-v5-2025",
           "label": "100UL"
+        },
+        {
+          "id": "wilson-ultra-25-v5",
+          "label": "Junior 25"
         }
       ],
       "colourway": "Blue"
@@ -7685,6 +9235,47 @@
         }
       },
       "variantLabel": "111",
+      "variantOf": "wilson-ultra-100-v5-2025"
+    },
+    {
+      "id": "wilson-ultra-25-v5",
+      "brand": "Wilson",
+      "line": "Ultra",
+      "model": "Ultra 25\" Junior",
+      "generation": "v5",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 102,
+        "lengthIn": 25,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          24,
+          26.5,
+          24.5
+        ]
+      },
+      "swatch": "#2f52dc",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/wilson-ultra-25-v5.glb",
+          "bytes": 107032,
+          "triangles": 4276
+        }
+      },
+      "variantLabel": "Junior 25",
       "variantOf": "wilson-ultra-100-v5-2025"
     },
     {
@@ -7945,6 +9536,14 @@
         {
           "id": "yonex-ezone-junior-26",
           "label": "Junior 26"
+        },
+        {
+          "id": "yonex-ezone-jr-25",
+          "label": "Junior 25 (JR)"
+        },
+        {
+          "id": "yonex-ezone-junior-25",
+          "label": "Junior 25"
         }
       ],
       "colourway": "Blast Blue",
@@ -8211,6 +9810,47 @@
       "variantOf": "yonex-ezone-100"
     },
     {
+      "id": "yonex-ezone-junior-25",
+      "brand": "Yonex",
+      "line": "EZONE",
+      "model": "EZONE 25\" Junior",
+      "generation": "8th gen",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 25,
+        "stringPattern": [
+          16,
+          18
+        ],
+        "beamMm": [
+          24.5,
+          26.5,
+          23
+        ]
+      },
+      "swatch": "#3a62bf",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/yonex-ezone-junior-25.glb",
+          "bytes": 128376,
+          "triangles": 5356
+        }
+      },
+      "variantLabel": "Junior 25",
+      "variantOf": "yonex-ezone-100"
+    },
+    {
       "id": "yonex-ezone-junior-26",
       "brand": "Yonex",
       "line": "EZONE",
@@ -8413,6 +10053,47 @@
         }
       },
       "colourway": "Blue"
+    },
+    {
+      "id": "yonex-ezone-jr-25",
+      "brand": "Yonex",
+      "line": "EZONE",
+      "model": "EZONE JR 25\" Junior",
+      "generation": "8th gen",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 25,
+        "stringPattern": [
+          16,
+          18
+        ],
+        "beamMm": [
+          24.5,
+          26.5,
+          23
+        ]
+      },
+      "swatch": "#3a62bf",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/yonex-ezone-jr-25.glb",
+          "bytes": 128368,
+          "triangles": 5356
+        }
+      },
+      "variantLabel": "Junior 25 (JR)",
+      "variantOf": "yonex-ezone-100"
     },
     {
       "id": "yonex-muse-100-2026",
@@ -9374,39 +11055,6 @@
   ],
   "placeholders": [
     {
-      "id": "babolat-aero-junior-25-2026",
-      "brand": "Babolat",
-      "line": "Aero Junior",
-      "model": "Aero Junior 25",
-      "generation": null,
-      "releaseYear": 2026,
-      "category": "junior",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 25,
-        "stringPattern": [
-          16,
-          17
-        ],
-        "beamMm": [
-          23,
-          23,
-          23
-        ],
-        "unstrungWeightG": 225,
-        "balanceMm": 310
-      },
-      "colourway": "Grey/Fluorescent yellow",
-      "sources": [
-        "https://www.tennis-warehouse.com/Babolat_Aero_25_Junior/descpageRCBAB-BAEJR5.html",
-        "https://www.babolat.com/us/aero-junior-25/140517.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
       "id": "babolat-aero-junior-25",
       "brand": "Babolat",
       "line": "Aero",
@@ -9429,69 +11077,6 @@
       "sources": [
         "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html",
         "https://web.archive.org/web/20240526172627/https://www.tennisexpress.com/babolat-aero-junior-25-prestrung-tennis-racquet-grey-and-yellow-99833"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-aero-junior-26-2026",
-      "brand": "Babolat",
-      "line": "Aero Junior",
-      "model": "Aero Junior 26",
-      "generation": null,
-      "releaseYear": 2026,
-      "category": "junior",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 26,
-        "stringPattern": [
-          16,
-          17
-        ],
-        "beamMm": [
-          23,
-          26,
-          23
-        ],
-        "unstrungWeightG": 240,
-        "balanceMm": 315
-      },
-      "colourway": "Grey/Fluorescent yellow",
-      "sources": [
-        "https://www.tennis-warehouse.com/Babolat_Aero_26_Junior/descpageRCBAB-BAEJR6.html",
-        "https://www.babolat.com/us/aero-junior-26/140518.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-aero-junior-26",
-      "brand": "Babolat",
-      "line": "Aero",
-      "model": "Aero Junior 26",
-      "generation": null,
-      "releaseYear": null,
-      "category": "junior",
-      "onSaleIn": [
-        2023
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 26,
-        "stringPattern": [
-          16,
-          17
-        ],
-        "beamMm": null,
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Yellow/Black",
-      "sources": [
-        "https://web.archive.org/web/20240823062343/https://www.tennis-warehouse.com/Babolat_Aero_26_Junior/descpageRCBAB-BJRA2600.html",
-        "https://web.archive.org/web/20230608223519/https://www.tennisexpress.com/babolat-tennis-racquets",
-        "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html"
       ],
       "researched": "2026-11-20"
     },
@@ -10182,204 +11767,6 @@
       "researched": "2026-11-20"
     },
     {
-      "id": "babolat-carlitos-junior-19",
-      "brand": "Babolat",
-      "line": "Carlitos",
-      "model": "Carlitos Junior 19",
-      "generation": null,
-      "releaseYear": null,
-      "category": "junior",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 81,
-        "lengthIn": 19,
-        "stringPattern": [
-          14,
-          14
-        ],
-        "beamMm": [
-          19,
-          19,
-          19
-        ],
-        "unstrungWeightG": 165,
-        "balanceMm": 230
-      },
-      "colourway": "Grey/Fluorescent yellow",
-      "sources": [
-        "https://www.tennis-warehouse.com/Babolat_Carlitos_19_Junior/descpageRCBAB-BCJR19.html",
-        "https://www.babolat.com/us/carlitos-junior-19/140548.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-carlitos-junior-21",
-      "brand": "Babolat",
-      "line": "Carlitos",
-      "model": "Carlitos Junior 21",
-      "generation": null,
-      "releaseYear": null,
-      "category": "junior",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 86,
-        "lengthIn": 21,
-        "stringPattern": [
-          14,
-          15
-        ],
-        "beamMm": [
-          19,
-          19,
-          19
-        ],
-        "unstrungWeightG": 180,
-        "balanceMm": 257
-      },
-      "colourway": "Grey/Fluorescent yellow",
-      "sources": [
-        "https://www.tennis-warehouse.com/Babolat_Carlitos_21_Junior/descpageRCBAB-BCJR21.html",
-        "https://www.babolat.com/us/carlitos-junior-21/140549.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-carlitos-junior-23",
-      "brand": "Babolat",
-      "line": "Carlitos",
-      "model": "Carlitos Junior 23",
-      "generation": null,
-      "releaseYear": null,
-      "category": "junior",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 92,
-        "lengthIn": 23,
-        "stringPattern": [
-          16,
-          16
-        ],
-        "beamMm": [
-          19,
-          19,
-          19
-        ],
-        "unstrungWeightG": 200,
-        "balanceMm": 285
-      },
-      "colourway": "Grey/Fluorescent yellow",
-      "sources": [
-        "https://www.tennis-warehouse.com/Babolat_Carlitos_23_Junior/descpageRCBAB-BCJR23.html",
-        "https://www.babolat.com/us/carlitos-junior-23/140550.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-carlitos-junior-25",
-      "brand": "Babolat",
-      "line": "Carlitos",
-      "model": "Carlitos Junior 25",
-      "generation": null,
-      "releaseYear": null,
-      "category": "junior",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 25,
-        "stringPattern": [
-          16,
-          17
-        ],
-        "beamMm": [
-          20,
-          20,
-          20
-        ],
-        "unstrungWeightG": 230,
-        "balanceMm": 305
-      },
-      "colourway": "Grey/Fluorescent yellow",
-      "sources": [
-        "https://www.tennis-warehouse.com/Babolat_Carlitos_25_Junior/descpageRCBAB-BCJR25.html",
-        "https://www.babolat.com/us/carlitos-junior-25/140551.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-carlitos-junior-26",
-      "brand": "Babolat",
-      "line": "Carlitos",
-      "model": "Carlitos Junior 26",
-      "generation": null,
-      "releaseYear": null,
-      "category": "junior",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 26,
-        "stringPattern": [
-          16,
-          17
-        ],
-        "beamMm": [
-          20,
-          20,
-          20
-        ],
-        "unstrungWeightG": 240,
-        "balanceMm": 320
-      },
-      "colourway": "Grey/Fluorescent yellow",
-      "sources": [
-        "https://www.tennis-warehouse.com/Babolat_Carlitos_26_Junior/descpageRCBAB-BCJR26.html",
-        "https://www.babolat.com/us/carlitos-junior-26/140552.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-drive-junior-23-2025",
-      "brand": "Babolat",
-      "line": "Drive Junior",
-      "model": "Drive Junior 23",
-      "generation": null,
-      "releaseYear": 2025,
-      "category": "junior",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 98,
-        "lengthIn": 23,
-        "stringPattern": [
-          16,
-          17
-        ],
-        "beamMm": [
-          20,
-          20,
-          19
-        ],
-        "unstrungWeightG": 215,
-        "balanceMm": 285
-      },
-      "colourway": "Blue",
-      "sources": [
-        "https://www.tennis-warehouse.com/Babolat_Drive_23_Junior/descpageRCBAB-BDJ23R.html",
-        "https://www.babolat.com/us/drive-junior-23/140512.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
       "id": "babolat-drive-junior-23",
       "brand": "Babolat",
       "line": "Drive",
@@ -10402,67 +11789,6 @@
       "sources": [
         "https://web.archive.org/web/20230130100911/https://www.tennis-warehouse.com/Babolat_Drive_23_Junior/descpageRCBAB-BRD23J.html",
         "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-drive-junior-24-2025",
-      "brand": "Babolat",
-      "line": "Drive Junior",
-      "model": "Drive Junior 24",
-      "generation": null,
-      "releaseYear": 2025,
-      "category": "junior",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 98,
-        "lengthIn": 24,
-        "stringPattern": [
-          16,
-          17
-        ],
-        "beamMm": null,
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Blue",
-      "sources": [
-        "https://www.tennis-warehouse.com/Babolat_Drive_24_Junior/descpageRCBAB-BDJ24R.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-drive-junior-25-2025",
-      "brand": "Babolat",
-      "line": "Drive Junior",
-      "model": "Drive Junior 25",
-      "generation": null,
-      "releaseYear": 2025,
-      "category": "junior",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 25,
-        "stringPattern": [
-          16,
-          17
-        ],
-        "beamMm": [
-          23,
-          23,
-          21
-        ],
-        "unstrungWeightG": 230,
-        "balanceMm": 315
-      },
-      "colourway": "Blue/White",
-      "sources": [
-        "https://www.tennis-warehouse.com/Babolat_Drive_25_Junior/descpageRCBAB-BDJ25R.html",
-        "https://www.babolat.com/us/drive-junior-25-strung/140516.html"
       ],
       "researched": "2026-11-20"
     },
@@ -10749,305 +12075,6 @@
       "researched": "2026-11-20"
     },
     {
-      "id": "babolat-pure-aero-junior-25-2019gen",
-      "brand": "Babolat",
-      "line": "Pure Aero",
-      "model": "Pure Aero Junior 25",
-      "generation": "2019",
-      "releaseYear": null,
-      "category": "junior",
-      "onSaleIn": [
-        2023
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 25,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": null,
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Yellow/Black",
-      "sources": [
-        "https://web.archive.org/web/20230410175138/https://www.tennis-warehouse.com/Babolat_Pure_Aero_25_Junior/descpageRCBAB-BPARJ25.html",
-        "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-pure-aero-junior-25-2023gen",
-      "brand": "Babolat",
-      "line": "Pure Aero",
-      "model": "Pure Aero Junior 25",
-      "generation": "2023",
-      "releaseYear": null,
-      "category": "junior",
-      "onSaleIn": [
-        2023
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 25,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": null,
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Yellow/Black",
-      "sources": [
-        "https://web.archive.org/web/20230410182243/https://www.tennis-warehouse.com/Babolat_Pure_Aero_25_2023_Junior/descpageRCBAB-BAJ25R.html",
-        "https://web.archive.org/web/20230608223519/https://www.tennisexpress.com/babolat-tennis-racquets",
-        "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-pure-aero-junior-25-2026",
-      "brand": "Babolat",
-      "line": "Pure Aero",
-      "model": "Pure Aero Junior 25",
-      "generation": "Gen9",
-      "releaseYear": 2026,
-      "category": "junior",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 98,
-        "lengthIn": 25,
-        "stringPattern": [
-          16,
-          17
-        ],
-        "beamMm": [
-          22,
-          24,
-          22
-        ],
-        "unstrungWeightG": 235,
-        "balanceMm": 315
-      },
-      "colourway": "Metallic Grey/Fluo Yellow",
-      "sources": [
-        "https://www.tennis-warehouse.com/Babolat_Pure_Aero_Junior_25/descpageRCBAB-BPAJR5.html",
-        "https://www.babolat.com/us/pure-aero-junior-25-gen9/140538.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-pure-aero-junior-26-2019gen",
-      "brand": "Babolat",
-      "line": "Pure Aero",
-      "model": "Pure Aero Junior 26",
-      "generation": "2019",
-      "releaseYear": null,
-      "category": "junior",
-      "onSaleIn": [
-        2023
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 26,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": null,
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Yellow/Black",
-      "sources": [
-        "https://web.archive.org/web/20230410175139/https://www.tennis-warehouse.com/Babolat_Pure_Aero_26_Junior/descpageRCBAB-BPARJ26.html",
-        "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-pure-aero-junior-26-2023gen",
-      "brand": "Babolat",
-      "line": "Pure Aero",
-      "model": "Pure Aero Junior 26",
-      "generation": "2023",
-      "releaseYear": null,
-      "category": "junior",
-      "onSaleIn": [
-        2023
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 26,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": null,
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Yellow/Black",
-      "sources": [
-        "https://web.archive.org/web/20230410182245/https://www.tennis-warehouse.com/Babolat_Pure_Aero_26_2023_Junior/descpageRCBAB-BAJ26R.html",
-        "https://web.archive.org/web/20230608223519/https://www.tennisexpress.com/babolat-tennis-racquets",
-        "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-pure-aero-lite-2018",
-      "brand": "Babolat",
-      "line": "Pure Aero",
-      "model": "Pure Aero Lite",
-      "generation": "2019",
-      "releaseYear": 2018,
-      "category": "adult",
-      "onSaleIn": [
-        2023
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          23,
-          26,
-          23
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Black/Yellow",
-      "sources": [
-        "https://web.archive.org/web/20230410175140/https://www.tennis-warehouse.com/Babolat_Pure_Aero_Lite/descpageRCBAB-BPARL.html",
-        "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://mijnracket.nl/en/blogs/blogposts/babolat-pure-aero-2019"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-pure-aero-lite-2022",
-      "brand": "Babolat",
-      "line": "Pure Aero",
-      "model": "Pure Aero Lite",
-      "generation": "2023",
-      "releaseYear": 2022,
-      "category": "adult",
-      "onSaleIn": [
-        2023,
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          23,
-          26,
-          23
-        ],
-        "unstrungWeightG": 270,
-        "balanceMm": 330
-      },
-      "colourway": "Yellow/Black",
-      "sources": [
-        "https://web.archive.org/web/20230410181956/https://www.tennis-warehouse.com/Babolat_Pure_Aero_Lite_2023/descpageRCBAB-BAROL.html",
-        "https://web.archive.org/web/20230608223519/https://www.tennisexpress.com/babolat-tennis-racquets",
-        "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://www.merchantoftennis.com/a/llms/products/babolat-pure-aero-lite-2023",
-        "https://www.babolat.com/us/news-articles-blog-pure-aero-98/pure-aero-98.html",
-        "https://www.tennis-warehouse.com/Babolat_Pure_Aero_Lite_2023/descpage-BAROL.html",
-        "https://www.tennis-warehouse.com/Babolat_Pure_Aero_Lite_2023/descpageRCBAB-BAROL.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-pure-aero-plus-2023gen",
-      "brand": "Babolat",
-      "line": "Pure Aero",
-      "model": "Pure Aero Plus",
-      "generation": "2023",
-      "releaseYear": null,
-      "category": "adult",
-      "onSaleIn": [
-        2023
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27.5,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          23,
-          26,
-          23
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Yellow/Black",
-      "sources": [
-        "https://web.archive.org/web/20230410174524/https://www.tennis-warehouse.com/Babolat_Pure_Aero_Plus_2023/descpageRCBAB-BAROPL.html",
-        "https://web.archive.org/web/20230608223519/https://www.tennisexpress.com/babolat-tennis-racquets",
-        "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://www.babolat.com/us/news-articles-blog-pure-aero-98/pure-aero-98.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-pure-aero-plus-2026",
-      "brand": "Babolat",
-      "line": "Pure Aero",
-      "model": "Pure Aero Plus",
-      "generation": "Gen9",
-      "releaseYear": 2026,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27.5,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          23,
-          26,
-          23
-        ],
-        "unstrungWeightG": 300,
-        "balanceMm": 320
-      },
-      "colourway": "Yellow/Grey",
-      "sources": [
-        "https://www.tennis-warehouse.com/Babolat_Pure_Aero_Plus_2026/descpageRCBAB-BPAPLR.html",
-        "https://www.tenniswarehouse-europe.com/descpageRCQBA-BPAPLR-EN.html",
-        "https://www.babolat.com/us/tennis/racquets/adults.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
       "id": "babolat-pure-aero-rafa-2021",
       "brand": "Babolat",
       "line": "Pure Aero",
@@ -11254,110 +12281,6 @@
       "researched": "2026-11-20"
     },
     {
-      "id": "babolat-pure-drive-98-2023",
-      "brand": "Babolat",
-      "line": "Pure Drive",
-      "model": "Pure Drive 98",
-      "generation": "2023",
-      "releaseYear": 2023,
-      "category": "adult",
-      "onSaleIn": [
-        2023,
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 98,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          21,
-          23,
-          21
-        ],
-        "unstrungWeightG": 305,
-        "balanceMm": null
-      },
-      "colourway": "Blue",
-      "sources": [
-        "https://web.archive.org/web/20240823062343/https://www.tennis-warehouse.com/Babolat_Pure_Drive_98/descpageRCBAB-BRPD98.html",
-        "https://web.archive.org/web/20230131040526/https://www.tennisexpress.com/babolat-pure-drive-98-tennis-racquet-99824",
-        "https://www.babolat.com/us/news-articles-blog-pure-drive-98/pure-drive-98.html",
-        "https://web.archive.org/web/20240329074225/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://www.tennis-warehouse.com/Babolat_Pure_Drive_98_2023_2-Pack/descpageRCBAB-PD98X2.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-pure-drive-junior-25-2020",
-      "brand": "Babolat",
-      "line": "Pure Drive",
-      "model": "Pure Drive Junior 25",
-      "generation": "2021",
-      "releaseYear": 2020,
-      "category": "junior",
-      "onSaleIn": [
-        2023
-      ],
-      "specs": {
-        "headSizeSqIn": 98,
-        "lengthIn": 25,
-        "stringPattern": [
-          16,
-          17
-        ],
-        "beamMm": null,
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Blue/Black; also Navy/Pink",
-      "sources": [
-        "https://web.archive.org/web/20230130100813/https://www.tennis-warehouse.com/Babolat_Pure_Drive_25_Junior/descpageRCBAB-PDJR25.html",
-        "https://web.archive.org/web/20230608223519/https://www.tennisexpress.com/babolat-tennis-racquets",
-        "https://web.archive.org/web/20230528040204/https://www.tennisexpress.com/babolat-2021-pure-drive-25-junior-tennis-racquet-blue-85295",
-        "https://web.archive.org/web/20230130100812/https://www.tennis-warehouse.com/Babolat_Pure_Drive_25_Junior_Navy_Pink/descpageRCBAB-PDJR25P.html",
-        "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://www.babolat.com/us/news-articles-blog-pure-drive-news/pure-drive-news.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-pure-drive-junior-25-2025",
-      "brand": "Babolat",
-      "line": "Pure Drive",
-      "model": "Pure Drive Junior 25",
-      "generation": "Gen11",
-      "releaseYear": 2025,
-      "category": "junior",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 98,
-        "lengthIn": 25,
-        "stringPattern": [
-          16,
-          17
-        ],
-        "beamMm": [
-          23,
-          26,
-          23
-        ],
-        "unstrungWeightG": 240,
-        "balanceMm": 315
-      },
-      "colourway": "Blue",
-      "sources": [
-        "https://www.tennis-warehouse.com/Babolat_Pure_Drive_25_Junior/descpageRCBAB-BPJ25R.html",
-        "https://www.babolat.com/us/pure-drive-junior-25-gen11/140533.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
       "id": "babolat-pure-drive-junior-25-light-blue-2025",
       "brand": "Babolat",
       "line": "Pure Drive",
@@ -11386,39 +12309,6 @@
       "researched": "2026-11-20"
     },
     {
-      "id": "babolat-pure-drive-junior-26-2020",
-      "brand": "Babolat",
-      "line": "Pure Drive",
-      "model": "Pure Drive Junior 26",
-      "generation": "2021",
-      "releaseYear": 2020,
-      "category": "junior",
-      "onSaleIn": [
-        2023
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 26,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": null,
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Blue; also Navy/Pink",
-      "sources": [
-        "https://web.archive.org/web/20230130100754/https://www.tennis-warehouse.com/Babolat_Pure_Drive_26_Junior/descpageRCBAB-PDJR26.html",
-        "https://web.archive.org/web/20230608223519/https://www.tennisexpress.com/babolat-tennis-racquets",
-        "https://web.archive.org/web/20230130100754/https://www.tennis-warehouse.com/Babolat_Pure_Drive_26_Junior_Navy_Pink/descpageRCBAB-PDJR26P.html",
-        "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://www.babolat.com/us/news-articles-blog-pure-drive-news/pure-drive-news.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
       "id": "babolat-pure-drive-junior-26-light-blue-2025",
       "brand": "Babolat",
       "line": "Pure Drive",
@@ -11443,40 +12333,6 @@
       "colourway": "Light Blue",
       "sources": [
         "https://www.tennis-warehouse.com/Babolat_Pure_Drive_26_Junior_Light_Blue/descpageRCBAB-BPJ26LB.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-pure-drive-plus-2025",
-      "brand": "Babolat",
-      "line": "Pure Drive",
-      "model": "Pure Drive Plus",
-      "generation": "Gen11",
-      "releaseYear": 2025,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27.5,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          23,
-          26,
-          23
-        ],
-        "unstrungWeightG": 300,
-        "balanceMm": 320
-      },
-      "colourway": "Metallic blue/Midnight blue",
-      "sources": [
-        "https://www.tennis-warehouse.com/Babolat_Pure_Drive_Plus_2025/descpageRCBAB-BPDP25.html",
-        "https://www.babolat.com/us/pure-drive-gen11-unstrung/101553.html",
-        "https://www.tennis.com/news/articles/racquet-preview-babolat-pure-drive-2025-user-friendly-stable-11th-generation-big-hitting"
       ],
       "researched": "2026-11-20"
     },
@@ -11708,42 +12564,6 @@
       "researched": "2026-11-20"
     },
     {
-      "id": "babolat-pure-strike-98-16x19-2019",
-      "brand": "Babolat",
-      "line": "Pure Strike",
-      "model": "Pure Strike 98 16x19",
-      "generation": "3rd Gen",
-      "releaseYear": 2019,
-      "category": "adult",
-      "onSaleIn": [
-        2023
-      ],
-      "specs": {
-        "headSizeSqIn": 98,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          21,
-          23,
-          21
-        ],
-        "unstrungWeightG": 306,
-        "balanceMm": null
-      },
-      "colourway": "White/Coral",
-      "sources": [
-        "https://web.archive.org/web/20230811040629/https://www.tennis-warehouse.com/Babolat_Pure_Strike_16x19_3rd_Gen/descpageRCBAB-PS1619.html",
-        "https://web.archive.org/web/20230926181807/https://www.tennisexpress.com/babolat-pure-strike-16-19-3rd-gen-tennis-racquet-74594",
-        "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://www.tennis-warehouse.com/learning_center/racquet_reviews/PS1619review.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
       "id": "babolat-pure-strike-98-16x19-japan",
       "brand": "Babolat",
       "line": "Pure Strike",
@@ -11765,66 +12585,6 @@
       "colourway": null,
       "sources": [
         "https://web.archive.org/web/20230306064607/https://www.tennis-warehouse.com/BabolatRacquets.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-pure-strike-junior-25-2019gen",
-      "brand": "Babolat",
-      "line": "Pure Strike",
-      "model": "Pure Strike Junior 25",
-      "generation": "3rd Gen",
-      "releaseYear": null,
-      "category": "junior",
-      "onSaleIn": [
-        2023
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 25,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": null,
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "White/Coral",
-      "sources": [
-        "https://web.archive.org/web/20230130100857/https://www.tennis-warehouse.com/Babolat_Pure_Strike_3rd_Gen_25_Junior/descpageRCBAB-PSJ25R.html",
-        "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "babolat-pure-strike-junior-26-2019gen",
-      "brand": "Babolat",
-      "line": "Pure Strike",
-      "model": "Pure Strike Junior 26",
-      "generation": "3rd Gen",
-      "releaseYear": null,
-      "category": "junior",
-      "onSaleIn": [
-        2023
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 26,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": null,
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "White/Coral",
-      "sources": [
-        "https://web.archive.org/web/20230130100833/https://www.tennis-warehouse.com/Babolat_Pure_Strike_3rd_Gen_26_Junior/descpageRCBAB-PSJ26R.html",
-        "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html",
-        "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html"
       ],
       "researched": "2026-11-20"
     },
@@ -12025,35 +12785,6 @@
         "https://web.archive.org/web/20230608223519/https://www.tennisexpress.com/babolat-tennis-racquets",
         "https://web.archive.org/web/20230130094634/https://www.tennis-warehouse.com/Babolatracquets.html",
         "https://web.archive.org/web/20230805045048/https://www.tennis-warehouse.com/Babolatracquets.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "head-boom-junior-25-2026",
-      "brand": "Head",
-      "line": "Boom",
-      "model": "Boom Junior 25",
-      "generation": "2026",
-      "releaseYear": 2026,
-      "category": "junior",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 25,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": null,
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Black/Coral (also Purple)",
-      "sources": [
-        "https://www.tennis-warehouse.com/Head_Boom_25_Junior_Racquet_2026/descpageRCHEAD-HBJR25.html",
-        "https://www.tennis-warehouse.com/Head_Boom_25_Junior_Racquet_2026_Purple/descpageRCHEAD-HBJRA5.html"
       ],
       "researched": "2026-11-20"
     },
@@ -12557,31 +13288,6 @@
       "researched": "2026-11-20"
     },
     {
-      "id": "head-radical-junior-21",
-      "brand": "Head",
-      "line": "Radical",
-      "model": "Radical Junior 21",
-      "generation": null,
-      "releaseYear": null,
-      "category": "junior",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 81,
-        "lengthIn": 21,
-        "stringPattern": null,
-        "beamMm": null,
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Orange",
-      "sources": [
-        "https://www.tennis-warehouse.com/Head_Radical_Junior_21/descpageRCHEAD-HARJ21.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
       "id": "head-radical-tour-2025",
       "brand": "Head",
       "line": "Radical",
@@ -12664,34 +13370,6 @@
       "researched": "2026-11-20"
     },
     {
-      "id": "head-speed-junior-25-2026",
-      "brand": "Head",
-      "line": "Speed",
-      "model": "Speed Junior 25",
-      "generation": "2026",
-      "releaseYear": 2026,
-      "category": "junior",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 25,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": null,
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "White/Black",
-      "sources": [
-        "https://www.tennis-warehouse.com/Head_Speed_25_Junior_Racquet_2026/descpageRCHEAD-HSJR25.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
       "id": "head-speed-junior-25",
       "brand": "Head",
       "line": "Speed",
@@ -12716,38 +13394,6 @@
       "colourway": "Blue/Green",
       "sources": [
         "https://www.tennis-warehouse.com/Head_Speed_25_Junior_Racquet/descpageRCHEAD-SPED25.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "head-speed-sinner",
-      "brand": "Head",
-      "line": "Speed",
-      "model": "Speed Sinner",
-      "generation": null,
-      "releaseYear": null,
-      "category": "adult",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 27,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          22,
-          22,
-          22
-        ],
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "White/Black",
-      "sources": [
-        "https://www.tennis-warehouse.com/Head_Speed_Sinner/descpageRCHEAD-HSPSIN.html"
       ],
       "researched": "2026-11-20"
     },
@@ -13155,34 +13801,6 @@
       "researched": "2026-11-20"
     },
     {
-      "id": "prince-ripcord-25-junior",
-      "brand": "Prince",
-      "line": "Ripcord",
-      "model": "Ripcord 25\" Junior",
-      "generation": null,
-      "releaseYear": null,
-      "category": "junior",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 25,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": null,
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Blue",
-      "sources": [
-        "https://www.tennis-warehouse.com/Prince_Ripcord_25_Junior/descpageRCPRINCE-PRIPCJ25.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
       "id": "prince-tour-25-junior",
       "brand": "Prince",
       "line": "Tour",
@@ -13393,34 +14011,6 @@
       "researched": "2026-11-20"
     },
     {
-      "id": "wilson-blade-25-v10-2026",
-      "brand": "Wilson",
-      "line": "Blade",
-      "model": "Blade 25\" Junior",
-      "generation": "v10",
-      "releaseYear": 2026,
-      "category": "junior",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 25,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": null,
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": null,
-      "sources": [
-        "https://www.tennis-warehouse.com/Wilson_Blade_25_v10_Junior/descpageRCWILSON-WB25J1.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
       "id": "wilson-burn-pink-105s-v6-2026",
       "brand": "Wilson",
       "line": "Burn",
@@ -13545,34 +14135,6 @@
       "researched": "2026-11-20"
     },
     {
-      "id": "wilson-ultra-25-v5",
-      "brand": "Wilson",
-      "line": "Ultra",
-      "model": "Ultra 25\" Junior",
-      "generation": "v5",
-      "releaseYear": null,
-      "category": "junior",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 102,
-        "lengthIn": 25,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": null,
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Blue",
-      "sources": [
-        "https://www.tennis-warehouse.com/Wilson_Ultra_25_v5_Junior/descpageRCWILSON-WU255R.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
       "id": "wilson-us-open-21",
       "brand": "Wilson",
       "line": "US Open",
@@ -13690,62 +14252,6 @@
       "colourway": "Blue",
       "sources": [
         "https://www.tennis-warehouse.com/Yonex_EZONE_Alpha_275g/descpageRCYONEX-EZAPR.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "yonex-ezone-jr-25",
-      "brand": "Yonex",
-      "line": "EZONE",
-      "model": "EZONE JR 25\" Junior",
-      "generation": null,
-      "releaseYear": null,
-      "category": "junior",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 25,
-        "stringPattern": [
-          16,
-          18
-        ],
-        "beamMm": null,
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Blast Blue",
-      "sources": [
-        "https://www.tennis-warehouse.com/Yonex_EZONE_JR_25_Junior/descpageRCYONEX-EZOJ25H.html"
-      ],
-      "researched": "2026-11-20"
-    },
-    {
-      "id": "yonex-ezone-junior-25",
-      "brand": "Yonex",
-      "line": "EZONE",
-      "model": "EZONE 25\" Junior",
-      "generation": null,
-      "releaseYear": null,
-      "category": "junior",
-      "onSaleIn": [
-        2026
-      ],
-      "specs": {
-        "headSizeSqIn": 100,
-        "lengthIn": 25,
-        "stringPattern": [
-          16,
-          18
-        ],
-        "beamMm": null,
-        "unstrungWeightG": null,
-        "balanceMm": null
-      },
-      "colourway": "Blue",
-      "sources": [
-        "https://www.tennis-warehouse.com/Yonex_EZONE_25_Junior/descpageRCYONEX-EZOJ25.html"
       ],
       "researched": "2026-11-20"
     },

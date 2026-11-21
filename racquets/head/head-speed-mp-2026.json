@@ -321,6 +321,48 @@
       "sources": [
         "https://www.tennis-warehouse.com/Head_Speed_Junior_26_2026/descpageRCHEAD-HSPJR6.html"
       ]
+    },
+    {
+      "id": "head-speed-junior-25-2026",
+      "label": "Junior 25",
+      "model": "Speed Junior 25",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 25,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          23,
+          23
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Speed_25_Junior_Racquet_2026/descpageRCHEAD-HSJR25.html"
+      ]
+    },
+    {
+      "id": "head-speed-sinner",
+      "label": "Sinner",
+      "model": "Speed Sinner",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          22,
+          22,
+          22
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Speed_Sinner/descpageRCHEAD-HSPSIN.html"
+      ]
     }
   ]
 }

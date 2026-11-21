@@ -214,6 +214,204 @@
       "sources": [
         "https://www.tennis-warehouse.com/Babolat_Pure_Aero_Junior_26/descpageRCBAB-BPAJR6.html"
       ]
+    },
+    {
+      "id": "babolat-aero-junior-25-2026",
+      "label": "Aero Junior 25",
+      "model": "Aero Junior 25",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 25,
+        "stringPattern": [
+          16,
+          17
+        ],
+        "beamMm": [
+          23,
+          23,
+          23
+        ],
+        "unstrungWeightG": 225
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Babolat_Aero_25_Junior/descpageRCBAB-BAEJR5.html"
+      ]
+    },
+    {
+      "id": "babolat-aero-junior-26-2026",
+      "label": "Aero Junior 26",
+      "model": "Aero Junior 26",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 26,
+        "stringPattern": [
+          16,
+          17
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 240
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Babolat_Aero_26_Junior/descpageRCBAB-BAEJR6.html"
+      ]
+    },
+    {
+      "id": "babolat-carlitos-junior-19",
+      "label": "Carlitos 19",
+      "model": "Carlitos Junior 19",
+      "specs": {
+        "headSizeSqIn": 81,
+        "lengthIn": 19,
+        "stringPattern": [
+          14,
+          14
+        ],
+        "beamMm": [
+          19,
+          19,
+          19
+        ],
+        "unstrungWeightG": 165
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Babolat_Carlitos_19_Junior/descpageRCBAB-BCJR19.html"
+      ]
+    },
+    {
+      "id": "babolat-carlitos-junior-21",
+      "label": "Carlitos 21",
+      "model": "Carlitos Junior 21",
+      "specs": {
+        "headSizeSqIn": 86,
+        "lengthIn": 21,
+        "stringPattern": [
+          14,
+          15
+        ],
+        "beamMm": [
+          19,
+          19,
+          19
+        ],
+        "unstrungWeightG": 180
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Babolat_Carlitos_21_Junior/descpageRCBAB-BCJR21.html"
+      ]
+    },
+    {
+      "id": "babolat-carlitos-junior-23",
+      "label": "Carlitos 23",
+      "model": "Carlitos Junior 23",
+      "specs": {
+        "headSizeSqIn": 92,
+        "lengthIn": 23,
+        "stringPattern": [
+          16,
+          16
+        ],
+        "beamMm": [
+          19,
+          19,
+          19
+        ],
+        "unstrungWeightG": 200
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Babolat_Carlitos_23_Junior/descpageRCBAB-BCJR23.html"
+      ]
+    },
+    {
+      "id": "babolat-carlitos-junior-25",
+      "label": "Carlitos 25",
+      "model": "Carlitos Junior 25",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 25,
+        "stringPattern": [
+          16,
+          17
+        ],
+        "beamMm": [
+          20,
+          20,
+          20
+        ],
+        "unstrungWeightG": 230
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Babolat_Carlitos_25_Junior/descpageRCBAB-BCJR25.html"
+      ]
+    },
+    {
+      "id": "babolat-carlitos-junior-26",
+      "label": "Carlitos 26",
+      "model": "Carlitos Junior 26",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 26,
+        "stringPattern": [
+          16,
+          17
+        ],
+        "beamMm": [
+          20,
+          20,
+          20
+        ],
+        "unstrungWeightG": 240
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Babolat_Carlitos_26_Junior/descpageRCBAB-BCJR26.html"
+      ]
+    },
+    {
+      "id": "babolat-pure-aero-junior-25-2026",
+      "label": "Pure Aero Junior 25",
+      "model": "Pure Aero Junior 25",
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 25,
+        "stringPattern": [
+          16,
+          17
+        ],
+        "beamMm": [
+          22,
+          24,
+          22
+        ],
+        "unstrungWeightG": 235
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Babolat_Pure_Aero_Junior_25/descpageRCBAB-BPAJR5.html"
+      ]
+    },
+    {
+      "id": "babolat-pure-aero-plus-2026",
+      "label": "Plus",
+      "model": "Pure Aero Plus",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27.5,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 300
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Babolat_Pure_Aero_Plus_2026/descpageRCBAB-BPAPLR.html"
+      ]
     }
   ]
 }

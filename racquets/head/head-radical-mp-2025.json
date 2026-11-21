@@ -173,6 +173,27 @@
       "sources": [
         "https://www.tennis-warehouse.com/Head_Radical_Junior_2025/descpageRCHEAD-HRJR26.html"
       ]
+    },
+    {
+      "id": "head-radical-junior-21",
+      "label": "Junior 21",
+      "model": "Radical Junior 21",
+      "specs": {
+        "headSizeSqIn": 81,
+        "lengthIn": 21,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          20,
+          23,
+          21
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Radical_Junior_21/descpageRCHEAD-HARJ21.html"
+      ]
     }
   ]
 }

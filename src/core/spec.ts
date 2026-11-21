@@ -133,8 +133,8 @@ const baseSpecSchema = z
     year: z.number().int(),
     specs: z
       .object({
-        headSizeSqIn: z.number().min(85).max(115),
-        lengthIn: z.number().min(26).max(29),
+        headSizeSqIn: z.number().min(55).max(120),
+        lengthIn: z.number().min(16).max(29),
         stringPattern: z.tuple([patternCount, patternCount]),
         beamMm: z.tuple([beam, beam, beam]),
         unstrungWeightG: z.number().positive().optional(),

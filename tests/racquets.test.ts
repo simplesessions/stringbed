@@ -5,7 +5,7 @@ const specs = loadAllSpecs();
 
 test('every spec parses and ids are unique', () => {
   // 62 frames on the wall; 145 more are their variants (other sizes of the same frame).
-  expect(specs.length).toBe(207);
+  expect(specs.length).toBe(244);
   expect(specs.filter((s) => !s.variantOf)).toHaveLength(62);
   expect(new Set(specs.map((s) => s.id)).size).toBe(specs.length);
 });

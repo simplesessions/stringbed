@@ -172,6 +172,27 @@
       "sources": [
         "https://www.tennis-warehouse.com/Prince_Ripcord_26_Junior/descpageRCPRINCE-PRIPCJ26.html"
       ]
+    },
+    {
+      "id": "prince-ripcord-25-junior",
+      "label": "Junior 25",
+      "model": "Ripcord 25\" Junior",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 25,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          27,
+          25,
+          22
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Prince_Ripcord_25_Junior/descpageRCPRINCE-PRIPCJ25.html"
+      ]
     }
   ],
   "variantLabel": "100 280g"

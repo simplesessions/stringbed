@@ -155,7 +155,7 @@ function mixRing(a: Ring, b: Ring, t: number, u: number): Ring {
  */
 function withSeams(rings: Ring[], seams: number[]): Ring[] {
   if (seams.length === 0 || rings.length < 2) return rings;
-  const edgeAt = (u: number) => seams.find((s) => Math.abs(u - s) <= 1e-6);
+  const edgeAt = (u: number) => seams.find((s) => Math.abs(u - s) <= 2 * SEAM_EPS); // a ring this close to an edge cannot be split, so it becomes the pair
   const groups: Ring[][] = rings.map((r, i) => {
     const s = edgeAt(r.u);
     if (s === undefined) return [r];

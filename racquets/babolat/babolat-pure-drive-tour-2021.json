@@ -216,6 +216,70 @@
       "sources": [
         "https://web.archive.org/web/20230410175146/https://www.tennis-warehouse.com/Babolat_Pure_Drive_Plus_2021/descpageRCBAB-BRPDP.html"
       ]
+    },
+    {
+      "id": "babolat-pure-drive-junior-25-2020",
+      "label": "Junior 25 (2020)",
+      "model": "Pure Drive Junior 25",
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 25.0,
+        "stringPattern": [
+          16,
+          17
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "sources": [
+        "https://web.archive.org/web/20230130100813/https://www.tennis-warehouse.com/Babolat_Pure_Drive_25_Junior/descpageRCBAB-PDJR25.html"
+      ]
+    },
+    {
+      "id": "babolat-pure-drive-junior-26-2020",
+      "label": "Junior 26 (2020)",
+      "model": "Pure Drive Junior 26",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 26.0,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "sources": [
+        "https://web.archive.org/web/20230130100754/https://www.tennis-warehouse.com/Babolat_Pure_Drive_26_Junior/descpageRCBAB-PDJR26.html"
+      ]
+    },
+    {
+      "id": "babolat-pure-drive-98-2023",
+      "label": "98",
+      "model": "Pure Drive 98",
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27.0,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          21,
+          23,
+          21
+        ],
+        "unstrungWeightG": 305
+      },
+      "sources": [
+        "https://web.archive.org/web/20240823062343/https://www.tennis-warehouse.com/Babolat_Pure_Drive_98/descpageRCBAB-BRPD98.html"
+      ]
     }
   ],
   "variantLabel": "Tour"

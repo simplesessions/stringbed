@@ -204,6 +204,115 @@
       "sources": [
         "https://www.tennis-warehouse.com/Babolat_Pure_Drive_26_Junior/descpageRCBAB-BPJ26R.html"
       ]
+    },
+    {
+      "id": "babolat-drive-junior-23-2025",
+      "label": "Drive Junior 23",
+      "model": "Drive Junior 23",
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 23,
+        "stringPattern": [
+          16,
+          17
+        ],
+        "beamMm": [
+          20,
+          20,
+          19
+        ],
+        "unstrungWeightG": 215
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Babolat_Drive_23_Junior/descpageRCBAB-BDJ23R.html"
+      ]
+    },
+    {
+      "id": "babolat-drive-junior-24-2025",
+      "label": "Drive Junior 24",
+      "model": "Drive Junior 24",
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 24,
+        "stringPattern": [
+          16,
+          17
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Babolat_Drive_24_Junior/descpageRCBAB-BDJ24R.html"
+      ]
+    },
+    {
+      "id": "babolat-drive-junior-25-2025",
+      "label": "Drive Junior 25",
+      "model": "Drive Junior 25",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 25,
+        "stringPattern": [
+          16,
+          17
+        ],
+        "beamMm": [
+          23,
+          23,
+          21
+        ],
+        "unstrungWeightG": 230
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Babolat_Drive_25_Junior/descpageRCBAB-BDJ25R.html"
+      ]
+    },
+    {
+      "id": "babolat-pure-drive-junior-25-2025",
+      "label": "Junior 25",
+      "model": "Pure Drive Junior 25",
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 25,
+        "stringPattern": [
+          16,
+          17
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 240
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Babolat_Pure_Drive_25_Junior/descpageRCBAB-BPJ25R.html"
+      ]
+    },
+    {
+      "id": "babolat-pure-drive-plus-2025",
+      "label": "Plus",
+      "model": "Pure Drive Plus",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27.5,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 300
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Babolat_Pure_Drive_Plus_2025/descpageRCBAB-BPDP25.html"
+      ]
     }
   ]
 }

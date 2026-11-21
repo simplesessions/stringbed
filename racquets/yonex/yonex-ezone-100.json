@@ -431,6 +431,48 @@
       "sources": [
         "https://www.tennis-warehouse.com/Yonex_EZONE_26_Junior/descpageRCYONEX-EZOJ26.html"
       ]
+    },
+    {
+      "id": "yonex-ezone-jr-25",
+      "label": "Junior 25 (JR)",
+      "model": "EZONE JR 25\" Junior",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 25,
+        "stringPattern": [
+          16,
+          18
+        ],
+        "beamMm": [
+          24.5,
+          26.5,
+          23
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Yonex_EZONE_JR_25_Junior/descpageRCYONEX-EZOJ25H.html"
+      ]
+    },
+    {
+      "id": "yonex-ezone-junior-25",
+      "label": "Junior 25",
+      "model": "EZONE 25\" Junior",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 25,
+        "stringPattern": [
+          16,
+          18
+        ],
+        "beamMm": [
+          24.5,
+          26.5,
+          23
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Yonex_EZONE_25_Junior/descpageRCYONEX-EZOJ25.html"
+      ]
     }
   ],
   "variantLabel": "100"

@@ -160,6 +160,70 @@
       "sources": [
         "https://web.archive.org/web/20230410174449/https://www.tennis-warehouse.com/Babolat_Pure_Strike_103/descpageRCBAB-BPS103.html"
       ]
+    },
+    {
+      "id": "babolat-pure-strike-junior-25-2019gen",
+      "label": "Junior 25",
+      "model": "Pure Strike Junior 25",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 25.0,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          21,
+          23,
+          21
+        ]
+      },
+      "sources": [
+        "https://web.archive.org/web/20230130100857/https://www.tennis-warehouse.com/Babolat_Pure_Strike_3rd_Gen_25_Junior/descpageRCBAB-PSJ25R.html"
+      ]
+    },
+    {
+      "id": "babolat-pure-strike-junior-26-2019gen",
+      "label": "Junior 26",
+      "model": "Pure Strike Junior 26",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 26.0,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          21,
+          23,
+          21
+        ]
+      },
+      "sources": [
+        "https://web.archive.org/web/20230130100833/https://www.tennis-warehouse.com/Babolat_Pure_Strike_3rd_Gen_26_Junior/descpageRCBAB-PSJ26R.html"
+      ]
+    },
+    {
+      "id": "babolat-pure-strike-98-16x19-2019",
+      "label": "98 16x19",
+      "model": "Pure Strike 98 16x19",
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27.0,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          21,
+          23,
+          21
+        ],
+        "unstrungWeightG": 306
+      },
+      "sources": [
+        "https://web.archive.org/web/20230811040629/https://www.tennis-warehouse.com/Babolat_Pure_Strike_16x19_3rd_Gen/descpageRCBAB-PS1619.html"
+      ]
     }
   ],
   "variantLabel": "Tour"

@@ -221,6 +221,27 @@
       "sources": [
         "https://www.tennis-warehouse.com/Head_Boom_26_Junior/descpageRCHEAD-HBMJR6.html"
       ]
+    },
+    {
+      "id": "head-boom-junior-25-2026",
+      "label": "Junior 25",
+      "model": "Boom Junior 25",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 25,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          24,
+          22
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Head_Boom_25_Junior_Racquet_2026/descpageRCHEAD-HBJR25.html"
+      ]
     }
   ]
 }
