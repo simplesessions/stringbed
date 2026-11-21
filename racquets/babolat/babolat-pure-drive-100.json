@@ -98,7 +98,6 @@
       "id": "babolat-pure-drive-98-2025",
       "label": "98",
       "model": "Pure Drive 98",
-      "generation": "Gen11",
       "specs": {
         "headSizeSqIn": 98,
         "lengthIn": 27,
@@ -353,9 +352,6 @@
           23
         ]
       },
-      "sources": [
-        "https://www.tennis-warehouse.com/Babolat_Pure_Drive_25_Junior_Light_Blue/descpageRCBAB-BJPD25.html"
-      ],
       "paint": {
         "base": "#3cc4de",
         "finish": "satin",
@@ -408,6 +404,9 @@
         },
         "dampener": null
       },
+      "sources": [
+        "https://www.tennis-warehouse.com/Babolat_Pure_Drive_25_Junior_Light_Blue/descpageRCBAB-BJPD25.html"
+      ],
       "colourway": "Light Blue"
     },
     {
@@ -427,9 +426,6 @@
           23
         ]
       },
-      "sources": [
-        "https://www.tennis-warehouse.com/Babolat_Pure_Drive_26_Junior_Light_Blue/descpageRCBAB-BPJ26LB.html"
-      ],
       "paint": {
         "base": "#3cc4de",
         "finish": "satin",
@@ -482,6 +478,9 @@
         },
         "dampener": null
       },
+      "sources": [
+        "https://www.tennis-warehouse.com/Babolat_Pure_Drive_26_Junior_Light_Blue/descpageRCBAB-BPJ26LB.html"
+      ],
       "colourway": "Light Blue"
     }
   ]

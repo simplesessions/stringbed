@@ -1,13 +1,13 @@
 {
-  "id": "babolat-pure-strike-tour-2019",
+  "id": "babolat-pure-strike-98-16x19-2019",
   "brand": "Babolat",
   "line": "Pure Strike",
-  "model": "Pure Strike Tour",
+  "model": "Pure Strike 98 16x19",
   "generation": "3rd Gen",
   "year": 2019,
   "specs": {
     "headSizeSqIn": 98,
-    "lengthIn": 27,
+    "lengthIn": 27.0,
     "stringPattern": [
       16,
       19
@@ -16,7 +16,8 @@
       21,
       23,
       21
-    ]
+    ],
+    "unstrungWeightG": 306
   },
   "geometry": {
     "head": {
@@ -72,11 +73,33 @@
     "dampener": null
   },
   "sources": [
-    "https://web.archive.org/web/20230410173836/https://www.tennis-warehouse.com/Babolat_Pure_Strike_Tour_3rd_Gen/descpageRCBAB-BPSTTO.html"
+    "https://web.archive.org/web/20230811040629/https://www.tennis-warehouse.com/Babolat_Pure_Strike_16x19_3rd_Gen/descpageRCBAB-PS1619.html"
   ],
   "verified": true,
-  "colourway": "White/Coral",
+  "variantLabel": "98 16x19",
   "variants": [
+    {
+      "id": "babolat-pure-strike-tour-2019",
+      "label": "Tour",
+      "model": "Pure Strike Tour",
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          21,
+          23,
+          21
+        ]
+      },
+      "sources": [
+        "https://web.archive.org/web/20230410173836/https://www.tennis-warehouse.com/Babolat_Pure_Strike_Tour_3rd_Gen/descpageRCBAB-BPSTTO.html"
+      ],
+      "colourway": "White/Coral"
+    },
     {
       "id": "babolat-pure-strike-100-2019",
       "label": "100",
@@ -202,29 +225,6 @@
       "sources": [
         "https://web.archive.org/web/20230130100833/https://www.tennis-warehouse.com/Babolat_Pure_Strike_3rd_Gen_26_Junior/descpageRCBAB-PSJ26R.html"
       ]
-    },
-    {
-      "id": "babolat-pure-strike-98-16x19-2019",
-      "label": "98 16x19",
-      "model": "Pure Strike 98 16x19",
-      "specs": {
-        "headSizeSqIn": 98,
-        "lengthIn": 27.0,
-        "stringPattern": [
-          16,
-          19
-        ],
-        "beamMm": [
-          21,
-          23,
-          21
-        ],
-        "unstrungWeightG": 306
-      },
-      "sources": [
-        "https://web.archive.org/web/20230811040629/https://www.tennis-warehouse.com/Babolat_Pure_Strike_16x19_3rd_Gen/descpageRCBAB-PS1619.html"
-      ]
     }
-  ],
-  "variantLabel": "Tour"
+  ]
 }

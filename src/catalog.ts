@@ -17,6 +17,8 @@ export interface Catalog {
     parts: PartName[];
     /** Keyed by style id; path is relative to assets/, e.g. "realistic/babolat-pure-aero-100.glb". */
     assets: Record<string, { path: string; bytes: number; triangles: number }>;
+    /** Shared by every generation of one line, e.g. "babolat-pure-aero". */
+    lineage: string;
     /** Short name within its frame family ("MP", "98"), when the frame comes in variants. */
     variantLabel?: string;
     /** On a variant: the id of its family's main entry (the one the wall shows). */
@@ -33,6 +35,27 @@ export interface Catalog {
       swatch: HexColor;
       assets: Record<string, { path: string; bytes: number; triangles: number }>;
     }>;
+  }>;
+  /**
+   * Every downloadable file, one row each: the quickest way to import a racquet. Filter by brand,
+   * line, lineage, year, variant or colourway, then load `path` (relative to the catalog's folder).
+   */
+  files: Array<{
+    /** Racquet id (the variant's own id). */
+    id: string;
+    brand: string;
+    line: string;
+    lineage: string;
+    model: string;
+    generation: string;
+    year: number;
+    variant: string | null;
+    /** Colourway id, null for the racquet's default colourway. */
+    colourway: string | null;
+    colourwayName: string | null;
+    style: string;
+    path: string;
+    bytes: number;
   }>;
   /** Researched racquets with no model yet (placeholders/), without their research notes. */
   placeholders: Array<Omit<Placeholder, 'status' | 'notes' | 'verified'>>;

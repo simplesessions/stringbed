@@ -1,13 +1,13 @@
 {
-  "id": "babolat-pure-drive-tour-2021",
+  "id": "babolat-pure-drive-100-2020",
   "brand": "Babolat",
   "line": "Pure Drive",
-  "model": "Pure Drive Tour",
+  "model": "Pure Drive 100",
   "generation": "Gen10",
   "year": 2021,
   "specs": {
     "headSizeSqIn": 100,
-    "lengthIn": 27,
+    "lengthIn": 27.0,
     "stringPattern": [
       16,
       19
@@ -16,7 +16,8 @@
       23,
       26,
       23
-    ]
+    ],
+    "unstrungWeightG": 301
   },
   "geometry": {
     "head": {
@@ -85,18 +86,18 @@
     "dampener": null
   },
   "sources": [
-    "https://web.archive.org/web/20230410175747/https://www.tennis-warehouse.com/Babolat_Pure_Drive_Tour_2021/descpageRCBAB-BRPDT.html"
+    "https://web.archive.org/web/20230410174451/https://www.tennis-warehouse.com/Babolat_Pure_Drive_2021/descpageRCBAB-BRPDR.html"
   ],
   "verified": true,
-  "colourway": "Blue/Navy",
+  "variantLabel": "100",
   "variants": [
     {
-      "id": "babolat-pure-drive-100-2020",
-      "label": "100",
-      "model": "Pure Drive 100",
+      "id": "babolat-pure-drive-tour-2021",
+      "label": "Tour",
+      "model": "Pure Drive Tour",
       "specs": {
         "headSizeSqIn": 100,
-        "lengthIn": 27.0,
+        "lengthIn": 27,
         "stringPattern": [
           16,
           19
@@ -105,12 +106,12 @@
           23,
           26,
           23
-        ],
-        "unstrungWeightG": 301
+        ]
       },
       "sources": [
-        "https://web.archive.org/web/20230410174451/https://www.tennis-warehouse.com/Babolat_Pure_Drive_2021/descpageRCBAB-BRPDR.html"
-      ]
+        "https://web.archive.org/web/20230410175747/https://www.tennis-warehouse.com/Babolat_Pure_Drive_Tour_2021/descpageRCBAB-BRPDT.html"
+      ],
+      "colourway": "Blue/Navy"
     },
     {
       "id": "babolat-pure-drive-team-2021",
@@ -219,7 +220,7 @@
     },
     {
       "id": "babolat-pure-drive-junior-25-2020",
-      "label": "Junior 25 (2020)",
+      "label": "Junior 25",
       "model": "Pure Drive Junior 25",
       "specs": {
         "headSizeSqIn": 98,
@@ -240,7 +241,7 @@
     },
     {
       "id": "babolat-pure-drive-junior-26-2020",
-      "label": "Junior 26 (2020)",
+      "label": "Junior 26",
       "model": "Pure Drive Junior 26",
       "specs": {
         "headSizeSqIn": 100,
@@ -281,6 +282,5 @@
         "https://web.archive.org/web/20240823062343/https://www.tennis-warehouse.com/Babolat_Pure_Drive_98/descpageRCBAB-BRPD98.html"
       ]
     }
-  ],
-  "variantLabel": "Tour"
+  ]
 }

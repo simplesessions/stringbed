@@ -70,5 +70,64 @@
     "https://www.tennis-warehouse.com/Wilson_Triad_Five/descpageRCWILSON-WTRI5.html"
   ],
   "verified": true,
-  "colourway": "Red"
+  "colourway": "Red",
+  "variantLabel": "Five",
+  "variants": [
+    {
+      "id": "wilson-triad-three",
+      "label": "Three",
+      "model": "Triad Three",
+      "specs": {
+        "headSizeSqIn": 113,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          26,
+          30,
+          26
+        ]
+      },
+      "paint": {
+        "base": "#1f3f8f",
+        "finish": "gloss",
+        "zones": [
+          {
+            "from": 0.86,
+            "to": 1,
+            "color": "#101428"
+          }
+        ]
+      },
+      "parts": {
+        "grip": {
+          "color": "#f0f0f0"
+        },
+        "collar": {
+          "color": "#1f3f8f"
+        },
+        "buttCap": {
+          "color": "#f0f0f0"
+        },
+        "strings": {
+          "color": "#f2f2f2",
+          "gaugeMm": 1.25
+        },
+        "grommets": {
+          "color": "#16296a",
+          "channel": 0.45
+        },
+        "bumper": {
+          "color": "#16296a"
+        },
+        "dampener": null
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Wilson_Triad_Three/descpageRCWILSON-WTRI3.html"
+      ],
+      "colourway": "Blue"
+    }
+  ]
 }

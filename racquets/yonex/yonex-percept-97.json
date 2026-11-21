@@ -3,8 +3,8 @@
   "brand": "Yonex",
   "line": "Percept",
   "model": "Percept 97",
-  "generation": "2025",
-  "year": 2025,
+  "generation": "2023",
+  "year": 2023,
   "specs": {
     "headSizeSqIn": 97,
     "lengthIn": 27,
@@ -244,5 +244,6 @@
       ]
     }
   ],
-  "variantLabel": "97"
+  "variantLabel": "97",
+  "colourway": "Midnight Navy"
 }

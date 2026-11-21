@@ -3,7 +3,7 @@ import { dirname, join } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import type { Catalog } from '../src/catalog';
 import { buildRacquet, triangleCount } from '../src/core/build';
-import { loadAllSpecs, withColourway, type RacquetSpec } from '../src/core/spec';
+import { lineageOf, loadAllSpecs, withColourway, type RacquetSpec } from '../src/core/spec';
 import { loadPlaceholders } from '../src/placeholders';
 import { styles } from '../src/styles';
 
@@ -24,6 +24,7 @@ export async function generateInMemory(): Promise<Generated> {
     version: 1,
     styles: styles.map((s) => ({ id: s.id, kind: s.kind, label: s.label, extension: s.extension })),
     racquets: [],
+    files: [],
     placeholders: loadPlaceholders().map(({ status: _s, notes: _n, verified: _v, ...p }) => p),
   };
   /** Build one spec (a racquet or one of its colourways) into every style; file stem `stem`. */
@@ -58,12 +59,24 @@ export async function generateInMemory(): Promise<Generated> {
       swatch: spec.paint.base,
       parts: model.parts.map((p) => p.name),
       assets,
+      lineage: lineageOf(spec),
       ...(spec.variantLabel ? { variantLabel: spec.variantLabel } : {}),
       ...(spec.variantOf ? { variantOf: spec.variantOf } : {}),
       ...(spec.variants?.length ? { variants: [{ id: spec.id, label: spec.variantLabel ?? spec.model }, ...spec.variants.map((v) => ({ id: v.id, label: v.label }))] } : {}),
       ...(spec.colourway ? { colourway: spec.colourway } : {}),
       ...(colourways.length ? { colourways } : {}),
     });
+  }
+  for (const r of catalog.racquets) {
+    const row = { id: r.id, brand: r.brand, line: r.line, lineage: r.lineage, model: r.model, generation: r.generation, year: r.year, variant: r.variantLabel ?? null };
+    for (const [style, a] of Object.entries(r.assets)) {
+      catalog.files.push({ ...row, colourway: null, colourwayName: r.colourway ?? null, style, path: a.path, bytes: a.bytes });
+    }
+    for (const cw of r.colourways ?? []) {
+      for (const [style, a] of Object.entries(cw.assets)) {
+        catalog.files.push({ ...row, colourway: cw.id, colourwayName: cw.name, style, path: a.path, bytes: a.bytes });
+      }
+    }
   }
   files.set('catalog.json', new TextEncoder().encode(JSON.stringify(catalog, null, 2) + '\n'));
   return { files, catalog, rows };

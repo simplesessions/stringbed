@@ -12,7 +12,11 @@ import {
   formatLength,
   formatPattern,
   generationLabel,
-  groupByBrand,
+  wallGroups,
+  olderCount,
+  isJunior,
+  generationsOf,
+  generationShort,
   groupPlaceholders,
   placeholderLabel,
   parseRoute,
@@ -48,6 +52,8 @@ const loadGL = (): Promise<GL | null> =>
 void loadGL();
 /** Bays waiting for the 3D code, so they can be wired up (or left flat) once it arrives. */
 let pendingBays: Array<(thumbs: Thumbnails | null) => void> = [];
+/** True once the 3D code has loaded or failed; bays built after that attach straight away. */
+let glSettled = false;
 
 const $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as T;
 const wall = $<HTMLDivElement>('wall');
@@ -63,6 +69,8 @@ interface App {
   style: Style;
   groups: BrandGroup[];
   order: Racquet[];
+  /** Show families that a newer generation of their line has replaced. */
+  older: boolean;
   stock: StockGroup[];
   stockOrder: Placeholder[];
   brand: string | null;
@@ -97,7 +105,9 @@ async function boot() {
   }
   const style = pickStyle(catalog, new URLSearchParams(location.search).get('style'));
   if (!style) return catalogFailed(new Error('The catalog lists no styles.'));
-  const groups = groupByBrand(catalog);
+  const age = storedAge();
+  const older = storedOlder();
+  const groups = wallGroups(catalog, age, older);
   const stock = groupPlaceholders(catalog);
   app = {
     catalog,
@@ -106,8 +116,9 @@ async function boot() {
     order: groups.flatMap((g) => g.racquets),
     stock,
     stockOrder: stock.flatMap((g) => g.years.flatMap((y) => y.items)),
+    older,
     brand: null,
-    age: storedAge(),
+    age,
     look: storedLook(),
     gl: null,
     thumbs: null,
@@ -122,6 +133,7 @@ async function boot() {
   a.thumbs?.setLook(a.look);
   for (const attach of pendingBays) attach(a.thumbs);
   pendingBays = [];
+  glSettled = true;
   ready = true;
   baseNotice = !a.gl
     ? 'The 3D viewer did not load, so racquets show as colour silhouettes. Specs and downloads still work.'
@@ -165,7 +177,7 @@ function storedAge(): Age {
 /** Racquets per brand for the current size filter: modelled ones (all adult) plus placeholders. */
 function brandCounts(a: App): Map<string, number> {
   const counts = new Map<string, number>();
-  if (a.age !== 'junior') for (const g of a.groups) counts.set(g.brand, g.racquets.length);
+  for (const g of a.groups) counts.set(g.brand, g.racquets.length);
   for (const g of groupPlaceholders(a.catalog, a.age)) counts.set(g.brand, (counts.get(g.brand) ?? 0) + g.count);
   return counts;
 }
@@ -187,9 +199,10 @@ function buildHeader(a: App) {
       }
       for (const x of sizes.children) x.setAttribute('aria-pressed', String(x === b));
       a.lastOpened = null;
+      regroup(a);
       if (a.brand && !brandCounts(a).has(a.brand)) a.brand = null; // the brand has nothing in this size
       renderSigns(a);
-      applyFilter(a);
+      buildWall(a);
       announceShown(a);
       if (parseRoute(location.hash).racquetId) location.hash = routeFor(null);
     });
@@ -276,10 +289,24 @@ function renderSigns(a: App) {
   }
 }
 
+const OLDER_KEY = 'stringbed.older';
+function storedOlder(): boolean {
+  try {
+    return localStorage.getItem(OLDER_KEY) === '1';
+  } catch {
+    return false;
+  }
+}
+
+/** Recompute what the wall shows after the size or the older-generations choice changed. */
+function regroup(a: App) {
+  a.groups = wallGroups(a.catalog, a.age, a.older);
+  a.order = a.groups.flatMap((g) => g.racquets);
+}
+
 function applyFilter(a: App) {
-  // Every modelled racquet is an adult frame, so the wall itself steps aside for juniors.
   for (const section of wall.querySelectorAll<HTMLElement>('.section')) {
-    section.hidden = a.age === 'junior' || (a.brand !== null && section.dataset.brand !== a.brand);
+    section.hidden = a.brand !== null && section.dataset.brand !== a.brand;
   }
   wall.querySelector('.stock')?.replaceWith(...stockList(a));
   wall.classList.toggle('is-filtered', a.brand !== null);
@@ -295,9 +322,32 @@ function buildWall(a: App) {
       el('ul', { class: 'bays', role: 'list' }, ...g.racquets.map((r) => bay(a, r))),
     );
   });
-  wall.replaceChildren(el('h1', { class: 'sr-only' }, 'All racquets'), ...sections, el('section', { class: 'stock' }));
+  wall.replaceChildren(el('h1', { class: 'sr-only' }, 'All racquets'), ...sections, olderToggle(a), el('section', { class: 'stock' }));
+  a.thumbs?.prune();
   wall.setAttribute('aria-busy', 'false');
   applyFilter(a);
+}
+
+/** Older generations stay off the wall unless asked for: one button under the frames. */
+function olderToggle(a: App): HTMLElement {
+  const n = olderCount(a.catalog, a.age);
+  if (n === 0 && !a.older) return el('span', { hidden: true });
+  const b = el('button', { class: 'button older-toggle', type: 'button', 'aria-pressed': String(a.older) },
+    a.older ? 'Hide older generations' : `Show ${n} older generation${n === 1 ? '' : 's'}`);
+  b.addEventListener('click', () => {
+    a.older = !a.older;
+    try {
+      localStorage.setItem(OLDER_KEY, a.older ? '1' : '0');
+    } catch {
+      /* private mode */
+    }
+    regroup(a);
+    renderSigns(a);
+    buildWall(a);
+    announceShown(a);
+    wall.querySelector<HTMLButtonElement>('.older-toggle')?.focus({ preventScroll: true });
+  });
+  return el('div', { class: 'older' }, b);
 }
 
 /** Researched racquets with no model yet: a plain list under the wall, one column per brand. */
@@ -343,9 +393,9 @@ function bay(a: App, r: Racquet): HTMLLIElement {
   const link = el('a', { class: 'bay-link', href: routeFor(r.id) },
     el('span', { class: 'bay-stage' }, silhouette(r.specs.headSizeSqIn), canvas),
     el('span', { class: 'tag' },
-      el('span', { class: 'tag-model' }, wallName(r)),
+      el('span', { class: 'tag-model' }, a.age === 'junior' ? r.model : wallName(r)),
       el('span', { class: 'tag-meta' }, `${r.brand} · ${generationLabel(r)}`),
-      r.variants?.length ? el('span', { class: 'tag-variants' }, r.variants.map((v) => v.label).join(' · ')) : null,
+      a.age !== 'junior' && r.variants?.length ? el('span', { class: 'tag-variants' }, variantLabels(a, r)) : null,
     ),
   );
   const item = el('li', { class: 'bay', style: `--swatch: ${r.swatch}`, 'data-id': r.id }, link);
@@ -354,11 +404,19 @@ function bay(a: App, r: Racquet): HTMLLIElement {
     item.dataset.state = 'flat';
     return item;
   }
-  pendingBays.push((thumbs) => {
+  const attach = (thumbs: Thumbnails | null) => {
     if (thumbs) watch(thumbs, item, link, canvas, r, asset.path);
     else item.dataset.state = 'flat';
-  });
+  };
+  if (glSettled) attach(a.thumbs);
+  else pendingBays.push(attach);
   return item;
+}
+
+/** A family's sizes for the bay tag, leaving out juniors on the Adult wall. */
+function variantLabels(a: App, r: Racquet): string {
+  const byId = new Map(a.catalog.racquets.map((x) => [x.id, x]));
+  return r.variants!.filter((v) => a.age !== 'adult' || !isJunior(byId.get(v.id) ?? r)).map((v) => v.label).join(' · ');
 }
 
 function watch(thumbs: Thumbnails, item: HTMLLIElement, link: HTMLAnchorElement, canvas: HTMLCanvasElement, r: Racquet, path: string) {
@@ -500,10 +558,11 @@ function sourceLabel(u: string): string {
 
 function detailView(a: App, base: Racquet, colourwayId: string | null = null): Node[] {
   const family = familyOf(a.catalog, base);
-  const i = a.order.indexOf(family);
+  const order = a.order.includes(family) ? a.order : wallGroups(a.catalog, 'all', true).flatMap((g) => g.racquets);
+  const i = Math.max(0, order.indexOf(family));
   const { shown: r, colourway } = inColourway(base, colourwayId);
-  const prev = a.order[(i - 1 + a.order.length) % a.order.length];
-  const next = a.order[(i + 1) % a.order.length];
+  const prev = order[(i - 1 + order.length) % order.length];
+  const next = order[(i + 1) % order.length];
   const nav = el('nav', { class: 'detail-nav', 'aria-label': 'Racquet' },
     el('a', { class: 'back', href: routeFor(null) }, icon('back'), 'All racquets'),
     el('span', { class: 'stepper' },
@@ -511,8 +570,19 @@ function detailView(a: App, base: Racquet, colourwayId: string | null = null): N
       el('a', { href: routeFor(next.id), 'aria-label': `Next: ${wallName(next)}` }, el('span', { class: 'stepper-name' }, wallName(next)), icon('next')),
     ),
   );
-  const pickers = [variantPicker(family, base.id), colourwayPicker(base, colourway)].filter((x): x is HTMLElement => x !== null);
+  const pickers = [generationPicker(a, family, base), variantPicker(family, base.id), colourwayPicker(base, colourway)].filter((x): x is HTMLElement => x !== null);
   return [nav, el('div', { class: 'detail-body', style: `--swatch: ${r.swatch}` }, stage(a, r), sheet(a, r, pickers.length ? el('div', { class: 'pickers' }, ...pickers) : null))];
+}
+
+/** Other generations of the line, newest first; each links to the same size where it exists. */
+function generationPicker(a: App, family: Racquet, current: Racquet): HTMLElement | null {
+  const gens = generationsOf(a.catalog, family);
+  if (gens.length < 2) return null;
+  const label = current.variantLabel;
+  const target = (g: Racquet) => g.variants?.find((v) => v.label === label)?.id ?? g.id;
+  return el('div', { class: 'variants generations', role: 'group', 'aria-label': 'Generation' },
+    ...gens.map((g) => el('a', { class: 'variant', href: routeFor(target(g)), 'aria-current': String(g.id === family.id) }, generationShort(g))),
+  );
 }
 
 /** The sizes or versions of a frame; none when it comes in one. */
@@ -598,6 +668,29 @@ function stage(a: App, r: Racquet): HTMLElement {
   return host;
 }
 
+/** The file's absolute URL and a loader snippet, each with a copy button. */
+function useInCode(r: Racquet, path: string): HTMLElement[] {
+  const url = new URL(assetUrl(BASE, path), location.href).href;
+  const snippet = `import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';\n\nconst gltf = await new GLTFLoader().loadAsync(\n  '${url}',\n);\nscene.add(gltf.scene);`;
+  const copyable = (text: string, label: string, block: boolean) => {
+    const button = el('button', { class: 'copy', type: 'button', 'aria-label': `Copy ${label}` }, 'Copy');
+    button.addEventListener('click', () => {
+      void navigator.clipboard?.writeText(text).then(() => {
+        button.textContent = 'Copied';
+        setTimeout(() => (button.textContent = 'Copy'), 1500);
+      });
+    });
+    return el('div', { class: block ? 'code code-block' : 'code' }, el(block ? 'pre' : 'span', {}, el('code', {}, text)), button);
+  };
+  return [
+    el('h2', { class: 'sheet-head' }, 'Use in code'),
+    el('p', { class: 'sheet-note' }, 'Load this exact racquet straight from the library. Id: ', el('code', {}, r.id), '. Every file is listed in ',
+      el('a', { href: assetUrl(BASE, 'catalog.json') }, 'catalog.json'), ' under files.'),
+    copyable(url, 'file URL', false),
+    copyable(snippet, 'three.js snippet', true),
+  ];
+}
+
 function sheet(a: App, r: Racquet, picker: HTMLElement | null = null): HTMLElement {
   const s = r.specs;
   const head = formatHeadSize(s.headSizeSqIn);
@@ -625,6 +718,7 @@ function sheet(a: App, r: Racquet, picker: HTMLElement | null = null): HTMLEleme
     : el('p', { class: 'sheet-note' }, `There is no ${a.style.label} file for this racquet yet.`);
   const file = asset
     ? [
+        ...useInCode(r, asset.path),
         el('h2', { class: 'sheet-head' }, 'File'),
         el('dl', { class: 'rows' },
           row('Style', a.style.label),

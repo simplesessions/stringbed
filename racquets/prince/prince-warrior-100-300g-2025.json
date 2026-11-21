@@ -74,5 +74,126 @@
     "https://www.tennis-warehouse.com/Prince_Warrior_100_300g/descpageRCPRINCE-P5WA30.html"
   ],
   "verified": true,
-  "colourway": "Black/Navy"
+  "colourway": "Black/Navy",
+  "variantLabel": "100 300g",
+  "variants": [
+    {
+      "id": "prince-warrior-100-285g-2025",
+      "label": "100 285g",
+      "model": "Warrior 100 285g",
+      "paint": {
+        "base": "#2b2d33",
+        "finish": "satin",
+        "zones": [
+          {
+            "from": 0.12,
+            "to": 0.3,
+            "color": "#44474f"
+          }
+        ]
+      },
+      "parts": {
+        "grip": {
+          "color": "#1e1e1e"
+        },
+        "collar": {
+          "color": "#2b2d33"
+        },
+        "buttCap": {
+          "color": "#1e1e1e"
+        },
+        "strings": {
+          "color": "#f2f2f2",
+          "gaugeMm": 1.25
+        },
+        "grommets": {
+          "color": "#1f2126",
+          "channel": 0.45
+        },
+        "bumper": {
+          "color": "#1f2126"
+        },
+        "dampener": null
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Prince_Warrior_100_285g/descpageRCPRINCE-P5WA28.html"
+      ],
+      "colourway": "Black/Grey"
+    },
+    {
+      "id": "prince-warrior-107-275g-2025",
+      "label": "107 275g",
+      "model": "Warrior 107 275g",
+      "specs": {
+        "headSizeSqIn": 107,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          28,
+          27,
+          24
+        ]
+      },
+      "geometry": {
+        "head": {
+          "shape": "oval",
+          "aspect": 1.29
+        },
+        "beam": {
+          "profile": "ellipse"
+        },
+        "throat": {
+          "style": "open-v",
+          "bridge": "curved"
+        },
+        "features": []
+      },
+      "paint": {
+        "base": "#8a6a3a",
+        "finish": "satin",
+        "zones": [
+          {
+            "from": 0,
+            "to": 0.12,
+            "color": "#1a1a1d"
+          },
+          {
+            "from": 0.88,
+            "to": 1,
+            "color": "#1a1a1d"
+          }
+        ]
+      },
+      "parts": {
+        "grip": {
+          "color": "#1e1e1e"
+        },
+        "collar": {
+          "color": "#1a1a1d"
+        },
+        "buttCap": {
+          "color": "#1e1e1e"
+        },
+        "strings": {
+          "color": "#f2f2f2",
+          "gaugeMm": 1.25
+        },
+        "grommets": {
+          "color": "#1a1a1d",
+          "channel": 0.45
+        },
+        "bumper": {
+          "color": "#1a1a1d"
+        },
+        "dampener": null
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Prince_Warrior_107_275g/descpageRCPRINCE-P5WA27.html"
+      ],
+      "colourway": "Black/Bronze"
+    }
+  ]
 }

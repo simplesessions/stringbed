@@ -623,6 +623,30 @@ body[data-view='detail'] .signs { display: none; }
 .colourway[aria-current='true'] { border-color: var(--ink); }
 .colourway-chip { width: 22px; height: 22px; border-radius: 50%; background: var(--chip); box-shadow: inset 0 0 0 1px oklch(0.23 0.01 75 / 0.25); }
 
+/* ---------- older generations, use in code ---------- */
+
+.older { flex: 1 0 100%; display: flex; justify-content: center; }
+.older-toggle { min-height: 40px; }
+.generations .variant[aria-current='true'] { background: transparent; color: var(--ink); border-color: var(--ink); }
+
+.code {
+  display: flex; align-items: flex-start; gap: 8px;
+  margin: 0 0 8px;
+  padding: 8px 8px 8px 12px;
+  border-radius: 8px;
+  background: var(--wall-2);
+  font-family: var(--mono); font-size: 0.75rem;
+}
+.code > span, .code > pre { flex: 1; min-width: 0; margin: 0; overflow-x: auto; white-space: nowrap; }
+.code-block > pre { white-space: pre; line-height: 1.5; }
+.copy {
+  appearance: none; flex: none;
+  padding: 3px 10px; border: 1.5px solid var(--line); border-radius: 999px;
+  background: var(--wall); color: var(--ink);
+  font: 600 0.75rem/1.4 var(--sans); cursor: pointer;
+}
+.copy:hover { border-color: var(--ink); }
+
 @media (max-width: 1099px) {
   :root { --bay-w: min(calc((100vw - 2 * var(--pad) - var(--group-gap) - 4 * var(--bay-gap) - 1px) / 6), 156px); }
 }

@@ -129,7 +129,7 @@ export interface StockGroup {
   count: number;
 }
 
-/** Which racquets to show by size. Every modelled racquet is an adult frame. */
+/** Which racquets to show by size. Juniors are frames shorter than 27 in. */
 export type Age = 'adult' | 'junior' | 'all';
 export const AGES: readonly Age[] = ['adult', 'junior', 'all'];
 
@@ -199,4 +199,61 @@ export function searchRacquets(c: Catalog, query: string, limit = 40): SearchHit
     .sort((a, b) => score(a) - score(b) || b.year - a.year || byText(a.brand, b.brand) || byText(a.model, b.model))
     .slice(0, limit)
     .map(({ id, brand, model, meta, hasModel, junior }) => ({ id, brand, model, meta, hasModel, junior }));
+}
+
+/** A junior frame: anything shorter than the adult 27 in. */
+export function isJunior(r: Pick<Racquet, 'specs'>): boolean {
+  return r.specs.lengthIn < 27;
+}
+
+/** Families in a lineage, newest first (year, then generation label). */
+export function generationsOf(c: Catalog, family: Racquet): Racquet[] {
+  return c.racquets
+    .filter((r) => !r.variantOf && r.lineage === family.lineage)
+    .sort((a, b) => b.year - a.year || byText(b.generation, a.generation));
+}
+
+/** True when a newer generation of the family's line is in the catalog. */
+export function isOlderGeneration(c: Catalog, family: Racquet): boolean {
+  return c.racquets.some((r) => !r.variantOf && r.lineage === family.lineage && r.year > family.year);
+}
+
+/** A generation's short name for a picker: "2026", "Gen 11 · 2025", "Rafa 2021". */
+export function generationShort(r: Pick<Racquet, 'generation' | 'year'>): string {
+  return /^\d{4}$/.test(r.generation) || r.generation.includes(String(r.year)) ? r.generation : `${r.generation} · ${r.year}`;
+}
+
+export interface WallGroup {
+  brand: string;
+  racquets: Racquet[];
+}
+
+/**
+ * What the wall shows, by brand. Adult and All: one bay per frame family (its base), adult
+ * bases only for Adult. Junior: every junior racquet, variant or not, since junior sizes often
+ * live inside an adult family. Unless `older`, a family with a newer generation in its lineage
+ * (and the juniors inside it) is left out. Sorted like the wall reads: by wall name.
+ */
+export function wallGroups(c: Catalog, age: Age, older: boolean): WallGroup[] {
+  const byId = new Map(c.racquets.map((r) => [r.id, r]));
+  const familyOf_ = (r: Racquet) => (r.variantOf ? byId.get(r.variantOf) ?? r : r);
+  const picked = c.racquets.filter((r) => {
+    if (!older && isOlderGeneration(c, familyOf_(r))) return false;
+    if (age === 'junior') return isJunior(r);
+    if (r.variantOf) return false;
+    return age === 'all' || !isJunior(r);
+  });
+  const groups = new Map<string, Racquet[]>();
+  for (const r of picked) groups.set(r.brand, [...(groups.get(r.brand) ?? []), r]);
+  const name = (r: Racquet) => (age === 'junior' ? r.model : wallName(r));
+  return [...groups.keys()].sort(byText).map((brand) => ({
+    brand,
+    racquets: groups.get(brand)!.sort((a, b) => byText(name(a), name(b)) || b.year - a.year),
+  }));
+}
+
+/** How many frame families `older` would add for this size. */
+export function olderCount(c: Catalog, age: Age): number {
+  const count = (older: boolean) => wallGroups(c, age, older).reduce((n, g) => n + g.racquets.length, 0);
+  return count(true) - count(false);
 }

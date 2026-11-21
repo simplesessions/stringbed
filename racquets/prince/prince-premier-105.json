@@ -73,5 +73,68 @@
     "https://www.tennis-warehouse.com/Prince_Premier_105/descpageRCPRINCE-PREM05.html"
   ],
   "verified": true,
-  "colourway": "Red"
+  "colourway": "Red",
+  "variantLabel": "105",
+  "variants": [
+    {
+      "id": "prince-premier-110",
+      "label": "110",
+      "model": "Premier 110",
+      "specs": {
+        "headSizeSqIn": 110,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          18
+        ],
+        "beamMm": [
+          25,
+          27,
+          26.5
+        ]
+      },
+      "paint": {
+        "base": "#1d2f6e",
+        "finish": "gloss",
+        "zones": [
+          {
+            "from": 0.2,
+            "to": 0.5,
+            "color": "#1f9aa8",
+            "faces": [
+              "front",
+              "back"
+            ]
+          }
+        ]
+      },
+      "parts": {
+        "grip": {
+          "color": "#efefec"
+        },
+        "collar": {
+          "color": "#1d2f6e"
+        },
+        "buttCap": {
+          "color": "#efefec"
+        },
+        "strings": {
+          "color": "#f2f2f2",
+          "gaugeMm": 1.25
+        },
+        "grommets": {
+          "color": "#14204d",
+          "channel": 0.45
+        },
+        "bumper": {
+          "color": "#14204d"
+        },
+        "dampener": null
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Prince_Premier_110/descpageRCPRINCE-PREM10.html"
+      ],
+      "colourway": "Blue"
+    }
+  ]
 }

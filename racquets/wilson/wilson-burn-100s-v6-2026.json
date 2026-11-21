@@ -71,13 +71,22 @@
   ],
   "verified": true,
   "colourway": "Orange/Black",
+  "variantLabel": "100S",
   "variants": [
     {
       "id": "wilson-burn-100ls-v6-2026",
       "label": "100LS",
       "model": "Burn 100LS",
+      "sources": [
+        "https://www.tennis-warehouse.com/Wilson_Burn_100_LS_v6/descpageRCWILSON-BRNLS6.html"
+      ]
+    },
+    {
+      "id": "wilson-burn-pink-105s-v6-2026",
+      "label": "105S Pink",
+      "model": "Burn Pink 105S",
       "specs": {
-        "headSizeSqIn": 100,
+        "headSizeSqIn": 105,
         "lengthIn": 27,
         "stringPattern": [
           18,
@@ -89,10 +98,47 @@
           23.5
         ]
       },
+      "paint": {
+        "base": "#ff3d9e",
+        "finish": "satin",
+        "zones": [
+          {
+            "from": 0.85,
+            "to": 1,
+            "color": "#17171a",
+            "faces": [
+              "inner"
+            ]
+          }
+        ]
+      },
+      "parts": {
+        "grip": {
+          "color": "#1c1c1e"
+        },
+        "collar": {
+          "color": "#ff3d9e"
+        },
+        "buttCap": {
+          "color": "#1c1c1e"
+        },
+        "strings": {
+          "color": "#f2f2f2",
+          "gaugeMm": 1.25
+        },
+        "grommets": {
+          "color": "#17171a",
+          "channel": 0.45
+        },
+        "bumper": {
+          "color": "#17171a"
+        },
+        "dampener": null
+      },
       "sources": [
-        "https://www.tennis-warehouse.com/Wilson_Burn_100_LS_v6/descpageRCWILSON-BRNLS6.html"
-      ]
+        "https://www.tennis-warehouse.com/Wilson_Burn_Pink_105S_v6/descpageRCWILSON-BRNP15.html"
+      ],
+      "colourway": "Pink"
     }
-  ],
-  "variantLabel": "100S"
+  ]
 }

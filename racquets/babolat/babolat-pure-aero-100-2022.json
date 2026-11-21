@@ -1,0 +1,350 @@
+{
+  "id": "babolat-pure-aero-100-2022",
+  "brand": "Babolat",
+  "line": "Pure Aero",
+  "model": "Pure Aero 100",
+  "generation": "2023",
+  "year": 2022,
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27.0,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      23,
+      26,
+      23
+    ],
+    "unstrungWeightG": 300
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.32
+    },
+    "beam": {
+      "profile": "aero"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "curved"
+    },
+    "features": []
+  },
+  "paint": {
+    "base": "#4a5258",
+    "finish": "gloss",
+    "zones": [
+      {
+        "from": 0.36,
+        "to": 0.415,
+        "color": "#d6ee2c"
+      },
+      {
+        "from": 0.44,
+        "to": 0.56,
+        "color": "#d6ee2c"
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#ececec"
+    },
+    "collar": {
+      "color": "#3a4449"
+    },
+    "buttCap": {
+      "color": "#ececec"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#3a4449",
+      "channel": 0.45
+    },
+    "bumper": {
+      "color": "#3a4449"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://web.archive.org/web/20230603173019/https://www.tennis-warehouse.com/Babolat_Pure_Aero_2023/descpageRCBAB-BARO.html"
+  ],
+  "verified": true,
+  "variantLabel": "100",
+  "variants": [
+    {
+      "id": "babolat-pure-aero-team-2022",
+      "label": "Team",
+      "model": "Pure Aero Team",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "sources": [
+        "https://web.archive.org/web/20230410180926/https://www.tennis-warehouse.com/Babolat_Pure_Aero_Team_2023/descpageRCBAB-BAROTM.html"
+      ],
+      "colourway": "Grey/Yellow"
+    },
+    {
+      "id": "babolat-pure-aero-plus-2023gen",
+      "label": "Plus",
+      "model": "Pure Aero Plus",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27.5,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "sources": [
+        "https://web.archive.org/web/20230410174524/https://www.tennis-warehouse.com/Babolat_Pure_Aero_Plus_2023/descpageRCBAB-BAROPL.html"
+      ]
+    },
+    {
+      "id": "babolat-pure-aero-lite-2022",
+      "label": "Lite",
+      "model": "Pure Aero Lite",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27.0,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 270
+      },
+      "sources": [
+        "https://web.archive.org/web/20230410181956/https://www.tennis-warehouse.com/Babolat_Pure_Aero_Lite_2023/descpageRCBAB-BAROL.html"
+      ]
+    },
+    {
+      "id": "babolat-pure-aero-junior-25-2023gen",
+      "label": "Junior 25",
+      "model": "Pure Aero Junior 25",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 25.0,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "paint": {
+        "base": "#f2e82a",
+        "finish": "gloss",
+        "zones": [
+          {
+            "from": 0.36,
+            "to": 0.415,
+            "color": "#1d1d1f"
+          },
+          {
+            "from": 0.44,
+            "to": 0.56,
+            "color": "#1d1d1f"
+          },
+          {
+            "from": 0.86,
+            "to": 1,
+            "color": "#1d1d1f",
+            "faces": [
+              "inner"
+            ]
+          }
+        ]
+      },
+      "parts": {
+        "grip": {
+          "color": "#1e1e1e"
+        },
+        "collar": {
+          "color": "#1d1d1f"
+        },
+        "buttCap": {
+          "color": "#1e1e1e"
+        },
+        "strings": {
+          "color": "#f2f2f2",
+          "gaugeMm": 1.25
+        },
+        "grommets": {
+          "color": "#1d1d1f",
+          "channel": 0.45
+        },
+        "bumper": {
+          "color": "#1d1d1f"
+        },
+        "dampener": null
+      },
+      "sources": [
+        "https://web.archive.org/web/20230410182243/https://www.tennis-warehouse.com/Babolat_Pure_Aero_25_2023_Junior/descpageRCBAB-BAJ25R.html"
+      ]
+    },
+    {
+      "id": "babolat-pure-aero-junior-26-2023gen",
+      "label": "Junior 26",
+      "model": "Pure Aero Junior 26",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 26.0,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "paint": {
+        "base": "#f2e82a",
+        "finish": "gloss",
+        "zones": [
+          {
+            "from": 0.36,
+            "to": 0.415,
+            "color": "#1d1d1f"
+          },
+          {
+            "from": 0.44,
+            "to": 0.56,
+            "color": "#1d1d1f"
+          },
+          {
+            "from": 0.86,
+            "to": 1,
+            "color": "#1d1d1f",
+            "faces": [
+              "inner"
+            ]
+          }
+        ]
+      },
+      "parts": {
+        "grip": {
+          "color": "#1e1e1e"
+        },
+        "collar": {
+          "color": "#1d1d1f"
+        },
+        "buttCap": {
+          "color": "#1e1e1e"
+        },
+        "strings": {
+          "color": "#f2f2f2",
+          "gaugeMm": 1.25
+        },
+        "grommets": {
+          "color": "#1d1d1f",
+          "channel": 0.45
+        },
+        "bumper": {
+          "color": "#1d1d1f"
+        },
+        "dampener": null
+      },
+      "sources": [
+        "https://web.archive.org/web/20230410182245/https://www.tennis-warehouse.com/Babolat_Pure_Aero_26_2023_Junior/descpageRCBAB-BAJ26R.html"
+      ]
+    },
+    {
+      "id": "babolat-pure-aero-98-2023",
+      "label": "98",
+      "model": "Pure Aero 98",
+      "year": 2023,
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          20
+        ],
+        "beamMm": [
+          21,
+          23,
+          22
+        ]
+      },
+      "paint": {
+        "base": "#4e585d",
+        "finish": "gloss",
+        "zones": [
+          {
+            "from": 0.36,
+            "to": 0.415,
+            "color": "#d3f23a"
+          },
+          {
+            "from": 0.44,
+            "to": 0.56,
+            "color": "#d3f23a"
+          },
+          {
+            "from": 0.8,
+            "to": 1,
+            "color": "#1d2124"
+          }
+        ]
+      },
+      "parts": {
+        "grip": {
+          "color": "#1e1e1e"
+        },
+        "collar": {
+          "color": "#3a4449"
+        },
+        "buttCap": {
+          "color": "#1e1e1e"
+        },
+        "strings": {
+          "color": "#f2f2f2",
+          "gaugeMm": 1.25
+        },
+        "grommets": {
+          "color": "#1d2124",
+          "channel": 0.45
+        },
+        "bumper": {
+          "color": "#1d2124"
+        },
+        "dampener": null
+      },
+      "sources": [
+        "https://web.archive.org/web/20250816081147/https://www.tennis-warehouse.com/descpage-BARO98.html"
+      ],
+      "colourway": "Black/Yellow"
+    }
+  ]
+}

@@ -97,6 +97,16 @@ export class Thumbnails {
     hoverTarget.addEventListener('blur', stop);
   }
 
+  /** Stop tracking canvases that have left the page (the wall was rebuilt). */
+  prune(): void {
+    for (const [canvas, e] of this.entries) {
+      if (e.canvas.isConnected) continue;
+      this.seen.unobserve(canvas);
+      this.resized.unobserve(canvas);
+      this.entries.delete(canvas);
+    }
+  }
+
   /** Redraw every loaded bay in `look`. Models stay loaded. */
   setLook(look: Look): void {
     this.painter.setLook(look);

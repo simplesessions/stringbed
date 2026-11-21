@@ -22,6 +22,11 @@ import {
   placeholderLabel,
   searchRacquets,
   wallName,
+  wallGroups,
+  olderCount,
+  isJunior,
+  isOlderGeneration,
+  generationsOf,
 } from '../../site/src/catalog-view';
 
 const catalog: Catalog = JSON.parse(readFileSync(join(__dirname, '../../assets/catalog.json'), 'utf8'));
@@ -162,4 +167,23 @@ test('groupPlaceholders filters by size', () => {
   expect(total('adult') + total('junior')).toBe(total('all'));
   expect(total('junior')).toBeGreaterThan(0);
   for (const g of groupPlaceholders(catalog, 'junior')) for (const y of g.years) for (const p of y.items) expect(p.category).toBe('junior');
+});
+
+test('wallGroups: latest generation by default, juniors only in Junior', () => {
+  const count = (age: 'adult' | 'junior' | 'all', older: boolean) => wallGroups(catalog, age, older).reduce((n, g) => n + g.racquets.length, 0);
+  expect(count('adult', true)).toBeGreaterThan(count('adult', false));
+  expect(olderCount(catalog, 'adult')).toBe(count('adult', true) - count('adult', false));
+  for (const g of wallGroups(catalog, 'adult', false)) for (const r of g.racquets) {
+    expect(r.variantOf).toBeUndefined();
+    expect(isJunior(r)).toBe(false);
+    expect(isOlderGeneration(catalog, r)).toBe(false);
+  }
+  const juniors = wallGroups(catalog, 'junior', true).flatMap((g) => g.racquets);
+  expect(juniors.length).toBeGreaterThan(0);
+  expect(juniors.every(isJunior)).toBe(true);
+  const aero = catalog.racquets.find((r) => r.id === 'babolat-pure-aero-100')!;
+  const gens = generationsOf(catalog, aero);
+  expect(gens[0].id).toBe('babolat-pure-aero-100');
+  expect(gens.length).toBeGreaterThanOrEqual(3);
+  expect(gens.every((g) => g.lineage === 'babolat-pure-aero')).toBe(true);
 });

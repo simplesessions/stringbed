@@ -94,7 +94,6 @@
       "id": "babolat-pure-strike-97-2024",
       "label": "97",
       "model": "Pure Strike 97",
-      "generation": "Gen4",
       "specs": {
         "headSizeSqIn": 97,
         "lengthIn": 27,
@@ -166,7 +165,6 @@
       "id": "babolat-pure-strike-100-2024",
       "label": "100",
       "model": "Pure Strike 100",
-      "generation": "Gen4",
       "specs": {
         "headSizeSqIn": 100,
         "lengthIn": 27,

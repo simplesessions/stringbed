@@ -8,12 +8,13 @@ colourway.
 
 **Gallery:** https://simplesessions.github.io/stringbed/
 
-## What's in v1
+## What's in the library
 
-- 14 racquets from Babolat, Prince, Solinco, Wilson and Yonex (three each, except Solinco
-  with two; see the [roster](docs/racquet-roster.md) for why)
-- One binary glTF (`.glb`) per racquet, under 150 KB each, with no textures
-- A static gallery to browse, turn and download every model
+- 300 modelled racquets from Babolat, Head, Prince, Solinco, Wilson and Yonex, as 72 frames
+  (one per generation of a line) with their sizes as variants, plus official colourways
+- One binary glTF (`.glb`) per racquet and colourway, under 150 KB each, with no textures
+- Researched racquets without a model yet (`placeholders/`), listed in the gallery
+- A static gallery to browse, turn and download every model, in Realistic, Pixel or Line looks
 
 ## Using an asset
 
@@ -26,6 +27,30 @@ https://simplesessions.github.io/stringbed/catalog.json
 
 `catalog.json` lists every racquet with its specs, a base colour swatch, its part names and
 the path, size and triangle count of each file. Read paths from it rather than building them.
+Each racquet page in the gallery also shows its file URL and a loader snippet to copy.
+
+### Importing exactly the racquet you want
+
+`catalog.json` has a flat `files` list: one row per downloadable file, with `id`, `brand`,
+`line`, `lineage` (every generation of a line), `model`, `generation`, `year`, `variant` (the
+size within its frame, e.g. "98", "MP", "Junior 26"), `colourway`, `path` and `bytes`.
+Filter it, then load the path:
+
+```js
+const base = 'https://simplesessions.github.io/stringbed/';
+const { files } = await (await fetch(base + 'catalog.json')).json();
+
+// The newest Pure Aero 98 in its standard colourway:
+const pick = files
+  .filter((f) => f.lineage === 'babolat-pure-aero' && f.variant === '98' && !f.colourway)
+  .sort((a, b) => b.year - a.year)[0];
+
+const gltf = await new GLTFLoader().loadAsync(base + pick.path);
+```
+
+File names follow the racquet id, so a link you already use keeps working:
+`realistic/<racquet id>.glb`, and `realistic/<racquet id>--<colourway id>.glb` for other
+colourways (e.g. `yonex-ezone-100--espresso-brown.glb`).
 
 **Coordinates:** metres, Y up, butt cap at the origin, the racquet runs up +Y, the string
 bed lies in the XY plane and +Z is the hitting-face normal. A 27 in racquet is 0.6858 tall.

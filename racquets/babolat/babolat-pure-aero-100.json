@@ -92,7 +92,6 @@
       "id": "babolat-pure-aero-98-2026",
       "label": "98",
       "model": "Pure Aero 98",
-      "generation": "Gen9",
       "specs": {
         "headSizeSqIn": 98,
         "lengthIn": 27,
@@ -371,7 +370,7 @@
     },
     {
       "id": "babolat-pure-aero-junior-25-2026",
-      "label": "Pure Aero Junior 25",
+      "label": "Junior 25",
       "model": "Pure Aero Junior 25",
       "specs": {
         "headSizeSqIn": 98,

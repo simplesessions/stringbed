@@ -76,6 +76,11 @@ export interface RacquetSpec {
   verified: boolean;
   /** Name of the colourway the spec itself describes, e.g. "Blast Blue". */
   colourway?: string;
+  /**
+   * Every generation of one line shares a lineage, e.g. "babolat-pure-aero". Default: brand and
+   * line, kebab-cased; set it when two lines share a `line` value (Pure Aero vs Pure Aero Rafa).
+   */
+  lineage?: string;
   /** Short name of this size or version within its frame family, e.g. "MP", "100", "Pro 98". */
   variantLabel?: string;
   /**
@@ -211,8 +216,17 @@ const variantSchema = z
   .strict();
 
 export const racquetSpecSchema = baseSpecSchema
-  .extend({ variantLabel: z.string().min(1).optional(), variants: z.array(variantSchema).optional() })
+  .extend({
+    lineage: z.string().regex(/^[a-z0-9]+(-[a-z0-9]+)*$/, 'expected kebab-case').optional(),
+    variantLabel: z.string().min(1).optional(),
+    variants: z.array(variantSchema).optional(),
+  })
   .strict() satisfies z.ZodType<Omit<RacquetSpec, 'variantOf'>, unknown>;
+
+/** The lineage a spec belongs to: its own, or brand and line kebab-cased. */
+export function lineageOf(spec: Pick<RacquetSpec, 'lineage' | 'brand' | 'line'>): string {
+  return spec.lineage ?? `${spec.brand} ${spec.line}`.toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
 
 /** A family's variant as a full spec: the base with the variant's fields in place of its own. */
 export function withVariant(base: RacquetSpec, v: Variant): RacquetSpec {

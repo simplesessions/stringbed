@@ -24,6 +24,15 @@ Example (Babolat Pure Aero 2026): the inner edge is slate, yellow only inside th
 the bands wrap the face and outer edge with the dark grommet channel running through them; a
 thin yellow line runs under the bridge; the throat-arm yellow is lettering, so it is left out.
 
+**Generations.** A new generation is a new frame: its own spec file (a frame family), with its
+own `generation` and `year`. Every generation of one line shares a `lineage` (default: brand and
+line, kebab-cased, e.g. `babolat-pure-aero`; set it explicitly when two lines share a `line`
+value, such as Pure Aero and Pure Aero Rafa, or the O3 Phantom and the Phantom). Variants inherit
+their family's generation and never override it (a test enforces this): a junior or size from
+another year belongs in that year's family. The gallery shows the newest generation of each
+lineage on the wall, offers "Show older generations", and puts a generation picker on each
+racquet page that jumps to the same size in the other generation where it exists.
+
 **Variants (one frame, several sizes).** Racquets of the same line and generation that differ
 only in head size, string pattern, beam or weight (Speed MP / Pro / Tour, Pure Aero 100 / 98)
 are one spec file: the flagship is the base, with a `variantLabel` ("MP", "100"), and the others
