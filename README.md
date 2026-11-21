@@ -72,6 +72,28 @@ gltf.scene.getObjectByName('grip').material.color.set('#f4f1ea');
 scene.add(gltf.scene);
 ```
 
+## Using it as a library
+
+Releases are git tags (`v1.0.0`, …) with the package tarball attached; see `CHANGELOG.md`.
+Pin a version from another project:
+
+```sh
+bun add github:simplesessions/stringbed#v1.0.0 three
+# or, from a release's tarball:
+bun add https://github.com/simplesessions/stringbed/releases/download/v1.0.0/stringbed-1.0.0.tgz three
+```
+
+```ts
+import { buildRacquet, parseSpec, modelToGlb, styles } from 'stringbed';
+import catalog from 'stringbed/catalog.json';
+import spec from 'stringbed/racquets/babolat/babolat-pure-aero-100.json';
+
+const model = buildRacquet(parseSpec(spec, 'pure-aero'));   // three.js geometry per named part
+// Ready-made files: stringbed/assets/<path from catalog.json>
+```
+
+`three` is a peer dependency. The package is about 17 MB packed, almost all of it GLB files.
+
 ## Adding a racquet
 
 1. Add a JSON spec at `racquets/<brand>/<id>.json` (copy a similar one; the schema is in

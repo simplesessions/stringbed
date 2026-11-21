@@ -1,5 +1,3 @@
-import { readdirSync, readFileSync } from 'node:fs';
-import { join, resolve } from 'node:path';
 import { z } from 'zod';
 
 // placeholders/ holds research-only records: racquets we know about but have not modelled.
@@ -41,6 +39,8 @@ const cmp = (a: string, b: string) => (a < b ? -1 : a > b ? 1 : 0);
 
 /** Node only. Reads `<dir>/<brand>/*.json`; checks each file is named by its id and filed under its brand. */
 export function loadPlaceholders(dir = 'placeholders'): Placeholder[] {
+  const { readdirSync, readFileSync } = process.getBuiltinModule('node:fs');
+  const { join, resolve } = process.getBuiltinModule('node:path');
   const root = resolve(process.cwd(), dir);
   const out: Placeholder[] = [];
   for (const brandDir of readdirSync(root, { withFileTypes: true }).filter((d) => d.isDirectory()).map((d) => d.name).sort(cmp)) {

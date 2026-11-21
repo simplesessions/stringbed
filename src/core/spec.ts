@@ -1,5 +1,3 @@
-import { readdirSync, readFileSync } from 'node:fs';
-import { basename, join, resolve } from 'node:path';
 import { z } from 'zod';
 
 export type HeadShape = 'oval' | 'isometric' | 'teardrop';
@@ -256,6 +254,9 @@ const cmp = (a: string, b: string) => (a < b ? -1 : a > b ? 1 : 0);
 
 /** Node only. Reads `<dir>/<brand>/*.json`, sorted by brand then model then id. */
 export function loadAllSpecs(dir = 'racquets'): RacquetSpec[] {
+  // Resolved at call time, not imported, so the library entry stays bundle-safe for browsers.
+  const { readdirSync, readFileSync } = process.getBuiltinModule('node:fs');
+  const { basename, join, resolve } = process.getBuiltinModule('node:path');
   const root = resolve(process.cwd(), dir);
   const specs: RacquetSpec[] = [];
   const brandDirs = readdirSync(root, { withFileTypes: true })

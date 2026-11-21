@@ -1,0 +1,29 @@
+name: Release
+
+# Push a tag like v1.1.0 (it must match package.json's version) to cut a release.
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version-file: package.json
+      - run: bun install --frozen-lockfile
+      - name: Tag matches package.json
+        run: test "v$(bun -p 'require("./package.json").version')" = "${GITHUB_REF_NAME}"
+      - run: bun run typecheck
+      - run: bun test
+      - run: bun run generate --check
+      - run: bun pm pack
+      - name: GitHub release with the package tarball
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$GITHUB_REF_NAME" stringbed-*.tgz --generate-notes --title "$GITHUB_REF_NAME"

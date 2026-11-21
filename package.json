@@ -1,12 +1,35 @@
 {
   "name": "stringbed",
   "version": "1.0.0",
+  "description": "Parametric tennis racquet asset library: specs, a model builder and generated GLB files.",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./catalog.json": "./assets/catalog.json",
+    "./assets/*": "./assets/*",
+    "./racquets/*": "./racquets/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "assets",
+    "racquets",
+    "placeholders",
+    "CHANGELOG.md"
+  ],
+  "sideEffects": false,
   "scripts": {
     "test": "bun test",
     "generate": "bun scripts/generate.ts",
     "dev": "bunx --bun vite",
     "build": "bunx --bun vite build",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "build:lib": "rm -rf lib dist-types && bun build src/index.ts --outdir lib --target browser --packages external && tsc -p tsconfig.build.json && mv dist-types/index.d.ts lib/index.d.ts && cp -R dist-types/* lib/ && rm -rf dist-types",
+    "prepack": "bun run generate --check && bun run build:lib"
   },
   "repository": {
     "type": "git",
@@ -17,10 +40,8 @@
     "url": "https://github.com/simplesessions/stringbed/issues"
   },
   "homepage": "https://github.com/simplesessions/stringbed#readme",
-  "private": true,
   "dependencies": {
     "@gltf-transform/core": "^4.5.1",
-    "three": "^0.187.0",
     "zod": "^4.6.7"
   },
   "devDependencies": {
@@ -28,7 +49,11 @@
     "@types/node": "^26.6.6",
     "@types/three": "^0.187.0",
     "typescript": "^7.0.2",
-    "vite": "^8.3.8"
+    "vite": "^8.3.8",
+    "three": "^0.187.0"
   },
-  "packageManager": "bun@1.4.4"
+  "packageManager": "bun@1.4.4",
+  "peerDependencies": {
+    "three": "^0.187.0"
+  }
 }
