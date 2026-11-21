@@ -46,6 +46,14 @@
         "from": 0.3,
         "to": 0.345,
         "color": "#f2542d"
+      },
+      {
+        "from": 0.6,
+        "to": 0.66,
+        "color": "#f2542d",
+        "faces": [
+          "outer"
+        ]
       }
     ]
   },
@@ -64,7 +72,8 @@
       "gaugeMm": 1.25
     },
     "grommets": {
-      "color": "#1e1e20"
+      "color": "#1e1e20",
+      "channel": 0.45
     },
     "bumper": {
       "color": "#1e1e20"

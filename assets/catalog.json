@@ -84,8 +84,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-drive-100.glb",
-          "bytes": 122232,
-          "triangles": 5044
+          "bytes": 121140,
+          "triangles": 4980
         }
       }
     },
@@ -124,8 +124,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-strike-98.glb",
-          "bytes": 148608,
-          "triangles": 4984
+          "bytes": 143132,
+          "triangles": 4696
         }
       }
     },
@@ -164,8 +164,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/head-speed-mp-2026.glb",
-          "bytes": 117088,
-          "triangles": 4788
+          "bytes": 113440,
+          "triangles": 4596
         }
       }
     },
@@ -284,8 +284,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/prince-tour-100-290g.glb",
-          "bytes": 137812,
-          "triangles": 4592
+          "bytes": 132336,
+          "triangles": 4304
         }
       }
     },
@@ -324,8 +324,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/solinco-blackout-v2-300.glb",
-          "bytes": 114560,
-          "triangles": 4660
+          "bytes": 110908,
+          "triangles": 4468
         }
       }
     },
@@ -364,8 +364,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/solinco-whiteout-v2-305.glb",
-          "bytes": 136504,
-          "triangles": 4536
+          "bytes": 131036,
+          "triangles": 4248
         }
       }
     },
@@ -404,8 +404,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-blade-98-v10.glb",
-          "bytes": 138228,
-          "triangles": 4600
+          "bytes": 132756,
+          "triangles": 4312
         }
       }
     },
@@ -444,8 +444,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-clash-100-v3.glb",
-          "bytes": 114548,
-          "triangles": 4660
+          "bytes": 116020,
+          "triangles": 4724
         }
       }
     },
@@ -484,8 +484,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/wilson-pro-staff-97-v14.glb",
-          "bytes": 141692,
-          "triangles": 4728
+          "bytes": 136220,
+          "triangles": 4440
         }
       }
     },
@@ -524,8 +524,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-ezone-100.glb",
-          "bytes": 120924,
-          "triangles": 4980
+          "bytes": 122396,
+          "triangles": 5044
         }
       }
     },
@@ -564,8 +564,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-percept-97.glb",
-          "bytes": 145132,
-          "triangles": 4856
+          "bytes": 139660,
+          "triangles": 4568
         }
       }
     },
@@ -604,8 +604,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/yonex-vcore-100.glb",
-          "bytes": 130120,
-          "triangles": 5044
+          "bytes": 124644,
+          "triangles": 4756
         }
       }
     }

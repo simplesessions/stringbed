@@ -69,7 +69,8 @@
       "gaugeMm": 1.25
     },
     "grommets": {
-      "color": "#a8683a"
+      "color": "#a8683a",
+      "channel": 0.45
     },
     "bumper": {
       "color": "#8a5530"
