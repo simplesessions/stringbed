@@ -28,7 +28,7 @@ lists other official ones in `colourways`: each has an id, name, optional year, 
 optional part-colour overrides and sources. Geometry is shared. Each colourway is generated as
 `assets/<style>/<id>--<colourway>.glb`, listed under the racquet in `catalog.json`, and offered
 as swatches on the racquet's page (`#/<id>/<colourway>`). Limited and event editions stay out;
-only colourways the maker sells as standard. First one: Yonex EZONE 100 Espresso Brown (2026).
+only colourways the maker sells as standard. So far: Yonex EZONE 100 Espresso Brown (2026) and Wilson Clash 100 v3 Reverse (red; checked against TW WC103R face-on and side photos). The other racquets have no second standard colourway: retailers list one colour, and the rest are limited or event editions.
 
 Beam widths are tip / mid / shaft in mm. All racquets are 27 in long unless noted.
 

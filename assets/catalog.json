@@ -447,7 +447,23 @@
           "bytes": 116020,
           "triangles": 4724
         }
-      }
+      },
+      "colourway": "Black/Orange",
+      "colourways": [
+        {
+          "id": "reverse",
+          "name": "Reverse",
+          "year": 2025,
+          "swatch": "#e5412e",
+          "assets": {
+            "realistic": {
+              "path": "realistic/wilson-clash-100-v3--reverse.glb",
+              "bytes": 108312,
+              "triangles": 4340
+            }
+          }
+        }
+      ]
     },
     {
       "id": "wilson-pro-staff-97-v14",

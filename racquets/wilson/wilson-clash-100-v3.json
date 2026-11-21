@@ -85,5 +85,44 @@
     "https://www.racquetpoint.com/products/wilson-clash-100-v3-us-open-tennis-racquet",
     "https://www.tennis-warehouse.com/Wilson_Clash_100_v3/descpageRCWILSON-CL103V.html"
   ],
-  "verified": true
+  "verified": true,
+  "colourway": "Black/Orange",
+  "colourways": [
+    {
+      "id": "reverse",
+      "name": "Reverse",
+      "year": 2025,
+      "paint": {
+        "base": "#e5412e",
+        "finish": "satin",
+        "zones": [
+          {
+            "from": 0.12,
+            "to": 0.3,
+            "color": "#ec4b3b"
+          }
+        ]
+      },
+      "parts": {
+        "grip": {
+          "color": "#ecedec"
+        },
+        "collar": {
+          "color": "#e5412e"
+        },
+        "buttCap": {
+          "color": "#e4e5e4"
+        },
+        "grommets": {
+          "color": "#c4203a"
+        },
+        "bumper": {
+          "color": "#c4203a"
+        }
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Wilson_Clash_100_v3_Reverse/descpage-WC103R.html"
+      ]
+    }
+  ]
 }
