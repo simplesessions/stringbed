@@ -257,3 +257,100 @@ export function olderCount(c: Catalog, age: Age): number {
   const count = (older: boolean) => wallGroups(c, age, older).reduce((n, g) => n + g.racquets.length, 0);
   return count(true) - count(false);
 }
+
+// ---------- the shop floor: brands, then lines, then sizes ----------
+
+export function brandSlug(brand: string): string {
+  return brand.toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
+
+/** "#/b/<brand>" opens a brand's floor. */
+export function brandRoute(brand: string): string {
+  return `#/b/${brandSlug(brand)}`;
+}
+
+/** The brand a "#/b/<slug>" hash names, if any. */
+export function parseBrandRoute(hash: string, brands: readonly string[]): string | null {
+  const m = /^#\/b\/([a-z0-9-]+)\/?$/.exec(hash);
+  return m ? brands.find((b) => brandSlug(b) === m[1]) ?? null : null;
+}
+
+/** A family and its variants as full entries, base first, limited to one size. */
+export function membersOf(c: Catalog, family: Racquet, age: Age): Racquet[] {
+  const byId = new Map(c.racquets.map((r) => [r.id, r]));
+  const ids = family.variants?.length ? family.variants.map((v) => v.id) : [family.id];
+  return ids.map((id) => byId.get(id)).filter((r): r is Racquet => !!r && (age === 'all' || isJunior(r) === (age === 'junior')));
+}
+
+/** A lineage's display name: its line, plus what sets it apart ("Pure Aero Rafa", "O3 Phantom"). */
+export function lineageName(family: Racquet): string {
+  const own = brandSlug(`${family.brand} ${family.line}`);
+  if (family.lineage === own) return family.line;
+  const tail = family.lineage.replace(`${brandSlug(family.brand)}-`, '');
+  const lineSlug = brandSlug(family.line);
+  const rest = tail.startsWith(lineSlug) ? tail.slice(lineSlug.length).replace(/^-/, '') : tail;
+  const word = (w: string) => (w.length <= 2 || /\d/.test(w) || w === 'vs' ? w.toUpperCase() : w[0].toUpperCase() + w.slice(1));
+  const words = rest.split('-').filter(Boolean).map(word).join(' ');
+  return tail.startsWith(lineSlug) ? `${family.line} ${words}`.trim() : words;
+}
+
+export interface Shelf {
+  lineage: string;
+  name: string;
+  /** Generations with something in the chosen size, newest first. */
+  generations: Racquet[];
+}
+
+/** A brand's floor: one shelf per line (lineage), the lines with most sizes first. */
+export function shelvesOf(c: Catalog, brand: string, age: Age): Shelf[] {
+  const families = c.racquets.filter((r) => r.brand === brand && !r.variantOf);
+  const lineages = new Map<string, Racquet[]>();
+  for (const f of families) if (membersOf(c, f, age).length) lineages.set(f.lineage, [...(lineages.get(f.lineage) ?? []), f]);
+  return [...lineages.entries()]
+    .map(([lineage, gens]) => {
+      const generations = gens.sort((a, b) => b.year - a.year || byText(b.generation, a.generation));
+      return { lineage, name: lineageName(generations[0]), generations };
+    })
+    // The big lines lead (most sizes on the newest shelf), newest first among equals.
+    .sort((a, b) =>
+      membersOf(c, b.generations[0], age).length - membersOf(c, a.generations[0], age).length ||
+      b.generations[0].year - a.generations[0].year ||
+      byText(a.name, b.name));
+}
+
+export interface Aisle {
+  brand: string;
+  /** Up to five current flagships to fan out, the biggest line in the middle. */
+  fan: Racquet[];
+  lines: number;
+  racquets: number;
+  colourways: number;
+  noModel: number;
+}
+
+/** The home floor: one aisle per brand with a modelled racquet in this size, alphabetical. */
+export function aislesOf(c: Catalog, age: Age): Aisle[] {
+  const brands = [...new Set(c.racquets.map((r) => r.brand))].sort(byText);
+  const out: Aisle[] = [];
+  for (const brand of brands) {
+    const shelves = shelvesOf(c, brand, age);
+    if (!shelves.length) continue;
+    const current = shelves.map((s) => s.generations[0]);
+    const flagships = current
+      .map((f) => membersOf(c, f, age)[0])
+      .slice(0, 5);
+    // Middle-out: biggest line at the centre, the next ones alternating either side.
+    const fan: Racquet[] = [];
+    flagships.forEach((r, i) => (i % 2 ? fan.unshift(r) : fan.push(r)));
+    const all = shelves.flatMap((s) => s.generations.flatMap((g) => membersOf(c, g, age)));
+    out.push({
+      brand,
+      fan,
+      lines: shelves.length,
+      racquets: all.length,
+      colourways: all.reduce((n, r) => n + (r.colourways?.length ?? 0), 0),
+      noModel: (c.placeholders ?? []).filter((p) => p.brand === brand && matchesAge(p.category, age)).length,
+    });
+  }
+  return out;
+}

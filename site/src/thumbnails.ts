@@ -4,7 +4,7 @@
 // Where OffscreenCanvas has WebGL, frames move as ImageBitmaps into 'bitmaprenderer'
 // canvases (no GPU readback); otherwise they are copied with a 2D drawImage.
 import { OrthographicCamera, type Object3D, type WebGLRenderer, type Scene } from 'three';
-import { bounds, createRenderer, createStudio, loadModel, prefersReducedMotion } from './studio';
+import { createRenderer, createStudio, loadModel, prefersReducedMotion } from './studio';
 import { LookPainter, type LookScale } from './look-passes';
 import type { Look } from './look';
 
@@ -31,6 +31,9 @@ const TURN_SPEED = 1.1; // radians per second while hovered
 const MAX_DPR = 2;
 /** Bay-sized cells and lines, in CSS px. */
 const LOOK_SCALE: LookScale = { cell: 4, outline: 1 };
+
+/** Height every thumbnail frames, metres: 29 in, the longest frame the spec allows. */
+const FRAME_HEIGHT_M = 0.7366;
 
 export class Thumbnails {
   private readonly scene: Scene;
@@ -192,16 +195,16 @@ export class Thumbnails {
 
     model.rotation.y = e.yaw;
     model.updateMatrixWorld(true);
-    const { center, size } = bounds(model);
-    // One scale for every racquet: frame by height, so the wall compares like with like.
-    const halfH = (size.y * 1.08) / 2;
+    // One true scale for every racquet: the frame is a fixed 29 in tall with the butt cap (the
+    // model's origin) on the rail, so a 25 in junior stands visibly shorter than a 27 in frame.
+    const halfH = (FRAME_HEIGHT_M * 1.03) / 2;
     const halfW = halfH * (w / h);
     const cam = this.camera;
     cam.left = -halfW;
     cam.right = halfW;
     cam.top = halfH;
     cam.bottom = -halfH;
-    cam.position.set(0, center.y, 3);
+    cam.position.set(0, halfH - 0.012, 3);
     cam.updateProjectionMatrix();
 
     this.scene.add(model);

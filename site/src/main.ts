@@ -13,7 +13,14 @@ import {
   formatPattern,
   generationLabel,
   wallGroups,
-  olderCount,
+  aislesOf,
+  shelvesOf,
+  membersOf,
+  brandRoute,
+  brandSlug,
+  parseBrandRoute,
+  type Aisle,
+  type Shelf,
   isJunior,
   generationsOf,
   generationShort,
@@ -69,8 +76,8 @@ interface App {
   style: Style;
   groups: BrandGroup[];
   order: Racquet[];
-  /** Show families that a newer generation of their line has replaced. */
-  older: boolean;
+  /** Generation picked on each shelf (lineage → family id); newest when absent. */
+  shelfGen: Map<string, string>;
   stock: StockGroup[];
   stockOrder: Placeholder[];
   brand: string | null;
@@ -106,8 +113,7 @@ async function boot() {
   const style = pickStyle(catalog, new URLSearchParams(location.search).get('style'));
   if (!style) return catalogFailed(new Error('The catalog lists no styles.'));
   const age = storedAge();
-  const older = storedOlder();
-  const groups = wallGroups(catalog, age, older);
+  const groups = wallGroups(catalog, age, false);
   const stock = groupPlaceholders(catalog);
   app = {
     catalog,
@@ -116,7 +122,7 @@ async function boot() {
     order: groups.flatMap((g) => g.racquets),
     stock,
     stockOrder: stock.flatMap((g) => g.years.flatMap((y) => y.items)),
-    older,
+    shelfGen: new Map(),
     brand: null,
     age,
     look: storedLook(),
@@ -126,8 +132,9 @@ async function boot() {
     lastOpened: null,
   };
   const a = app;
+  a.brand = parseBrandRoute(location.hash, brandsOf(a));
   buildHeader(a);
-  buildWall(a);
+  renderFloor(a);
   a.gl = await loadGL();
   a.thumbs = a.gl?.Thumbnails.create() ?? null;
   a.thumbs?.setLook(a.look);
@@ -177,9 +184,13 @@ function storedAge(): Age {
 /** Racquets per brand for the current size filter: modelled ones (all adult) plus placeholders. */
 function brandCounts(a: App): Map<string, number> {
   const counts = new Map<string, number>();
-  for (const g of a.groups) counts.set(g.brand, g.racquets.length);
+  for (const x of aislesOf(a.catalog, a.age)) counts.set(x.brand, x.racquets);
   for (const g of groupPlaceholders(a.catalog, a.age)) counts.set(g.brand, (counts.get(g.brand) ?? 0) + g.count);
   return counts;
+}
+
+function brandsOf(a: Pick<App, 'catalog'>): string[] {
+  return [...new Set([...a.catalog.racquets.map((r) => r.brand), ...(a.catalog.placeholders ?? []).map((p) => p.brand)])];
 }
 
 const sizes = el('div', { class: 'signs sizes', role: 'group', 'aria-label': 'Racquet size' });
@@ -200,11 +211,10 @@ function buildHeader(a: App) {
       for (const x of sizes.children) x.setAttribute('aria-pressed', String(x === b));
       a.lastOpened = null;
       regroup(a);
-      if (a.brand && !brandCounts(a).has(a.brand)) a.brand = null; // the brand has nothing in this size
       renderSigns(a);
-      buildWall(a);
+      transition(() => renderFloor(a));
       announceShown(a);
-      if (parseRoute(location.hash).racquetId) location.hash = routeFor(null);
+      if (wall.hidden) location.hash = a.brand ? brandRoute(a.brand) : routeFor(null);
     });
     return b;
   }));
@@ -262,23 +272,15 @@ function renderSigns(a: App) {
   const counts = brandCounts(a);
   const brands = [...counts.keys()].sort((x, y) => x.localeCompare(y, 'en'));
   const n = [...counts.values()].reduce((x, y) => x + y, 0);
-  const buttons: HTMLButtonElement[] = [];
-  const add = (brand: string | null, label: string, count: number) => {
-    const b = el('button', { class: 'sign', type: 'button', 'aria-pressed': String(brand === a.brand) },
-      el('span', {}, label), el('span', { class: 'sign-count' }, String(count)));
-    b.addEventListener('click', () => {
-      a.brand = brand;
-      a.lastOpened = null; // a filter choice is a new place on the wall; don't jump to the old bay
-      for (const x of buttons) x.setAttribute('aria-pressed', String(x === b));
-      applyFilter(a);
-      announceShown(a);
-      if (parseRoute(location.hash).racquetId) location.hash = routeFor(null);
-    });
-    buttons.push(b);
-  };
-  add(null, 'All', n);
+  // Brand signs are the floor's directory: each opens that brand's aisle.
+  const links: HTMLAnchorElement[] = [];
+  const add = (brand: string | null, label: string, count: number) =>
+    links.push(el('a', { class: 'sign', href: brand ? brandRoute(brand) : routeFor(null), 'data-brand': brand ?? '' },
+      el('span', {}, label), el('span', { class: 'sign-count' }, String(count))));
+  add(null, 'All brands', n);
   for (const b of brands) add(b, b, counts.get(b)!);
-  signs.replaceChildren(...buttons);
+  signs.replaceChildren(...links);
+  markSigns(a);
 
   // Styles come from the catalog. With a single style there is nothing to switch.
   if (a.catalog.styles.length > 1) {
@@ -289,75 +291,30 @@ function renderSigns(a: App) {
   }
 }
 
-const OLDER_KEY = 'stringbed.older';
-function storedOlder(): boolean {
-  try {
-    return localStorage.getItem(OLDER_KEY) === '1';
-  } catch {
-    return false;
-  }
-}
-
 /** Recompute what the wall shows after the size or the older-generations choice changed. */
 function regroup(a: App) {
-  a.groups = wallGroups(a.catalog, a.age, a.older);
+  a.groups = wallGroups(a.catalog, a.age, false);
   a.order = a.groups.flatMap((g) => g.racquets);
 }
 
-function applyFilter(a: App) {
-  for (const section of wall.querySelectorAll<HTMLElement>('.section')) {
-    section.hidden = a.brand !== null && section.dataset.brand !== a.brand;
+/** Show which floor the visitor is on: a brand, or all brands on the home floor. */
+function markSigns(a: App) {
+  for (const l of signs.querySelectorAll<HTMLElement>('a.sign[data-brand]')) {
+    const on = !wall.hidden && (l.dataset.brand || null) === a.brand;
+    if (on) l.setAttribute('aria-current', 'page');
+    else l.removeAttribute('aria-current');
   }
-  wall.querySelector('.stock')?.replaceWith(...stockList(a));
-  wall.classList.toggle('is-filtered', a.brand !== null);
 }
 
 // ---------- wall ----------
 
-function buildWall(a: App) {
-  const sections = a.groups.map((g) => {
-    const id = `brand-${g.brand.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
-    return el('section', { class: 'section', 'data-brand': g.brand, 'aria-labelledby': id },
-      el('h2', { class: 'section-sign', id }, g.brand),
-      el('ul', { class: 'bays', role: 'list' }, ...g.racquets.map((r) => bay(a, r))),
-    );
-  });
-  wall.replaceChildren(el('h1', { class: 'sr-only' }, 'All racquets'), ...sections, olderToggle(a), el('section', { class: 'stock' }));
-  a.thumbs?.prune();
-  wall.setAttribute('aria-busy', 'false');
-  applyFilter(a);
-}
-
-/** Older generations stay off the wall unless asked for: one button under the frames. */
-function olderToggle(a: App): HTMLElement {
-  const n = olderCount(a.catalog, a.age);
-  if (n === 0 && !a.older) return el('span', { hidden: true });
-  const b = el('button', { class: 'button older-toggle', type: 'button', 'aria-pressed': String(a.older) },
-    a.older ? 'Hide older generations' : `Show ${n} older generation${n === 1 ? '' : 's'}`);
-  b.addEventListener('click', () => {
-    a.older = !a.older;
-    try {
-      localStorage.setItem(OLDER_KEY, a.older ? '1' : '0');
-    } catch {
-      /* private mode */
-    }
-    regroup(a);
-    renderSigns(a);
-    buildWall(a);
-    announceShown(a);
-    wall.querySelector<HTMLButtonElement>('.older-toggle')?.focus({ preventScroll: true });
-  });
-  return el('div', { class: 'older' }, b);
-}
-
 /** Researched racquets with no model yet: a plain list under the wall, one column per brand. */
 function stockList(a: App): HTMLElement[] {
-  const stock = groupPlaceholders(a.catalog, a.age).filter((g) => a.brand === null || g.brand === a.brand);
+  const stock = groupPlaceholders(a.catalog, a.age).filter((g) => g.brand === a.brand);
   if (stock.length === 0) return [el('section', { class: 'stock', hidden: true })];
   const total = stock.reduce((n, g) => n + g.count, 0);
   const brand = (g: StockGroup) =>
     el('section', { class: 'stock-brand', 'data-brand': g.brand, 'aria-label': `${g.brand}, no model yet` },
-      el('h3', { class: 'stock-sign' }, g.brand, el('span', { class: 'sign-count' }, String(g.count))),
       ...g.years.flatMap((y) => [
         el('h4', { class: 'stock-year' }, y.year === CURRENT_YEAR ? 'Current' : `On sale in ${y.year}`),
         el('ul', { class: 'stock-rows', role: 'list' }, ...y.items.map((p) => stockRow(p, a.age === 'all'))),
@@ -365,7 +322,7 @@ function stockList(a: App): HTMLElement[] {
     );
   return [
     el('section', { class: 'stock', 'aria-labelledby': 'stock-title' },
-      el('h2', { class: 'stock-title', id: 'stock-title' }, 'No model yet', el('span', { class: 'sign-count' }, String(total))),
+      el('h2', { class: 'shelf-name', id: 'stock-title' }, 'No model yet', el('span', { class: 'sign-count' }, String(total))),
       el('p', { class: 'stock-lede' }, 'Researched from retailer listings and not yet modelled. Specs are unverified and often incomplete.'),
       el('div', { class: 'stock-brands' }, ...stock.map(brand)),
     ),
@@ -387,39 +344,191 @@ function stockRow(p: Placeholder, showSize: boolean): HTMLLIElement {
   );
 }
 
-function bay(a: App, r: Racquet): HTMLLIElement {
-  const asset = assetFor(r, a.style.id);
-  const canvas = el('canvas', { class: 'bay-canvas', 'aria-hidden': 'true' });
-  const link = el('a', { class: 'bay-link', href: routeFor(r.id) },
-    el('span', { class: 'bay-stage' }, silhouette(r.specs.headSizeSqIn), canvas),
-    el('span', { class: 'tag' },
-      el('span', { class: 'tag-model' }, a.age === 'junior' ? r.model : wallName(r)),
-      el('span', { class: 'tag-meta' }, `${r.brand} · ${generationLabel(r)}`),
-      a.age !== 'junior' && r.variants?.length ? el('span', { class: 'tag-variants' }, variantLabels(a, r)) : null,
+// ---------- the shop floor ----------
+//
+// Home is one aisle per brand: the brand's sign over a fan of its current flagships, held at
+// the butt caps like a hand of cards. An aisle opens that brand's floor (#/b/<brand>): one shelf
+// per line, each standing the line's sizes side by side at one true scale, with generation tabs
+// that swap what stands on the shelf.
+
+const FAN_ANGLES: Record<number, number[]> = {
+  1: [0],
+  2: [-9, 9],
+  3: [-16, 0, 16],
+  4: [-18, -6, 6, 18],
+  5: [-21, -10.5, 0, 10.5, 21],
+};
+
+/** Render whichever floor the route names: a brand's, or the home aisles. */
+function renderFloor(a: App) {
+  const views = a.brand ? brandFloor(a, a.brand) : homeFloor(a);
+  wall.replaceChildren(...views);
+  wall.dataset.floor = a.brand ? 'brand' : 'home';
+  a.thumbs?.prune();
+  wall.setAttribute('aria-busy', 'false');
+  markSigns(a);
+}
+
+function homeFloor(a: App): HTMLElement[] {
+  const aisles = aislesOf(a.catalog, a.age);
+  return [
+    el('h1', { class: 'sr-only' }, 'Brands'),
+    el('ul', { class: 'aisles', role: 'list' }, ...aisles.map((x, k) => aisle(a, x, k))),
+  ];
+}
+
+function aisle(a: App, x: Aisle, k: number): HTMLLIElement {
+  const slug = brandSlug(x.brand);
+  const angles = FAN_ANGLES[x.fan.length] ?? FAN_ANGLES[5];
+  const link = el('a', { class: 'aisle-link', href: brandRoute(x.brand), 'aria-label': `${x.brand}: ${x.racquets} racquets in ${x.lines} lines` });
+  const fan = el('span', { class: 'fan', 'aria-hidden': 'true' });
+  x.fan.forEach((r, i) => {
+    const canvas = el('canvas', { class: 'bay-canvas' });
+    const off = i - (x.fan.length - 1) / 2;
+    // Centre blade on top; the fans open aisle by aisle, centre out.
+    const blade = el('span', { class: 'blade', style: `--a: ${angles[i]}deg; --i: ${off}; --n: ${k * 2 + Math.abs(off)}; z-index: ${10 - Math.round(Math.abs(off) * 2)}; --swatch: ${r.swatch}` },
+      el('span', { class: 'bay-stage' }, silhouette(r.specs.headSizeSqIn), canvas));
+    fan.append(blade);
+    thumbnail(a, r, blade, canvas, link);
+  });
+  const centre = x.fan[Math.floor(x.fan.length / 2)];
+  link.append(
+    el('span', { class: 'aisle-sign', style: `view-transition-name: brand-${slug}` }, x.brand),
+    fan,
+    el('span', { class: 'aisle-rail', style: `--swatch: ${centre?.swatch ?? 'var(--rail)'}` }),
+    el('span', { class: 'aisle-tag' },
+      el('span', {}, `${x.lines} ${x.lines === 1 ? 'line' : 'lines'}`),
+      el('span', {}, `${x.racquets} ${x.racquets === 1 ? 'racquet' : 'racquets'}`),
+      x.colourways ? el('span', {}, `${x.colourways} ${x.colourways === 1 ? 'colourway' : 'colourways'}`) : null,
+      x.noModel ? el('span', { class: 'aisle-soft' }, `+${x.noModel} no model yet`) : null,
     ),
   );
-  const item = el('li', { class: 'bay', style: `--swatch: ${r.swatch}`, 'data-id': r.id }, link);
+  return el('li', { class: 'aisle', 'data-brand': x.brand }, link);
+}
 
+function brandFloor(a: App, brand: string): HTMLElement[] {
+  const shelves = shelvesOf(a.catalog, brand, a.age);
+  const x = aislesOf(a.catalog, a.age).find((y) => y.brand === brand);
+  const head = el('header', { class: 'floor-head' },
+    el('a', { class: 'back', href: routeFor(null) }, icon('back'), 'All brands'),
+    el('h1', { class: 'floor-sign', style: `view-transition-name: brand-${brandSlug(brand)}` }, brand),
+    x
+      ? el('p', { class: 'floor-tally' }, `${x.lines} ${x.lines === 1 ? 'line' : 'lines'} · ${x.racquets} racquets${x.colourways ? ` · ${x.colourways} colourways` : ''}`)
+      : null,
+    shelves.length > 1
+      ? el('nav', { class: 'floor-index', 'aria-label': `${brand} lines` },
+          ...shelves.map((sh) => el('a', { href: `#shelf-${sh.lineage}`, 'data-shelf': sh.lineage }, sh.name)))
+      : null,
+  );
+  const empty = shelves.length
+    ? null
+    : el('p', { class: 'floor-empty' }, `No ${a.age === 'all' ? '' : `${a.age} `}${brand} racquets have a 3D model yet.`);
+  return [head, ...(empty ? [empty] : []), ...shelves.map((sh) => shelf(a, sh)), ...stockList(a)];
+}
+
+function shelf(a: App, sh: Shelf): HTMLElement {
+  const picked = a.shelfGen.get(sh.lineage);
+  const family = sh.generations.find((g) => g.id === picked) ?? sh.generations[0];
+  const members = membersOf(a.catalog, family, a.age);
+  const id = `shelf-${sh.lineage}`;
+  const tabs = sh.generations.length > 1
+    ? el('div', { class: 'gen-tabs', role: 'group', 'aria-label': `${sh.name} generation` },
+        ...sh.generations.map((g) => {
+          const b = el('button', { class: 'gen-tab', type: 'button', 'aria-pressed': String(g === family) }, generationShort(g));
+          b.addEventListener('click', () => {
+            if (g === family) return;
+            a.shelfGen.set(sh.lineage, g.id);
+            const section = document.getElementById(id);
+            transition(() => {
+              section?.replaceWith(shelf(a, sh));
+              a.thumbs?.prune();
+            });
+            requestAnimationFrame(() => document.getElementById(id)?.querySelector<HTMLElement>('.gen-tab[aria-pressed="true"]')?.focus({ preventScroll: true }));
+            announce.textContent = `${sh.name} ${generationShort(g)}: ${membersOf(a.catalog, g, a.age).length} racquets.`;
+          });
+          return b;
+        }))
+    : el('span', { class: 'gen-only' }, generationShort(family));
+  return el('section', { class: 'shelf', id, 'aria-labelledby': `${id}-name`, style: `view-transition-name: ${id}` },
+    el('div', { class: 'shelf-head' },
+      el('h2', { class: 'shelf-name', id: `${id}-name` }, sh.name),
+      tabs,
+    ),
+    el('ul', { class: 'bays', role: 'list' },
+      ...members.map((r) =>
+        bay(a, r, {
+          title: r.variantLabel ?? wallName(r),
+          meta: [`${formatHeadSize(r.specs.headSizeSqIn).primary}`, formatPattern(r.specs.stringPattern), isJunior(r) ? `${r.specs.lengthIn} in` : null].filter(Boolean).join(' · '),
+          extra: r.colourways?.length ? `${r.colourways.length + 1} colourways` : null,
+        }),
+      ),
+    ),
+  );
+}
+
+interface BayText {
+  title: string;
+  meta: string;
+  extra?: string | null;
+}
+
+/** A racquet standing on a rail: its 3D thumbnail (or swatch silhouette) and a hang tag. */
+function bay(a: App, r: Racquet, text: BayText): HTMLLIElement {
+  const canvas = el('canvas', { class: 'bay-canvas', 'aria-hidden': 'true' });
+  const link = el('a', { class: 'bay-link', href: routeFor(r.id), 'aria-label': `${r.model}, ${text.meta}` },
+    el('span', { class: 'bay-stage', style: vtName(r.id) }, silhouette(r.specs.headSizeSqIn), canvas),
+    el('span', { class: 'tag', 'aria-hidden': 'true' },
+      el('span', { class: 'tag-model' }, text.title),
+      el('span', { class: 'tag-meta' }, text.meta),
+      text.extra ? el('span', { class: 'tag-variants' }, text.extra) : null,
+    ),
+  );
+  link.addEventListener('click', () => {
+    // Name only the clicked bay, so the transition morphs exactly this racquet into the stage.
+    for (const old of wall.querySelectorAll<HTMLElement>('.bay-stage[style*="view-transition-name"]')) old.style.viewTransitionName = '';
+    link.querySelector<HTMLElement>('.bay-stage')!.style.viewTransitionName = 'racquet';
+    a.lastOpened = r.id;
+  });
+  const item = el('li', { class: 'bay', style: `--swatch: ${r.swatch}`, 'data-id': r.id }, link);
+  thumbnail(a, r, item, canvas, link);
+  return item;
+}
+
+/** Hook a canvas up to the shared thumbnail renderer once the 3D code has settled. */
+function thumbnail(a: App, r: Racquet, item: HTMLElement, canvas: HTMLCanvasElement, hover: HTMLElement) {
+  const asset = assetFor(r, a.style.id);
   if (!asset) {
     item.dataset.state = 'flat';
-    return item;
+    return;
   }
   const attach = (thumbs: Thumbnails | null) => {
-    if (thumbs) watch(thumbs, item, link, canvas, r, asset.path);
+    if (thumbs) watch(thumbs, item, hover, canvas, r, asset.path);
     else item.dataset.state = 'flat';
   };
   if (glSettled) attach(a.thumbs);
   else pendingBays.push(attach);
-  return item;
 }
 
-/** A family's sizes for the bay tag, leaving out juniors on the Adult wall. */
-function variantLabels(a: App, r: Racquet): string {
-  const byId = new Map(a.catalog.racquets.map((x) => [x.id, x]));
-  return r.variants!.filter((v) => a.age !== 'adult' || !isJunior(byId.get(v.id) ?? r)).map((v) => v.label).join(' · ');
+/** On the way back from a racquet, its bay carries the morph name again. */
+function vtName(id: string): string | null {
+  return app?.lastOpened === id ? 'view-transition-name: racquet' : null;
 }
 
-function watch(thumbs: Thumbnails, item: HTMLLIElement, link: HTMLAnchorElement, canvas: HTMLCanvasElement, r: Racquet, path: string) {
+/**
+ * Run a DOM change as a view transition where the browser has them and motion is welcome.
+ */
+function transition(change: () => void): void {
+  const doc = document as Document & { startViewTransition?: (cb: () => Promise<void> | void) => unknown };
+  if (!doc.startViewTransition || matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    change();
+    return;
+  }
+  // Rendering is paused during the update, so it must not wait for frames: fresh thumbnails
+  // arrive as silhouettes in the snapshot and fade to 3D a moment later.
+  doc.startViewTransition(change);
+}
+
+function watch(thumbs: Thumbnails, item: HTMLElement, link: HTMLElement, canvas: HTMLCanvasElement, r: Racquet, path: string) {
   const retry = el('button', { class: 'bay-retry', type: 'button' }, icon('retry'), 'Retry');
   retry.setAttribute('aria-label', `Retry loading the ${r.model} preview`);
   const fault = el('span', { class: 'bay-fault', hidden: true }, el('span', {}, 'Preview failed'), retry);
@@ -436,16 +545,37 @@ function watch(thumbs: Thumbnails, item: HTMLLIElement, link: HTMLAnchorElement,
 
 // ---------- routing ----------
 
+let routed = false;
+
 function route() {
   if (!app || !ready) return;
-  const { racquetId, colourway } = parseRoute(location.hash);
-  const r = racquetId ? app.catalog.racquets.find((x) => x.id === racquetId) : undefined;
-  const p = racquetId && !r ? app.stockOrder.find((x) => x.id === racquetId) : undefined;
-  const missing = racquetId && !r && !p ? `There is no racquet with the id “${racquetId}”. Here is the full lineup.` : '';
+  const a = app;
+  const brand = parseBrandRoute(location.hash, brandsOf(a));
+  const { racquetId, colourway } = brand ? { racquetId: null, colourway: null } : parseRoute(location.hash);
+  const r = racquetId ? a.catalog.racquets.find((x) => x.id === racquetId) : undefined;
+  const p = racquetId && !r ? a.stockOrder.find((x) => x.id === racquetId) : undefined;
+  const missing = racquetId && !r && !p ? `There is no racquet with the id “${racquetId}”. Here are the brands.` : '';
   notice.textContent = [missing, baseNotice].filter(Boolean).join(' ');
-  if (r) showDetail(app, r, colourway);
-  else if (p) showPlaceholder(app, p);
-  else showWall(app);
+  const change = () => {
+    if (r || p) detail.dataset.brand = (r ?? p)!.brand;
+    if (r) showDetail(a, r, colourway);
+    else if (p) showPlaceholder(a, p);
+    else {
+      const floorChanged = a.brand !== brand || wall.dataset.floor !== (brand ? 'brand' : 'home');
+      if (floorChanged) {
+        a.brand = brand;
+        renderFloor(a);
+      }
+      showWall(a);
+      if (floorChanged && !a.lastOpened) window.scrollTo(0, 0);
+      document.title = brand ? `${brand} · ${baseTitle.split(':')[0]}` : baseTitle;
+    }
+    markSigns(a);
+  };
+  // The first render is the page loading, not a move between places: no transition.
+  if (routed) transition(change);
+  else change();
+  routed = true;
 }
 
 function showWall(a: App) {
@@ -457,7 +587,6 @@ function showWall(a: App) {
   }
   wall.hidden = false;
   document.body.dataset.view = 'wall';
-  document.title = baseTitle;
   if (a.lastOpened) {
     const link = wall.querySelector<HTMLAnchorElement>(`.bay[data-id="${a.lastOpened}"] .bay-link, li[data-id="${a.lastOpened}"] .stock-row`);
     a.lastOpened = null;
@@ -504,7 +633,7 @@ function placeholderView(a: App, p: Placeholder): Node[] {
   const prev = a.stockOrder[(i - 1 + a.stockOrder.length) % a.stockOrder.length];
   const next = a.stockOrder[(i + 1) % a.stockOrder.length];
   const nav = el('nav', { class: 'detail-nav', 'aria-label': 'Racquet' },
-    el('a', { class: 'back', href: routeFor(null) }, icon('back'), 'All racquets'),
+    el('a', { class: 'back', href: brandRoute(p.brand) }, icon('back'), p.brand),
     el('span', { class: 'stepper' },
       el('a', { href: routeFor(prev.id), 'aria-label': `Previous: ${prev.model}` }, icon('prev'), el('span', { class: 'stepper-name' }, prev.model)),
       el('a', { href: routeFor(next.id), 'aria-label': `Next: ${next.model}` }, el('span', { class: 'stepper-name' }, next.model), icon('next')),
@@ -564,7 +693,7 @@ function detailView(a: App, base: Racquet, colourwayId: string | null = null): N
   const prev = order[(i - 1 + order.length) % order.length];
   const next = order[(i + 1) % order.length];
   const nav = el('nav', { class: 'detail-nav', 'aria-label': 'Racquet' },
-    el('a', { class: 'back', href: routeFor(null) }, icon('back'), 'All racquets'),
+    el('a', { class: 'back', href: brandRoute(base.brand) }, icon('back'), base.brand),
     el('span', { class: 'stepper' },
       el('a', { href: routeFor(prev.id), 'aria-label': `Previous: ${wallName(prev)}` }, icon('prev'), el('span', { class: 'stepper-name' }, wallName(prev))),
       el('a', { href: routeFor(next.id), 'aria-label': `Next: ${wallName(next)}` }, el('span', { class: 'stepper-name' }, wallName(next)), icon('next')),
@@ -619,7 +748,7 @@ function colourwayPicker(r: Racquet, current: string | null): HTMLElement | null
 function stage(a: App, r: Racquet): HTMLElement {
   const asset = assetFor(r, a.style.id);
   const hintId = `hint-${r.id}`;
-  const host = el('div', { class: 'stage', 'data-state': 'loading' }, silhouette(r.specs.headSizeSqIn));
+  const host = el('div', { class: 'stage', 'data-state': 'loading', style: 'view-transition-name: racquet' }, silhouette(r.specs.headSizeSqIn));
 
   if (a.viewer === undefined && a.thumbs && a.gl) {
     a.viewer = a.gl.Viewer.create();
@@ -833,6 +962,6 @@ window.addEventListener('keydown', (e) => {
     return;
   }
   if (searchDialog.open) return; // Escape closes the dialog, not the detail view
-  if (e.key === 'Escape' && !detail.hidden && !e.defaultPrevented) location.hash = routeFor(null);
+  if (e.key === 'Escape' && !detail.hidden && !e.defaultPrevented) location.hash = detail.dataset.brand ? brandRoute(detail.dataset.brand) : routeFor(null);
 });
 void boot();

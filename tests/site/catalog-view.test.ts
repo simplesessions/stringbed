@@ -27,6 +27,11 @@ import {
   isJunior,
   isOlderGeneration,
   generationsOf,
+  aislesOf,
+  shelvesOf,
+  membersOf,
+  brandRoute,
+  parseBrandRoute,
 } from '../../site/src/catalog-view';
 
 const catalog: Catalog = JSON.parse(readFileSync(join(__dirname, '../../assets/catalog.json'), 'utf8'));
@@ -186,4 +191,23 @@ test('wallGroups: latest generation by default, juniors only in Junior', () => {
   expect(gens[0].id).toBe('babolat-pure-aero-100');
   expect(gens.length).toBeGreaterThanOrEqual(3);
   expect(gens.every((g) => g.lineage === 'babolat-pure-aero')).toBe(true);
+});
+
+test('shop floor: aisles, shelves and members', () => {
+  const aisles = aislesOf(catalog, 'adult');
+  expect(aisles.map((x) => x.brand)).toContain('Babolat');
+  for (const a of aisles) {
+    expect(a.fan.length).toBeGreaterThan(0);
+    expect(a.fan.length).toBeLessThanOrEqual(5);
+    expect(a.fan.every((r) => r.brand === a.brand && !isJunior(r))).toBe(true);
+  }
+  const shelves = shelvesOf(catalog, 'Babolat', 'adult');
+  const aero = shelves.find((s) => s.lineage === 'babolat-pure-aero')!;
+  expect(aero.name).toBe('Pure Aero');
+  expect(aero.generations[0].id).toBe('babolat-pure-aero-100');
+  expect(membersOf(catalog, aero.generations[0], 'adult').every((r) => !isJunior(r))).toBe(true);
+  expect(membersOf(catalog, aero.generations[0], 'junior').every(isJunior)).toBe(true);
+  expect(shelves.find((s) => s.lineage === 'babolat-pure-aero-rafa')?.name).toBe('Pure Aero Rafa');
+  expect(parseBrandRoute(brandRoute('Babolat'), ['Babolat', 'Head'])).toBe('Babolat');
+  expect(parseBrandRoute('#/babolat-pure-aero-100', ['Babolat'])).toBeNull();
 });

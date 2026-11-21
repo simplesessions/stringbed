@@ -107,7 +107,10 @@ wall, turning slowly, with its spec tag set beside it.
 - Archivo across the board, its width axis doing the work: condensed for labels and model
   names, wide for the wordmark.
 - Flat. Depth comes from the 3D renders and nothing else.
-- One signature motion: the turn on hover or focus, off under reduced motion.
+- One signature motion: the turn on hover or focus, off under reduced motion. Moving between
+  places is a view transition: the brand sign morphs from aisle to floor, the racquet you open
+  lifts off its rail into the stage (and back), and the header holds still. Fans open once on
+  arrival. All of it is off under reduced motion.
 
 ## Colors
 
@@ -162,12 +165,21 @@ names, hex values. Nothing else.
 
 ## Layout
 
-The wall is a wrapping row of brand sections. Each section is a sign over a row of bays;
-bays have one width for the whole page so every racquet is drawn at one scale, and the bay
-height is the width divided by 0.42 (a racquet's proportions plus margin). On wide screens
-eight bays fill a row (`--bay-w` from the viewport width, capped at 156px); between 721 and
-1099px six; at 720px and below sections stack and each shows three bays across. Filtering to
-one brand walks up to that section: bays grow to as much as 260px wide.
+The gallery is a shop floor in three steps: brands, then lines, then sizes.
+
+- **Home (`#/`): one aisle per brand.** Three aisles across from 1100px, two to 721px, one
+  below. Each aisle is a sign (2px ink rule, brand name uppercase at wdth 112, widening to
+  125 on hover), a fan of up to five current flagships held at the butt caps like a hand of
+  cards (biggest line in the middle, the rest alternating out), a rail, and a tally (lines ·
+  racquets · colourways · no model yet). The whole aisle is the link.
+- **Brand floor (`#/b/<brand>`): one shelf per line.** A display-size brand sign (wdth 125),
+  a tally, and a sticky index of the brand's lines. Each shelf is a sign row (line name,
+  generation tabs) over a rail on which that generation's sizes stand side by side; the lines
+  with most sizes lead. Generation tabs swap the shelf in place. Researched racquets with no
+  model close the floor.
+- **One true scale everywhere:** thumbnails frame a fixed 29 in with the butt cap on the rail,
+  so juniors stand shorter than adult frames. Bays are `clamp(104px, 11.5vw, 168px)` wide and
+  height = width / 0.42; long shelves scroll sideways (and bleed to the edges on phones).
 
 The detail view is two columns from 721px: the model stage takes the free width and stays
 sticky; the spec sheet is 320 to 400px. Below 721px the stage comes first at 60svh, then the

@@ -142,29 +142,169 @@ main { flex: 1; padding: 6px var(--pad) 72px; }
 /* ---------- the wall ---------- */
 
 .wall {
+  --bay-w: clamp(104px, 11.5vw, 168px);
   --bay-h: calc(var(--bay-w) / 0.42);
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  gap: 36px var(--group-gap);
-}
-.wall.is-filtered {
-  --bay-w: min(calc((100svh - 300px) * 0.42), calc((100vw - 2 * var(--pad) - 2 * var(--bay-gap)) / 3), 260px);
 }
 .wall[hidden] { display: none; }
 
-.section { display: grid; gap: 14px; }
-.section[hidden] { display: none; }
-.section-sign {
-  margin: 0;
-  padding-top: 8px;
+/* ---------- home floor: one aisle per brand ---------- */
+
+.aisles {
+  --fan-h: clamp(300px, 30vw, 400px);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 64px clamp(28px, 4vw, 64px);
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.aisle-link { display: grid; color: inherit; text-decoration: none; border-radius: 4px; }
+.aisle-link:focus-visible { outline-offset: 10px; }
+.aisle-sign {
+  justify-self: start;
+  width: 100%;
+  padding-top: 10px;
   border-top: 2px solid var(--ink);
-  font-size: 0.9375rem;
+  font-size: clamp(1.75rem, 1.1rem + 2vw, 3rem);
+  font-weight: 800;
+  font-stretch: 112%;
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+  text-transform: uppercase;
+  /* The width axis is the signage: the sign widens as you walk up to the aisle. */
+  transition: font-stretch 0.6s var(--ease-out), letter-spacing 0.6s var(--ease-out);
+}
+.aisle-link:hover .aisle-sign, .aisle-link:focus-visible .aisle-sign { font-stretch: 125%; letter-spacing: 0; }
+
+/* The fan: current flagships held at the butt caps like a hand of cards. */
+.fan { position: relative; display: block; height: var(--fan-h); margin-top: 0; }
+.blade {
+  --w: calc(var(--fan-h) * 0.42);
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - var(--w) / 2 + var(--i) * var(--w) * 0.06);
+  width: var(--w);
+  height: var(--fan-h);
+  transform-origin: 50% 96%;
+  transform: rotate(var(--a));
+  transition: transform 0.7s var(--ease-out);
+  animation: fan-open 0.9s var(--ease-out) both;
+  animation-delay: calc(var(--n, 0) * 70ms + 120ms);
+}
+.blade .bay-stage { height: 100%; }
+.blade .bay-canvas, .blade .silhouette { position: absolute; inset: 0; width: 100%; height: 100%; }
+.blade .bay-canvas { opacity: 0; transition: opacity 0.5s var(--ease-out); }
+.blade[data-state='ready'] .bay-canvas { opacity: 1; }
+.blade[data-state='ready'] .silhouette { opacity: 0; }
+.aisle-link:hover .blade, .aisle-link:focus-visible .blade {
+  transform: rotate(calc(var(--a) * 1.4)) translateY(calc(-6px - (2 - var(--i) * var(--i) / 2) * 3px));
+}
+@keyframes fan-open { from { transform: rotate(0deg); } }
+.aisle-rail { position: relative; display: block; height: 3px; margin-top: -2px; background: var(--rail); }
+.aisle-rail::after {
+  content: '';
+  position: absolute;
+  inset: 0 30%;
+  background: var(--swatch);
+  transform: scaleX(0);
+  transition: transform 0.6s var(--ease-out);
+}
+.aisle-link:hover .aisle-rail::after, .aisle-link:focus-visible .aisle-rail::after { transform: scaleX(1); }
+.aisle-tag {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 14px;
+  margin-top: 12px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-stretch: 86%;
+  font-variant-numeric: tabular-nums;
+}
+.aisle-soft { color: var(--ink-2); font-weight: 450; }
+
+/* ---------- brand floor: one shelf per line ---------- */
+
+.floor-head { display: grid; gap: 10px; margin-bottom: 8px; }
+.floor-head .back { justify-self: start; }
+.floor-sign {
+  margin: 6px 0 0;
+  font-size: clamp(3rem, 1.4rem + 5.6vw, 6rem);
+  font-weight: 800;
+  font-stretch: 125%;
+  letter-spacing: -0.02em;
+  line-height: 0.85;
+  text-transform: uppercase;
+}
+.floor-tally { margin: 0; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.floor-index {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  margin: 10px calc(-1 * var(--pad)) 0;
+  padding: 10px calc(var(--pad) - 10px);
+  background: color-mix(in oklch, var(--wall) 92%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.floor-index a {
+  padding: 6px 10px 5px;
+  border-radius: 999px;
+  color: var(--ink);
+  font-size: 0.875rem;
+  font-weight: 640;
+  font-stretch: 86%;
+  text-decoration: none;
+  transition: background-color 0.2s var(--ease-out);
+}
+.floor-index a:hover { background: var(--wall-2); }
+.floor-empty { margin: 32px 0; color: var(--ink-2); }
+
+.shelf { margin-top: 44px; scroll-margin-top: 72px; }
+.shelf-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 20px;
+  padding-top: 10px;
+  border-top: 2px solid var(--ink);
+}
+.shelf-name {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 0;
+  font-size: 1.125rem;
   font-weight: 780;
   font-stretch: 72%;
   letter-spacing: 0.07em;
   text-transform: uppercase;
 }
+.shelf-name .sign-count { letter-spacing: 0; font-size: 0.875rem; }
+.gen-tabs { display: flex; gap: 0; padding: 2px; border: 1.5px solid var(--line); border-radius: 999px; }
+.gen-tab {
+  appearance: none;
+  min-height: 30px;
+  padding: 4px 12px 3px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.8125rem;
+  font-weight: 640;
+  font-stretch: 86%;
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+  transition: background-color 0.2s var(--ease-out), color 0.2s var(--ease-out);
+}
+.gen-tab:hover { background: var(--wall-2); }
+.gen-tab[aria-pressed='true'] { background: var(--ink); color: var(--wall); }
+.gen-only { color: var(--ink-2); font-size: 0.8125rem; font-variant-numeric: tabular-nums; }
+.shelf .bays { margin-top: 18px; overflow-x: auto; scrollbar-width: thin; padding-bottom: 6px; }
 
 .bays {
   display: flex;
@@ -172,11 +312,11 @@ main { flex: 1; padding: 6px var(--pad) 72px; }
   margin: 0;
   padding: 0;
   list-style: none;
-  /* The rail the racquets stand on. */
-  background: linear-gradient(var(--rail), var(--rail)) 0 var(--bay-h) / 100% 3px no-repeat;
+  /* The rail the racquets stand on; local, so it runs on when a long shelf scrolls. */
+  background: linear-gradient(var(--rail), var(--rail)) 0 var(--bay-h) / 100% 3px no-repeat local;
 }
 
-.bay { position: relative; width: var(--bay-w); }
+.bay { position: relative; flex: none; width: var(--bay-w); }
 .bay-link { display: block; color: inherit; text-decoration: none; }
 .bay-link:focus-visible { outline-offset: 6px; }
 .bay-stage { position: relative; display: block; height: var(--bay-h); }
@@ -448,7 +588,9 @@ body[data-view='detail'] .signs { display: none; }
 
 /* ---------- no model yet: the stock list under the wall ---------- */
 
-.stock { flex: 1 0 100%; display: grid; gap: 6px; margin-top: 28px; }
+.stock { display: grid; gap: 6px; margin-top: 64px; }
+.stock .shelf-name { padding-top: 10px; border-top: 2px solid var(--ink); }
+.wall[data-floor='brand'] .stock-brands { grid-template-columns: minmax(0, 72ch); }
 .stock-title {
   display: flex; align-items: baseline; gap: 10px;
   margin: 0;
@@ -469,7 +611,6 @@ body[data-view='detail'] .signs { display: none; }
   align-items: start;
 }
 .stock-brand[hidden] { display: none; }
-.wall.is-filtered .stock-brands { grid-template-columns: minmax(0, 72ch); }
 .stock-sign {
   display: flex; align-items: baseline; gap: 6px;
   margin: 0;
@@ -632,8 +773,6 @@ body[data-view='detail'] .signs { display: none; }
 
 /* ---------- older generations, use in code ---------- */
 
-.older { flex: 1 0 100%; display: flex; justify-content: center; }
-.older-toggle { min-height: 40px; }
 .generations .variant[aria-current='true'] { background: transparent; color: var(--ink); border-color: var(--ink); }
 
 .code {
@@ -655,7 +794,7 @@ body[data-view='detail'] .signs { display: none; }
 .copy:hover { border-color: var(--ink); }
 
 @media (max-width: 1099px) {
-  :root { --bay-w: min(calc((100vw - 2 * var(--pad) - var(--group-gap) - 4 * var(--bay-gap) - 1px) / 6), 156px); }
+  .aisles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 720px) {
@@ -663,12 +802,13 @@ body[data-view='detail'] .signs { display: none; }
   .strip { position: relative; }
   .search-open { position: absolute; top: 18px; right: var(--pad); }
   .search { margin-top: 12px; }
-  :root {
-    --bay-gap: 10px;
-    --bay-w: calc((100vw - 2 * var(--pad) - 2 * var(--bay-gap)) / 3);
-  }
-  .wall.is-filtered { --bay-w: calc((100vw - 2 * var(--pad) - 2 * var(--bay-gap)) / 3); }
-  .wall { flex-direction: column; flex-wrap: nowrap; gap: 32px; }
+  :root { --bay-gap: 10px; }
+  .wall { --bay-w: calc((100vw - 2 * var(--pad) - 2 * var(--bay-gap)) / 3.3); }
+  .aisles { --fan-h: 300px; grid-template-columns: minmax(0, 1fr); gap: 48px; }
+  .floor-index { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+  .floor-index a { flex: none; }
+  .shelf .bays { margin-inline: calc(-1 * var(--pad)); padding-inline: var(--pad); scroll-padding-inline: var(--pad); scroll-snap-type: x proximity; }
+  .shelf .bay { scroll-snap-align: start; }
   .strip { gap: 12px; }
   .detail-body { grid-template-columns: minmax(0, 1fr); }
   .stage { --controls-h: 64px; position: relative; top: 0; height: 60svh; min-height: 400px; }
@@ -718,4 +858,21 @@ body[data-view='detail'] .signs { display: none; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+/* ---------- view transitions ---------- */
+
+/* The header strip holds still while the floor changes under it. */
+.strip { view-transition-name: strip; }
+::view-transition-group(*) { animation-duration: 0.55s; animation-timing-function: var(--ease-out); }
+::view-transition-old(root) { animation: 0.32s var(--ease-out) both vt-leave; }
+::view-transition-new(root) { animation: 0.5s var(--ease-out) both vt-arrive; }
+@keyframes vt-leave { to { opacity: 0; transform: translateY(-10px) scale(0.99); filter: blur(3px); } }
+@keyframes vt-arrive { from { opacity: 0; transform: translateY(18px); filter: blur(3px); } }
+/* The racquet you opened lifts off the rail into the stage (and back). */
+::view-transition-group(racquet) { animation-duration: 0.6s; animation-timing-function: cubic-bezier(0.2, 0.9, 0.1, 1); }
+::view-transition-old(racquet), ::view-transition-new(racquet) { height: 100%; object-fit: contain; }
+@media (prefers-reduced-motion: reduce) {
+  .blade { animation: none; transition: none; }
+  .aisle-sign { transition: none; }
 }
