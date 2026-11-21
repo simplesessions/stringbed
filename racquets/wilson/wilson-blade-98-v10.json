@@ -40,14 +40,12 @@
       {
         "from": 0,
         "to": 0.35,
-        "color": "#137a4e",
-        "blend": 0.02
+        "color": "#137a4e"
       },
       {
         "from": 0.365,
         "to": 0.39,
-        "color": "#ea4436",
-        "blend": 0
+        "color": "#ea4436"
       }
     ]
   },

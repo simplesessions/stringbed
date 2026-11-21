@@ -193,6 +193,8 @@ project-context setup first, then design the page with it.
 - How O-Ports are represented. Real holes through the frame are not required; a convincing
   inset is enough.
 - Tessellation density, within the triangle budget.
+- Keeping paint edges crisp: every zone boundary is built as a geometric seam (two coincident
+  rings with u either side), so vertex colours cannot smear a graphic over a ring gap.
 - Every visual decision in the gallery.
 
 ## Open items for the owner

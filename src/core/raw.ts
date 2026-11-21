@@ -4,6 +4,8 @@ import * as THREE from 'three';
 export class RawMesh {
   positions: number[] = [];
   indices: number[] = [];
+  /** Linear RGB per vertex, in vertex order. Empty when the part has no vertex colours. */
+  colors: number[] = [];
 
   get vertexCount(): number {
     return this.positions.length / 3;
@@ -12,6 +14,11 @@ export class RawMesh {
   vertex(x: number, y: number, z: number): number {
     this.positions.push(x, y, z);
     return this.vertexCount - 1;
+  }
+
+  /** Colour for the vertex most recently added (call it once per vertex). */
+  colour(r: number, g: number, b: number): void {
+    this.colors.push(r, g, b);
   }
 
   tri(a: number, b: number, c: number): void {
@@ -37,6 +44,9 @@ export class RawMesh {
   build(): THREE.BufferGeometry {
     const g = new THREE.BufferGeometry();
     g.setAttribute('position', new THREE.Float32BufferAttribute(this.positions, 3));
+    if (this.colors.length === this.positions.length && this.colors.length > 0) {
+      g.setAttribute('color', new THREE.Float32BufferAttribute(this.colors, 3));
+    }
     g.setIndex(this.indices);
     g.computeVertexNormals();
     return g;

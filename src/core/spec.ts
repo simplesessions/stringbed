@@ -8,6 +8,12 @@ export type Finish = 'matte' | 'satin' | 'gloss';
 export type Feature = 'o-ports' | 'aero-fins';
 export type HexColor = string; // "#rrggbb"
 
+export interface TrimPart {
+  color: HexColor;
+  /** "frame": the part carries the frame's paint zones as vertex colours (its own colour is unused). */
+  paint?: 'frame';
+}
+
 export interface RacquetSpec {
   id: string; // kebab-case, equals the file name, e.g. "babolat-pure-aero-100"
   brand: string;
@@ -39,8 +45,8 @@ export interface RacquetSpec {
     collar: { color: HexColor };
     buttCap: { color: HexColor };
     strings: { color: HexColor; gaugeMm: number }; // gauge 1.0..1.4
-    grommets: { color: HexColor };
-    bumper: { color: HexColor };
+    grommets: TrimPart;
+    bumper: TrimPart;
     dampener: null | { color: HexColor };
   };
   sources: string[]; // URLs
@@ -49,6 +55,7 @@ export interface RacquetSpec {
 
 const hex = z.string().regex(/^#[0-9a-f]{6}$/, 'expected a #rrggbb colour');
 const color = z.object({ color: hex }).strict();
+const trimPart = z.object({ color: hex, paint: z.literal('frame').optional() }).strict();
 const patternCount = z.number().int().min(12).max(22);
 const beam = z.number().min(14).max(32);
 const unit = z.number().min(0).max(1);
@@ -107,8 +114,8 @@ export const racquetSpecSchema = z
         collar: color,
         buttCap: color,
         strings: z.object({ color: hex, gaugeMm: z.number().min(1.0).max(1.4) }).strict(),
-        grommets: color,
-        bumper: color,
+        grommets: trimPart,
+        bumper: trimPart,
         dampener: color.nullable(),
       })
       .strict(),

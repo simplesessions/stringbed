@@ -100,6 +100,92 @@ export interface Ring {
   u: number; // frame coordinate written to the vertices
   thickness: number;
   radial: number;
+  /** One of the two coincident copies built at a paint-zone edge (see withSeams). */
+  seam?: boolean;
+}
+
+/**
+ * u offset between the two copies of a seam ring. The copies sit at the same point on the frame;
+ * only their u differs, so the colour lookup lands either side of the edge. The offset is far
+ * below a tenth of a millimetre of frame, so it never shows in the geometry.
+ */
+export const SEAM_EPS = 2e-5;
+/** Zone edges closer together than this in u are one edge. */
+const SEAM_MERGE = 2e-4;
+
+/**
+ * u values where a paint zone starts or ends, ignoring the frame ends (u = 0 and u = 1 have
+ * nothing beyond them to be hard against). Sorted, de-duplicated. The trim parts use the same
+ * list so a zone edge lands on a ring there too.
+ */
+export function paintSeams(spec: RacquetSpec): number[] {
+  const out: number[] = [];
+  for (const z of spec.paint.zones) {
+    for (const u of [z.from, z.to]) {
+      if (u <= SEAM_MERGE || u >= 1 - SEAM_MERGE) continue;
+      if (!out.some((v) => Math.abs(v - u) < SEAM_MERGE)) out.push(u);
+    }
+  }
+  return out.sort((a, b) => a - b);
+}
+
+/** Ring interpolated between `a` and `b` at fraction `t`, carrying its own u. */
+function mixRing(a: Ring, b: Ring, t: number, u: number): Ring {
+  const tx = lerp(a.t.x, b.t.x, t);
+  const ty = lerp(a.t.y, b.t.y, t);
+  const l = Math.hypot(tx, ty) || 1;
+  return {
+    c: { x: lerp(a.c.x, b.c.x, t), y: lerp(a.c.y, b.c.y, t) },
+    t: { x: tx / l, y: ty / l },
+    u,
+    thickness: lerp(a.thickness, b.thickness, t),
+    radial: lerp(a.radial, b.radial, t),
+    seam: true,
+  };
+}
+
+/**
+ * Split every ring gap that a paint-zone edge crosses. The ring on the edge is built twice at the
+ * same position, with u just either side of it; vertex colours cannot interpolate across the pair,
+ * so the paint change is a true seam instead of a gradient the width of a ring gap. This is what
+ * keeps the graphics crisp without needing a texture (see docs: models carry no textures).
+ *
+ * A base ring already sitting exactly on an edge (the throat junction is one) is replaced by the
+ * pair, so its position is kept exactly.
+ */
+function withSeams(rings: Ring[], seams: number[]): Ring[] {
+  if (seams.length === 0 || rings.length < 2) return rings;
+  const edgeAt = (u: number) => seams.find((s) => Math.abs(u - s) <= 1e-6);
+  const groups: Ring[][] = rings.map((r, i) => {
+    const s = edgeAt(r.u);
+    if (s === undefined) return [r];
+    // The list can run either way (the main sweep goes up one side and down the other), so the
+    // copy nearer the incoming neighbour has to sit first.
+    const prev = rings[i - 1] ?? rings[i + 1];
+    const descending = i > 0 ? prev.u > r.u : prev.u < r.u;
+    const near = descending ? s + SEAM_EPS : s - SEAM_EPS;
+    const far = descending ? s - SEAM_EPS : s + SEAM_EPS;
+    return [{ ...r, u: near, seam: true }, { ...r, u: far, seam: true }];
+  });
+  const out: Ring[] = [];
+  for (let i = 0; i < groups.length; i++) {
+    out.push(...groups[i]);
+    const next = groups[i + 1];
+    if (!next) continue;
+    const a = groups[i][groups[i].length - 1];
+    const b = next[0];
+    const lo = Math.min(a.u, b.u);
+    const hi = Math.max(a.u, b.u);
+    if (hi - lo <= 2 * SEAM_EPS) continue;
+    const crossed = seams.filter((s) => s > lo + 2 * SEAM_EPS && s < hi - 2 * SEAM_EPS);
+    if (a.u > b.u) crossed.reverse();
+    for (const s of crossed) {
+      const t = (s - a.u) / (b.u - a.u);
+      const [first, second] = a.u > b.u ? [s + SEAM_EPS, s - SEAM_EPS] : [s - SEAM_EPS, s + SEAM_EPS];
+      out.push(mixRing(a, b, t, first), mixRing(a, b, t, second));
+    }
+  }
+  return out;
 }
 
 /** Mirror a right-hand ring to the left; the sweep runs the other way there, so flip t.y. */
@@ -367,6 +453,9 @@ export function armRings(ctx: FrameContext, junction: Ring): Ring[] {
     return { c: at(armDense, f, mixV), t: norm(at(armTangent, f, mixV)), u, thickness: beamThicknessAt(spec, u), radial: r };
   });
   rings[rings.length - 1].t = { x: 0, y: -1 };
+  // The apex ring stops just past U_SHAFT while the shaft's top ring stops just short of it, so a
+  // zone edge at the fork changes colour between the two sweeps: a hard edge, not a gradient.
+  rings[rings.length - 1].u = U_SHAFT + SEAM_EPS;
   return rings;
 }
 
@@ -406,7 +495,10 @@ export function shaftRings(ctx: FrameContext): Ring[] {
   const rings: Ring[] = [];
   for (let k = 0; k <= SHAFT_RINGS; k++) {
     const y = lerp(layout.gripTopY, apex.y, k / SHAFT_RINGS);
-    const u = (U_SHAFT * k) / SHAFT_RINGS;
+    // The top ring stops just short of U_SHAFT. The arms' apex ring sits at U_SHAFT exactly, so a
+    // zone starting (or ending) at the apex changes colour between the two sweeps: a hard edge at
+    // the fork rather than a gradient down the shaft.
+    const u = k === SHAFT_RINGS ? U_SHAFT - SEAM_EPS : (U_SHAFT * k) / SHAFT_RINGS;
     rings.push({ c: { x: 0, y }, t: { x: 0, y: 1 }, u, thickness: beamThicknessAt(spec, u), radial: armR });
   }
   return rings;
@@ -431,19 +523,21 @@ export function buildFrame(spec: RacquetSpec, layout: Layout): THREE.BufferGeome
   const fJ = findJunction(ctx);
   const hoop = hoopRings(ctx, fJ);
   const right = [...hoop, ...armRings(ctx, hoop[hoop.length - 1])];
+  const seams = paintSeams(spec);
 
   const mesh = new MeshBuilder();
-  mesh.sweep([...right.slice(1).reverse().map(mirror), ...right], sectionOf);
+  mesh.sweep(withSeams([...right.slice(1).reverse().map(mirror), ...right], seams), sectionOf);
+  // The bridge is one constant u, so it takes no seam: it paints like the top of the arms it joins.
   mesh.sweep(bridgeRings(ctx, fJ), sectionOf);
 
   // The shaft holds both arms side by side. The arms stand on its top cap, which closes the
   // floor of the V; the bottom cap closes it inside the grip.
   const { armR } = ctx;
   const shaftLoop = (r: Ring) => stretchSection(beamSectionLoop(profile, r.thickness, armR, detail), armR / 2 + SHAFT_CLEARANCE);
-  const shaft = shaftRings(ctx);
+  const shaft = withSeams(shaftRings(ctx), seams);
   mesh.sweep(shaft, shaftLoop);
   mesh.cap(shaft[0], shaftLoop(shaft[0]), -1);
-  mesh.cap(shaft[SHAFT_RINGS], shaftLoop(shaft[SHAFT_RINGS]), 1);
+  mesh.cap(shaft[shaft.length - 1], shaftLoop(shaft[shaft.length - 1]), 1);
 
   return mesh.build();
 }

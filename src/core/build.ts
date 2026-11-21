@@ -39,16 +39,22 @@ export function buildRacquet(spec: RacquetSpec): RacquetModel {
   const frame = buildFrame(spec, layout);
   applyPaint(frame, spec.paint);
 
-  // The grommets geometry has a `color` attribute exactly when the spec has o-ports. That
-  // attribute already holds grommet colour x port darkening, so the surface colour is white
-  // (a style multiplying base colour by vertex colour then gets the right result). Without it,
-  // the grommet colour comes from the surface.
+  // The grommets geometry has a `color` attribute when the spec has o-ports or the part follows
+  // the frame paint. That attribute already holds the final colour, so the surface colour is white
+  // (a style multiplying base colour by vertex colour then gets the right result). Without it, the
+  // part colour comes from the surface.
   const grommets = clean(buildGrommets(spec, layout));
   const grommetVertexColors = grommets.getAttribute('color') !== undefined;
+  const bumper = clean(buildBumper(spec, layout));
+  const bumperVertexColors = bumper.getAttribute('color') !== undefined;
 
   const parts: Part[] = [
     { name: 'frame', geometry: clean(frame), surface: { color: WHITE, finish: spec.paint.finish, vertexColors: true } },
-    solid('bumper', buildBumper(spec, layout), p.bumper.color, 'satin'),
+    {
+      name: 'bumper',
+      geometry: bumper,
+      surface: { color: bumperVertexColors ? WHITE : p.bumper.color, finish: 'satin', vertexColors: bumperVertexColors },
+    },
     {
       name: 'grommets',
       geometry: grommets,

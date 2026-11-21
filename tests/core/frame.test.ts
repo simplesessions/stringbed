@@ -1,6 +1,6 @@
 import { test, expect } from 'bun:test';
 import type * as THREE from 'three';
-import { armRings, beamThicknessAt, BRIDGE_U, bridgeRings, buildFrame, findJunction, frameContext, hoopRings, U_JUNCTION, U_SHAFT } from '../../src/core/frame';
+import { armRings, beamThicknessAt, BRIDGE_U, bridgeRings, buildFrame, findJunction, frameContext, hoopRings, SEAM_EPS, U_JUNCTION, U_SHAFT } from '../../src/core/frame';
 import { computeLayout } from '../../src/core/layout';
 import { headOutline } from '../../src/core/outline';
 import { HOOP_RADIAL } from '../../src/core/section';
@@ -154,7 +154,9 @@ test('junction rings carry U_JUNCTION, arms run down to U_SHAFT, the bridge carr
     expect(hoop[0].u).toBeCloseTo(1, 9);
     expect(hoop[hoop.length - 1].u).toBeCloseTo(U_JUNCTION, 9);
     const arm = armRings(ctx, hoop[hoop.length - 1]);
-    expect(arm[0].u).toBeLessThan(U_JUNCTION); expect(arm[arm.length - 1].u).toBeCloseTo(U_SHAFT, 9);
+    expect(arm[0].u).toBeLessThan(U_JUNCTION);
+    // The apex ring sits a seam offset past U_SHAFT so the paint edge at the fork is hard.
+    expect(arm[arm.length - 1].u).toBeCloseTo(U_SHAFT + SEAM_EPS, 9);
     const bridge = bridgeRings(ctx, fJ);
     for (const r of bridge) expect(r.u).toBe(BRIDGE_U);
     // the bridge starts and ends at the junctions

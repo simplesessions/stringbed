@@ -5,11 +5,14 @@ import {
   BOX_CORNER_SEGMENTS,
   findJunction,
   frameContext,
+  paintSeams,
   ROUND_SECTION_POINTS,
+  SEAM_EPS,
   U_JUNCTION,
   type FrameContext,
 } from './frame';
 import { hexToLinear } from './color';
+import { paintColorAt } from './paint';
 import type { Layout } from './layout';
 import type { Vec2 } from './outline';
 import { RawMesh } from './raw';
@@ -33,7 +36,7 @@ const FIN_FACE = 0.0008;
 /** Bumper spans +-60 degrees about the head centre (10 to 2 o'clock). */
 const BUMPER_HALF_ANGLE = Math.PI / 3;
 const BUMPER_GAPS_PER_SIDE = 14;
-const GROMMET_GAPS_PER_SIDE = 14;
+const GROMMET_GAPS_PER_SIDE = 12;
 /** Aero fins: angles from the tip on each side, and the half-width of a fin. */
 const FIN_ANGLES = [(15 * Math.PI) / 180, (35 * Math.PI) / 180, (55 * Math.PI) / 180];
 const FIN_HALF_WIDTH = 0.004; // metres along the rim
@@ -47,8 +50,9 @@ const PORT_PITCH = 0.037;
 const PORT_HALF_LENGTH = 0.0125;
 const PORT_HALF_HEIGHT_FRACTION = 0.76;
 const PORT_SEGMENTS = 10;
-/** Rings between the oval's centre and its edge; enough that chords stay within ~0.02 mm of the curved rim. */
-const PORT_RINGS = 3;
+/** Rings between the oval's centre and its edge. The port is a flat inset that follows the
+ * shell's curvature, so two rings keep it within ~0.1 mm of the surface while staying cheap. */
+const PORT_RINGS = 2;
 /** The grommet strip sits this far below GROMMET_OUT so the o-port insets show above it. */
 const PORT_LIFT = 0.00002;
 /**
@@ -113,11 +117,15 @@ function outerSection(spec: RacquetSpec, u: number, ex: number, ez: number): { p
 }
 
 /** Sweep an open strip over the outer rim through the given points; `infl` gives (ex, ez) per point. */
-function strip(m: RawMesh, spec: RacquetSpec, pts: RimPoint[], infl: [number, number][]): void {
+function strip(m: RawMesh, spec: RacquetSpec, pts: RimPoint[], infl: [number, number][], paint?: PaintFn): void {
   let prev: number[] | null = null;
   pts.forEach((p, k) => {
     const { points, centre } = outerSection(spec, p.u, infl[k][0], infl[k][1]);
     const row = points.map((s) => m.vertex(p.x + p.nx * (centre + s.x), p.y + p.ny * (centre + s.x), s.y));
+    if (paint) {
+      const c = paint(p.u);
+      for (let j = 0; j < row.length; j++) m.colour(c[0], c[1], c[2]);
+    }
     if (prev) {
       for (let j = 0; j + 1 < row.length; j++) {
         m.tri(prev[j], prev[j + 1], row[j]);
@@ -128,8 +136,41 @@ function strip(m: RawMesh, spec: RacquetSpec, pts: RimPoint[], infl: [number, nu
   });
 }
 
-function ringsBetween(ctx: FrameContext, f0: number, f1: number, gaps: number, side: 1 | -1, sJ: number): RimPoint[] {
-  return Array.from({ length: gaps + 1 }, (_, k) => rimAt(ctx, lerp(f0, f1, k / gaps), side, sJ));
+/** Frame-paint lookup for a trim strip whose spec says `paint: "frame"`. */
+type PaintFn = (u: number) => readonly number[];
+
+/** Fractional index of the inner outline at frame coordinate u (the inverse of rimAt's u). */
+function indexAtU(tc: TrimContext, u: number): number {
+  const target = ((1 - u) * tc.sJ) / (1 - U_JUNCTION);
+  const arc = tc.ctx.arc;
+  let lo = 0;
+  let hi = arc.length - 1;
+  while (hi - lo > 1) {
+    const mid = (lo + hi) >> 1;
+    if (arc[mid] <= target) lo = mid;
+    else hi = mid;
+  }
+  const span = arc[hi] - arc[lo];
+  return span > 0 ? lo + (target - arc[lo]) / span : lo;
+}
+
+/**
+ * Rings along the rim, plus a pair of rings at each paint-zone edge the path crosses. The pair
+ * sits at one point with u either side of the edge, so `paint` cannot blend across it: the trim's
+ * stripes break on the same hard line as the frame's.
+ */
+function ringsBetween(tc: TrimContext, f0: number, f1: number, gaps: number, side: 1 | -1, seams: number[] = []): RimPoint[] {
+  const fs = Array.from({ length: gaps + 1 }, (_, k) => lerp(f0, f1, k / gaps));
+  if (seams.length === 0) return fs.map((f) => rimAt(tc.ctx, f, side, tc.sJ));
+  const uAt = (f: number) => rimAt(tc.ctx, f, side, tc.sJ).u;
+  const lo = Math.min(uAt(f0), uAt(f1));
+  const hi = Math.max(uAt(f0), uAt(f1));
+  // A ring already on an edge would sit between the pair; the pair replaces it.
+  const kept = fs.filter((f) => !seams.some((s) => Math.abs(uAt(f) - s) <= 2 * SEAM_EPS));
+  const extra = seams
+    .filter((s) => s > lo + 2 * SEAM_EPS && s < hi - 2 * SEAM_EPS)
+    .flatMap((s) => [indexAtU(tc, s + SEAM_EPS), indexAtU(tc, s - SEAM_EPS)]);
+  return [...kept, ...extra].sort((a, b) => a - b).map((f) => rimAt(tc.ctx, f, side, tc.sJ));
 }
 
 interface TrimContext {
@@ -148,29 +189,36 @@ function trimContext(spec: RacquetSpec, layout: Layout): TrimContext {
 }
 
 /** A fin ridge across the rim at fractional index f: base, peak, base. */
-function fin(m: RawMesh, spec: RacquetSpec, tc: TrimContext, f: number, side: 1 | -1): void {
+function fin(m: RawMesh, spec: RacquetSpec, tc: TrimContext, f: number, side: 1 | -1, paint?: PaintFn): void {
   const half = FIN_HALF_WIDTH / (tc.ctx.arc[1] - tc.ctx.arc[0]); // outline samples are evenly spaced
   const fs = [f - half, f, f + half];
   const pts = fs.map((q) => rimAt(tc.ctx, Math.max(0, q), side, tc.sJ));
   // Keep the sweep clockwise: the left side runs up toward the tip.
   const infl: [number, number][] = [[BUMPER_OUT, BUMPER_FACE], [FIN_OUT, FIN_FACE], [BUMPER_OUT, BUMPER_FACE]];
-  if (side === 1) strip(m, spec, pts, infl);
-  else strip(m, spec, pts.reverse(), infl);
+  if (side === 1) strip(m, spec, pts, infl, paint);
+  else strip(m, spec, pts.reverse(), infl, paint);
+}
+
+/** The frame's paint as a strip colour, when a trim part declares `paint: "frame"`. */
+function trimPaint(spec: RacquetSpec, part: 'bumper' | 'grommets'): PaintFn | undefined {
+  return spec.parts[part].paint === 'frame' ? (u: number) => paintColorAt(spec.paint, u) : undefined;
 }
 
 /** Bumper over the top (10 to 2 o'clock), plus aero fins when the spec has them. */
 export function buildBumper(spec: RacquetSpec, layout: Layout): THREE.BufferGeometry {
   const tc = trimContext(spec, layout);
+  const paint = trimPaint(spec, 'bumper');
+  const seams = paint ? paintSeams(spec) : [];
   const m = new RawMesh();
-  const right = ringsBetween(tc.ctx, 0, tc.fB, BUMPER_GAPS_PER_SIDE, 1, tc.sJ);
-  const left = ringsBetween(tc.ctx, 0, tc.fB, BUMPER_GAPS_PER_SIDE, -1, tc.sJ).reverse();
+  const right = ringsBetween(tc, 0, tc.fB, BUMPER_GAPS_PER_SIDE, 1, seams);
+  const left = ringsBetween(tc, 0, tc.fB, BUMPER_GAPS_PER_SIDE, -1, seams).reverse();
   const path = [...left, ...right.slice(1)]; // clockwise: up the left, over the tip, down the right
-  strip(m, spec, path, path.map(() => [BUMPER_OUT, BUMPER_FACE]));
+  strip(m, spec, path, path.map(() => [BUMPER_OUT, BUMPER_FACE]), paint);
   if (spec.geometry.features.includes('aero-fins')) {
     for (const angle of FIN_ANGLES) {
       const f = indexAtAngle(tc.ctx, angle);
-      fin(m, spec, tc, f, 1);
-      fin(m, spec, tc, f, -1);
+      fin(m, spec, tc, f, 1, paint);
+      fin(m, spec, tc, f, -1, paint);
     }
   }
   return m.build();
@@ -223,16 +271,20 @@ function oPort(m: RawMesh, spec: RacquetSpec, tc: TrimContext, f: number): void 
  * Grommet strip: the outer rim from the bumper's end down to the throat junction, both sides.
  * With `o-ports` the geometry also carries a `color` attribute (linear RGB, itemSize 3): the
  * grommet colour on the strip and PORT_DARKEN x that on the flush oval insets down each side.
- * Without o-ports there is no `color` attribute. The build step must set `vertexColors: true` on
- * the grommets material exactly when the attribute exists.
+ * With `paint: "frame"` on the part, the strip instead carries the frame's paint (zones included),
+ * so stripes wrap over the rim; the insets keep the darkened grommet colour. Otherwise there is no
+ * `color` attribute. The build step must set `vertexColors: true` on the grommets material exactly
+ * when the attribute exists.
  */
 export function buildGrommets(spec: RacquetSpec, layout: Layout): THREE.BufferGeometry {
   const tc = trimContext(spec, layout);
+  const paint = trimPaint(spec, 'grommets');
+  const seams = paint ? paintSeams(spec) : [];
   const m = new RawMesh();
   const fEnd = Math.floor(tc.fJ);
   const flat: [number, number][] = Array.from({ length: GROMMET_GAPS_PER_SIDE + 1 }, () => [GROMMET_OUT - PORT_LIFT, GROMMET_FACE - PORT_LIFT]);
-  strip(m, spec, ringsBetween(tc.ctx, tc.fB, fEnd, GROMMET_GAPS_PER_SIDE, 1, tc.sJ), flat);
-  strip(m, spec, ringsBetween(tc.ctx, tc.fB, fEnd, GROMMET_GAPS_PER_SIDE, -1, tc.sJ).reverse(), flat);
+  strip(m, spec, ringsBetween(tc, tc.fB, fEnd, GROMMET_GAPS_PER_SIDE, 1, seams), flat, paint);
+  strip(m, spec, ringsBetween(tc, tc.fB, fEnd, GROMMET_GAPS_PER_SIDE, -1, seams).reverse(), flat, paint);
   const stripVerts = m.vertexCount;
   if (!spec.geometry.features.includes('o-ports')) return m.build();
   const ports = new RawMesh();
@@ -250,12 +302,17 @@ export function buildGrommets(spec: RacquetSpec, layout: Layout): THREE.BufferGe
   for (let k = 0; k < PORTS_PER_SIDE; k++) oPort(ports, spec, tc, first + k * pitch);
   ports.appendMirrorX();
   m.append(ports);
-  const g = m.build();
+  // The o-port insets carry no frame paint: they are the grommet colour, darkened.
   const base = hexToLinear(spec.parts.grommets.color);
-  const colors: number[] = [];
-  for (let i = 0; i < m.vertexCount; i++) colors.push(...base.map((v) => (i < stripVerts ? v : v * PORT_DARKEN)));
-  g.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
-  return g;
+  if (paint) {
+    for (let i = stripVerts; i < m.vertexCount; i++) m.colour(base[0] * PORT_DARKEN, base[1] * PORT_DARKEN, base[2] * PORT_DARKEN);
+  } else {
+    for (let i = 0; i < m.vertexCount; i++) {
+      const k = i < stripVerts ? 1 : PORT_DARKEN;
+      m.colour(base[0] * k, base[1] * k, base[2] * k);
+    }
+  }
+  return m.build();
 }
 
 const DAMPENER_WIDTH = 0.011;

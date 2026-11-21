@@ -1,7 +1,7 @@
 import { test, expect } from 'bun:test';
 import type * as THREE from 'three';
 import { BufferGeometry, Float32BufferAttribute } from 'three';
-import { buildFrame } from '../../src/core/frame';
+import { buildFrame, SEAM_EPS } from '../../src/core/frame';
 import { computeLayout } from '../../src/core/layout';
 import { applyPaint, hexToLinear, paintColorAt, zonedAt } from '../../src/core/paint';
 import { HOOP_RADIAL } from '../../src/core/section';
@@ -99,4 +99,62 @@ test('camo streaks run across the racquet: the pattern changes faster along y th
 test('applyPaint explains a frame missing u', () => {
   const g = frameOf(spec); g.deleteAttribute('u');
   expect(() => applyPaint(g, camoPaint)).toThrow(/"u"/);
+});
+test('every interior paint-zone edge gets its two seam rings', () => {
+  const round = (v: number) => Math.round(v * 1e6) / 1e6;
+  for (const s of loadAllSpecs()) {
+    const u = frameOf(s).getAttribute('u');
+    const values = new Set<number>();
+    for (let i = 0; i < u.count; i++) values.add(round(u.getX(i)));
+    for (const z of s.paint.zones) {
+      for (const b of [z.from, z.to]) {
+        if (b <= 0 || b >= 1) continue;
+        expect(values.has(round(b - SEAM_EPS)), `${s.id} below ${b}`).toBe(true);
+        expect(values.has(round(b + SEAM_EPS)), `${s.id} above ${b}`).toBe(true);
+      }
+    }
+  }
+});
+test('a seam is a hard edge: coincident vertices carry the two colours', () => {
+  const s = makeSpec({ paint: { base: '#ffffff', finish: 'matte', zones: [{ from: 0.5, to: 0.9, color: '#000000' }] } });
+  const f = frameOf(s);
+  applyPaint(f, s.paint);
+  const pos = f.getAttribute('position'), u = f.getAttribute('u'), c = f.getAttribute('color');
+  const at = new Map<string, number[]>();
+  for (let i = 0; i < pos.count; i++) {
+    const k = `${pos.getX(i)},${pos.getY(i)},${pos.getZ(i)}`;
+    const list = at.get(k);
+    if (list) list.push(i); else at.set(k, [i]);
+  }
+  let pairs = 0;
+  for (const ids of at.values()) {
+    if (ids.length < 2) continue;
+    const [i, j] = ids;
+    const lo = Math.min(u.getX(i), u.getX(j));
+    const hi = Math.max(u.getX(i), u.getX(j));
+    if (hi - lo > 1e-3 || !(lo < 0.5 && hi > 0.5)) continue;
+    // Each copy is pure base or pure zone, on opposite sides of the edge.
+    expect(Math.abs(c.getX(i) - c.getX(j))).toBeGreaterThan(0.9);
+    expect([0, 1]).toContain(Math.round(c.getX(i)));
+    expect([0, 1]).toContain(Math.round(c.getX(j)));
+    pairs++;
+  }
+  expect(pairs).toBeGreaterThan(10);
+});
+test('a zone edge at the throat fork is hard between the arm and the shaft', () => {
+  const s = makeSpec({ paint: { base: '#ffffff', finish: 'matte', zones: [{ from: 0.12, to: 0.35, color: '#000000' }] } });
+  const f = frameOf(s);
+  applyPaint(f, s.paint);
+  const u = f.getAttribute('u'), y = f.getAttribute('position'), c = f.getAttribute('color');
+  // The shaft's top ring and the arms' apex ring sit at the same height, on opposite sides.
+  let apexY = -Infinity;
+  for (let i = 0; i < y.count; i++) if (Math.abs(u.getX(i) - 0.12) < 1e-3) apexY = Math.max(apexY, y.getY(i));
+  const black: number[] = [], white: number[] = [];
+  for (let i = 0; i < u.count; i++) {
+    if (Math.abs(u.getX(i) - 0.12) > 1e-3 || Math.abs(y.getY(i) - apexY) > 1e-4) continue;
+    (c.getX(i) > 0.5 ? white : black).push(u.getX(i));
+  }
+  expect(black.length).toBeGreaterThan(0); expect(white.length).toBeGreaterThan(0);
+  expect(Math.min(...white)).toBeLessThan(0.12); // the shaft side is inside the zone
+  expect(Math.max(...black)).toBeGreaterThan(0.12); // the arm side is outside it
 });

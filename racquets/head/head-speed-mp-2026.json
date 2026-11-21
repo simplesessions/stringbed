@@ -39,15 +39,13 @@
     "zones": [
       {
         "from": 0,
-        "to": 0.06,
-        "color": "#f1f1ec",
-        "blend": 0.02
+        "to": 0.155,
+        "color": "#f1f1ec"
       },
       {
-        "from": 0.48,
+        "from": 0.55,
         "to": 0.88,
-        "color": "#f1f1ec",
-        "blend": 0.015
+        "color": "#f1f1ec"
       }
     ]
   },
@@ -76,7 +74,8 @@
   "sources": [
     "https://www.tennis-warehouse.com/Head_Speed_MP_2026/descpageRCHEAD-HSPMP6.html",
     "https://www.tennis-warehouse.com/learning_center/racquet_reviews/HSPMP6review.html",
-    "https://www.head.com/en_US/product/speed-mp-2026-232026"
+    "https://www.head.com/en_US/product/speed-mp-2026-232026",
+    "https://www.midwestracquetsports.com/head-speed-mp-2026-tennis-racquet-black-white/p/232026/"
   ],
   "verified": true
 }

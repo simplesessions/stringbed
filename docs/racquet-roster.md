@@ -75,7 +75,7 @@ with white hoop-side panels and a white grip. No logos or "SPEED" wordmark.
 
 | Model | Head | Pattern | Beam | Cross-section | Colourway | Identity cues | Trust |
 |---|---|---|---|---|---|---|---|
-| Speed MP (2026) | 100 | 16×19 | 23 / 23 / 23 | ellipse | Charcoal, almost black, with broad white panels on the mid-to-upper hoop sides and a white band at the bottom of the shaft; **white grip** and white collar | Constant 23 mm rounded beam; rounded 100 sq in head; white side panels are the fastest cue | Specs verified 2026-11-20 (TW page and review); colourway checked against product photos 2026-11-20 (TW HSPMP6, five views) |
+| Speed MP (2026) | 100 | 16×19 | 23 / 23 / 23 | ellipse | Charcoal, almost black, with white panels on the upper hoop sides and a white lower shaft that runs all the way to the throat fork, its edge cutting diagonally across the bottom of each arm; **white grip** and white collar | Constant 23 mm rounded beam; rounded 100 sq in head; white side panels and the white fork are the fastest cues | Specs verified 2026-11-20 (TW page and review); colourway checked against product photos 2026-11-20 (TW HSPMP6 and Midwest 232026, six views) |
 
 With the Speed MP added, the library has **15** racquets.
 
