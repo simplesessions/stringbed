@@ -32,6 +32,7 @@ import {
   membersOf,
   brandRoute,
   parseBrandRoute,
+  parseShelfRoute,
 } from '../../site/src/catalog-view';
 
 const catalog: Catalog = JSON.parse(readFileSync(join(__dirname, '../../assets/catalog.json'), 'utf8'));
@@ -210,4 +211,11 @@ test('shop floor: aisles, shelves and members', () => {
   expect(shelves.find((s) => s.lineage === 'babolat-pure-aero-rafa')?.name).toBe('Pure Aero Rafa');
   expect(parseBrandRoute(brandRoute('Babolat'), ['Babolat', 'Head'])).toBe('Babolat');
   expect(parseBrandRoute('#/babolat-pure-aero-100', ['Babolat'])).toBeNull();
+});
+
+test('brand routes can point at a line', () => {
+  expect(brandRoute('Babolat', 'babolat-pure-aero')).toBe('#/b/babolat/babolat-pure-aero');
+  expect(parseBrandRoute('#/b/babolat/babolat-pure-aero', ['Babolat'])).toBe('Babolat');
+  expect(parseShelfRoute('#/b/babolat/babolat-pure-aero')).toBe('babolat-pure-aero');
+  expect(parseShelfRoute('#/b/babolat')).toBeNull();
 });

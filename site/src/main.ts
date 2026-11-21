@@ -19,6 +19,7 @@ import {
   brandRoute,
   brandSlug,
   parseBrandRoute,
+  parseShelfRoute,
   type Aisle,
   type Shelf,
   isJunior,
@@ -415,15 +416,16 @@ function brandFloor(a: App, brand: string): HTMLElement[] {
     x
       ? el('p', { class: 'floor-tally' }, `${x.lines} ${x.lines === 1 ? 'line' : 'lines'} · ${x.racquets} racquets${x.colourways ? ` · ${x.colourways} colourways` : ''}`)
       : null,
-    shelves.length > 1
-      ? el('nav', { class: 'floor-index', 'aria-label': `${brand} lines` },
-          ...shelves.map((sh) => el('a', { href: `#shelf-${sh.lineage}`, 'data-shelf': sh.lineage }, sh.name)))
-      : null,
   );
+  // Outside the header, so it can stay pinned for the whole floor, not just the header's height.
+  const index = shelves.length > 1
+    ? el('nav', { class: 'floor-index', 'aria-label': `${brand} lines` },
+        ...shelves.map((sh) => el('a', { href: brandRoute(brand, sh.lineage), 'data-shelf': sh.lineage }, sh.name)))
+    : null;
   const empty = shelves.length
     ? null
     : el('p', { class: 'floor-empty' }, `No ${a.age === 'all' ? '' : `${a.age} `}${brand} racquets have a 3D model yet.`);
-  return [head, ...(empty ? [empty] : []), ...shelves.map((sh) => shelf(a, sh)), ...stockList(a)];
+  return [head, ...(index ? [index] : []), ...(empty ? [empty] : []), ...shelves.map((sh) => shelf(a, sh)), ...stockList(a)];
 }
 
 function shelf(a: App, sh: Shelf): HTMLElement {
@@ -547,6 +549,19 @@ function watch(thumbs: Thumbnails, item: HTMLElement, link: HTMLElement, canvas:
 
 let routed = false;
 
+/** Bring a line's shelf into view (under the sticky line index) and focus its heading. */
+function scrollToShelf(lineage: string | null, smooth: boolean) {
+  const shelfEl = lineage ? document.getElementById(`shelf-${lineage}`) : null;
+  if (!shelfEl) return;
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  shelfEl.scrollIntoView({ block: 'start', behavior: smooth && !reduce ? 'smooth' : 'auto' });
+  const name = shelfEl.querySelector<HTMLElement>('.shelf-name');
+  if (name) {
+    name.tabIndex = -1;
+    name.focus({ preventScroll: true });
+  }
+}
+
 function route() {
   if (!app || !ready) return;
   const a = app;
@@ -556,6 +571,15 @@ function route() {
   const p = racquetId && !r ? a.stockOrder.find((x) => x.id === racquetId) : undefined;
   const missing = racquetId && !r && !p ? `There is no racquet with the id “${racquetId}”. Here are the brands.` : '';
   notice.textContent = [missing, baseNotice].filter(Boolean).join(' ');
+  const shelfId = brand ? parseShelfRoute(location.hash) : null;
+  const sameFloor = !r && !p && !wall.hidden && a.brand === brand && wall.dataset.floor === (brand ? 'brand' : 'home');
+  if (sameFloor) {
+    // Only the shelf changed (the line index): scroll to it, no page transition.
+    markSigns(a);
+    scrollToShelf(shelfId, true);
+    routed = true;
+    return;
+  }
   const change = () => {
     if (r || p) detail.dataset.brand = (r ?? p)!.brand;
     if (r) showDetail(a, r, colourway);
@@ -567,7 +591,8 @@ function route() {
         renderFloor(a);
       }
       showWall(a);
-      if (floorChanged && !a.lastOpened) window.scrollTo(0, 0);
+      if (shelfId) scrollToShelf(shelfId, false);
+      else if (floorChanged && !a.lastOpened) window.scrollTo(0, 0);
       document.title = brand ? `${brand} · ${baseTitle.split(':')[0]}` : baseTitle;
     }
     markSigns(a);

@@ -264,15 +264,22 @@ export function brandSlug(brand: string): string {
   return brand.toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 }
 
-/** "#/b/<brand>" opens a brand's floor. */
-export function brandRoute(brand: string): string {
-  return `#/b/${brandSlug(brand)}`;
+/** "#/b/<brand>" opens a brand's floor; "#/b/<brand>/<lineage>" opens it at that line's shelf. */
+export function brandRoute(brand: string, lineage?: string | null): string {
+  return lineage ? `#/b/${brandSlug(brand)}/${lineage}` : `#/b/${brandSlug(brand)}`;
 }
 
-/** The brand a "#/b/<slug>" hash names, if any. */
+const BRAND_ROUTE = /^#\/b\/([a-z0-9-]+)(?:\/([a-z0-9-]+))?\/?$/;
+
+/** The brand a "#/b/<slug>[/<lineage>]" hash names, if any. */
 export function parseBrandRoute(hash: string, brands: readonly string[]): string | null {
-  const m = /^#\/b\/([a-z0-9-]+)\/?$/.exec(hash);
+  const m = BRAND_ROUTE.exec(hash);
   return m ? brands.find((b) => brandSlug(b) === m[1]) ?? null : null;
+}
+
+/** The line (lineage) a brand-floor hash points at, if any. */
+export function parseShelfRoute(hash: string): string | null {
+  return BRAND_ROUTE.exec(hash)?.[2] ?? null;
 }
 
 /** A family and its variants as full entries, base first, limited to one size. */

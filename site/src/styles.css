@@ -187,8 +187,10 @@ main { flex: 1; padding: 6px var(--pad) 72px; }
   height: var(--fan-h);
   transform-origin: 50% 96%;
   transform: rotate(var(--a));
-  transition: transform 0.7s var(--ease-out);
-  animation: fan-open 0.9s var(--ease-out) both;
+  transition: transform 0.9s cubic-bezier(0.22, 0.8, 0.24, 1);
+  /* backwards, not both: once the fan has opened, the animation lets go of transform so hover
+     transitions run instead of snapping. */
+  animation: fan-open 0.9s var(--ease-out) backwards;
   animation-delay: calc(var(--n, 0) * 70ms + 120ms);
 }
 .blade .bay-stage { height: 100%; }
@@ -197,7 +199,7 @@ main { flex: 1; padding: 6px var(--pad) 72px; }
 .blade[data-state='ready'] .bay-canvas { opacity: 1; }
 .blade[data-state='ready'] .silhouette { opacity: 0; }
 .aisle-link:hover .blade, .aisle-link:focus-visible .blade {
-  transform: rotate(calc(var(--a) * 1.4)) translateY(calc(-6px - (2 - var(--i) * var(--i) / 2) * 3px));
+  transform: rotate(calc(var(--a) * 1.4)) translateY(-6px);
 }
 @keyframes fan-open { from { transform: rotate(0deg); } }
 .aisle-rail { position: relative; display: block; height: 3px; margin-top: -2px; background: var(--rail); }
@@ -374,8 +376,8 @@ main { flex: 1; padding: 6px var(--pad) 72px; }
 .bay-fault .bay-retry { background: var(--wall); }
 .bay-fault .bay-retry:hover { background: var(--ink); }
 
-/* The brand signs belong to the wall; in a detail view they would only be noise. */
-body[data-view='detail'] .signs { display: none; }
+/* The header is the same on every page (the brand signs are the site's directory), so view
+   transitions can hold it still instead of swapping one header for another. */
 
 /* ---------- buttons ---------- */
 
@@ -865,6 +867,9 @@ body[data-view='detail'] .signs { display: none; }
 /* The header strip holds still while the floor changes under it. */
 .strip { view-transition-name: strip; }
 ::view-transition-group(*) { animation-duration: 0.55s; animation-timing-function: var(--ease-out); }
+/* No cross-fade for the header: the new one is already in place, so show it straight away. */
+::view-transition-old(strip) { display: none; }
+::view-transition-new(strip) { animation: none; }
 ::view-transition-old(root) { animation: 0.32s var(--ease-out) both vt-leave; }
 ::view-transition-new(root) { animation: 0.5s var(--ease-out) both vt-arrive; }
 @keyframes vt-leave { to { opacity: 0; transform: translateY(-10px) scale(0.99); filter: blur(3px); } }
