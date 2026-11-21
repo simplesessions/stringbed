@@ -1685,7 +1685,7 @@
         ],
         "unstrungWeightG": 300
       },
-      "swatch": "#4a5258",
+      "swatch": "#2f3539",
       "parts": [
         "frame",
         "bumper",
@@ -1699,8 +1699,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-aero-100-2022.glb",
-          "bytes": 121012,
-          "triangles": 4628
+          "bytes": 126604,
+          "triangles": 4884
         }
       },
       "lineage": "babolat-pure-aero",
@@ -2139,7 +2139,7 @@
         ],
         "unstrungWeightG": 270
       },
-      "swatch": "#4a5258",
+      "swatch": "#2f3539",
       "parts": [
         "frame",
         "bumper",
@@ -2153,8 +2153,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-aero-lite-2022.glb",
-          "bytes": 121012,
-          "triangles": 4628
+          "bytes": 126608,
+          "triangles": 4884
         }
       },
       "lineage": "babolat-pure-aero",
@@ -2266,7 +2266,7 @@
           23
         ]
       },
-      "swatch": "#4a5258",
+      "swatch": "#2f3539",
       "parts": [
         "frame",
         "bumper",
@@ -2280,8 +2280,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-aero-plus-2023gen.glb",
-          "bytes": 121012,
-          "triangles": 4628
+          "bytes": 126608,
+          "triangles": 4884
         }
       },
       "lineage": "babolat-pure-aero",
@@ -2736,7 +2736,7 @@
           23
         ]
       },
-      "swatch": "#4a5258",
+      "swatch": "#2f3539",
       "parts": [
         "frame",
         "bumper",
@@ -2750,8 +2750,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/babolat-pure-aero-team-2022.glb",
-          "bytes": 121012,
-          "triangles": 4628
+          "bytes": 126608,
+          "triangles": 4884
         }
       },
       "lineage": "babolat-pure-aero",
@@ -14573,7 +14573,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-pure-aero-100-2022.glb",
-      "bytes": 121012
+      "bytes": 126604
     },
     {
       "id": "babolat-pure-aero-98-2023",
@@ -14723,7 +14723,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-pure-aero-lite-2022.glb",
-      "bytes": 121012
+      "bytes": 126608
     },
     {
       "id": "babolat-pure-aero-lite-2026",
@@ -14768,7 +14768,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/babolat-pure-aero-plus-2023gen.glb",
-      "bytes": 121012
+      "bytes": 126608
     },
     {
       "id": "babolat-pure-aero-plus-2026",
@@ -14918,7 +14918,7 @@
       "colourwayName": "Grey/Yellow",
       "style": "realistic",
       "path": "realistic/babolat-pure-aero-team-2022.glb",
-      "bytes": 121012
+      "bytes": 126608
     },
     {
       "id": "babolat-pure-aero-team-2026",

@@ -34,41 +34,49 @@
     "features": []
   },
   "paint": {
-    "base": "#4a5258",
+    "base": "#2f3539",
     "finish": "gloss",
     "zones": [
       {
-        "from": 0.36,
+        "from": 0.33,
         "to": 0.415,
-        "color": "#d6ee2c"
+        "color": "#e8e8e4"
       },
       {
         "from": 0.44,
         "to": 0.56,
         "color": "#d6ee2c"
+      },
+      {
+        "from": 0.34,
+        "to": 0.62,
+        "color": "#1d2124",
+        "faces": [
+          "inner"
+        ]
       }
     ]
   },
   "parts": {
     "grip": {
-      "color": "#ececec"
+      "color": "#1e1e1e"
     },
     "collar": {
-      "color": "#3a4449"
+      "color": "#2a3034"
     },
     "buttCap": {
-      "color": "#ececec"
+      "color": "#1e1e1e"
     },
     "strings": {
       "color": "#f2f2f2",
       "gaugeMm": 1.25
     },
     "grommets": {
-      "color": "#3a4449",
+      "color": "#1d2124",
       "channel": 0.45
     },
     "bumper": {
-      "color": "#3a4449"
+      "color": "#1d2124"
     },
     "dampener": null
   },
