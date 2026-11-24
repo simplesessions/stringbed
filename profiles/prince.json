@@ -1,0 +1,104 @@
+[
+  {
+    "id": "prince-o3-phantom-100x",
+    "summary": "A plush control frame for players who like to shape points with touch. Testers praised the comfort, precision and drop-volley feel, and the O-Ports soften impact well. The price is free power: several had to swing harder, some found the feel muted, and spin on defensive lobs came less easily. It reads as a modest update to earlier Phantoms, with slightly more punch, rather than a reinvention.",
+    "bestFor": ["control", "comfort", "touch", "net-play"],
+    "playerLevel": ["intermediate", "advanced"],
+    "playStyle": "controlled all-court shotmaker",
+    "feel": "plush and muted",
+    "ratings": { "power": 2, "spin": 3, "control": 5, "comfort": 5, "stability": 4, "maneuverability": 3, "feel": 4 },
+    "compared": ["prince-phantom-100x-305g-2024", "prince-tour-100-290g", "prince-ats-textreme-tour-98-carbon"],
+    "released": "2025",
+    "confidence": "medium",
+    "sources": [
+      "https://www.tennis-warehouse.com/learning_center/racquet_reviews/PO310Xreview.html",
+      "https://www.tennis-warehouse.com/Prince_O3_Phantom_100X/descpage-PO310X.html"
+    ],
+    "researchedOn": "2026-11-23"
+  },
+  {
+    "id": "prince-tour-100-290g",
+    "summary": "The light, quick member of Prince's reborn Tour family. Testers liked the connected, classic feel, easy topspin and good control for the weight. It is not a heavy-hitter's tool: power is modest, and it can get pushed around by bigger hitters unless you add lead. Suits intermediates who want a manoeuvrable 100, and stronger players who want a platform to customise.",
+    "bestFor": ["maneuverability", "feel", "control", "spin"],
+    "playerLevel": ["intermediate", "advanced"],
+    "playStyle": "compact-swing all-courter",
+    "feel": "connected and classic",
+    "ratings": { "power": 2, "spin": 4, "control": 4, "comfort": 4, "stability": 2, "maneuverability": 5, "feel": 4 },
+    "compared": ["prince-ats-textreme-tour-98-carbon", "prince-o3-phantom-100x", "wilson-blade-98-v10"],
+    "variantNotes": {
+      "98": "The most demanding Tour, connected feel with controlled power; one reviewer's pick for advanced players.",
+      "100 310g": "Most stable and spin-friendly of the family, but needs quicker hands at net.",
+      "100P": "Tighter, lower launch for flat hitters.",
+      "100 275g": "Lightest option, an easy-swing starting point."
+    },
+    "released": "2026",
+    "confidence": "medium",
+    "sources": [
+      "https://www.tennis-warehouse.com/learning_center/racquet_reviews/PTR629review.html",
+      "https://www.tennisnerd.net/gear/racquets/racquet-reviews/prince-tour-2026-racquet-review-the-return-of-a-classic/65936"
+    ],
+    "researchedOn": "2026-11-23"
+  },
+  {
+    "id": "prince-ripstick-100",
+    "summary": "A power-and-spin frame that is also easy on the arm. Playtesters found it stable, deep-hitting and spin-friendly, with O-Ports keeping a poly string bed comfortable. The costs are a muted feel, a slow-feeling swing in the 300g stock form and control that lags behind the power, so it can overhit. Suits intermediate to advanced baseliners who want free pace. Note the detailed review found was of an earlier version.",
+    "bestFor": ["power", "spin", "stability", "comfort"],
+    "playerLevel": ["intermediate", "advanced"],
+    "playStyle": "heavy-topspin baseliner",
+    "feel": "muted and solid",
+    "ratings": { "power": 5, "spin": 5, "control": 3, "comfort": 4, "stability": 4, "maneuverability": 2, "feel": 2 },
+    "compared": ["babolat-pure-aero-100", "head-graphene-360-extreme-mp", "prince-warrior-100-300g-2025"],
+    "variantNotes": {
+      "100 280g": "Lighter and faster, aimed at intermediates.",
+      "98": "Smaller head, more control, less free power."
+    },
+    "released": "2025",
+    "confidence": "low",
+    "sources": [
+      "https://www.tennis-warehouse.com/learning_center/racquet_reviews/PRIPSreview.html",
+      "https://www.tennis-warehouse.com/Prince_Ripstick_100_300g/descpage-25RIPH.html"
+    ],
+    "researchedOn": "2026-11-23"
+  },
+  {
+    "id": "prince-ats-textreme-tour-98-carbon",
+    "summary": "A stable, spin-friendly 98 that stays easy to swing. Playtesters rated it highly for directional control, depth and volleys, with plush but communicative feel. Power is moderate rather than generous, and drop shots and touch volleys are easy to overhit. Best for intermediate to advanced baseliners or all-courters with a modern, spin-led game. The Carbon version shares the specs of the standard one; the main review found was of that original.",
+    "bestFor": ["control", "spin", "stability", "all-court"],
+    "playerLevel": ["intermediate", "advanced"],
+    "playStyle": "spin-oriented all-court baseliner",
+    "feel": "plush yet responsive",
+    "ratings": { "power": 3, "spin": 4, "control": 5, "comfort": 4, "stability": 4, "maneuverability": 4, "feel": 4 },
+    "compared": ["prince-tour-100-290g", "prince-o3-phantom-100x", "wilson-blade-98-v10"],
+    "variantNotes": {
+      "100 290": "Lighter 100 sq in sibling with a 16x18 pattern.",
+      "98 White": "The original colourway reviewed by playtesters."
+    },
+    "released": "2025",
+    "confidence": "medium",
+    "sources": [
+      "https://www.tennis-warehouse.com/learning_center/racquet_reviews/PTC98review.html",
+      "https://www.tennis-warehouse.com/Prince_ATS_Textreme_Tour_98_Carbon/descpage-PTC98.html"
+    ],
+    "researchedOn": "2026-11-23"
+  },
+  {
+    "id": "prince-ripcord-100-280g-2025",
+    "summary": "A budget-minded, light and fast frame for rising intermediates who want easy spin. The 2025 update stiffens the beam and adds anti-torque reinforcement for steadier off-centre hits. The trade-off is stability: lighter weight means stronger hitters will want lead tape, and one buyer found it slightly less powerful than before. Independent reviews are scarce, so this rests on retailer descriptions and a handful of user ratings.",
+    "bestFor": ["spin", "maneuverability", "forgiveness"],
+    "playerLevel": ["beginner", "intermediate"],
+    "playStyle": "developing topspin baseliner",
+    "feel": "light and lively",
+    "ratings": { "power": 3, "spin": 4, "control": 3, "comfort": 3, "stability": 2, "maneuverability": 5, "feel": 3 },
+    "compared": ["prince-ripstick-100", "babolat-evo-drive-2025", "prince-warrior-100-300g-2025"],
+    "variantNotes": {
+      "100 300g": "Heavier, steadier version for stronger hitters.",
+      "100 265g": "Lightest option, suits smaller or newer players."
+    },
+    "released": "2025",
+    "confidence": "low",
+    "sources": [
+      "https://www.tennis-warehouse.com/Prince_Ripcord_100_280g/descpage-RPCDM.html"
+    ],
+    "researchedOn": "2026-11-23"
+  }
+]

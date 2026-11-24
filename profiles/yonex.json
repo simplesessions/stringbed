@@ -1,0 +1,69 @@
+[
+  {
+    "id": "yonex-ezone-100",
+    "summary": "The all-rounder of the Yonex line: easy depth, a plush and arm-friendly response, and enough pop that a compact swing still gets the ball deep. It suits intermediate to advanced baseliners and returning players who like a forgiving frame. The trade-off is control on aggressive swings, where the power can send balls long, and a dampened feel that some find muted. Spin is good, but the VCORE is the spinnier Yonex.",
+    "bestFor": ["power", "comfort", "forgiveness", "groundstrokes"],
+    "playerLevel": ["intermediate", "advanced"],
+    "playStyle": "aggressive all-court baseliner",
+    "feel": "plush and softly dampened",
+    "ratings": { "power": 4, "spin": 4, "control": 3, "comfort": 4, "stability": 4, "maneuverability": 4, "feel": 3 },
+    "compared": ["yonex-vcore-100", "wilson-ultra-100-v5-2025", "babolat-pure-drive-100"],
+    "variantNotes": {
+      "98": "Smaller head for more control, less free power.",
+      "100L": "Lighter and easier to swing, for players who want less mass.",
+      "100 Plus": "Extra length for leverage and reach, a little harder to time.",
+      "110": "More forgiveness and power for those who want maximum help."
+    },
+    "released": "2025-01",
+    "confidence": "high",
+    "sources": [
+      "https://www.tennis-warehouse.com/learning_center/racquet_reviews/EZ10BBreview.html",
+      "https://tennisgearguide.co.uk/yonex-ezone-2025-review/"
+    ],
+    "researchedOn": "2026-11-23"
+  },
+  {
+    "id": "yonex-vcore-100",
+    "summary": "The most forgiving and power-assisted frame in the VCORE family, built for players who shape the ball with spin and want a more stable base than earlier generations gave. It suits intermediates stepping up and advanced players who want some help. The trade-offs: this is a refinement of the previous model rather than a leap, reviewers found it a little less whippy and comfortable, and its spin is not the best in the 100 class.",
+    "bestFor": ["spin", "stability", "forgiveness", "groundstrokes"],
+    "playerLevel": ["intermediate", "advanced"],
+    "playStyle": "topspin baseliner",
+    "feel": "solid and connected, slightly firm on mishits",
+    "ratings": { "power": 4, "spin": 4, "control": 3, "comfort": 3, "stability": 4, "maneuverability": 3, "feel": 3 },
+    "compared": ["yonex-ezone-100", "babolat-pure-aero-100"],
+    "variantNotes": {
+      "100L": "Lower swingweight for a quicker, lighter swing.",
+      "100D": "Denser 16x20 pattern and more weight for flatter, more controlled hitting.",
+      "98": "Smaller head with more precision and less forgiveness."
+    },
+    "released": "2026-01",
+    "confidence": "low",
+    "sources": [
+      "https://www.tennisnerd.net/gear/racquets/yonex-vcore-2026-review/62233",
+      "https://tennisgearguide.co.uk/yonex-vcore-2026-review/"
+    ],
+    "researchedOn": "2026-11-23"
+  },
+  {
+    "id": "yonex-muse-100-2026",
+    "summary": "A comfort-first frame with a flexible, plush response and a light swing, aimed at rising intermediates and players who want something kind to the arm. The 16x18 pattern gives usable spin and net clearance, and off-centre hits stay stable. The trade-off is power: it is low to medium, and heavier hitters or competitive players may find it light on penetration. One reviewer preferred the Wilson Clash 100 for power and comfort.",
+    "bestFor": ["comfort", "maneuverability", "forgiveness", "feel"],
+    "playerLevel": ["beginner", "intermediate"],
+    "playStyle": "easygoing all-court player",
+    "feel": "soft, flexible and plush",
+    "ratings": { "power": 2, "spin": 3, "control": 3, "comfort": 5, "stability": 3, "maneuverability": 4, "feel": 4 },
+    "compared": ["wilson-clash-100-v3", "yonex-ezone-100"],
+    "variantNotes": {
+      "100L": "Lighter and easier to swing, best for newer players.",
+      "98": "Smaller head, even more flex, less power.",
+      "107": "Larger head for extra forgiveness."
+    },
+    "released": "2026-01",
+    "confidence": "medium",
+    "sources": [
+      "https://www.tennis-warehouse.com/Yonex_Muse_100/descpageRCYONEX-YMUS10.html",
+      "https://www.tennisnerd.net/?p=68498"
+    ],
+    "researchedOn": "2026-11-23"
+  }
+]

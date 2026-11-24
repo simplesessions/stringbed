@@ -126,8 +126,50 @@ export interface StockGroup {
   brand: string;
   /** Newest sale year first; within a year, newest release first, then model. */
   years: Array<{ year: number; items: Placeholder[] }>;
+  /** The same racquets gathered by product line, so 100 / 98 / Team / Lite sit together. */
+  families: Family[];
   count: number;
 }
+export interface Family {
+  line: string;
+  variants: Array<{ item: Placeholder; label: string }>;
+}
+
+/** "Pure Aero 98 16x19" in the Pure Aero line is the "98 16x19" variant; the line itself is "Standard". */
+export function variantLabel(model: string, line: string): string {
+  const m = model.trim();
+  if (m.toLowerCase() === line.toLowerCase()) return 'Standard';
+  const rest = m.toLowerCase().startsWith(line.toLowerCase() + ' ') ? m.slice(line.length + 1) : m;
+  return rest.replace(/\s+Junior\s+/i, ' ').trim() || m;
+}
+
+/** Lines with the most variants first, then newest; variants in natural order (98 before 100, Lite after). */
+export function groupFamilies(items: Placeholder[]): Family[] {
+  const byLine = new Map<string, Placeholder[]>();
+  for (const p of items) byLine.set(p.line, [...(byLine.get(p.line) ?? []), p]);
+  const newest = (ps: Placeholder[]) => Math.max(...ps.map((p) => Math.max(...p.onSaleIn)));
+  return [...byLine.entries()]
+    .sort(([la, a], [lb, b]) => newest(b) - newest(a) || b.length - a.length || byText(la, lb))
+    .map(([line, ps]) => {
+      const labelled = ps.map((item) => ({ item, label: variantLabel(item.model, line) }));
+      // Identical labels are told apart by the first thing that differs: colourway, then year.
+      const groups = new Map<string, typeof labelled>();
+      for (const v of labelled) groups.set(v.label, [...(groups.get(v.label) ?? []), v]);
+      const variants = [...groups.values()]
+        .flatMap((vs) => {
+          if (vs.length === 1) return vs;
+          const distinct = (f: (p: Placeholder) => string | number | null | undefined) => new Set(vs.map((v) => f(v.item))).size === vs.length;
+          const tag = distinct((p) => p.colourway) ? (p: Placeholder) => p.colourway
+            : distinct((p) => p.releaseYear ?? Math.max(...p.onSaleIn)) ? (p: Placeholder) => p.releaseYear ?? Math.max(...p.onSaleIn)
+            : null;
+          return vs.map((v, i) => ({ ...v, label: `${v.label} · ${tag ? tag(v.item) : `#${i + 1}`}` }));
+        })
+        .sort((a, b) => a.label.localeCompare(b.label, 'en', { numeric: true }));
+      return { line, variants };
+    });
+}
+
+
 
 /** Which racquets to show by size. Juniors are frames shorter than 27 in. */
 export type Age = 'adult' | 'junior' | 'all';
@@ -153,7 +195,7 @@ export function groupPlaceholders(c: Catalog, age: Age = 'all'): StockGroup[] {
       year,
       items: byYear.get(year)!.sort((a, b) => (b.releaseYear ?? 0) - (a.releaseYear ?? 0) || byText(a.model, b.model)),
     }));
-    return { brand, years, count: years.reduce((n, y) => n + y.items.length, 0) };
+    return { brand, years, families: groupFamilies(years.flatMap((y) => y.items)), count: years.reduce((n, y) => n + y.items.length, 0) };
   });
 }
 
