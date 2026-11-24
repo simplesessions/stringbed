@@ -15,6 +15,9 @@
   --wall: oklch(0.885 0.006 80);
   --wall-2: oklch(0.845 0.007 80);
   --rail: oklch(0.76 0.008 80);
+  /* The detail stage's alcove: the same wall under a warm lamp. Matches the colours in alcove.ts. */
+  --niche: oklch(0.79 0.026 78);
+  --niche-lit: oklch(0.9 0.022 82);
   --ink: oklch(0.23 0.01 75);
   --ink-2: oklch(0.43 0.012 75);
   --ink-hover: oklch(0.33 0.012 75);
@@ -574,19 +577,30 @@ main { flex: 1; padding: 6px var(--pad) 72px; overflow-x: clip; }
 }
 
 .stage {
-  --controls-h: 56px;
+  display: flex;
+  flex-direction: column;
   position: sticky;
   top: 16px;
-  height: min(calc(100svh - 120px), 880px);
+  height: min(calc(100svh - 196px), 880px); /* its controls stay above the fold under a two-row header */
   min-height: 440px;
   border-radius: 12px;
-  background: radial-gradient(closest-side, var(--wall-2), transparent) 50% calc(100% - var(--controls-h) + 2%) / 70% 14% no-repeat;
 }
+/* The panel shows before the 3D alcove arrives and without WebGL. */
+.niche {
+  position: relative;
+  flex: 1 1 0;
+  min-height: 0;
+  border-radius: 12px;
+  background: radial-gradient(70% 62% at 47% 42%, var(--niche-lit), var(--niche));
+}
+/* Print looks (pixel, line, halftone) are drawn for a flat ground. */
+:root[data-look]:not([data-look='realistic']) .niche { background: var(--wall-2); }
+.stage-model { position: absolute; inset: 0; overflow: hidden; border-radius: 12px; }
 .stage:focus-visible { outline-offset: 2px; }
-.stage canvas { position: absolute; top: 0; left: 0; display: block; width: 100%; height: calc(100% - var(--controls-h)); touch-action: none; cursor: grab; }
+.stage canvas { position: absolute; top: 0; left: 0; display: block; width: 100%; height: 100%; touch-action: none; cursor: grab; }
 .stage canvas:active { cursor: grabbing; }
 /* The silhouette and note sit above the canvas in the DOM; never let them eat the drag. */
-.stage .silhouette { position: absolute; top: 4%; left: 0; width: 100%; height: calc(92% - var(--controls-h)); pointer-events: none; }
+.stage .silhouette { position: absolute; top: 4%; left: 0; width: 100%; height: 92%; pointer-events: none; }
 .stage canvas { z-index: 1; }
 .stage-note { pointer-events: none; }
 .stage[data-state='ready'] .silhouette { opacity: 0; }
@@ -594,18 +608,19 @@ main { flex: 1; padding: 6px var(--pad) 72px; overflow-x: clip; }
 .stage canvas { opacity: 0; transition: opacity 0.4s var(--ease-out); }
 
 .stage-controls {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  flex: none;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 8px 16px;
   padding: 10px 0;
 }
-.stage-controls .button-quiet { margin-inline-start: -10px; padding-inline: 10px 14px; }
-.stage-hint { margin: 0; color: var(--ink-2); font-size: 0.8125rem; }
+.views .sign, .looks .sign { align-items: center; }
+.views { display: flex; padding: 2px; border: 1.5px solid var(--line); border-radius: 999px; }
+.stage-controls .button-quiet { padding-inline: 10px 14px; }
+.stage-controls > * { flex: none; }
+.stage-controls .stage-hint { flex: 1 1 22rem; }
+.stage-hint { margin: 0; color: var(--ink-2); font-size: 0.8125rem; line-height: 1.35; text-wrap: pretty; }
 .stage-fault, .stage-note {
   position: absolute;
   left: 16px;
@@ -617,12 +632,14 @@ main { flex: 1; padding: 6px var(--pad) 72px; overflow-x: clip; }
   text-align: center;
 }
 /* Inside the hoop of the silhouette, where nothing else is drawn. */
-.stage-fault { top: calc((100% - var(--controls-h)) * 0.27); transform: translateY(-50%); z-index: 2; }
+.stage-fault { top: 27%; transform: translateY(-50%); z-index: 2; }
 .stage-fault p { padding: 2px 6px; border-radius: 4px; background: var(--wall); }
 .stage-fault .button { background: var(--wall); }
 .stage[data-state='failed'] .stage-controls { visibility: hidden; }
 .stage-fault .button:hover { background: var(--ink); }
 .stage-note { bottom: 14px; color: var(--ink-2); font-size: 0.875rem; }
+.niche + .stage-note { position: static; padding: 14px 0; }
+.stage-empty > .silhouette { height: calc(92% - 56px); }
 .stage-fault p { margin: 0; }
 .stage-fault[hidden] { display: none; }
 
@@ -1009,7 +1026,8 @@ a.gen-tab { display: inline-flex; align-items: center; text-decoration: none; }
   .shelf .bay { scroll-snap-align: start; }
   .strip { gap: 12px; }
   .detail-body { grid-template-columns: minmax(0, 1fr); }
-  .stage { --controls-h: 64px; position: relative; top: 0; height: 60svh; min-height: 400px; }
+  /* Room for the niche, plus three short rows of controls under it. */
+  .stage { position: relative; top: 0; height: calc(52svh + 160px); min-height: 480px; }
   .bay-fault { left: 4%; right: 4%; font-size: 0.75rem; }
   /* Phones: previous and next get a row of their own, so each arrow keeps the name of where it goes. */
   .detail-nav { flex-wrap: wrap; gap: 10px 16px; }
@@ -1039,9 +1057,8 @@ a.gen-tab { display: inline-flex; align-items: center; text-decoration: none; }
   /* No room for a third header row: on phones the look lives in the detail stage. */
   .strip-end { display: contents; }
   .strip .looks { display: none; }
-  .stage:not(.stage-empty) { --controls-h: 104px; }
-  .stage-controls .looks { display: flex; margin-inline-start: auto; }
-  .stage-controls .stage-hint { width: 100%; }
+  .stage-controls .looks { display: flex; }
+  .stage-controls .stage-hint { flex-basis: 100%; }
 
   /* No model: the outline is a stand-in, not the content, so it gets a short stage. */
   .stage-empty { height: 34svh; min-height: 240px; }

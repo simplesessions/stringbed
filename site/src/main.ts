@@ -53,6 +53,7 @@ import { profileView, type Rival } from './profile-view';
 import { lineupView } from './lineup-view';
 import { play, setSound, soundOn, storedSound } from './sound';
 import { LOOKS, LOOK_LABEL, storedLook, storeLook, type Look } from './look';
+import { PARTS, PART_LABEL } from './parts';
 import type { Thumbnails, ThumbState, Viewer } from './gl';
 
 const BASE = import.meta.env.BASE_URL;
@@ -151,6 +152,7 @@ async function boot() {
   a.gl = await loadGL();
   a.thumbs = a.gl?.Thumbnails.create() ?? null;
   a.thumbs?.setLook(a.look);
+  document.documentElement.dataset.look = a.look;
   for (const attach of pendingBays) attach(a.thumbs);
   pendingBays = [];
   glSettled = true;
@@ -260,6 +262,7 @@ function lookControl(a: App): HTMLElement {
 function setLook(a: App, look: Look) {
   if (a.look === look) return;
   a.look = look;
+  document.documentElement.dataset.look = look;
   storeLook(look);
   for (const group of lookControls) {
     if (!group.isConnected && group !== headerLook) {
@@ -936,7 +939,10 @@ function colourwayPicker(r: Racquet): { node: HTMLElement; update(colourway: str
 function stage(a: App, r: Racquet): Stage {
   const asset = assetFor(r, a.style.id);
   const hintId = 'stage-hint';
-  const host = el('div', { class: 'stage', 'data-state': 'loading', style: 'view-transition-name: racquet' }, silhouette(r.specs.headSizeSqIn));
+  // Only the racquet carries the transition name: it flies in while the alcove behind it fades.
+  const model = el('div', { class: 'stage-model', style: 'view-transition-name: racquet' }, silhouette(r.specs.headSizeSqIn));
+  const niche = el('div', { class: 'niche' }, model);
+  const host = el('div', { class: 'stage', 'data-state': 'loading' }, niche);
 
   if (a.viewer === undefined && a.thumbs && a.gl) {
     a.viewer = a.gl.Viewer.create();
@@ -962,17 +968,25 @@ function stage(a: App, r: Racquet): Stage {
 
   const reset = el('button', { class: 'button button-quiet', type: 'button' }, icon('reset'), 'Reset view');
   reset.addEventListener('click', () => viewer.reset());
+  const views = el('div', { class: 'views', role: 'group', 'aria-label': 'Move in on' });
+  for (const part of PARTS) {
+    const b = el('button', { class: 'sign sign-size', type: 'button' }, PART_LABEL[part]);
+    b.addEventListener('click', () => viewer.focus(part));
+    views.append(b);
+  }
   const retry = el('button', { class: 'button', type: 'button' }, icon('retry'), 'Retry');
   const fault = el('div', { class: 'stage-fault', hidden: true }, el('p', {}, 'The model did not load.'), retry);
   const controls = el('div', { class: 'stage-controls' },
+    views,
     reset,
     lookControl(a),
     el('p', { class: 'stage-hint', id: hintId },
-      el('span', { class: 'hint-fine' }, 'Drag to turn. Scroll to zoom. Arrow keys and + / − work too.'),
-      el('span', { class: 'hint-coarse' }, 'Swipe sideways to turn. Pinch to zoom.'),
+      el('span', { class: 'hint-fine' }, 'Drag to turn, Shift-drag to move, scroll to zoom. Double-click to move in. Arrow keys, Shift + arrows and + / − work too.'),
+      el('span', { class: 'hint-coarse' }, 'Swipe sideways to turn. Two fingers move and zoom.'),
     ),
   );
-  host.append(fault, controls);
+  niche.append(fault);
+  host.append(controls);
 
   let url = assetUrl(BASE, asset.path);
   // With a racquet already standing here, it stays until the next one is ready to take its place.
@@ -995,7 +1009,7 @@ function stage(a: App, r: Racquet): Stage {
     host.focus(); // the button hides as loading starts; keep focus on the 3D view
     load(false);
   });
-  viewer.attach(host);
+  viewer.attach(model);
   load(false);
   return {
     node: host,
