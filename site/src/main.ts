@@ -45,6 +45,8 @@ import {
 } from './catalog-view';
 import { el, icon, silhouette } from './dom';
 import { fetchModelBytes } from './prefetch';
+import { loadProfiles } from './profiles';
+import { profileView, type Rival } from './profile-view';
 import { play, setSound, soundOn, storedSound } from './sound';
 import { LOOKS, LOOK_LABEL, storedLook, storeLook, type Look } from './look';
 import type { Thumbnails, ThumbState, Viewer } from './gl';
@@ -323,7 +325,7 @@ function stockList(a: App): HTMLElement[] {
   const family = (f: Family, showSize: boolean) =>
     el('li', { class: 'family' },
       el('h3', { class: 'family-name' }, f.line, el('span', { class: 'sign-count' }, String(f.variants.length))),
-      el('ul', { class: 'variants', role: 'list' }, ...f.variants.map((v) => variantChip(v.item, v.label, showSize))),
+      el('ul', { class: 'stock-tags', role: 'list' }, ...f.variants.map((v) => variantChip(v.item, v.label, showSize))),
     );
   const brand = (g: StockGroup) =>
     el('section', { class: 'stock-brand', 'data-brand': g.brand, 'aria-label': `${g.brand}, no model yet` },
@@ -344,7 +346,7 @@ function variantChip(p: Placeholder, label: string, showSize: boolean): HTMLLIEl
   const facts = [placeholderLabel(p), s.headSizeSqIn ? `${s.headSizeSqIn} in²` : null, s.stringPattern ? formatPattern(s.stringPattern) : null].filter(Boolean).join(' · ');
   const junior = p.category === 'junior' && showSize;
   return el('li', { 'data-id': p.id },
-    el('a', { class: 'variant', href: routeFor(p.id), title: facts ? `${p.model}: ${facts}` : p.model, 'aria-label': `${p.model}${junior ? ', junior' : ''}` },
+    el('a', { class: 'stock-tag', href: routeFor(p.id), title: facts ? `${p.model}: ${facts}` : p.model, 'aria-label': `${p.model}${junior ? ', junior' : ''}` },
       label, junior ? el('span', { class: 'stock-flag' }, 'Jr') : null),
   );
 }
@@ -699,7 +701,7 @@ function showWall(a: App) {
   wall.hidden = false;
   document.body.dataset.view = 'wall';
   if (a.lastOpened) {
-    const link = wall.querySelector<HTMLAnchorElement>(`.shelf-stage[data-family="${a.lastOpened}"], li[data-id="${a.lastOpened}"] .stock-row, li[data-id="${a.lastOpened}"] .variant`);
+    const link = wall.querySelector<HTMLAnchorElement>(`.shelf-stage[data-family="${a.lastOpened}"], li[data-id="${a.lastOpened}"] .stock-row, li[data-id="${a.lastOpened}"] .stock-tag`);
     a.lastOpened = null;
     if (link && !link.closest('[hidden]')) {
       link.focus({ preventScroll: true });
@@ -979,11 +981,28 @@ function sheet(a: App, r: Racquet, picker: HTMLElement | null = null): HTMLEleme
       ]
     : [];
 
+  const profileSlot = el('div', { class: 'profile-slot' });
+  const family = familyOf(a.catalog, r);
+  void loadProfiles().then((profiles) => {
+    const p = profiles.get(family.id);
+    if (!p || !profileSlot.isConnected) return;
+    const byId = new Map(a.catalog.racquets.map((x) => [x.id, x]));
+    // Rivals are the profile's closest alternatives that this library has a page for and a profile of.
+    const rivals: Rival[] = p.compared.flatMap((id) => {
+      const x = byId.get(id);
+      const rp = profiles.get(id);
+      return x && rp ? [{ id, name: x.model, href: routeFor(x.id), profile: rp }] : [];
+    });
+    const label = r.variantLabel;
+    profileSlot.append(profileView(p, rivals, label, label ? p.variantNotes?.[label] : undefined));
+  });
+
   return el('div', { class: 'sheet' },
     el('h1', { class: 'sheet-title', tabindex: '-1' }, r.model),
     el('p', { class: 'sheet-sub' }, `${r.brand} · ${generationLabel(r)}${r.colourway ? ` · ${r.colourway}` : ''}`),
     picker,
     download,
+    profileSlot,
     el('h2', { class: 'sheet-head' }, 'Specs'),
     specs,
     ...file,
@@ -1090,7 +1109,7 @@ document.addEventListener('pointerenter', (e) => {
 }, true);
 document.addEventListener('click', (e) => {
   const t = e.target as Element;
-  if (t.closest('.shelf-stage, .aisle-link, .lineup-open, .stock-row, .variant')) play('open');
+  if (t.closest('.shelf-stage, .aisle-link, .lineup-open, .stock-row, .stock-tag')) play('open');
   else if (t.closest('.back, .stepper a')) play('back');
   else if (t.closest('.sign, .gen-tab')) play('pick');
 });
