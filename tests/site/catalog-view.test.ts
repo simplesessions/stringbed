@@ -219,3 +219,10 @@ test('brand routes can point at a line', () => {
   expect(parseShelfRoute('#/b/babolat/babolat-pure-aero')).toBe('babolat-pure-aero');
   expect(parseShelfRoute('#/b/babolat')).toBeNull();
 });
+
+test('groupPlaceholders gathers variants by product line', () => {
+  for (const g of groupPlaceholders(catalog)) {
+    expect(g.families.reduce((t, f) => t + f.variants.length, 0)).toBe(g.count);
+    expect(new Set(g.families.map((f) => f.line)).size).toBe(g.families.length);
+  }
+});

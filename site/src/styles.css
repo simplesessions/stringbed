@@ -736,6 +736,19 @@ main { flex: 1; padding: 6px var(--pad) 72px; }
   text-transform: uppercase;
 }
 .stock-sign .sign-count { letter-spacing: 0; }
+/* A line's variants as small tags, not a row of look-alikes. */
+.families { display: grid; gap: 18px; margin: 14px 0 0; padding: 0; list-style: none; }
+.family-name { display: flex; align-items: baseline; gap: 8px; margin: 0 0 7px; font-size: 1.0625rem; font-weight: 700; font-stretch: 80%; line-height: 1.1; }
+.variants { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.variant {
+  display: inline-flex; align-items: baseline; gap: 5px;
+  min-height: 30px; padding: 6px 11px 5px;
+  border-radius: 999px; background: var(--wall-2); color: var(--ink);
+  font-size: 0.8125rem; font-weight: 560; font-stretch: 88%; line-height: 1.1; text-decoration: none;
+  transition: background-color 0.2s var(--ease-out), color 0.2s var(--ease-out), transform 0.35s var(--spring);
+}
+.variant:hover { background: var(--ink); color: var(--wall); transform: translateY(-2px) rotate(-1.5deg); }
+.variant:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
 .stock-year {
   margin: 16px 0 2px;
   color: var(--ink-2);

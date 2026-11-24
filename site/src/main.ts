@@ -37,6 +37,7 @@ import {
   AGES,
   type Age,
   type BrandGroup,
+  type Family,
   type Placeholder,
   type Racquet,
   type StockGroup,
@@ -126,7 +127,7 @@ async function boot() {
     groups,
     order: groups.flatMap((g) => g.racquets),
     stock,
-    stockOrder: stock.flatMap((g) => g.years.flatMap((y) => y.items)),
+    stockOrder: stock.flatMap((g) => g.families.flatMap((f) => f.variants.map((v) => v.item))),
     shelfGen: new Map(),
     shelfPick: new Map(),
     brand: null,
@@ -319,12 +320,14 @@ function stockList(a: App): HTMLElement[] {
   const stock = groupPlaceholders(a.catalog, a.age).filter((g) => g.brand === a.brand);
   if (stock.length === 0) return [el('section', { class: 'stock', hidden: true })];
   const total = stock.reduce((n, g) => n + g.count, 0);
+  const family = (f: Family, showSize: boolean) =>
+    el('li', { class: 'family' },
+      el('h3', { class: 'family-name' }, f.line, el('span', { class: 'sign-count' }, String(f.variants.length))),
+      el('ul', { class: 'variants', role: 'list' }, ...f.variants.map((v) => variantChip(v.item, v.label, showSize))),
+    );
   const brand = (g: StockGroup) =>
     el('section', { class: 'stock-brand', 'data-brand': g.brand, 'aria-label': `${g.brand}, no model yet` },
-      ...g.years.flatMap((y) => [
-        el('h4', { class: 'stock-year' }, y.year === CURRENT_YEAR ? 'Current' : `On sale in ${y.year}`),
-        el('ul', { class: 'stock-rows', role: 'list' }, ...y.items.map((p) => stockRow(p, a.age === 'all'))),
-      ]),
+      el('ul', { class: 'families', role: 'list' }, ...g.families.map((f) => family(f, a.age === 'all'))),
     );
   return [
     el('section', { class: 'stock', 'aria-labelledby': 'stock-title' },
@@ -335,18 +338,14 @@ function stockList(a: App): HTMLElement[] {
   ];
 }
 
-const CURRENT_YEAR = 2026;
-
-/** showSize: flag junior frames, needed only when adult and junior rows are mixed. */
-function stockRow(p: Placeholder, showSize: boolean): HTMLLIElement {
+/** One variant of a product line: a small tag, so a line of twelve takes two rows, not twelve. */
+function variantChip(p: Placeholder, label: string, showSize: boolean): HTMLLIElement {
   const s = p.specs;
-  const facts = [s.headSizeSqIn ? `${s.headSizeSqIn} in²` : null, s.stringPattern ? formatPattern(s.stringPattern) : null].filter(Boolean).join(' · ');
+  const facts = [placeholderLabel(p), s.headSizeSqIn ? `${s.headSizeSqIn} in²` : null, s.stringPattern ? formatPattern(s.stringPattern) : null].filter(Boolean).join(' · ');
+  const junior = p.category === 'junior' && showSize;
   return el('li', { 'data-id': p.id },
-    el('a', { class: 'stock-row', href: routeFor(p.id) },
-      el('span', { class: 'stock-model' }, p.model, p.category === 'junior' && showSize ? el('span', { class: 'stock-flag' }, 'Junior') : null),
-      el('span', { class: 'stock-meta' }, placeholderLabel(p)),
-      el('span', { class: 'stock-facts' }, facts),
-    ),
+    el('a', { class: 'variant', href: routeFor(p.id), title: facts ? `${p.model}: ${facts}` : p.model, 'aria-label': `${p.model}${junior ? ', junior' : ''}` },
+      label, junior ? el('span', { class: 'stock-flag' }, 'Jr') : null),
   );
 }
 
