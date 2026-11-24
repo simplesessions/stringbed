@@ -1,0 +1,111 @@
+[
+  {
+    "id": "head-speed-mp-2026",
+    "summary": "A stable, heavy-feeling 100 for players who take full swings and want depth and topspin without fuss. The 2026 update with boron-reinforced construction reads as crisper and more solid than the previous Speed MP, yet still soft on the arm. The price is agility: the swingweight bites on quick backhands and returns, and testers split on serve consistency and touch, so it rewards time and rhythm more than reflexes.",
+    "bestFor": ["stability", "groundstrokes", "spin", "comfort"],
+    "playerLevel": ["intermediate", "advanced"],
+    "playStyle": "counterpunching baseliner who hits heavy",
+    "feel": "soft but solid, not muted",
+    "ratings": { "power": 3, "spin": 4, "control": 3, "comfort": 4, "stability": 4, "maneuverability": 2, "feel": 3 },
+    "compared": ["head-speed-mp-2024", "head-extreme-mp-2026", "wilson-clash-100-v3"],
+    "variantNotes": {
+      "MP L": "Lighter version of the same frame for easier swinging.",
+      "MP UL": "Lightest MP option, aimed at slower swings.",
+      "Pro": "Denser 18x20 pattern for flatter hitters wanting more control.",
+      "Tour": "Smaller 97 head for those who want more precision."
+    },
+    "released": "2026-01",
+    "confidence": "medium",
+    "sources": [
+      "https://www.tennis-warehouse.com/learning_center/racquet_reviews/HSPMP6review.html"
+    ],
+    "researchedOn": "2026-11-23"
+  },
+  {
+    "id": "head-extreme-mp-2026",
+    "summary": "The spin-first Head: an easy-swinging 100 that gives a lot of topspin and free power, and testers say the newer boron layup brings back some of the feel the 2024 frame lacked. It suits aggressive baseliners and flatter hitters alike. The catch is precision and stability: testers found it twists on off-center volleys and heavy serves, and it can sail long if you overhit, especially on returns.",
+    "bestFor": ["spin", "power", "maneuverability", "groundstrokes"],
+    "playerLevel": ["intermediate", "advanced"],
+    "playStyle": "aggressive topspin baseliner",
+    "feel": "lively with clearer feedback than before",
+    "ratings": { "power": 4, "spin": 5, "control": 3, "comfort": 4, "stability": 3, "maneuverability": 4, "feel": 4 },
+    "compared": ["head-extreme-mp-2024", "babolat-pure-aero-100-2022", "head-speed-mp-2026"],
+    "variantNotes": {
+      "MP L": "Lighter version of the MP.",
+      "MP UL": "Lightest option for slower swings.",
+      "Pro": "Smaller 98 head with a tighter feel.",
+      "Team": "Larger 105 head for more assistance."
+    },
+    "released": "2026-01",
+    "confidence": "medium",
+    "sources": [
+      "https://www.tennis-warehouse.com/learning_center/racquet_reviews/HREM26review.html"
+    ],
+    "researchedOn": "2026-11-23"
+  },
+  {
+    "id": "head-boom-mp-2026",
+    "summary": "A light, whippy, plush frame that gives easy depth and spin and is kind to the arm. Reviewers agree it is quick and comfortable, and the 2026 layup is a touch firmer and more direct than before. The trade-offs are stability and plow-through: it gets pushed around on off-center hits and heavy pace, and some testers wanted more pop on serve. Better for improving players than for heavy hitters, unless customised.",
+    "bestFor": ["maneuverability", "comfort", "spin", "forgiveness"],
+    "playerLevel": ["beginner", "intermediate"],
+    "playStyle": "easy-power all-court or doubles player",
+    "feel": "soft, plush and friendly",
+    "ratings": { "power": 3, "spin": 4, "control": 3, "comfort": 5, "stability": 2, "maneuverability": 5, "feel": 4 },
+    "compared": ["head-extreme-mp-2026", "head-gravity-mp-2025", "wilson-clash-100-v3"],
+    "variantNotes": {
+      "MP L": "Lighter still, for slower swings.",
+      "Pro": "Smaller 98 head aimed at stronger players.",
+      "Elite": "Bigger 107 head for extra assistance."
+    },
+    "released": "2026-01",
+    "confidence": "high",
+    "sources": [
+      "https://www.tennis-warehouse.com/learning_center/racquet_reviews/HBOMP6review.html",
+      "https://www.tennisnerd.net/gear/racquets/racquet-reviews/head-boom-2026-review-controlled-power-gets-smarter-and-slightly-firmer/64495"
+    ],
+    "researchedOn": "2026-11-23"
+  },
+  {
+    "id": "head-radical-mp-2025",
+    "summary": "A control-leaning 98 that rewards good technique. The 2025 update adds softer, more comfortable carbon layup with a slightly more forgiving sweet spot, and reviewers praise its stability and precision. It does not hand out power or spin, so you supply the pace, and testers disagreed on how easy it is to whip around. A frame for players who like to hit their spots rather than ask the racquet to help.",
+    "bestFor": ["control", "stability", "all-court", "touch"],
+    "playerLevel": ["intermediate", "advanced"],
+    "playStyle": "all-court player with full strokes",
+    "feel": "smooth, controlled and predictable",
+    "ratings": { "power": 2, "spin": 3, "control": 5, "comfort": 4, "stability": 4, "maneuverability": 3, "feel": 4 },
+    "compared": ["prince-ats-textreme-tour-98-carbon", "babolat-pure-strike-98", "wilson-blade-98-v10"],
+    "variantNotes": {
+      "Pro": "Heavier and more demanding.",
+      "Tour": "Dense 18x20 pattern for flat, precise hitters.",
+      "Elite": "102 head with a bit more help."
+    },
+    "released": "2025-01",
+    "confidence": "medium",
+    "sources": [
+      "https://www.tennis-warehouse.com/learning_center/racquet_reviews/HRMPreview.html",
+      "https://www.tennisnerd.net/gear/racquets/head-radical-racquet-review-pro-and-mp-auxetic-2-0/45446"
+    ],
+    "researchedOn": "2026-11-23"
+  },
+  {
+    "id": "head-gravity-mp-2025",
+    "summary": "A plush, spin-friendly frame with an unusually connected feel, particularly on drop shots and volleys. The 2025 version is more stable than the last Gravity MP and is easy on the arm. Testers still call it a little short on free power for its weight, so it suits players with a decent swing who value touch and accuracy over raw pace; a lower string tension helps if you want more pop.",
+    "bestFor": ["feel", "comfort", "control", "touch"],
+    "playerLevel": ["intermediate", "advanced"],
+    "playStyle": "touch-oriented all-court player",
+    "feel": "plush and connected",
+    "ratings": { "power": 2, "spin": 4, "control": 4, "comfort": 5, "stability": 3, "maneuverability": 4, "feel": 5 },
+    "compared": ["head-boom-mp-2026", "head-radical-mp-2025", "yonex-ezone-100"],
+    "variantNotes": {
+      "MP L": "Lighter version of the MP.",
+      "Pro": "Slimmer, denser, more demanding frame.",
+      "Tour": "Smaller 98 head with more control."
+    },
+    "released": "2025-01",
+    "confidence": "medium",
+    "sources": [
+      "https://www.tennis-warehouse.com/learning_center/racquet_reviews/HGMPGreview.html"
+    ],
+    "researchedOn": "2026-11-23"
+  }
+]

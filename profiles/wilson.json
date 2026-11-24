@@ -1,0 +1,115 @@
+[
+  {
+    "id": "wilson-blade-98-v10",
+    "summary": "The v10 is a careful tweak of the Blade rather than a rethink: a slightly thicker beam adds a little pop and better off-center stability, and the feel stays muted but cleaner. It is a control frame for advanced players who supply their own pace and want dwell time and directional precision. The sweet spot is not generous, and the short handle bothers some two-handed backhands.",
+    "bestFor": ["control", "feel", "groundstrokes", "serves"],
+    "playerLevel": ["advanced"],
+    "playStyle": "aggressive all-court baseliner who generates own pace",
+    "feel": "muted but cleaner and more direct than v9",
+    "ratings": { "power": 3, "spin": 3, "control": 5, "comfort": 3, "stability": 4, "maneuverability": 4, "feel": 5 },
+    "compared": ["wilson-pro-staff-97-v14", "wilson-rf-01-pro"],
+    "variantNotes": {
+      "16x19": "The more versatile pattern: easier spin, more launch, more forgiving.",
+      "18x20": "Denser and flatter; tightest control, but less forgiving and harder to accelerate."
+    },
+    "confidence": "medium",
+    "sources": [
+      "https://www.tennisnerd.net/gear/racquets/racquet-reviews/wilson-blade-v10-review/65231"
+    ],
+    "researchedOn": "2026-11-23"
+  },
+  {
+    "id": "wilson-pro-staff-97-v14",
+    "summary": "A heavy, classically firm-but-connected frame that rewards full swings and clean footwork. Reviewers rate control and stability as its standout traits, with power that is steady and weight-driven instead of free. Spin is reliable if you brush up the back of the ball, but it will not do the work for you. Best for strong intermediates and advanced players; the mass tires you in long sessions and mishits are not forgiven.",
+    "bestFor": ["control", "stability", "feel", "volleys"],
+    "playerLevel": ["intermediate", "advanced"],
+    "playStyle": "flat-hitting, technique-driven all-court player",
+    "feel": "solid, connected and slightly softer than older Pro Staffs",
+    "ratings": { "power": 3, "spin": 3, "control": 5, "comfort": 3, "stability": 5, "maneuverability": 3, "feel": 5 },
+    "compared": ["wilson-blade-98-v10", "wilson-rf-01-pro"],
+    "confidence": "medium",
+    "sources": [
+      "https://tenniscompanion.org/wilson-pro-staff-97-v14/"
+    ],
+    "researchedOn": "2026-11-23"
+  },
+  {
+    "id": "wilson-clash-100-v3",
+    "summary": "The arm-friendly Clash, now with better stability than earlier versions, though still the weak spot. Very flexible and comfortable, with easy hidden power and a whippy, spin-friendly swing. Testers split on control, and several said it lacks the mass to hold up against heavy hitters or to produce big serves. Suits adults and advanced juniors who want a comfortable easy swing, not a stable plow-through frame.",
+    "bestFor": ["comfort", "spin", "power", "forgiveness"],
+    "playerLevel": ["beginner", "intermediate"],
+    "playStyle": "easy-swinging spin baseliner or counterpuncher",
+    "feel": "soft, flexible and plush",
+    "ratings": { "power": 4, "spin": 4, "control": 3, "comfort": 5, "stability": 2, "maneuverability": 4, "feel": 4 },
+    "compared": ["wilson-ultra-100-v5-2025", "wilson-defyer-100"],
+    "confidence": "medium",
+    "sources": [
+      "https://www.tennis-warehouse.com/learning_center/racquet_reviews/WC103Rreview.html"
+    ],
+    "researchedOn": "2026-11-23"
+  },
+  {
+    "id": "wilson-ultra-100-v5-2025",
+    "summary": "A forgiving, easy-to-swing power frame aimed at club players and returners rather than touring-level hitters. The mold looks carried over from v4, with a softer, more dampened response and a generous sweet spot. Control is solid without being elite. Open grommets let the strings move a lot and lose tension sooner. Reviewers disagree on comfort: one calls it arm-friendly, one Tennis Warehouse tester found it stiff.",
+    "bestFor": ["power", "forgiveness", "comfort", "groundstrokes"],
+    "playerLevel": ["beginner", "intermediate"],
+    "playStyle": "free-swinging baseliner who wants easy depth",
+    "feel": "dampened and soft, with plenty of pop",
+    "ratings": { "power": 4, "spin": 3, "control": 3, "comfort": 3, "stability": 3, "maneuverability": 4, "feel": 3 },
+    "compared": ["wilson-clash-100-v3", "wilson-defyer-100"],
+    "released": "2025-07",
+    "confidence": "medium",
+    "sources": [
+      "https://www.tennisnerd.net/gear/racquets/wilson-ultra-v5-review-ultra-100-and-ultra-99-pro/48888"
+    ],
+    "researchedOn": "2026-11-23"
+  },
+  {
+    "id": "wilson-burn-100s-v6-2026",
+    "summary": "A spin-first frame with an unusual 18x16 pattern, which the maker pitches at aggressive intermediate and advanced hitters. The 2026 version appears to be mainly a cosmetic refresh of v5, and I found no independent playtest of it. Older Burn reviews describe plenty of spin and power but a stiff feel. Treat this profile as provisional and demo before buying.",
+    "bestFor": ["spin", "power", "baseline"],
+    "playerLevel": ["intermediate", "advanced"],
+    "playStyle": "aggressive topspin baseliner",
+    "feel": "crisp and on the firm side",
+    "ratings": { "power": 3, "spin": 5, "control": 3, "comfort": 2, "stability": 3, "maneuverability": 3, "feel": 3 },
+    "compared": ["wilson-defyer-100", "wilson-ultra-100-v5-2025"],
+    "released": "2026-01",
+    "confidence": "low",
+    "sources": [
+      "https://www.tennis-warehouse.com/Wilson_Burn_100S_v6/descpage-WB1SV6.html?img=3"
+    ],
+    "researchedOn": "2026-11-23"
+  },
+  {
+    "id": "wilson-rf-01-pro",
+    "summary": "The Federer-collaboration frame for serious players: crisp, firm and stable, with more power and spin access than the RF97 it replaces in spirit. Testers found it easier to swing than the RF97 but less stable, and a dense centre can need aimed-up topspin. The firm response tired some arms after long kick-serve sessions. Not for casual players; it rewards timing and conditioning.",
+    "bestFor": ["stability", "power", "control", "all-court"],
+    "playerLevel": ["advanced"],
+    "playStyle": "aggressive all-court player",
+    "feel": "crisp and firm",
+    "ratings": { "power": 4, "spin": 3, "control": 4, "comfort": 2, "stability": 5, "maneuverability": 3, "feel": 4 },
+    "compared": ["wilson-pro-staff-97-v14", "wilson-blade-98-v10"],
+    "released": "2025",
+    "confidence": "medium",
+    "sources": [
+      "https://www.tennis-warehouse.com/learning_center/racquet_reviews/WRFPRreview.html"
+    ],
+    "researchedOn": "2026-11-23"
+  },
+  {
+    "id": "wilson-defyer-100",
+    "summary": "A well-rounded spin frame with a higher swingweight that gives net stability and plow-through. Testers found spin easy and the handling quick at the net, but nothing stood out as exceptional. Some wanted more easy power and depth, and the flared butt cap and impact feel drew complaints, including one case of wrist soreness. Suits intermediate and advanced attackers who like to hit through the ball.",
+    "bestFor": ["spin", "stability", "net-play", "groundstrokes"],
+    "playerLevel": ["intermediate", "advanced"],
+    "playStyle": "spin-heavy attacking baseliner",
+    "feel": "direct and crisp, mixed opinions at impact",
+    "ratings": { "power": 3, "spin": 4, "control": 4, "comfort": 3, "stability": 4, "maneuverability": 4, "feel": 3 },
+    "compared": ["wilson-burn-100s-v6-2026", "wilson-clash-100-v3"],
+    "released": "2026",
+    "confidence": "medium",
+    "sources": [
+      "https://www.tennis-warehouse.com/learning_center/racquet_reviews/WRL100review.html"
+    ],
+    "researchedOn": "2026-11-23"
+  }
+]

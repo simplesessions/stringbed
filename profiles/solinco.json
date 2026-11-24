@@ -1,0 +1,46 @@
+[
+  {
+    "id": "solinco-whiteout-v2-305",
+    "summary": "A heavy, thin-beamed 98 for advanced ball strikers who want stability and a steady response. The second version adds power and comfort over the original while keeping the control-frame character. Testers praised its stability and punch, and it asks for a full, confident swing. The trade-offs: a high swingweight and a firm frame make timing harder on volleys and off-centre hits, and the damping can feel too muted. Spin on second serves can be limited.",
+    "bestFor": ["stability", "control", "groundstrokes", "power"],
+    "playerLevel": ["advanced"],
+    "playStyle": "aggressive baseliner and all-court shotmaker",
+    "feel": "dense, dampened and stable",
+    "ratings": { "power": 3, "spin": 3, "control": 4, "comfort": 3, "stability": 5, "maneuverability": 2, "feel": 3 },
+    "compared": ["wilson-blade-98-v10", "babolat-pure-strike-98"],
+    "variantNotes": {
+      "290": "Lighter option with a quicker swing and less stability.",
+      "305 18x20": "Denser pattern with more control and less spin.",
+      "305 XTD": "Extra length for leverage and reach."
+    },
+    "released": "2025-01",
+    "confidence": "medium",
+    "sources": [
+      "https://www.tennis-warehouse.com/learning_center/racquet_reviews/WTOCAHreview.html",
+      "https://www.tennisnerd.net/gear/racquets/racquet-reviews/solinco-whiteout-v2-review-16-19-and-xtd/43779"
+    ],
+    "researchedOn": "2026-11-23"
+  },
+  {
+    "id": "solinco-blackout-v2-300",
+    "summary": "A power-and-spin frame for aggressive baseliners with fast swings: quick through the air, easy depth, and a softer response than the first version. Testers liked the topspin and pace. The trade-off is control: big swings can fly long and depth depends on heavy spin, and reviewers disagreed on feel. One liked it, another found it too muted and floaty under pressure. Volley and off-centre stability are only fair.",
+    "bestFor": ["spin", "power", "maneuverability", "groundstrokes"],
+    "playerLevel": ["intermediate", "advanced"],
+    "playStyle": "heavy-topspin baseliner",
+    "feel": "soft, muted and flexible",
+    "ratings": { "power": 4, "spin": 5, "control": 2, "comfort": 4, "stability": 3, "maneuverability": 4, "feel": 3 },
+    "compared": ["babolat-pure-aero-100", "yonex-vcore-100"],
+    "variantNotes": {
+      "285": "Lighter and quicker, with less stability.",
+      "300 XTD": "Extra length for more leverage and reach.",
+      "110": "Larger head and low weight, built for forgiveness."
+    },
+    "released": "2025-01",
+    "confidence": "medium",
+    "sources": [
+      "https://www.tennis-warehouse.com/learning_center/racquet_reviews/BKOCAHreview.html",
+      "https://www.tennisnerd.net/gear/racquets/racquet-reviews/solinco-blackout-v2-review/61196"
+    ],
+    "researchedOn": "2026-11-23"
+  }
+]
