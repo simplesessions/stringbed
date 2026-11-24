@@ -40,11 +40,11 @@
     "finish": "gloss",
     "zones": [
       {
-        "from": 0.88,
+        "from": 0.9,
         "to": 1,
         "color": "#17171a",
         "faces": [
-          "inner"
+          "outer"
         ]
       }
     ]
@@ -101,13 +101,18 @@
         "finish": "gloss",
         "zones": [
           {
-            "from": 0.2,
-            "to": 0.5,
-            "color": "#1f9aa8",
-            "faces": [
-              "front",
-              "back"
-            ]
+            "from": 0.14,
+            "to": 0.45,
+            "color": "#14808f",
+            "blend": 0.12,
+            "side": "right"
+          },
+          {
+            "from": 0.6,
+            "to": 0.95,
+            "color": "#14808f",
+            "blend": 0.14,
+            "side": "left"
           }
         ]
       },

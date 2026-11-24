@@ -53,10 +53,11 @@
         "side": "right"
       },
       {
-        "from": 0.351,
+        "from": 0.325,
         "to": 0.8,
         "color": "#c8ea38",
-        "side": "left"
+        "side": "left",
+        "bridge": false
       },
       {
         "from": 0.533,

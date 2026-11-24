@@ -41,14 +41,30 @@
     "finish": "satin",
     "zones": [
       {
-        "from": 0.4,
-        "to": 0.56,
-        "color": "#ef4f38"
+        "from": 0.405,
+        "to": 0.515,
+        "color": "#57575a",
+        "side": "left"
       },
       {
-        "from": 0.9,
-        "to": 1,
-        "color": "#ef4f38"
+        "from": 0.298,
+        "to": 0.364,
+        "color": "#57575a",
+        "side": "left",
+        "bridge": false
+      },
+      {
+        "from": 0.405,
+        "to": 0.515,
+        "color": "#e23a34",
+        "side": "right"
+      },
+      {
+        "from": 0.298,
+        "to": 0.364,
+        "color": "#e23a34",
+        "side": "right",
+        "bridge": false
       }
     ]
   },

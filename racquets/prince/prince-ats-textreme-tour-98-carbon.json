@@ -134,33 +134,36 @@
         "zones": [
           {
             "from": 0,
-            "to": 0.1,
+            "to": 0.09,
             "color": "#1c1d20"
           },
           {
-            "from": 0.4,
-            "to": 0.5,
-            "color": "#3bb8b0",
+            "from": 0.09,
+            "to": 0.165,
+            "color": "#8fd8d3",
             "faces": [
               "front",
-              "back"
-            ]
-          },
-          {
-            "from": 0.55,
-            "to": 1,
-            "color": "#1c1d20",
-            "faces": [
-              "inner"
-            ]
-          },
-          {
-            "from": 0.88,
-            "to": 0.96,
-            "color": "#ef5a3a",
-            "faces": [
+              "back",
               "outer"
             ]
+          },
+          {
+            "from": 0.464,
+            "to": 0.858,
+            "color": "#1c1d20",
+            "side": "left"
+          },
+          {
+            "from": 0.37,
+            "to": 0.464,
+            "color": "#8fd8d3",
+            "side": "left"
+          },
+          {
+            "from": 0.652,
+            "to": 0.815,
+            "color": "#f3a592",
+            "side": "right"
           }
         ]
       },
@@ -179,7 +182,8 @@
           "gaugeMm": 1.25
         },
         "grommets": {
-          "color": "#1c1d20"
+          "color": "#1c1d20",
+          "channel": 0.45
         },
         "bumper": {
           "color": "#1c1d20"
@@ -214,33 +218,36 @@
         "zones": [
           {
             "from": 0,
-            "to": 0.1,
+            "to": 0.09,
             "color": "#1c1d20"
           },
           {
-            "from": 0.4,
-            "to": 0.5,
-            "color": "#3bb8b0",
+            "from": 0.09,
+            "to": 0.165,
+            "color": "#8fd8d3",
             "faces": [
               "front",
-              "back"
-            ]
-          },
-          {
-            "from": 0.55,
-            "to": 1,
-            "color": "#1c1d20",
-            "faces": [
-              "inner"
-            ]
-          },
-          {
-            "from": 0.88,
-            "to": 0.96,
-            "color": "#ef5a3a",
-            "faces": [
+              "back",
               "outer"
             ]
+          },
+          {
+            "from": 0.464,
+            "to": 0.858,
+            "color": "#1c1d20",
+            "side": "left"
+          },
+          {
+            "from": 0.37,
+            "to": 0.464,
+            "color": "#8fd8d3",
+            "side": "left"
+          },
+          {
+            "from": 0.652,
+            "to": 0.815,
+            "color": "#f3a592",
+            "side": "right"
           }
         ]
       },
@@ -259,7 +266,8 @@
           "gaugeMm": 1.25
         },
         "grommets": {
-          "color": "#1c1d20"
+          "color": "#f0562a",
+          "channel": 0.45
         },
         "bumper": {
           "color": "#1c1d20"
@@ -294,33 +302,36 @@
         "zones": [
           {
             "from": 0,
-            "to": 0.1,
+            "to": 0.09,
             "color": "#1c1d20"
           },
           {
-            "from": 0.4,
-            "to": 0.5,
-            "color": "#3bb8b0",
+            "from": 0.09,
+            "to": 0.165,
+            "color": "#8fd8d3",
             "faces": [
               "front",
-              "back"
-            ]
-          },
-          {
-            "from": 0.55,
-            "to": 1,
-            "color": "#1c1d20",
-            "faces": [
-              "inner"
-            ]
-          },
-          {
-            "from": 0.88,
-            "to": 0.96,
-            "color": "#ef5a3a",
-            "faces": [
+              "back",
               "outer"
             ]
+          },
+          {
+            "from": 0.464,
+            "to": 0.858,
+            "color": "#1c1d20",
+            "side": "left"
+          },
+          {
+            "from": 0.37,
+            "to": 0.464,
+            "color": "#8fd8d3",
+            "side": "left"
+          },
+          {
+            "from": 0.652,
+            "to": 0.815,
+            "color": "#f3a592",
+            "side": "right"
           }
         ]
       },
@@ -339,7 +350,8 @@
           "gaugeMm": 1.25
         },
         "grommets": {
-          "color": "#1c1d20"
+          "color": "#1c1d20",
+          "channel": 0.45
         },
         "bumper": {
           "color": "#1c1d20"
@@ -374,33 +386,36 @@
         "zones": [
           {
             "from": 0,
-            "to": 0.1,
+            "to": 0.09,
             "color": "#1c1d20"
           },
           {
-            "from": 0.4,
-            "to": 0.5,
-            "color": "#3bb8b0",
+            "from": 0.09,
+            "to": 0.165,
+            "color": "#8fd8d3",
             "faces": [
               "front",
-              "back"
-            ]
-          },
-          {
-            "from": 0.55,
-            "to": 1,
-            "color": "#1c1d20",
-            "faces": [
-              "inner"
-            ]
-          },
-          {
-            "from": 0.88,
-            "to": 0.96,
-            "color": "#ef5a3a",
-            "faces": [
+              "back",
               "outer"
             ]
+          },
+          {
+            "from": 0.561,
+            "to": 0.872,
+            "color": "#1c1d20",
+            "side": "left"
+          },
+          {
+            "from": 0.42,
+            "to": 0.561,
+            "color": "#8fd8d3",
+            "side": "left"
+          },
+          {
+            "from": 0.652,
+            "to": 0.815,
+            "color": "#f3a592",
+            "side": "right"
           }
         ]
       },
@@ -419,10 +434,11 @@
           "gaugeMm": 1.25
         },
         "grommets": {
-          "color": "#1c1d20"
+          "color": "#f0562a",
+          "channel": 0.45
         },
         "bumper": {
-          "color": "#1c1d20"
+          "color": "#f0562a"
         },
         "dampener": null
       },

@@ -40,13 +40,10 @@
     "finish": "gloss",
     "zones": [
       {
-        "from": 0.7,
-        "to": 0.92,
+        "from": 0.526,
+        "to": 0.83,
         "color": "#3a3f45",
-        "faces": [
-          "inner",
-          "outer"
-        ]
+        "side": "right"
       }
     ]
   },

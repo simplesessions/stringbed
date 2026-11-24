@@ -40,9 +40,28 @@
     "finish": "satin",
     "zones": [
       {
-        "from": 0.44,
-        "to": 0.58,
-        "color": "#f2561f"
+        "from": 0.456,
+        "to": 0.549,
+        "color": "#eceef0",
+        "side": "left"
+      },
+      {
+        "from": 0.341,
+        "to": 0.422,
+        "color": "#eceef0",
+        "side": "left"
+      },
+      {
+        "from": 0.456,
+        "to": 0.549,
+        "color": "#f2561f",
+        "side": "right"
+      },
+      {
+        "from": 0.341,
+        "to": 0.422,
+        "color": "#f2561f",
+        "side": "right"
       }
     ]
   },
@@ -84,14 +103,30 @@
         "finish": "gloss",
         "zones": [
           {
-            "from": 0.4,
-            "to": 0.54,
-            "color": "#2c3552"
+            "from": 0.446,
+            "to": 0.538,
+            "color": "#2c3552",
+            "side": "left"
           },
           {
-            "from": 0.58,
-            "to": 0.72,
-            "color": "#d9564a"
+            "from": 0.334,
+            "to": 0.411,
+            "color": "#2c3552",
+            "side": "left",
+            "bridge": false
+          },
+          {
+            "from": 0.446,
+            "to": 0.538,
+            "color": "#c0514a",
+            "side": "right"
+          },
+          {
+            "from": 0.334,
+            "to": 0.411,
+            "color": "#c0514a",
+            "side": "right",
+            "bridge": false
           }
         ]
       },

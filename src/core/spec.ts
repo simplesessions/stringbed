@@ -66,7 +66,8 @@ export interface RacquetSpec {
     // from/to are frame coordinate u, 0..1. `faces` limits a zone to some faces of the beam:
     // outer (the edge away from the strings), inner (the string side), front, back. Default: all.
     // `side` limits it to one half of the racquet, as seen from the front (left is -X). Default: both.
-    zones: Array<{ from: number; to: number; color: HexColor; blend?: number; faces?: BeamFace[]; side?: RacquetSide }>;
+    // `bridge: false` leaves the bridge out of a zone that runs across the throat junction. Default: in.
+    zones: Array<{ from: number; to: number; color: HexColor; blend?: number; faces?: BeamFace[]; side?: RacquetSide; bridge?: false }>;
     pattern?: { type: 'camo'; color: HexColor; scale: number; seed: number };
   };
   parts: {
@@ -119,6 +120,7 @@ const zone = z
     blend: z.number().min(0).max(0.5).optional(),
     faces: z.array(z.enum(['outer', 'inner', 'front', 'back'])).min(1).optional(),
     side: z.enum(['left', 'right']).optional(),
+    bridge: z.literal(false).optional(),
   })
   .strict()
   .refine((z) => z.from < z.to, { message: 'from must be less than to', path: ['to'] });

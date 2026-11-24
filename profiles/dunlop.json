@@ -1,0 +1,110 @@
+[
+  {
+    "id": "dunlop-cx-200-16x19-2027",
+    "summary": "A box-beam control frame for players who make their own pace and like a connected response. Independent coverage is still thin: one reviewer who hit pre-production frames found more stability, depth and spin than the old CX 200, with touch intact, and preferred it to the current Blade. He still added a little weight for stability, and the production version remains light and quick to swing. Expect to do most of the work on power.",
+    "bestFor": ["control", "feel", "maneuverability", "all-court"],
+    "playerLevel": ["advanced"],
+    "playStyle": "all-court shotmaker who generates own pace",
+    "feel": "well dampened but connected",
+    "ratings": { "power": 3, "spin": 3, "control": 4, "comfort": 3, "stability": 3, "maneuverability": 4, "feel": 4 },
+    "compared": ["wilson-blade-98-v10", "head-radical-mp-2025", "prince-ats-textreme-tour-98-carbon"],
+    "variantNotes": {
+      "200 18x20": "Denser pattern with a higher swingweight; a tighter, more predictable response.",
+      "200 Tour": "Small head and thinner beam; solid at net but asks for cleaner contact.",
+      "400 Tour": "Thicker beam and larger head; easier depth, though one tester found it a little wild under pressure.",
+      "400": "Lighter 100 pitched at intermediates who want speed and easier spin.",
+      "200 LS": "Lighter 98 that is easier to swing and quicker at net.",
+      "200 OS": "Larger head in a box beam; more forgiving and powerful."
+    },
+    "confidence": "low",
+    "sources": [
+      "https://www.tennisnerd.net/gear/racquets/racquet-reviews/dunlop-cx-2027-first-impressions-more-power-more-stability-still-plenty-of-control/69728",
+      "https://www.tennisnerd.net/gear/racquets/dunlop-cx-2027-specs-and-cosmetics-revealed/70200",
+      "https://us.dunlopsports.com/dunlop/tennis/rackets/cx-series/cx-200-tennis-racket/MCX200.html",
+      "https://us.dunlopsports.com/dunlop/tennis/rackets/cx-series/cx-200-ls-tennis-racket/MCX200LS.html",
+      "https://www.tennis-warehouse.com/Dunlop_CX_200_16x19_2027_Racquet/descpageRCDUNLOP-DCX216.html",
+      "https://www.tennis-warehouse.com/Dunlop_CX_200_18x20_2027_Racquet/descpageRCDUNLOP-DCX218.html",
+      "https://www.tennis-warehouse.com/Dunlop_CX_200_Tour_2027_Racquet/descpageRCDUNLOP-DCX226.html",
+      "https://www.tennis-warehouse.com/Dunlop_CX_400_2027_Racquet/descpageRCDUNLOP-DCX407.html",
+      "https://www.tennis-warehouse.com/Dunlop_CX_200_OS_2027_Racquet/descpageRCDUNLOP-DCXOS27.html",
+      "https://tennisexpress.com/blogs/news/dunlop-unveils-all-new-cx-series-racquets-and-bags"
+    ],
+    "researchedOn": "2026-11-24"
+  },
+  {
+    "id": "dunlop-fx-500-2025",
+    "summary": "A power frame in the Pure Drive mould: effortless depth, plenty of spin and some of the easiest serving of its type. Testers found it quick to handle and better connected than before. The catch is depth control. Nearly everyone overhit until they added topspin, and touch volleys were tricky for some. Opinions split on comfort, since it is firm with stiff polyester, and on stability, which one outlet praised and one tester wanted more of.",
+    "bestFor": ["power", "serves", "spin", "maneuverability"],
+    "playerLevel": ["intermediate", "advanced"],
+    "playStyle": "aggressive baseliner with topspin",
+    "feel": "firm, lively and slightly dampened",
+    "ratings": { "power": 5, "spin": 4, "control": 2, "comfort": 3, "stability": 3, "maneuverability": 4, "feel": 3 },
+    "compared": ["babolat-pure-drive-100", "yonex-ezone-100", "wilson-ultra-100-v5-2025"],
+    "variantNotes": {
+      "500 Tour": "Smaller head with a better power-to-control balance; one outlet rated it above the 500, another found it less stable and forgiving.",
+      "500 LS": "Lighter version for intermediates who want a faster swing.",
+      "500 Lite": "Lighter again, for improving players.",
+      "500 Super Lite": "Lightest of the line, for beginners and juniors."
+    },
+    "confidence": "high",
+    "sources": [
+      "https://www.tennis-warehouse.com/learning_center/racquet_reviews/DF500review.html",
+      "https://www.tennis-warehouse.com/learning_center/racquet_reviews/DF50Treview.html",
+      "https://www.tennisnerd.net/gear/racquets/the-dunlop-fx-500-racquet-series-for-2026/63142",
+      "https://www.tennis-warehouse.com/Dunlop_FX_500_LS/descpageRCDUNLOP-DF50LS.html",
+      "https://www.tennis-warehouse.com/Dunlop_FX_500_Lite/descpageRCDUNLOP-DF50LI.html",
+      "https://us.dunlopsports.com/dunlop/tennis/rackets/fx-series/fx-500-super-lite/MFX500SL26.html"
+    ],
+    "researchedOn": "2026-11-24"
+  },
+  {
+    "id": "dunlop-sx-300-2025",
+    "summary": "A spin-first frame that swings fast and lifts the ball easily, making heavy topspin, kick serves and defensive depth come naturally. It suits intermediate and stronger players who take full cuts; hit flat and it tends to fly. Testers disagreed about power and launch, with one finding both lower than expected, and several disliked the firm feel. Faster hitters may want added weight for stability, and touch at net takes some care.",
+    "bestFor": ["spin", "maneuverability", "groundstrokes", "baseline"],
+    "playerLevel": ["intermediate", "advanced"],
+    "playStyle": "heavy-topspin baseliner",
+    "feel": "firm and crisp",
+    "ratings": { "power": 4, "spin": 5, "control": 3, "comfort": 3, "stability": 3, "maneuverability": 4, "feel": 3 },
+    "compared": ["babolat-pure-aero-100", "head-extreme-mp-2026", "yonex-vcore-100"],
+    "variantNotes": {
+      "300 Tour": "Smaller head and more weight; still launchy and stiff, with plenty of spin.",
+      "300 LS": "Lighter version aimed at intermediates.",
+      "300 Lite": "Lightest of the adult frames, for beginners and early intermediates."
+    },
+    "released": "2025-01",
+    "confidence": "high",
+    "sources": [
+      "https://www.tennis-warehouse.com/learning_center/racquet_reviews/DSX3Rreview.html",
+      "https://prod.tennis.com/news/articles/racquet-review-dunlop-sx-300-string-movement-enhanced-stability-spin-generation",
+      "https://www.tennis-warehouse.com/learning_center/racquet_reviews/DSXTRreview.html",
+      "https://www.tennisnerd.net/gear/racquets/dunlop-sx-2025-racquets/43709",
+      "https://www.tennis-warehouse.com/Dunlop_SX_300_LS/descpageRCDUNLOP-DSXLSR.html",
+      "https://www.tennis-warehouse.com/Dunlop_SX_300_Lite/descpageRCDUNLOP-DSXLIR.html"
+    ],
+    "researchedOn": "2026-11-24"
+  },
+  {
+    "id": "dunlop-lx-800-2024",
+    "summary": "A light oversize for players with short or slow swings who want the racquet to supply the depth. The large head and thick, stiff beam are meant to make pace and clean contact easy, and the 2024 version drops the extra length of the old one so it moves faster. No independent playtest turned up, so this rests on the maker, a retailer and a tennis.com preview. Anyone with a longer swing is better served by the Team 107.",
+    "bestFor": ["power", "forgiveness", "comfort", "maneuverability"],
+    "playerLevel": ["beginner", "intermediate"],
+    "playStyle": "compact swinger, doubles and social play",
+    "feel": "cushioned, by the maker's account",
+    "ratings": { "power": 4, "spin": 3, "control": 2, "comfort": 4, "stability": 2, "maneuverability": 4, "feel": 3 },
+    "compared": ["head-pwr-110", "prince-premier-105", "solinco-prizm-115-2026"],
+    "variantNotes": {
+      "1000": "Larger head and an even bigger margin for error.",
+      "Team 107": "Smaller head, thinner beam and more weight; a little more command for longer swings."
+    },
+    "released": "2024-08",
+    "confidence": "low",
+    "sources": [
+      "https://www.tennis.com/news/articles/tennis-racquet-preview-dunlop-lx-series-800-1000-team-107",
+      "https://www.tennis-warehouse.com/Dunlop_LX_800/descpageRCDUNLOP-LX800.html",
+      "https://us.dunlopsports.com/dunlop/tennis/rackets/lx-series/lx-800-tennis-racket/LX800-24.html",
+      "https://www.tennis-warehouse.com/Dunlop_LX_1000/descpageRCDUNLOP-LX1000.html",
+      "https://us.dunlopsports.com/dunlop/tennis/rackets/lx-team/lx-team-107-tennis-racket/MLXTEAM107-24.html"
+    ],
+    "researchedOn": "2026-11-24"
+  }
+]

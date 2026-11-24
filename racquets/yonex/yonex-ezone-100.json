@@ -41,58 +41,22 @@
     "finish": "gloss",
     "zones": [
       {
-        "from": 0,
-        "to": 0.12,
-        "color": "#5d97d6"
-      },
-      {
-        "from": 0.36,
-        "to": 0.4,
-        "color": "#4843b4",
-        "faces": [
-          "outer",
-          "front",
-          "back"
-        ]
-      },
-      {
-        "from": 0.4,
-        "to": 0.425,
-        "color": "#2fc4b2"
-      },
-      {
-        "from": 0.425,
-        "to": 0.47,
-        "color": "#4843b4",
-        "faces": [
-          "outer"
-        ]
-      },
-      {
-        "from": 0.53,
-        "to": 0.58,
-        "color": "#4843b4",
-        "faces": [
-          "outer"
-        ]
-      },
-      {
-        "from": 0.58,
-        "to": 0.605,
+        "from": 0.33,
+        "to": 0.45,
         "color": "#2fc4b2",
         "faces": [
-          "outer",
           "front",
-          "back"
-        ]
+          "back",
+          "outer"
+        ],
+        "side": "left",
+        "bridge": false
       },
       {
-        "from": 0.605,
-        "to": 0.64,
-        "color": "#4843b4",
-        "faces": [
-          "outer"
-        ]
+        "from": 0.322,
+        "to": 0.339,
+        "color": "#2fc4b2",
+        "side": "right"
       },
       {
         "from": 0.7,
@@ -142,58 +106,22 @@
         "finish": "gloss",
         "zones": [
           {
-            "from": 0,
-            "to": 0.12,
-            "color": "#30221d"
-          },
-          {
-            "from": 0.36,
-            "to": 0.4,
-            "color": "#2b1e19",
-            "faces": [
-              "outer",
-              "front",
-              "back"
-            ]
-          },
-          {
-            "from": 0.4,
-            "to": 0.425,
-            "color": "#c46c36"
-          },
-          {
-            "from": 0.425,
-            "to": 0.47,
-            "color": "#2b1e19",
-            "faces": [
-              "outer"
-            ]
-          },
-          {
-            "from": 0.53,
-            "to": 0.58,
-            "color": "#2b1e19",
-            "faces": [
-              "outer"
-            ]
-          },
-          {
-            "from": 0.58,
-            "to": 0.605,
+            "from": 0.325,
+            "to": 0.452,
             "color": "#c46c36",
             "faces": [
-              "outer",
               "front",
-              "back"
-            ]
+              "back",
+              "outer"
+            ],
+            "side": "left",
+            "bridge": false
           },
           {
-            "from": 0.605,
-            "to": 0.64,
-            "color": "#2b1e19",
-            "faces": [
-              "outer"
-            ]
+            "from": 0.322,
+            "to": 0.339,
+            "color": "#c46c36",
+            "side": "right"
           },
           {
             "from": 0.7,

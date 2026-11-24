@@ -40,19 +40,54 @@
     "finish": "gloss",
     "zones": [
       {
-        "from": 0.4,
-        "to": 0.54,
-        "color": "#2b2a2e"
-      },
-      {
-        "from": 0.56,
-        "to": 0.72,
-        "color": "#d535a8"
-      },
-      {
-        "from": 0.8,
+        "from": 0.53,
         "to": 1,
-        "color": "#f39a1e"
+        "color": "#f5801f",
+        "side": "left"
+      },
+      {
+        "from": 0.531,
+        "to": 1,
+        "color": "#f0a21c",
+        "side": "right"
+      },
+      {
+        "from": 0.428,
+        "to": 0.53,
+        "color": "#4a4548",
+        "side": "left"
+      },
+      {
+        "from": 0.395,
+        "to": 0.428,
+        "color": "#f0b528",
+        "side": "left"
+      },
+      {
+        "from": 0.318,
+        "to": 0.395,
+        "color": "#4a4548",
+        "side": "left",
+        "bridge": false
+      },
+      {
+        "from": 0.427,
+        "to": 0.531,
+        "color": "#cf4f9f",
+        "side": "right"
+      },
+      {
+        "from": 0.315,
+        "to": 0.392,
+        "color": "#cf4f9f",
+        "side": "right",
+        "bridge": false
+      },
+      {
+        "from": 0.235,
+        "to": 0.318,
+        "color": "#eab80e",
+        "side": "left"
       }
     ]
   },

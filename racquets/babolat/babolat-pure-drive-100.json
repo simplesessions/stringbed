@@ -41,25 +41,22 @@
     "finish": "gloss",
     "zones": [
       {
-        "from": 0.36,
-        "to": 0.415,
+        "from": 0.428,
+        "to": 0.534,
         "color": "#2b3446"
       },
       {
-        "from": 0.44,
-        "to": 0.52,
-        "color": "#2b3446"
+        "from": 0.316,
+        "to": 0.391,
+        "color": "#2b3446",
+        "bridge": false
       },
       {
-        "from": 0.71,
+        "from": 0.75,
         "to": 1,
-        "color": "#2b3446"
-      },
-      {
-        "from": 0.53,
-        "to": 0.71,
         "color": "#2b3446",
         "faces": [
+          "inner",
           "outer"
         ]
       }
@@ -360,25 +357,22 @@
         "finish": "satin",
         "zones": [
           {
-            "from": 0.36,
-            "to": 0.415,
+            "from": 0.43,
+            "to": 0.54,
             "color": "#1f7bc2"
           },
           {
-            "from": 0.44,
-            "to": 0.52,
-            "color": "#1f7bc2"
+            "from": 0.317,
+            "to": 0.395,
+            "color": "#1f7bc2",
+            "bridge": false
           },
           {
-            "from": 0.71,
+            "from": 0.75,
             "to": 1,
-            "color": "#1f7bc2"
-          },
-          {
-            "from": 0.53,
-            "to": 0.71,
             "color": "#1f7bc2",
             "faces": [
+              "inner",
               "outer"
             ]
           }
@@ -434,25 +428,22 @@
         "finish": "satin",
         "zones": [
           {
-            "from": 0.36,
-            "to": 0.415,
+            "from": 0.43,
+            "to": 0.54,
             "color": "#1f7bc2"
           },
           {
-            "from": 0.44,
-            "to": 0.52,
-            "color": "#1f7bc2"
+            "from": 0.317,
+            "to": 0.395,
+            "color": "#1f7bc2",
+            "bridge": false
           },
           {
-            "from": 0.71,
+            "from": 0.75,
             "to": 1,
-            "color": "#1f7bc2"
-          },
-          {
-            "from": 0.53,
-            "to": 0.71,
             "color": "#1f7bc2",
             "faces": [
+              "inner",
               "outer"
             ]
           }

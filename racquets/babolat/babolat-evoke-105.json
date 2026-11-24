@@ -40,9 +40,15 @@
     "finish": "matte",
     "zones": [
       {
-        "from": 0.44,
-        "to": 0.58,
-        "color": "#f2431e"
+        "from": 0.433,
+        "to": 0.517,
+        "color": "#f2302c"
+      },
+      {
+        "from": 0.326,
+        "to": 0.392,
+        "color": "#f2302c",
+        "bridge": false
       }
     ]
   },
@@ -65,7 +71,7 @@
       "channel": 0.45
     },
     "bumper": {
-      "color": "#f2431e"
+      "color": "#1c1c20"
     },
     "dampener": null
   },

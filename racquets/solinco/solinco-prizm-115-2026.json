@@ -39,9 +39,9 @@
       {
         "from": 0.9,
         "to": 1,
-        "color": "#202225",
+        "color": "#17171a",
         "faces": [
-          "inner"
+          "outer"
         ]
       }
     ]

@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { hexToLinear } from './color';
+import { BRIDGE_U } from './frame';
 import type { BeamFace, RacquetSide, RacquetSpec } from './spec';
 
 export { hexToLinear } from './color';
@@ -99,14 +100,17 @@ export function applyPaint(frame: THREE.BufferGeometry, paint: Paint): void {
   const sideAttr = frame.getAttribute('side');
   if (!uAttr) throw new Error('applyPaint: frame needs a "u" attribute (use buildFrame output)');
   const out = new Float32Array(pos.count * 3);
+  // Every bridge vertex carries exactly BRIDGE_U; nothing else does.
+  const bridgePaint: Paint = { ...paint, zones: paint.zones.filter((z) => z.bridge !== false) };
   const pat = paint.pattern;
   const patColor = pat ? hexToLinear(pat.color) : null;
   for (let i = 0; i < pos.count; i++) {
     const u = uAttr.getX(i);
     const face = sideAttr ? faceAt(sideAttr.getX(i), sideAttr.getY(i)) : undefined;
     const half: RacquetSide = pos.getX(i) < 0 ? 'left' : 'right';
-    let c = paintColorAt(paint, u, face, half);
-    if (pat && patColor && !zonedAt(paint, u, face, half) && camoField(pos.getX(i), pos.getY(i), pos.getZ(i), pat.scale, pat.seed) > CAMO_THRESHOLD) c = patColor;
+    const p = Math.abs(u - BRIDGE_U) < 1e-6 ? bridgePaint : paint;
+    let c = paintColorAt(p, u, face, half);
+    if (pat && patColor && !zonedAt(p, u, face, half) && camoField(pos.getX(i), pos.getY(i), pos.getZ(i), pat.scale, pat.seed) > CAMO_THRESHOLD) c = patColor;
     out[i * 3] = c[0]; out[i * 3 + 1] = c[1]; out[i * 3 + 2] = c[2];
   }
   frame.setAttribute('color', new THREE.BufferAttribute(out, 3));

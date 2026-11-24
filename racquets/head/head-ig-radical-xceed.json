@@ -36,21 +36,29 @@
     }
   },
   "paint": {
-    "base": "#f26b1d",
+    "base": "#23304f",
     "finish": "satin",
     "zones": [
       {
-        "from": 0,
-        "to": 0.35,
-        "color": "#23304f"
+        "from": 0.228,
+        "to": 1,
+        "color": "#f5641c",
+        "side": "left"
       },
       {
-        "from": 0.9,
+        "from": 0.358,
         "to": 1,
-        "color": "#17171a",
+        "color": "#f2401f",
+        "side": "right"
+      },
+      {
+        "from": 0.358,
+        "to": 1,
+        "color": "#ee2742",
         "faces": [
           "inner"
-        ]
+        ],
+        "side": "right"
       }
     ]
   },

@@ -45,13 +45,10 @@
         "color": "#16181a"
       },
       {
-        "from": 0.62,
-        "to": 0.9,
+        "from": 0.53,
+        "to": 0.825,
         "color": "#17191b",
-        "faces": [
-          "inner",
-          "outer"
-        ]
+        "side": "right"
       }
     ]
   },
@@ -70,11 +67,11 @@
       "gaugeMm": 1.25
     },
     "grommets": {
-      "color": "#14161a",
+      "color": "#8fcb34",
       "channel": 0.45
     },
     "bumper": {
-      "color": "#14161a"
+      "color": "#a6e63f"
     },
     "dampener": null
   },

@@ -41,19 +41,20 @@
     "finish": "satin",
     "zones": [
       {
+        "from": 0.408,
+        "to": 0.52,
+        "color": "#f55a46"
+      },
+      {
+        "from": 0.299,
+        "to": 0.369,
+        "color": "#f55a46",
+        "bridge": false
+      },
+      {
         "from": 0,
-        "to": 0.35,
-        "color": "#58606a"
-      },
-      {
-        "from": 0.36,
-        "to": 0.405,
-        "color": "#f55a46"
-      },
-      {
-        "from": 0.425,
-        "to": 0.535,
-        "color": "#f55a46"
+        "to": 0.298,
+        "color": "#5f6771"
       },
       {
         "from": 0.79,
@@ -115,19 +116,20 @@
         "finish": "satin",
         "zones": [
           {
+            "from": 0.424,
+            "to": 0.532,
+            "color": "#f55a46"
+          },
+          {
+            "from": 0.304,
+            "to": 0.377,
+            "color": "#f55a46",
+            "bridge": false
+          },
+          {
             "from": 0,
-            "to": 0.35,
+            "to": 0.298,
             "color": "#5f6771"
-          },
-          {
-            "from": 0.36,
-            "to": 0.405,
-            "color": "#f55a46"
-          },
-          {
-            "from": 0.425,
-            "to": 0.535,
-            "color": "#f55a46"
           },
           {
             "from": 0.79,
@@ -186,19 +188,20 @@
         "finish": "satin",
         "zones": [
           {
+            "from": 0.408,
+            "to": 0.52,
+            "color": "#f55a46"
+          },
+          {
+            "from": 0.299,
+            "to": 0.369,
+            "color": "#f55a46",
+            "bridge": false
+          },
+          {
             "from": 0,
-            "to": 0.35,
+            "to": 0.298,
             "color": "#5f6771"
-          },
-          {
-            "from": 0.36,
-            "to": 0.405,
-            "color": "#f55a46"
-          },
-          {
-            "from": 0.425,
-            "to": 0.535,
-            "color": "#f55a46"
           },
           {
             "from": 0.79,

@@ -1,0 +1,110 @@
+[
+  {
+    "id": "tecnifibre-fire-2026",
+    "summary": "A power-leaning 98 for advanced players who like to swing hard. Testers found easy pace and spin from the baseline and rated serving as its best shot, with good stability for the spec. It is firm, and off-centre hits can feel sharp, so touch volleys and soft angles were the common complaint, along with returns that sailed. Opinion was not uniform: one tester liked the flex at net and saw a hybrid, not a pure power frame.",
+    "bestFor": ["power", "serves", "spin", "baseline"],
+    "playerLevel": ["advanced"],
+    "playStyle": "big-hitting baseliner",
+    "feel": "firm and crisp",
+    "ratings": { "power": 4, "spin": 4, "control": 3, "comfort": 3, "stability": 4, "maneuverability": 4, "feel": 2 },
+    "compared": ["dunlop-fx-500-2025", "prince-ats-textreme-tour-98-carbon", "babolat-pure-drive-100"],
+    "variantNotes": {
+      "300": "Larger head and faster swing with easy power and spin; testers split on feel and found it less stable off-centre.",
+      "285": "Lighter and quick, pitched at intermediates.",
+      "270": "Lighter still, for beginners and early intermediates.",
+      "260 OS": "Oversize head for maximum forgiveness; also pitched at doubles players."
+    },
+    "confidence": "medium",
+    "sources": [
+      "https://www.tennis-warehouse.com/learning_center/racquet_reviews/TFFI35review.html",
+      "https://www.tennis-warehouse.com/learning_center/racquet_reviews/TFFI30review.html",
+      "https://www.tennisnerd.net/gear/racquets/tecnifibre-fire-racquets-specs-for-this-new-power-frame/63640",
+      "https://www.tennis-warehouse.com/learning_center/Gear_Guides/Tennis_Racquets/best_tecnifibre_racquet_for_me.html",
+      "https://www.tennis-warehouse.com/Tecnifibre_Fire_285/descpageRCTFUSA-TFFI28.html",
+      "https://www.tennis-warehouse.com/Tecnifibre_Fire_270/descpageRCTFUSA-TFFI70.html",
+      "https://www.tennis-warehouse.com/Tecnifibre_Fire_260_OS/descpageRCTFUSA-TFFI26.html"
+    ],
+    "researchedOn": "2026-11-24"
+  },
+  {
+    "id": "tecnifibre-tfight-2025",
+    "summary": "A precise 98 with an in-between string pattern that favours control but still lets you shape the ball. Reviewers agree the lower swingweight makes it far easier to use than the model it replaced, while staying solid on volleys and returns; slices and flat drives stand out. It still wants a skilled swing. The old frame's heft is gone, so defensive balls can land short, and the flat, rectangular grip divides people.",
+    "bestFor": ["control", "feel", "volleys", "all-court"],
+    "playerLevel": ["advanced"],
+    "playStyle": "all-court player who picks targets",
+    "feel": "solid, clean and connected",
+    "ratings": { "power": 3, "spin": 3, "control": 5, "comfort": 4, "stability": 4, "maneuverability": 4, "feel": 5 },
+    "compared": ["babolat-pure-strike-98", "head-radical-mp-2025", "solinco-whiteout-v2-305"],
+    "variantNotes": {
+      "300S": "Lighter 98 with an open pattern; very quick, leaning to control.",
+      "315S": "Heavier but head-light, with more launch and plow; the grip shape bothered some testers.",
+      "300": "Larger head, more spin and easier depth; flat balls can float.",
+      "285": "Lighter 100 with a soft flex, aimed at intermediates.",
+      "270": "Lightest of the 100s, for developing players.",
+      "Team": "Larger head and thicker beam, sold pre-strung for regular and occasional players."
+    },
+    "confidence": "high",
+    "sources": [
+      "https://www.tennis-warehouse.com/learning_center/racquet_reviews/TF305Sreview.html",
+      "https://prod.tennis.com/news/articles/racquet-review-tecnifibre-t-fight-305s-daniil-medvedev-weapon-of-choice",
+      "https://www.tennisnerd.net/gear/racquets/racquet-reviews/tecnifibre-tfight-305s-review/43957",
+      "https://www.tennis.com/news/articles/racquet-review-tecnifibre-t-fight-300-and-300s",
+      "https://www.tennis-warehouse.com/learning_center/racquet_reviews/TF300Sreview.html",
+      "https://www.tennis-warehouse.com/learning_center/racquet_reviews/TF30STreview.html",
+      "https://www.tennis-warehouse.com/learning_center/racquet_reviews/TF315Sreview.html",
+      "https://www.tennis-warehouse.com/learning_center/Gear_Guides/Tennis_Racquets/best_tecnifibre_racquet_for_me.html",
+      "https://www.tennis-warehouse.com/Tecnifibre_TFight_285/descpageRCTFUSA-TF285S.html",
+      "https://www.tennis-warehouse.com/Tecnifibre_TFight_270/descpageRCTFUSA-TF270S.html",
+      "https://www.tennisnuts.com/tecnifibre-t-fight-team-tennis-racket-1750086.html"
+    ],
+    "researchedOn": "2026-11-24"
+  },
+  {
+    "id": "tecnifibre-tf40-2024",
+    "summary": "A foam-filled control 98 with a comfortable, connected response, for players with a full swing. One reviewer found it stable and surprisingly punchy for its class, especially on serve, and thought it balanced control and power better than a Blade. A second, shorter test praised its precision and touch but found power lacking, so do not count on free pace. The rectangular grip is an acquired taste, and sources differ on how heavy it swings.",
+    "bestFor": ["control", "stability", "comfort", "feel"],
+    "playerLevel": ["intermediate", "advanced"],
+    "playStyle": "all-court player with a full swing",
+    "feel": "solid, dampened and connected",
+    "ratings": { "power": 3, "spin": 3, "control": 4, "comfort": 4, "stability": 4, "maneuverability": 3, "feel": 4 },
+    "compared": ["wilson-blade-98-v10", "solinco-whiteout-v2-305", "head-radical-mp-2025"],
+    "variantNotes": {
+      "305 18x20": "Denser pattern and a higher swingweight; more directional control and stability.",
+      "315 16x19": "Heavier on the scale but head-light and manageable; the most traditional of the line.",
+      "290 16x19": "Quick and spin-friendly with the same feel; gets pushed around by heavier hitters."
+    },
+    "confidence": "medium",
+    "sources": [
+      "https://www.tennisnerd.net/gear/racquets/racquet-reviews/tecnifibre-tf40-2024-review/41371",
+      "https://hitwithme.com/tennis-racket-reviews/2024/10/16/tecnifibre-tf-40-racket-review-18x20-and-16x19",
+      "https://www.tennis-warehouse.com/learning_center/Gear_Guides/Tennis_Racquets/best_tecnifibre_racquet_for_me.html",
+      "https://www.tennis-warehouse.com/learning_center/racquet_reviews/TF40R9review.html",
+      "https://www.tennis-warehouse.com/Tecnifibre_TF40_305g_18x20/descpage-TF40R2.html",
+      "https://www.tennis-warehouse.com/Tecnifibre_TF40_315g_16x19/descpageRCTFUSA-TF40R5.html"
+    ],
+    "researchedOn": "2026-11-24"
+  },
+  {
+    "id": "tecnifibre-tempo-2026",
+    "summary": "Part of a range Tecnifibre designs for women, with a fairly light frame and a head slightly larger than a standard 100. The maker pitches the Tour at competitive juniors and players at a good level, with power from the bigger head and an open pattern for spin; one shop lists it as intermediate. Independent reviews of this version could not be found, so treat the ratings as a cautious reading of the specs and try before buying.",
+    "bestFor": ["maneuverability", "forgiveness"],
+    "playerLevel": ["intermediate"],
+    "playStyle": "developing or club-competition player",
+    "feel": "not independently reviewed",
+    "ratings": { "power": 3, "spin": 3, "control": 3, "comfort": 3, "stability": 2, "maneuverability": 4, "feel": 3 },
+    "compared": ["yonex-muse-100-2026", "babolat-evo-drive-2025", "head-boom-mp-2026"],
+    "variantNotes": {
+      "Team": "Lighter, for players moving past the beginner stage."
+    },
+    "confidence": "low",
+    "sources": [
+      "https://b2b.tecnifibre.com/en/p/14TEMTOU6.html",
+      "https://b2b.tecnifibre.com/en/gamme-tempo.html",
+      "https://sportano.com/p/1077921/tennis-racket-tecnifibre-tempo-tour-g1-2026-white",
+      "https://sportano.com/p/1077911/tennis-racket-tecnifibre-tempo-team-2026-g2-white",
+      "https://www.ipontennis.com/en/adult-tennis-rackets/tecnifibre-tennis-racket-tempo-tour-2026-285g",
+      "https://www.ipontennis.com/en/adult-tennis-rackets/tecnifiber-tennis-racket-tempo-team-2026"
+    ],
+    "researchedOn": "2026-11-24"
+  }
+]

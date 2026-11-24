@@ -47,20 +47,20 @@
         "side": "left"
       },
       {
-        "from": 0.17,
-        "to": 0.21,
+        "from": 0.18,
+        "to": 0.212,
         "color": "#de1f22",
         "side": "left"
       },
       {
-        "from": 0.485,
-        "to": 0.55,
+        "from": 0.486,
+        "to": 0.53,
         "color": "#2323bd",
         "side": "right"
       },
       {
-        "from": 0.56,
-        "to": 0.62,
+        "from": 0.555,
+        "to": 0.6,
         "color": "#de1f22",
         "side": "right"
       }
@@ -320,8 +320,8 @@
             "side": "left"
           },
           {
-            "from": 0.17,
-            "to": 0.21,
+            "from": 0.18,
+            "to": 0.212,
             "color": "#de1f22",
             "side": "left"
           },

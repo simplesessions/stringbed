@@ -40,28 +40,41 @@
     "finish": "satin",
     "zones": [
       {
-        "from": 0.36,
-        "to": 0.44,
+        "from": 0.315,
+        "to": 0.38,
         "color": "#e8642a",
-        "faces": [
-          "outer"
-        ]
+        "side": "left",
+        "bridge": false
       },
       {
-        "from": 0.46,
-        "to": 0.7,
+        "from": 0.41,
+        "to": 0.62,
         "color": "#5fd6b8",
-        "faces": [
-          "outer"
-        ]
+        "side": "left"
       },
       {
-        "from": 0.88,
-        "to": 1,
-        "color": "#17171a",
-        "faces": [
-          "inner"
-        ]
+        "from": 0.36,
+        "to": 0.42,
+        "color": "#5fd6b8",
+        "side": "right"
+      },
+      {
+        "from": 0.43,
+        "to": 0.445,
+        "color": "#e8642a",
+        "side": "right"
+      },
+      {
+        "from": 0.5,
+        "to": 0.62,
+        "color": "#5fd6b8",
+        "side": "right"
+      },
+      {
+        "from": 0.74,
+        "to": 0.83,
+        "color": "#1f5fc8",
+        "side": "right"
       }
     ]
   },

@@ -40,12 +40,10 @@
     "finish": "matte",
     "zones": [
       {
-        "from": 0.42,
-        "to": 0.5,
-        "color": "#c8e63c",
-        "faces": [
-          "outer"
-        ]
+        "from": 0.75,
+        "to": 0.815,
+        "color": "#d6e832",
+        "side": "right"
       }
     ]
   },

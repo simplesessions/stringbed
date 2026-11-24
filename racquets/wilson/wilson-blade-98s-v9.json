@@ -36,13 +36,16 @@
     }
   },
   "paint": {
-    "base": "#1f8a78",
+    "base": "#10686f",
     "finish": "gloss",
     "zones": [
       {
-        "from": 0.85,
+        "from": 0.8,
         "to": 1,
-        "color": "#2a2f33"
+        "color": "#3d4a4e",
+        "faces": [
+          "outer"
+        ]
       }
     ]
   },
@@ -51,7 +54,7 @@
       "color": "#1d1d1f"
     },
     "collar": {
-      "color": "#1f8a78"
+      "color": "#10686f"
     },
     "buttCap": {
       "color": "#1d1d1f"
@@ -61,7 +64,7 @@
       "gaugeMm": 1.25
     },
     "grommets": {
-      "color": "#17604f",
+      "color": "#16454c",
       "channel": 0.45
     },
     "bumper": {

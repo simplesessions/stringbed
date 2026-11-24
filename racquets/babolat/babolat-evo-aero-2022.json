@@ -36,26 +36,34 @@
     }
   },
   "paint": {
-    "base": "#8b9399",
+    "base": "#6f7b84",
     "finish": "satin",
     "zones": [
       {
-        "from": 0.4,
-        "to": 0.52,
-        "color": "#f0f0f0"
+        "from": 0.422,
+        "to": 0.525,
+        "color": "#f0f0f0",
+        "side": "left"
       },
       {
-        "from": 0.56,
-        "to": 0.72,
-        "color": "#c8f23c"
+        "from": 0.315,
+        "to": 0.387,
+        "color": "#f0f0f0",
+        "side": "left",
+        "bridge": false
       },
       {
-        "from": 0.88,
-        "to": 1,
-        "color": "#1e2124",
-        "faces": [
-          "inner"
-        ]
+        "from": 0.422,
+        "to": 0.525,
+        "color": "#c8f23c",
+        "side": "right"
+      },
+      {
+        "from": 0.315,
+        "to": 0.387,
+        "color": "#c8f23c",
+        "side": "right",
+        "bridge": false
       }
     ]
   },

@@ -41,27 +41,47 @@
     "finish": "gloss",
     "zones": [
       {
-        "from": 0.36,
-        "to": 0.415,
-        "color": "#1c2438"
-      },
-      {
-        "from": 0.44,
-        "to": 0.52,
-        "color": "#1c2438"
-      },
-      {
-        "from": 0.71,
-        "to": 1,
-        "color": "#1c2438"
-      },
-      {
-        "from": 0.53,
-        "to": 0.71,
+        "from": 0.424,
+        "to": 0.53,
         "color": "#1c2438",
-        "faces": [
-          "outer"
-        ]
+        "side": "left"
+      },
+      {
+        "from": 0.315,
+        "to": 0.39,
+        "color": "#1c2438",
+        "side": "left",
+        "bridge": false
+      },
+      {
+        "from": 0.535,
+        "to": 1,
+        "color": "#1c2438",
+        "side": "right"
+      },
+      {
+        "from": 0.395,
+        "to": 0.425,
+        "color": "#1c2438",
+        "side": "right"
+      },
+      {
+        "from": 0.277,
+        "to": 0.314,
+        "color": "#1c2438",
+        "side": "right"
+      },
+      {
+        "from": 0.3397,
+        "to": 0.3403,
+        "color": "#1c2438",
+        "side": "right"
+      },
+      {
+        "from": 0.9,
+        "to": 1,
+        "color": "#1c2438",
+        "side": "left"
       }
     ]
   },

@@ -78,5 +78,47 @@
   "verified": true,
   "colourway": "White/Neon Yellow",
   "variantLabel": "305",
-  "variants": []
+  "variants": [
+    {
+      "id": "tecnifibre-tf-x1-300-v2",
+      "label": "300",
+      "model": "TF-X1 V2 300",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          24.5,
+          25.4,
+          25
+        ],
+        "unstrungWeightG": 300
+      },
+      "geometry": {
+        "head": {
+          "shape": "oval",
+          "aspect": 1.31
+        },
+        "beam": {
+          "profile": "ellipse"
+        },
+        "throat": {
+          "style": "open-v",
+          "bridge": "curved"
+        },
+        "features": [],
+        "handle": {
+          "elongationMm": 3.5
+        }
+      },
+      "sources": [
+        "https://www.tecnifibre.com/products/tf-x1-v2-300",
+        "https://www.extreme-tennis.eu/tecnifibre-tf-x1-rackets/19089-tecnifibre-tf-x1-v2-300-300g-racket.html",
+        "https://www.tennisnerd.net/gear/racquets/tecnifibre-tf-x1-v2/36691"
+      ]
+    }
+  ]
 }
