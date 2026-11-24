@@ -3,11 +3,12 @@
 Editorial research on the current top racquets: a skimmable summary plus what each frame is good
 for. Nothing here is read by the generator, and nothing here changes `racquets/` or `assets/`.
 The gallery loads these files on a racquet's page (`site/src/profiles.ts`, bundled by Vite, one
-chunk per brand) and shows them under "How it plays": summary, best-for tags, levels, the 1-5
+chunk per brand) and shows them under "How the <line> plays": summary, best-for tags, levels, the 1-5
 ratings and a compare-against-a-rival toggle built from `compared`.
 
 One file per brand, `profiles/<brand>.json`: an array of profile objects, one per **frame** (the
-spec id in `racquets/`), not per size. Size-specific notes go in `variantNotes`.
+spec id in `racquets/`), not per size. Size-specific notes go in `variantNotes` and show on that
+size's row in the line-up. Junior sizes of an adult frame show no write-up.
 
 ## Fields
 

@@ -22,6 +22,8 @@ export class Viewer {
   private frame = 0;
   private dirty = true;
   private request = 0;
+  /** How far back the camera stands to fit the model on show. */
+  private distance = 1;
 
   static create(): Viewer | null {
     const renderer = createRenderer();
@@ -65,15 +67,27 @@ export class Viewer {
     this.canvas.remove();
   }
 
-  /** Load and frame a model. Rejects if the file fails to load. */
-  async show(url: string): Promise<void> {
+  /**
+   * Load and frame a model. The one on show stays until the new one is ready; with `keepView` the
+   * new one takes its place at the same angle and zoom. Rejects if the file fails to load.
+   */
+  async show(url: string, keepView = false): Promise<void> {
     const ticket = ++this.request;
     const source = await loadModel(url);
     if (ticket !== this.request) return; // a newer request won
+    const c = this.controls;
+    const view = keepView && this.model
+      ? { offset: this.camera.position.clone().sub(c.target).divideScalar(this.distance), autoRotate: c.autoRotate }
+      : null;
     if (this.model) this.scene.remove(this.model);
     this.model = source.clone();
     this.scene.add(this.model);
     this.frameModel();
+    if (view) {
+      this.camera.position.copy(c.target).addScaledVector(view.offset, this.distance);
+      c.autoRotate = view.autoRotate;
+      c.update();
+    }
   }
 
   /** Draw in `look` from the next frame. */
@@ -118,7 +132,7 @@ export class Viewer {
     const vHalf = (FOV * Math.PI) / 360;
     const fitH = (size.y * 0.58) / Math.tan(vHalf);
     const fitW = (Math.max(size.x, size.z) * 0.62) / (Math.tan(vHalf) * this.camera.aspect);
-    const distance = Math.max(fitH, fitW);
+    const distance = (this.distance = Math.max(fitH, fitW));
     c.target.copy(center);
     const yaw = -0.45;
     const pitch = 0.12;
@@ -144,15 +158,20 @@ export class Viewer {
     this.renderer.setSize(w, h, false);
     this.camera.aspect = w / h;
     this.camera.updateProjectionMatrix();
-    this.dirty = true;
+    // Resizing wipes the canvas, and this runs after the frame's own drawing: draw again now, or
+    // the browser paints one blank frame for every step of a window resize.
+    this.draw();
+  }
+
+  private draw() {
+    this.dirty = false;
+    this.painter.render(this.scene, this.camera, this.renderer.getPixelRatio(), LOOK_SCALE);
   }
 
   private loop = () => {
     this.frame = requestAnimationFrame(this.loop);
     if (this.controls.update()) this.dirty = true;
     if (this.controls.autoRotate && this.model) this.dirty = true;
-    if (!this.dirty) return;
-    this.dirty = false;
-    this.painter.render(this.scene, this.camera, this.renderer.getPixelRatio(), LOOK_SCALE);
+    if (this.dirty) this.draw();
   };
 }

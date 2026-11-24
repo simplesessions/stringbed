@@ -403,3 +403,100 @@ export function aislesOf(c: Catalog, age: Age): Aisle[] {
   }
   return out;
 }
+
+// ---------- a family's line-up: its versions, the juniors apart, colours folded in ----------
+
+/** One colour a version comes in: its own page, or a colourway of the version's page. */
+export interface VersionColour {
+  name: string;
+  swatch: string;
+  racquetId: string;
+  colourway: string | null;
+}
+export interface Version {
+  racquet: Racquet;
+  /** Empty when it comes in one colour. */
+  colours: VersionColour[];
+}
+export interface Lineup {
+  adult: Version[];
+  junior: Version[];
+}
+
+/** "Junior 25 Light Blue" is the "Junior 25" in light blue when the listed frames agree. */
+function isColourOf(v: Racquet, parent: Racquet): boolean {
+  if (v === parent || !v.colourway || v.variantLabel !== `${parent.variantLabel} ${v.colourway}`) return false;
+  const a = v.specs;
+  const b = parent.specs;
+  return (
+    a.headSizeSqIn === b.headSizeSqIn &&
+    a.lengthIn === b.lengthIn &&
+    String(a.stringPattern) === String(b.stringPattern) &&
+    String(a.beamMm) === String(b.beamMm) &&
+    (!a.unstrungWeightG || !b.unstrungWeightG || a.unstrungWeightG === b.unstrungWeightG)
+  );
+}
+
+/** A family's versions in reading order: adults by head size, juniors by length. */
+export function lineupOf(c: Catalog, family: Racquet): Lineup {
+  const members = membersOf(c, family, 'all');
+  const parentOf = (r: Racquet) => members.find((p) => isColourOf(r, p));
+  const ownColours = (r: Racquet): VersionColour[] => [
+    { name: r.colourway ?? 'Standard', swatch: r.swatch, racquetId: r.id, colourway: null },
+    ...(r.colourways ?? []).map((cw) => ({ name: cw.name, swatch: cw.swatch, racquetId: r.id, colourway: cw.id })),
+  ];
+  const versions = members
+    .filter((r) => !parentOf(r))
+    .map((racquet): Version => {
+      const colours = [racquet, ...members.filter((r) => parentOf(r) === racquet)].flatMap(ownColours);
+      return { racquet, colours: colours.length > 1 ? colours : [] };
+    });
+  // Weight is listed for few frames, so it only settles ties: heaviest first, blanks last.
+  const weight = (r: Racquet) => r.specs.unstrungWeightG ?? 0;
+  const tie = (a: Version, b: Version) =>
+    Number(b.racquet === family) - Number(a.racquet === family) || weight(b.racquet) - weight(a.racquet);
+  const head = (v: Version) => v.racquet.specs.headSizeSqIn;
+  const length = (v: Version) => v.racquet.specs.lengthIn;
+  return {
+    adult: versions.filter((v) => !isJunior(v.racquet)).sort((a, b) => head(a) - head(b) || length(a) - length(b) || tie(a, b)),
+    junior: versions.filter((v) => isJunior(v.racquet)).sort((a, b) => length(a) - length(b) || head(a) - head(b) || tie(a, b)),
+  };
+}
+
+export type SpecKey = 'head' | 'pattern' | 'weight' | 'length';
+export interface VersionSpec {
+  key: SpecKey;
+  /** Blank when not listed, or when it is the standard adult length. */
+  text: string;
+  /** The value is listed and is not the base's. */
+  differs: boolean;
+}
+
+/** The facts a line-up row shows, and which of them set the version apart from `base`. */
+export function versionSpecs(r: Racquet, base: Racquet | null): VersionSpec[] {
+  const s = r.specs;
+  const b = base?.specs;
+  const weight = s.unstrungWeightG;
+  return [
+    { key: 'head', text: formatHeadSize(s.headSizeSqIn).primary, differs: !!b && s.headSizeSqIn !== b.headSizeSqIn },
+    { key: 'pattern', text: formatPattern(s.stringPattern), differs: !!b && String(s.stringPattern) !== String(b.stringPattern) },
+    { key: 'weight', text: weight ? `${formatCount(weight)} g` : '', differs: !!b?.unstrungWeightG && !!weight && weight !== b.unstrungWeightG },
+    { key: 'length', text: s.lengthIn === 27 ? '' : formatLength(s.lengthIn).primary, differs: !!b && s.lengthIn !== b.lengthIn },
+  ];
+}
+
+// ---------- stepping from one racquet page to the next ----------
+
+/** The lines either side of `current` on the wall, wrapping round. Generations of a line are one step. */
+export function neighboursOf(order: readonly Racquet[], current: Racquet): { prev: Racquet; next: Racquet } {
+  const seen = new Set<string>();
+  const lines = order.filter((r) => !seen.has(r.lineage) && seen.add(r.lineage));
+  const i = Math.max(0, lines.findIndex((r) => r.lineage === current.lineage));
+  return { prev: lines[(i - 1 + lines.length) % lines.length], next: lines[(i + 1) % lines.length] };
+}
+
+/** What a step is called: its line (or model, for a frame in one version), with the brand when that changes. */
+export function stepName(r: Racquet, fromBrand: string): string {
+  const name = r.variants?.length || r.variantOf ? lineageName(r) : r.model;
+  return r.brand === fromBrand ? name : `${r.brand} ${name}`;
+}

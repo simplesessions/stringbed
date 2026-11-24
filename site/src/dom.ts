@@ -32,10 +32,12 @@ function svg(viewBox: string, cls: string, paths: Array<[string, Record<string, 
 
 // One stroke family: 24 px grid, 1.75 stroke, round caps.
 const ICONS = {
-  back: 'M15 5l-7 7 7 7',
+  back: 'M10.5 5.5L4 12l6.5 6.5M4 12h16',
   prev: 'M15 5l-7 7 7 7',
   next: 'M9 5l7 7-7 7',
   download: 'M12 4v11M7 10.5l5 5 5-5M5 20h14',
+  code: 'M9 7l-5 5 5 5M15 7l5 5-5 5',
+  close: 'M6 6l12 12M18 6L6 18',
   retry: 'M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4.5v4h-4',
   reset: 'M12 4.5a7.5 7.5 0 1 1-7.1 5.1M4.5 4.5v5h5',
 } as const;
