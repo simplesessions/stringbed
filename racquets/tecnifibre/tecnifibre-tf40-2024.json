@@ -1,0 +1,156 @@
+{
+  "id": "tecnifibre-tf40-2024",
+  "brand": "Tecnifibre",
+  "line": "TF40",
+  "model": "TF40 305 16x19",
+  "generation": "2024",
+  "year": 2024,
+  "specs": {
+    "headSizeSqIn": 98,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      22,
+      22,
+      22
+    ],
+    "unstrungWeightG": 305
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.33
+    },
+    "beam": {
+      "profile": "box"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "curved"
+    },
+    "features": []
+  },
+  "paint": {
+    "base": "#f3f3f0",
+    "finish": "satin",
+    "zones": [
+      {
+        "from": 0.8,
+        "to": 1,
+        "color": "#232a22",
+        "blend": 0.05
+      },
+      {
+        "from": 0.12,
+        "to": 0.34,
+        "color": "#232a22",
+        "faces": [
+          "inner"
+        ]
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#f3f3f0"
+    },
+    "collar": {
+      "color": "#f3f3f0"
+    },
+    "buttCap": {
+      "color": "#f3f3f0"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#2a2b2d",
+      "channel": 0.45
+    },
+    "bumper": {
+      "color": "#26272a"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://www.tennis-warehouse.com/Tecnifibre_TF40_305g_16x19/descpageRCTFUSA-TF40R1.html",
+    "https://www.tennis-warehouse.com/Tecnifibre_TF40_305g_18x20/descpage-TF40R2.html",
+    "https://www.tennis-warehouse.com/learning_center/racquet_reviews/TF40R2review.html",
+    "https://www.tecnifibre.com/products/tf-40-305-16m-v3"
+  ],
+  "verified": true,
+  "colourway": "White/Black",
+  "variantLabel": "305 16x19",
+  "variants": [
+    {
+      "id": "tecnifibre-tf40-305-18x20-2024",
+      "label": "305 18x20",
+      "model": "TF40 305 18x20",
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          18,
+          20
+        ],
+        "beamMm": [
+          22,
+          22,
+          22
+        ],
+        "unstrungWeightG": 305
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Tecnifibre_TF40_305g_18x20/descpage-TF40R2.html"
+      ]
+    },
+    {
+      "id": "tecnifibre-tf40-315-16x19-2024",
+      "label": "315 16x19",
+      "model": "TF40 315 16x19",
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          22,
+          22,
+          22
+        ],
+        "unstrungWeightG": 315
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Tecnifibre_TF40_315g_16x19/descpageRCTFUSA-TF40R5.html"
+      ]
+    },
+    {
+      "id": "tecnifibre-tf40-290-16x19-2024",
+      "label": "290 16x19",
+      "model": "TF40 290 16x19",
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          22,
+          22,
+          22
+        ],
+        "unstrungWeightG": 290
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Tecnifibre_TF40_290g_16x19/descpageRCTFUSA-TF40R9.html"
+      ]
+    }
+  ]
+}

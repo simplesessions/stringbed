@@ -10,7 +10,7 @@ colourway.
 
 ## What's in the library
 
-- 300 modelled racquets from Babolat, Head, Prince, Solinco, Wilson and Yonex, as 72 frames
+- 354 modelled racquets from Babolat, Dunlop, Head, Prince, Solinco, Tecnifibre, Wilson and Yonex, as 86 frames
   (one per generation of a line) with their sizes as variants, plus official colourways
 - One binary glTF (`.glb`) per racquet and colourway, about 35 KB each, meshopt-compressed, with no textures
 - Researched racquets without a model yet (`placeholders/`), listed in the gallery

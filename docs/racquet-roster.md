@@ -301,3 +301,41 @@ Not modelled (54 placeholders remain):
   Evo Aero Pink (2), Graphene XT Radical/Speed (4), IG Speed juniors (2), Speed Junior 21 and 23,
   B Fly previous generation (4), Boost A, D, Aero, Drive 2021, Drive USA and Strike, Drive Junior
   23, Rafa Nadal Junior previous generation (2), Pure Drive 2018 (2), Ballfighter 17 and US Open 21.
+
+## Added 2026-11-24: Dunlop and Tecnifibre
+
+Two new brands, current and previous generation of each adult line only (no juniors). The library
+is now 354 racquets in 86 frames. Specs come from Tennis Warehouse US pages and review pages,
+tennisnerd and retailer snippets; colourways from the Tennis Warehouse product photo, face-on only.
+Not yet checked against angled photos. Aspect ratios, bridge shapes, beam order and paint hexes
+are judged by eye. Neither brand's own site was reachable, so unstrung weights are omitted for Dunlop
+(TW lists strung only); Tecnifibre unstrung weights are the nominal figure in the model name.
+
+- **Dunlop:** CX 200/400 (2027 and 2024), SX 300 (2025, 2022), FX 500 (2025, 2023; the FX 700 sits in the 2023 family as a variant), LX 800/1000 (2024). The 2027 CX year comes from retailer pre-sale listings. SX 300 2022 and FX 500 2023 have no TW product page; their specs come from review pages and search snippets.
+- **Tecnifibre:** Fire (2026, the TF-X1 successor per TW and tennisnerd, kept as its own lineage), TFight (2025, ISO 2022), TF40 (2024, v1 2019), TF-X1 (V2 2024, V1 2022). The Fire 2026 year is inferred from pre-sale listings.
+- **Left out for lack of a checked source:** TF-X1 V2 300 and TFight ISO 295 (spec page or photo not read; every spec in the library must be verified). Also skipped: Tecnifibre TFight 300 IG, TW-exclusive colours, Fire 255; Dunlop LX Team, CX/SX limited editions.
+- Beam widths where sources disagree (TFight ISO 305, TF-X1 V1 300, TF-X1 V2) follow the notes in each spec's source list; the TF-X1 V1 300 beam (24 mm, TW) conflicts with tennisnerd (26 mm).
+
+**Checked against tecnifibre.com (2026-11-24, same day).** The official product pages confirm every Tecnifibre
+unstrung weight, head size and pattern, and the Fire beams. Corrections: TFight 300 beam is 23 / 23.5 / 23
+(was 22.5 constant). Added: TFight Team (102 sq in, 285 g, beam 23 / 26 / 23 from one retailer page, as a
+variant of the TFight 2025 frame, black upper hoop from the official photo). The "TF40 2024" frame is the V3
+(same SKU as tecnifibre.com's TF-40 V3). Not added: the TF-40 AxT G2 (limited edition of 580) and the new
+Tempo line (Tour, Team, OS, L; no beam width published anywhere found). Beams of TFight 300S, 305S, 315S, 285,
+270 and the TF-40 V3 are still unconfirmed by the official site, which lists none for them.
+
+**Colourway recheck (Tecnifibre, same day).** Angled and detail photos (tecnifibre.com galleries; Tennis
+Warehouse TFX135D and TF4016 side views) were compared with the specs. Fire 2026, TFight 2025 and TF40 2024
+(V3) matched; the V3's dark top is olive-black, so its dark paint was shifted to `#232a22`. Corrected: TF-X1 V2
+(yellow grommets, bumper and upper hoop; the charcoal top was only lettering, so it is gone) and TF40 v1 (black
+runs along the whole outer edge of the hoop, not only the top). Not rechecked at other angles: TF-X1 V1 and
+TFight ISO (no readable product page found).
+
+**Dunlop checked against us.dunlopsports.com (2026-11-24).** The official product pages list unstrung weight,
+pattern, beam, head size and balance, and have several photos. Added unstrung weights to every current-generation
+Dunlop (CX 2027, FX 500 2025, SX 300 2025, LX 800). The earlier generations (CX 2024, SX 2022, FX 2023) are not on
+the site, so they keep no unstrung weight. Added: FX 500 Super Lite and FX Team 100 (FX 500 2025 family; the site sells
+them as 2026 products in the same cosmetic) and LX Team 107 (LX 2024 family, own light-blue/white/gold paint, approximated
+symmetrically). Removed: LX 800 Tour (the site calls it a limited edition). CX paint now has the orange fade and dark
+top the official photo shows. Not confirmed by the site: the "2027" CX year (the site gives no year), LX 1000 (not listed
+there) and the beams of the CX frames (the site lists none).

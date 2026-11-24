@@ -1,0 +1,281 @@
+{
+  "id": "dunlop-fx-500-2025",
+  "brand": "Dunlop",
+  "line": "FX",
+  "model": "FX 500",
+  "generation": "2025",
+  "year": 2025,
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      23,
+      26,
+      23
+    ],
+    "unstrungWeightG": 300
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.31
+    },
+    "beam": {
+      "profile": "ellipse"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "curved"
+    },
+    "features": []
+  },
+  "paint": {
+    "base": "#3d3c94",
+    "finish": "gloss",
+    "zones": [
+      {
+        "from": 0.57,
+        "to": 0.87,
+        "color": "#27b0ee"
+      },
+      {
+        "from": 0.87,
+        "to": 1,
+        "color": "#1a1b22"
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#1f1f21"
+    },
+    "collar": {
+      "color": "#3d3c94"
+    },
+    "buttCap": {
+      "color": "#1f1f21"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#17181e",
+      "channel": 0.45
+    },
+    "bumper": {
+      "color": "#17181e"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://www.tennis-warehouse.com/Dunlop_FX_500/descpageRCDUNLOP-DF500.html",
+    "https://us.dunlopsports.com/dunlop/tennis/rackets/fx-series/fx-500/MFX50026.html"
+  ],
+  "verified": true,
+  "colourway": "Blue",
+  "lineage": "dunlop-fx",
+  "variantLabel": "500",
+  "variants": [
+    {
+      "id": "dunlop-fx-500-tour-2025",
+      "label": "500 Tour",
+      "model": "FX 500 Tour",
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          21,
+          23,
+          21
+        ],
+        "unstrungWeightG": 305
+      },
+      "geometry": {
+        "head": {
+          "shape": "oval",
+          "aspect": 1.33
+        },
+        "beam": {
+          "profile": "ellipse"
+        },
+        "throat": {
+          "style": "open-v",
+          "bridge": "curved"
+        },
+        "features": []
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Dunlop_FX_500_Tour/descpageRCDUNLOP-DF50T.html",
+        "https://us.dunlopsports.com/dunlop/tennis/rackets/fx-series/fx-500-tour/MFX500TR26.html"
+      ]
+    },
+    {
+      "id": "dunlop-fx-500-ls-2025",
+      "label": "500 LS",
+      "model": "FX 500 LS",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 285
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Dunlop_FX_500_LS/descpageRCDUNLOP-DF50LS.html",
+        "https://us.dunlopsports.com/dunlop/tennis/rackets/fx-series/fx-500-ls/MFX500LS26.html"
+      ]
+    },
+    {
+      "id": "dunlop-fx-500-lite-2025",
+      "label": "500 Lite",
+      "model": "FX 500 Lite",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          18
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 270
+      },
+      "parts": {
+        "grip": {
+          "color": "#e6e6e3"
+        },
+        "collar": {
+          "color": "#1f1f21"
+        },
+        "buttCap": {
+          "color": "#1f1f21"
+        },
+        "strings": {
+          "color": "#f2f2f2",
+          "gaugeMm": 1.25
+        },
+        "grommets": {
+          "color": "#17181e",
+          "channel": 0.45
+        },
+        "bumper": {
+          "color": "#17181e"
+        },
+        "dampener": null
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Dunlop_FX_500_Lite/descpageRCDUNLOP-DF50LI.html",
+        "https://us.dunlopsports.com/dunlop/tennis/rackets/fx-series/fx-500-lite/MFX500L26.html"
+      ]
+    },
+    {
+      "id": "dunlop-fx-500-super-lite-2025",
+      "label": "500 Super Lite",
+      "model": "FX 500 Super Lite",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          18
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 255
+      },
+      "parts": {
+        "grip": {
+          "color": "#f0f0ee"
+        },
+        "collar": {
+          "color": "#1f1f21"
+        },
+        "buttCap": {
+          "color": "#1f1f21"
+        },
+        "strings": {
+          "color": "#f2f2f2",
+          "gaugeMm": 1.25
+        },
+        "grommets": {
+          "color": "#17181e",
+          "channel": 0.45
+        },
+        "bumper": {
+          "color": "#17181e"
+        },
+        "dampener": null
+      },
+      "sources": [
+        "https://us.dunlopsports.com/dunlop/tennis/rackets/fx-series/fx-500-super-lite/MFX500SL26.html"
+      ]
+    },
+    {
+      "id": "dunlop-fx-team-100-2025",
+      "label": "Team 100",
+      "model": "FX Team 100",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          24
+        ],
+        "unstrungWeightG": 285
+      },
+      "parts": {
+        "grip": {
+          "color": "#f0f0ee"
+        },
+        "collar": {
+          "color": "#1f1f21"
+        },
+        "buttCap": {
+          "color": "#1f1f21"
+        },
+        "strings": {
+          "color": "#f2f2f2",
+          "gaugeMm": 1.25
+        },
+        "grommets": {
+          "color": "#17181e",
+          "channel": 0.45
+        },
+        "bumper": {
+          "color": "#17181e"
+        },
+        "dampener": null
+      },
+      "sources": [
+        "https://us.dunlopsports.com/dunlop/tennis/rackets/fx-series/fx-team-100-tennis-racket/MFXTEAM10026.html"
+      ]
+    }
+  ]
+}

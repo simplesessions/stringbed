@@ -4,9 +4,9 @@ import { lineageOf, loadAllSpecs } from '../src/core/spec';
 const specs = loadAllSpecs();
 
 test('every spec parses and ids are unique', () => {
-  // 72 frame families (one per generation); 228 more are their variants (other sizes).
-  expect(specs.length).toBe(300);
-  expect(specs.filter((s) => !s.variantOf)).toHaveLength(72);
+  // 86 frame families (one per generation); 268 more are their variants (other sizes).
+  expect(specs.length).toBe(354);
+  expect(specs.filter((s) => !s.variantOf)).toHaveLength(86);
   expect(new Set(specs.map((s) => s.id)).size).toBe(specs.length);
 });
 test('a variant never carries another generation (sizes of one frame only)', () => {
@@ -35,9 +35,9 @@ test('variants share brand and line with their family and have a label', () => {
     expect(base.variantLabel, base.id).toBeTruthy();
   }
 });
-test('six brands, at least one racquet each', () => {
+test('eight brands, at least one racquet each', () => {
   const byBrand = Object.groupBy(specs, (s) => s.brand);
-  expect(Object.keys(byBrand).sort()).toEqual(['Babolat', 'Head', 'Prince', 'Solinco', 'Wilson', 'Yonex']);
+  expect(Object.keys(byBrand).sort()).toEqual(['Babolat', 'Dunlop', 'Head', 'Prince', 'Solinco', 'Tecnifibre', 'Wilson', 'Yonex']);
   for (const list of Object.values(byBrand)) {
     expect(list!.length).toBeGreaterThanOrEqual(1);
   }
