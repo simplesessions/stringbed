@@ -1099,15 +1099,15 @@ main { flex: 1; padding: 6px var(--pad) 72px; }
   .aisle-sign { transition: none; }
 }
 
-/* The racquet turns as it travels: the old snapshot swings away edge-on while the new one swings
-   in from the other side, over a springy flight between the two boxes. */
-::view-transition-image-pair(racquet) { perspective: 1600px; isolation: auto; }
-::view-transition-group(racquet) { animation-duration: 0.9s; animation-timing-function: var(--spring); z-index: 10; }
-::view-transition-old(racquet), ::view-transition-new(racquet) { mix-blend-mode: normal; animation-duration: 0.9s; animation-fill-mode: both; transform-origin: 50% 60%; }
-::view-transition-old(racquet) { animation-name: racquet-turn-out; }
-::view-transition-new(racquet) { animation-name: racquet-turn-in; }
-@keyframes racquet-turn-out { 0% { opacity: 1; transform: rotateY(0); } 50% { opacity: 1; } 100% { opacity: 0; transform: rotateY(-95deg); } }
-@keyframes racquet-turn-in { 0% { opacity: 0; transform: rotateY(95deg); } 45% { opacity: 0; } 60% { opacity: 1; } 100% { opacity: 1; transform: none; } }
+/* The racquet flies on its own, one continuous object that lands where the detail stage draws it;
+   the panel behind it is not part of the snapshot and fades with the page. */
+::view-transition-group(racquet) { animation-duration: 0.8s; animation-timing-function: var(--spring); z-index: 10; }
+::view-transition-image-pair(racquet) { isolation: auto; }
+::view-transition-old(racquet), ::view-transition-new(racquet) { mix-blend-mode: normal; }
+::view-transition-old(racquet) { animation: 0.3s var(--ease-out) both vt-fade-out; }
+::view-transition-new(racquet) { animation: 0.3s var(--ease-out) both vt-fade-in; }
+@keyframes vt-fade-out { to { opacity: 0; } }
+@keyframes vt-fade-in { from { opacity: 0; } }
 /* On arrival, the spec sheet deals itself in, one line after another. */
 .detail.arriving .sheet > *, .detail.arriving .detail-nav { animation: sheet-in 0.7s var(--spring) both; animation-delay: calc(var(--s, 0) * 55ms + 260ms); }
 .detail.arriving .sheet > :nth-child(2) { --s: 1; } .detail.arriving .sheet > :nth-child(3) { --s: 2; } .detail.arriving .sheet > :nth-child(4) { --s: 3; }
