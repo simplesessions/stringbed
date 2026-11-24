@@ -13,6 +13,7 @@ import {
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+import { fetchModelBytes } from './prefetch';
 
 /** Creates a renderer, or returns null when the browser cannot give us WebGL. */
 export function createRenderer(canvas: HTMLCanvasElement | OffscreenCanvas = document.createElement('canvas')): WebGLRenderer | null {
@@ -57,7 +58,9 @@ const cache = new Map<string, Promise<Object3D>>();
 export function loadModel(url: string): Promise<Object3D> {
   let pending = cache.get(url);
   if (!pending) {
-    pending = loader.loadAsync(url).then((gltf) => gltf.scene);
+    // The bytes were usually requested long ago (prefetch.ts); parse a copy of them here.
+    const base = url.slice(0, url.lastIndexOf('/') + 1);
+    pending = fetchModelBytes(url).then((bytes) => loader.parseAsync(bytes.slice(0), base)).then((gltf) => gltf.scene);
     pending.catch(() => cache.delete(url));
     cache.set(url, pending);
   }

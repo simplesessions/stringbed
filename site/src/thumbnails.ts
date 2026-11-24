@@ -22,12 +22,16 @@ interface Entry {
   visible: boolean;
   dirty: boolean;
   yaw: number;
+  /** Angular velocity (rad/s) and how awake the racquet is (0 at rest, 1 fully hovered). */
+  spin: number;
+  wake: number;
+  phase: number;
   turning: boolean;
 }
 
 /** Resting pose: turned a little off face-on so the beam's depth shows. */
 const REST_YAW = -0.38;
-const TURN_SPEED = 1.1; // radians per second while hovered
+const TURN_SPEED = 1.35; // radians per second at cruising speed; it eases up to this and back
 const MAX_DPR = 2;
 /** Bay-sized cells and lines, in CSS px. */
 const LOOK_SCALE: LookScale = { cell: 4, outline: 1, dot: 3.5 };
@@ -81,7 +85,7 @@ export class Thumbnails {
     const flat = bitmap ? null : canvas.getContext('2d');
     const target: Target | null = bitmap ? { kind: 'bitmap', ctx: bitmap } : flat ? { kind: '2d', ctx: flat } : null;
     if (!target) return onState('failed');
-    const e: Entry = { canvas, target, url, onState, state: 'idle', model: null, visible: false, dirty: true, yaw: REST_YAW, turning: false };
+    const e: Entry = { canvas, target, url, onState, state: 'idle', model: null, visible: false, dirty: true, yaw: REST_YAW, spin: 0, wake: 0, phase: Math.random() * Math.PI * 2, turning: false };
     this.entries.set(canvas, e);
     this.seen.observe(canvas);
     this.resized.observe(canvas);
@@ -165,18 +169,27 @@ export class Thumbnails {
     let again = false;
     for (const e of this.entries.values()) {
       if (e.state !== 'ready' || !e.visible) continue;
+      // Inertia, not a motor: hovering spins the frame up, leaving lets a spring settle it back to
+      // rest with a small overshoot, and the speed drifts so no two racquets move alike.
+      const full = Math.PI * 2;
       if (e.turning) {
-        e.yaw += TURN_SPEED * dt;
+        const drift = 1 + 0.18 * Math.sin(now / 700 + e.phase);
+        e.spin += (TURN_SPEED * drift - e.spin) * (1 - Math.exp(-dt * 3.2));
+        e.wake += (1 - e.wake) * (1 - Math.exp(-dt * 5));
+      } else {
+        const target = REST_YAW + Math.round((e.yaw - REST_YAW) / full) * full;
+        e.spin += (-52 * (e.yaw - target) - 7.5 * e.spin) * dt; // underdamped spring
+        e.wake += (0 - e.wake) * (1 - Math.exp(-dt * 4));
+        if (Math.abs(e.yaw - target) < 0.002 && Math.abs(e.spin) < 0.02 && e.wake < 0.01) {
+          e.yaw = REST_YAW;
+          e.spin = 0;
+          e.wake = 0;
+        }
+      }
+      if (e.turning || e.yaw !== REST_YAW || e.spin !== 0 || e.wake !== 0) {
+        e.yaw += e.spin * dt;
         e.dirty = true;
         again = true;
-      } else if (e.yaw !== REST_YAW) {
-        // Ease back to the nearest resting turn, exponentially.
-        const full = Math.PI * 2;
-        const target = REST_YAW + Math.round((e.yaw - REST_YAW) / full) * full;
-        const next = target + (e.yaw - target) * Math.exp(-dt * 6);
-        e.yaw = Math.abs(next - target) < 0.002 ? REST_YAW : next;
-        e.dirty = true;
-        again = e.yaw !== REST_YAW;
       }
       if (e.dirty) this.draw(e);
     }
@@ -194,6 +207,9 @@ export class Thumbnails {
     this.renderer.setSize(w, h, false);
 
     model.rotation.y = e.yaw;
+    // A slow lean while awake, so the frame turns like an object in a hand, not a pole.
+    model.rotation.z = Math.sin(e.yaw + e.phase) * 0.04 * e.wake;
+    model.rotation.x = Math.sin(e.yaw * 0.5 + 1.3) * 0.03 * e.wake;
     model.updateMatrixWorld(true);
     // One true scale for every racquet: the frame is a fixed 29 in tall with the butt cap (the
     // model's origin) on the rail, so a 25 in junior stands visibly shorter than a 27 in frame.

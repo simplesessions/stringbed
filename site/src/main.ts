@@ -43,6 +43,8 @@ import {
   type Style,
 } from './catalog-view';
 import { el, icon, silhouette } from './dom';
+import { fetchModelBytes } from './prefetch';
+import { play, setSound, soundOn, storedSound } from './sound';
 import { LOOKS, LOOK_LABEL, storedLook, storeLook, type Look } from './look';
 import type { Thumbnails, ThumbState, Viewer } from './gl';
 
@@ -79,6 +81,8 @@ interface App {
   order: Racquet[];
   /** Generation picked on each shelf (lineage → family id); newest when absent. */
   shelfGen: Map<string, string>;
+  /** Variant standing on each shelf's stage (family id → racquet id). */
+  shelfPick: Map<string, string>;
   stock: StockGroup[];
   stockOrder: Placeholder[];
   brand: string | null;
@@ -124,6 +128,7 @@ async function boot() {
     stock,
     stockOrder: stock.flatMap((g) => g.years.flatMap((y) => y.items)),
     shelfGen: new Map(),
+    shelfPick: new Map(),
     brand: null,
     age,
     look: storedLook(),
@@ -387,7 +392,9 @@ function aisle(a: App, x: Aisle, k: number): HTMLLIElement {
     const canvas = el('canvas', { class: 'bay-canvas' });
     const off = i - (x.fan.length - 1) / 2;
     // Centre blade on top; the fans open aisle by aisle, centre out.
-    const blade = el('span', { class: 'blade', style: `--a: ${angles[i]}deg; --i: ${off}; --n: ${k * 2 + Math.abs(off)}; z-index: ${10 - Math.round(Math.abs(off) * 2)}; --swatch: ${r.swatch}` },
+    const r1 = (n: number) => (Math.random() - 0.5) * 2 * n;
+    // A degree or two of play, and its own beat, travel and sway: the hand never reads as copies.
+    const blade = el('span', { class: 'blade', style: `--a: ${(angles[i] + r1(1.6)).toFixed(2)}deg; --i: ${off}; --k: ${Math.round(Math.abs(off) * 2)}; z-index: ${10 - Math.round(Math.abs(off) * 2)}; --swatch: ${r.swatch}; --delay: ${Math.round(Math.abs(off) * 90 + Math.random() * 140)}ms; --dur: ${Math.round(820 + Math.random() * 420)}ms; --sway: ${(6 + Math.random() * 4).toFixed(1)}s; --sway-delay: ${(-Math.random() * 6).toFixed(1)}s` },
       el('span', { class: 'bay-stage' }, silhouette(r.specs.headSizeSqIn), canvas));
     fan.append(blade);
     thumbnail(a, r, blade, canvas, link);
@@ -406,7 +413,36 @@ function aisle(a: App, x: Aisle, k: number): HTMLLIElement {
       x.noModel ? el('span', { class: 'aisle-soft' }, `+${x.noModel} no model yet`) : null,
     ),
   );
-  return el('li', { class: 'aisle', 'data-brand': x.brand }, link);
+  const item = el('li', { class: 'aisle', 'data-brand': x.brand }, link);
+  openWhenSeen(item);
+  return item;
+}
+
+/** Open an aisle's fan when it scrolls into view and its racquets have arrived (or a moment has passed). */
+function openWhenSeen(item: HTMLElement) {
+  const open = () => {
+    item.dataset.open = '';
+    play('swish');
+    setTimeout(() => (item.dataset.settled = ''), 1500);
+  };
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
+    item.dataset.open = '';
+    item.dataset.settled = '';
+    return;
+  }
+  const io = new IntersectionObserver((records) => {
+    if (!records.some((r) => r.isIntersecting)) return;
+    io.disconnect();
+    const started = performance.now();
+    const check = () => {
+      const blades = [...item.querySelectorAll<HTMLElement>('.blade')];
+      const loaded = blades.every((b) => b.dataset.state === 'ready' || b.dataset.state === 'flat' || b.dataset.state === 'failed');
+      if (loaded || performance.now() - started > 1400) open();
+      else setTimeout(check, 80);
+    };
+    check();
+  }, { threshold: 0.25 });
+  io.observe(item);
 }
 
 function brandFloor(a: App, brand: string): HTMLElement[] {
@@ -430,6 +466,12 @@ function brandFloor(a: App, brand: string): HTMLElement[] {
   return [head, ...(index ? [index] : []), ...(empty ? [empty] : []), ...shelves.map((sh) => shelf(a, sh)), ...stockList(a)];
 }
 
+/**
+ * A line's shelf: one pinned racquet and a line-up of its variants. The variants of a line
+ * (100, 98, Team, Lite) are near-identical frames, so they are not stood in a row of look-alikes:
+ * the stage holds one racquet, the line-up lists every variant at one size, and choosing a row
+ * swaps the racquet in the stage.
+ */
 function shelf(a: App, sh: Shelf): HTMLElement {
   const picked = a.shelfGen.get(sh.lineage);
   const family = sh.generations.find((g) => g.id === picked) ?? sh.generations[0];
@@ -442,6 +484,7 @@ function shelf(a: App, sh: Shelf): HTMLElement {
           b.addEventListener('click', () => {
             if (g === family) return;
             a.shelfGen.set(sh.lineage, g.id);
+            play('pick');
             const section = document.getElementById(id);
             transition(() => {
               section?.replaceWith(shelf(a, sh));
@@ -453,49 +496,95 @@ function shelf(a: App, sh: Shelf): HTMLElement {
           return b;
         }))
     : el('span', { class: 'gen-only' }, generationShort(family));
-  return el('section', { class: 'shelf', id, 'aria-labelledby': `${id}-name`, style: `view-transition-name: ${id}` },
+
+  const initial = members.find((r) => r.id === a.shelfPick.get(family.id)) ?? members[0];
+  const stageLink = el('a', { class: 'shelf-stage', href: routeFor(initial.id), 'data-family': family.id });
+  const slotHost = el('span', { class: 'shelf-slots' });
+  const title = el('span', { class: 'shelf-title' });
+  const readout = el('dl', { class: 'readout' });
+  const open = el('a', { class: 'button lineup-open' });
+  stageLink.append(slotHost, el('span', { class: 'shelf-rail' }), title);
+  stageLink.addEventListener('click', () => {
+    // Name only the clicked stage, so the transition morphs exactly this racquet into the detail stage.
+    for (const old of wall.querySelectorAll<HTMLElement>('.shelf-stage[style*="view-transition-name"]')) old.style.viewTransitionName = '';
+    stageLink.style.viewTransitionName = 'racquet';
+    a.lastOpened = family.id;
+  });
+
+  let current: Racquet | null = null;
+  const rows: HTMLButtonElement[] = [];
+  const select = (r: Racquet, how: 'first' | 'swap') => {
+    if (current === r) return;
+    const dir = current ? Math.sign(members.indexOf(r) - members.indexOf(current)) || 1 : 0;
+    current = r;
+    a.shelfPick.set(family.id, r.id);
+    rows.forEach((b, i) => b.setAttribute('aria-pressed', String(members[i] === r)));
+    // The next racquet arrives on a spring from the side it sits on in the list; the old one leaves.
+    const canvas = el('canvas', { class: 'bay-canvas', 'aria-hidden': 'true' });
+    const slot = el('span', { class: 'slot', style: `--swatch: ${r.swatch}; --dir: ${dir}`, 'data-id': r.id }, silhouette(r.specs.headSizeSqIn), canvas);
+    for (const old of slotHost.querySelectorAll<HTMLElement>('.slot:not(.is-out)')) {
+      old.classList.add('is-out');
+      setTimeout(() => {
+        old.remove();
+        a.thumbs?.prune();
+      }, 520);
+    }
+    slotHost.append(slot);
+    slot.classList.toggle('is-first', how === 'first');
+    thumbnail(a, r, slot, canvas, stageLink);
+    stageLink.href = routeFor(r.id);
+    stageLink.style.setProperty('--swatch', r.swatch);
+    stageLink.setAttribute('aria-label', `${wallName(r)}, open the 3D view`);
+    title.replaceChildren(el('span', { class: 'shelf-title-name' }, wallName(r)), el('span', { class: 'shelf-title-meta' }, generationLabel(r)));
+    const s = r.specs;
+    readout.replaceChildren(
+      ...([
+        ['Head size', formatHeadSize(s.headSizeSqIn).primary],
+        ['Length', formatLength(s.lengthIn).primary],
+        ['Pattern', formatPattern(s.stringPattern)],
+        s.unstrungWeightG ? ['Weight', `${formatCount(s.unstrungWeightG)} g`] : null,
+      ].filter(Boolean) as string[][]).map(([k, v]) => el('div', {}, el('dt', {}, k), el('dd', {}, v))),
+    );
+    open.href = routeFor(r.id);
+    open.replaceChildren(`Open the ${r.variantLabel ?? wallName(r)}`, icon('next'));
+    if (how === 'swap') play('hover', members.indexOf(r));
+  };
+
+  const lineup = el('ul', { class: 'lineup', role: 'list', 'aria-label': `${sh.name} variants` },
+    ...members.map((r) => {
+      const s = r.specs;
+      const btn = el('button', { class: 'lineup-row', type: 'button', 'aria-pressed': 'false' },
+        el('span', { class: 'lineup-name' }, r.variantLabel ?? wallName(r)),
+        el('span', { class: 'lineup-spec' }, [formatHeadSize(s.headSizeSqIn).primary, formatPattern(s.stringPattern), isJunior(r) ? `${s.lengthIn} in` : null].filter(Boolean).join(' · ')),
+        r.colourways?.length ? el('span', { class: 'lineup-more' }, `${r.colourways.length + 1} colourways`) : null,
+      );
+      rows.push(btn);
+      btn.addEventListener('click', () => select(r, 'swap'));
+      btn.addEventListener('focus', () => select(r, 'swap'));
+      // A mouse previews on hover; touch and keyboard choose.
+      btn.addEventListener('pointerenter', (e) => {
+        if (e.pointerType === 'mouse') select(r, 'swap');
+      });
+      return el('li', {}, btn);
+    }),
+  );
+  select(initial, 'first');
+
+  const section = el('section', { class: 'shelf', id, 'aria-labelledby': `${id}-name`, style: `view-transition-name: ${id}` },
     el('div', { class: 'shelf-head' },
-      el('h2', { class: 'shelf-name', id: `${id}-name` }, sh.name),
+      el('h2', { class: 'shelf-name', id: `${id}-name` }, sh.name, el('span', { class: 'sign-count' }, String(members.length))),
       tabs,
     ),
-    el('ul', { class: 'bays', role: 'list' },
-      ...members.map((r) =>
-        bay(a, r, {
-          title: r.variantLabel ?? wallName(r),
-          meta: [`${formatHeadSize(r.specs.headSizeSqIn).primary}`, formatPattern(r.specs.stringPattern), isJunior(r) ? `${r.specs.lengthIn} in` : null].filter(Boolean).join(' · '),
-          extra: r.colourways?.length ? `${r.colourways.length + 1} colourways` : null,
-        }),
-      ),
-    ),
+    el('div', { class: 'shelf-body' }, stageLink, el('div', { class: 'shelf-side' }, lineup, readout, open)),
   );
-}
-
-interface BayText {
-  title: string;
-  meta: string;
-  extra?: string | null;
-}
-
-/** A racquet standing on a rail: its 3D thumbnail (or swatch silhouette) and a hang tag. */
-function bay(a: App, r: Racquet, text: BayText): HTMLLIElement {
-  const canvas = el('canvas', { class: 'bay-canvas', 'aria-hidden': 'true' });
-  const link = el('a', { class: 'bay-link', href: routeFor(r.id), 'aria-label': `${r.model}, ${text.meta}` },
-    el('span', { class: 'bay-stage', style: vtName(r.id) }, silhouette(r.specs.headSizeSqIn), canvas),
-    el('span', { class: 'tag', 'aria-hidden': 'true' },
-      el('span', { class: 'tag-model' }, text.title),
-      el('span', { class: 'tag-meta' }, text.meta),
-      text.extra ? el('span', { class: 'tag-variants' }, text.extra) : null,
-    ),
-  );
-  link.addEventListener('click', () => {
-    // Name only the clicked bay, so the transition morphs exactly this racquet into the stage.
-    for (const old of wall.querySelectorAll<HTMLElement>('.bay-stage[style*="view-transition-name"]')) old.style.viewTransitionName = '';
-    link.querySelector<HTMLElement>('.bay-stage')!.style.viewTransitionName = 'racquet';
-    a.lastOpened = r.id;
+  // Quietly bring every other variant's file in, so choosing a row never waits on the network.
+  const warm = () => members.forEach((r) => {
+    const asset = assetFor(r, a.style.id);
+    if (asset) void fetchModelBytes(assetUrl(BASE, asset.path), 'low').catch(() => {});
   });
-  const item = el('li', { class: 'bay', style: `--swatch: ${r.swatch}`, 'data-id': r.id }, link);
-  thumbnail(a, r, item, canvas, link);
-  return item;
+  if ('requestIdleCallback' in window) requestIdleCallback(warm, { timeout: 2000 });
+  else setTimeout(warm, 800);
+  return section;
 }
 
 /** Hook a canvas up to the shared thumbnail renderer once the 3D code has settled. */
@@ -505,17 +594,13 @@ function thumbnail(a: App, r: Racquet, item: HTMLElement, canvas: HTMLCanvasElem
     item.dataset.state = 'flat';
     return;
   }
+  void fetchModelBytes(assetUrl(BASE, asset.path)).catch(() => {}); // download now; parse when the renderer is up
   const attach = (thumbs: Thumbnails | null) => {
     if (thumbs) watch(thumbs, item, hover, canvas, r, asset.path);
     else item.dataset.state = 'flat';
   };
   if (glSettled) attach(a.thumbs);
   else pendingBays.push(attach);
-}
-
-/** On the way back from a racquet, its bay carries the morph name again. */
-function vtName(id: string): string | null {
-  return app?.lastOpened === id ? 'view-transition-name: racquet' : null;
 }
 
 /**
@@ -615,7 +700,7 @@ function showWall(a: App) {
   wall.hidden = false;
   document.body.dataset.view = 'wall';
   if (a.lastOpened) {
-    const link = wall.querySelector<HTMLAnchorElement>(`.bay[data-id="${a.lastOpened}"] .bay-link, li[data-id="${a.lastOpened}"] .stock-row`);
+    const link = wall.querySelector<HTMLAnchorElement>(`.shelf-stage[data-family="${a.lastOpened}"], li[data-id="${a.lastOpened}"] .stock-row, li[data-id="${a.lastOpened}"] .variant`);
     a.lastOpened = null;
     if (link && !link.closest('[hidden]')) {
       link.focus({ preventScroll: true });
@@ -634,6 +719,7 @@ function showDetail(a: App, r: Racquet, colourway: string | null = null) {
   document.body.dataset.view = 'detail';
   document.title = `${r.model} · ${baseTitle.split(':')[0]}`;
   detail.replaceChildren(...detailView(a, r, colourway));
+  detail.classList.toggle('arriving', !same);
   if (same) {
     detail.querySelector<HTMLElement>('.colourway[aria-current="true"]')?.focus({ preventScroll: true });
     return;
@@ -979,6 +1065,36 @@ searchDialog.addEventListener('click', (e) => {
   if (e.target === searchDialog) searchDialog.close();
 });
 searchDialog.addEventListener('close', () => searchOpen.focus({ preventScroll: true }));
+
+// ---------- sound ----------
+
+const SPEAKER = (on: boolean) =>
+  `<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 9.5v5h3.5l4.5 3.5v-12L7.5 9.5H4z" fill="currentColor"/>${
+    on
+      ? '<path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>'
+      : '<path d="M16 9.5l5 5M21 9.5l-5 5" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>'
+  }</svg>`;
+const soundButton = el('button', { class: 'sound-toggle', type: 'button', 'aria-pressed': 'false', 'aria-label': 'Interface sounds', title: 'Interface sounds' });
+const paintSound = () => {
+  soundButton.innerHTML = SPEAKER(soundOn());
+  soundButton.setAttribute('aria-pressed', String(soundOn()));
+};
+paintSound();
+searchOpen.after(soundButton);
+soundButton.addEventListener('click', () => void setSound(!soundOn()).then(paintSound));
+if (storedSound()) void setSound(true).then(paintSound); // the synth loads lazily and plays nothing until a gesture
+
+// Delegated, so every control has its sound without wiring each one.
+document.addEventListener('pointerenter', (e) => {
+  const aisleLink = (e.target as Element).closest?.('.aisle-link');
+  if (aisleLink && e.target === aisleLink) play('swish');
+}, true);
+document.addEventListener('click', (e) => {
+  const t = e.target as Element;
+  if (t.closest('.shelf-stage, .aisle-link, .lineup-open, .stock-row, .variant')) play('open');
+  else if (t.closest('.back, .stepper a')) play('back');
+  else if (t.closest('.sign, .gen-tab')) play('pick');
+});
 
 window.addEventListener('hashchange', route);
 window.addEventListener('keydown', (e) => {

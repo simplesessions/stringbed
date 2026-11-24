@@ -23,6 +23,8 @@
   --sans: 'Archivo', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
   --mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  /* A damped spring: overshoots about 9% and settles. Used wherever something is set down or opens. */
+  --spring: linear(0, 0.2 6%, 0.62 12%, 0.98 20%, 1.08 27%, 1.09 32%, 1.04 40%, 0.98 50%, 0.99 60%, 1.005 72%, 1 85%, 1);
 
   --pad: clamp(16px, 3.2vw, 48px);
   --bay-gap: 12px;
@@ -177,7 +179,10 @@ main { flex: 1; padding: 6px var(--pad) 72px; }
 .aisle-link:hover .aisle-sign, .aisle-link:focus-visible .aisle-sign { font-stretch: 125%; letter-spacing: 0; }
 .aisle-name, .floor-name { display: inline-block; line-height: 0.9; }
 
-/* The fan: current flagships held at the butt caps like a hand of cards. */
+/* The fan: current flagships held at the butt caps like a hand of cards. It stays closed until
+   its aisle scrolls into view and its racquets have loaded, then each blade opens on a spring of
+   its own: its own delay, length of travel and a degree or two of play, so the hand is never
+   a row of copies. */
 .fan { position: relative; display: block; height: var(--fan-h); margin-top: 0; }
 .blade {
   --w: calc(var(--fan-h) * 0.42);
@@ -187,22 +192,28 @@ main { flex: 1; padding: 6px var(--pad) 72px; }
   width: var(--w);
   height: var(--fan-h);
   transform-origin: 50% 96%;
-  transform: rotate(var(--a));
-  transition: transform 0.9s cubic-bezier(0.22, 0.8, 0.24, 1);
-  /* backwards, not both: once the fan has opened, the animation lets go of transform so hover
-     transitions run instead of snapping. */
-  animation: fan-open 0.9s var(--ease-out) backwards;
-  animation-delay: calc(var(--n, 0) * 70ms + 120ms);
+  transform: translateY(16px) rotate(calc(var(--a) * 0.12));
+  opacity: 0;
+  transition:
+    transform var(--dur, 1000ms) var(--spring) var(--delay, 0ms),
+    opacity 0.4s var(--ease-out) var(--delay, 0ms);
 }
+.aisle[data-open] .blade { transform: rotate(var(--a)); opacity: 1; }
+/* Once settled, a slow idle sway on the separate `rotate` property, different per blade. */
+.aisle[data-settled] .blade {
+  transition: transform 0.7s var(--spring) calc(var(--k, 0) * 28ms);
+  animation: sway var(--sway, 7s) ease-in-out var(--sway-delay, 0s) infinite alternate;
+}
+@keyframes sway { from { rotate: -0.7deg; } to { rotate: 0.8deg; } }
 .blade .bay-stage { height: 100%; }
 .blade .bay-canvas, .blade .silhouette { position: absolute; inset: 0; width: 100%; height: 100%; }
 .blade .bay-canvas { opacity: 0; transition: opacity 0.5s var(--ease-out); }
 .blade[data-state='ready'] .bay-canvas { opacity: 1; }
 .blade[data-state='ready'] .silhouette { opacity: 0; }
-.aisle-link:hover .blade, .aisle-link:focus-visible .blade {
-  transform: rotate(calc(var(--a) * 1.4)) translateY(-6px);
+/* Walking up to the aisle, the hand spreads wider, centre first. */
+.aisle[data-settled] .aisle-link:hover .blade, .aisle[data-settled] .aisle-link:focus-visible .blade {
+  transform: rotate(calc(var(--a) * 1.45)) translateY(-8px);
 }
-@keyframes fan-open { from { transform: rotate(0deg); } }
 .aisle-rail { position: relative; display: block; height: 3px; margin-top: -2px; background: var(--rail); }
 .aisle-rail::after {
   content: '';
@@ -309,6 +320,103 @@ main { flex: 1; padding: 6px var(--pad) 72px; }
 .gen-tab:hover { background: var(--wall-2); }
 .gen-tab[aria-pressed='true'] { background: var(--ink); color: var(--wall); }
 .gen-only { color: var(--ink-2); font-size: 0.8125rem; font-variant-numeric: tabular-nums; }
+
+/* ---------- a line's shelf: one pinned racquet, a line-up of its variants ---------- */
+
+.shelf-body {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.62fr) minmax(0, 1.38fr);
+  gap: 28px clamp(32px, 5vw, 88px);
+  align-items: start;
+  margin-top: 18px;
+}
+.shelf-stage {
+  --stage-h: min(72svh, 620px);
+  position: sticky;
+  top: 64px;
+  display: block;
+  height: var(--stage-h);
+  overflow: hidden;
+  border-radius: 12px;
+  /* The panel takes a flat tint of the racquet standing on it. */
+  background: color-mix(in oklch, var(--swatch, var(--rail)) 13%, var(--wall));
+  color: inherit;
+  text-decoration: none;
+  transition: background-color 0.6s var(--ease-out);
+}
+.shelf-stage:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+.shelf-slots { position: absolute; inset: 26px 18px 84px; display: block; }
+.slot { position: absolute; inset: 0; display: block; transform-origin: 50% 100%; }
+.slot .bay-canvas, .slot .silhouette { position: absolute; inset: 0; width: 100%; height: 100%; }
+.slot[data-state='ready'] .bay-canvas { opacity: 1; }
+.slot[data-state='ready'] .silhouette { opacity: 0; }
+.slot:not(.is-out) { animation: slot-in 0.85s var(--spring) both; }
+.slot.is-first:not(.is-out) { animation-name: slot-rise; }
+.slot.is-out { animation: slot-out 0.36s var(--ease-out) forwards; pointer-events: none; }
+@keyframes slot-in { from { opacity: 0; transform: translateX(calc(var(--dir, 1) * 44px)) rotate(calc(var(--dir, 1) * 7deg)) scale(0.94); } }
+@keyframes slot-rise { from { opacity: 0; transform: translateY(40px) rotate(-4deg) scale(0.96); } }
+@keyframes slot-out { to { opacity: 0; transform: translateX(calc(var(--dir, 1) * -34px)) rotate(calc(var(--dir, 1) * -6deg)) scale(0.96); } }
+.shelf-rail { position: absolute; left: 12%; right: 12%; bottom: 82px; height: 3px; background: var(--swatch, var(--rail)); opacity: 0.85; }
+.shelf-title { position: absolute; left: 20px; right: 20px; bottom: 16px; display: grid; gap: 2px; }
+.shelf-title-name { font-size: 1.125rem; font-weight: 740; font-stretch: 82%; line-height: 1.1; }
+.shelf-title-meta { color: var(--ink-2); font-size: 0.875rem; }
+
+.shelf-side { display: grid; gap: 8px; align-content: start; min-width: 0; }
+.lineup { display: grid; gap: 2px; margin: 0; padding: 0; list-style: none; }
+.lineup-row {
+  appearance: none;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: baseline;
+  gap: 4px 18px;
+  width: 100%;
+  padding: 11px 16px 10px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: clamp(1.125rem, 1.3vw + 0.6rem, 1.5rem);
+  line-height: 1.15;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s var(--ease-out), color 0.2s var(--ease-out), transform 0.5s var(--spring);
+}
+.lineup-row:hover { background: var(--wall-2); }
+.lineup-row:focus-visible { outline: 2px solid var(--ink); outline-offset: 1px; }
+.lineup-row[aria-pressed='true'] { background: var(--ink); color: var(--wall); transform: translateX(8px); }
+.lineup-name { font-weight: 700; font-stretch: 82%; letter-spacing: -0.005em; }
+.lineup-spec, .lineup-more { font-size: 0.72em; font-variant-numeric: tabular-nums; font-weight: 450; color: var(--ink-2); white-space: nowrap; }
+.lineup-row[aria-pressed='true'] .lineup-spec, .lineup-row[aria-pressed='true'] .lineup-more { color: color-mix(in oklch, var(--wall) 74%, var(--ink)); }
+.readout { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 18px 24px; margin: 26px 0 0; padding: 0 16px; }
+.readout > div { animation: readout-in 0.5s var(--spring) both; animation-delay: calc(var(--k, 0) * 40ms); }
+.readout > div:nth-child(2) { --k: 1; }
+.readout > div:nth-child(3) { --k: 2; }
+.readout > div:nth-child(4) { --k: 3; }
+@keyframes readout-in { from { opacity: 0; transform: translateY(10px); } }
+.readout dt { color: var(--ink-2); font-size: 0.8125rem; }
+.readout dd { margin: 2px 0 0; font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2.25rem); font-weight: 760; font-stretch: 78%; font-variant-numeric: tabular-nums; line-height: 1; }
+.lineup-open { justify-self: start; margin: 18px 0 0 16px; }
+
+.sound-toggle {
+  appearance: none; display: inline-grid; place-items: center;
+  width: 36px; height: 36px; padding: 0;
+  border: 1.5px solid var(--line); border-radius: 999px;
+  background: transparent; color: var(--ink-2); cursor: pointer;
+  transition: background-color 0.2s var(--ease-out), color 0.2s var(--ease-out), transform 0.35s var(--spring);
+}
+.sound-toggle:hover { background: var(--wall-2); border-color: transparent; color: var(--ink); }
+.sound-toggle[aria-pressed='true'] { background: var(--ink); border-color: var(--ink); color: var(--wall); }
+.sound-toggle:active { transform: scale(0.9); }
+.sound-toggle:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+
+@media (max-width: 720px) {
+  .shelf-body { grid-template-columns: minmax(0, 1fr); }
+  .shelf-stage { position: relative; top: 0; --stage-h: min(54svh, 470px); }
+  .lineup-row { padding-inline: 12px; }
+  .readout, .lineup-open { margin-inline: 12px; padding-inline: 0; }
+}
+
 .shelf .bays { margin-top: 18px; overflow-x: auto; scrollbar-width: thin; padding-bottom: 6px; }
 
 .bays {
@@ -886,6 +994,22 @@ main { flex: 1; padding: 6px var(--pad) 72px; }
 ::view-transition-group(racquet) { animation-duration: 0.6s; animation-timing-function: cubic-bezier(0.2, 0.9, 0.1, 1); }
 ::view-transition-old(racquet), ::view-transition-new(racquet) { height: 100%; object-fit: contain; }
 @media (prefers-reduced-motion: reduce) {
-  .blade { animation: none; transition: none; }
+  .blade { animation: none; transition: none; opacity: 1; transform: rotate(var(--a)); }
   .aisle-sign { transition: none; }
 }
+
+/* The racquet turns as it travels: the old snapshot swings away edge-on while the new one swings
+   in from the other side, over a springy flight between the two boxes. */
+::view-transition-image-pair(racquet) { perspective: 1600px; isolation: auto; }
+::view-transition-group(racquet) { animation-duration: 0.9s; animation-timing-function: var(--spring); z-index: 10; }
+::view-transition-old(racquet), ::view-transition-new(racquet) { mix-blend-mode: normal; animation-duration: 0.9s; animation-fill-mode: both; transform-origin: 50% 60%; }
+::view-transition-old(racquet) { animation-name: racquet-turn-out; }
+::view-transition-new(racquet) { animation-name: racquet-turn-in; }
+@keyframes racquet-turn-out { 0% { opacity: 1; transform: rotateY(0); } 50% { opacity: 1; } 100% { opacity: 0; transform: rotateY(-95deg); } }
+@keyframes racquet-turn-in { 0% { opacity: 0; transform: rotateY(95deg); } 45% { opacity: 0; } 60% { opacity: 1; } 100% { opacity: 1; transform: none; } }
+/* On arrival, the spec sheet deals itself in, one line after another. */
+.detail.arriving .sheet > *, .detail.arriving .detail-nav { animation: sheet-in 0.7s var(--spring) both; animation-delay: calc(var(--s, 0) * 55ms + 260ms); }
+.detail.arriving .sheet > :nth-child(2) { --s: 1; } .detail.arriving .sheet > :nth-child(3) { --s: 2; } .detail.arriving .sheet > :nth-child(4) { --s: 3; }
+.detail.arriving .sheet > :nth-child(5) { --s: 4; } .detail.arriving .sheet > :nth-child(6) { --s: 5; } .detail.arriving .sheet > :nth-child(n+7) { --s: 6; }
+@keyframes sheet-in { from { opacity: 0; transform: translateX(28px); } }
+@media (prefers-reduced-motion: reduce) { .detail.arriving .sheet > *, .detail.arriving .detail-nav { animation: none; } }
