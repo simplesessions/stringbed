@@ -90,8 +90,9 @@ export interface Studio {
   /**
    * Bring the lights round to a viewer standing at `yaw`. The viewer walks round the racquet, but
    * it should read as the racquet turning under fixed lamps: highlights run along the beam.
+   * `under` (0 to 1) brings up a soft glow from below, for looking up at the butt cap.
    */
-  face(yaw: number): void;
+  face(yaw: number, under: number): void;
 }
 
 /** A warm showcase: the softbox room, a key light that casts soft shadows, and a rim from behind. */
@@ -122,15 +123,18 @@ export function createStudio(renderer: WebGLRenderer, shadowPx = 2048): Studio {
   key.shadow.intensity = 0.62; // soft: the room fills what the key misses
   const rim = new DirectionalLight(0xffecd8, 1.3);
   rim.position.set(1.3, 1, -1.5).add(AIM);
-  for (const light of [key, rim]) {
+  const glow = new DirectionalLight(0xfff0dd, 0);
+  glow.position.set(0.5, -1.6, 0.9).add(AIM);
+  for (const light of [key, rim, glow]) {
     light.target.position.copy(AIM);
     rig.add(light, light.target);
   }
   scene.add(rig);
   return {
     scene,
-    face(yaw) {
+    face(yaw, under) {
       rig.rotation.y = yaw;
+      glow.intensity = 1.1 * under;
       scene.environmentRotation.y = yaw;
     },
   };

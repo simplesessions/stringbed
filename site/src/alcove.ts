@@ -2,6 +2,11 @@
 // wall, a pool of light on it, and the racquet's own soft shadow. It is drawn first, writes no
 // depth, and stays opposite the camera, so it can never get in front of the racquet.
 //
+// Three layers, each over the last: a lit ground that fills the view, the wall, and the floor with
+// its sweep. From the side they read as one surface. As the camera sinks to the floor's level the
+// floor dissolves into the wall behind it, and looking up from far below the wall dissolves too, so
+// the racquet hangs in the same pool of light and its butt cap can be seen.
+//
 // The shadow is the racquet's silhouette seen from the key light, blurred twice (a little and a
 // lot). Each point of the backdrop mixes the two by how far behind the racquet it lies, so the
 // shadow is crisp at the butt cap and melts as it climbs the wall.
@@ -9,24 +14,31 @@ import {
   BufferAttribute,
   BufferGeometry,
   Color,
+  CustomBlending,
   DoubleSide,
   Group,
   LinearFilter,
+  MathUtils,
   Matrix4,
   Mesh,
   MeshBasicMaterial,
   NoBlending,
+  OneFactor,
+  OneMinusSrcAlphaFactor,
   OrthographicCamera,
+  type PerspectiveCamera,
   PlaneGeometry,
   Scene,
   ShaderMaterial,
   Vector2,
   Vector3,
   WebGLRenderTarget,
+  ZeroFactor,
   type Texture,
   type WebGLRenderer,
 } from 'three';
 import { KEY_DIRECTION } from './studio';
+import type { Presence } from './view-math';
 
 /** How far behind the racquet the wall stands, and the radius of the sweep up to it, metres. */
 const WALL = 0.36;
@@ -39,27 +51,19 @@ const SHADOW_SPAN = 1.15;
 const SHADOW_PX = 512;
 const CENTRE = new Vector3(0, 0.34, 0);
 
-/** Floor, sweep and wall as one strip; `along` is the distance from under the racquet, so light
- *  falls across the bend without a seam. */
-function sweep(): BufferGeometry {
-  const profile: Array<[z: number, y: number]> = [[FLOOR_FRONT, 0], [1, 0], [0.3, 0], [0, 0]];
-  const steps = 24;
-  for (let i = 0; i <= steps; i++) {
-    const a = (i / steps) * (Math.PI / 2);
-    profile.push([-(WALL - SWEEP) - Math.sin(a) * SWEEP, SWEEP - Math.cos(a) * SWEEP]);
-  }
-  profile.push([-WALL, 0.7], [-WALL, 1.4], [-WALL, WALL_TOP]);
+/** A strip across the niche through `profile` points; `along` is the distance from under the
+ *  racquet, so light falls across the bend, and from floor to wall, without a seam. */
+function strip(profile: Array<[z: number, y: number]>, from: number): BufferGeometry {
   const position: number[] = [];
   const along: number[] = [];
   const index: number[] = [];
-  let s = -FLOOR_FRONT;
+  let s = from;
   profile.forEach(([z, y], i) => {
     if (i) s += Math.hypot(z - profile[i - 1][0], y - profile[i - 1][1]);
     position.push(-HALF_WIDTH, y, z, HALF_WIDTH, y, z);
     along.push(s, s);
     const k = i * 2;
-    // Top of the wall first: seen from below, the floor must be drawn over the wall.
-    if (i) index.unshift(k - 2, k - 1, k, k, k - 1, k + 1);
+    if (i) index.push(k - 2, k - 1, k, k, k - 1, k + 1);
   });
   const g = new BufferGeometry();
   g.setAttribute('position', new BufferAttribute(new Float32Array(position), 3));
@@ -68,7 +72,26 @@ function sweep(): BufferGeometry {
   return g;
 }
 
-const backdropVertex = /* glsl */ `
+/** Where the sweep begins and ends, measured along the surface from under the racquet. */
+const BEND = WALL - SWEEP;
+const BEND_END = BEND + (SWEEP * Math.PI) / 2;
+
+function floorStrip(): BufferGeometry {
+  const profile: Array<[number, number]> = [[FLOOR_FRONT, 0], [1, 0], [0.3, 0], [0, 0]];
+  const steps = 24;
+  for (let i = 0; i <= steps; i++) {
+    const a = (i / steps) * (Math.PI / 2);
+    profile.push([-BEND - Math.sin(a) * SWEEP, SWEEP - Math.cos(a) * SWEEP]);
+  }
+  return strip(profile, -FLOOR_FRONT);
+}
+
+/** The wall runs on below the floor, for when the floor is not there. */
+function wallStrip(): BufferGeometry {
+  return strip([[-WALL, -WALL_TOP], [-WALL, 0], [-WALL, SWEEP], [-WALL, 0.7], [-WALL, 1.4], [-WALL, WALL_TOP]], BEND_END - SWEEP - WALL_TOP);
+}
+
+const surfaceVertex = /* glsl */ `
   attribute float along;
   uniform mat4 lightMatrix;
   varying vec3 vLocal;
@@ -82,54 +105,85 @@ const backdropVertex = /* glsl */ `
     gl_Position = projectionMatrix * viewMatrix * world;
   }`;
 
-const backdropFragment = /* glsl */ `
-  uniform sampler2D tNear;
-  uniform sampler2D tFar;
+const groundVertex = /* glsl */ `
+  varying vec2 vNdc;
+  void main() {
+    vNdc = position.xy;
+    gl_Position = vec4(position.xy, 0.0, 1.0);
+  }`;
+
+const shared = /* glsl */ `
   uniform vec3 shade;
   uniform vec3 pool;
-  uniform vec3 shadowTint;
   uniform vec2 resolution;
   uniform float reveal;
-  uniform float floorY;
+
+  float blob(vec2 p, vec2 size) { p /= size; return exp(-dot(p, p)); }
+
+  // Two overlapping pools: the wide wash of the key, and a smaller warm heart behind the head.
+  // 'p' is metres right of and above the racquet's middle.
+  float wash(vec2 p) {
+    return 0.62 * blob(p + vec2(0.10, -0.01), vec2(0.95, 0.85))
+         + 0.38 * blob(p + vec2(0.04, -0.19), vec2(0.42, 0.46));
+  }
+
+  vec3 lit(float light) {
+    // The niche's own edges: a soft fall-off at the lintel and the sides.
+    vec2 uv = gl_FragCoord.xy / resolution;
+    vec2 e = vec2(min(uv.x, 1.0 - uv.x) * resolution.x / resolution.y, 1.0 - uv.y);
+    return mix(shade, pool, clamp(light, 0.0, 1.0)) * (1.0 - 0.07 * exp(-e.y / 0.10) - 0.05 * exp(-e.x / 0.09));
+  }
+
+  // A light gradient this wide bands in 8 bits without a little noise.
+  vec3 dithered(vec3 c) {
+    return c + (fract(52.9829189 * fract(dot(gl_FragCoord.xy, vec2(0.06711056, 0.00583715)))) - 0.5) / 255.0;
+  }`;
+
+const groundFragment = /* glsl */ `
+  ${shared}
+  uniform vec2 centre;
+  uniform vec2 metres;
+  varying vec2 vNdc;
+  void main() {
+    gl_FragColor = vec4(lit(wash((vNdc - centre) * metres)), 1.0);
+    #include <colorspace_fragment>
+    gl_FragColor = vec4(dithered(gl_FragColor.rgb), 1.0) * reveal;
+  }`;
+
+const surfaceFragment = /* glsl */ `
+  ${shared}
+  uniform sampler2D tNear;
+  uniform sampler2D tFar;
+  uniform vec3 shadowTint;
+  uniform float presence;
+  uniform float floorPresence;
   varying vec3 vLocal;
   varying float vAlong;
   varying vec2 vShadow;
 
-  float blob(vec2 p, vec2 size) { p /= size; return exp(-dot(p, p)); }
-
   void main() {
-    // Two overlapping pools: the wide wash of the key, and a smaller warm heart behind the head.
-    float light = 0.62 * blob(vec2(vLocal.x + 0.10, vAlong - 0.62), vec2(0.95, 0.85))
-                + 0.38 * blob(vec2(vLocal.x + 0.04, vAlong - 0.80), vec2(0.42, 0.46));
+    if (presence <= 0.0) discard;
+    float light = wash(vec2(vLocal.x, vAlong - ${(BEND_END - SWEEP + 0.34).toFixed(4)}));
     // Light reaching the floor around the butt cap, so it stands in the pool, not at its edge.
     light += 0.30 * blob(vec2(vLocal.x, vAlong + 0.12), vec2(0.75, 0.62));
     // Where floor turns into wall, each shades the other a little.
-    light -= 0.16 * exp(-pow((vAlong - ${(WALL - SWEEP + 0.157).toFixed(3)}) / 0.16, 2.0));
-    vec3 c = mix(shade, pool, clamp(light, 0.0, 1.0));
+    light -= 0.16 * floorPresence * exp(-pow((vAlong - ${((BEND + BEND_END) / 2).toFixed(4)}) / 0.16, 2.0));
+    vec3 c = lit(light);
 
-    // The niche's own edges: a soft fall-off at the lintel and the sides.
-    vec2 uv = gl_FragCoord.xy / resolution;
-    vec2 e = vec2(min(uv.x, 1.0 - uv.x) * resolution.x / resolution.y, 1.0 - uv.y);
-    c *= 1.0 - 0.07 * exp(-e.y / 0.10) - 0.05 * exp(-e.x / 0.09);
-
-    float behind = max(0.0, -vLocal.z);
-    float soft = smoothstep(0.0, 0.26, behind);
+    float soft = smoothstep(0.0, 0.26, max(0.0, -vLocal.z));
     float s = mix(texture2D(tNear, vShadow).r, texture2D(tFar, vShadow).r, soft);
     vec2 inside = step(vec2(0.0), vShadow) * step(vShadow, vec2(1.0));
     s *= inside.x * inside.y * mix(0.62, 0.5, soft);
     // Contact: the dark little halo where the cap meets the floor.
-    s = max(s, 0.55 * blob(vLocal.xz, vec2(0.034, 0.030)) * step(vLocal.y, 0.002));
-    s = max(s, 0.22 * blob(vLocal.xz, vec2(0.11, 0.085)) * step(vLocal.y, 0.002));
-    // Seen from under the floor there is nothing for it to fall on.
-    s *= smoothstep(-0.06, 0.06, cameraPosition.y - floorY);
+    float onFloor = step(abs(vLocal.y), 0.002);
+    s = max(s, 0.55 * blob(vLocal.xz, vec2(0.034, 0.030)) * onFloor);
+    s = max(s, 0.22 * blob(vLocal.xz, vec2(0.11, 0.085)) * onFloor);
     c = mix(c, c * shadowTint, s);
 
     gl_FragColor = vec4(c, 1.0);
     #include <colorspace_fragment>
-    // A light gradient this wide bands in 8 bits without a little noise.
-    float noise = fract(52.9829189 * fract(dot(gl_FragCoord.xy, vec2(0.06711056, 0.00583715))));
-    gl_FragColor.rgb += (noise - 0.5) / 255.0;
-    gl_FragColor *= reveal;
+    // Blended so that layers mix among themselves; 'reveal' then fades the stack as one.
+    gl_FragColor = vec4(dithered(gl_FragColor.rgb) * presence * reveal, presence);
   }`;
 
 const blurVertex = /* glsl */ `
@@ -156,7 +210,9 @@ const target = (px: number, samples = 0) =>
 
 export class Alcove {
   readonly node = new Group();
-  private readonly backdrop: ShaderMaterial;
+  private readonly uniforms: Record<string, { value: unknown }>;
+  private readonly wallPresence = { value: 1 };
+  private readonly floorPresence = { value: 1 };
   private readonly light = new OrthographicCamera(-SHADOW_SPAN / 2, SHADOW_SPAN / 2, SHADOW_SPAN / 2, -SHADOW_SPAN / 2, 0.1, 4);
   private readonly ink = new MeshBasicMaterial({ color: 0xffffff, side: DoubleSide, toneMapped: false });
   private readonly silhouette = target(SHADOW_PX, 4);
@@ -175,31 +231,42 @@ export class Alcove {
   });
 
   constructor() {
-    this.backdrop = new ShaderMaterial({
-      uniforms: {
-        tNear: { value: this.near[0].texture },
-        tFar: { value: this.far[0].texture },
-        lightMatrix: { value: new Matrix4() },
-        shade: { value: new Color(0xc3b5a2) },
-        pool: { value: new Color(0xe9dece) },
-        shadowTint: { value: new Color(0x8a7460) },
-        resolution: { value: new Vector2(1, 1) },
-        reveal: { value: 1 },
-        floorY: { value: 0 },
-      },
-      vertexShader: backdropVertex,
-      fragmentShader: backdropFragment,
-      side: DoubleSide,
-      depthTest: false,
-      depthWrite: false,
-      blending: NoBlending,
-      toneMapped: false,
+    this.uniforms = {
+      tNear: { value: this.near[0].texture },
+      tFar: { value: this.far[0].texture },
+      lightMatrix: { value: new Matrix4() },
+      shade: { value: new Color(0xc3b5a2) },
+      pool: { value: new Color(0xe9dece) },
+      shadowTint: { value: new Color(0x8a7460) },
+      resolution: { value: new Vector2(1, 1) },
+      reveal: { value: 1 },
+      centre: { value: new Vector2() },
+      metres: { value: new Vector2(1, 1) },
+    };
+    const flat = { side: DoubleSide, depthTest: false, depthWrite: false, toneMapped: false };
+    const surface = (presence: { value: number }) => new ShaderMaterial({
+      ...flat,
+      uniforms: { ...this.uniforms, presence, floorPresence: this.floorPresence },
+      vertexShader: surfaceVertex,
+      fragmentShader: surfaceFragment,
+      blending: CustomBlending,
+      blendSrc: OneFactor,
+      blendDst: OneMinusSrcAlphaFactor,
+      blendSrcAlpha: ZeroFactor,
+      blendDstAlpha: OneFactor,
     });
-    const mesh = new Mesh(sweep(), this.backdrop);
-    mesh.name = 'alcove';
-    mesh.renderOrder = -1;
-    mesh.frustumCulled = false;
-    this.node.add(mesh);
+    const ground = new ShaderMaterial({ ...flat, uniforms: this.uniforms, vertexShader: groundVertex, fragmentShader: groundFragment, blending: NoBlending });
+    const layers: Array<[BufferGeometry, ShaderMaterial]> = [
+      [new PlaneGeometry(2, 2), ground],
+      [wallStrip(), surface(this.wallPresence)],
+      [floorStrip(), surface(this.floorPresence)],
+    ];
+    layers.forEach(([geometry, material], i) => {
+      const mesh = new Mesh(geometry, material);
+      mesh.renderOrder = i - layers.length; // before the racquet, in this order
+      mesh.frustumCulled = false;
+      this.node.add(mesh);
+    });
     const plane = new Mesh(new PlaneGeometry(2, 2), this.blur);
     plane.frustumCulled = false;
     this.quad.add(plane);
@@ -207,22 +274,29 @@ export class Alcove {
 
   /** 0: only the racquet is drawn, 1: the alcove is fully lit. */
   set reveal(v: number) {
-    this.backdrop.uniforms.reveal.value = v;
+    this.uniforms.reveal.value = v;
   }
 
   /**
-   * Turn to face the camera at `yaw` and take the racquet's shadow again from there. `lit` is the
-   * scene the racquet stands in; everything else in it is hidden while the silhouette is drawn.
+   * Turn to face the camera and take the racquet's shadow again from there. `lit` is the scene the
+   * racquet stands in; everything else in it is hidden while the silhouette is drawn.
    */
-  update(renderer: WebGLRenderer, lit: Scene, yaw: number, floor: number): void {
+  update(renderer: WebGLRenderer, lit: Scene, camera: PerspectiveCamera, yaw: number, floor: number, presence: Presence): void {
     this.node.rotation.y = yaw;
     this.node.position.y = floor;
-    this.backdrop.uniforms.floorY.value = floor;
-    renderer.getDrawingBufferSize(this.backdrop.uniforms.resolution.value as Vector2);
+    this.floorPresence.value = presence.floor;
+    this.wallPresence.value = presence.wall;
+    renderer.getDrawingBufferSize(this.uniforms.resolution.value as Vector2);
+    // The ground's pool hangs behind the racquet on screen, at the size the wall's would have.
+    const reach = Math.max(0.05, camera.position.distanceTo(CENTRE)) * Math.tan(MathUtils.degToRad(camera.fov) / 2);
+    camera.updateMatrixWorld();
+    const at = CENTRE.clone().project(camera);
+    (this.uniforms.centre.value as Vector2).set(at.x, at.y);
+    (this.uniforms.metres.value as Vector2).set(reach * camera.aspect, reach);
     this.light.position.copy(KEY_DIRECTION).multiplyScalar(2).applyAxisAngle(this.node.up, yaw).add(CENTRE);
     this.light.lookAt(CENTRE);
     this.light.updateMatrixWorld();
-    (this.backdrop.uniforms.lightMatrix.value as Matrix4).multiplyMatrices(this.light.projectionMatrix, this.light.matrixWorldInverse);
+    (this.uniforms.lightMatrix.value as Matrix4).multiplyMatrices(this.light.projectionMatrix, this.light.matrixWorldInverse);
 
     const shadows = renderer.shadowMap.autoUpdate;
     renderer.shadowMap.autoUpdate = false;

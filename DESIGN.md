@@ -201,7 +201,9 @@ turning a racquet runs the highlights along it.
 
 The detail view stands its racquet in the **alcove** (`site/src/alcove.ts`): a floor that sweeps
 up into a wall, a pool of warm light behind the head, and the racquet's own shadow, crisp at the
-butt cap and melting as it climbs. The light comes up once the racquet has landed. Thumbnails get
+butt cap and melting as it climbs. The light comes up once the racquet has landed. The floor
+dissolves as the camera sinks to its level and the wall after it, so nothing ever cuts across the
+view; from below the racquet hangs in the same light, with a soft glow on its butt cap. Thumbnails get
 the lighting without the alcove; pixel, line and halftone stand on a flat panel.
 
 ### Named Rules

@@ -4,7 +4,7 @@ import { Box3, MathUtils, PerspectiveCamera, Plane, Raycaster, Vector2, Vector3,
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { Alcove } from './alcove';
 import { createRenderer, createStudio, loadModel, prefersReducedMotion, type Studio } from './studio';
-import { between, ease, fitDistance, holdTarget, partBoxes, type Pose } from './view-math';
+import { between, ease, fitDistance, holdTarget, partBoxes, presence, type Pose } from './view-math';
 import type { PartView } from './parts';
 import { LookPainter, type LookScale } from './look-passes';
 import type { Look } from './look';
@@ -261,13 +261,14 @@ export class Viewer {
   private draw() {
     this.dirty = false;
     const yaw = this.controls.getAzimuthalAngle();
-    this.studio.face(yaw);
+    const there = presence(this.camera.position, this.controls.target, this.box.min.y);
+    this.studio.face(yaw, 1 - there.floor);
     // The other looks redraw the racquet alone, on the stage's own flat panel: the alcove leaves
     // the scene, so they never see it.
     const staged = this.look === 'realistic' && this.model !== null;
     if (staged) this.studio.scene.add(this.alcove.node);
     else this.alcove.node.removeFromParent();
-    if (staged) this.alcove.update(this.renderer, this.studio.scene, yaw, this.box.min.y);
+    if (staged) this.alcove.update(this.renderer, this.studio.scene, this.camera, yaw, this.box.min.y, there);
     this.painter.render(this.studio.scene, this.camera, this.renderer.getPixelRatio(), LOOK_SCALE);
   }
 

@@ -67,6 +67,24 @@ export function holdTarget(target: Vector3, box: Box3, distance: number, fitted:
   return target.clone().sub(before);
 }
 
+/** How much of the alcove is there, 0 to 1 each. */
+export interface Presence {
+  floor: number;
+  wall: number;
+}
+
+/**
+ * The floor is solid from any ordinary view and gone by the time the camera reaches its level, so
+ * the camera never breaks through it. The wall goes later, as the view tips up towards the butt
+ * cap and the wall would end.
+ */
+export function presence(camera: Vector3, target: Vector3, floor: number): Presence {
+  const away = Math.hypot(camera.x - target.x, camera.z - target.z);
+  const above = MathUtils.radToDeg(Math.atan2(camera.y - floor, away));
+  const pitch = MathUtils.radToDeg(Math.atan2(camera.y - target.y, away));
+  return { floor: MathUtils.smoothstep(above, 1, 9), wall: MathUtils.smoothstep(pitch, -42, -14) };
+}
+
 /** Ease-out with no overshoot: the camera should arrive, not bounce. */
 export const ease = (t: number): number => 1 - Math.pow(1 - MathUtils.clamp(t, 0, 1), 4);
 

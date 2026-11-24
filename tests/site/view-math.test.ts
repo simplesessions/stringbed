@@ -1,6 +1,6 @@
 import { test, expect } from 'bun:test';
 import { Box3, BoxGeometry, Group, Mesh, Vector3 } from 'three';
-import { between, ease, fitDistance, holdTarget, partBoxes } from '../../site/src/view-math';
+import { between, ease, fitDistance, holdTarget, partBoxes, presence } from '../../site/src/view-math';
 
 /** A racquet-shaped stack of boxes with the public part names. */
 function racquet(): Group {
@@ -69,4 +69,27 @@ test('a glide starts and ends exactly on its poses and turns the short way', () 
   expect(mid.target.y).toBeCloseTo(0.2);
   expect(ease(0)).toBe(0);
   expect(ease(2)).toBe(1);
+});
+
+test('the floor is solid from ordinary views, gone at its own level, and the wall outlasts it', () => {
+  const target = new Vector3(0, 0.34, 0);
+  const from = (deg: number, d = 1.6) => new Vector3(0, 0.34 + d * Math.sin((deg * Math.PI) / 180), d * Math.cos((deg * Math.PI) / 180));
+  expect(presence(from(7), target, 0)).toEqual({ floor: 1, wall: 1 });
+  expect(presence(from(85), target, 0)).toEqual({ floor: 1, wall: 1 });
+  const level = presence(new Vector3(0, 0, 1.6), target, 0);
+  expect(level.floor).toBe(0);
+  expect(level.wall).toBeGreaterThan(0.9);
+  expect(presence(from(-89), target, 0)).toEqual({ floor: 0, wall: 0 });
+});
+
+test('the floor and wall only ever fade as the camera sinks', () => {
+  const target = new Vector3(0, 0.34, 0);
+  let last = { floor: 1, wall: 1 };
+  for (let deg = 30; deg >= -89; deg--) {
+    const a = (deg * Math.PI) / 180;
+    const now = presence(new Vector3(0, 0.34 + 1.6 * Math.sin(a), 1.6 * Math.cos(a)), target, 0);
+    expect(now.floor).toBeLessThanOrEqual(last.floor);
+    expect(now.wall).toBeLessThanOrEqual(last.wall);
+    last = now;
+  }
 });
