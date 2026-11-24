@@ -1,0 +1,195 @@
+{
+  "id": "dunlop-lx-800-2024",
+  "brand": "Dunlop",
+  "line": "LX",
+  "model": "LX 800",
+  "generation": "2024",
+  "year": 2024,
+  "specs": {
+    "headSizeSqIn": 110,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      18
+    ],
+    "beamMm": [
+      26,
+      27,
+      26
+    ],
+    "unstrungWeightG": 255
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.28
+    },
+    "beam": {
+      "profile": "ellipse"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "curved"
+    },
+    "features": []
+  },
+  "paint": {
+    "base": "#d6d8d6",
+    "finish": "satin",
+    "zones": [
+      {
+        "from": 0.6,
+        "to": 0.9,
+        "color": "#b8a284",
+        "faces": [
+          "outer",
+          "front",
+          "back"
+        ]
+      },
+      {
+        "from": 0.9,
+        "to": 1,
+        "color": "#4b4b4e"
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#e3e3e0"
+    },
+    "collar": {
+      "color": "#262628"
+    },
+    "buttCap": {
+      "color": "#d9d9d6"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#3a3a3c",
+      "channel": 0.45
+    },
+    "bumper": {
+      "color": "#3a3a3c"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://www.tennis-warehouse.com/Dunlop_LX_800/descpageRCDUNLOP-LX800.html",
+    "https://us.dunlopsports.com/dunlop/tennis/rackets/lx-series/lx-800-tennis-racket/LX800-24.html"
+  ],
+  "verified": true,
+  "colourway": "Grey",
+  "lineage": "dunlop-lx",
+  "variantLabel": "800",
+  "variants": [
+    {
+      "id": "dunlop-lx-1000-2024",
+      "label": "1000",
+      "model": "LX 1000",
+      "specs": {
+        "headSizeSqIn": 115,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          18
+        ],
+        "beamMm": [
+          27,
+          28,
+          26
+        ]
+      },
+      "geometry": {
+        "head": {
+          "shape": "oval",
+          "aspect": 1.26
+        },
+        "beam": {
+          "profile": "ellipse"
+        },
+        "throat": {
+          "style": "open-v",
+          "bridge": "flat"
+        },
+        "features": []
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Dunlop_LX_1000/descpageRCDUNLOP-LX1000.html"
+      ]
+    },
+    {
+      "id": "dunlop-lx-team-107-2024",
+      "label": "Team 107",
+      "model": "LX Team 107",
+      "specs": {
+        "headSizeSqIn": 107,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          27,
+          23
+        ],
+        "unstrungWeightG": 270
+      },
+      "paint": {
+        "base": "#a8c0d2",
+        "finish": "satin",
+        "zones": [
+          {
+            "from": 0.5,
+            "to": 0.78,
+            "color": "#f0f0ee",
+            "blend": 0.04
+          },
+          {
+            "from": 0.78,
+            "to": 0.92,
+            "color": "#b8a284",
+            "blend": 0.04
+          },
+          {
+            "from": 0.92,
+            "to": 1,
+            "color": "#2a2a2c",
+            "blend": 0.04
+          }
+        ]
+      },
+      "parts": {
+        "grip": {
+          "color": "#f0f0ee"
+        },
+        "collar": {
+          "color": "#262628"
+        },
+        "buttCap": {
+          "color": "#d9d9d6"
+        },
+        "strings": {
+          "color": "#f2f2f2",
+          "gaugeMm": 1.25
+        },
+        "grommets": {
+          "color": "#8fa6b8",
+          "channel": 0.45
+        },
+        "bumper": {
+          "color": "#8fa6b8"
+        },
+        "dampener": null
+      },
+      "colourway": "Light Blue/White/Gold",
+      "sources": [
+        "https://us.dunlopsports.com/dunlop/tennis/rackets/lx-team/lx-team-107-tennis-racket/MLXTEAM107-24.html"
+      ]
+    }
+  ]
+}

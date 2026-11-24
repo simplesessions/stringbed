@@ -4879,6 +4879,1513 @@
       "colourway": "White/Coral"
     },
     {
+      "id": "dunlop-cx-200-2024",
+      "brand": "Dunlop",
+      "line": "CX",
+      "model": "CX 200",
+      "generation": "2024",
+      "year": 2024,
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          21.5,
+          21.5,
+          21.5
+        ]
+      },
+      "swatch": "#8e1d24",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/dunlop-cx-200-2024.glb",
+          "bytes": 36136,
+          "triangles": 4248
+        }
+      },
+      "lineage": "dunlop-cx",
+      "variantLabel": "200",
+      "variants": [
+        {
+          "id": "dunlop-cx-200-2024",
+          "label": "200"
+        },
+        {
+          "id": "dunlop-cx-200-tour-2024",
+          "label": "200 Tour"
+        },
+        {
+          "id": "dunlop-cx-400-2024",
+          "label": "400"
+        },
+        {
+          "id": "dunlop-cx-400-tour-2024",
+          "label": "400 Tour"
+        },
+        {
+          "id": "dunlop-cx-200-os-2024",
+          "label": "200 OS"
+        },
+        {
+          "id": "dunlop-cx-200-ls-2024",
+          "label": "200 LS"
+        }
+      ],
+      "colourway": "Red/Orange"
+    },
+    {
+      "id": "dunlop-cx-200-16x19-2027",
+      "brand": "Dunlop",
+      "line": "CX",
+      "model": "CX 200 16x19",
+      "generation": "2027",
+      "year": 2027,
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          21.5,
+          21.5,
+          21.5
+        ],
+        "unstrungWeightG": 305
+      },
+      "swatch": "#d4211f",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/dunlop-cx-200-16x19-2027.glb",
+          "bytes": 38676,
+          "triangles": 4536
+        }
+      },
+      "lineage": "dunlop-cx",
+      "variantLabel": "200 16x19",
+      "variants": [
+        {
+          "id": "dunlop-cx-200-16x19-2027",
+          "label": "200 16x19"
+        },
+        {
+          "id": "dunlop-cx-200-18x20-2027",
+          "label": "200 18x20"
+        },
+        {
+          "id": "dunlop-cx-200-tour-2027",
+          "label": "200 Tour"
+        },
+        {
+          "id": "dunlop-cx-400-2027",
+          "label": "400"
+        },
+        {
+          "id": "dunlop-cx-400-tour-2027",
+          "label": "400 Tour"
+        },
+        {
+          "id": "dunlop-cx-200-ls-2027",
+          "label": "200 LS"
+        },
+        {
+          "id": "dunlop-cx-200-os-2027",
+          "label": "200 OS"
+        }
+      ],
+      "colourway": "Red"
+    },
+    {
+      "id": "dunlop-cx-200-18x20-2027",
+      "brand": "Dunlop",
+      "line": "CX",
+      "model": "CX 200 18x20",
+      "generation": "2027",
+      "year": 2027,
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          18,
+          20
+        ],
+        "beamMm": [
+          21.5,
+          21.5,
+          21.5
+        ],
+        "unstrungWeightG": 305
+      },
+      "swatch": "#d4211f",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/dunlop-cx-200-18x20-2027.glb",
+          "bytes": 38888,
+          "triangles": 4560
+        }
+      },
+      "lineage": "dunlop-cx",
+      "variantLabel": "200 18x20",
+      "variantOf": "dunlop-cx-200-16x19-2027"
+    },
+    {
+      "id": "dunlop-cx-200-ls-2024",
+      "brand": "Dunlop",
+      "line": "CX",
+      "model": "CX 200 LS",
+      "generation": "2024",
+      "year": 2024,
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          21.5,
+          21.5,
+          21.5
+        ]
+      },
+      "swatch": "#8e1d24",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/dunlop-cx-200-ls-2024.glb",
+          "bytes": 36140,
+          "triangles": 4248
+        }
+      },
+      "lineage": "dunlop-cx",
+      "variantLabel": "200 LS",
+      "variantOf": "dunlop-cx-200-2024"
+    },
+    {
+      "id": "dunlop-cx-200-ls-2027",
+      "brand": "Dunlop",
+      "line": "CX",
+      "model": "CX 200 LS",
+      "generation": "2027",
+      "year": 2027,
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          21.5,
+          21.5,
+          21.5
+        ],
+        "unstrungWeightG": 290
+      },
+      "swatch": "#cf2220",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/dunlop-cx-200-ls-2027.glb",
+          "bytes": 36748,
+          "triangles": 4248
+        }
+      },
+      "lineage": "dunlop-cx",
+      "variantLabel": "200 LS",
+      "variantOf": "dunlop-cx-200-16x19-2027"
+    },
+    {
+      "id": "dunlop-cx-200-os-2024",
+      "brand": "Dunlop",
+      "line": "CX",
+      "model": "CX 200 OS",
+      "generation": "2024",
+      "year": 2024,
+      "specs": {
+        "headSizeSqIn": 105,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          21.5,
+          21.5,
+          21.5
+        ]
+      },
+      "swatch": "#8e1d24",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/dunlop-cx-200-os-2024.glb",
+          "bytes": 36308,
+          "triangles": 4248
+        }
+      },
+      "lineage": "dunlop-cx",
+      "variantLabel": "200 OS",
+      "variantOf": "dunlop-cx-200-2024"
+    },
+    {
+      "id": "dunlop-cx-200-os-2027",
+      "brand": "Dunlop",
+      "line": "CX",
+      "model": "CX 200 OS",
+      "generation": "2027",
+      "year": 2027,
+      "specs": {
+        "headSizeSqIn": 105,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          21.5,
+          21.5,
+          21.5
+        ],
+        "unstrungWeightG": 295
+      },
+      "swatch": "#d4211f",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/dunlop-cx-200-os-2027.glb",
+          "bytes": 35092,
+          "triangles": 4120
+        }
+      },
+      "lineage": "dunlop-cx",
+      "variantLabel": "200 OS",
+      "variantOf": "dunlop-cx-200-16x19-2027"
+    },
+    {
+      "id": "dunlop-cx-200-tour-2024",
+      "brand": "Dunlop",
+      "line": "CX",
+      "model": "CX 200 Tour",
+      "generation": "2024",
+      "year": 2024,
+      "specs": {
+        "headSizeSqIn": 95,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          20.5,
+          20.5,
+          20.5
+        ]
+      },
+      "swatch": "#8e1d24",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/dunlop-cx-200-tour-2024.glb",
+          "bytes": 36388,
+          "triangles": 4248
+        }
+      },
+      "lineage": "dunlop-cx",
+      "variantLabel": "200 Tour",
+      "variantOf": "dunlop-cx-200-2024"
+    },
+    {
+      "id": "dunlop-cx-200-tour-2027",
+      "brand": "Dunlop",
+      "line": "CX",
+      "model": "CX 200 Tour",
+      "generation": "2027",
+      "year": 2027,
+      "specs": {
+        "headSizeSqIn": 95,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          20.5,
+          20.5,
+          20.5
+        ],
+        "unstrungWeightG": 310
+      },
+      "swatch": "#d4211f",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/dunlop-cx-200-tour-2027.glb",
+          "bytes": 38920,
+          "triangles": 4536
+        }
+      },
+      "lineage": "dunlop-cx",
+      "variantLabel": "200 Tour",
+      "variantOf": "dunlop-cx-200-16x19-2027"
+    },
+    {
+      "id": "dunlop-cx-400-2024",
+      "brand": "Dunlop",
+      "line": "CX",
+      "model": "CX 400",
+      "generation": "2024",
+      "year": 2024,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          24,
+          24,
+          24
+        ]
+      },
+      "swatch": "#8e1d24",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/dunlop-cx-400-2024.glb",
+          "bytes": 33152,
+          "triangles": 4468
+        }
+      },
+      "lineage": "dunlop-cx",
+      "variantLabel": "400",
+      "variantOf": "dunlop-cx-200-2024"
+    },
+    {
+      "id": "dunlop-cx-400-2027",
+      "brand": "Dunlop",
+      "line": "CX",
+      "model": "CX 400",
+      "generation": "2027",
+      "year": 2027,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          24,
+          24,
+          24
+        ],
+        "unstrungWeightG": 285
+      },
+      "swatch": "#d4211f",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/dunlop-cx-400-2027.glb",
+          "bytes": 34612,
+          "triangles": 4760
+        }
+      },
+      "lineage": "dunlop-cx",
+      "variantLabel": "400",
+      "variantOf": "dunlop-cx-200-16x19-2027"
+    },
+    {
+      "id": "dunlop-cx-400-tour-2024",
+      "brand": "Dunlop",
+      "line": "CX",
+      "model": "CX 400 Tour",
+      "generation": "2024",
+      "year": 2024,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          23,
+          23
+        ]
+      },
+      "swatch": "#8e1d24",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/dunlop-cx-400-tour-2024.glb",
+          "bytes": 36288,
+          "triangles": 4248
+        }
+      },
+      "lineage": "dunlop-cx",
+      "variantLabel": "400 Tour",
+      "variantOf": "dunlop-cx-200-2024"
+    },
+    {
+      "id": "dunlop-cx-400-tour-2027",
+      "brand": "Dunlop",
+      "line": "CX",
+      "model": "CX 400 Tour",
+      "generation": "2027",
+      "year": 2027,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          23,
+          23
+        ],
+        "unstrungWeightG": 300
+      },
+      "swatch": "#d4211f",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/dunlop-cx-400-tour-2027.glb",
+          "bytes": 38840,
+          "triangles": 4536
+        }
+      },
+      "lineage": "dunlop-cx",
+      "variantLabel": "400 Tour",
+      "variantOf": "dunlop-cx-200-16x19-2027"
+    },
+    {
+      "id": "dunlop-fx-500-2023",
+      "brand": "Dunlop",
+      "line": "FX",
+      "model": "FX 500",
+      "generation": "2023",
+      "year": 2023,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "swatch": "#1479e0",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/dunlop-fx-500-2023.glb",
+          "bytes": 34088,
+          "triangles": 4468
+        }
+      },
+      "lineage": "dunlop-fx",
+      "variantLabel": "500",
+      "variants": [
+        {
+          "id": "dunlop-fx-500-2023",
+          "label": "500"
+        },
+        {
+          "id": "dunlop-fx-500-tour-2023",
+          "label": "500 Tour"
+        },
+        {
+          "id": "dunlop-fx-500-lite-2023",
+          "label": "500 Lite"
+        },
+        {
+          "id": "dunlop-fx-700-2023",
+          "label": "700"
+        }
+      ],
+      "colourway": "Blue"
+    },
+    {
+      "id": "dunlop-fx-500-2025",
+      "brand": "Dunlop",
+      "line": "FX",
+      "model": "FX 500",
+      "generation": "2025",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 300
+      },
+      "swatch": "#3d3c94",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/dunlop-fx-500-2025.glb",
+          "bytes": 33312,
+          "triangles": 4468
+        }
+      },
+      "lineage": "dunlop-fx",
+      "variantLabel": "500",
+      "variants": [
+        {
+          "id": "dunlop-fx-500-2025",
+          "label": "500"
+        },
+        {
+          "id": "dunlop-fx-500-tour-2025",
+          "label": "500 Tour"
+        },
+        {
+          "id": "dunlop-fx-500-ls-2025",
+          "label": "500 LS"
+        },
+        {
+          "id": "dunlop-fx-500-lite-2025",
+          "label": "500 Lite"
+        },
+        {
+          "id": "dunlop-fx-500-super-lite-2025",
+          "label": "500 Super Lite"
+        },
+        {
+          "id": "dunlop-fx-team-100-2025",
+          "label": "Team 100"
+        }
+      ],
+      "colourway": "Blue"
+    },
+    {
+      "id": "dunlop-fx-500-ls-2025",
+      "brand": "Dunlop",
+      "line": "FX",
+      "model": "FX 500 LS",
+      "generation": "2025",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 285
+      },
+      "swatch": "#3d3c94",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/dunlop-fx-500-ls-2025.glb",
+          "bytes": 33316,
+          "triangles": 4468
+        }
+      },
+      "lineage": "dunlop-fx",
+      "variantLabel": "500 LS",
+      "variantOf": "dunlop-fx-500-2025"
+    },
+    {
+      "id": "dunlop-fx-500-lite-2023",
+      "brand": "Dunlop",
+      "line": "FX",
+      "model": "FX 500 Lite",
+      "generation": "2023",
+      "year": 2023,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          18
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "swatch": "#1479e0",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/dunlop-fx-500-lite-2023.glb",
+          "bytes": 34044,
+          "triangles": 4460
+        }
+      },
+      "lineage": "dunlop-fx",
+      "variantLabel": "500 Lite",
+      "variantOf": "dunlop-fx-500-2023"
+    },
+    {
+      "id": "dunlop-fx-500-lite-2025",
+      "brand": "Dunlop",
+      "line": "FX",
+      "model": "FX 500 Lite",
+      "generation": "2025",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          18
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 270
+      },
+      "swatch": "#3d3c94",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/dunlop-fx-500-lite-2025.glb",
+          "bytes": 33264,
+          "triangles": 4460
+        }
+      },
+      "lineage": "dunlop-fx",
+      "variantLabel": "500 Lite",
+      "variantOf": "dunlop-fx-500-2025"
+    },
+    {
+      "id": "dunlop-fx-500-super-lite-2025",
+      "brand": "Dunlop",
+      "line": "FX",
+      "model": "FX 500 Super Lite",
+      "generation": "2025",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          18
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 255
+      },
+      "swatch": "#3d3c94",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/dunlop-fx-500-super-lite-2025.glb",
+          "bytes": 33280,
+          "triangles": 4460
+        }
+      },
+      "lineage": "dunlop-fx",
+      "variantLabel": "500 Super Lite",
+      "variantOf": "dunlop-fx-500-2025"
+    },
+    {
+      "id": "dunlop-fx-500-tour-2023",
+      "brand": "Dunlop",
+      "line": "FX",
+      "model": "FX 500 Tour",
+      "generation": "2023",
+      "year": 2023,
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          21,
+          23,
+          21
+        ]
+      },
+      "swatch": "#1479e0",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/dunlop-fx-500-tour-2023.glb",
+          "bytes": 34104,
+          "triangles": 4468
+        }
+      },
+      "lineage": "dunlop-fx",
+      "variantLabel": "500 Tour",
+      "variantOf": "dunlop-fx-500-2023"
+    },
+    {
+      "id": "dunlop-fx-500-tour-2025",
+      "brand": "Dunlop",
+      "line": "FX",
+      "model": "FX 500 Tour",
+      "generation": "2025",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          21,
+          23,
+          21
+        ],
+        "unstrungWeightG": 305
+      },
+      "swatch": "#3d3c94",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/dunlop-fx-500-tour-2025.glb",
+          "bytes": 33348,
+          "triangles": 4468
+        }
+      },
+      "lineage": "dunlop-fx",
+      "variantLabel": "500 Tour",
+      "variantOf": "dunlop-fx-500-2025"
+    },
+    {
+      "id": "dunlop-fx-700-2023",
+      "brand": "Dunlop",
+      "line": "FX",
+      "model": "FX 700",
+      "generation": "2023",
+      "year": 2023,
+      "specs": {
+        "headSizeSqIn": 107,
+        "lengthIn": 27.5,
+        "stringPattern": [
+          16,
+          18
+        ],
+        "beamMm": [
+          23,
+          27,
+          23
+        ]
+      },
+      "swatch": "#1f6fd1",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/dunlop-fx-700-2023.glb",
+          "bytes": 33856,
+          "triangles": 4460
+        }
+      },
+      "lineage": "dunlop-fx",
+      "variantLabel": "700",
+      "variantOf": "dunlop-fx-500-2023",
+      "colourway": "Blue/Black"
+    },
+    {
+      "id": "dunlop-fx-team-100-2025",
+      "brand": "Dunlop",
+      "line": "FX",
+      "model": "FX Team 100",
+      "generation": "2025",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          24
+        ],
+        "unstrungWeightG": 285
+      },
+      "swatch": "#3d3c94",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/dunlop-fx-team-100-2025.glb",
+          "bytes": 33312,
+          "triangles": 4468
+        }
+      },
+      "lineage": "dunlop-fx",
+      "variantLabel": "Team 100",
+      "variantOf": "dunlop-fx-500-2025"
+    },
+    {
+      "id": "dunlop-lx-1000-2024",
+      "brand": "Dunlop",
+      "line": "LX",
+      "model": "LX 1000",
+      "generation": "2024",
+      "year": 2024,
+      "specs": {
+        "headSizeSqIn": 115,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          18
+        ],
+        "beamMm": [
+          27,
+          28,
+          26
+        ]
+      },
+      "swatch": "#d6d8d6",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/dunlop-lx-1000-2024.glb",
+          "bytes": 34008,
+          "triangles": 4460
+        }
+      },
+      "lineage": "dunlop-lx",
+      "variantLabel": "1000",
+      "variantOf": "dunlop-lx-800-2024"
+    },
+    {
+      "id": "dunlop-lx-800-2024",
+      "brand": "Dunlop",
+      "line": "LX",
+      "model": "LX 800",
+      "generation": "2024",
+      "year": 2024,
+      "specs": {
+        "headSizeSqIn": 110,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          18
+        ],
+        "beamMm": [
+          26,
+          27,
+          26
+        ],
+        "unstrungWeightG": 255
+      },
+      "swatch": "#d6d8d6",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/dunlop-lx-800-2024.glb",
+          "bytes": 33808,
+          "triangles": 4460
+        }
+      },
+      "lineage": "dunlop-lx",
+      "variantLabel": "800",
+      "variants": [
+        {
+          "id": "dunlop-lx-800-2024",
+          "label": "800"
+        },
+        {
+          "id": "dunlop-lx-1000-2024",
+          "label": "1000"
+        },
+        {
+          "id": "dunlop-lx-team-107-2024",
+          "label": "Team 107"
+        }
+      ],
+      "colourway": "Grey"
+    },
+    {
+      "id": "dunlop-lx-team-107-2024",
+      "brand": "Dunlop",
+      "line": "LX",
+      "model": "LX Team 107",
+      "generation": "2024",
+      "year": 2024,
+      "specs": {
+        "headSizeSqIn": 107,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          27,
+          23
+        ],
+        "unstrungWeightG": 270
+      },
+      "swatch": "#a8c0d2",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/dunlop-lx-team-107-2024.glb",
+          "bytes": 34260,
+          "triangles": 4596
+        }
+      },
+      "lineage": "dunlop-lx",
+      "variantLabel": "Team 107",
+      "variantOf": "dunlop-lx-800-2024",
+      "colourway": "Light Blue/White/Gold"
+    },
+    {
+      "id": "dunlop-sx-300-2022",
+      "brand": "Dunlop",
+      "line": "SX",
+      "model": "SX 300",
+      "generation": "2022",
+      "year": 2022,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "swatch": "#d9e83c",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/dunlop-sx-300-2022.glb",
+          "bytes": 35484,
+          "triangles": 4724
+        }
+      },
+      "lineage": "dunlop-sx",
+      "variantLabel": "300",
+      "variants": [
+        {
+          "id": "dunlop-sx-300-2022",
+          "label": "300"
+        },
+        {
+          "id": "dunlop-sx-300-tour-2022",
+          "label": "300 Tour"
+        }
+      ],
+      "colourway": "Yellow/Black"
+    },
+    {
+      "id": "dunlop-sx-300-2025",
+      "brand": "Dunlop",
+      "line": "SX",
+      "model": "SX 300",
+      "generation": "2025",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 300
+      },
+      "swatch": "#17899b",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/dunlop-sx-300-2025.glb",
+          "bytes": 33308,
+          "triangles": 4468
+        }
+      },
+      "lineage": "dunlop-sx",
+      "variantLabel": "300",
+      "variants": [
+        {
+          "id": "dunlop-sx-300-2025",
+          "label": "300"
+        },
+        {
+          "id": "dunlop-sx-300-tour-2025",
+          "label": "300 Tour"
+        },
+        {
+          "id": "dunlop-sx-300-ls-2025",
+          "label": "300 LS"
+        },
+        {
+          "id": "dunlop-sx-300-lite-2025",
+          "label": "300 Lite"
+        }
+      ],
+      "colourway": "Teal/Yellow"
+    },
+    {
+      "id": "dunlop-sx-300-ls-2025",
+      "brand": "Dunlop",
+      "line": "SX",
+      "model": "SX 300 LS",
+      "generation": "2025",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 285
+      },
+      "swatch": "#1b8a86",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/dunlop-sx-300-ls-2025.glb",
+          "bytes": 33316,
+          "triangles": 4468
+        }
+      },
+      "lineage": "dunlop-sx",
+      "variantLabel": "300 LS",
+      "variantOf": "dunlop-sx-300-2025"
+    },
+    {
+      "id": "dunlop-sx-300-lite-2025",
+      "brand": "Dunlop",
+      "line": "SX",
+      "model": "SX 300 Lite",
+      "generation": "2025",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          18
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 270
+      },
+      "swatch": "#1b8a86",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/dunlop-sx-300-lite-2025.glb",
+          "bytes": 33264,
+          "triangles": 4460
+        }
+      },
+      "lineage": "dunlop-sx",
+      "variantLabel": "300 Lite",
+      "variantOf": "dunlop-sx-300-2025"
+    },
+    {
+      "id": "dunlop-sx-300-tour-2022",
+      "brand": "Dunlop",
+      "line": "SX",
+      "model": "SX 300 Tour",
+      "generation": "2022",
+      "year": 2022,
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "swatch": "#d9e83c",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/dunlop-sx-300-tour-2022.glb",
+          "bytes": 35544,
+          "triangles": 4724
+        }
+      },
+      "lineage": "dunlop-sx",
+      "variantLabel": "300 Tour",
+      "variantOf": "dunlop-sx-300-2022"
+    },
+    {
+      "id": "dunlop-sx-300-tour-2025",
+      "brand": "Dunlop",
+      "line": "SX",
+      "model": "SX 300 Tour",
+      "generation": "2025",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 305
+      },
+      "swatch": "#17899b",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/dunlop-sx-300-tour-2025.glb",
+          "bytes": 33372,
+          "triangles": 4468
+        }
+      },
+      "lineage": "dunlop-sx",
+      "variantLabel": "300 Tour",
+      "variantOf": "dunlop-sx-300-2025"
+    },
+    {
       "id": "head-boom-elite-2026",
       "brand": "Head",
       "line": "Boom",
@@ -9963,6 +11470,1036 @@
       "lineage": "solinco-whiteout",
       "variantLabel": "305 XTD 18x20",
       "variantOf": "solinco-whiteout-v2-305"
+    },
+    {
+      "id": "tecnifibre-fire-260-os-2026",
+      "brand": "Tecnifibre",
+      "line": "Fire",
+      "model": "Fire 260 OS",
+      "generation": "2026",
+      "year": 2026,
+      "specs": {
+        "headSizeSqIn": 110,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          24.5,
+          25,
+          24.5
+        ],
+        "unstrungWeightG": 260
+      },
+      "swatch": "#f3f3f0",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/tecnifibre-fire-260-os-2026.glb",
+          "bytes": 34620,
+          "triangles": 4724
+        }
+      },
+      "lineage": "tecnifibre-fire",
+      "variantLabel": "260 OS",
+      "variantOf": "tecnifibre-fire-2026"
+    },
+    {
+      "id": "tecnifibre-fire-270-2026",
+      "brand": "Tecnifibre",
+      "line": "Fire",
+      "model": "Fire 270",
+      "generation": "2026",
+      "year": 2026,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          24.5,
+          25,
+          24.5
+        ],
+        "unstrungWeightG": 270
+      },
+      "swatch": "#f3f3f0",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/tecnifibre-fire-270-2026.glb",
+          "bytes": 34612,
+          "triangles": 4724
+        }
+      },
+      "lineage": "tecnifibre-fire",
+      "variantLabel": "270",
+      "variantOf": "tecnifibre-fire-2026"
+    },
+    {
+      "id": "tecnifibre-fire-285-2026",
+      "brand": "Tecnifibre",
+      "line": "Fire",
+      "model": "Fire 285",
+      "generation": "2026",
+      "year": 2026,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          24.5,
+          25,
+          24.5
+        ],
+        "unstrungWeightG": 285
+      },
+      "swatch": "#f3f3f0",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/tecnifibre-fire-285-2026.glb",
+          "bytes": 34612,
+          "triangles": 4724
+        }
+      },
+      "lineage": "tecnifibre-fire",
+      "variantLabel": "285",
+      "variantOf": "tecnifibre-fire-2026"
+    },
+    {
+      "id": "tecnifibre-fire-300-2026",
+      "brand": "Tecnifibre",
+      "line": "Fire",
+      "model": "Fire 300",
+      "generation": "2026",
+      "year": 2026,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          24.5,
+          25,
+          24.5
+        ],
+        "unstrungWeightG": 300
+      },
+      "swatch": "#f3f3f0",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/tecnifibre-fire-300-2026.glb",
+          "bytes": 34612,
+          "triangles": 4724
+        }
+      },
+      "lineage": "tecnifibre-fire",
+      "variantLabel": "300",
+      "variantOf": "tecnifibre-fire-2026"
+    },
+    {
+      "id": "tecnifibre-fire-2026",
+      "brand": "Tecnifibre",
+      "line": "Fire",
+      "model": "Fire 305S",
+      "generation": "2026",
+      "year": 2026,
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          23,
+          22.5
+        ],
+        "unstrungWeightG": 305
+      },
+      "swatch": "#f3f3f0",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/tecnifibre-fire-2026.glb",
+          "bytes": 34572,
+          "triangles": 4724
+        }
+      },
+      "lineage": "tecnifibre-fire",
+      "variantLabel": "305S",
+      "variants": [
+        {
+          "id": "tecnifibre-fire-2026",
+          "label": "305S"
+        },
+        {
+          "id": "tecnifibre-fire-300-2026",
+          "label": "300"
+        },
+        {
+          "id": "tecnifibre-fire-285-2026",
+          "label": "285"
+        },
+        {
+          "id": "tecnifibre-fire-270-2026",
+          "label": "270"
+        },
+        {
+          "id": "tecnifibre-fire-260-os-2026",
+          "label": "260 OS"
+        }
+      ],
+      "colourway": "White/Neon Yellow"
+    },
+    {
+      "id": "tecnifibre-tf-x1-v1",
+      "brand": "Tecnifibre",
+      "line": "TF-X1",
+      "model": "TF-X1 300",
+      "generation": "V1",
+      "year": 2022,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          24,
+          24,
+          24
+        ],
+        "unstrungWeightG": 300
+      },
+      "swatch": "#f3f3f0",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/tecnifibre-tf-x1-v1.glb",
+          "bytes": 34092,
+          "triangles": 4468
+        }
+      },
+      "lineage": "tecnifibre-tf-x1",
+      "variantLabel": "300",
+      "colourway": "White/Charcoal/Neon Yellow"
+    },
+    {
+      "id": "tecnifibre-tf-x1-v2",
+      "brand": "Tecnifibre",
+      "line": "TF-X1",
+      "model": "TF-X1 305 V2",
+      "generation": "V2",
+      "year": 2024,
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          24.5,
+          24.5,
+          24.5
+        ],
+        "unstrungWeightG": 305
+      },
+      "swatch": "#f3f3f0",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/tecnifibre-tf-x1-v2.glb",
+          "bytes": 32756,
+          "triangles": 4340
+        }
+      },
+      "lineage": "tecnifibre-tf-x1",
+      "variantLabel": "305",
+      "colourway": "White/Neon Yellow"
+    },
+    {
+      "id": "tecnifibre-tf40-290-16x19-2024",
+      "brand": "Tecnifibre",
+      "line": "TF40",
+      "model": "TF40 290 16x19",
+      "generation": "2024",
+      "year": 2024,
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          22,
+          22,
+          22
+        ],
+        "unstrungWeightG": 290
+      },
+      "swatch": "#f3f3f0",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/tecnifibre-tf40-290-16x19-2024.glb",
+          "bytes": 36872,
+          "triangles": 4344
+        }
+      },
+      "lineage": "tecnifibre-tf40",
+      "variantLabel": "290 16x19",
+      "variantOf": "tecnifibre-tf40-2024"
+    },
+    {
+      "id": "tecnifibre-tf40-2024",
+      "brand": "Tecnifibre",
+      "line": "TF40",
+      "model": "TF40 305 16x19",
+      "generation": "2024",
+      "year": 2024,
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          22,
+          22,
+          22
+        ],
+        "unstrungWeightG": 305
+      },
+      "swatch": "#f3f3f0",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/tecnifibre-tf40-2024.glb",
+          "bytes": 36852,
+          "triangles": 4344
+        }
+      },
+      "lineage": "tecnifibre-tf40",
+      "variantLabel": "305 16x19",
+      "variants": [
+        {
+          "id": "tecnifibre-tf40-2024",
+          "label": "305 16x19"
+        },
+        {
+          "id": "tecnifibre-tf40-305-18x20-2024",
+          "label": "305 18x20"
+        },
+        {
+          "id": "tecnifibre-tf40-315-16x19-2024",
+          "label": "315 16x19"
+        },
+        {
+          "id": "tecnifibre-tf40-290-16x19-2024",
+          "label": "290 16x19"
+        }
+      ],
+      "colourway": "White/Black"
+    },
+    {
+      "id": "tecnifibre-tf40-v1",
+      "brand": "Tecnifibre",
+      "line": "TF40",
+      "model": "TF40 305 16x19",
+      "generation": "v1",
+      "year": 2019,
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          22,
+          22,
+          22
+        ],
+        "unstrungWeightG": 305
+      },
+      "swatch": "#f3f3f0",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/tecnifibre-tf40-v1.glb",
+          "bytes": 40256,
+          "triangles": 4792
+        }
+      },
+      "lineage": "tecnifibre-tf40",
+      "variantLabel": "305 16x19",
+      "variants": [
+        {
+          "id": "tecnifibre-tf40-v1",
+          "label": "305 16x19"
+        },
+        {
+          "id": "tecnifibre-tf40-v1-305-18x20",
+          "label": "305 18x20"
+        },
+        {
+          "id": "tecnifibre-tf40-v1-315-18x20",
+          "label": "315 18x20"
+        }
+      ],
+      "colourway": "White/Black/Red/Blue"
+    },
+    {
+      "id": "tecnifibre-tf40-305-18x20-2024",
+      "brand": "Tecnifibre",
+      "line": "TF40",
+      "model": "TF40 305 18x20",
+      "generation": "2024",
+      "year": 2024,
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          18,
+          20
+        ],
+        "beamMm": [
+          22,
+          22,
+          22
+        ],
+        "unstrungWeightG": 305
+      },
+      "swatch": "#f3f3f0",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/tecnifibre-tf40-305-18x20-2024.glb",
+          "bytes": 37084,
+          "triangles": 4368
+        }
+      },
+      "lineage": "tecnifibre-tf40",
+      "variantLabel": "305 18x20",
+      "variantOf": "tecnifibre-tf40-2024"
+    },
+    {
+      "id": "tecnifibre-tf40-315-16x19-2024",
+      "brand": "Tecnifibre",
+      "line": "TF40",
+      "model": "TF40 315 16x19",
+      "generation": "2024",
+      "year": 2024,
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          22,
+          22,
+          22
+        ],
+        "unstrungWeightG": 315
+      },
+      "swatch": "#f3f3f0",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/tecnifibre-tf40-315-16x19-2024.glb",
+          "bytes": 36872,
+          "triangles": 4344
+        }
+      },
+      "lineage": "tecnifibre-tf40",
+      "variantLabel": "315 16x19",
+      "variantOf": "tecnifibre-tf40-2024"
+    },
+    {
+      "id": "tecnifibre-tf40-v1-305-18x20",
+      "brand": "Tecnifibre",
+      "line": "TF40",
+      "model": "TF40 v1 305 18x20",
+      "generation": "v1",
+      "year": 2019,
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          18,
+          20
+        ],
+        "beamMm": [
+          22,
+          22,
+          22
+        ],
+        "unstrungWeightG": 305
+      },
+      "swatch": "#f3f3f0",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/tecnifibre-tf40-v1-305-18x20.glb",
+          "bytes": 40492,
+          "triangles": 4816
+        }
+      },
+      "lineage": "tecnifibre-tf40",
+      "variantLabel": "305 18x20",
+      "variantOf": "tecnifibre-tf40-v1"
+    },
+    {
+      "id": "tecnifibre-tf40-v1-315-18x20",
+      "brand": "Tecnifibre",
+      "line": "TF40",
+      "model": "TF40 v1 315 18x20",
+      "generation": "v1",
+      "year": 2019,
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          18,
+          20
+        ],
+        "beamMm": [
+          22,
+          22,
+          22
+        ],
+        "unstrungWeightG": 315
+      },
+      "swatch": "#f3f3f0",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/tecnifibre-tf40-v1-315-18x20.glb",
+          "bytes": 40492,
+          "triangles": 4816
+        }
+      },
+      "lineage": "tecnifibre-tf40",
+      "variantLabel": "315 18x20",
+      "variantOf": "tecnifibre-tf40-v1"
+    },
+    {
+      "id": "tecnifibre-tfight-270-2025",
+      "brand": "Tecnifibre",
+      "line": "TFight",
+      "model": "TFight 270",
+      "generation": "2025",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          23,
+          23
+        ],
+        "unstrungWeightG": 270
+      },
+      "swatch": "#f3f3f0",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/tecnifibre-tfight-270-2025.glb",
+          "bytes": 40680,
+          "triangles": 4888
+        }
+      },
+      "lineage": "tecnifibre-tfight",
+      "variantLabel": "270",
+      "variantOf": "tecnifibre-tfight-2025"
+    },
+    {
+      "id": "tecnifibre-tfight-285-2025",
+      "brand": "Tecnifibre",
+      "line": "TFight",
+      "model": "TFight 285",
+      "generation": "2025",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          23,
+          23
+        ],
+        "unstrungWeightG": 285
+      },
+      "swatch": "#f3f3f0",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/tecnifibre-tfight-285-2025.glb",
+          "bytes": 40680,
+          "triangles": 4888
+        }
+      },
+      "lineage": "tecnifibre-tfight",
+      "variantLabel": "285",
+      "variantOf": "tecnifibre-tfight-2025"
+    },
+    {
+      "id": "tecnifibre-tfight-300-2025",
+      "brand": "Tecnifibre",
+      "line": "TFight",
+      "model": "TFight 300",
+      "generation": "2025",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          23.5,
+          23
+        ],
+        "unstrungWeightG": 300
+      },
+      "swatch": "#f3f3f0",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/tecnifibre-tfight-300-2025.glb",
+          "bytes": 41268,
+          "triangles": 4888
+        }
+      },
+      "lineage": "tecnifibre-tfight",
+      "variantLabel": "300",
+      "variantOf": "tecnifibre-tfight-2025"
+    },
+    {
+      "id": "tecnifibre-tfight-300s-2025",
+      "brand": "Tecnifibre",
+      "line": "TFight",
+      "model": "TFight 300S",
+      "generation": "2025",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          22.5,
+          22.5,
+          22.5
+        ],
+        "unstrungWeightG": 300
+      },
+      "swatch": "#f3f3f0",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/tecnifibre-tfight-300s-2025.glb",
+          "bytes": 40596,
+          "triangles": 4888
+        }
+      },
+      "lineage": "tecnifibre-tfight",
+      "variantLabel": "300S",
+      "variantOf": "tecnifibre-tfight-2025"
+    },
+    {
+      "id": "tecnifibre-tfight-2025",
+      "brand": "Tecnifibre",
+      "line": "TFight",
+      "model": "TFight 305S",
+      "generation": "2025",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          18,
+          19
+        ],
+        "beamMm": [
+          22.5,
+          22.5,
+          22.5
+        ],
+        "unstrungWeightG": 305
+      },
+      "swatch": "#f3f3f0",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/tecnifibre-tfight-2025.glb",
+          "bytes": 40740,
+          "triangles": 4904
+        }
+      },
+      "lineage": "tecnifibre-tfight",
+      "variantLabel": "305S",
+      "variants": [
+        {
+          "id": "tecnifibre-tfight-2025",
+          "label": "305S"
+        },
+        {
+          "id": "tecnifibre-tfight-300s-2025",
+          "label": "300S"
+        },
+        {
+          "id": "tecnifibre-tfight-315s-2025",
+          "label": "315S"
+        },
+        {
+          "id": "tecnifibre-tfight-300-2025",
+          "label": "300"
+        },
+        {
+          "id": "tecnifibre-tfight-285-2025",
+          "label": "285"
+        },
+        {
+          "id": "tecnifibre-tfight-270-2025",
+          "label": "270"
+        },
+        {
+          "id": "tecnifibre-tfight-team-2025",
+          "label": "Team"
+        }
+      ],
+      "colourway": "White"
+    },
+    {
+      "id": "tecnifibre-tfight-315s-2025",
+      "brand": "Tecnifibre",
+      "line": "TFight",
+      "model": "TFight 315S",
+      "generation": "2025",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          22.5,
+          22.5,
+          22.5
+        ],
+        "unstrungWeightG": 315
+      },
+      "swatch": "#f3f3f0",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/tecnifibre-tfight-315s-2025.glb",
+          "bytes": 40596,
+          "triangles": 4888
+        }
+      },
+      "lineage": "tecnifibre-tfight",
+      "variantLabel": "315S",
+      "variantOf": "tecnifibre-tfight-2025"
+    },
+    {
+      "id": "tecnifibre-tfight-iso-2022",
+      "brand": "Tecnifibre",
+      "line": "TFight",
+      "model": "TFight ISO 305",
+      "generation": "ISO",
+      "year": 2022,
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          18,
+          19
+        ],
+        "beamMm": [
+          23,
+          23,
+          22.5
+        ],
+        "unstrungWeightG": 305
+      },
+      "swatch": "#f3f3f0",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/tecnifibre-tfight-iso-2022.glb",
+          "bytes": 36692,
+          "triangles": 4392
+        }
+      },
+      "lineage": "tecnifibre-tfight",
+      "variantLabel": "305",
+      "colourway": "White/Red/Blue"
+    },
+    {
+      "id": "tecnifibre-tfight-team-2025",
+      "brand": "Tecnifibre",
+      "line": "TFight",
+      "model": "TFight Team",
+      "generation": "2025",
+      "year": 2025,
+      "specs": {
+        "headSizeSqIn": 102,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 285
+      },
+      "swatch": "#f3f3f0",
+      "parts": [
+        "frame",
+        "bumper",
+        "grommets",
+        "strings_mains",
+        "strings_crosses",
+        "grip",
+        "collar",
+        "butt_cap"
+      ],
+      "assets": {
+        "realistic": {
+          "path": "realistic/tecnifibre-tfight-team-2025.glb",
+          "bytes": 43192,
+          "triangles": 5016
+        }
+      },
+      "lineage": "tecnifibre-tfight",
+      "variantLabel": "Team",
+      "variantOf": "tecnifibre-tfight-2025"
     },
     {
       "id": "wilson-blade-100-v10-2026",
@@ -15611,6 +18148,486 @@
       "bytes": 38324
     },
     {
+      "id": "dunlop-cx-200-2024",
+      "brand": "Dunlop",
+      "line": "CX",
+      "lineage": "dunlop-cx",
+      "model": "CX 200",
+      "generation": "2024",
+      "year": 2024,
+      "variant": "200",
+      "colourway": null,
+      "colourwayName": "Red/Orange",
+      "style": "realistic",
+      "path": "realistic/dunlop-cx-200-2024.glb",
+      "bytes": 36136
+    },
+    {
+      "id": "dunlop-cx-200-16x19-2027",
+      "brand": "Dunlop",
+      "line": "CX",
+      "lineage": "dunlop-cx",
+      "model": "CX 200 16x19",
+      "generation": "2027",
+      "year": 2027,
+      "variant": "200 16x19",
+      "colourway": null,
+      "colourwayName": "Red",
+      "style": "realistic",
+      "path": "realistic/dunlop-cx-200-16x19-2027.glb",
+      "bytes": 38676
+    },
+    {
+      "id": "dunlop-cx-200-18x20-2027",
+      "brand": "Dunlop",
+      "line": "CX",
+      "lineage": "dunlop-cx",
+      "model": "CX 200 18x20",
+      "generation": "2027",
+      "year": 2027,
+      "variant": "200 18x20",
+      "colourway": null,
+      "colourwayName": null,
+      "style": "realistic",
+      "path": "realistic/dunlop-cx-200-18x20-2027.glb",
+      "bytes": 38888
+    },
+    {
+      "id": "dunlop-cx-200-ls-2024",
+      "brand": "Dunlop",
+      "line": "CX",
+      "lineage": "dunlop-cx",
+      "model": "CX 200 LS",
+      "generation": "2024",
+      "year": 2024,
+      "variant": "200 LS",
+      "colourway": null,
+      "colourwayName": null,
+      "style": "realistic",
+      "path": "realistic/dunlop-cx-200-ls-2024.glb",
+      "bytes": 36140
+    },
+    {
+      "id": "dunlop-cx-200-ls-2027",
+      "brand": "Dunlop",
+      "line": "CX",
+      "lineage": "dunlop-cx",
+      "model": "CX 200 LS",
+      "generation": "2027",
+      "year": 2027,
+      "variant": "200 LS",
+      "colourway": null,
+      "colourwayName": null,
+      "style": "realistic",
+      "path": "realistic/dunlop-cx-200-ls-2027.glb",
+      "bytes": 36748
+    },
+    {
+      "id": "dunlop-cx-200-os-2024",
+      "brand": "Dunlop",
+      "line": "CX",
+      "lineage": "dunlop-cx",
+      "model": "CX 200 OS",
+      "generation": "2024",
+      "year": 2024,
+      "variant": "200 OS",
+      "colourway": null,
+      "colourwayName": null,
+      "style": "realistic",
+      "path": "realistic/dunlop-cx-200-os-2024.glb",
+      "bytes": 36308
+    },
+    {
+      "id": "dunlop-cx-200-os-2027",
+      "brand": "Dunlop",
+      "line": "CX",
+      "lineage": "dunlop-cx",
+      "model": "CX 200 OS",
+      "generation": "2027",
+      "year": 2027,
+      "variant": "200 OS",
+      "colourway": null,
+      "colourwayName": null,
+      "style": "realistic",
+      "path": "realistic/dunlop-cx-200-os-2027.glb",
+      "bytes": 35092
+    },
+    {
+      "id": "dunlop-cx-200-tour-2024",
+      "brand": "Dunlop",
+      "line": "CX",
+      "lineage": "dunlop-cx",
+      "model": "CX 200 Tour",
+      "generation": "2024",
+      "year": 2024,
+      "variant": "200 Tour",
+      "colourway": null,
+      "colourwayName": null,
+      "style": "realistic",
+      "path": "realistic/dunlop-cx-200-tour-2024.glb",
+      "bytes": 36388
+    },
+    {
+      "id": "dunlop-cx-200-tour-2027",
+      "brand": "Dunlop",
+      "line": "CX",
+      "lineage": "dunlop-cx",
+      "model": "CX 200 Tour",
+      "generation": "2027",
+      "year": 2027,
+      "variant": "200 Tour",
+      "colourway": null,
+      "colourwayName": null,
+      "style": "realistic",
+      "path": "realistic/dunlop-cx-200-tour-2027.glb",
+      "bytes": 38920
+    },
+    {
+      "id": "dunlop-cx-400-2024",
+      "brand": "Dunlop",
+      "line": "CX",
+      "lineage": "dunlop-cx",
+      "model": "CX 400",
+      "generation": "2024",
+      "year": 2024,
+      "variant": "400",
+      "colourway": null,
+      "colourwayName": null,
+      "style": "realistic",
+      "path": "realistic/dunlop-cx-400-2024.glb",
+      "bytes": 33152
+    },
+    {
+      "id": "dunlop-cx-400-2027",
+      "brand": "Dunlop",
+      "line": "CX",
+      "lineage": "dunlop-cx",
+      "model": "CX 400",
+      "generation": "2027",
+      "year": 2027,
+      "variant": "400",
+      "colourway": null,
+      "colourwayName": null,
+      "style": "realistic",
+      "path": "realistic/dunlop-cx-400-2027.glb",
+      "bytes": 34612
+    },
+    {
+      "id": "dunlop-cx-400-tour-2024",
+      "brand": "Dunlop",
+      "line": "CX",
+      "lineage": "dunlop-cx",
+      "model": "CX 400 Tour",
+      "generation": "2024",
+      "year": 2024,
+      "variant": "400 Tour",
+      "colourway": null,
+      "colourwayName": null,
+      "style": "realistic",
+      "path": "realistic/dunlop-cx-400-tour-2024.glb",
+      "bytes": 36288
+    },
+    {
+      "id": "dunlop-cx-400-tour-2027",
+      "brand": "Dunlop",
+      "line": "CX",
+      "lineage": "dunlop-cx",
+      "model": "CX 400 Tour",
+      "generation": "2027",
+      "year": 2027,
+      "variant": "400 Tour",
+      "colourway": null,
+      "colourwayName": null,
+      "style": "realistic",
+      "path": "realistic/dunlop-cx-400-tour-2027.glb",
+      "bytes": 38840
+    },
+    {
+      "id": "dunlop-fx-500-2023",
+      "brand": "Dunlop",
+      "line": "FX",
+      "lineage": "dunlop-fx",
+      "model": "FX 500",
+      "generation": "2023",
+      "year": 2023,
+      "variant": "500",
+      "colourway": null,
+      "colourwayName": "Blue",
+      "style": "realistic",
+      "path": "realistic/dunlop-fx-500-2023.glb",
+      "bytes": 34088
+    },
+    {
+      "id": "dunlop-fx-500-2025",
+      "brand": "Dunlop",
+      "line": "FX",
+      "lineage": "dunlop-fx",
+      "model": "FX 500",
+      "generation": "2025",
+      "year": 2025,
+      "variant": "500",
+      "colourway": null,
+      "colourwayName": "Blue",
+      "style": "realistic",
+      "path": "realistic/dunlop-fx-500-2025.glb",
+      "bytes": 33312
+    },
+    {
+      "id": "dunlop-fx-500-ls-2025",
+      "brand": "Dunlop",
+      "line": "FX",
+      "lineage": "dunlop-fx",
+      "model": "FX 500 LS",
+      "generation": "2025",
+      "year": 2025,
+      "variant": "500 LS",
+      "colourway": null,
+      "colourwayName": null,
+      "style": "realistic",
+      "path": "realistic/dunlop-fx-500-ls-2025.glb",
+      "bytes": 33316
+    },
+    {
+      "id": "dunlop-fx-500-lite-2023",
+      "brand": "Dunlop",
+      "line": "FX",
+      "lineage": "dunlop-fx",
+      "model": "FX 500 Lite",
+      "generation": "2023",
+      "year": 2023,
+      "variant": "500 Lite",
+      "colourway": null,
+      "colourwayName": null,
+      "style": "realistic",
+      "path": "realistic/dunlop-fx-500-lite-2023.glb",
+      "bytes": 34044
+    },
+    {
+      "id": "dunlop-fx-500-lite-2025",
+      "brand": "Dunlop",
+      "line": "FX",
+      "lineage": "dunlop-fx",
+      "model": "FX 500 Lite",
+      "generation": "2025",
+      "year": 2025,
+      "variant": "500 Lite",
+      "colourway": null,
+      "colourwayName": null,
+      "style": "realistic",
+      "path": "realistic/dunlop-fx-500-lite-2025.glb",
+      "bytes": 33264
+    },
+    {
+      "id": "dunlop-fx-500-super-lite-2025",
+      "brand": "Dunlop",
+      "line": "FX",
+      "lineage": "dunlop-fx",
+      "model": "FX 500 Super Lite",
+      "generation": "2025",
+      "year": 2025,
+      "variant": "500 Super Lite",
+      "colourway": null,
+      "colourwayName": null,
+      "style": "realistic",
+      "path": "realistic/dunlop-fx-500-super-lite-2025.glb",
+      "bytes": 33280
+    },
+    {
+      "id": "dunlop-fx-500-tour-2023",
+      "brand": "Dunlop",
+      "line": "FX",
+      "lineage": "dunlop-fx",
+      "model": "FX 500 Tour",
+      "generation": "2023",
+      "year": 2023,
+      "variant": "500 Tour",
+      "colourway": null,
+      "colourwayName": null,
+      "style": "realistic",
+      "path": "realistic/dunlop-fx-500-tour-2023.glb",
+      "bytes": 34104
+    },
+    {
+      "id": "dunlop-fx-500-tour-2025",
+      "brand": "Dunlop",
+      "line": "FX",
+      "lineage": "dunlop-fx",
+      "model": "FX 500 Tour",
+      "generation": "2025",
+      "year": 2025,
+      "variant": "500 Tour",
+      "colourway": null,
+      "colourwayName": null,
+      "style": "realistic",
+      "path": "realistic/dunlop-fx-500-tour-2025.glb",
+      "bytes": 33348
+    },
+    {
+      "id": "dunlop-fx-700-2023",
+      "brand": "Dunlop",
+      "line": "FX",
+      "lineage": "dunlop-fx",
+      "model": "FX 700",
+      "generation": "2023",
+      "year": 2023,
+      "variant": "700",
+      "colourway": null,
+      "colourwayName": "Blue/Black",
+      "style": "realistic",
+      "path": "realistic/dunlop-fx-700-2023.glb",
+      "bytes": 33856
+    },
+    {
+      "id": "dunlop-fx-team-100-2025",
+      "brand": "Dunlop",
+      "line": "FX",
+      "lineage": "dunlop-fx",
+      "model": "FX Team 100",
+      "generation": "2025",
+      "year": 2025,
+      "variant": "Team 100",
+      "colourway": null,
+      "colourwayName": null,
+      "style": "realistic",
+      "path": "realistic/dunlop-fx-team-100-2025.glb",
+      "bytes": 33312
+    },
+    {
+      "id": "dunlop-lx-1000-2024",
+      "brand": "Dunlop",
+      "line": "LX",
+      "lineage": "dunlop-lx",
+      "model": "LX 1000",
+      "generation": "2024",
+      "year": 2024,
+      "variant": "1000",
+      "colourway": null,
+      "colourwayName": null,
+      "style": "realistic",
+      "path": "realistic/dunlop-lx-1000-2024.glb",
+      "bytes": 34008
+    },
+    {
+      "id": "dunlop-lx-800-2024",
+      "brand": "Dunlop",
+      "line": "LX",
+      "lineage": "dunlop-lx",
+      "model": "LX 800",
+      "generation": "2024",
+      "year": 2024,
+      "variant": "800",
+      "colourway": null,
+      "colourwayName": "Grey",
+      "style": "realistic",
+      "path": "realistic/dunlop-lx-800-2024.glb",
+      "bytes": 33808
+    },
+    {
+      "id": "dunlop-lx-team-107-2024",
+      "brand": "Dunlop",
+      "line": "LX",
+      "lineage": "dunlop-lx",
+      "model": "LX Team 107",
+      "generation": "2024",
+      "year": 2024,
+      "variant": "Team 107",
+      "colourway": null,
+      "colourwayName": "Light Blue/White/Gold",
+      "style": "realistic",
+      "path": "realistic/dunlop-lx-team-107-2024.glb",
+      "bytes": 34260
+    },
+    {
+      "id": "dunlop-sx-300-2022",
+      "brand": "Dunlop",
+      "line": "SX",
+      "lineage": "dunlop-sx",
+      "model": "SX 300",
+      "generation": "2022",
+      "year": 2022,
+      "variant": "300",
+      "colourway": null,
+      "colourwayName": "Yellow/Black",
+      "style": "realistic",
+      "path": "realistic/dunlop-sx-300-2022.glb",
+      "bytes": 35484
+    },
+    {
+      "id": "dunlop-sx-300-2025",
+      "brand": "Dunlop",
+      "line": "SX",
+      "lineage": "dunlop-sx",
+      "model": "SX 300",
+      "generation": "2025",
+      "year": 2025,
+      "variant": "300",
+      "colourway": null,
+      "colourwayName": "Teal/Yellow",
+      "style": "realistic",
+      "path": "realistic/dunlop-sx-300-2025.glb",
+      "bytes": 33308
+    },
+    {
+      "id": "dunlop-sx-300-ls-2025",
+      "brand": "Dunlop",
+      "line": "SX",
+      "lineage": "dunlop-sx",
+      "model": "SX 300 LS",
+      "generation": "2025",
+      "year": 2025,
+      "variant": "300 LS",
+      "colourway": null,
+      "colourwayName": null,
+      "style": "realistic",
+      "path": "realistic/dunlop-sx-300-ls-2025.glb",
+      "bytes": 33316
+    },
+    {
+      "id": "dunlop-sx-300-lite-2025",
+      "brand": "Dunlop",
+      "line": "SX",
+      "lineage": "dunlop-sx",
+      "model": "SX 300 Lite",
+      "generation": "2025",
+      "year": 2025,
+      "variant": "300 Lite",
+      "colourway": null,
+      "colourwayName": null,
+      "style": "realistic",
+      "path": "realistic/dunlop-sx-300-lite-2025.glb",
+      "bytes": 33264
+    },
+    {
+      "id": "dunlop-sx-300-tour-2022",
+      "brand": "Dunlop",
+      "line": "SX",
+      "lineage": "dunlop-sx",
+      "model": "SX 300 Tour",
+      "generation": "2022",
+      "year": 2022,
+      "variant": "300 Tour",
+      "colourway": null,
+      "colourwayName": null,
+      "style": "realistic",
+      "path": "realistic/dunlop-sx-300-tour-2022.glb",
+      "bytes": 35544
+    },
+    {
+      "id": "dunlop-sx-300-tour-2025",
+      "brand": "Dunlop",
+      "line": "SX",
+      "lineage": "dunlop-sx",
+      "model": "SX 300 Tour",
+      "generation": "2025",
+      "year": 2025,
+      "variant": "300 Tour",
+      "colourway": null,
+      "colourwayName": null,
+      "style": "realistic",
+      "path": "realistic/dunlop-sx-300-tour-2025.glb",
+      "bytes": 33372
+    },
+    {
       "id": "head-boom-elite-2026",
       "brand": "Head",
       "line": "Boom",
@@ -17259,6 +20276,336 @@
       "style": "realistic",
       "path": "realistic/solinco-whiteout-v2-305-xtd-18x20-2025.glb",
       "bytes": 39492
+    },
+    {
+      "id": "tecnifibre-fire-260-os-2026",
+      "brand": "Tecnifibre",
+      "line": "Fire",
+      "lineage": "tecnifibre-fire",
+      "model": "Fire 260 OS",
+      "generation": "2026",
+      "year": 2026,
+      "variant": "260 OS",
+      "colourway": null,
+      "colourwayName": null,
+      "style": "realistic",
+      "path": "realistic/tecnifibre-fire-260-os-2026.glb",
+      "bytes": 34620
+    },
+    {
+      "id": "tecnifibre-fire-270-2026",
+      "brand": "Tecnifibre",
+      "line": "Fire",
+      "lineage": "tecnifibre-fire",
+      "model": "Fire 270",
+      "generation": "2026",
+      "year": 2026,
+      "variant": "270",
+      "colourway": null,
+      "colourwayName": null,
+      "style": "realistic",
+      "path": "realistic/tecnifibre-fire-270-2026.glb",
+      "bytes": 34612
+    },
+    {
+      "id": "tecnifibre-fire-285-2026",
+      "brand": "Tecnifibre",
+      "line": "Fire",
+      "lineage": "tecnifibre-fire",
+      "model": "Fire 285",
+      "generation": "2026",
+      "year": 2026,
+      "variant": "285",
+      "colourway": null,
+      "colourwayName": null,
+      "style": "realistic",
+      "path": "realistic/tecnifibre-fire-285-2026.glb",
+      "bytes": 34612
+    },
+    {
+      "id": "tecnifibre-fire-300-2026",
+      "brand": "Tecnifibre",
+      "line": "Fire",
+      "lineage": "tecnifibre-fire",
+      "model": "Fire 300",
+      "generation": "2026",
+      "year": 2026,
+      "variant": "300",
+      "colourway": null,
+      "colourwayName": null,
+      "style": "realistic",
+      "path": "realistic/tecnifibre-fire-300-2026.glb",
+      "bytes": 34612
+    },
+    {
+      "id": "tecnifibre-fire-2026",
+      "brand": "Tecnifibre",
+      "line": "Fire",
+      "lineage": "tecnifibre-fire",
+      "model": "Fire 305S",
+      "generation": "2026",
+      "year": 2026,
+      "variant": "305S",
+      "colourway": null,
+      "colourwayName": "White/Neon Yellow",
+      "style": "realistic",
+      "path": "realistic/tecnifibre-fire-2026.glb",
+      "bytes": 34572
+    },
+    {
+      "id": "tecnifibre-tf-x1-v1",
+      "brand": "Tecnifibre",
+      "line": "TF-X1",
+      "lineage": "tecnifibre-tf-x1",
+      "model": "TF-X1 300",
+      "generation": "V1",
+      "year": 2022,
+      "variant": "300",
+      "colourway": null,
+      "colourwayName": "White/Charcoal/Neon Yellow",
+      "style": "realistic",
+      "path": "realistic/tecnifibre-tf-x1-v1.glb",
+      "bytes": 34092
+    },
+    {
+      "id": "tecnifibre-tf-x1-v2",
+      "brand": "Tecnifibre",
+      "line": "TF-X1",
+      "lineage": "tecnifibre-tf-x1",
+      "model": "TF-X1 305 V2",
+      "generation": "V2",
+      "year": 2024,
+      "variant": "305",
+      "colourway": null,
+      "colourwayName": "White/Neon Yellow",
+      "style": "realistic",
+      "path": "realistic/tecnifibre-tf-x1-v2.glb",
+      "bytes": 32756
+    },
+    {
+      "id": "tecnifibre-tf40-290-16x19-2024",
+      "brand": "Tecnifibre",
+      "line": "TF40",
+      "lineage": "tecnifibre-tf40",
+      "model": "TF40 290 16x19",
+      "generation": "2024",
+      "year": 2024,
+      "variant": "290 16x19",
+      "colourway": null,
+      "colourwayName": null,
+      "style": "realistic",
+      "path": "realistic/tecnifibre-tf40-290-16x19-2024.glb",
+      "bytes": 36872
+    },
+    {
+      "id": "tecnifibre-tf40-2024",
+      "brand": "Tecnifibre",
+      "line": "TF40",
+      "lineage": "tecnifibre-tf40",
+      "model": "TF40 305 16x19",
+      "generation": "2024",
+      "year": 2024,
+      "variant": "305 16x19",
+      "colourway": null,
+      "colourwayName": "White/Black",
+      "style": "realistic",
+      "path": "realistic/tecnifibre-tf40-2024.glb",
+      "bytes": 36852
+    },
+    {
+      "id": "tecnifibre-tf40-v1",
+      "brand": "Tecnifibre",
+      "line": "TF40",
+      "lineage": "tecnifibre-tf40",
+      "model": "TF40 305 16x19",
+      "generation": "v1",
+      "year": 2019,
+      "variant": "305 16x19",
+      "colourway": null,
+      "colourwayName": "White/Black/Red/Blue",
+      "style": "realistic",
+      "path": "realistic/tecnifibre-tf40-v1.glb",
+      "bytes": 40256
+    },
+    {
+      "id": "tecnifibre-tf40-305-18x20-2024",
+      "brand": "Tecnifibre",
+      "line": "TF40",
+      "lineage": "tecnifibre-tf40",
+      "model": "TF40 305 18x20",
+      "generation": "2024",
+      "year": 2024,
+      "variant": "305 18x20",
+      "colourway": null,
+      "colourwayName": null,
+      "style": "realistic",
+      "path": "realistic/tecnifibre-tf40-305-18x20-2024.glb",
+      "bytes": 37084
+    },
+    {
+      "id": "tecnifibre-tf40-315-16x19-2024",
+      "brand": "Tecnifibre",
+      "line": "TF40",
+      "lineage": "tecnifibre-tf40",
+      "model": "TF40 315 16x19",
+      "generation": "2024",
+      "year": 2024,
+      "variant": "315 16x19",
+      "colourway": null,
+      "colourwayName": null,
+      "style": "realistic",
+      "path": "realistic/tecnifibre-tf40-315-16x19-2024.glb",
+      "bytes": 36872
+    },
+    {
+      "id": "tecnifibre-tf40-v1-305-18x20",
+      "brand": "Tecnifibre",
+      "line": "TF40",
+      "lineage": "tecnifibre-tf40",
+      "model": "TF40 v1 305 18x20",
+      "generation": "v1",
+      "year": 2019,
+      "variant": "305 18x20",
+      "colourway": null,
+      "colourwayName": null,
+      "style": "realistic",
+      "path": "realistic/tecnifibre-tf40-v1-305-18x20.glb",
+      "bytes": 40492
+    },
+    {
+      "id": "tecnifibre-tf40-v1-315-18x20",
+      "brand": "Tecnifibre",
+      "line": "TF40",
+      "lineage": "tecnifibre-tf40",
+      "model": "TF40 v1 315 18x20",
+      "generation": "v1",
+      "year": 2019,
+      "variant": "315 18x20",
+      "colourway": null,
+      "colourwayName": null,
+      "style": "realistic",
+      "path": "realistic/tecnifibre-tf40-v1-315-18x20.glb",
+      "bytes": 40492
+    },
+    {
+      "id": "tecnifibre-tfight-270-2025",
+      "brand": "Tecnifibre",
+      "line": "TFight",
+      "lineage": "tecnifibre-tfight",
+      "model": "TFight 270",
+      "generation": "2025",
+      "year": 2025,
+      "variant": "270",
+      "colourway": null,
+      "colourwayName": null,
+      "style": "realistic",
+      "path": "realistic/tecnifibre-tfight-270-2025.glb",
+      "bytes": 40680
+    },
+    {
+      "id": "tecnifibre-tfight-285-2025",
+      "brand": "Tecnifibre",
+      "line": "TFight",
+      "lineage": "tecnifibre-tfight",
+      "model": "TFight 285",
+      "generation": "2025",
+      "year": 2025,
+      "variant": "285",
+      "colourway": null,
+      "colourwayName": null,
+      "style": "realistic",
+      "path": "realistic/tecnifibre-tfight-285-2025.glb",
+      "bytes": 40680
+    },
+    {
+      "id": "tecnifibre-tfight-300-2025",
+      "brand": "Tecnifibre",
+      "line": "TFight",
+      "lineage": "tecnifibre-tfight",
+      "model": "TFight 300",
+      "generation": "2025",
+      "year": 2025,
+      "variant": "300",
+      "colourway": null,
+      "colourwayName": null,
+      "style": "realistic",
+      "path": "realistic/tecnifibre-tfight-300-2025.glb",
+      "bytes": 41268
+    },
+    {
+      "id": "tecnifibre-tfight-300s-2025",
+      "brand": "Tecnifibre",
+      "line": "TFight",
+      "lineage": "tecnifibre-tfight",
+      "model": "TFight 300S",
+      "generation": "2025",
+      "year": 2025,
+      "variant": "300S",
+      "colourway": null,
+      "colourwayName": null,
+      "style": "realistic",
+      "path": "realistic/tecnifibre-tfight-300s-2025.glb",
+      "bytes": 40596
+    },
+    {
+      "id": "tecnifibre-tfight-2025",
+      "brand": "Tecnifibre",
+      "line": "TFight",
+      "lineage": "tecnifibre-tfight",
+      "model": "TFight 305S",
+      "generation": "2025",
+      "year": 2025,
+      "variant": "305S",
+      "colourway": null,
+      "colourwayName": "White",
+      "style": "realistic",
+      "path": "realistic/tecnifibre-tfight-2025.glb",
+      "bytes": 40740
+    },
+    {
+      "id": "tecnifibre-tfight-315s-2025",
+      "brand": "Tecnifibre",
+      "line": "TFight",
+      "lineage": "tecnifibre-tfight",
+      "model": "TFight 315S",
+      "generation": "2025",
+      "year": 2025,
+      "variant": "315S",
+      "colourway": null,
+      "colourwayName": null,
+      "style": "realistic",
+      "path": "realistic/tecnifibre-tfight-315s-2025.glb",
+      "bytes": 40596
+    },
+    {
+      "id": "tecnifibre-tfight-iso-2022",
+      "brand": "Tecnifibre",
+      "line": "TFight",
+      "lineage": "tecnifibre-tfight",
+      "model": "TFight ISO 305",
+      "generation": "ISO",
+      "year": 2022,
+      "variant": "305",
+      "colourway": null,
+      "colourwayName": "White/Red/Blue",
+      "style": "realistic",
+      "path": "realistic/tecnifibre-tfight-iso-2022.glb",
+      "bytes": 36692
+    },
+    {
+      "id": "tecnifibre-tfight-team-2025",
+      "brand": "Tecnifibre",
+      "line": "TFight",
+      "lineage": "tecnifibre-tfight",
+      "model": "TFight Team",
+      "generation": "2025",
+      "year": 2025,
+      "variant": "Team",
+      "colourway": null,
+      "colourwayName": null,
+      "style": "realistic",
+      "path": "realistic/tecnifibre-tfight-team-2025.glb",
+      "bytes": 43192
     },
     {
       "id": "wilson-blade-100-v10-2026",

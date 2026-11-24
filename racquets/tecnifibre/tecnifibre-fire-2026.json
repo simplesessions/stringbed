@@ -1,0 +1,241 @@
+{
+  "id": "tecnifibre-fire-2026",
+  "brand": "Tecnifibre",
+  "line": "Fire",
+  "model": "Fire 305S",
+  "generation": "2026",
+  "year": 2026,
+  "specs": {
+    "headSizeSqIn": 98,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      23,
+      23,
+      22.5
+    ],
+    "unstrungWeightG": 305
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.33
+    },
+    "beam": {
+      "profile": "ellipse"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "curved"
+    },
+    "features": []
+  },
+  "paint": {
+    "base": "#f3f3f0",
+    "finish": "satin",
+    "zones": [
+      {
+        "from": 0.52,
+        "to": 1,
+        "color": "#dff23a",
+        "blend": 0.04
+      },
+      {
+        "from": 0.2,
+        "to": 0.29,
+        "color": "#dff23a"
+      },
+      {
+        "from": 0.29,
+        "to": 0.335,
+        "color": "#23282b",
+        "faces": [
+          "front",
+          "back"
+        ]
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#f3f3f0"
+    },
+    "collar": {
+      "color": "#f3f3f0"
+    },
+    "buttCap": {
+      "color": "#f3f3f0"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#dff23a",
+      "channel": 0.45
+    },
+    "bumper": {
+      "color": "#dff23a"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://www.tennis-warehouse.com/Tecnifibre_Fire_305S/descpageRCTFUSA-TFFI35.html",
+    "https://www.tennis-warehouse.com/Tecnifibre_Fire_300/descpageRCTFUSA-TFFI30.html",
+    "https://www.tennis-warehouse.com/Tecnifibre_Fire_260_OS/descpageRCTFUSA-TFFI26.html",
+    "https://www.tennis-warehouse.com/learning_center/Gear_Guides/Tennis_Racquets/best_tecnifibre_racquet_for_me.html",
+    "https://www.tecnifibre.com/products/fire-305s"
+  ],
+  "verified": true,
+  "colourway": "White/Neon Yellow",
+  "variantLabel": "305S",
+  "variants": [
+    {
+      "id": "tecnifibre-fire-300-2026",
+      "label": "300",
+      "model": "Fire 300",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          24.5,
+          25,
+          24.5
+        ],
+        "unstrungWeightG": 300
+      },
+      "geometry": {
+        "head": {
+          "shape": "oval",
+          "aspect": 1.31
+        },
+        "beam": {
+          "profile": "ellipse"
+        },
+        "throat": {
+          "style": "open-v",
+          "bridge": "curved"
+        },
+        "features": []
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Tecnifibre_Fire_300/descpageRCTFUSA-TFFI30.html"
+      ]
+    },
+    {
+      "id": "tecnifibre-fire-285-2026",
+      "label": "285",
+      "model": "Fire 285",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          24.5,
+          25,
+          24.5
+        ],
+        "unstrungWeightG": 285
+      },
+      "geometry": {
+        "head": {
+          "shape": "oval",
+          "aspect": 1.31
+        },
+        "beam": {
+          "profile": "ellipse"
+        },
+        "throat": {
+          "style": "open-v",
+          "bridge": "curved"
+        },
+        "features": []
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Tecnifibre_Fire_285/descpageRCTFUSA-TFFI28.html"
+      ]
+    },
+    {
+      "id": "tecnifibre-fire-270-2026",
+      "label": "270",
+      "model": "Fire 270",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          24.5,
+          25,
+          24.5
+        ],
+        "unstrungWeightG": 270
+      },
+      "geometry": {
+        "head": {
+          "shape": "oval",
+          "aspect": 1.31
+        },
+        "beam": {
+          "profile": "ellipse"
+        },
+        "throat": {
+          "style": "open-v",
+          "bridge": "curved"
+        },
+        "features": []
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Tecnifibre_Fire_270/descpageRCTFUSA-TFFI70.html"
+      ]
+    },
+    {
+      "id": "tecnifibre-fire-260-os-2026",
+      "label": "260 OS",
+      "model": "Fire 260 OS",
+      "specs": {
+        "headSizeSqIn": 110,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          24.5,
+          25,
+          24.5
+        ],
+        "unstrungWeightG": 260
+      },
+      "geometry": {
+        "head": {
+          "shape": "oval",
+          "aspect": 1.27
+        },
+        "beam": {
+          "profile": "ellipse"
+        },
+        "throat": {
+          "style": "open-v",
+          "bridge": "curved"
+        },
+        "features": []
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Tecnifibre_Fire_260_OS/descpageRCTFUSA-TFFI26.html"
+      ]
+    }
+  ]
+}

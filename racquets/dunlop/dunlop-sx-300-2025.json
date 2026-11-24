@@ -1,0 +1,223 @@
+{
+  "id": "dunlop-sx-300-2025",
+  "brand": "Dunlop",
+  "line": "SX",
+  "model": "SX 300",
+  "generation": "2025",
+  "year": 2025,
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      23,
+      26,
+      23
+    ],
+    "unstrungWeightG": 300
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.31
+    },
+    "beam": {
+      "profile": "ellipse"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "curved"
+    },
+    "features": []
+  },
+  "paint": {
+    "base": "#17899b",
+    "finish": "gloss",
+    "zones": [
+      {
+        "from": 0.57,
+        "to": 0.87,
+        "color": "#c5ec2c"
+      },
+      {
+        "from": 0.87,
+        "to": 1,
+        "color": "#1b1c1f"
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#1f1f21"
+    },
+    "collar": {
+      "color": "#17899b"
+    },
+    "buttCap": {
+      "color": "#1f1f21"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#17191c",
+      "channel": 0.45
+    },
+    "bumper": {
+      "color": "#17191c"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://www.tennis-warehouse.com/Dunlop_SX_300/descpageRCDUNLOP-DSX3R.html",
+    "https://us.dunlopsports.com/dunlop/tennis/rackets/sx-series/sx-300-tennis-racket/SX300-25.html"
+  ],
+  "verified": true,
+  "colourway": "Teal/Yellow",
+  "lineage": "dunlop-sx",
+  "variantLabel": "300",
+  "variants": [
+    {
+      "id": "dunlop-sx-300-tour-2025",
+      "label": "300 Tour",
+      "model": "SX 300 Tour",
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 305
+      },
+      "geometry": {
+        "head": {
+          "shape": "oval",
+          "aspect": 1.33
+        },
+        "beam": {
+          "profile": "ellipse"
+        },
+        "throat": {
+          "style": "open-v",
+          "bridge": "curved"
+        },
+        "features": []
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Dunlop_SX_300_Tour/descpageRCDUNLOP-DSXTR.html",
+        "https://us.dunlopsports.com/dunlop/tennis/rackets/sx-series/sx-300-tour-tennis-racket/SX300T-25.html"
+      ]
+    },
+    {
+      "id": "dunlop-sx-300-ls-2025",
+      "label": "300 LS",
+      "model": "SX 300 LS",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 285
+      },
+      "paint": {
+        "base": "#1b8a86",
+        "finish": "gloss",
+        "zones": [
+          {
+            "from": 0.57,
+            "to": 0.87,
+            "color": "#c5ec2c"
+          },
+          {
+            "from": 0.87,
+            "to": 1,
+            "color": "#1b1c1f"
+          }
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Dunlop_SX_300_LS/descpageRCDUNLOP-DSXLSR.html",
+        "https://us.dunlopsports.com/dunlop/tennis/rackets/sx-series/sx-300-ls-tennis-racket/SX300LS-25.html"
+      ]
+    },
+    {
+      "id": "dunlop-sx-300-lite-2025",
+      "label": "300 Lite",
+      "model": "SX 300 Lite",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          18
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ],
+        "unstrungWeightG": 270
+      },
+      "paint": {
+        "base": "#1b8a86",
+        "finish": "gloss",
+        "zones": [
+          {
+            "from": 0.57,
+            "to": 0.87,
+            "color": "#c5ec2c"
+          },
+          {
+            "from": 0.87,
+            "to": 1,
+            "color": "#1b1c1f"
+          }
+        ]
+      },
+      "parts": {
+        "grip": {
+          "color": "#e6e6e3"
+        },
+        "collar": {
+          "color": "#1f1f21"
+        },
+        "buttCap": {
+          "color": "#1f1f21"
+        },
+        "strings": {
+          "color": "#f2f2f2",
+          "gaugeMm": 1.25
+        },
+        "grommets": {
+          "color": "#17191c",
+          "channel": 0.45
+        },
+        "bumper": {
+          "color": "#17191c"
+        },
+        "dampener": null
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Dunlop_SX_300_Lite/descpageRCDUNLOP-DSXLIR.html",
+        "https://us.dunlopsports.com/dunlop/tennis/rackets/sx-series/sx-300-lite-tennis-racket/SX300LITE-25.html"
+      ]
+    }
+  ]
+}

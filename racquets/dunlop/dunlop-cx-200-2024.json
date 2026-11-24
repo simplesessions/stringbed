@@ -1,0 +1,299 @@
+{
+  "id": "dunlop-cx-200-2024",
+  "brand": "Dunlop",
+  "line": "CX",
+  "model": "CX 200",
+  "generation": "2024",
+  "year": 2024,
+  "specs": {
+    "headSizeSqIn": 98,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      21.5,
+      21.5,
+      21.5
+    ]
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.33
+    },
+    "beam": {
+      "profile": "box"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "curved"
+    },
+    "features": []
+  },
+  "paint": {
+    "base": "#8e1d24",
+    "finish": "gloss",
+    "zones": [
+      {
+        "from": 0.57,
+        "to": 0.87,
+        "color": "#ee4524"
+      },
+      {
+        "from": 0.87,
+        "to": 1,
+        "color": "#27272b"
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#1f1f21"
+    },
+    "collar": {
+      "color": "#27272b"
+    },
+    "buttCap": {
+      "color": "#1f1f21"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#1f1f22",
+      "channel": 0.45
+    },
+    "bumper": {
+      "color": "#1f1f22"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://www.tennis-warehouse.com/Dunlop_CX_200/descpageRCDUNLOP-DCX2S.html"
+  ],
+  "verified": true,
+  "colourway": "Red/Orange",
+  "lineage": "dunlop-cx",
+  "variantLabel": "200",
+  "variants": [
+    {
+      "id": "dunlop-cx-200-tour-2024",
+      "label": "200 Tour",
+      "model": "CX 200 Tour",
+      "specs": {
+        "headSizeSqIn": 95,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          20.5,
+          20.5,
+          20.5
+        ]
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Dunlop_CX_200_Tour_16x19/descpageRCDUNLOP-DCX2T6.html"
+      ]
+    },
+    {
+      "id": "dunlop-cx-400-2024",
+      "label": "400",
+      "model": "CX 400",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          24,
+          24,
+          24
+        ]
+      },
+      "geometry": {
+        "head": {
+          "shape": "oval",
+          "aspect": 1.31
+        },
+        "beam": {
+          "profile": "ellipse"
+        },
+        "throat": {
+          "style": "open-v",
+          "bridge": "curved"
+        },
+        "features": []
+      },
+      "parts": {
+        "grip": {
+          "color": "#e6e6e3"
+        },
+        "collar": {
+          "color": "#1f1f21"
+        },
+        "buttCap": {
+          "color": "#1f1f21"
+        },
+        "strings": {
+          "color": "#f2f2f2",
+          "gaugeMm": 1.25
+        },
+        "grommets": {
+          "color": "#1f1f22",
+          "channel": 0.45
+        },
+        "bumper": {
+          "color": "#1f1f22"
+        },
+        "dampener": null
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Dunlop_CX_400/descpageRCDUNLOP-DCX4R.html"
+      ]
+    },
+    {
+      "id": "dunlop-cx-400-tour-2024",
+      "label": "400 Tour",
+      "model": "CX 400 Tour",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          23,
+          23
+        ]
+      },
+      "geometry": {
+        "head": {
+          "shape": "oval",
+          "aspect": 1.31
+        },
+        "beam": {
+          "profile": "box"
+        },
+        "throat": {
+          "style": "open-v",
+          "bridge": "curved"
+        },
+        "features": []
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Dunlop_CX_400_Tour/descpageRCDUNLOP-DCX4T.html"
+      ]
+    },
+    {
+      "id": "dunlop-cx-200-os-2024",
+      "label": "200 OS",
+      "model": "CX 200 OS",
+      "specs": {
+        "headSizeSqIn": 105,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          21.5,
+          21.5,
+          21.5
+        ]
+      },
+      "geometry": {
+        "head": {
+          "shape": "oval",
+          "aspect": 1.3
+        },
+        "beam": {
+          "profile": "box"
+        },
+        "throat": {
+          "style": "open-v",
+          "bridge": "curved"
+        },
+        "features": []
+      },
+      "parts": {
+        "grip": {
+          "color": "#e6e6e3"
+        },
+        "collar": {
+          "color": "#1f1f21"
+        },
+        "buttCap": {
+          "color": "#1f1f21"
+        },
+        "strings": {
+          "color": "#f2f2f2",
+          "gaugeMm": 1.25
+        },
+        "grommets": {
+          "color": "#1f1f22",
+          "channel": 0.45
+        },
+        "bumper": {
+          "color": "#1f1f22"
+        },
+        "dampener": null
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Dunlop_CX_200_OS/descpageRCDUNLOP-DCX2OS.html"
+      ]
+    },
+    {
+      "id": "dunlop-cx-200-ls-2024",
+      "label": "200 LS",
+      "model": "CX 200 LS",
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          21.5,
+          21.5,
+          21.5
+        ]
+      },
+      "parts": {
+        "grip": {
+          "color": "#e6e6e3"
+        },
+        "collar": {
+          "color": "#1f1f21"
+        },
+        "buttCap": {
+          "color": "#1f1f21"
+        },
+        "strings": {
+          "color": "#f2f2f2",
+          "gaugeMm": 1.25
+        },
+        "grommets": {
+          "color": "#1f1f22",
+          "channel": 0.45
+        },
+        "bumper": {
+          "color": "#1f1f22"
+        },
+        "dampener": null
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/Dunlop_CX_200_LS/descpageRCDUNLOP-DCX2LS.html"
+      ]
+    }
+  ]
+}

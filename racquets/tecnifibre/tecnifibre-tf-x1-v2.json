@@ -1,0 +1,80 @@
+{
+  "id": "tecnifibre-tf-x1-v2",
+  "brand": "Tecnifibre",
+  "line": "TF-X1",
+  "model": "TF-X1 305 V2",
+  "generation": "V2",
+  "year": 2024,
+  "specs": {
+    "headSizeSqIn": 98,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      24.5,
+      24.5,
+      24.5
+    ],
+    "unstrungWeightG": 305
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.33
+    },
+    "beam": {
+      "profile": "ellipse"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "curved"
+    },
+    "features": []
+  },
+  "paint": {
+    "base": "#f3f3f0",
+    "finish": "satin",
+    "zones": [
+      {
+        "from": 0.5,
+        "to": 1,
+        "color": "#dff23a",
+        "blend": 0.1
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#f3f3f0"
+    },
+    "collar": {
+      "color": "#f3f3f0"
+    },
+    "buttCap": {
+      "color": "#f3f3f0"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#dff23a",
+      "channel": 0.45
+    },
+    "bumper": {
+      "color": "#dff23a"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://www.tennis-warehouse.com/Tecnifibre_TF-X1_305_v2/descpageRCTFUSA-TFX135D.html",
+    "https://www.tennisnerd.net/gear/racquets/tecnifibre-tf-x1-v2/36691",
+    "https://www.tennis-warehouse.com/Tecnifibre_TF-X1_305_v2/descpageRCTFUSA-TFX135D.html"
+  ],
+  "verified": true,
+  "colourway": "White/Neon Yellow",
+  "variantLabel": "305",
+  "variants": []
+}

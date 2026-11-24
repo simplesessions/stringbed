@@ -1,0 +1,90 @@
+{
+  "id": "tecnifibre-tfight-iso-2022",
+  "brand": "Tecnifibre",
+  "line": "TFight",
+  "model": "TFight ISO 305",
+  "generation": "ISO",
+  "year": 2022,
+  "specs": {
+    "headSizeSqIn": 98,
+    "lengthIn": 27,
+    "stringPattern": [
+      18,
+      19
+    ],
+    "beamMm": [
+      23,
+      23,
+      22.5
+    ],
+    "unstrungWeightG": 305
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.33
+    },
+    "beam": {
+      "profile": "box"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "curved"
+    },
+    "features": []
+  },
+  "paint": {
+    "base": "#f3f3f0",
+    "finish": "satin",
+    "zones": [
+      {
+        "from": 0.56,
+        "to": 0.63,
+        "color": "#2f4fc4",
+        "faces": [
+          "outer"
+        ]
+      },
+      {
+        "from": 0.63,
+        "to": 0.72,
+        "color": "#e8372f",
+        "faces": [
+          "outer"
+        ]
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#f3f3f0"
+    },
+    "collar": {
+      "color": "#f3f3f0"
+    },
+    "buttCap": {
+      "color": "#f3f3f0"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#e4e4e1",
+      "channel": 0.45
+    },
+    "bumper": {
+      "color": "#d8d8d5"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://www.tennisnerd.net/gear/racquets/racquet-preview-tecnifibre-tfight-iso-305/27490",
+    "https://www.tennis-warehouse.com/learning_center/racquet_reviews/ISO305review.html",
+    "https://www.tennis-warehouse.com/learning_center/racquet_reviews/ISO295review.html",
+    "https://racquetguys.ca/products/tecnifibre-t-fight-iso-295g"
+  ],
+  "verified": true,
+  "colourway": "White/Red/Blue",
+  "variantLabel": "305"
+}

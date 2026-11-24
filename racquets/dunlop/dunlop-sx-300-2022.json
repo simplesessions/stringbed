@@ -1,0 +1,129 @@
+{
+  "id": "dunlop-sx-300-2022",
+  "brand": "Dunlop",
+  "line": "SX",
+  "model": "SX 300",
+  "generation": "2022",
+  "year": 2022,
+  "specs": {
+    "headSizeSqIn": 100,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      23,
+      26,
+      23
+    ]
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.31
+    },
+    "beam": {
+      "profile": "ellipse"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "curved"
+    },
+    "features": []
+  },
+  "paint": {
+    "base": "#d9e83c",
+    "finish": "gloss",
+    "zones": [
+      {
+        "from": 0.45,
+        "to": 0.95,
+        "color": "#2a2b2d",
+        "faces": [
+          "inner"
+        ]
+      },
+      {
+        "from": 0.62,
+        "to": 0.68,
+        "color": "#2a2b2d",
+        "faces": [
+          "outer"
+        ]
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#1f1f21"
+    },
+    "collar": {
+      "color": "#d9e83c"
+    },
+    "buttCap": {
+      "color": "#1f1f21"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#242527",
+      "channel": 0.45
+    },
+    "bumper": {
+      "color": "#242527"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://www.tennis-warehouse.com/learning_center/racquet_reviews/RSX300review.html",
+    "https://www.tennisdirect.com.au/dunlop-sx-300-300g-2022",
+    "https://prod.tennis.com/news/articles/2022-gear-guide-dunlop-racquets-sx-300-and-sx-300-tour",
+    "https://www.tennis-warehouse.com/learning_center/racquet_reviews/T310DUreview.html"
+  ],
+  "verified": true,
+  "colourway": "Yellow/Black",
+  "lineage": "dunlop-sx",
+  "variantLabel": "300",
+  "variants": [
+    {
+      "id": "dunlop-sx-300-tour-2022",
+      "label": "300 Tour",
+      "model": "SX 300 Tour",
+      "specs": {
+        "headSizeSqIn": 98,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          26,
+          23
+        ]
+      },
+      "geometry": {
+        "head": {
+          "shape": "oval",
+          "aspect": 1.33
+        },
+        "beam": {
+          "profile": "ellipse"
+        },
+        "throat": {
+          "style": "open-v",
+          "bridge": "curved"
+        },
+        "features": []
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/learning_center/racquet_reviews/T310DUreview.html",
+        "https://www.tennisnuts.com/dunlop-sx-300-tour-tennis-racket-2022-1540161.html",
+        "https://prod.tennis.com/news/articles/2022-gear-guide-dunlop-racquets-sx-300-and-sx-300-tour"
+      ]
+    }
+  ]
+}
