@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { hexToLinear } from './color';
-import type { BeamFace, RacquetSpec } from './spec';
+import type { BeamFace, RacquetSide, RacquetSpec } from './spec';
 
 export { hexToLinear } from './color';
 
@@ -30,15 +30,16 @@ export function faceAt(sx: number, sz: number): BeamFace {
 
 /**
  * Linear-RGB colour at frame coordinate u, before any pattern: base, overridden by zones in order
- * (later wins). A zone with `faces` applies only where `face` is one of them; with no face given
- * (trim parts) such zones are skipped. A zone's `blend` fades it in and out *inside* its [from, to] edges, so a zone never
+ * (later wins). A zone with `faces` applies only where `face` is one of them, and one with `side`
+ * only on that side; with no face or side given (trim parts) such zones are skipped. A zone's `blend` fades it in and out *inside* its [from, to] edges, so a zone never
  * reaches past the published extent. An edge sitting on the frame end (from <= 0, to >= 1) does not
  * fade, since there is nothing beyond it to fade into.
  */
-export function paintColorAt(paint: Paint, u: number, face?: BeamFace): RGB {
+export function paintColorAt(paint: Paint, u: number, face?: BeamFace, side?: RacquetSide): RGB {
   let c = hexToLinear(paint.base);
   for (const z of paint.zones) {
     if (z.faces && !(face && z.faces.includes(face))) continue;
+    if (z.side && z.side !== side) continue;
     const w = zoneWeight(z, u);
     if (w > 0) c = mix(c, hexToLinear(z.color), w);
   }
@@ -46,8 +47,8 @@ export function paintColorAt(paint: Paint, u: number, face?: BeamFace): RGB {
 }
 
 /** True where a zone covers u at least half strength. The pattern paints only the base, never a zone. */
-export function zonedAt(paint: Paint, u: number, face?: BeamFace): boolean {
-  return paint.zones.some((z) => (!z.faces || (face !== undefined && z.faces.includes(face))) && zoneWeight(z, u) >= 0.5);
+export function zonedAt(paint: Paint, u: number, face?: BeamFace, side?: RacquetSide): boolean {
+  return paint.zones.some((z) => (!z.side || z.side === side) && (!z.faces || (face !== undefined && z.faces.includes(face))) && zoneWeight(z, u) >= 0.5);
 }
 
 /** 32-bit integer hash of a lattice point and seed (no Math.random; fully deterministic). */
@@ -103,8 +104,9 @@ export function applyPaint(frame: THREE.BufferGeometry, paint: Paint): void {
   for (let i = 0; i < pos.count; i++) {
     const u = uAttr.getX(i);
     const face = sideAttr ? faceAt(sideAttr.getX(i), sideAttr.getY(i)) : undefined;
-    let c = paintColorAt(paint, u, face);
-    if (pat && patColor && !zonedAt(paint, u, face) && camoField(pos.getX(i), pos.getY(i), pos.getZ(i), pat.scale, pat.seed) > CAMO_THRESHOLD) c = patColor;
+    const half: RacquetSide = pos.getX(i) < 0 ? 'left' : 'right';
+    let c = paintColorAt(paint, u, face, half);
+    if (pat && patColor && !zonedAt(paint, u, face, half) && camoField(pos.getX(i), pos.getY(i), pos.getZ(i), pat.scale, pat.seed) > CAMO_THRESHOLD) c = patColor;
     out[i * 3] = c[0]; out[i * 3 + 1] = c[1]; out[i * 3 + 2] = c[2];
   }
   frame.setAttribute('color', new THREE.BufferAttribute(out, 3));

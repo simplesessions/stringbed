@@ -36,49 +36,43 @@
     }
   },
   "paint": {
-    "base": "#1479e0",
+    "base": "#0a6fc6",
     "finish": "gloss",
     "zones": [
       {
-        "from": 0.4,
-        "to": 1,
-        "color": "#171c3a",
-        "faces": [
-          "inner"
-        ]
+        "from": 0.351,
+        "to": 0.8,
+        "color": "#232c3f",
+        "side": "left"
       },
       {
-        "from": 0.84,
-        "to": 1,
-        "color": "#171c3a",
-        "faces": [
-          "front",
-          "back"
-        ],
-        "blend": 0.08
+        "from": 0.533,
+        "to": 0.593,
+        "color": "#232c3f",
+        "side": "right"
       }
     ]
   },
   "parts": {
     "grip": {
-      "color": "#1f1f21"
+      "color": "#2b2b2d"
     },
     "collar": {
-      "color": "#1b2a5a"
+      "color": "#232630"
     },
     "buttCap": {
-      "color": "#1f1f21"
+      "color": "#2b2b2d"
     },
     "strings": {
       "color": "#f2f2f2",
       "gaugeMm": 1.25
     },
     "grommets": {
-      "color": "#151a33",
+      "color": "#232630",
       "channel": 0.45
     },
     "bumper": {
-      "color": "#151a33"
+      "color": "#232630"
     },
     "dampener": null
   },
@@ -149,24 +143,24 @@
       },
       "parts": {
         "grip": {
-          "color": "#e6e6e3"
+          "color": "#e9e9e6"
         },
         "collar": {
-          "color": "#1f1f21"
+          "color": "#232630"
         },
         "buttCap": {
-          "color": "#1f1f21"
+          "color": "#e9e9e6"
         },
         "strings": {
           "color": "#f2f2f2",
           "gaugeMm": 1.25
         },
         "grommets": {
-          "color": "#151a33",
+          "color": "#232630",
           "channel": 0.45
         },
         "bumper": {
-          "color": "#151a33"
+          "color": "#232630"
         },
         "dampener": null
       },
@@ -209,50 +203,26 @@
           "elongationMm": 3.8
         }
       },
-      "paint": {
-        "base": "#1f6fd1",
-        "finish": "gloss",
-        "zones": [
-          {
-            "from": 0.45,
-            "to": 1,
-            "color": "#1b2748",
-            "faces": [
-              "inner"
-            ]
-          },
-          {
-            "from": 0.78,
-            "to": 1,
-            "color": "#1b2748",
-            "faces": [
-              "front",
-              "back"
-            ],
-            "blend": 0.1
-          }
-        ]
-      },
       "parts": {
         "grip": {
-          "color": "#e6e6e3"
+          "color": "#e9e9e6"
         },
         "collar": {
-          "color": "#1f1f21"
+          "color": "#232630"
         },
         "buttCap": {
-          "color": "#1f1f21"
+          "color": "#e9e9e6"
         },
         "strings": {
           "color": "#f2f2f2",
           "gaugeMm": 1.25
         },
         "grommets": {
-          "color": "#151a33",
+          "color": "#232630",
           "channel": 0.45
         },
         "bumper": {
-          "color": "#151a33"
+          "color": "#232630"
         },
         "dampener": null
       },

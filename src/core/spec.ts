@@ -6,6 +6,7 @@ export type Finish = 'matte' | 'satin' | 'gloss';
 export type Feature = 'o-ports' | 'aero-fins';
 export type HexColor = string; // "#rrggbb"
 export type BeamFace = 'outer' | 'inner' | 'front' | 'back';
+export type RacquetSide = 'left' | 'right';
 
 export interface Variant extends Partial<Pick<RacquetSpec, 'model' | 'generation' | 'year' | 'specs' | 'geometry' | 'paint' | 'parts' | 'sources' | 'verified' | 'colourway' | 'colourways'>> {
   id: string;
@@ -64,7 +65,8 @@ export interface RacquetSpec {
     finish: Finish;
     // from/to are frame coordinate u, 0..1. `faces` limits a zone to some faces of the beam:
     // outer (the edge away from the strings), inner (the string side), front, back. Default: all.
-    zones: Array<{ from: number; to: number; color: HexColor; blend?: number; faces?: BeamFace[] }>;
+    // `side` limits it to one half of the racquet, as seen from the front (left is -X). Default: both.
+    zones: Array<{ from: number; to: number; color: HexColor; blend?: number; faces?: BeamFace[]; side?: RacquetSide }>;
     pattern?: { type: 'camo'; color: HexColor; scale: number; seed: number };
   };
   parts: {
@@ -116,6 +118,7 @@ const zone = z
     color: hex,
     blend: z.number().min(0).max(0.5).optional(),
     faces: z.array(z.enum(['outer', 'inner', 'front', 'back'])).min(1).optional(),
+    side: z.enum(['left', 'right']).optional(),
   })
   .strict()
   .refine((z) => z.from < z.to, { message: 'from must be less than to', path: ['to'] });

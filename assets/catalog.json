@@ -4898,7 +4898,7 @@
           21.5
         ]
       },
-      "swatch": "#8e1d24",
+      "swatch": "#8a1a28",
       "parts": [
         "frame",
         "bumper",
@@ -4912,8 +4912,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/dunlop-cx-200-2024.glb",
-          "bytes": 36152,
-          "triangles": 4248
+          "bytes": 37296,
+          "triangles": 4504
         }
       },
       "lineage": "dunlop-cx",
@@ -4967,7 +4967,7 @@
         ],
         "unstrungWeightG": 305
       },
-      "swatch": "#d4211f",
+      "swatch": "#c01a28",
       "parts": [
         "frame",
         "bumper",
@@ -4981,8 +4981,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/dunlop-cx-200-16x19-2027.glb",
-          "bytes": 36384,
-          "triangles": 4280
+          "bytes": 36804,
+          "triangles": 4408
         }
       },
       "lineage": "dunlop-cx",
@@ -5040,7 +5040,7 @@
         ],
         "unstrungWeightG": 305
       },
-      "swatch": "#d4211f",
+      "swatch": "#c01a28",
       "parts": [
         "frame",
         "bumper",
@@ -5054,8 +5054,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/dunlop-cx-200-18x20-2027.glb",
-          "bytes": 36600,
-          "triangles": 4304
+          "bytes": 37016,
+          "triangles": 4432
         }
       },
       "lineage": "dunlop-cx",
@@ -5082,7 +5082,7 @@
           21.5
         ]
       },
-      "swatch": "#8e1d24",
+      "swatch": "#8a1a28",
       "parts": [
         "frame",
         "bumper",
@@ -5096,8 +5096,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/dunlop-cx-200-ls-2024.glb",
-          "bytes": 36152,
-          "triangles": 4248
+          "bytes": 37292,
+          "triangles": 4504
         }
       },
       "lineage": "dunlop-cx",
@@ -5125,7 +5125,7 @@
         ],
         "unstrungWeightG": 290
       },
-      "swatch": "#cf2220",
+      "swatch": "#c01a28",
       "parts": [
         "frame",
         "bumper",
@@ -5139,8 +5139,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/dunlop-cx-200-ls-2027.glb",
-          "bytes": 36760,
-          "triangles": 4248
+          "bytes": 36784,
+          "triangles": 4408
         }
       },
       "lineage": "dunlop-cx",
@@ -5167,7 +5167,7 @@
           21.5
         ]
       },
-      "swatch": "#8e1d24",
+      "swatch": "#8a1a28",
       "parts": [
         "frame",
         "bumper",
@@ -5181,8 +5181,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/dunlop-cx-200-os-2024.glb",
-          "bytes": 36324,
-          "triangles": 4248
+          "bytes": 37460,
+          "triangles": 4504
         }
       },
       "lineage": "dunlop-cx",
@@ -5210,7 +5210,7 @@
         ],
         "unstrungWeightG": 295
       },
-      "swatch": "#d4211f",
+      "swatch": "#c01a28",
       "parts": [
         "frame",
         "bumper",
@@ -5224,8 +5224,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/dunlop-cx-200-os-2027.glb",
-          "bytes": 35108,
-          "triangles": 4120
+          "bytes": 36956,
+          "triangles": 4408
         }
       },
       "lineage": "dunlop-cx",
@@ -5252,7 +5252,7 @@
           20.5
         ]
       },
-      "swatch": "#8e1d24",
+      "swatch": "#8a1a28",
       "parts": [
         "frame",
         "bumper",
@@ -5266,8 +5266,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/dunlop-cx-200-tour-2024.glb",
-          "bytes": 36404,
-          "triangles": 4248
+          "bytes": 37548,
+          "triangles": 4504
         }
       },
       "lineage": "dunlop-cx",
@@ -5295,7 +5295,7 @@
         ],
         "unstrungWeightG": 310
       },
-      "swatch": "#d4211f",
+      "swatch": "#c01a28",
       "parts": [
         "frame",
         "bumper",
@@ -5309,8 +5309,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/dunlop-cx-200-tour-2027.glb",
-          "bytes": 36632,
-          "triangles": 4280
+          "bytes": 37060,
+          "triangles": 4408
         }
       },
       "lineage": "dunlop-cx",
@@ -5337,7 +5337,7 @@
           24
         ]
       },
-      "swatch": "#8e1d24",
+      "swatch": "#8a1a28",
       "parts": [
         "frame",
         "bumper",
@@ -5351,8 +5351,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/dunlop-cx-400-2024.glb",
-          "bytes": 33168,
-          "triangles": 4468
+          "bytes": 34252,
+          "triangles": 4724
         }
       },
       "lineage": "dunlop-cx",
@@ -5380,7 +5380,7 @@
         ],
         "unstrungWeightG": 285
       },
-      "swatch": "#d4211f",
+      "swatch": "#c01a28",
       "parts": [
         "frame",
         "bumper",
@@ -5394,8 +5394,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/dunlop-cx-400-2027.glb",
-          "bytes": 33340,
-          "triangles": 4504
+          "bytes": 34212,
+          "triangles": 4632
         }
       },
       "lineage": "dunlop-cx",
@@ -5422,7 +5422,7 @@
           23
         ]
       },
-      "swatch": "#8e1d24",
+      "swatch": "#8a1a28",
       "parts": [
         "frame",
         "bumper",
@@ -5436,8 +5436,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/dunlop-cx-400-tour-2024.glb",
-          "bytes": 36304,
-          "triangles": 4248
+          "bytes": 37468,
+          "triangles": 4504
         }
       },
       "lineage": "dunlop-cx",
@@ -5465,7 +5465,7 @@
         ],
         "unstrungWeightG": 300
       },
-      "swatch": "#d4211f",
+      "swatch": "#c01a28",
       "parts": [
         "frame",
         "bumper",
@@ -5479,8 +5479,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/dunlop-cx-400-tour-2027.glb",
-          "bytes": 36540,
-          "triangles": 4280
+          "bytes": 36988,
+          "triangles": 4408
         }
       },
       "lineage": "dunlop-cx",
@@ -5507,7 +5507,7 @@
           23
         ]
       },
-      "swatch": "#1479e0",
+      "swatch": "#0a6fc6",
       "parts": [
         "frame",
         "bumper",
@@ -5521,8 +5521,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/dunlop-fx-500-2023.glb",
-          "bytes": 34104,
-          "triangles": 4468
+          "bytes": 34424,
+          "triangles": 4724
         }
       },
       "lineage": "dunlop-fx",
@@ -5568,7 +5568,7 @@
         ],
         "unstrungWeightG": 300
       },
-      "swatch": "#3d3c94",
+      "swatch": "#4b4d88",
       "parts": [
         "frame",
         "bumper",
@@ -5582,8 +5582,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/dunlop-fx-500-2025.glb",
-          "bytes": 33328,
-          "triangles": 4468
+          "bytes": 34432,
+          "triangles": 4724
         }
       },
       "lineage": "dunlop-fx",
@@ -5637,7 +5637,7 @@
         ],
         "unstrungWeightG": 285
       },
-      "swatch": "#3d3c94",
+      "swatch": "#4b4d88",
       "parts": [
         "frame",
         "bumper",
@@ -5651,8 +5651,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/dunlop-fx-500-ls-2025.glb",
-          "bytes": 33332,
-          "triangles": 4468
+          "bytes": 34436,
+          "triangles": 4724
         }
       },
       "lineage": "dunlop-fx",
@@ -5679,7 +5679,7 @@
           23
         ]
       },
-      "swatch": "#1479e0",
+      "swatch": "#0a6fc6",
       "parts": [
         "frame",
         "bumper",
@@ -5693,8 +5693,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/dunlop-fx-500-lite-2023.glb",
-          "bytes": 34056,
-          "triangles": 4460
+          "bytes": 34372,
+          "triangles": 4716
         }
       },
       "lineage": "dunlop-fx",
@@ -5722,7 +5722,7 @@
         ],
         "unstrungWeightG": 270
       },
-      "swatch": "#3d3c94",
+      "swatch": "#4b4d88",
       "parts": [
         "frame",
         "bumper",
@@ -5736,8 +5736,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/dunlop-fx-500-lite-2025.glb",
-          "bytes": 33280,
-          "triangles": 4460
+          "bytes": 34376,
+          "triangles": 4716
         }
       },
       "lineage": "dunlop-fx",
@@ -5765,7 +5765,7 @@
         ],
         "unstrungWeightG": 255
       },
-      "swatch": "#3d3c94",
+      "swatch": "#4b4d88",
       "parts": [
         "frame",
         "bumper",
@@ -5779,8 +5779,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/dunlop-fx-500-super-lite-2025.glb",
-          "bytes": 33292,
-          "triangles": 4460
+          "bytes": 34388,
+          "triangles": 4716
         }
       },
       "lineage": "dunlop-fx",
@@ -5807,7 +5807,7 @@
           21
         ]
       },
-      "swatch": "#1479e0",
+      "swatch": "#0a6fc6",
       "parts": [
         "frame",
         "bumper",
@@ -5821,8 +5821,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/dunlop-fx-500-tour-2023.glb",
-          "bytes": 34120,
-          "triangles": 4468
+          "bytes": 34444,
+          "triangles": 4724
         }
       },
       "lineage": "dunlop-fx",
@@ -5850,7 +5850,7 @@
         ],
         "unstrungWeightG": 305
       },
-      "swatch": "#3d3c94",
+      "swatch": "#4b4d88",
       "parts": [
         "frame",
         "bumper",
@@ -5864,8 +5864,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/dunlop-fx-500-tour-2025.glb",
-          "bytes": 33360,
-          "triangles": 4468
+          "bytes": 34452,
+          "triangles": 4724
         }
       },
       "lineage": "dunlop-fx",
@@ -5892,7 +5892,7 @@
           23
         ]
       },
-      "swatch": "#1f6fd1",
+      "swatch": "#0a6fc6",
       "parts": [
         "frame",
         "bumper",
@@ -5906,8 +5906,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/dunlop-fx-700-2023.glb",
-          "bytes": 33880,
-          "triangles": 4460
+          "bytes": 34240,
+          "triangles": 4716
         }
       },
       "lineage": "dunlop-fx",
@@ -5936,7 +5936,7 @@
         ],
         "unstrungWeightG": 285
       },
-      "swatch": "#3d3c94",
+      "swatch": "#4b4d88",
       "parts": [
         "frame",
         "bumper",
@@ -5950,8 +5950,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/dunlop-fx-team-100-2025.glb",
-          "bytes": 33332,
-          "triangles": 4468
+          "bytes": 34432,
+          "triangles": 4724
         }
       },
       "lineage": "dunlop-fx",
@@ -5978,7 +5978,7 @@
           26
         ]
       },
-      "swatch": "#d6d8d6",
+      "swatch": "#dfe3e1",
       "parts": [
         "frame",
         "bumper",
@@ -5992,8 +5992,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/dunlop-lx-1000-2024.glb",
-          "bytes": 34024,
-          "triangles": 4460
+          "bytes": 34496,
+          "triangles": 4716
         }
       },
       "lineage": "dunlop-lx",
@@ -6021,7 +6021,7 @@
         ],
         "unstrungWeightG": 255
       },
-      "swatch": "#d6d8d6",
+      "swatch": "#dfe3e1",
       "parts": [
         "frame",
         "bumper",
@@ -6035,8 +6035,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/dunlop-lx-800-2024.glb",
-          "bytes": 33824,
-          "triangles": 4460
+          "bytes": 34288,
+          "triangles": 4716
         }
       },
       "lineage": "dunlop-lx",
@@ -6078,7 +6078,7 @@
         ],
         "unstrungWeightG": 270
       },
-      "swatch": "#a8c0d2",
+      "swatch": "#8fadbd",
       "parts": [
         "frame",
         "bumper",
@@ -6092,8 +6092,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/dunlop-lx-team-107-2024.glb",
-          "bytes": 34276,
-          "triangles": 4596
+          "bytes": 34396,
+          "triangles": 4724
         }
       },
       "lineage": "dunlop-lx",
@@ -6121,7 +6121,7 @@
           23
         ]
       },
-      "swatch": "#d9e83c",
+      "swatch": "#cdd436",
       "parts": [
         "frame",
         "bumper",
@@ -6135,7 +6135,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/dunlop-sx-300-2022.glb",
-          "bytes": 35500,
+          "bytes": 34432,
           "triangles": 4724
         }
       },
@@ -6174,7 +6174,7 @@
         ],
         "unstrungWeightG": 300
       },
-      "swatch": "#17899b",
+      "swatch": "#147a8a",
       "parts": [
         "frame",
         "bumper",
@@ -6188,8 +6188,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/dunlop-sx-300-2025.glb",
-          "bytes": 33324,
-          "triangles": 4468
+          "bytes": 34432,
+          "triangles": 4724
         }
       },
       "lineage": "dunlop-sx",
@@ -6235,7 +6235,7 @@
         ],
         "unstrungWeightG": 285
       },
-      "swatch": "#1b8a86",
+      "swatch": "#147a8a",
       "parts": [
         "frame",
         "bumper",
@@ -6249,8 +6249,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/dunlop-sx-300-ls-2025.glb",
-          "bytes": 33332,
-          "triangles": 4468
+          "bytes": 34436,
+          "triangles": 4724
         }
       },
       "lineage": "dunlop-sx",
@@ -6278,7 +6278,7 @@
         ],
         "unstrungWeightG": 270
       },
-      "swatch": "#1b8a86",
+      "swatch": "#147a8a",
       "parts": [
         "frame",
         "bumper",
@@ -6292,8 +6292,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/dunlop-sx-300-lite-2025.glb",
-          "bytes": 33280,
-          "triangles": 4460
+          "bytes": 34376,
+          "triangles": 4716
         }
       },
       "lineage": "dunlop-sx",
@@ -6320,7 +6320,7 @@
           23
         ]
       },
-      "swatch": "#d9e83c",
+      "swatch": "#cdd436",
       "parts": [
         "frame",
         "bumper",
@@ -6334,7 +6334,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/dunlop-sx-300-tour-2022.glb",
-          "bytes": 35560,
+          "bytes": 34492,
           "triangles": 4724
         }
       },
@@ -6363,7 +6363,7 @@
         ],
         "unstrungWeightG": 305
       },
-      "swatch": "#17899b",
+      "swatch": "#147a8a",
       "parts": [
         "frame",
         "bumper",
@@ -6377,8 +6377,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/dunlop-sx-300-tour-2025.glb",
-          "bytes": 33388,
-          "triangles": 4468
+          "bytes": 34492,
+          "triangles": 4724
         }
       },
       "lineage": "dunlop-sx",
@@ -11506,7 +11506,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/tecnifibre-fire-260-os-2026.glb",
-          "bytes": 35044,
+          "bytes": 34928,
           "triangles": 4852
         }
       },
@@ -11549,7 +11549,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/tecnifibre-fire-270-2026.glb",
-          "bytes": 35044,
+          "bytes": 34932,
           "triangles": 4852
         }
       },
@@ -11592,7 +11592,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/tecnifibre-fire-285-2026.glb",
-          "bytes": 35044,
+          "bytes": 34932,
           "triangles": 4852
         }
       },
@@ -11635,7 +11635,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/tecnifibre-fire-300-2026.glb",
-          "bytes": 35044,
+          "bytes": 34932,
           "triangles": 4852
         }
       },
@@ -11678,7 +11678,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/tecnifibre-fire-2026.glb",
-          "bytes": 35008,
+          "bytes": 34892,
           "triangles": 4852
         }
       },
@@ -11743,7 +11743,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/tecnifibre-tf-x1-v1.glb",
-          "bytes": 34076,
+          "bytes": 33240,
           "triangles": 4468
         }
       },
@@ -11786,7 +11786,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/tecnifibre-tf-x1-v2.glb",
-          "bytes": 32772,
+          "bytes": 32776,
           "triangles": 4340
         }
       },
@@ -11829,7 +11829,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/tecnifibre-tf40-290-16x19-2024.glb",
-          "bytes": 35580,
+          "bytes": 35304,
           "triangles": 4120
         }
       },
@@ -11872,7 +11872,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/tecnifibre-tf40-2024.glb",
-          "bytes": 35560,
+          "bytes": 35284,
           "triangles": 4120
         }
       },
@@ -11933,8 +11933,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/tecnifibre-tf40-v1.glb",
-          "bytes": 38488,
-          "triangles": 4568
+          "bytes": 38564,
+          "triangles": 4696
         }
       },
       "lineage": "tecnifibre-tf40",
@@ -11990,7 +11990,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/tecnifibre-tf40-305-18x20-2024.glb",
-          "bytes": 35792,
+          "bytes": 35516,
           "triangles": 4144
         }
       },
@@ -12033,7 +12033,7 @@
       "assets": {
         "realistic": {
           "path": "realistic/tecnifibre-tf40-315-16x19-2024.glb",
-          "bytes": 35580,
+          "bytes": 35304,
           "triangles": 4120
         }
       },
@@ -12076,8 +12076,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/tecnifibre-tf40-v1-305-18x20.glb",
-          "bytes": 38720,
-          "triangles": 4592
+          "bytes": 38796,
+          "triangles": 4720
         }
       },
       "lineage": "tecnifibre-tf40",
@@ -12119,8 +12119,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/tecnifibre-tf40-v1-315-18x20.glb",
-          "bytes": 38720,
-          "triangles": 4592
+          "bytes": 38796,
+          "triangles": 4720
         }
       },
       "lineage": "tecnifibre-tf40",
@@ -12162,8 +12162,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/tecnifibre-tfight-270-2025.glb",
-          "bytes": 40440,
-          "triangles": 4888
+          "bytes": 40140,
+          "triangles": 5016
         }
       },
       "lineage": "tecnifibre-tfight",
@@ -12205,8 +12205,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/tecnifibre-tfight-285-2025.glb",
-          "bytes": 40440,
-          "triangles": 4888
+          "bytes": 40140,
+          "triangles": 5016
         }
       },
       "lineage": "tecnifibre-tfight",
@@ -12248,8 +12248,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/tecnifibre-tfight-300-2025.glb",
-          "bytes": 41008,
-          "triangles": 4888
+          "bytes": 40720,
+          "triangles": 5016
         }
       },
       "lineage": "tecnifibre-tfight",
@@ -12291,8 +12291,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/tecnifibre-tfight-300s-2025.glb",
-          "bytes": 40340,
-          "triangles": 4888
+          "bytes": 40060,
+          "triangles": 5016
         }
       },
       "lineage": "tecnifibre-tfight",
@@ -12334,8 +12334,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/tecnifibre-tfight-2025.glb",
-          "bytes": 40480,
-          "triangles": 4904
+          "bytes": 40200,
+          "triangles": 5032
         }
       },
       "lineage": "tecnifibre-tfight",
@@ -12407,8 +12407,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/tecnifibre-tfight-315s-2025.glb",
-          "bytes": 40340,
-          "triangles": 4888
+          "bytes": 40060,
+          "triangles": 5016
         }
       },
       "lineage": "tecnifibre-tfight",
@@ -12450,8 +12450,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/tecnifibre-tfight-iso-2022.glb",
-          "bytes": 36680,
-          "triangles": 4392
+          "bytes": 36916,
+          "triangles": 4456
         }
       },
       "lineage": "tecnifibre-tfight",
@@ -12493,8 +12493,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/tecnifibre-tfight-team-2025.glb",
-          "bytes": 42620,
-          "triangles": 5016
+          "bytes": 42348,
+          "triangles": 5144
         }
       },
       "lineage": "tecnifibre-tfight",
@@ -12536,8 +12536,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/tecnifibre-tempo-team-2026.glb",
-          "bytes": 35168,
-          "triangles": 4852
+          "bytes": 36664,
+          "triangles": 5236
         }
       },
       "lineage": "tecnifibre-tempo",
@@ -12579,8 +12579,8 @@
       "assets": {
         "realistic": {
           "path": "realistic/tecnifibre-tempo-2026.glb",
-          "bytes": 35108,
-          "triangles": 4852
+          "bytes": 36604,
+          "triangles": 5236
         }
       },
       "lineage": "tecnifibre-tempo",
@@ -18256,7 +18256,7 @@
       "colourwayName": "Red/Orange",
       "style": "realistic",
       "path": "realistic/dunlop-cx-200-2024.glb",
-      "bytes": 36152
+      "bytes": 37296
     },
     {
       "id": "dunlop-cx-200-16x19-2027",
@@ -18271,7 +18271,7 @@
       "colourwayName": "Red",
       "style": "realistic",
       "path": "realistic/dunlop-cx-200-16x19-2027.glb",
-      "bytes": 36384
+      "bytes": 36804
     },
     {
       "id": "dunlop-cx-200-18x20-2027",
@@ -18286,7 +18286,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/dunlop-cx-200-18x20-2027.glb",
-      "bytes": 36600
+      "bytes": 37016
     },
     {
       "id": "dunlop-cx-200-ls-2024",
@@ -18301,7 +18301,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/dunlop-cx-200-ls-2024.glb",
-      "bytes": 36152
+      "bytes": 37292
     },
     {
       "id": "dunlop-cx-200-ls-2027",
@@ -18316,7 +18316,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/dunlop-cx-200-ls-2027.glb",
-      "bytes": 36760
+      "bytes": 36784
     },
     {
       "id": "dunlop-cx-200-os-2024",
@@ -18331,7 +18331,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/dunlop-cx-200-os-2024.glb",
-      "bytes": 36324
+      "bytes": 37460
     },
     {
       "id": "dunlop-cx-200-os-2027",
@@ -18346,7 +18346,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/dunlop-cx-200-os-2027.glb",
-      "bytes": 35108
+      "bytes": 36956
     },
     {
       "id": "dunlop-cx-200-tour-2024",
@@ -18361,7 +18361,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/dunlop-cx-200-tour-2024.glb",
-      "bytes": 36404
+      "bytes": 37548
     },
     {
       "id": "dunlop-cx-200-tour-2027",
@@ -18376,7 +18376,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/dunlop-cx-200-tour-2027.glb",
-      "bytes": 36632
+      "bytes": 37060
     },
     {
       "id": "dunlop-cx-400-2024",
@@ -18391,7 +18391,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/dunlop-cx-400-2024.glb",
-      "bytes": 33168
+      "bytes": 34252
     },
     {
       "id": "dunlop-cx-400-2027",
@@ -18406,7 +18406,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/dunlop-cx-400-2027.glb",
-      "bytes": 33340
+      "bytes": 34212
     },
     {
       "id": "dunlop-cx-400-tour-2024",
@@ -18421,7 +18421,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/dunlop-cx-400-tour-2024.glb",
-      "bytes": 36304
+      "bytes": 37468
     },
     {
       "id": "dunlop-cx-400-tour-2027",
@@ -18436,7 +18436,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/dunlop-cx-400-tour-2027.glb",
-      "bytes": 36540
+      "bytes": 36988
     },
     {
       "id": "dunlop-fx-500-2023",
@@ -18451,7 +18451,7 @@
       "colourwayName": "Blue",
       "style": "realistic",
       "path": "realistic/dunlop-fx-500-2023.glb",
-      "bytes": 34104
+      "bytes": 34424
     },
     {
       "id": "dunlop-fx-500-2025",
@@ -18466,7 +18466,7 @@
       "colourwayName": "Blue",
       "style": "realistic",
       "path": "realistic/dunlop-fx-500-2025.glb",
-      "bytes": 33328
+      "bytes": 34432
     },
     {
       "id": "dunlop-fx-500-ls-2025",
@@ -18481,7 +18481,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/dunlop-fx-500-ls-2025.glb",
-      "bytes": 33332
+      "bytes": 34436
     },
     {
       "id": "dunlop-fx-500-lite-2023",
@@ -18496,7 +18496,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/dunlop-fx-500-lite-2023.glb",
-      "bytes": 34056
+      "bytes": 34372
     },
     {
       "id": "dunlop-fx-500-lite-2025",
@@ -18511,7 +18511,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/dunlop-fx-500-lite-2025.glb",
-      "bytes": 33280
+      "bytes": 34376
     },
     {
       "id": "dunlop-fx-500-super-lite-2025",
@@ -18526,7 +18526,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/dunlop-fx-500-super-lite-2025.glb",
-      "bytes": 33292
+      "bytes": 34388
     },
     {
       "id": "dunlop-fx-500-tour-2023",
@@ -18541,7 +18541,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/dunlop-fx-500-tour-2023.glb",
-      "bytes": 34120
+      "bytes": 34444
     },
     {
       "id": "dunlop-fx-500-tour-2025",
@@ -18556,7 +18556,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/dunlop-fx-500-tour-2025.glb",
-      "bytes": 33360
+      "bytes": 34452
     },
     {
       "id": "dunlop-fx-700-2023",
@@ -18571,7 +18571,7 @@
       "colourwayName": "Blue/Black",
       "style": "realistic",
       "path": "realistic/dunlop-fx-700-2023.glb",
-      "bytes": 33880
+      "bytes": 34240
     },
     {
       "id": "dunlop-fx-team-100-2025",
@@ -18586,7 +18586,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/dunlop-fx-team-100-2025.glb",
-      "bytes": 33332
+      "bytes": 34432
     },
     {
       "id": "dunlop-lx-1000-2024",
@@ -18601,7 +18601,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/dunlop-lx-1000-2024.glb",
-      "bytes": 34024
+      "bytes": 34496
     },
     {
       "id": "dunlop-lx-800-2024",
@@ -18616,7 +18616,7 @@
       "colourwayName": "Grey",
       "style": "realistic",
       "path": "realistic/dunlop-lx-800-2024.glb",
-      "bytes": 33824
+      "bytes": 34288
     },
     {
       "id": "dunlop-lx-team-107-2024",
@@ -18631,7 +18631,7 @@
       "colourwayName": "Light Blue/White/Gold",
       "style": "realistic",
       "path": "realistic/dunlop-lx-team-107-2024.glb",
-      "bytes": 34276
+      "bytes": 34396
     },
     {
       "id": "dunlop-sx-300-2022",
@@ -18646,7 +18646,7 @@
       "colourwayName": "Yellow/Black",
       "style": "realistic",
       "path": "realistic/dunlop-sx-300-2022.glb",
-      "bytes": 35500
+      "bytes": 34432
     },
     {
       "id": "dunlop-sx-300-2025",
@@ -18661,7 +18661,7 @@
       "colourwayName": "Teal/Yellow",
       "style": "realistic",
       "path": "realistic/dunlop-sx-300-2025.glb",
-      "bytes": 33324
+      "bytes": 34432
     },
     {
       "id": "dunlop-sx-300-ls-2025",
@@ -18676,7 +18676,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/dunlop-sx-300-ls-2025.glb",
-      "bytes": 33332
+      "bytes": 34436
     },
     {
       "id": "dunlop-sx-300-lite-2025",
@@ -18691,7 +18691,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/dunlop-sx-300-lite-2025.glb",
-      "bytes": 33280
+      "bytes": 34376
     },
     {
       "id": "dunlop-sx-300-tour-2022",
@@ -18706,7 +18706,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/dunlop-sx-300-tour-2022.glb",
-      "bytes": 35560
+      "bytes": 34492
     },
     {
       "id": "dunlop-sx-300-tour-2025",
@@ -18721,7 +18721,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/dunlop-sx-300-tour-2025.glb",
-      "bytes": 33388
+      "bytes": 34492
     },
     {
       "id": "head-boom-elite-2026",
@@ -20386,7 +20386,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/tecnifibre-fire-260-os-2026.glb",
-      "bytes": 35044
+      "bytes": 34928
     },
     {
       "id": "tecnifibre-fire-270-2026",
@@ -20401,7 +20401,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/tecnifibre-fire-270-2026.glb",
-      "bytes": 35044
+      "bytes": 34932
     },
     {
       "id": "tecnifibre-fire-285-2026",
@@ -20416,7 +20416,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/tecnifibre-fire-285-2026.glb",
-      "bytes": 35044
+      "bytes": 34932
     },
     {
       "id": "tecnifibre-fire-300-2026",
@@ -20431,7 +20431,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/tecnifibre-fire-300-2026.glb",
-      "bytes": 35044
+      "bytes": 34932
     },
     {
       "id": "tecnifibre-fire-2026",
@@ -20446,7 +20446,7 @@
       "colourwayName": "White/Neon Yellow",
       "style": "realistic",
       "path": "realistic/tecnifibre-fire-2026.glb",
-      "bytes": 35008
+      "bytes": 34892
     },
     {
       "id": "tecnifibre-tf-x1-v1",
@@ -20461,7 +20461,7 @@
       "colourwayName": "White/Charcoal/Neon Yellow",
       "style": "realistic",
       "path": "realistic/tecnifibre-tf-x1-v1.glb",
-      "bytes": 34076
+      "bytes": 33240
     },
     {
       "id": "tecnifibre-tf-x1-v2",
@@ -20476,7 +20476,7 @@
       "colourwayName": "White/Neon Yellow",
       "style": "realistic",
       "path": "realistic/tecnifibre-tf-x1-v2.glb",
-      "bytes": 32772
+      "bytes": 32776
     },
     {
       "id": "tecnifibre-tf40-290-16x19-2024",
@@ -20491,7 +20491,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/tecnifibre-tf40-290-16x19-2024.glb",
-      "bytes": 35580
+      "bytes": 35304
     },
     {
       "id": "tecnifibre-tf40-2024",
@@ -20506,7 +20506,7 @@
       "colourwayName": "White/Black",
       "style": "realistic",
       "path": "realistic/tecnifibre-tf40-2024.glb",
-      "bytes": 35560
+      "bytes": 35284
     },
     {
       "id": "tecnifibre-tf40-v1",
@@ -20521,7 +20521,7 @@
       "colourwayName": "White/Black/Red/Blue",
       "style": "realistic",
       "path": "realistic/tecnifibre-tf40-v1.glb",
-      "bytes": 38488
+      "bytes": 38564
     },
     {
       "id": "tecnifibre-tf40-305-18x20-2024",
@@ -20536,7 +20536,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/tecnifibre-tf40-305-18x20-2024.glb",
-      "bytes": 35792
+      "bytes": 35516
     },
     {
       "id": "tecnifibre-tf40-315-16x19-2024",
@@ -20551,7 +20551,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/tecnifibre-tf40-315-16x19-2024.glb",
-      "bytes": 35580
+      "bytes": 35304
     },
     {
       "id": "tecnifibre-tf40-v1-305-18x20",
@@ -20566,7 +20566,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/tecnifibre-tf40-v1-305-18x20.glb",
-      "bytes": 38720
+      "bytes": 38796
     },
     {
       "id": "tecnifibre-tf40-v1-315-18x20",
@@ -20581,7 +20581,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/tecnifibre-tf40-v1-315-18x20.glb",
-      "bytes": 38720
+      "bytes": 38796
     },
     {
       "id": "tecnifibre-tfight-270-2025",
@@ -20596,7 +20596,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/tecnifibre-tfight-270-2025.glb",
-      "bytes": 40440
+      "bytes": 40140
     },
     {
       "id": "tecnifibre-tfight-285-2025",
@@ -20611,7 +20611,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/tecnifibre-tfight-285-2025.glb",
-      "bytes": 40440
+      "bytes": 40140
     },
     {
       "id": "tecnifibre-tfight-300-2025",
@@ -20626,7 +20626,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/tecnifibre-tfight-300-2025.glb",
-      "bytes": 41008
+      "bytes": 40720
     },
     {
       "id": "tecnifibre-tfight-300s-2025",
@@ -20641,7 +20641,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/tecnifibre-tfight-300s-2025.glb",
-      "bytes": 40340
+      "bytes": 40060
     },
     {
       "id": "tecnifibre-tfight-2025",
@@ -20656,7 +20656,7 @@
       "colourwayName": "White",
       "style": "realistic",
       "path": "realistic/tecnifibre-tfight-2025.glb",
-      "bytes": 40480
+      "bytes": 40200
     },
     {
       "id": "tecnifibre-tfight-315s-2025",
@@ -20671,7 +20671,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/tecnifibre-tfight-315s-2025.glb",
-      "bytes": 40340
+      "bytes": 40060
     },
     {
       "id": "tecnifibre-tfight-iso-2022",
@@ -20686,7 +20686,7 @@
       "colourwayName": "White/Red/Blue",
       "style": "realistic",
       "path": "realistic/tecnifibre-tfight-iso-2022.glb",
-      "bytes": 36680
+      "bytes": 36916
     },
     {
       "id": "tecnifibre-tfight-team-2025",
@@ -20701,7 +20701,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/tecnifibre-tfight-team-2025.glb",
-      "bytes": 42620
+      "bytes": 42348
     },
     {
       "id": "tecnifibre-tempo-team-2026",
@@ -20716,7 +20716,7 @@
       "colourwayName": null,
       "style": "realistic",
       "path": "realistic/tecnifibre-tempo-team-2026.glb",
-      "bytes": 35168
+      "bytes": 36664
     },
     {
       "id": "tecnifibre-tempo-2026",
@@ -20731,7 +20731,7 @@
       "colourwayName": "White/Teal",
       "style": "realistic",
       "path": "realistic/tecnifibre-tempo-2026.glb",
-      "bytes": 35108
+      "bytes": 36604
     },
     {
       "id": "wilson-blade-100-v10-2026",

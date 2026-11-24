@@ -325,15 +325,23 @@ variant of the TFight 2025 frame, black upper hoop from the official photo). The
 Tempo line (Tour, Team, OS, L; no beam width published anywhere found). Beams of TFight 300S, 305S, 315S, 285,
 270 and the TF-40 V3 are still unconfirmed by the official site, which lists none for them.
 
-**Colourway recheck (Tecnifibre and Dunlop, same day).** A first recheck compared photos with the spec numbers only and
-got several wrong; this replaces it. Models were rendered face-on and at an angle and compared with tecnifibre.com, Tennis Warehouse and
-us.dunlopsports.com photos. TF40 v1: white hoop with a black grommet strip (not a black outer edge), red band, lower blue
-band, black shaft base; the one black throat arm is asymmetric and left out. TF40 2024: no dark inner throat (that was lettering).
-TFight 2025: hoop stripes moved down to mid-hoop. TFight Team: black upper hoop, bumper and grommets. Fire: yellow reaches
-the lower hoop; throat bands narrower. TF-X1 V2: yellow upper hoop, grommets and bumper. Tempo Team: pale mint throat band
-where the Tour has black. Dunlop CX 2027: orange upper hoop (the dark top was only the bumper). FX Team 100: charcoal grip.
-LX Team 107: dark bumper. Several of these are asymmetric left to right in the photos and are modelled symmetrically.
-Not rendered and compared: TF-X1 V1, TFight ISO, the other Dunlop frames.
+**Colour check (Dunlop and Tecnifibre, 2026-11-24).** All 56 models were rendered face-on, edge-on and from above next to their
+product photos (Tennis Warehouse, us.dunlopsports.com, tecnifibre.com). Positions were read against a render with ruled paint zones; base
+colours were sampled from photos, which vary with lighting. This replaces the earlier same-day notes.
+
+- **Left and right differ** on every Dunlop and most Tecnifibre frames, so zones now take `side` ("left" is -X, seen from the front).
+  Dunlop's template: long accent on the left (13 to 85 percent down the hoop), a short hex on the right (45 to 52 percent), and on most
+  lines a dark or gold panel above both. The left accent stops a little short (about 81 percent), because lower would paint half the bridge.
+- **Dunlop:** FX 500 2025 and SX 300 2025 base colours, black collars, CX 400 Tour 2027 grip (black), butt caps follow white grips. SX 300
+  LS/Lite and CX 2027 LS/OS no longer carry their own paint: the photos show the family's. The RSX300 review (March 2020) was removed
+  from the SX 300 2022 sources: it covers the previous generation.
+- **Tecnifibre:** Fire, TFight and Tempo throat bands are on the left arm only, TFight and TF40 v1 hoop stripes on the right only; TF40 v1 has
+  a black right arm. TF-X1 V1 is white inside (the yellow inner face was wrong). TFight ISO has no hoop bands; its marks are on one arm.
+- **Not modelled:** lettering, the TF40 V3 orange and white flecks, diagonal stripe edges, hexagon points, the SX 300 2025 stripe down
+  the arm, the TF-X1 V1 yellow showing through the grommet strip, the LX 1000 double bridge. The FX Team 100 and LX Team 107 have two photos each.
+- **Grommet strips:** on box and tapered-box beams with a `channel` (93 models, every brand with such frames) the strip faced inward and was invisible. Fixed
+  in `trim.ts`; the 17 affected frames of other brands were looked at beside their photos (no photo found for the Pro Staff 97 v14).
+- **Found, not fixed:** the Babolat Pure Strike Evo bumper is red here and black in the photo. Other brands' left/right differences were not checked.
 
 **Dunlop checked against us.dunlopsports.com (2026-11-24).** The official product pages list unstrung weight,
 pattern, beam, head size and balance, and have several photos. Added unstrung weights to every current-generation

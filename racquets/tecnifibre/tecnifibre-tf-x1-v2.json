@@ -41,10 +41,10 @@
     "finish": "satin",
     "zones": [
       {
-        "from": 0.5,
+        "from": 0.7,
         "to": 1,
-        "color": "#dff23a",
-        "blend": 0.1
+        "color": "#dcee4a",
+        "blend": 0.08
       }
     ]
   },
@@ -63,18 +63,17 @@
       "gaugeMm": 1.25
     },
     "grommets": {
-      "color": "#dff23a",
+      "color": "#dcee4a",
       "channel": 0.45
     },
     "bumper": {
-      "color": "#dff23a"
+      "color": "#dcee4a"
     },
     "dampener": null
   },
   "sources": [
     "https://www.tennis-warehouse.com/Tecnifibre_TF-X1_305_v2/descpageRCTFUSA-TFX135D.html",
-    "https://www.tennisnerd.net/gear/racquets/tecnifibre-tf-x1-v2/36691",
-    "https://www.tennis-warehouse.com/Tecnifibre_TF-X1_305_v2/descpageRCTFUSA-TFX135D.html"
+    "https://www.tennisnerd.net/gear/racquets/tecnifibre-tf-x1-v2/36691"
   ],
   "verified": true,
   "colourway": "White/Neon Yellow",

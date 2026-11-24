@@ -36,52 +36,47 @@
     }
   },
   "paint": {
-    "base": "#d9e83c",
+    "base": "#cdd436",
     "finish": "gloss",
     "zones": [
       {
-        "from": 0.45,
-        "to": 0.95,
-        "color": "#2a2b2d",
-        "faces": [
-          "inner"
-        ]
+        "from": 0.351,
+        "to": 0.8,
+        "color": "#26282a",
+        "side": "left"
       },
       {
-        "from": 0.62,
-        "to": 0.68,
-        "color": "#2a2b2d",
-        "faces": [
-          "outer"
-        ]
+        "from": 0.533,
+        "to": 0.593,
+        "color": "#26282a",
+        "side": "right"
       }
     ]
   },
   "parts": {
     "grip": {
-      "color": "#1f1f21"
+      "color": "#2b2b2d"
     },
     "collar": {
-      "color": "#d9e83c"
+      "color": "#1c1c1f"
     },
     "buttCap": {
-      "color": "#1f1f21"
+      "color": "#2b2b2d"
     },
     "strings": {
       "color": "#f2f2f2",
       "gaugeMm": 1.25
     },
     "grommets": {
-      "color": "#242527",
+      "color": "#1c1c1f",
       "channel": 0.45
     },
     "bumper": {
-      "color": "#242527"
+      "color": "#1c1c1f"
     },
     "dampener": null
   },
   "sources": [
-    "https://www.tennis-warehouse.com/learning_center/racquet_reviews/RSX300review.html",
     "https://www.tennisdirect.com.au/dunlop-sx-300-300g-2022",
     "https://prod.tennis.com/news/articles/2022-gear-guide-dunlop-racquets-sx-300-and-sx-300-tour",
     "https://www.tennis-warehouse.com/learning_center/racquet_reviews/T310DUreview.html"
