@@ -608,15 +608,45 @@ function thumbnail(a: App, r: Racquet, item: HTMLElement, canvas: HTMLCanvasElem
 /**
  * Run a DOM change as a view transition where the browser has them and motion is welcome.
  */
-function transition(change: () => void): void {
-  const doc = document as Document & { startViewTransition?: (cb: () => Promise<void> | void) => unknown };
+function transition(change: () => void, local = false): void {
+  const doc = document as Document & { startViewTransition?: (cb: () => Promise<void> | void) => { finished: Promise<void> } };
   if (!doc.startViewTransition || matchMedia('(prefers-reduced-motion: reduce)').matches) {
     change();
+    return;
+  }
+  if (local) {
+    // Moving between variants of one racquet: the page stays put. Each block of the sheet is its
+    // own transition piece, so what is unchanged looks still, what changed cross-fades, and
+    // blocks that move or resize glide to their new place.
+    nameBlocks();
+    const root = document.documentElement;
+    root.classList.add('vt-local');
+    doc.startViewTransition(() => {
+      change();
+      nameBlocks();
+    }).finished.finally(() => root.classList.remove('vt-local'));
     return;
   }
   // Rendering is paused during the update, so it must not wait for frames: fresh thumbnails
   // arrive as silhouettes in the snapshot and fade to 3D a moment later.
   doc.startViewTransition(change);
+}
+
+/** Give each block of the detail page a transition name that matches between old and new pages. */
+function nameBlocks(): void {
+  const seen = new Map<string, number>();
+  for (const b of detail.querySelectorAll<HTMLElement>('.detail-nav, .sheet > *')) {
+    const key = `${b.tagName}.${b.className}`.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+    const n = (seen.get(key) ?? 0) + 1;
+    seen.set(key, n);
+    b.style.viewTransitionName = `blk-${key}-${n}`;
+  }
+}
+
+function sameFamilyDetail(a: App, r: Racquet): boolean {
+  if (detail.hidden || !detail.dataset.id) return false;
+  const prev = a.catalog.racquets.find((x) => x.id === detail.dataset.id);
+  return !!prev && familyOf(a.catalog, prev) === familyOf(a.catalog, r);
 }
 
 function watch(thumbs: Thumbnails, item: HTMLElement, link: HTMLElement, canvas: HTMLCanvasElement, r: Racquet, path: string) {
@@ -687,7 +717,7 @@ function route() {
     markSigns(a);
   };
   // The first render is the page loading, not a move between places: no transition.
-  if (routed) transition(change);
+  if (routed) transition(change, !!r && sameFamilyDetail(a, r));
   else change();
   routed = true;
 }
@@ -714,6 +744,7 @@ function showWall(a: App) {
 function showDetail(a: App, r: Racquet, colourway: string | null = null) {
   // Switching colourway on the same racquet keeps the scroll position and focus where they are.
   const same = !detail.hidden && detail.dataset.id === r.id;
+  const within = sameFamilyDetail(a, r);
   detail.dataset.id = r.id;
   a.lastOpened = familyOf(a.catalog, r).id; // the wall shows the family, so return to its bay
   wall.hidden = true;
@@ -721,9 +752,10 @@ function showDetail(a: App, r: Racquet, colourway: string | null = null) {
   document.body.dataset.view = 'detail';
   document.title = `${r.model} · ${baseTitle.split(':')[0]}`;
   detail.replaceChildren(...detailView(a, r, colourway));
-  detail.classList.toggle('arriving', !same);
-  if (same) {
-    detail.querySelector<HTMLElement>('.colourway[aria-current="true"]')?.focus({ preventScroll: true });
+  detail.classList.toggle('arriving', !within);
+  if (within) {
+    // Another variant of the same racquet: keep the scroll position and focus the chip just chosen.
+    detail.querySelector<HTMLElement>('.colourway[aria-current="true"], .variant[aria-current="true"]')?.focus({ preventScroll: true });
     return;
   }
   window.scrollTo(0, 0);

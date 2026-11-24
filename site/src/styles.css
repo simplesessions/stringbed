@@ -1108,6 +1108,13 @@ main { flex: 1; padding: 6px var(--pad) 72px; }
 ::view-transition-new(racquet) { animation: 0.3s var(--ease-out) both vt-fade-in; }
 @keyframes vt-fade-out { to { opacity: 0; } }
 @keyframes vt-fade-in { from { opacity: 0; } }
+/* Variant to variant: no page-wide fade; the named blocks do the work. */
+.vt-local::view-transition-old(root) { display: none; }
+.vt-local::view-transition-new(root) { animation: none; }
+.vt-local::view-transition-group(*) { animation-duration: 0.45s; }
+.vt-local::view-transition-old(*), .vt-local::view-transition-new(*) { height: 100%; object-fit: cover; object-position: left top; }
+.vt-local::view-transition-old(racquet), .vt-local::view-transition-new(racquet) { object-fit: contain; object-position: 50% 50%; }
+.vt-local::view-transition-old(*):only-child, .vt-local::view-transition-new(*):only-child { animation-duration: 0.3s; }
 /* On arrival, the spec sheet deals itself in, one line after another. */
 .detail.arriving .sheet > *, .detail.arriving .detail-nav { animation: sheet-in 0.7s var(--spring) both; animation-delay: calc(var(--s, 0) * 55ms + 260ms); }
 .detail.arriving .sheet > :nth-child(2) { --s: 1; } .detail.arriving .sheet > :nth-child(3) { --s: 2; } .detail.arriving .sheet > :nth-child(4) { --s: 3; }
