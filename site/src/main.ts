@@ -506,9 +506,10 @@ function shelf(a: App, sh: Shelf): HTMLElement {
   const open = el('a', { class: 'button lineup-open' });
   stageLink.append(slotHost, el('span', { class: 'shelf-rail' }), title);
   stageLink.addEventListener('click', () => {
-    // Name only the clicked stage, so the transition morphs exactly this racquet into the detail stage.
-    for (const old of wall.querySelectorAll<HTMLElement>('.shelf-stage[style*="view-transition-name"]')) old.style.viewTransitionName = '';
-    stageLink.style.viewTransitionName = 'racquet';
+    // Name only the clicked racquet (not its tinted panel), so the racquet alone flies into the
+    // detail stage while the panel's background fades away with the rest of the page.
+    for (const old of wall.querySelectorAll<HTMLElement>('.shelf-slots[style*="view-transition-name"]')) old.style.viewTransitionName = '';
+    slotHost.style.viewTransitionName = 'racquet';
     a.lastOpened = family.id;
   });
 
