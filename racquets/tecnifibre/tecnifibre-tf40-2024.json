@@ -31,7 +31,10 @@
       "style": "open-v",
       "bridge": "curved"
     },
-    "features": []
+    "features": [],
+    "handle": {
+      "elongationMm": 5.2
+    }
   },
   "paint": {
     "base": "#f3f3f0",
@@ -42,14 +45,6 @@
         "to": 1,
         "color": "#232a22",
         "blend": 0.05
-      },
-      {
-        "from": 0.12,
-        "to": 0.34,
-        "color": "#232a22",
-        "faces": [
-          "inner"
-        ]
       }
     ]
   },

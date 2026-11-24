@@ -30,7 +30,10 @@
       "style": "open-v",
       "bridge": "flat"
     },
-    "features": []
+    "features": [],
+    "handle": {
+      "elongationMm": 3.8
+    }
   },
   "paint": {
     "base": "#2d5ad6",

@@ -60,3 +60,33 @@ test('handle parts are small and fit the real racquets', () => {
     expect(box(buildGrip(s, l)).max.y).toBeCloseTo(l.gripTopY, 5);
   }
 });
+
+test('elongationMm makes every handle part wider in the string plane than deep, at the same girth', () => {
+  const e = 5.2;
+  const long = makeSpec({ geometry: { ...spec.geometry, handle: { elongationMm: e } } });
+  for (const build of [buildGrip, buildCollar, buildButtCap]) {
+    const plain = box(build(spec, layout)), b = box(build(long, layout));
+    expect((b.max.x - b.max.z) * 2).toBeCloseTo(e / 1000, 6); // X is in the string plane, Z is the face normal
+    expect(b.max.x + b.max.z).toBeCloseTo(plain.max.x + plain.max.z, 6);
+    expect([b.min.y, b.max.y]).toEqual([plain.min.y, plain.max.y]);
+    expect(tris(build(long, layout))).toBe(tris(build(spec, layout)));
+    expect(facesOutward(build(long, layout))).toBe(true);
+  }
+});
+test('an elongated grip keeps its corner bevels at 45 degrees', () => {
+  const g = buildGrip(makeSpec({ geometry: { ...spec.geometry, handle: { elongationMm: 5.2 } } }), layout);
+  const p = g.getAttribute('position');
+  const pts = new Map<string, [number, number]>();
+  const yMin = box(g).min.y;
+  for (let i = 0; i < p.count; i++) if (Math.abs(p.getY(i) - yMin) < 1e-6) pts.set(`${p.getX(i).toFixed(6)},${p.getZ(i).toFixed(6)}`, [p.getX(i), p.getZ(i)]);
+  const ring = [...pts.values()].sort((a, b) => Math.atan2(a[1], a[0]) - Math.atan2(b[1], b[0]));
+  expect(ring).toHaveLength(8);
+  const dirs = ring.map((a, i) => { const b = ring[(i + 1) % 8]; return [Math.abs(b[0] - a[0]), Math.abs(b[1] - a[1])]; });
+  const diagonal = dirs.filter(([x, z]) => x > 1e-4 && z > 1e-4);
+  expect(diagonal).toHaveLength(4);
+  for (const [x, z] of diagonal) expect(x).toBeCloseTo(z, 5);
+});
+test('no elongation, or zero, is the plain octagon exactly', () => {
+  const zero = makeSpec({ geometry: { ...spec.geometry, handle: { elongationMm: 0 } } });
+  expect(Array.from(buildGrip(zero, layout).getAttribute('position').array)).toEqual(Array.from(buildGrip(spec, layout).getAttribute('position').array));
+});

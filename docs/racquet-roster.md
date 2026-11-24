@@ -316,26 +316,59 @@ are judged by eye. Neither brand's own site was reachable, so unstrung weights a
 - **Left out for lack of a checked source:** TF-X1 V2 300 and TFight ISO 295 (spec page or photo not read; every spec in the library must be verified). Also skipped: Tecnifibre TFight 300 IG, TW-exclusive colours, Fire 255; Dunlop LX Team, CX/SX limited editions.
 - Beam widths where sources disagree (TFight ISO 305, TF-X1 V1 300, TF-X1 V2) follow the notes in each spec's source list; the TF-X1 V1 300 beam (24 mm, TW) conflicts with tennisnerd (26 mm).
 
-**Checked against tecnifibre.com (2026-11-24, same day).** The official product pages confirm every Tecnifibre
-unstrung weight, head size and pattern, and the Fire beams. Corrections: TFight 300 beam is 23 / 23.5 / 23
+**Checked against tecnifibre.com (2026-11-24, same day).** The official product pages confirm the
+unstrung weights, head sizes and patterns of Fire, TFight 2025 and the TF-40 V3, and the Fire beams (TF40 v1, TFight ISO
+and both TF-X1 generations were not checked there). Corrections: TFight 300 beam is 23 / 23.5 / 23
 (was 22.5 constant). Added: TFight Team (102 sq in, 285 g, beam 23 / 26 / 23 from one retailer page, as a
 variant of the TFight 2025 frame, black upper hoop from the official photo). The "TF40 2024" frame is the V3
-(same SKU as tecnifibre.com's TF-40 V3). Not added: the TF-40 AxT G2 (limited edition of 580) and the new
+(same SKU as tecnifibre.com's TF-40 V3). Not added: the TF-40 AxT G2 (limited edition of 580). The new
 Tempo line (Tour, Team, OS, L; no beam width published anywhere found). Beams of TFight 300S, 305S, 315S, 285,
 270 and the TF-40 V3 are still unconfirmed by the official site, which lists none for them.
 
-**Colourway recheck (Tecnifibre, same day).** Angled and detail photos (tecnifibre.com galleries; Tennis
-Warehouse TFX135D and TF4016 side views) were compared with the specs. Fire 2026, TFight 2025 and TF40 2024
-(V3) matched; the V3's dark top is olive-black, so its dark paint was shifted to `#232a22`. Corrected: TF-X1 V2
-(yellow grommets, bumper and upper hoop; the charcoal top was only lettering, so it is gone) and TF40 v1 (black
-runs along the whole outer edge of the hoop, not only the top). Not rechecked at other angles: TF-X1 V1 and
-TFight ISO (no readable product page found).
+**Colourway recheck (Tecnifibre and Dunlop, same day).** A first recheck compared photos with the spec numbers only and
+got several wrong; this replaces it. Models were rendered face-on and at an angle and compared with tecnifibre.com, Tennis Warehouse and
+us.dunlopsports.com photos. TF40 v1: white hoop with a black grommet strip (not a black outer edge), red band, lower blue
+band, black shaft base; the one black throat arm is asymmetric and left out. TF40 2024: no dark inner throat (that was lettering).
+TFight 2025: hoop stripes moved down to mid-hoop. TFight Team: black upper hoop, bumper and grommets. Fire: yellow reaches
+the lower hoop; throat bands narrower. TF-X1 V2: yellow upper hoop, grommets and bumper. Tempo Team: pale mint throat band
+where the Tour has black. Dunlop CX 2027: orange upper hoop (the dark top was only the bumper). FX Team 100: charcoal grip.
+LX Team 107: dark bumper. Several of these are asymmetric left to right in the photos and are modelled symmetrically.
+Not rendered and compared: TF-X1 V1, TFight ISO, the other Dunlop frames.
 
 **Dunlop checked against us.dunlopsports.com (2026-11-24).** The official product pages list unstrung weight,
 pattern, beam, head size and balance, and have several photos. Added unstrung weights to every current-generation
 Dunlop (CX 2027, FX 500 2025, SX 300 2025, LX 800). The earlier generations (CX 2024, SX 2022, FX 2023) are not on
 the site, so they keep no unstrung weight. Added: FX 500 Super Lite and FX Team 100 (FX 500 2025 family; the site sells
 them as 2026 products in the same cosmetic) and LX Team 107 (LX 2024 family, own light-blue/white/gold paint, approximated
-symmetrically). Removed: LX 800 Tour (the site calls it a limited edition). CX paint now has the orange fade and dark
-top the official photo shows. Not confirmed by the site: the "2027" CX year (the site gives no year), LX 1000 (not listed
+symmetrically). Removed: LX 800 Tour (the site calls it a limited edition). The FX Team 100 page contradicts itself on weight
+(285 g / 8.8 oz; 8.8 oz is 250 g); 285 g is used, unconfirmed. Not confirmed by the site: the "2027" CX year (the site gives no year), LX 1000 (not listed
 there) and the beams of the CX frames (the site lists none).
+
+**Tecnifibre Tempo (2026), added later 2026-11-24.** The new women's line (white with a teal fade over the upper hoop).
+Modelled: Tempo Tour (102 sq in, 285 g) and Tempo Team (102 sq in, 270 g, 67.5 cm long). Weight, head, length and
+pattern come from tecnifibre.com; the 23 / 23 / 21 mm beam comes from Sportano's spec tables for both (one retailer,
+not Tecnifibre, and the same figure for both frames). Tempo OS (105 sq in) and Tempo L (102 sq in, 255 g) are left out:
+no page found gives their beam. Colours from the official photos of the Tour and Team only; the Team's throat band is
+pale mint where the Tour's is black.
+
+**Handle shapes (2026-11-24).** `geometry.handle.elongationMm` is pallet width (string plane) minus depth. Values come from one
+set of Talk Tennis measurements (podcast, 2021-12-07, 4 3/8 racquets; units and models not stated): Wilson and Babolat 32.4 x 28.5
+(3.9), Yonex 32.8 x 29 (3.8), Dunlop 32 x 28.2 (3.8), Prince 31.2 x 28 (3.2), Head TK82S 31.3 x 28.5 (2.8), Head TK82 33.4 x 27.6
+(5.8), Tecnifibre 33.1 x 27.9 (5.2). Each is applied to the whole brand, so differences between lines are not captured, and
+juniors and budget frames use the adult figure unmeasured.
+
+- **Head:** every frame uses TK82S except the Ti.S6. tennisnerd (Dec 2020) says all new Heads but the Pro Tour 2.0 do, and
+  the current adult butt caps look alike in photos, Prestige included. One retailer (Extreme Tennis) still lists Prestige, Radical,
+  Boom and Extreme as TK82, so this is not settled. Ti.S6 as TK82 is inferred: the line predates TK82S (about 2009) and its cap is narrower.
+- **Solinco:** left as a regular octagon; nobody has published a measurement. One forum post calls it "fairly similar to Wilsons".
+
+Tecnifibre:
+
+- **5.2 mm**: TF40, TFight, TFight ISO, TFight Team, Tempo, TF-X1 V1. The podcast's Babolat and Yonex values agree within 0.2 mm
+  with a separate bare-handle thread (TT 561916), so its figures are read as bare mm. Tecnifibre said in 2019 that all its series share
+  one handle shape (TT 653947); the TW TFight 315S, tennisnerd TF40 2024 and tennisrally TF40 reviews all call it rectangular.
+  The end-on butt photos of these frames show the same cap (about 1.13-1.18 wide to deep; TF40 v1, Tempo and Team by eye).
+- **3.5 mm, estimated:** Fire and TF-X1 V2, whose X-DAMP caps are visibly squarer (1.08-1.11). Nobody has published a
+  measurement. Cap shape is a weak guide (Head's cap is 1.15 on a 1.10 pallet), and Tennis Express says the Fire grip was brought
+  closer to the TFight's, so the true figure may be nearer 5.2.
+- Not captured for any brand: grip size (all handles share one girth) and bevel edge sharpness.

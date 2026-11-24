@@ -31,31 +31,30 @@
       "style": "open-v",
       "bridge": "curved"
     },
-    "features": []
+    "features": [],
+    "handle": {
+      "elongationMm": 3.5
+    }
   },
   "paint": {
     "base": "#f3f3f0",
     "finish": "satin",
     "zones": [
       {
-        "from": 0.52,
+        "from": 0.4,
         "to": 1,
         "color": "#dff23a",
         "blend": 0.04
       },
       {
-        "from": 0.2,
-        "to": 0.29,
+        "from": 0.235,
+        "to": 0.265,
         "color": "#dff23a"
       },
       {
-        "from": 0.29,
-        "to": 0.335,
-        "color": "#23282b",
-        "faces": [
-          "front",
-          "back"
-        ]
+        "from": 0.275,
+        "to": 0.305,
+        "color": "#23282b"
       }
     ]
   },
@@ -123,7 +122,10 @@
           "style": "open-v",
           "bridge": "curved"
         },
-        "features": []
+        "features": [],
+        "handle": {
+          "elongationMm": 3.5
+        }
       },
       "sources": [
         "https://www.tennis-warehouse.com/Tecnifibre_Fire_300/descpageRCTFUSA-TFFI30.html"
@@ -159,7 +161,10 @@
           "style": "open-v",
           "bridge": "curved"
         },
-        "features": []
+        "features": [],
+        "handle": {
+          "elongationMm": 3.5
+        }
       },
       "sources": [
         "https://www.tennis-warehouse.com/Tecnifibre_Fire_285/descpageRCTFUSA-TFFI28.html"
@@ -195,7 +200,10 @@
           "style": "open-v",
           "bridge": "curved"
         },
-        "features": []
+        "features": [],
+        "handle": {
+          "elongationMm": 3.5
+        }
       },
       "sources": [
         "https://www.tennis-warehouse.com/Tecnifibre_Fire_270/descpageRCTFUSA-TFFI70.html"
@@ -231,7 +239,10 @@
           "style": "open-v",
           "bridge": "curved"
         },
-        "features": []
+        "features": [],
+        "handle": {
+          "elongationMm": 3.5
+        }
       },
       "sources": [
         "https://www.tennis-warehouse.com/Tecnifibre_Fire_260_OS/descpageRCTFUSA-TFFI26.html"
