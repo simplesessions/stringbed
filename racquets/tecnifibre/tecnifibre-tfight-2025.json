@@ -41,24 +41,28 @@
     "finish": "satin",
     "zones": [
       {
-        "from": 0.22,
-        "to": 0.28,
-        "color": "#e8372f"
+        "from": 0.215,
+        "to": 0.24,
+        "color": "#2323bd",
+        "side": "left"
       },
       {
-        "from": 0.28,
-        "to": 0.34,
-        "color": "#2f4fc4"
+        "from": 0.17,
+        "to": 0.21,
+        "color": "#de1f22",
+        "side": "left"
       },
       {
-        "from": 0.49,
-        "to": 0.56,
-        "color": "#2f4fc4"
+        "from": 0.485,
+        "to": 0.55,
+        "color": "#2323bd",
+        "side": "right"
       },
       {
-        "from": 0.57,
-        "to": 0.635,
-        "color": "#e8372f"
+        "from": 0.56,
+        "to": 0.62,
+        "color": "#de1f22",
+        "side": "right"
       }
     ]
   },
@@ -298,29 +302,40 @@
         "finish": "satin",
         "zones": [
           {
-            "from": 0.64,
+            "from": 0.605,
             "to": 1,
-            "color": "#1f2022"
+            "color": "#1c1c1f",
+            "side": "left"
           },
           {
-            "from": 0.22,
-            "to": 0.28,
-            "color": "#e8372f"
+            "from": 0.65,
+            "to": 1,
+            "color": "#1c1c1f",
+            "side": "right"
           },
           {
-            "from": 0.28,
-            "to": 0.34,
-            "color": "#2f4fc4"
+            "from": 0.215,
+            "to": 0.24,
+            "color": "#2323bd",
+            "side": "left"
           },
           {
-            "from": 0.49,
-            "to": 0.56,
-            "color": "#2f4fc4"
+            "from": 0.17,
+            "to": 0.21,
+            "color": "#de1f22",
+            "side": "left"
           },
           {
-            "from": 0.57,
-            "to": 0.635,
-            "color": "#e8372f"
+            "from": 0.45,
+            "to": 0.54,
+            "color": "#2323bd",
+            "side": "right"
+          },
+          {
+            "from": 0.55,
+            "to": 0.65,
+            "color": "#de1f22",
+            "side": "right"
           }
         ]
       },

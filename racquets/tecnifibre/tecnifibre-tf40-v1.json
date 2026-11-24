@@ -43,17 +43,25 @@
       {
         "from": 0,
         "to": 0.08,
-        "color": "#1f2022"
+        "color": "#1c1c1e"
       },
       {
-        "from": 0.37,
-        "to": 0.42,
-        "color": "#2f4fc4"
+        "from": 0.08,
+        "to": 0.335,
+        "color": "#1c1c1e",
+        "side": "right"
       },
       {
-        "from": 0.47,
-        "to": 0.67,
-        "color": "#e8372f"
+        "from": 0.351,
+        "to": 0.385,
+        "color": "#2f349c",
+        "side": "right"
+      },
+      {
+        "from": 0.48,
+        "to": 0.667,
+        "color": "#e5101f",
+        "side": "right"
       }
     ]
   },

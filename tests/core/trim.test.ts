@@ -146,3 +146,20 @@ test('dampener faces outward', () => {
   const b = box(d); const cx = (b.min.x + b.max.x) / 2, cy = (b.min.y + b.max.y) / 2;
   for (let i = 0; i < p.count; i++) expect(n.getX(i) * (p.getX(i) - cx) + n.getY(i) * (p.getY(i) - cy) + n.getZ(i) * p.getZ(i)).toBeGreaterThan(-1e-9);
 });
+
+test('the grommet channel faces outward on every beam profile', () => {
+  for (const profile of ['box', 'tapered-box', 'ellipse', 'aero'] as const) {
+    const s = makeSpec({ geometry: { beam: { profile } }, parts: { grommets: { color: '#111111', channel: 0.45 } } });
+    const g = buildGrommets(s, layoutOf(s));
+    const p = g.getAttribute('position'), ix = g.index!;
+    const b = box(g), cy = (b.min.y + b.max.y) / 2;
+    let outward = 0, inward = 0;
+    for (let t = 0; t < ix.count; t += 3) {
+      const [A, B, C] = [0, 1, 2].map((k) => { const i = ix.getX(t + k); return [p.getX(i), p.getY(i), p.getZ(i)]; });
+      const e1 = B.map((x, i) => x - A[i]), e2 = C.map((x, i) => x - A[i]);
+      const d = (e1[1] * e2[2] - e1[2] * e2[1]) * A[0] + (e1[2] * e2[0] - e1[0] * e2[2]) * (A[1] - cy);
+      if (d > 0) outward += d; else inward -= d;
+    }
+    expect(inward / (outward + inward), profile).toBeLessThan(0.01);
+  }
+});

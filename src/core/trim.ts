@@ -125,7 +125,9 @@ function outerSection(spec: RacquetSpec, u: number, ex: number, ez: number, chan
     if (Math.abs(a.y) <= lim) band.push(a);
     const b = points[j + 1];
     if (!b) break;
-    for (const edge of [lim, -lim]) {
+    // A flat face can cross both edges in one segment: add them in the order it meets them, or the
+    // strip doubles back and faces inward.
+    for (const edge of b.y > a.y ? [-lim, lim] : [lim, -lim]) {
       if ((a.y - edge) * (b.y - edge) < 0) {
         const k = (edge - a.y) / (b.y - a.y);
         band.push({ x: a.x + (b.x - a.x) * k, y: edge });

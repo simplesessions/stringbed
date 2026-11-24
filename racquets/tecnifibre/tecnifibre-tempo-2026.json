@@ -43,18 +43,33 @@
       {
         "from": 0.5,
         "to": 1,
-        "color": "#2fc4b2",
-        "blend": 0.15
+        "color": "#10b8af",
+        "blend": 0.22,
+        "side": "left"
       },
       {
-        "from": 0.275,
-        "to": 0.305,
-        "color": "#2fc4b2"
+        "from": 0.465,
+        "to": 1,
+        "color": "#10b8af",
+        "side": "right"
       },
       {
-        "from": 0.235,
-        "to": 0.265,
-        "color": "#1f2022"
+        "from": 0.4,
+        "to": 0.44,
+        "color": "#1c1c1e",
+        "side": "right"
+      },
+      {
+        "from": 0.225,
+        "to": 0.245,
+        "color": "#10b8af",
+        "side": "left"
+      },
+      {
+        "from": 0.19,
+        "to": 0.215,
+        "color": "#1c1c1e",
+        "side": "left"
       }
     ]
   },
@@ -73,11 +88,11 @@
       "gaugeMm": 1.25
     },
     "grommets": {
-      "color": "#2fc4b2",
+      "color": "#10b8af",
       "channel": 0.45
     },
     "bumper": {
-      "color": "#2fc4b2"
+      "color": "#10b8af"
     },
     "dampener": null
   },
@@ -118,18 +133,33 @@
           {
             "from": 0.5,
             "to": 1,
-            "color": "#2fc4b2",
-            "blend": 0.15
+            "color": "#10b8af",
+            "blend": 0.22,
+            "side": "left"
           },
           {
-            "from": 0.275,
-            "to": 0.305,
-            "color": "#2fc4b2"
+            "from": 0.465,
+            "to": 1,
+            "color": "#10b8af",
+            "side": "right"
           },
           {
-            "from": 0.235,
-            "to": 0.265,
-            "color": "#bfeee6"
+            "from": 0.4,
+            "to": 0.44,
+            "color": "#b5e6e0",
+            "side": "right"
+          },
+          {
+            "from": 0.225,
+            "to": 0.245,
+            "color": "#10b8af",
+            "side": "left"
+          },
+          {
+            "from": 0.19,
+            "to": 0.215,
+            "color": "#b5e6e0",
+            "side": "left"
           }
         ]
       }

@@ -43,18 +43,19 @@
       {
         "from": 0.4,
         "to": 1,
-        "color": "#dff23a",
-        "blend": 0.04
+        "color": "#e8f520"
       },
       {
-        "from": 0.235,
-        "to": 0.265,
-        "color": "#dff23a"
+        "from": 0.21,
+        "to": 0.235,
+        "color": "#1f2a33",
+        "side": "left"
       },
       {
-        "from": 0.275,
-        "to": 0.305,
-        "color": "#23282b"
+        "from": 0.18,
+        "to": 0.205,
+        "color": "#e8f520",
+        "side": "left"
       }
     ]
   },
@@ -73,11 +74,11 @@
       "gaugeMm": 1.25
     },
     "grommets": {
-      "color": "#dff23a",
+      "color": "#e8f520",
       "channel": 0.45
     },
     "bumper": {
-      "color": "#dff23a"
+      "color": "#e8f520"
     },
     "dampener": null
   },

@@ -41,20 +41,22 @@
     "finish": "satin",
     "zones": [
       {
-        "from": 0.56,
-        "to": 0.63,
-        "color": "#2f4fc4",
+        "from": 0.21,
+        "to": 0.245,
+        "color": "#de1f22",
         "faces": [
           "outer"
-        ]
+        ],
+        "side": "left"
       },
       {
-        "from": 0.63,
-        "to": 0.72,
-        "color": "#e8372f",
+        "from": 0.17,
+        "to": 0.2,
+        "color": "#2323bd",
         "faces": [
           "outer"
-        ]
+        ],
+        "side": "left"
       }
     ]
   },

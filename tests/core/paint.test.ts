@@ -158,3 +158,23 @@ test('a zone edge at the throat fork is hard between the arm and the shaft', () 
   expect(Math.min(...white)).toBeLessThan(0.12); // the shaft side is inside the zone
   expect(Math.max(...black)).toBeGreaterThan(0.12); // the arm side is outside it
 });
+
+test('a zone with a side paints only that half of the racquet; left is -X, seen from the front', () => {
+  const s = makeSpec({ paint: { base: '#ffffff', finish: 'matte', zones: [{ from: 0.5, to: 0.8, color: '#ff0000', side: 'left' }] } });
+  const g = buildFrame(s, computeLayout(s, HOOP_RADIAL[s.geometry.beam.profile]));
+  applyPaint(g, s.paint);
+  const pos = g.getAttribute('position'), u = g.getAttribute('u'), c = g.getAttribute('color');
+  let left = 0, right = 0;
+  for (let i = 0; i < pos.count; i++) {
+    if (u.getX(i) < 0.52 || u.getX(i) > 0.78) continue;
+    const red = c.getY(i) < 0.5;
+    if (pos.getX(i) < 0) { expect(red).toBe(true); left++; } else { expect(red).toBe(false); right++; }
+  }
+  expect(left).toBeGreaterThan(0); expect(right).toBeGreaterThan(0);
+});
+test('a lookup with no side skips sided zones (trim parts)', () => {
+  const paint: RacquetSpec['paint'] = { base: '#ffffff', finish: 'matte', zones: [{ from: 0, to: 1, color: '#ff0000', side: 'right' }] };
+  expect(paintColorAt(paint, 0.5)).toEqual(hexToLinear('#ffffff'));
+  expect(paintColorAt(paint, 0.5, undefined, 'right')).toEqual(hexToLinear('#ff0000'));
+  expect(zonedAt(paint, 0.5, undefined, 'left')).toBe(false);
+});
