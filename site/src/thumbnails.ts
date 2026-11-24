@@ -60,7 +60,7 @@ export class Thumbnails {
     private readonly transfer: boolean,
   ) {
     renderer.setPixelRatio(1); // we size the drawing buffer in device pixels ourselves
-    this.scene = createStudio(renderer);
+    this.scene = createStudio(renderer, 1024).scene;
     this.painter = new LookPainter(renderer);
     this.camera.position.set(0, 0, 3);
     this.seen = new IntersectionObserver((records) => {
