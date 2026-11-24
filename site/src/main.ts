@@ -152,7 +152,6 @@ async function boot() {
   a.gl = await loadGL();
   a.thumbs = a.gl?.Thumbnails.create() ?? null;
   a.thumbs?.setLook(a.look);
-  document.documentElement.dataset.look = a.look;
   for (const attach of pendingBays) attach(a.thumbs);
   pendingBays = [];
   glSettled = true;
@@ -262,7 +261,6 @@ function lookControl(a: App): HTMLElement {
 function setLook(a: App, look: Look) {
   if (a.look === look) return;
   a.look = look;
-  document.documentElement.dataset.look = look;
   storeLook(look);
   for (const group of lookControls) {
     if (!group.isConnected && group !== headerLook) {

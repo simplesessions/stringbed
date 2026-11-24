@@ -18,7 +18,7 @@ const GLIDE_MS = 720;
 const REVEAL_AFTER_MS = 350;
 const REVEAL_MS = 900;
 /** Stage-sized cells and lines, in CSS px. */
-const LOOK_SCALE: LookScale = { cell: 6, outline: 1.5, dot: 6 };
+const LOOK_SCALE: LookScale = { cell: 6, outline: 1.5, dot: 4.5, hatch: 7 };
 
 export class Viewer {
   readonly canvas: HTMLCanvasElement;
@@ -38,6 +38,7 @@ export class Viewer {
   private look: Look = 'realistic';
   private home: Pose = { target: new Vector3(), offset: new Vector3(0, 0, 1) };
   private glide: { from: Pose; to: Pose; start: number; done: () => void } | null = null;
+  private reveal = 0;
   private lit = 0; // when the alcove's light began to come up; 0 before the first racquet
 
   static create(): Viewer | null {
@@ -85,7 +86,7 @@ export class Viewer {
     this.frame = 0;
     this.glide = null;
     this.lit = 0;
-    this.alcove.reveal = 0;
+    this.alcove.reveal = this.reveal = 0;
     this.resized.disconnect();
     this.canvas.remove();
   }
@@ -263,13 +264,14 @@ export class Viewer {
     const yaw = this.controls.getAzimuthalAngle();
     const there = presence(this.camera.position, this.controls.target, this.box.min.y);
     this.studio.face(yaw, 1 - there.floor);
-    // The other looks redraw the racquet alone, on the stage's own flat panel: the alcove leaves
-    // the scene, so they never see it.
-    const staged = this.look === 'realistic' && this.model !== null;
-    if (staged) this.studio.scene.add(this.alcove.node);
+    // The other looks draw the racquet alone, so the alcove leaves the scene; they get its light and
+    // shadow as data and redraw them in their own medium.
+    const realistic = this.look === 'realistic';
+    if (realistic && this.model) this.studio.scene.add(this.alcove.node);
     else this.alcove.node.removeFromParent();
-    if (staged) this.alcove.update(this.renderer, this.studio.scene, this.camera, yaw, this.box.min.y, there);
-    this.painter.render(this.studio.scene, this.camera, this.renderer.getPixelRatio(), LOOK_SCALE);
+    if (this.model) this.alcove.update(this.renderer, this.studio.scene, this.camera, yaw, this.box.min.y, there);
+    const stage = !realistic && this.model ? { data: this.alcove.asData(this.renderer, this.camera), reveal: this.reveal } : null;
+    this.painter.render(this.studio.scene, this.camera, this.renderer.getPixelRatio(), LOOK_SCALE, stage);
   }
 
   private loop = (now: number) => {
@@ -287,7 +289,7 @@ export class Viewer {
     }
     if (this.lit && this.lit !== Infinity) {
       const t = prefersReducedMotion() ? 1 : MathUtils.clamp((now - this.lit - REVEAL_AFTER_MS) / REVEAL_MS, 0, 1);
-      this.alcove.reveal = MathUtils.smoothstep(t, 0, 1);
+      this.alcove.reveal = this.reveal = MathUtils.smoothstep(t, 0, 1);
       this.dirty = true;
       if (t === 1) this.lit = Infinity;
     }

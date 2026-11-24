@@ -23,6 +23,7 @@ import {
   type Camera,
   type Material,
   type Object3D,
+  type Texture,
   type WebGLRenderer,
 } from 'three';
 import type { Look } from './look';
@@ -35,11 +36,36 @@ export interface LookScale {
   outline: number;
   /** Halftone look: dot pitch along the screen. */
   dot: number;
+  /** Line look: distance between the strokes of a hatched shadow. */
+  hatch: number;
 }
+
+/** The alcove behind the racquet, as light and shadow amounts for a look to draw its own way. */
+export interface LookStage {
+  /** Red: how lit, green: how shadowed, 0 to 1. */
+  data: Texture;
+  /** 0: racquet only, 1: the alcove is fully there. */
+  reveal: number;
+}
+
+/** What the alcove is drawn with, as sRGB 0..1 (written to the canvas as is). */
+const srgb = (hex: number) => new Vector3(((hex >> 16) & 255) / 255, ((hex >> 8) & 255) / 255, (hex & 255) / 255);
+
+// Shared by the looks. A look works out its racquet as premultiplied sRGB, then lays it over its
+// own drawing of the alcove; with no stage (the thumbnails) only the racquet is left.
+const stageChunk = /* glsl */ `
+  uniform sampler2D tStage;
+  uniform float reveal;
+  vec2 stageAt(vec2 uv) { return texture2D(tStage, clamp(uv, 0.0, 1.0)).rg; }
+  vec4 over(vec4 racquet, vec3 ground) {
+    float show = (1.0 - racquet.a) * reveal;
+    return vec4(racquet.rgb + ground * show, racquet.a + show);
+  }`;
+const stageUniforms = () => ({ tStage: { value: null as Texture | null }, reveal: { value: 0 } });
 
 /** The design system's ink, oklch(0.23 0.01 75), as sRGB 0..1 (written to the canvas as is). */
 const INK = new Vector3(0x20 / 255, 0x1c / 255, 0x18 / 255);
-const LEVELS = 10; // pixel look: colour levels per channel
+const LEVELS = 10; // pixel look: brightness levels
 
 const fullscreenVertex = /* glsl */ `
   varying vec2 vUv;
@@ -54,13 +80,35 @@ const pixelFragment = /* glsl */ `
   uniform vec2 resolution;
   uniform float cell;
   uniform float levels;
+  uniform vec3 toneDark;
+  uniform vec3 toneLight;
+  ${stageChunk}
+
+  // Ordered dither, one threshold a cell.
+  float bayer(vec2 i) {
+    i = mod(i, 4.0);
+    float a = mod(i.x, 2.0) * 2.0 + mod(i.y, 2.0) * 3.0 - mod(i.x, 2.0) * mod(i.y, 2.0) * 4.0;
+    vec2 j = floor(i / 2.0);
+    float b = j.x * 2.0 + j.y * 3.0 - j.x * j.y * 4.0;
+    return (a * 4.0 + b + 0.5) / 16.0;
+  }
+  // The alcove in a handful of tones, stepped and dithered by the cell.
+  vec3 ground() {
+    if (reveal <= 0.0) return vec3(0.0);
+    vec2 idx = floor(gl_FragCoord.xy / cell);
+    vec2 st = stageAt((idx + 0.5) * cell / resolution);
+    float v = mix(0.42, 1.0, st.r) * (1.0 - 0.72 * st.g);
+    float steps = 7.0;
+    v = clamp(floor(v * steps + bayer(idx)) / steps, 0.0, 1.0);
+    return mix(toneDark, toneLight, v);
+  }
   void main() {
     // Every canvas pixel in a cell reads the same low-res texel: crisp squares.
     vec2 base = floor(gl_FragCoord.xy / cell) * cell;
     vec2 uv = clamp((base + 0.5 * cell) / resolution, 0.0, 1.0);
     vec4 c = texture2D(tColor, uv);
     float alpha = 1.0;
-    if (c.a < 0.5) {
+    if (c.a < 0.34) {
       // Strings are thinner than a cell (at thumbnail size thinner than even the 4x pass can
       // always catch), so the bed is found from a 7x7 sample over three cells around this one:
       // wide enough to bridge the gaps, and the frame (thicker than a cell) hides the overreach.
@@ -71,48 +119,73 @@ const pixelFragment = /* glsl */ `
         sum += texture2D(tStrings, clamp(at / resolution, 0.0, 1.0));
       }
       sum /= 49.0;
-      if (sum.a < 0.01) { gl_FragColor = vec4(0.0); return; }
+      if (sum.a < 0.01) { gl_FragColor = over(vec4(0.0), ground()); return; }
       c = vec4(sum.rgb / sum.a, 1.0);
       // One flat string colour: keep the hue, drop the lighting, so the bed has no blotches.
       c.rgb = c.rgb / max(max(c.r, max(c.g, c.b)), 1e-4) * 0.85;
       vec2 idx = floor(gl_FragCoord.xy / cell);
       bool line = mod(idx.x, 3.0) < 0.5 || mod(idx.y, 3.0) < 0.5;
-      alpha = line ? 0.6 : 0.14;
+      alpha = line ? 0.72 : 0.2;
     }
     gl_FragColor = vec4(c.rgb / c.a, 1.0);
     #include <tonemapping_fragment>
     #include <colorspace_fragment>
-    gl_FragColor.rgb = floor(gl_FragColor.rgb * levels + 0.5) / levels;
-    gl_FragColor = vec4(gl_FragColor.rgb * alpha, alpha);
+    // Step the brightness, not each channel: a warm white must not break into pink and yellow.
+    float peak = max(gl_FragColor.r, max(gl_FragColor.g, gl_FragColor.b));
+    gl_FragColor.rgb *= floor(peak * levels + 0.5) / levels / max(peak, 1e-4);
+    gl_FragColor = over(vec4(gl_FragColor.rgb * alpha, alpha), ground());
   }`;
 
-// Halftone: a 45-degree dot screen. Each dot takes the colour under its centre; its size follows
-// how dark that colour is (shadow = big dots, highlight = small), so the racquet reads as if
-// printed in a catalogue, in its own colours, on the bare wall.
+// Halftone: a 45-degree dot screen. Each dot takes the mean colour of its cell; its size follows how
+// dark that colour is (shadow = big dots, highlight = small) and how much of the cell the racquet
+// fills, so thin strings print as an even row of small dots instead of a broken one. On the stage a
+// second plate prints the alcove in one warm ink, knocked out where the racquet prints.
 const halftoneFragment = /* glsl */ `
   uniform sampler2D tColor;
   uniform vec2 resolution;
   uniform float pitch;
+  uniform vec3 paper;
+  uniform vec3 groundInk;
+  ${stageChunk}
   const float ANGLE = 0.7853982;
+  float dotCover(float d, float r) { return r <= 0.0 ? 0.0 : 1.0 - smoothstep(r - 0.75, r + 0.75, d); }
   void main() {
     mat2 rot = mat2(cos(ANGLE), -sin(ANGLE), sin(ANGLE), cos(ANGLE));
     vec2 p = rot * gl_FragCoord.xy;
     vec2 cellCentre = (floor(p / pitch) + 0.5) * pitch;
-    vec2 centre = transpose(rot) * cellCentre;
-    vec4 c = texture2D(tColor, clamp(centre / resolution, 0.0, 1.0));
-    if (c.a < 0.3) { gl_FragColor = vec4(0.0); return; }
-    gl_FragColor = vec4(c.rgb / c.a, 1.0);
-    #include <tonemapping_fragment>
-    #include <colorspace_fragment>
-    vec3 ink = gl_FragColor.rgb;
-    float lum = dot(ink, vec3(0.2126, 0.7152, 0.0722));
-    // Radius as a fraction of the pitch: light colours still get a readable dot.
-    float r = pitch * mix(0.26, 0.66, sqrt(1.0 - lum)) * clamp(c.a, 0.0, 1.0);
     float d = length(p - cellCentre);
-    float cover = 1.0 - smoothstep(r - 0.75, r + 0.75, d);
-    // Deepen the ink a touch so small dots keep their colour against the wall.
-    ink = mix(ink, ink * ink, 0.25);
-    gl_FragColor = vec4(ink * cover, cover);
+    vec2 centre = transpose(rot) * cellCentre;
+
+    vec4 c = vec4(0.0);
+    for (int i = -1; i <= 1; i++) for (int j = -1; j <= 1; j++) {
+      vec2 at = transpose(rot) * (cellCentre + vec2(float(i), float(j)) * pitch / 3.0);
+      c += texture2D(tColor, clamp(at / resolution, 0.0, 1.0));
+    }
+    c /= 9.0;
+
+    vec4 racquet = vec4(0.0);
+    if (c.a > 0.06) {
+      gl_FragColor = vec4(c.rgb / c.a, 1.0);
+      #include <tonemapping_fragment>
+      #include <colorspace_fragment>
+      vec3 ink = gl_FragColor.rgb;
+      float lum = dot(ink, vec3(0.2126, 0.7152, 0.0722));
+      // Radius as a fraction of the pitch: light colours still get a dot that reads as a colour.
+      float r = pitch * mix(0.46, 0.72, sqrt(1.0 - lum)) * sqrt(clamp(c.a * 1.6, 0.0, 1.0));
+      // Deepen the ink a touch so small dots keep their colour against the wall.
+      ink = mix(ink, ink * ink, 0.25);
+      float cover = dotCover(d, r);
+      racquet = vec4(ink * cover, cover);
+    }
+
+    vec3 ground = paper;
+    if (reveal > 0.0 && c.a <= 0.06) {
+      vec2 st = stageAt(centre / resolution);
+      // Bare paper in the pool of light; the plate builds towards the edges and in the shadow.
+      float dark = 0.22 * smoothstep(0.25, 0.95, 1.0 - st.r) + 0.5 * st.g;
+      ground = mix(paper, groundInk, dotCover(d, pitch * 0.62 * sqrt(clamp(dark, 0.0, 1.0))));
+    }
+    gl_FragColor = over(racquet, ground);
   }`;
 
 const gbufferVertex = /* glsl */ `
@@ -144,7 +217,31 @@ const lineFragment = /* glsl */ `
   uniform float depthStep;
   uniform vec3 ink;
   uniform sampler2D tFill;
+  uniform float hatch;
+  uniform vec3 paper;
+  uniform vec3 paperEdge;
+  ${stageChunk}
   varying vec2 vUv;
+
+  // One set of parallel strokes, as wide as the tone asks for, with a hand's slight unevenness.
+  float strokes(vec2 at, float angle, float tone) {
+    vec2 dir = vec2(cos(angle), sin(angle));
+    float along = dot(at, dir);
+    float across = dot(at, vec2(-dir.y, dir.x));
+    across += sin(along / hatch * 0.31 + floor(across / hatch) * 2.4) * hatch * 0.06;
+    float d = abs(fract(across / hatch) - 0.5) * hatch;
+    float w = hatch * 0.24 * tone;
+    return tone <= 0.02 ? 0.0 : (1.0 - smoothstep(w - 0.6, w + 0.6, d)) * smoothstep(0.02, 0.16, tone);
+  }
+  // Warm paper, lit by the same pool, with the shadow hatched in; the deepest part is crossed.
+  vec3 ground() {
+    if (reveal <= 0.0) return vec3(0.0);
+    vec2 st = stageAt(vUv);
+    vec3 sheet = mix(paperEdge, paper, st.r);
+    float s = strokes(gl_FragCoord.xy, 0.96, st.g);
+    s = max(s, 0.8 * strokes(gl_FragCoord.xy, -0.62, smoothstep(0.55, 1.0, st.g)));
+    return mix(sheet, ink, s * 0.5);
+  }
 
   vec3 toSRGB(vec3 c) {
     return mix(c * 12.92, 1.055 * pow(max(c, vec3(0.0)), vec3(1.0 / 2.4)) - 0.055, step(0.0031308, c));
@@ -202,7 +299,7 @@ const lineFragment = /* glsl */ `
     float fa = max(b0, isString(g0.a) * 0.55);
     vec3 base = toSRGB(fill * (b0 > 0.5 ? tone : 1.0));
     // Ink over fill, premultiplied (the canvas is premultiplied alpha).
-    gl_FragColor = vec4(ink * a + base * fa * (1.0 - a), a + fa * (1.0 - a));
+    gl_FragColor = over(vec4(ink * a + base * fa * (1.0 - a), a + fa * (1.0 - a)), ground());
   }`;
 
 function fullscreen(material: ShaderMaterial): { scene: Scene; material: ShaderMaterial } {
@@ -223,12 +320,12 @@ export class LookPainter {
   private colorTarget: WebGLRenderTarget | null = null;
   private gTarget: WebGLRenderTarget | null = null;
   private readonly pixel = fullscreen(new ShaderMaterial({
-    uniforms: { tColor: { value: null }, tStrings: { value: null }, resolution: { value: new Vector2() }, cell: { value: 4 }, levels: { value: LEVELS } },
+    uniforms: { tColor: { value: null }, tStrings: { value: null }, resolution: { value: new Vector2() }, cell: { value: 4 }, levels: { value: LEVELS }, toneDark: { value: srgb(0x9c8a74) }, toneLight: { value: srgb(0xd9ccb7) }, ...stageUniforms() },
     vertexShader: fullscreenVertex,
     fragmentShader: pixelFragment,
   }));
   private readonly halftone = fullscreen(new ShaderMaterial({
-    uniforms: { tColor: { value: null }, resolution: { value: new Vector2() }, pitch: { value: 5 } },
+    uniforms: { tColor: { value: null }, resolution: { value: new Vector2() }, pitch: { value: 5 }, paper: { value: srgb(0xd9cdba) }, groundInk: { value: srgb(0xa08c74) }, ...stageUniforms() },
     vertexShader: fullscreenVertex,
     fragmentShader: halftoneFragment,
   }));
@@ -246,6 +343,10 @@ export class LookPainter {
       depthStep: { value: 0.015 },
       ink: { value: INK },
       tFill: { value: null },
+      hatch: { value: 7 },
+      paper: { value: srgb(0xeee6d9) },
+      paperEdge: { value: srgb(0xd9cdbb) },
+      ...stageUniforms(),
     },
     vertexShader: fullscreenVertex,
     fragmentShader: lineFragment,
@@ -275,9 +376,16 @@ export class LookPainter {
     this.look = look;
   }
 
-  /** Draw `scene` to the canvas in the current look. `scale` is device px per CSS px. */
-  render(scene: Scene, camera: Camera, scale: number, sizes: LookScale): void {
+  /**
+   * Draw `scene` to the canvas in the current look. `scale` is device px per CSS px. `stage` is the
+   * alcove to draw behind it; without one the racquet stands on a clear canvas.
+   */
+  render(scene: Scene, camera: Camera, scale: number, sizes: LookScale, stage: LookStage | null = null): void {
     const r = this.renderer;
+    for (const { material } of [this.pixel, this.halftone, this.line]) {
+      material.uniforms.tStage.value = stage?.data ?? null;
+      material.uniforms.reveal.value = stage?.reveal ?? 0;
+    }
     if (this.look === 'realistic') {
       r.setRenderTarget(null);
       r.render(scene, camera);
@@ -295,7 +403,7 @@ export class LookPainter {
   private renderHalftone(scene: Scene, camera: Camera, w: number, h: number, pitch: number) {
     const r = this.renderer;
     // Full resolution, linear and half float: the screen samples it at each dot's centre.
-    this.halftoneTarget ??= new WebGLRenderTarget(w, h, { type: HalfFloatType, depthBuffer: true });
+    this.halftoneTarget ??= new WebGLRenderTarget(w, h, { type: HalfFloatType, depthBuffer: true, samples: 4 });
     const t = this.halftoneTarget;
     if (t.width !== w || t.height !== h) t.setSize(w, h);
     r.setRenderTarget(t);
@@ -313,7 +421,7 @@ export class LookPainter {
     const lw = Math.ceil(w / cell);
     const lh = Math.ceil(h / cell);
     // Half float keeps highlights above 1 so the blit's tone mapping matches Realistic.
-    this.colorTarget ??= new WebGLRenderTarget(lw, lh, { type: HalfFloatType, minFilter: NearestFilter, magFilter: NearestFilter, depthBuffer: true });
+    this.colorTarget ??= new WebGLRenderTarget(lw, lh, { type: HalfFloatType, minFilter: NearestFilter, magFilter: NearestFilter, depthBuffer: true, samples: 4 });
     const t = this.colorTarget;
     if (t.width !== lw || t.height !== lh) t.setSize(lw, lh);
     // Pass 1: everything but the strings at cell resolution. Pass 2: only the strings at 4x.
@@ -390,6 +498,7 @@ export class LookPainter {
     u.cameraFar.value = cam.far;
     u.perspective.value = cam.isPerspectiveCamera ? 1 : 0;
     u.outline.value = Math.max(1, sizes.outline * scale);
+    u.hatch.value = sizes.hatch * scale;
     r.render(this.line.scene, this.quadCamera);
   }
 }

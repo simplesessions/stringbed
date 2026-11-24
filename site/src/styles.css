@@ -593,8 +593,6 @@ main { flex: 1; padding: 6px var(--pad) 72px; overflow-x: clip; }
   border-radius: 12px;
   background: radial-gradient(70% 62% at 47% 42%, var(--niche-lit), var(--niche));
 }
-/* Print looks (pixel, line, halftone) are drawn for a flat ground. */
-:root[data-look]:not([data-look='realistic']) .niche { background: var(--wall-2); }
 .stage-model { position: absolute; inset: 0; overflow: hidden; border-radius: 12px; }
 .stage:focus-visible { outline-offset: 2px; }
 .stage canvas { position: absolute; top: 0; left: 0; display: block; width: 100%; height: 100%; touch-action: none; cursor: grab; }
