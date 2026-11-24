@@ -17,6 +17,7 @@ import {
   CustomBlending,
   DoubleSide,
   Group,
+  HalfFloatType,
   LinearFilter,
   MathUtils,
   Matrix4,
@@ -117,6 +118,7 @@ const shared = /* glsl */ `
   uniform vec3 pool;
   uniform vec2 resolution;
   uniform float reveal;
+  uniform float asData;
 
   float blob(vec2 p, vec2 size) { p /= size; return exp(-dot(p, p)); }
 
@@ -127,11 +129,18 @@ const shared = /* glsl */ `
          + 0.38 * blob(p + vec2(0.04, -0.19), vec2(0.42, 0.46));
   }
 
-  vec3 lit(float light) {
-    // The niche's own edges: a soft fall-off at the lintel and the sides.
+  // The niche's own edges: a soft fall-off at the lintel and the sides.
+  float edges() {
     vec2 uv = gl_FragCoord.xy / resolution;
     vec2 e = vec2(min(uv.x, 1.0 - uv.x) * resolution.x / resolution.y, 1.0 - uv.y);
-    return mix(shade, pool, clamp(light, 0.0, 1.0)) * (1.0 - 0.07 * exp(-e.y / 0.10) - 0.05 * exp(-e.x / 0.09));
+    return 1.0 - 0.07 * exp(-e.y / 0.10) - 0.05 * exp(-e.x / 0.09);
+  }
+  vec3 lit(float light) {
+    return mix(shade, pool, clamp(light, 0.0, 1.0)) * edges();
+  }
+  // For the print looks: how lit (0 to 1) and how shadowed (0 to 1) this point is, not its colour.
+  vec3 data(float light, float shadow) {
+    return vec3(clamp(light, 0.0, 1.0) * edges(), clamp(shadow / 0.62, 0.0, 1.0), 0.0);
   }
 
   // A light gradient this wide bands in 8 bits without a little noise.
@@ -145,7 +154,9 @@ const groundFragment = /* glsl */ `
   uniform vec2 metres;
   varying vec2 vNdc;
   void main() {
-    gl_FragColor = vec4(lit(wash((vNdc - centre) * metres)), 1.0);
+    float light = wash((vNdc - centre) * metres);
+    if (asData > 0.5) { gl_FragColor = vec4(data(light, 0.0), 1.0); return; }
+    gl_FragColor = vec4(lit(light), 1.0);
     #include <colorspace_fragment>
     gl_FragColor = vec4(dithered(gl_FragColor.rgb), 1.0) * reveal;
   }`;
@@ -178,6 +189,7 @@ const surfaceFragment = /* glsl */ `
     float onFloor = step(abs(vLocal.y), 0.002);
     s = max(s, 0.55 * blob(vLocal.xz, vec2(0.034, 0.030)) * onFloor);
     s = max(s, 0.22 * blob(vLocal.xz, vec2(0.11, 0.085)) * onFloor);
+    if (asData > 0.5) { gl_FragColor = vec4(data(light, s) * presence, presence); return; }
     c = mix(c, c * shadowTint, s);
 
     gl_FragColor = vec4(c, 1.0);
@@ -211,6 +223,9 @@ const target = (px: number, samples = 0) =>
 export class Alcove {
   readonly node = new Group();
   private readonly uniforms: Record<string, { value: unknown }>;
+  /** Holds the layers alone while they are drawn as data. */
+  private readonly apart = new Scene();
+  private readonly dataTarget = new WebGLRenderTarget(1, 1, { type: HalfFloatType, minFilter: LinearFilter, magFilter: LinearFilter, depthBuffer: false });
   private readonly wallPresence = { value: 1 };
   private readonly floorPresence = { value: 1 };
   private readonly light = new OrthographicCamera(-SHADOW_SPAN / 2, SHADOW_SPAN / 2, SHADOW_SPAN / 2, -SHADOW_SPAN / 2, 0.1, 4);
@@ -240,6 +255,7 @@ export class Alcove {
       shadowTint: { value: new Color(0x8a7460) },
       resolution: { value: new Vector2(1, 1) },
       reveal: { value: 1 },
+      asData: { value: 0 },
       centre: { value: new Vector2() },
       metres: { value: new Vector2(1, 1) },
     };
@@ -310,6 +326,24 @@ export class Alcove {
     this.smear(renderer, this.near[0].texture, this.far, 1.15);
     renderer.setRenderTarget(null);
     renderer.shadowMap.autoUpdate = shadows;
+  }
+
+  /** The alcove as light and shadow amounts (red and green), for a look to redraw its own way. */
+  asData(renderer: WebGLRenderer, camera: PerspectiveCamera): Texture {
+    const size = this.uniforms.resolution.value as Vector2;
+    // Both are smooth, so half size is plenty.
+    const w = Math.max(1, Math.ceil(size.x / 2));
+    const h = Math.max(1, Math.ceil(size.y / 2));
+    if (this.dataTarget.width !== w || this.dataTarget.height !== h) this.dataTarget.setSize(w, h);
+    size.set(w, h);
+    this.uniforms.asData.value = 1;
+    this.apart.add(this.node);
+    renderer.setRenderTarget(this.dataTarget);
+    renderer.render(this.apart, camera);
+    renderer.setRenderTarget(null);
+    this.node.removeFromParent();
+    this.uniforms.asData.value = 0;
+    return this.dataTarget.texture;
   }
 
   private smear(renderer: WebGLRenderer, source: Texture, [out, scratch]: WebGLRenderTarget[], spread: number) {

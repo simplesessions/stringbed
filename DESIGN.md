@@ -123,8 +123,7 @@ racquet swatches as the only colour.
 - **Shop Wall** (`wall`, about #dbd9d5): the page ground everywhere, including behind every 3D
   render (both renderers clear to transparent). Mid-light on purpose: white frames and black
   frames both separate from it.
-- **Wall Shadow** (`wall-deep`, about #ceccc7): hover fill for signs, the notice band, code chips,
-  the flat stage panel behind the pixel, line and halftone looks.
+- **Wall Shadow** (`wall-deep`, about #ceccc7): hover fill for signs, the notice band, code chips.
 - **Niche** (`niche` to `niche-lit`): the detail stage's alcove, the same wall under a warm lamp.
   Only there, and never over 0.03 chroma: it is light on plaster, not a colour.
 - **Shelf Rail** (`rail`, about #b4b1ab): the 3 px rail each row of racquets stands on. Decorative
@@ -204,7 +203,12 @@ up into a wall, a pool of warm light behind the head, and the racquet's own shad
 butt cap and melting as it climbs. The light comes up once the racquet has landed. The floor
 dissolves as the camera sinks to its level and the wall after it, so nothing ever cuts across the
 view; from below the racquet hangs in the same light, with a soft glow on its butt cap. Thumbnails get
-the lighting without the alcove; pixel, line and halftone stand on a flat panel.
+the lighting without the alcove.
+
+The other looks stand in the same alcove, each redrawing its light and shadow in its own medium
+(`site/src/look-passes.ts`): pixel in a few dithered tones by the cell, line as warm paper with
+the shadow hatched in, halftone as a second plate of warm dots, bare in the pool of light. All
+their grounds keep to the niche's hue, and stay dark enough for white strings to show.
 
 ### Named Rules
 **The Renders Carry Depth Rule.** If an element needs a shadow to be noticed, it is
