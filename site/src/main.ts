@@ -25,6 +25,9 @@ import {
   isJunior,
   generationsOf,
   generationShort,
+  lineageName,
+  neighboursOf,
+  stepName,
   groupPlaceholders,
   placeholderLabel,
   parseRoute,
@@ -47,6 +50,7 @@ import { el, icon, silhouette } from './dom';
 import { fetchModelBytes } from './prefetch';
 import { loadProfiles } from './profiles';
 import { profileView, type Rival } from './profile-view';
+import { lineupView } from './lineup-view';
 import { play, setSound, soundOn, storedSound } from './sound';
 import { LOOKS, LOOK_LABEL, storedLook, storeLook, type Look } from './look';
 import type { Thumbnails, ThumbState, Viewer } from './gl';
@@ -470,8 +474,8 @@ function brandFloor(a: App, brand: string): HTMLElement[] {
 /**
  * A line's shelf: one pinned racquet and a line-up of its variants. The variants of a line
  * (100, 98, Team, Lite) are near-identical frames, so they are not stood in a row of look-alikes:
- * the stage holds one racquet, the line-up lists every variant at one size, and choosing a row
- * swaps the racquet in the stage.
+ * the stage holds one racquet, the line-up lists every variant at one size. Pointing at a row (or
+ * tabbing to it) stands that racquet in the stage; clicking the row opens it.
  */
 function shelf(a: App, sh: Shelf): HTMLElement {
   const picked = a.shelfGen.get(sh.lineage);
@@ -505,22 +509,23 @@ function shelf(a: App, sh: Shelf): HTMLElement {
   const readout = el('dl', { class: 'readout' });
   const open = el('a', { class: 'button lineup-open' });
   stageLink.append(slotHost, el('span', { class: 'shelf-rail' }), title);
-  stageLink.addEventListener('click', () => {
+  const opening = () => {
     // Name only the clicked racquet (not its tinted panel), so the racquet alone flies into the
     // detail stage while the panel's background fades away with the rest of the page.
     for (const old of wall.querySelectorAll<HTMLElement>('.shelf-slots[style*="view-transition-name"]')) old.style.viewTransitionName = '';
     slotHost.style.viewTransitionName = 'racquet';
     a.lastOpened = family.id;
-  });
+  };
+  stageLink.addEventListener('click', opening);
 
   let current: Racquet | null = null;
-  const rows: HTMLButtonElement[] = [];
+  const rows: HTMLAnchorElement[] = [];
   const select = (r: Racquet, how: 'first' | 'swap') => {
     if (current === r) return;
     const dir = current ? Math.sign(members.indexOf(r) - members.indexOf(current)) || 1 : 0;
     current = r;
     a.shelfPick.set(family.id, r.id);
-    rows.forEach((b, i) => b.setAttribute('aria-pressed', String(members[i] === r)));
+    rows.forEach((row, i) => row.classList.toggle('is-on', members[i] === r));
     // The next racquet arrives on a spring from the side it sits on in the list; the old one leaves.
     const canvas = el('canvas', { class: 'bay-canvas', 'aria-hidden': 'true' });
     const slot = el('span', { class: 'slot', style: `--swatch: ${r.swatch}; --dir: ${dir}`, 'data-id': r.id }, silhouette(r.specs.headSizeSqIn), canvas);
@@ -555,19 +560,23 @@ function shelf(a: App, sh: Shelf): HTMLElement {
   const lineup = el('ul', { class: 'lineup', role: 'list', 'aria-label': `${sh.name} variants` },
     ...members.map((r) => {
       const s = r.specs;
-      const btn = el('button', { class: 'lineup-row', type: 'button', 'aria-pressed': 'false' },
+      const row = el('a', { class: 'lineup-row', href: routeFor(r.id), draggable: 'false' },
         el('span', { class: 'lineup-name' }, r.variantLabel ?? wallName(r)),
         el('span', { class: 'lineup-spec' }, [formatHeadSize(s.headSizeSqIn).primary, formatPattern(s.stringPattern), isJunior(r) ? `${s.lengthIn} in` : null].filter(Boolean).join(' · ')),
         r.colourways?.length ? el('span', { class: 'lineup-more' }, `${r.colourways.length + 1} colourways`) : null,
+        icon('next'),
       );
-      rows.push(btn);
-      btn.addEventListener('click', () => select(r, 'swap'));
-      btn.addEventListener('focus', () => select(r, 'swap'));
-      // A mouse previews on hover; touch and keyboard choose.
-      btn.addEventListener('pointerenter', (e) => {
+      rows.push(row);
+      row.addEventListener('focus', () => select(r, 'swap'));
+      row.addEventListener('pointerenter', (e) => {
         if (e.pointerType === 'mouse') select(r, 'swap');
       });
-      return el('li', {}, btn);
+      row.addEventListener('click', (e) => {
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return; // a new tab or window: this page stays
+        select(r, 'swap'); // a tap gives no hover, so make sure this racquet is the one that flies
+        opening();
+      });
+      return el('li', {}, row);
     }),
   );
   select(initial, 'first');
@@ -605,48 +614,31 @@ function thumbnail(a: App, r: Racquet, item: HTMLElement, canvas: HTMLCanvasElem
   else pendingBays.push(attach);
 }
 
+let activeTransition: { skipTransition(): void } | null = null;
+
+/** Finish any running transition at once; the page underneath is already in its end state. */
+function settle(): void {
+  activeTransition?.skipTransition();
+  activeTransition = null;
+}
+
 /**
  * Run a DOM change as a view transition where the browser has them and motion is welcome.
  */
-function transition(change: () => void, local = false): void {
-  const doc = document as Document & { startViewTransition?: (cb: () => Promise<void> | void) => { finished: Promise<void> } };
+function transition(change: () => void): void {
+  const doc = document as Document & { startViewTransition?: (cb: () => Promise<void> | void) => { finished: Promise<void>; skipTransition(): void } };
+  settle(); // the newest click wins
   if (!doc.startViewTransition || matchMedia('(prefers-reduced-motion: reduce)').matches) {
     change();
     return;
   }
-  if (local) {
-    // Moving between variants of one racquet: the page stays put. Each block of the sheet is its
-    // own transition piece, so what is unchanged looks still, what changed cross-fades, and
-    // blocks that move or resize glide to their new place.
-    nameBlocks();
-    const root = document.documentElement;
-    root.classList.add('vt-local');
-    doc.startViewTransition(() => {
-      change();
-      nameBlocks();
-    }).finished.finally(() => root.classList.remove('vt-local'));
-    return;
-  }
   // Rendering is paused during the update, so it must not wait for frames: fresh thumbnails
   // arrive as silhouettes in the snapshot and fade to 3D a moment later.
-  doc.startViewTransition(change);
-}
-
-/** Give each block of the detail page a transition name that matches between old and new pages. */
-function nameBlocks(): void {
-  const seen = new Map<string, number>();
-  for (const b of detail.querySelectorAll<HTMLElement>('.detail-nav, .sheet > *')) {
-    const key = `${b.tagName}.${b.className}`.toLowerCase().replace(/[^a-z0-9]+/g, '-');
-    const n = (seen.get(key) ?? 0) + 1;
-    seen.set(key, n);
-    b.style.viewTransitionName = `blk-${key}-${n}`;
-  }
-}
-
-function sameFamilyDetail(a: App, r: Racquet): boolean {
-  if (detail.hidden || !detail.dataset.id) return false;
-  const prev = a.catalog.racquets.find((x) => x.id === detail.dataset.id);
-  return !!prev && familyOf(a.catalog, prev) === familyOf(a.catalog, r);
+  const t = doc.startViewTransition(change);
+  activeTransition = t;
+  t.finished.finally(() => {
+    if (activeTransition === t) activeTransition = null;
+  });
 }
 
 function watch(thumbs: Thumbnails, item: HTMLElement, link: HTMLElement, canvas: HTMLCanvasElement, r: Racquet, path: string) {
@@ -717,8 +709,12 @@ function route() {
     markSigns(a);
   };
   // The first render is the page loading, not a move between places: no transition.
-  if (routed) transition(change, !!r && sameFamilyDetail(a, r));
-  else change();
+  // Moving within a line changes the page in place, so there is nothing to transition between.
+  if (routed && !(r && page?.lineage === r.lineage)) transition(change);
+  else {
+    settle();
+    change();
+  }
   routed = true;
 }
 
@@ -728,6 +724,7 @@ function showWall(a: App) {
     a.viewer?.clear();
     detail.hidden = true;
     detail.replaceChildren();
+    page = null;
   }
   wall.hidden = false;
   document.body.dataset.view = 'wall';
@@ -742,27 +739,26 @@ function showWall(a: App) {
 }
 
 function showDetail(a: App, r: Racquet, colourway: string | null = null) {
-  // Switching colourway on the same racquet keeps the scroll position and focus where they are.
-  const same = !detail.hidden && detail.dataset.id === r.id;
-  const within = sameFamilyDetail(a, r);
-  detail.dataset.id = r.id;
+  const inPlace = page?.lineage === r.lineage;
   a.lastOpened = familyOf(a.catalog, r).id; // the wall shows the family, so return to its bay
   wall.hidden = true;
   detail.hidden = false;
   document.body.dataset.view = 'detail';
   document.title = `${r.model} · ${baseTitle.split(':')[0]}`;
-  detail.replaceChildren(...detailView(a, r, colourway));
-  detail.classList.toggle('arriving', !within);
-  if (within) {
-    // Another variant of the same racquet: keep the scroll position and focus the chip just chosen.
-    detail.querySelector<HTMLElement>('.colourway[aria-current="true"], .variant[aria-current="true"]')?.focus({ preventScroll: true });
+  detail.classList.toggle('arriving', !inPlace);
+  if (inPlace && page) {
+    // Another version, colour or generation of the racquet on show: scroll, focus and view stay put.
+    updateDetail(a, page, r, colourway);
+    announce.textContent = `Showing the ${r.model}.`;
     return;
   }
+  detail.replaceChildren(...detailView(a, r, colourway));
   window.scrollTo(0, 0);
   detail.querySelector<HTMLElement>('h1')?.focus({ preventScroll: true });
 }
 
 function showPlaceholder(a: App, p: Placeholder) {
+  page = null;
   a.viewer?.detach();
   a.viewer?.clear();
   a.lastOpened = p.id;
@@ -780,11 +776,8 @@ function placeholderView(a: App, p: Placeholder): Node[] {
   const prev = a.stockOrder[(i - 1 + a.stockOrder.length) % a.stockOrder.length];
   const next = a.stockOrder[(i + 1) % a.stockOrder.length];
   const nav = el('nav', { class: 'detail-nav', 'aria-label': 'Racquet' },
-    el('a', { class: 'back', href: brandRoute(p.brand) }, icon('back'), p.brand),
-    el('span', { class: 'stepper' },
-      el('a', { href: routeFor(prev.id), 'aria-label': `Previous: ${prev.model}` }, icon('prev'), el('span', { class: 'stepper-name' }, prev.model)),
-      el('a', { href: routeFor(next.id), 'aria-label': `Next: ${next.model}` }, el('span', { class: 'stepper-name' }, next.model), icon('next')),
-    ),
+    el('a', { class: 'back', href: brandRoute(p.brand) }, icon('back'), `All ${p.brand}`),
+    stepper({ href: routeFor(prev.id), name: prev.model }, { href: routeFor(next.id), name: next.model }),
   );
   const s = p.specs;
   const row = (label: string, value: Node | string | null, aside?: string) =>
@@ -832,69 +825,117 @@ function sourceLabel(u: string): string {
 
 // ---------- detail ----------
 
+interface Stage {
+  node: HTMLElement;
+  /** Put another racquet of the line on the stage, at the same angle and zoom. False when it cannot. */
+  update(r: Racquet): boolean;
+}
+interface Sheet {
+  node: HTMLElement;
+  family: Racquet;
+  update(base: Racquet, r: Racquet, colourway: string | null): void;
+}
+/** The racquet page on show. Moving between versions of its line changes it in place. */
+interface Page {
+  lineage: string;
+  body: HTMLElement;
+  file: HTMLElement;
+  stage: Stage;
+  sheet: Sheet;
+}
+let page: Page | null = null;
+
 function detailView(a: App, base: Racquet, colourwayId: string | null = null): Node[] {
   const family = familyOf(a.catalog, base);
-  const order = a.order.includes(family) ? a.order : wallGroups(a.catalog, 'all', true).flatMap((g) => g.racquets);
-  const i = Math.max(0, order.indexOf(family));
   const { shown: r, colourway } = inColourway(base, colourwayId);
-  const prev = order[(i - 1 + order.length) % order.length];
-  const next = order[(i + 1) % order.length];
+  const onWall = a.order.some((x) => x.lineage === base.lineage);
+  const { prev, next } = neighboursOf(onWall ? a.order : wallGroups(a.catalog, 'all', true).flatMap((g) => g.racquets), base);
+  const file = el('div', { class: 'detail-file' }, ...getFile(a, r));
   const nav = el('nav', { class: 'detail-nav', 'aria-label': 'Racquet' },
-    el('a', { class: 'back', href: brandRoute(base.brand) }, icon('back'), base.brand),
-    el('span', { class: 'stepper' },
-      el('a', { href: routeFor(prev.id), 'aria-label': `Previous: ${wallName(prev)}` }, icon('prev'), el('span', { class: 'stepper-name' }, wallName(prev))),
-      el('a', { href: routeFor(next.id), 'aria-label': `Next: ${wallName(next)}` }, el('span', { class: 'stepper-name' }, wallName(next)), icon('next')),
-    ),
+    el('a', { class: 'back', href: brandRoute(base.brand) }, icon('back'), `All ${base.brand}`),
+    stepper({ href: routeFor(prev.id), name: stepName(prev, base.brand) }, { href: routeFor(next.id), name: stepName(next, base.brand) }),
+    file,
   );
-  const pickers = [generationPicker(a, family, base), ...variantPicker(a, family, base.id), colourwayPicker(base, colourway)].filter((x): x is HTMLElement => x !== null);
-  return [nav, el('div', { class: 'detail-body', style: `--swatch: ${r.swatch}` }, stage(a, r), sheet(a, r, pickers.length ? el('div', { class: 'pickers' }, ...pickers) : null))];
+  const stageView = stage(a, r);
+  const sheetView = sheet(a, family, base, r, colourway);
+  const body = el('div', { class: 'detail-body', style: `--swatch: ${r.swatch}` }, stageView.node, sheetView.node);
+  page = { lineage: base.lineage, body, file, stage: stageView, sheet: sheetView };
+  warmVersions(a, family);
+  return [nav, body];
+}
+
+function updateDetail(a: App, p: Page, base: Racquet, colourwayId: string | null): void {
+  const family = familyOf(a.catalog, base);
+  const { shown: r, colourway } = inColourway(base, colourwayId);
+  p.body.style.setProperty('--swatch', r.swatch);
+  p.file.replaceChildren(...getFile(a, r));
+  if (!p.stage.update(r)) {
+    const fresh = stage(a, r);
+    p.stage.node.replaceWith(fresh.node);
+    p.stage = fresh;
+  }
+  if (p.sheet.family === family) {
+    p.sheet.update(base, r, colourway);
+    return;
+  }
+  // Another generation has its own versions and write-up; keep focus on the tab just chosen.
+  const onTab = !!document.activeElement?.closest('.sheet-sub');
+  const fresh = sheet(a, family, base, r, colourway);
+  p.sheet.node.replaceWith(fresh.node);
+  p.sheet = fresh;
+  if (onTab) fresh.node.querySelector<HTMLElement>('.gen-tab[aria-current="true"]')?.focus({ preventScroll: true });
+  warmVersions(a, family);
+}
+
+/** Quietly bring every version's file in, so choosing one never waits on the network. */
+function warmVersions(a: App, family: Racquet): void {
+  const warm = () => membersOf(a.catalog, family, 'all').forEach((r) => {
+    const asset = assetFor(r, a.style.id);
+    if (asset) void fetchModelBytes(assetUrl(BASE, asset.path), 'low').catch(() => {});
+  });
+  if ('requestIdleCallback' in window) requestIdleCallback(warm, { timeout: 2000 });
+  else setTimeout(warm, 800);
+}
+
+/** Previous and next, each with the name of where it goes. */
+function stepper(prev: { href: string; name: string }, next: { href: string; name: string }): HTMLElement {
+  return el('div', { class: 'stepper', role: 'group', 'aria-label': 'Previous and next racquet' },
+    el('a', { class: 'step-prev', href: prev.href, 'aria-label': `Previous: ${prev.name}` }, icon('prev'), el('span', { class: 'stepper-name' }, prev.name)),
+    el('a', { class: 'step-next', href: next.href, 'aria-label': `Next: ${next.name}` }, el('span', { class: 'stepper-name' }, next.name), icon('next')),
+  );
 }
 
 /** Other generations of the line, newest first; each links to the same size where it exists. */
-function generationPicker(a: App, family: Racquet, current: Racquet): HTMLElement | null {
+function generationPicker(a: App, family: Racquet): { node: HTMLElement; update(current: Racquet): void } | null {
   const gens = generationsOf(a.catalog, family);
   if (gens.length < 2) return null;
-  const label = current.variantLabel;
-  const target = (g: Racquet) => g.variants?.find((v) => v.label === label)?.id ?? g.id;
-  return el('div', { class: 'variants generations', role: 'group', 'aria-label': 'Generation' },
-    ...gens.map((g) => el('a', { class: 'variant', href: routeFor(target(g)), 'aria-current': String(g.id === family.id) }, generationShort(g))),
-  );
+  const links = gens.map((g) => el('a', { class: 'gen-tab', 'aria-current': String(g.id === family.id) }, generationShort(g)));
+  return {
+    node: el('div', { class: 'gen-tabs', role: 'group', 'aria-label': 'Generation' }, ...links),
+    update(current) {
+      gens.forEach((g, i) => (links[i].href = routeFor(g.variants?.find((v) => v.label === current.variantLabel)?.id ?? g.id)));
+    },
+  };
 }
 
-/** The sizes or versions of a frame; none when it comes in one. */
-function variantPicker(a: App, family: Racquet, current: string): HTMLElement[] {
-  if (!family.variants?.length) return [];
-  const byId = new Map(a.catalog.racquets.map((r) => [r.id, r]));
-  const junior = (id: string) => isJunior(byId.get(id) ?? family);
-  const row = (label: string, list: Array<{ id: string; label: string }>, rowName?: string) =>
-    el('div', { class: 'variants', role: 'group', 'aria-label': label },
-      rowName ? el('span', { class: 'variants-name' }, rowName) : null,
-      ...list.map((v) => el('a', { class: 'variant', href: routeFor(v.id), 'aria-current': String(v.id === current) }, v.label)),
-    );
-  const adults = family.variants.filter((v) => !junior(v.id));
-  const juniors = family.variants.filter((v) => junior(v.id)).sort((x, y) => x.label.localeCompare(y.label, 'en', { numeric: true }));
-  // Juniors get their own row so a long list of junior sizes does not bury the adult ones.
-  return [
-    adults.length ? row('Version', adults) : null,
-    juniors.length ? row('Junior sizes', juniors, 'Junior') : null,
-  ].filter((x): x is HTMLDivElement => x !== null);
-}
-
-/** Swatches for a racquet's official colourways; none when it has only one. */
-function colourwayPicker(r: Racquet, current: string | null): HTMLElement | null {
+/** Swatches for a racquet that comes in one version; a line-up carries its own. */
+function colourwayPicker(r: Racquet): { node: HTMLElement; update(colourway: string | null): void } | null {
   if (!r.colourways?.length) return null;
   const options = [{ id: null as string | null, name: r.colourway ?? 'Standard', swatch: r.swatch }, ...r.colourways];
-  return el('div', { class: 'colourways', role: 'group', 'aria-label': 'Colourway' },
-    ...options.map((o) =>
-      el('a', { class: 'colourway', href: routeFor(r.id, o.id), 'aria-current': String(o.id === current), style: `--chip: ${o.swatch}` },
-        el('span', { class: 'colourway-chip', 'aria-hidden': 'true' }), o.name),
-    ),
-  );
+  const links = options.map((o) =>
+    el('a', { class: 'colourway', href: routeFor(r.id, o.id), style: `--chip: ${o.swatch}` },
+      el('span', { class: 'colourway-chip', 'aria-hidden': 'true' }), o.name));
+  return {
+    node: el('div', { class: 'colourways', role: 'group', 'aria-label': 'Colourway' }, ...links),
+    update(colourway) {
+      options.forEach((o, i) => links[i].setAttribute('aria-current', String(o.id === colourway)));
+    },
+  };
 }
 
-function stage(a: App, r: Racquet): HTMLElement {
+function stage(a: App, r: Racquet): Stage {
   const asset = assetFor(r, a.style.id);
-  const hintId = `hint-${r.id}`;
+  const hintId = 'stage-hint';
   const host = el('div', { class: 'stage', 'data-state': 'loading', style: 'view-transition-name: racquet' }, silhouette(r.specs.headSizeSqIn));
 
   if (a.viewer === undefined && a.thumbs && a.gl) {
@@ -908,7 +949,7 @@ function stage(a: App, r: Racquet): HTMLElement {
     viewer?.clear();
     host.dataset.state = 'flat';
     host.append(el('p', { class: 'stage-note' }, viewer ? 'No 3D file for this style.' : 'The 3D preview needs WebGL. Specs and the download still work.'));
-    return host;
+    return { node: host, update: () => false };
   }
 
   host.setAttribute('tabindex', '0');
@@ -933,12 +974,18 @@ function stage(a: App, r: Racquet): HTMLElement {
   );
   host.append(fault, controls);
 
-  const load = () => {
-    host.dataset.state = 'loading';
+  let url = assetUrl(BASE, asset.path);
+  // With a racquet already standing here, it stays until the next one is ready to take its place.
+  const load = (keepView: boolean) => {
+    const wanted = url;
+    if (!keepView) host.dataset.state = 'loading';
     fault.hidden = true;
-    viewer.show(assetUrl(BASE, asset.path)).then(
-      () => (host.dataset.state = 'ready'),
+    viewer.show(wanted, keepView).then(
       () => {
+        if (wanted === url) host.dataset.state = 'ready';
+      },
+      () => {
+        if (wanted !== url) return; // a newer choice won
         host.dataset.state = 'failed';
         fault.hidden = false;
       },
@@ -946,11 +993,21 @@ function stage(a: App, r: Racquet): HTMLElement {
   };
   retry.addEventListener('click', () => {
     host.focus(); // the button hides as loading starts; keep focus on the 3D view
-    load();
+    load(false);
   });
   viewer.attach(host);
-  load();
-  return host;
+  load(false);
+  return {
+    node: host,
+    update(next) {
+      const to = assetFor(next, a.style.id);
+      if (!to) return false;
+      host.setAttribute('aria-label', `3D view of the ${next.model}`);
+      url = assetUrl(BASE, to.path);
+      load(host.dataset.state === 'ready');
+      return true;
+    },
+  };
 }
 
 /** The file's absolute URL and a loader snippet, each with a copy button. */
@@ -976,49 +1033,89 @@ function useInCode(r: Racquet, path: string): HTMLElement[] {
   ];
 }
 
-function sheet(a: App, r: Racquet, picker: HTMLElement | null = null): HTMLElement {
+/** The nav's one button and the dialog it opens: the download, loading it in code, file facts and part names. */
+function getFile(a: App, r: Racquet): HTMLElement[] {
+  const asset = assetFor(r, a.style.id);
+  const name = asset ? fileNameFromPath(asset.path) : null;
+  if (!asset || !name) return [];
+  const row = (label: string, value: string, aside?: string) =>
+    el('div', { class: 'row' }, el('dt', {}, label), el('dd', {}, value, aside ? el('span', { class: 'aside' }, aside) : null));
+  const dev = el('dialog', { class: 'dev', 'aria-labelledby': 'dev-title' });
+  const close = el('button', { class: 'dev-close', type: 'button', 'aria-label': 'Close' }, icon('close'));
+  close.addEventListener('click', () => dev.close());
+  dev.addEventListener('click', (e) => { if (e.target === dev) dev.close(); }); // backdrop click
+  dev.append(
+    el('div', { class: 'dev-bar' }, el('h2', { id: 'dev-title', class: 'dev-title' }, `Get the ${r.model}`), close),
+    el('div', { class: 'dev-body' },
+      el('a', { class: 'download', href: assetUrl(BASE, asset.path), download: name },
+        icon('download'),
+        el('span', { class: 'download-label' }, `Download .${a.style.extension}`, el('span', { class: 'download-name' }, name)),
+        el('span', { class: 'download-size' }, formatBytes(asset.bytes)),
+      ),
+      ...useInCode(r, asset.path),
+      el('h2', { class: 'sheet-head' }, 'File'),
+      el('dl', { class: 'rows' },
+        row('Style', a.style.label),
+        row('Format', `.${a.style.extension}`),
+        row('Triangles', formatCount(asset.triangles)),
+        row('Size', formatBytes(asset.bytes), `${formatCount(asset.bytes)} bytes`),
+      ),
+      el('h2', { class: 'sheet-head' }, 'Parts'),
+      el('p', { class: 'sheet-note' }, 'Node names inside the file, for swapping or restyling parts in code.'),
+      el('ul', { class: 'parts', role: 'list' }, ...r.parts.map((p) => el('li', {}, el('code', {}, p)))),
+    ),
+  );
+  const open = el('button', { class: 'dev-open', type: 'button', 'aria-haspopup': 'dialog' }, icon('download'), el('span', {}, 'Download'));
+  open.addEventListener('click', () => dev.showModal());
+  return [open, dev];
+}
+
+/** The spec rows of the racquet on show. A family keeps the same rows from version to version. */
+function specRows(r: Racquet, listsWeight: boolean): HTMLElement[] {
   const s = r.specs;
   const head = formatHeadSize(s.headSizeSqIn);
   const len = formatLength(s.lengthIn);
-  const row = (label: string, value: Node | string, aside?: string) =>
+  const row = (label: string, value: Node | string, aside?: string | null) =>
     el('div', { class: 'row' }, el('dt', {}, label), el('dd', {}, value, aside ? el('span', { class: 'aside' }, aside) : null));
-
-  const specs = el('dl', { class: 'rows' },
+  return [
     row('Head size', head.primary, head.secondary),
     row('Length', len.primary, len.secondary),
     row('String pattern', formatPattern(s.stringPattern), 'mains × crosses'),
     row('Beam', formatBeam(s.beamMm), new Set(s.beamMm).size > 1 ? 'tip / middle / shaft' : undefined),
-    s.unstrungWeightG ? row('Weight', `${formatCount(s.unstrungWeightG)} g`, 'unstrung') : null,
-    row('Base colour', el('span', { class: 'chip-row' }, el('span', { class: 'chip', 'aria-hidden': 'true' }), r.swatch)),
-  );
+    ...(s.unstrungWeightG ? [row('Weight', `${formatCount(s.unstrungWeightG)} g`, 'unstrung')] : listsWeight ? [row('Weight', 'Not listed')] : []),
+    row('Base colour', el('span', { class: 'chip-row' }, el('span', { class: 'chip', 'aria-hidden': 'true' }), r.swatch), r.colourway),
+  ];
+}
 
-  const asset = assetFor(r, a.style.id);
-  const name = asset ? fileNameFromPath(asset.path) : null;
-  const download = asset && name
-    ? el('a', { class: 'download', href: assetUrl(BASE, asset.path), download: name },
-        icon('download'),
-        el('span', { class: 'download-label' }, `Download .${a.style.extension}`, el('span', { class: 'download-name' }, name)),
-        el('span', { class: 'download-size' }, formatBytes(asset.bytes)),
-      )
-    : el('p', { class: 'sheet-note' }, `There is no ${a.style.label} file for this racquet yet.`);
-  const file = asset
-    ? [
-        ...useInCode(r, asset.path),
-        el('h2', { class: 'sheet-head' }, 'File'),
-        el('dl', { class: 'rows' },
-          row('Style', a.style.label),
-          row('Format', `.${a.style.extension}`),
-          row('Triangles', formatCount(asset.triangles)),
-          row('Size', formatBytes(asset.bytes), `${formatCount(asset.bytes)} bytes`),
-        ),
-      ]
-    : [];
-
+/** `base` is the page's racquet; `r` is it in the chosen colourway. */
+function sheet(a: App, family: Racquet, base: Racquet, r: Racquet, colourway: string | null): Sheet {
+  const isFamily = !!family.variants?.length;
+  const listsWeight = membersOf(a.catalog, family, 'all').some((x) => x.specs.unstrungWeightG);
+  const generations = generationPicker(a, family);
+  const lineup = lineupView(a.catalog, family);
+  const colours = lineup ? null : colourwayPicker(family);
+  const picker = lineup?.node ?? colours?.node;
+  const sub = el('span');
+  const specsHead = el('h2', { class: 'sheet-head' });
+  const specs = el('dl', { class: 'rows' });
   const profileSlot = el('div', { class: 'profile-slot' });
-  const family = familyOf(a.catalog, r);
+
+  const update: Sheet['update'] = (base, r, colourway) => {
+    sub.textContent = [r.brand, generations ? null : generationLabel(r), isFamily ? null : r.colourway].filter(Boolean).join(' · ');
+    generations?.update(base);
+    lineup?.select(base, colourway);
+    colours?.update(colourway);
+    specsHead.textContent = isFamily ? `${r.model} specs` : 'Specs';
+    specs.replaceChildren(...specRows(r, listsWeight));
+    // The write-up is about the family's adult frame, so a junior size inside the family goes without.
+    profileSlot.hidden = isJunior(base) && !isJunior(family);
+  };
+  update(base, r, colourway);
+
   void loadProfiles().then((profiles) => {
     const p = profiles.get(family.id);
     if (!p || !profileSlot.isConnected) return;
+    lineup?.setNotes(p.variantNotes ?? {});
     const byId = new Map(a.catalog.racquets.map((x) => [x.id, x]));
     // Rivals are the profile's closest alternatives that this library has a page for and a profile of.
     const rivals: Rival[] = p.compared.flatMap((id) => {
@@ -1026,23 +1123,19 @@ function sheet(a: App, r: Racquet, picker: HTMLElement | null = null): HTMLEleme
       const rp = profiles.get(id);
       return x && rp ? [{ id, name: x.model, href: routeFor(x.id), profile: rp }] : [];
     });
-    const label = r.variantLabel;
-    profileSlot.append(profileView(p, rivals, label, label ? p.variantNotes?.[label] : undefined));
+    profileSlot.append(profileView(p, rivals, isFamily ? { name: lineageName(family), rated: family.variantLabel ?? family.model } : null));
   });
 
-  return el('div', { class: 'sheet' },
-    el('h1', { class: 'sheet-title', tabindex: '-1' }, r.model),
-    el('p', { class: 'sheet-sub' }, `${r.brand} · ${generationLabel(r)}${r.colourway ? ` · ${r.colourway}` : ''}`),
-    picker,
-    download,
+  // The page is the family's: its name and write-up stay put, and the line-up says which version is on show.
+  const node = el('div', { class: 'sheet' },
+    el('h1', { class: 'sheet-title', tabindex: '-1' }, isFamily ? lineageName(family) : family.model),
+    el('div', { class: 'sheet-sub' }, sub, generations?.node),
+    picker ? el('div', { class: 'pickers' }, picker) : null,
     profileSlot,
-    el('h2', { class: 'sheet-head' }, 'Specs'),
+    specsHead,
     specs,
-    ...file,
-    el('h2', { class: 'sheet-head' }, 'Parts'),
-    el('p', { class: 'sheet-note' }, 'Node names inside the file, for swapping or restyling parts in code.'),
-    el('ul', { class: 'parts', role: 'list' }, ...r.parts.map((p) => el('li', {}, el('code', {}, p)))),
   );
+  return { node, family, update };
 }
 
 // ---------- search ----------
@@ -1142,11 +1235,23 @@ document.addEventListener('pointerenter', (e) => {
 }, true);
 document.addEventListener('click', (e) => {
   const t = e.target as Element;
-  if (t.closest('.shelf-stage, .aisle-link, .lineup-open, .stock-row, .stock-tag')) play('open');
+  if (t.closest('.shelf-stage, .aisle-link, .lineup-row, .lineup-open, .stock-row, .stock-tag')) play('open');
   else if (t.closest('.back, .stepper a')) play('back');
   else if (t.closest('.sign, .gen-tab')) play('pick');
 });
 
+// Versions, colours and generations switch inside the click itself. Left to the link, the switch
+// would wait for `hashchange`, which comes late and unevenly when clicks come quickly. The address
+// and Back work as before; opening in a new tab is left to the browser.
+detail.addEventListener('click', (e) => {
+  const link = (e.target as Element).closest<HTMLAnchorElement>('.version, .sheet .colourway, .sheet-sub .gen-tab');
+  const href = link?.getAttribute('href');
+  if (!href || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+  e.preventDefault();
+  if (href === location.hash) return;
+  history.pushState(null, '', href);
+  route();
+});
 window.addEventListener('hashchange', route);
 window.addEventListener('keydown', (e) => {
   if ((e.metaKey || e.ctrlKey) && !e.altKey && !e.shiftKey && e.key.toLowerCase() === 'k') {

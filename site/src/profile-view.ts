@@ -29,8 +29,8 @@ const host = (u: string): string => {
 const lower = (k: RatingKey) => RATING_LABEL[k].toLowerCase();
 const list = (ks: RatingKey[]) => (ks.length < 2 ? ks.map(lower).join('') : `${ks.slice(0, -1).map(lower).join(', ')} and ${lower(ks[ks.length - 1])}`);
 
-/** `sizeNote`: the profile's note for the size on show, when it has one. */
-export function profileView(p: Profile, rivals: Rival[], sizeLabel: string | undefined, sizeNote: string | undefined): HTMLElement {
+/** `family`: for a frame in several versions, its name and the version the ratings describe. */
+export function profileView(p: Profile, rivals: Rival[], family: { name: string; rated: string } | null): HTMLElement {
   const tops = topRatings(p);
   const confidence = { high: 'well sourced', medium: 'reasonably sourced', low: 'thinly sourced' }[p.confidence];
 
@@ -103,15 +103,14 @@ export function profileView(p: Profile, rivals: Rival[], sizeLabel: string | und
     : null;
 
   const section = el('section', { class: 'profile', 'aria-labelledby': 'profile-head' },
-    el('h2', { class: 'sheet-head', id: 'profile-head' }, 'How it plays'),
+    el('h2', { class: 'sheet-head', id: 'profile-head' }, family ? `How the ${family.name} plays` : 'How it plays'),
     el('p', { class: 'profile-style' }, p.playStyle),
     el('p', { class: 'profile-feel' }, `Feels ${p.feel}.`),
     el('ul', { class: 'profile-tags', role: 'list', 'aria-label': 'Best for' }, ...p.bestFor.map((t) => el('li', {}, tagLabel(t)))),
     el('p', { class: 'profile-summary' }, p.summary),
-    sizeNote ? el('p', { class: 'profile-size' }, el('strong', {}, `The ${sizeLabel}: `), sizeNote) : null,
     el('div', { class: 'levels', role: 'group', 'aria-label': 'Suits players at' },
       ...LEVELS.map((l) => el('span', { class: `level${p.playerLevel.includes(l) ? ' on' : ''}`, 'aria-label': `${l}${p.playerLevel.includes(l) ? ', suited' : ', not the target'}` }, l.charAt(0).toUpperCase() + l.slice(1)))),
-    el('h3', { class: 'ratings-head' }, 'Ratings', el('span', { class: 'ratings-note' }, `Highest: ${list(tops)}`)),
+    el('h3', { class: 'ratings-head' }, family ? `Ratings for the ${family.rated}` : 'Ratings', el('span', { class: 'ratings-note' }, `Highest: ${list(tops)}`)),
     ratings,
     el('p', { class: 'ratings-foot' }, 'Our reading of review consensus, 1 to 5, against other adult frames in this set. Not lab data.'),
     compare,
