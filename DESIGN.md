@@ -5,6 +5,8 @@ colors:
   wall: "oklch(0.885 0.006 80)"
   wall-deep: "oklch(0.845 0.007 80)"
   rail: "oklch(0.76 0.008 80)"
+  niche: "oklch(0.79 0.026 78)"
+  niche-lit: "oklch(0.9 0.022 82)"
   ink: "oklch(0.23 0.01 75)"
   ink-soft: "oklch(0.43 0.012 75)"
   ink-hover: "oklch(0.33 0.012 75)"
@@ -99,14 +101,14 @@ The page has no colour of its own. Its ground is a mid-light warm grey chosen so
 and white frames both read against it, and its only chromatic moments come from the
 racquets: their renders, the swatch mark that slides along the rail on hover, the swatch
 chip in the spec sheet. Detail is a second room of the same shop: the racquet taken off the
-wall, turning slowly, with its spec tag set beside it.
+wall, turning slowly in a warmly lit alcove, with its spec tag set beside it.
 
 **Key Characteristics:**
 - One warm-grey ground, one ink, no accent: the catalogue's colourways are the palette.
 - Racquets at one shared scale, upright, never cropped, never boxed.
 - Archivo across the board, its width axis doing the work: condensed for labels and model
   names, wide for the wordmark.
-- Flat. Depth comes from the 3D renders and nothing else.
+- Flat page. Depth comes from the 3D renders and, in the detail view, the alcove they stand in.
 - One signature motion: the turn on hover or focus, off under reduced motion. Moving between
   places is a view transition: the brand sign morphs from aisle to floor, the racquet you open
   lifts off its rail into the stage (and back), and the header holds still. Fans open once on
@@ -122,7 +124,9 @@ racquet swatches as the only colour.
   render (both renderers clear to transparent). Mid-light on purpose: white frames and black
   frames both separate from it.
 - **Wall Shadow** (`wall-deep`, about #ceccc7): hover fill for signs, the notice band, code chips,
-  the soft floor under the detail model.
+  the flat stage panel behind the pixel, line and halftone looks.
+- **Niche** (`niche` to `niche-lit`): the detail stage's alcove, the same wall under a warm lamp.
+  Only there, and never over 0.03 chroma: it is light on plaster, not a colour.
 - **Shelf Rail** (`rail`, about #b4b1ab): the 3 px rail each row of racquets stands on. Decorative
   only; never carries text.
 - **Ink** (`ink`, about #201c18): all primary text, active sign fill, the download button, focus
@@ -188,10 +192,17 @@ inside it.
 
 ## Elevation & Depth
 
-Flat. No box shadows anywhere. Depth belongs to the racquets: studio-lit PBR renders with a
-neutral room environment and Neutral tone mapping. The only other depth cue is a soft
-elliptical floor under the detail model, in Wall Shadow, so it reads as standing rather than
-floating.
+Flat. No box shadows anywhere. Depth belongs to the racquets, lit as in a showcase
+(`site/src/studio.ts`): a dim warm room with a big softbox at upper left, a weak cool fill at
+right, two strips behind that draw a bright edge down the beam, and a key light whose shadows
+let parts shade one another. Neutral tone mapping, and a near-white key, keep base colours close
+to their hex: warmth lives in the shadows and the wall. The lamps stay with the viewer, so
+turning a racquet runs the highlights along it.
+
+The detail view stands its racquet in the **alcove** (`site/src/alcove.ts`): a floor that sweeps
+up into a wall, a pool of warm light behind the head, and the racquet's own shadow, crisp at the
+butt cap and melting as it climbs. The light comes up once the racquet has landed. Thumbnails get
+the lighting without the alcove; pixel, line and halftone stand on a flat panel.
 
 ### Named Rules
 **The Renders Carry Depth Rule.** If an element needs a shadow to be noticed, it is
@@ -213,6 +224,8 @@ sit under a 2px ink rule.
   directly under the model name.
 - **Outline (Retry, Try again):** 1.5px ink border, transparent; fills with ink on hover.
   Over a silhouette it takes a wall background so the hoop line never crosses its label.
+- **Part views (Head, Throat, Handle):** a segmented pill under the stage; each glides the camera
+  to that part from the side it is already on. They are moves, not states: nothing stays pressed.
 - **Quiet (Reset view):** borderless on a translucent wall wash; Wall Shadow on hover.
 - **Focus:** a 2px ink outline, 3px offset (6px on wall bays), everywhere.
 
