@@ -36,27 +36,32 @@
     }
   },
   "paint": {
-    "base": "#3fe0b0",
+    "base": "#62e2ba",
     "finish": "satin",
     "zones": [
       {
-        "from": 0,
-        "to": 0.12,
-        "color": "#1c2028"
-      },
-      {
-        "from": 0.62,
-        "to": 0.84,
-        "color": "#1c2028",
-        "faces": [
-          "inner",
-          "outer"
-        ]
-      },
-      {
-        "from": 0.84,
+        "from": 0.383,
         "to": 1,
-        "color": "#1c2028"
+        "color": "#1c2028",
+        "side": "left"
+      },
+      {
+        "from": 0.678,
+        "to": 1,
+        "color": "#1c2028",
+        "side": "right"
+      },
+      {
+        "from": 0,
+        "to": 0.155,
+        "color": "#1c2028",
+        "side": "left"
+      },
+      {
+        "from": 0,
+        "to": 0.2,
+        "color": "#1c2028",
+        "side": "right"
       }
     ]
   },
@@ -79,7 +84,7 @@
       "channel": 0.45
     },
     "bumper": {
-      "color": "#3fe0b0"
+      "color": "#1c2028"
     },
     "dampener": null
   },

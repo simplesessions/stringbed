@@ -91,5 +91,47 @@
   ],
   "verified": true,
   "colourway": "White/Red/Blue",
-  "variantLabel": "305"
+  "variantLabel": "305",
+  "variants": [
+    {
+      "id": "tecnifibre-tfight-iso-295-2022",
+      "label": "295",
+      "model": "TFight ISO 295",
+      "specs": {
+        "headSizeSqIn": 100,
+        "lengthIn": 27,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          23,
+          23
+        ],
+        "unstrungWeightG": 295
+      },
+      "geometry": {
+        "head": {
+          "shape": "oval",
+          "aspect": 1.31
+        },
+        "beam": {
+          "profile": "box"
+        },
+        "throat": {
+          "style": "open-v",
+          "bridge": "curved"
+        },
+        "features": [],
+        "handle": {
+          "elongationMm": 5.2
+        }
+      },
+      "sources": [
+        "https://www.tennis-warehouse.com/learning_center/racquet_reviews/ISO295review.html",
+        "https://www.tennispro.eu/tecnifibre-t-fight-295-iso-racquet-295-gr-587762.html"
+      ]
+    }
+  ]
 }

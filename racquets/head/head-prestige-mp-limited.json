@@ -41,17 +41,14 @@
     "zones": [
       {
         "from": 0,
-        "to": 0.12,
+        "to": 0.11,
         "color": "#202225"
       },
       {
-        "from": 0.8,
-        "to": 1,
+        "from": 0.51,
+        "to": 0.823,
         "color": "#26282c",
-        "faces": [
-          "inner",
-          "outer"
-        ]
+        "side": "right"
       }
     ]
   },

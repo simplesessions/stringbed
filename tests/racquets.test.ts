@@ -4,8 +4,8 @@ import { lineageOf, loadAllSpecs } from '../src/core/spec';
 const specs = loadAllSpecs();
 
 test('every spec parses and ids are unique', () => {
-  // 87 frame families (one per generation); 269 more are their variants (other sizes).
-  expect(specs.length).toBe(356);
+  // 87 frame families (one per generation); 271 more are their variants (other sizes).
+  expect(specs.length).toBe(358);
   expect(specs.filter((s) => !s.variantOf)).toHaveLength(87);
   expect(new Set(specs.map((s) => s.id)).size).toBe(specs.length);
 });

@@ -40,17 +40,30 @@
     "finish": "satin",
     "zones": [
       {
-        "from": 0.44,
-        "to": 0.58,
-        "color": "#f0452c"
+        "from": 0.438,
+        "to": 0.547,
+        "color": "#76838f",
+        "side": "left"
       },
       {
-        "from": 0.85,
-        "to": 1,
-        "color": "#7a7f86",
-        "faces": [
-          "inner"
-        ]
+        "from": 0.316,
+        "to": 0.4,
+        "color": "#76838f",
+        "side": "left",
+        "bridge": false
+      },
+      {
+        "from": 0.438,
+        "to": 0.547,
+        "color": "#f0392c",
+        "side": "right"
+      },
+      {
+        "from": 0.316,
+        "to": 0.4,
+        "color": "#f0392c",
+        "side": "right",
+        "bridge": false
       }
     ]
   },
@@ -73,7 +86,7 @@
       "channel": 0.45
     },
     "bumper": {
-      "color": "#f0452c"
+      "color": "#2a2a2c"
     },
     "dampener": null
   },

@@ -40,9 +40,15 @@
     "finish": "satin",
     "zones": [
       {
-        "from": 0.44,
-        "to": 0.58,
+        "from": 0.415,
+        "to": 0.51,
         "color": "#a8f03c"
+      },
+      {
+        "from": 0.317,
+        "to": 0.383,
+        "color": "#a8f03c",
+        "bridge": false
       }
     ]
   },
@@ -84,9 +90,15 @@
         "finish": "satin",
         "zones": [
           {
-            "from": 0.44,
-            "to": 0.58,
+            "from": 0.427,
+            "to": 0.512,
             "color": "#b91f58"
+          },
+          {
+            "from": 0.326,
+            "to": 0.393,
+            "color": "#b91f58",
+            "bridge": false
           },
           {
             "from": 0.88,

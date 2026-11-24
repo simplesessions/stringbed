@@ -313,7 +313,7 @@ are judged by eye. Neither brand's own site was reachable, so unstrung weights a
 
 - **Dunlop:** CX 200/400 (2027 and 2024), SX 300 (2025, 2022), FX 500 (2025, 2023; the FX 700 sits in the 2023 family as a variant), LX 800/1000 (2024). The 2027 CX year comes from retailer pre-sale listings. SX 300 2022 and FX 500 2023 have no TW product page; their specs come from review pages and search snippets.
 - **Tecnifibre:** Fire (2026, the TF-X1 successor per TW and tennisnerd, kept as its own lineage), TFight (2025, ISO 2022), TF40 (2024, v1 2019), TF-X1 (V2 2024, V1 2022). The Fire 2026 year is inferred from pre-sale listings.
-- **Left out for lack of a checked source:** TF-X1 V2 300 and TFight ISO 295 (spec page or photo not read; every spec in the library must be verified). Also skipped: Tecnifibre TFight 300 IG, TW-exclusive colours, Fire 255; Dunlop LX Team, CX/SX limited editions.
+- **Also skipped:** Tecnifibre TFight 300 IG, TW-exclusive colours, Fire 255; Dunlop LX Team, CX/SX limited editions.
 - Beam widths where sources disagree (TFight ISO 305, TF-X1 V1 300, TF-X1 V2) follow the notes in each spec's source list; the TF-X1 V1 300 beam (24 mm, TW) conflicts with tennisnerd (26 mm).
 
 **Checked against tecnifibre.com (2026-11-24, same day).** The official product pages confirm the
@@ -330,8 +330,8 @@ product photos (Tennis Warehouse, us.dunlopsports.com, tecnifibre.com). Position
 colours were sampled from photos, which vary with lighting. This replaces the earlier same-day notes.
 
 - **Left and right differ** on every Dunlop and most Tecnifibre frames, so zones now take `side` ("left" is -X, seen from the front).
-  Dunlop's template: long accent on the left (13 to 85 percent down the hoop), a short hex on the right (45 to 52 percent), and on most
-  lines a dark or gold panel above both. The left accent stops a little short (about 81 percent), because lower would paint half the bridge.
+  Dunlop's template: long accent on the left (u 0.325 to 0.80), a short hex on the right (45 to 52 percent), and on most
+  lines a dark or gold panel above both.
 - **Dunlop:** FX 500 2025 and SX 300 2025 base colours, black collars, CX 400 Tour 2027 grip (black), butt caps follow white grips. SX 300
   LS/Lite and CX 2027 LS/OS no longer carry their own paint: the photos show the family's. The RSX300 review (March 2020) was removed
   from the SX 300 2022 sources: it covers the previous generation.
@@ -341,7 +341,6 @@ colours were sampled from photos, which vary with lighting. This replaces the ea
   the arm, the TF-X1 V1 yellow showing through the grommet strip, the LX 1000 double bridge. The FX Team 100 and LX Team 107 have two photos each.
 - **Grommet strips:** on box and tapered-box beams with a `channel` (93 models, every brand with such frames) the strip faced inward and was invisible. Fixed
   in `trim.ts`; the 17 affected frames of other brands were looked at beside their photos (no photo found for the Pro Staff 97 v14).
-- **Found, not fixed:** the Babolat Pure Strike Evo bumper is red here and black in the photo. Other brands' left/right differences were not checked.
 
 **Dunlop checked against us.dunlopsports.com (2026-11-24).** The official product pages list unstrung weight,
 pattern, beam, head size and balance, and have several photos. Added unstrung weights to every current-generation
@@ -366,8 +365,8 @@ set of Talk Tennis measurements (podcast, 2021-12-07, 4 3/8 racquets; units and 
 juniors and budget frames use the adult figure unmeasured.
 
 - **Head:** every frame uses TK82S except the Ti.S6. tennisnerd (Dec 2020) says all new Heads but the Pro Tour 2.0 do, and
-  the current adult butt caps look alike in photos, Prestige included. One retailer (Extreme Tennis) still lists Prestige, Radical,
-  Boom and Extreme as TK82, so this is not settled. Ti.S6 as TK82 is inferred: the line predates TK82S (about 2009) and its cap is narrower.
+  the current adult butt caps look alike in photos, Prestige included. Extreme Tennis lists its TK82 shell for Prestige, Radical,
+  Boom and Extreme, but its TK82S page lists those ranges too (with Speed, Gravity, Instinct), so it shows what fits, not what ships. Ti.S6 as TK82 is inferred: the line predates TK82S (about 2009) and its cap is narrower.
 - **Solinco:** left as a regular octagon; nobody has published a measurement. One forum post calls it "fairly similar to Wilsons".
 
 Tecnifibre:
@@ -380,3 +379,25 @@ Tecnifibre:
   measurement. Cap shape is a weak guide (Head's cap is 1.15 on a 1.10 pallet), and Tennis Express says the Fire grip was brought
   closer to the TFight's, so the true figure may be nearer 5.2.
 - Not captured for any brand: grip size (all handles share one girth) and bevel edge sharpness.
+
+**All brands checked against photos (2026-11-24).** Every base frame, plus each variant and colourway with its own paint (106 in the six
+older brands; no photo for the Pro Staff 97 v14), was rendered beside its Tennis Warehouse photo. Band edges were measured, not read by
+eye: the photo's hoop colour was sampled down both sides and each row converted to the model's frame coordinate. Low-contrast and thin
+marks (Evo Strike, Defyer and Blade ticks, Classic stripes, throat and shaft zones) are by eye. Juniors and oversize heads line up less well.
+
+- Zones can also take `bridge: false`, for bands that run past the throat junction without painting the bridge.
+- **Wrong scheme before:** Pure Aero Junior 25 and 26 (2023) wore the 2018 yellow; Pure Aero 98 2023 wore the 2026 slate.
+- **Left and right differ** on most Babolat, Head and Prince frames, several Yonex and a few Wilson; these were mirrored before.
+- **Placement:** most Babolat bands sat too high, or were one wide band where there are two. Clash 100 v3 had a red band round the whole throat
+  (it is a line under the bridge). Parts corrected: Pure Strike Evo, Evoke, Boom Pro and Clash Pro bumpers, Extreme 2026 and Ultra 100 v5 trim.
+- Frames that are one colour carry a zone hidden under the bumper, because every spec must have one.
+- **Not modelled:** lettering, slashes, camo and cartoon graphics, diagonal edges. Grip and base colours were looked at, not sampled, except where changed.
+- Other variants inherit their base's paint and were not each compared with their own photo.
+
+**Specs settled the same day.** TF-X1 V2 300 (24.5 / 25.4 / 25; tennisnerd and Extreme Tennis; Tecnifibre's page has no beam, Tradeinn's 24 / 25 / 24 was
+not used) and TFight ISO 295 (23 constant, TW review; ProAm Tennis says 22.5) are back in. Dunlop Canada publishes the CX 2024, FX 500 Tour 2023 and
+FX 700 specs: beams confirmed, unstrung weights added. CX 200 Tour 2024 (Canada lists only the 18x20) and OS (290 g against 10.4 oz) keep none. SX 300 2022
+(tennisnuts), FX 500 2023 (Marcotte, TW review): confirmed; pages that were only search results were dropped from their sources. FX 500 Lite 2023 rests on TW alone.
+LX 800: Dunlop US says 27 in, an older Canada page 27.5; 27 kept. Tempo OS and L have no published beam, so they are placeholders.
+TF40 2024: TW's review page for it is dated February 2022 (the previous generation), so it was removed from the sources; the 22 mm beam is on TW's product
+page (tennisnerd says 21.7). Tempo Tour: both Tecnifibre sites list 68.5 cm, but their range text says every Tempo is X-Short at 67.5; 27 in is kept.

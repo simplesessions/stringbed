@@ -16,7 +16,8 @@
       21.5,
       21.5,
       21.5
-    ]
+    ],
+    "unstrungWeightG": 305
   },
   "geometry": {
     "head": {
@@ -52,10 +53,11 @@
         "side": "right"
       },
       {
-        "from": 0.351,
+        "from": 0.325,
         "to": 0.8,
         "color": "#f5402c",
-        "side": "left"
+        "side": "left",
+        "bridge": false
       },
       {
         "from": 0.533,
@@ -89,7 +91,8 @@
     "dampener": null
   },
   "sources": [
-    "https://www.tennis-warehouse.com/Dunlop_CX_200/descpageRCDUNLOP-DCX2S.html"
+    "https://www.tennis-warehouse.com/Dunlop_CX_200/descpageRCDUNLOP-DCX2S.html",
+    "https://ca.dunlopsports.com/products/dunlop-cx-200-tennis-racket-2025"
   ],
   "verified": true,
   "colourway": "Red/Orange",
@@ -132,7 +135,8 @@
           24,
           24,
           24
-        ]
+        ],
+        "unstrungWeightG": 285
       },
       "geometry": {
         "head": {
@@ -175,7 +179,8 @@
         "dampener": null
       },
       "sources": [
-        "https://www.tennis-warehouse.com/Dunlop_CX_400/descpageRCDUNLOP-DCX4R.html"
+        "https://www.tennis-warehouse.com/Dunlop_CX_400/descpageRCDUNLOP-DCX4R.html",
+        "https://ca.dunlopsports.com/products/dunlop-cx-400-tennis-racket-2025"
       ]
     },
     {
@@ -193,7 +198,8 @@
           23,
           23,
           23
-        ]
+        ],
+        "unstrungWeightG": 300
       },
       "geometry": {
         "head": {
@@ -213,7 +219,8 @@
         }
       },
       "sources": [
-        "https://www.tennis-warehouse.com/Dunlop_CX_400_Tour/descpageRCDUNLOP-DCX4T.html"
+        "https://www.tennis-warehouse.com/Dunlop_CX_400_Tour/descpageRCDUNLOP-DCX4T.html",
+        "https://ca.dunlopsports.com/products/dunlop-cx-400-tour-tennis-racket-2025"
       ]
     },
     {
@@ -274,7 +281,8 @@
         "dampener": null
       },
       "sources": [
-        "https://www.tennis-warehouse.com/Dunlop_CX_200_OS/descpageRCDUNLOP-DCX2OS.html"
+        "https://www.tennis-warehouse.com/Dunlop_CX_200_OS/descpageRCDUNLOP-DCX2OS.html",
+        "https://ca.dunlopsports.com/products/cx-200-os-tennis-racket-2025"
       ]
     },
     {
@@ -292,7 +300,8 @@
           21.5,
           21.5,
           21.5
-        ]
+        ],
+        "unstrungWeightG": 290
       },
       "parts": {
         "grip": {
@@ -318,7 +327,8 @@
         "dampener": null
       },
       "sources": [
-        "https://www.tennis-warehouse.com/Dunlop_CX_200_LS/descpageRCDUNLOP-DCX2LS.html"
+        "https://www.tennis-warehouse.com/Dunlop_CX_200_LS/descpageRCDUNLOP-DCX2LS.html",
+        "https://ca.dunlopsports.com/products/dunlop-cx-200-ls-tennis-racket-2025"
       ]
     }
   ]

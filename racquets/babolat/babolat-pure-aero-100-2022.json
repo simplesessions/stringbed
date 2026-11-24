@@ -41,22 +41,30 @@
     "finish": "gloss",
     "zones": [
       {
-        "from": 0.33,
-        "to": 0.415,
-        "color": "#e8e8e4"
+        "from": 0.411,
+        "to": 0.515,
+        "color": "#e8e8e4",
+        "side": "left"
       },
       {
-        "from": 0.44,
-        "to": 0.56,
-        "color": "#d6ee2c"
+        "from": 0.307,
+        "to": 0.376,
+        "color": "#e8e8e4",
+        "side": "left",
+        "bridge": false
       },
       {
-        "from": 0.34,
-        "to": 0.62,
-        "color": "#1d2124",
-        "faces": [
-          "inner"
-        ]
+        "from": 0.411,
+        "to": 0.515,
+        "color": "#d6ee2c",
+        "side": "right"
+      },
+      {
+        "from": 0.307,
+        "to": 0.376,
+        "color": "#d6ee2c",
+        "side": "right",
+        "bridge": false
       }
     ]
   },
@@ -171,56 +179,64 @@
           23
         ]
       },
-      "paint": {
-        "base": "#f2e82a",
-        "finish": "gloss",
-        "zones": [
-          {
-            "from": 0.36,
-            "to": 0.415,
-            "color": "#1d1d1f"
-          },
-          {
-            "from": 0.44,
-            "to": 0.56,
-            "color": "#1d1d1f"
-          },
-          {
-            "from": 0.86,
-            "to": 1,
-            "color": "#1d1d1f",
-            "faces": [
-              "inner"
-            ]
-          }
-        ]
-      },
       "parts": {
         "grip": {
-          "color": "#1e1e1e"
+          "color": "#ececec"
         },
         "collar": {
-          "color": "#1d1d1f"
+          "color": "#2a3034"
         },
         "buttCap": {
-          "color": "#1e1e1e"
+          "color": "#ececec"
         },
         "strings": {
           "color": "#f2f2f2",
           "gaugeMm": 1.25
         },
         "grommets": {
-          "color": "#1d1d1f",
+          "color": "#1d2124",
           "channel": 0.45
         },
         "bumper": {
-          "color": "#1d1d1f"
+          "color": "#1d2124"
         },
         "dampener": null
       },
       "sources": [
         "https://web.archive.org/web/20230410182243/https://www.tennis-warehouse.com/Babolat_Pure_Aero_25_2023_Junior/descpageRCBAB-BAJ25R.html"
-      ]
+      ],
+      "paint": {
+        "base": "#2f3539",
+        "finish": "gloss",
+        "zones": [
+          {
+            "from": 0.453,
+            "to": 0.55,
+            "color": "#e8e8e4",
+            "side": "left"
+          },
+          {
+            "from": 0.336,
+            "to": 0.421,
+            "color": "#e8e8e4",
+            "side": "left",
+            "bridge": false
+          },
+          {
+            "from": 0.453,
+            "to": 0.55,
+            "color": "#d6ee2c",
+            "side": "right"
+          },
+          {
+            "from": 0.336,
+            "to": 0.421,
+            "color": "#d6ee2c",
+            "side": "right",
+            "bridge": false
+          }
+        ]
+      }
     },
     {
       "id": "babolat-pure-aero-junior-26-2023gen",
@@ -239,56 +255,64 @@
           23
         ]
       },
-      "paint": {
-        "base": "#f2e82a",
-        "finish": "gloss",
-        "zones": [
-          {
-            "from": 0.36,
-            "to": 0.415,
-            "color": "#1d1d1f"
-          },
-          {
-            "from": 0.44,
-            "to": 0.56,
-            "color": "#1d1d1f"
-          },
-          {
-            "from": 0.86,
-            "to": 1,
-            "color": "#1d1d1f",
-            "faces": [
-              "inner"
-            ]
-          }
-        ]
-      },
       "parts": {
         "grip": {
-          "color": "#1e1e1e"
+          "color": "#ececec"
         },
         "collar": {
-          "color": "#1d1d1f"
+          "color": "#2a3034"
         },
         "buttCap": {
-          "color": "#1e1e1e"
+          "color": "#ececec"
         },
         "strings": {
           "color": "#f2f2f2",
           "gaugeMm": 1.25
         },
         "grommets": {
-          "color": "#1d1d1f",
+          "color": "#1d2124",
           "channel": 0.45
         },
         "bumper": {
-          "color": "#1d1d1f"
+          "color": "#1d2124"
         },
         "dampener": null
       },
       "sources": [
         "https://web.archive.org/web/20230410182245/https://www.tennis-warehouse.com/Babolat_Pure_Aero_26_2023_Junior/descpageRCBAB-BAJ26R.html"
-      ]
+      ],
+      "paint": {
+        "base": "#2f3539",
+        "finish": "gloss",
+        "zones": [
+          {
+            "from": 0.431,
+            "to": 0.533,
+            "color": "#e8e8e4",
+            "side": "left"
+          },
+          {
+            "from": 0.316,
+            "to": 0.395,
+            "color": "#e8e8e4",
+            "side": "left",
+            "bridge": false
+          },
+          {
+            "from": 0.431,
+            "to": 0.533,
+            "color": "#d6ee2c",
+            "side": "right"
+          },
+          {
+            "from": 0.316,
+            "to": 0.395,
+            "color": "#d6ee2c",
+            "side": "right",
+            "bridge": false
+          }
+        ]
+      }
     },
     {
       "id": "babolat-pure-aero-98-2023",
@@ -306,27 +330,6 @@
           21,
           23,
           22
-        ]
-      },
-      "paint": {
-        "base": "#4e585d",
-        "finish": "gloss",
-        "zones": [
-          {
-            "from": 0.36,
-            "to": 0.415,
-            "color": "#d3f23a"
-          },
-          {
-            "from": 0.44,
-            "to": 0.56,
-            "color": "#d3f23a"
-          },
-          {
-            "from": 0.8,
-            "to": 1,
-            "color": "#1d2124"
-          }
         ]
       },
       "parts": {

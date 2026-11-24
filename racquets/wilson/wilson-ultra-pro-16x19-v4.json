@@ -36,11 +36,11 @@
     }
   },
   "paint": {
-    "base": "#2394c8",
+    "base": "#2c7694",
     "finish": "gloss",
     "zones": [
       {
-        "from": 0.84,
+        "from": 0.657,
         "to": 1,
         "color": "#121316"
       }

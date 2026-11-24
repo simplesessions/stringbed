@@ -36,13 +36,16 @@
     }
   },
   "paint": {
-    "base": "#8f1a24",
+    "base": "#7c1f2a",
     "finish": "satin",
     "zones": [
       {
-        "from": 0.85,
+        "from": 0.9,
         "to": 1,
-        "color": "#1b1b1f"
+        "color": "#17171a",
+        "faces": [
+          "outer"
+        ]
       }
     ]
   },
@@ -51,7 +54,7 @@
       "color": "#f0f0f0"
     },
     "collar": {
-      "color": "#8f1a24"
+      "color": "#7c1f2a"
     },
     "buttCap": {
       "color": "#f0f0f0"
@@ -98,9 +101,12 @@
         "finish": "gloss",
         "zones": [
           {
-            "from": 0.86,
+            "from": 0.9,
             "to": 1,
-            "color": "#101428"
+            "color": "#17171a",
+            "faces": [
+              "outer"
+            ]
           }
         ]
       },

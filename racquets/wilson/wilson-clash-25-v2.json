@@ -40,9 +40,15 @@
     "finish": "satin",
     "zones": [
       {
-        "from": 0.82,
+        "from": 0.675,
         "to": 1,
         "color": "#1a1a1d"
+      },
+      {
+        "from": 0,
+        "to": 0.5,
+        "color": "#7d1a26",
+        "blend": 0.12
       }
     ]
   },

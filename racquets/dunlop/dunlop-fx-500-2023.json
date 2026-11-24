@@ -16,7 +16,8 @@
       23,
       26,
       23
-    ]
+    ],
+    "unstrungWeightG": 300
   },
   "geometry": {
     "head": {
@@ -40,10 +41,11 @@
     "finish": "gloss",
     "zones": [
       {
-        "from": 0.351,
+        "from": 0.325,
         "to": 0.8,
         "color": "#232c3f",
-        "side": "left"
+        "side": "left",
+        "bridge": false
       },
       {
         "from": 0.533,
@@ -78,7 +80,7 @@
   },
   "sources": [
     "https://www.tennis-warehouse.com/learning_center/racquet_reviews/DFX500review.html",
-    "https://www.tennisexpress.com/dunlop-fx-500-2023-tennis-racquet-103182"
+    "https://marcottesports.com/products/dunlop-fx-500-2023"
   ],
   "verified": true,
   "colourway": "Blue",
@@ -100,7 +102,8 @@
           21,
           23,
           21
-        ]
+        ],
+        "unstrungWeightG": 305
       },
       "geometry": {
         "head": {
@@ -121,7 +124,7 @@
       },
       "sources": [
         "https://www.tennis-warehouse.com/learning_center/racquet_reviews/FX5TRreview.html",
-        "https://www.tennisexpress.com/dunlop-fx-500-tour-2023-tennis-racquet-103180"
+        "https://ca.dunlopsports.com/products/dunlop-fx-500-tour-tennis-racquet"
       ]
     },
     {
@@ -184,7 +187,8 @@
           23,
           27,
           23
-        ]
+        ],
+        "unstrungWeightG": 265
       },
       "geometry": {
         "head": {
@@ -229,7 +233,8 @@
       "verified": true,
       "colourway": "Blue/Black",
       "sources": [
-        "https://www.tennis-warehouse.com/Dunlop_FX_700/descpageRCDUNLOP-DFX7R.html"
+        "https://www.tennis-warehouse.com/Dunlop_FX_700/descpageRCDUNLOP-DFX7R.html",
+        "https://ca.dunlopsports.com/products/dunlop-fx-700-tour-tennis-racquet"
       ]
     }
   ]

@@ -45,9 +45,10 @@
         "color": "#f2503f"
       },
       {
-        "from": 0.295,
-        "to": 0.33,
-        "color": "#f1f1ee"
+        "from": 0.225,
+        "to": 0.243,
+        "color": "#f1f1ee",
+        "side": "right"
       }
     ]
   },
@@ -103,9 +104,10 @@
         "finish": "gloss",
         "zones": [
           {
-            "from": 0.295,
-            "to": 0.33,
-            "color": "#f1f1ee"
+            "from": 0.225,
+            "to": 0.243,
+            "color": "#f1f1ee",
+            "side": "right"
           }
         ]
       },

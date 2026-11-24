@@ -9,7 +9,8 @@ bump; new racquets, new colourways and fixes to existing models are minor or pat
 
 - Spec: optional `geometry.handle.elongationMm` (pallet width minus depth). Handles of every brand
   but Solinco are now wider in the string plane than deep; part names and girth are unchanged.
-- Spec: optional `side` on paint zones, for paint that differs left and right.
+- Spec: optional `side` (paint that differs left and right) and `bridge: false` on paint zones.
+- Colourways of every brand corrected against product photos.
 - Fix: grommet strips with a `channel` on box and tapered-box beams faced inward and did not show.
 - Dunlop and Tecnifibre added.
 

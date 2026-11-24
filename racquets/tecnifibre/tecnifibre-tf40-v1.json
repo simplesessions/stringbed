@@ -47,19 +47,20 @@
       },
       {
         "from": 0.08,
-        "to": 0.335,
+        "to": 0.306,
         "color": "#1c1c1e",
         "side": "right"
       },
       {
-        "from": 0.351,
-        "to": 0.385,
+        "from": 0.306,
+        "to": 0.35,
         "color": "#2f349c",
-        "side": "right"
+        "side": "right",
+        "bridge": false
       },
       {
-        "from": 0.48,
-        "to": 0.667,
+        "from": 0.473,
+        "to": 0.66,
         "color": "#e5101f",
         "side": "right"
       }

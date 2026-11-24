@@ -23,8 +23,9 @@ every frame listed there has a record.
 | Wilson | 41 (5 junior) | — | 41 |
 | Yonex | 43 (10 junior) | — | 43 |
 | Solinco | 10 (1 junior) | — | 10 |
+| Tecnifibre (added 2026-11-24) | 2 | — | 2 |
 
-The library racquets are not repeated here. Twelve more were promoted on 2026-11-20 (Muse 100, Ultra 100 v5, Burn 100S v6, Defyer 100, Clash 100 Pro v3, RF 01 Pro, Extreme MP 2026, Radical MP 2025, Gravity MP 2025, Boom MP 2026, Ripcord 100 280g, Pure Aero 98 2026), so the table above is 12 records too high (Babolat 1, Head 4, Wilson 5, Yonex 1, Prince 1). Twenty more were promoted later that day (see the roster doc); a third batch of 30 followed; a fourth batch of 61 followed; a fifth and a sixth batch followed (see the roster doc); the placeholder count is now 54. The Head Speed MP 2026 was promoted into
+The library racquets are not repeated here. Twelve more were promoted on 2026-11-20 (Muse 100, Ultra 100 v5, Burn 100S v6, Defyer 100, Clash 100 Pro v3, RF 01 Pro, Extreme MP 2026, Radical MP 2025, Gravity MP 2025, Boom MP 2026, Ripcord 100 280g, Pure Aero 98 2026), so the table above is 12 records too high (Babolat 1, Head 4, Wilson 5, Yonex 1, Prince 1). Twenty more were promoted later that day (see the roster doc); a third batch of 30 followed; a fourth batch of 61 followed; a fifth and a sixth batch followed (see the roster doc); the placeholder count was then 54 (the two Tecnifibre records make it 56). The Head Speed MP 2026 was promoted into
 `racquets/` on 2026-11-20 and its record was removed.
 
 ## Fields

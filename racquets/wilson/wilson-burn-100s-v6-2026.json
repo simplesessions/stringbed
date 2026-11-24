@@ -40,7 +40,7 @@
     "finish": "satin",
     "zones": [
       {
-        "from": 0.82,
+        "from": 0.665,
         "to": 1,
         "color": "#2b2e33"
       }
@@ -102,16 +102,14 @@
         ]
       },
       "paint": {
-        "base": "#ff3d9e",
+        "base": "#f81e90",
         "finish": "satin",
         "zones": [
           {
-            "from": 0.85,
+            "from": 0.74,
             "to": 1,
-            "color": "#17171a",
-            "faces": [
-              "inner"
-            ]
+            "color": "#f50d55",
+            "blend": 0.04
           }
         ]
       },

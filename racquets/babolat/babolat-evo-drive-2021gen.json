@@ -40,19 +40,30 @@
     "finish": "gloss",
     "zones": [
       {
-        "from": 0.38,
-        "to": 0.52,
-        "color": "#1d2640"
+        "from": 0.44,
+        "to": 0.543,
+        "color": "#26344c",
+        "side": "left"
       },
       {
-        "from": 0.56,
-        "to": 0.72,
-        "color": "#f0f0f0"
+        "from": 0.325,
+        "to": 0.405,
+        "color": "#26344c",
+        "side": "left",
+        "bridge": false
       },
       {
-        "from": 0.85,
-        "to": 1,
-        "color": "#1d2640"
+        "from": 0.44,
+        "to": 0.543,
+        "color": "#f0f0f0",
+        "side": "right"
+      },
+      {
+        "from": 0.325,
+        "to": 0.405,
+        "color": "#f0f0f0",
+        "side": "right",
+        "bridge": false
       }
     ]
   },

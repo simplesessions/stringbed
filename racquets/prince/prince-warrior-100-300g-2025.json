@@ -40,13 +40,15 @@
     "finish": "satin",
     "zones": [
       {
-        "from": 0.45,
-        "to": 0.9,
-        "color": "#1f2e4d",
+        "from": 0.15,
+        "to": 1,
+        "color": "#1b2a4a",
         "faces": [
           "front",
-          "back"
-        ]
+          "back",
+          "inner"
+        ],
+        "side": "right"
       }
     ]
   },
@@ -89,9 +91,10 @@
         "finish": "satin",
         "zones": [
           {
-            "from": 0.12,
-            "to": 0.3,
-            "color": "#44474f"
+            "from": 0.13,
+            "to": 0.345,
+            "color": "#4a4d55",
+            "side": "right"
           }
         ]
       },
@@ -163,13 +166,15 @@
         "zones": [
           {
             "from": 0,
-            "to": 0.12,
-            "color": "#1a1a1d"
+            "to": 0.655,
+            "color": "#1a1a1d",
+            "side": "left"
           },
           {
-            "from": 0.88,
-            "to": 1,
-            "color": "#1a1a1d"
+            "from": 0,
+            "to": 0.1,
+            "color": "#1a1a1d",
+            "side": "right"
           }
         ]
       },

@@ -40,25 +40,22 @@
     "finish": "satin",
     "zones": [
       {
-        "from": 0.36,
-        "to": 0.415,
+        "from": 0.442,
+        "to": 0.545,
         "color": "#1f2540"
       },
       {
-        "from": 0.44,
-        "to": 0.52,
-        "color": "#1f2540"
+        "from": 0.324,
+        "to": 0.405,
+        "color": "#1f2540",
+        "bridge": false
       },
       {
-        "from": 0.71,
+        "from": 0.75,
         "to": 1,
-        "color": "#1f2540"
-      },
-      {
-        "from": 0.53,
-        "to": 0.71,
         "color": "#1f2540",
         "faces": [
+          "inner",
           "outer"
         ]
       }
@@ -170,22 +167,30 @@
         "finish": "satin",
         "zones": [
           {
-            "from": 0.4,
-            "to": 0.52,
-            "color": "#1f2540"
-          },
-          {
-            "from": 0.56,
-            "to": 0.7,
-            "color": "#6cc3c0"
-          },
-          {
-            "from": 0.88,
-            "to": 1,
+            "from": 0.429,
+            "to": 0.533,
             "color": "#1f2540",
-            "faces": [
-              "inner"
-            ]
+            "side": "left"
+          },
+          {
+            "from": 0.318,
+            "to": 0.396,
+            "color": "#1f2540",
+            "side": "left",
+            "bridge": false
+          },
+          {
+            "from": 0.429,
+            "to": 0.533,
+            "color": "#6cc3c0",
+            "side": "right"
+          },
+          {
+            "from": 0.318,
+            "to": 0.396,
+            "color": "#6cc3c0",
+            "side": "right",
+            "bridge": false
           }
         ]
       },

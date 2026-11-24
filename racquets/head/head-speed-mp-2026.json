@@ -42,13 +42,21 @@
     "zones": [
       {
         "from": 0,
-        "to": 0.155,
-        "color": "#f1f1ec"
+        "to": 0.09,
+        "color": "#f1f1ec",
+        "side": "left"
       },
       {
-        "from": 0.55,
-        "to": 0.88,
-        "color": "#f1f1ec"
+        "from": 0,
+        "to": 0.115,
+        "color": "#f1f1ec",
+        "side": "right"
+      },
+      {
+        "from": 0.51,
+        "to": 0.828,
+        "color": "#f1f1ec",
+        "side": "right"
       }
     ]
   },
@@ -107,13 +115,21 @@
         "zones": [
           {
             "from": 0,
-            "to": 0.155,
-            "color": "#ecece8"
+            "to": 0.09,
+            "color": "#ecece8",
+            "side": "left"
           },
           {
-            "from": 0.55,
-            "to": 0.88,
-            "color": "#ecece8"
+            "from": 0,
+            "to": 0.115,
+            "color": "#ecece8",
+            "side": "right"
+          },
+          {
+            "from": 0.52,
+            "to": 0.836,
+            "color": "#ecece8",
+            "side": "right"
           }
         ]
       },
@@ -185,13 +201,21 @@
         "zones": [
           {
             "from": 0,
-            "to": 0.155,
-            "color": "#ecece8"
+            "to": 0.09,
+            "color": "#ecece8",
+            "side": "left"
           },
           {
-            "from": 0.55,
-            "to": 0.88,
-            "color": "#ecece8"
+            "from": 0,
+            "to": 0.115,
+            "color": "#ecece8",
+            "side": "right"
+          },
+          {
+            "from": 0.52,
+            "to": 0.836,
+            "color": "#ecece8",
+            "side": "right"
           }
         ]
       },

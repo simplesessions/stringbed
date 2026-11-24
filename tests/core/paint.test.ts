@@ -178,3 +178,16 @@ test('a lookup with no side skips sided zones (trim parts)', () => {
   expect(paintColorAt(paint, 0.5, undefined, 'right')).toEqual(hexToLinear('#ff0000'));
   expect(zonedAt(paint, 0.5, undefined, 'left')).toBe(false);
 });
+
+test('a zone with bridge: false runs past the junction without painting the bridge', () => {
+  const paintOf = (bridge?: false) => {
+    const s = makeSpec({ paint: { base: '#ffffff', finish: 'matte', zones: [{ from: 0.3, to: 0.4, color: '#ff0000', ...(bridge === undefined ? {} : { bridge }) }] } });
+    const g = buildFrame(s, computeLayout(s, HOOP_RADIAL[s.geometry.beam.profile]));
+    applyPaint(g, s.paint);
+    const u = g.getAttribute('u'), c = g.getAttribute('color');
+    const red = (want: (u: number) => boolean) => { let n = 0, r = 0; for (let i = 0; i < u.count; i++) if (want(u.getX(i))) { n++; if (c.getY(i) < 0.5) r++; } expect(n).toBeGreaterThan(0); return r / n; };
+    return { bridge: red((v) => Math.abs(v - 0.34) < 1e-6), arm: red((v) => v > 0.31 && v < 0.335), hoop: red((v) => v > 0.352 && v < 0.39) };
+  };
+  expect(paintOf()).toEqual({ bridge: 1, arm: 1, hoop: 1 });
+  expect(paintOf(false)).toEqual({ bridge: 0, arm: 1, hoop: 1 });
+});

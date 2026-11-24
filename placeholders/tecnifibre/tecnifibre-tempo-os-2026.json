@@ -1,0 +1,31 @@
+{
+  "id": "tecnifibre-tempo-os-2026",
+  "status": "placeholder",
+  "brand": "Tecnifibre",
+  "line": "Tempo",
+  "model": "Tempo OS",
+  "generation": "2026",
+  "releaseYear": 2026,
+  "category": "adult",
+  "onSaleIn": [
+    2026
+  ],
+  "specs": {
+    "headSizeSqIn": 105,
+    "lengthIn": 26.6,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": null,
+    "unstrungWeightG": 270,
+    "balanceMm": 325
+  },
+  "colourway": null,
+  "sources": [
+    "https://www.tecnifibre.com/products/tempo-os"
+  ],
+  "notes": "Not modelled because no page read gives a beam width (tecnifibre.com, Sportano and Stringers World checked 2026-11-24). Length is 67.5 cm on tecnifibre.com.",
+  "researched": "2026-11-24",
+  "verified": false
+}
