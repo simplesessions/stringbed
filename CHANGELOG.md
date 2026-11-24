@@ -5,6 +5,12 @@ design doc, the spec JSON shape, `catalog.json` (its own `version` field is the 
 and the exports of the package entry. A change to any of those that breaks a consumer is a major
 bump; new racquets, new colourways and fixes to existing models are minor or patch.
 
+## Unreleased
+
+- Spec: optional `geometry.handle.elongationMm` (pallet width minus depth). Handles of every brand
+  but Solinco are now wider in the string plane than deep; part names and girth are unchanged.
+- Dunlop and Tecnifibre added.
+
 ## 1.0.0
 
 First tagged release.

@@ -31,7 +31,10 @@
       "style": "open-v",
       "bridge": "curved"
     },
-    "features": []
+    "features": [],
+    "handle": {
+      "elongationMm": 3.8
+    }
   },
   "paint": {
     "base": "#3d3c94",
@@ -111,7 +114,10 @@
           "style": "open-v",
           "bridge": "curved"
         },
-        "features": []
+        "features": [],
+        "handle": {
+          "elongationMm": 3.8
+        }
       },
       "sources": [
         "https://www.tennis-warehouse.com/Dunlop_FX_500_Tour/descpageRCDUNLOP-DF50T.html",
@@ -252,7 +258,7 @@
       },
       "parts": {
         "grip": {
-          "color": "#f0f0ee"
+          "color": "#3a3a3c"
         },
         "collar": {
           "color": "#1f1f21"

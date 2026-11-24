@@ -31,7 +31,10 @@
       "style": "open-v",
       "bridge": "curved"
     },
-    "features": []
+    "features": [],
+    "handle": {
+      "elongationMm": 5.2
+    }
   },
   "paint": {
     "base": "#f3f3f0",
@@ -48,13 +51,13 @@
         "color": "#2f4fc4"
       },
       {
-        "from": 0.62,
-        "to": 0.69,
+        "from": 0.49,
+        "to": 0.56,
         "color": "#2f4fc4"
       },
       {
-        "from": 0.7,
-        "to": 0.77,
+        "from": 0.57,
+        "to": 0.635,
         "color": "#e8372f"
       }
     ]
@@ -167,7 +170,10 @@
           "style": "open-v",
           "bridge": "curved"
         },
-        "features": []
+        "features": [],
+        "handle": {
+          "elongationMm": 5.2
+        }
       },
       "sources": [
         "https://www.tennis-warehouse.com/Tecnifibre_TFight_300/descpageRCTFUSA-TF30ST.html",
@@ -204,7 +210,10 @@
           "style": "open-v",
           "bridge": "curved"
         },
-        "features": []
+        "features": [],
+        "handle": {
+          "elongationMm": 5.2
+        }
       },
       "sources": [
         "https://www.tennis-warehouse.com/Tecnifibre_TFight_285/descpageRCTFUSA-TF285S.html"
@@ -240,7 +249,10 @@
           "style": "open-v",
           "bridge": "curved"
         },
-        "features": []
+        "features": [],
+        "handle": {
+          "elongationMm": 5.2
+        }
       },
       "sources": [
         "https://www.tennis-warehouse.com/Tecnifibre_TFight_270/descpageRCTFUSA-TF270S.html"
@@ -276,17 +288,19 @@
           "style": "open-v",
           "bridge": "curved"
         },
-        "features": []
+        "features": [],
+        "handle": {
+          "elongationMm": 5.2
+        }
       },
       "paint": {
         "base": "#f3f3f0",
         "finish": "satin",
         "zones": [
           {
+            "from": 0.64,
             "to": 1,
-            "color": "#1f2022",
-            "blend": 0.05,
-            "from": 0.8
+            "color": "#1f2022"
           },
           {
             "from": 0.22,
@@ -299,13 +313,13 @@
             "color": "#2f4fc4"
           },
           {
-            "from": 0.62,
-            "to": 0.69,
+            "from": 0.49,
+            "to": 0.56,
             "color": "#2f4fc4"
           },
           {
-            "from": 0.7,
-            "to": 0.77,
+            "from": 0.57,
+            "to": 0.635,
             "color": "#e8372f"
           }
         ]
@@ -314,7 +328,30 @@
         "https://www.tecnifibre.com/products/tfight-team",
         "https://www.tennisnuts.com/tecnifibre-t-fight-team-tennis-racket-1750086.html"
       ],
-      "verified": true
+      "verified": true,
+      "parts": {
+        "grip": {
+          "color": "#f3f3f0"
+        },
+        "collar": {
+          "color": "#f3f3f0"
+        },
+        "buttCap": {
+          "color": "#f3f3f0"
+        },
+        "strings": {
+          "color": "#f2f2f2",
+          "gaugeMm": 1.25
+        },
+        "grommets": {
+          "color": "#1f2022",
+          "channel": 0.45
+        },
+        "bumper": {
+          "color": "#1f2022"
+        },
+        "dampener": null
+      }
     }
   ]
 }

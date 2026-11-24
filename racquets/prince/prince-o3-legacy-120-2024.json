@@ -32,7 +32,10 @@
     },
     "features": [
       "o-ports"
-    ]
+    ],
+    "handle": {
+      "elongationMm": 3.2
+    }
   },
   "paint": {
     "base": "#a89868",
@@ -130,7 +133,10 @@
         },
         "features": [
           "o-ports"
-        ]
+        ],
+        "handle": {
+          "elongationMm": 3.2
+        }
       },
       "paint": {
         "base": "#24405e",

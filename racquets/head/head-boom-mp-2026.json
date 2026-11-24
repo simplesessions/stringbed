@@ -30,7 +30,10 @@
       "style": "open-v",
       "bridge": "curved"
     },
-    "features": []
+    "features": [],
+    "handle": {
+      "elongationMm": 2.8
+    }
   },
   "paint": {
     "base": "#3cb6e8",
@@ -111,7 +114,10 @@
           "style": "open-v",
           "bridge": "curved"
         },
-        "features": []
+        "features": [],
+        "handle": {
+          "elongationMm": 2.8
+        }
       },
       "sources": [
         "https://www.tennis-warehouse.com/Head_Boom_Pro_2026/descpageRCHEAD-HBOOP6.html"

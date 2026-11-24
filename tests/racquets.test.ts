@@ -4,9 +4,9 @@ import { lineageOf, loadAllSpecs } from '../src/core/spec';
 const specs = loadAllSpecs();
 
 test('every spec parses and ids are unique', () => {
-  // 86 frame families (one per generation); 268 more are their variants (other sizes).
-  expect(specs.length).toBe(354);
-  expect(specs.filter((s) => !s.variantOf)).toHaveLength(86);
+  // 87 frame families (one per generation); 269 more are their variants (other sizes).
+  expect(specs.length).toBe(356);
+  expect(specs.filter((s) => !s.variantOf)).toHaveLength(87);
   expect(new Set(specs.map((s) => s.id)).size).toBe(specs.length);
 });
 test('a variant never carries another generation (sizes of one frame only)', () => {
@@ -47,6 +47,15 @@ test('every Yonex head is isometric', () => {
 });
 test('every Solinco Blackout and Whiteout has a camo pattern', () => {
   for (const s of specs.filter((s) => s.brand === 'Solinco' && s.line !== 'Prizm')) expect(s.paint.pattern?.type).toBe('camo');
+});
+// Pallet width minus depth, in mm, from the published measurements in docs/racquet-roster.md.
+const ELONGATION: Record<string, number | undefined> = { Babolat: 3.9, Dunlop: 3.8, Head: 2.8, Prince: 3.2, Solinco: undefined, Tecnifibre: 5.2, Wilson: 3.9, Yonex: 3.8 };
+test('every handle has its brand\'s shape, variants with their own geometry included', () => {
+  for (const s of specs) {
+    const xDamp = s.brand === 'Tecnifibre' && (s.line === 'Fire' || (s.line === 'TF-X1' && s.generation === 'V2'));
+    const expected = xDamp ? 3.5 : s.id === 'head-ti-s6' ? 5.8 : ELONGATION[s.brand];
+    expect(s.geometry.handle?.elongationMm, s.id).toBe(expected);
+  }
 });
 test('every spec is verified and sourced', () => {
   for (const s of specs) { expect(s.verified, s.id).toBe(true); expect(s.sources.length).toBeGreaterThan(0); }

@@ -33,7 +33,10 @@
     },
     "features": [
       "aero-fins"
-    ]
+    ],
+    "handle": {
+      "elongationMm": 3.8
+    }
   },
   "paint": {
     "base": "#c41f3a",

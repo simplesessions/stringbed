@@ -52,6 +52,12 @@ export interface RacquetSpec {
     beam: { profile: BeamProfile };
     throat: { style: 'open-v' | 'open-u'; bridge: 'curved' | 'flat' };
     features: Feature[];
+    /**
+     * Handle cross-section. elongationMm = pallet width in the string plane (bevel 1 to 5) minus
+     * its depth along the face normal (bevel 3 to 7). Default 0, a regular octagon. Every handle
+     * has the same girth: grip size is the buyer's choice, not part of the frame.
+     */
+    handle?: { elongationMm: number }; // 0..8
   };
   paint: {
     base: HexColor;
@@ -156,6 +162,7 @@ const baseSpecSchema = z
           .object({ style: z.enum(['open-v', 'open-u']), bridge: z.enum(['curved', 'flat']) })
           .strict(),
         features: z.array(z.enum(['o-ports', 'aero-fins'])),
+        handle: z.object({ elongationMm: z.number().min(0).max(8) }).strict().optional(),
       })
       .strict(),
     paint: paintSchema,

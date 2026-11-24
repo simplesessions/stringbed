@@ -4,7 +4,8 @@ import { RawMesh } from './raw';
 import type { RacquetSpec } from './spec';
 
 // Handle dimensions in metres. All octagons have flats facing +-X and +-Z (so the bounding box
-// half-width equals the apothem). A real 4 3/8" grip is about 0.111 m round, ~0.035 m across flats.
+// half-width equals the apothem). `geometry.handle.elongationMm` makes them wider in the string
+// plane (X) and shallower along the face normal (Z) by the same amount, keeping the girth. A real 4 3/8" grip is about 0.111 m round, ~0.035 m across flats.
 const BUTT_CAP_HEIGHT = 0.02;
 /** Butt cap rings (y, apothem): flares out above the bottom face, then settles under the grip. */
 const BUTT_CAP_RINGS: [number, number][] = [[0, 0.017], [0.004, 0.0198], [BUTT_CAP_HEIGHT, 0.0186]];
@@ -21,13 +22,16 @@ const SIDES = 8;
 /**
  * Octagonal prism through `rings` (y, apothem), hard edges (every face has its own vertices).
  * Caps are optional and flat. Triangle count: 16 per ring gap plus 6 per cap.
+ * `stretch` moves the +-X flats out and the +-Z flats in by that much; sliding the corners rather
+ * than scaling them keeps the diagonal bevels at 45 degrees.
  */
-function octagon(rings: [number, number][], capBottom: boolean, capTop: boolean): THREE.BufferGeometry {
+function octagon(rings: [number, number][], capBottom: boolean, capTop: boolean, stretch: number): THREE.BufferGeometry {
   const m = new RawMesh();
   const corner = (k: number, y: number, a: number): [number, number, number] => {
     const phi = ((k - 0.5) * 2 * Math.PI) / SIDES;
     const R = a / Math.cos(Math.PI / SIDES);
-    return [R * Math.cos(phi), y, R * Math.sin(phi)];
+    const x = R * Math.cos(phi), z = R * Math.sin(phi);
+    return [x + Math.sign(x) * stretch, y, z - Math.sign(z) * stretch];
   };
   for (let r = 0; r + 1 < rings.length; r++) {
     for (let k = 0; k < SIDES; k++) {
@@ -53,22 +57,26 @@ function octagon(rings: [number, number][], capBottom: boolean, capTop: boolean)
   return m.build();
 }
 
+/** How far each in-plane flat moves out (and each face-normal flat in), in metres. */
+const stretchOf = (spec: RacquetSpec): number => (spec.geometry.handle?.elongationMm ?? 0) / 4000;
+
 /** Grip: from the butt cap top to gripTopY, slight taper (wider toward the butt). */
-export function buildGrip(_spec: RacquetSpec, layout: Layout): THREE.BufferGeometry {
-  return octagon([[BUTT_CAP_HEIGHT, GRIP_APOTHEM_BOTTOM], [layout.gripTopY, GRIP_APOTHEM_TOP]], false, false);
+export function buildGrip(spec: RacquetSpec, layout: Layout): THREE.BufferGeometry {
+  return octagon([[BUTT_CAP_HEIGHT, GRIP_APOTHEM_BOTTOM], [layout.gripTopY, GRIP_APOTHEM_TOP]], false, false, stretchOf(spec));
 }
 
 /** Collar: closed octagonal band that hides the seam between grip and shaft. */
-export function buildCollar(_spec: RacquetSpec, layout: Layout): THREE.BufferGeometry {
+export function buildCollar(spec: RacquetSpec, layout: Layout): THREE.BufferGeometry {
   const y = layout.gripTopY;
   return octagon(
     [[y - COLLAR_BELOW, COLLAR_APOTHEM], [y + COLLAR_SHOULDER_Y, COLLAR_APOTHEM], [y + COLLAR_ABOVE, COLLAR_APOTHEM_TOP]],
     false,
     true,
+    stretchOf(spec),
   );
 }
 
 /** Butt cap: flared octagon from y = 0 to 0.02, closed top and bottom. */
-export function buildButtCap(_spec: RacquetSpec, _layout: Layout): THREE.BufferGeometry {
-  return octagon(BUTT_CAP_RINGS, true, true);
+export function buildButtCap(spec: RacquetSpec, _layout: Layout): THREE.BufferGeometry {
+  return octagon(BUTT_CAP_RINGS, true, true, stretchOf(spec));
 }

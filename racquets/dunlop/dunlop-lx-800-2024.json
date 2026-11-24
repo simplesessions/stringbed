@@ -31,7 +31,10 @@
       "style": "open-v",
       "bridge": "curved"
     },
-    "features": []
+    "features": [],
+    "handle": {
+      "elongationMm": 3.8
+    }
   },
   "paint": {
     "base": "#d6d8d6",
@@ -115,7 +118,10 @@
           "style": "open-v",
           "bridge": "flat"
         },
-        "features": []
+        "features": [],
+        "handle": {
+          "elongationMm": 3.8
+        }
       },
       "sources": [
         "https://www.tennis-warehouse.com/Dunlop_LX_1000/descpageRCDUNLOP-LX1000.html"
@@ -178,11 +184,11 @@
           "gaugeMm": 1.25
         },
         "grommets": {
-          "color": "#8fa6b8",
+          "color": "#2a2a2c",
           "channel": 0.45
         },
         "bumper": {
-          "color": "#8fa6b8"
+          "color": "#2a2a2c"
         },
         "dampener": null
       },

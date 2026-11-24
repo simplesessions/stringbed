@@ -30,7 +30,10 @@
       "style": "open-v",
       "bridge": "curved"
     },
-    "features": []
+    "features": [],
+    "handle": {
+      "elongationMm": 3.8
+    }
   },
   "paint": {
     "base": "#d9e83c",
@@ -117,7 +120,10 @@
           "style": "open-v",
           "bridge": "curved"
         },
-        "features": []
+        "features": [],
+        "handle": {
+          "elongationMm": 3.8
+        }
       },
       "sources": [
         "https://www.tennis-warehouse.com/learning_center/racquet_reviews/T310DUreview.html",

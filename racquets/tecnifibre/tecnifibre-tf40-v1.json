@@ -31,42 +31,28 @@
       "style": "open-v",
       "bridge": "curved"
     },
-    "features": []
+    "features": [],
+    "handle": {
+      "elongationMm": 5.2
+    }
   },
   "paint": {
     "base": "#f3f3f0",
     "finish": "satin",
     "zones": [
       {
-        "from": 0.1,
-        "to": 0.88,
-        "color": "#1f2022",
-        "faces": [
-          "outer"
-        ]
+        "from": 0,
+        "to": 0.08,
+        "color": "#1f2022"
       },
       {
-        "from": 0.88,
-        "to": 1,
-        "color": "#1f2022",
-        "blend": 0.04
-      },
-      {
-        "from": 0.12,
-        "to": 0.34,
-        "color": "#1f2022",
-        "faces": [
-          "inner"
-        ]
-      },
-      {
-        "from": 0.56,
-        "to": 0.64,
+        "from": 0.37,
+        "to": 0.42,
         "color": "#2f4fc4"
       },
       {
-        "from": 0.64,
-        "to": 0.72,
+        "from": 0.47,
+        "to": 0.67,
         "color": "#e8372f"
       }
     ]

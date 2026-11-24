@@ -1,0 +1,138 @@
+{
+  "id": "tecnifibre-tempo-2026",
+  "brand": "Tecnifibre",
+  "line": "Tempo",
+  "model": "Tempo Tour",
+  "generation": "2026",
+  "year": 2026,
+  "specs": {
+    "headSizeSqIn": 102,
+    "lengthIn": 27,
+    "stringPattern": [
+      16,
+      19
+    ],
+    "beamMm": [
+      23,
+      23,
+      21
+    ],
+    "unstrungWeightG": 285
+  },
+  "geometry": {
+    "head": {
+      "shape": "oval",
+      "aspect": 1.3
+    },
+    "beam": {
+      "profile": "ellipse"
+    },
+    "throat": {
+      "style": "open-v",
+      "bridge": "curved"
+    },
+    "features": [],
+    "handle": {
+      "elongationMm": 5.2
+    }
+  },
+  "paint": {
+    "base": "#f3f3f0",
+    "finish": "satin",
+    "zones": [
+      {
+        "from": 0.5,
+        "to": 1,
+        "color": "#2fc4b2",
+        "blend": 0.15
+      },
+      {
+        "from": 0.275,
+        "to": 0.305,
+        "color": "#2fc4b2"
+      },
+      {
+        "from": 0.235,
+        "to": 0.265,
+        "color": "#1f2022"
+      }
+    ]
+  },
+  "parts": {
+    "grip": {
+      "color": "#f3f3f0"
+    },
+    "collar": {
+      "color": "#f3f3f0"
+    },
+    "buttCap": {
+      "color": "#f3f3f0"
+    },
+    "strings": {
+      "color": "#f2f2f2",
+      "gaugeMm": 1.25
+    },
+    "grommets": {
+      "color": "#2fc4b2",
+      "channel": 0.45
+    },
+    "bumper": {
+      "color": "#2fc4b2"
+    },
+    "dampener": null
+  },
+  "sources": [
+    "https://www.tecnifibre.com/products/tempo-tour",
+    "https://sportano.com/p/1077921/tennis-racket-tecnifibre-tempo-tour-g1-2026-white"
+  ],
+  "verified": true,
+  "colourway": "White/Teal",
+  "variantLabel": "Tour",
+  "variants": [
+    {
+      "id": "tecnifibre-tempo-team-2026",
+      "label": "Team",
+      "model": "Tempo Team",
+      "specs": {
+        "headSizeSqIn": 102,
+        "lengthIn": 26.6,
+        "stringPattern": [
+          16,
+          19
+        ],
+        "beamMm": [
+          23,
+          23,
+          21
+        ],
+        "unstrungWeightG": 270
+      },
+      "sources": [
+        "https://www.tecnifibre.com/products/tempo-team",
+        "https://sportano.com/p/1077911/tennis-racket-tecnifibre-tempo-team-2026-g2-white"
+      ],
+      "paint": {
+        "base": "#f3f3f0",
+        "finish": "satin",
+        "zones": [
+          {
+            "from": 0.5,
+            "to": 1,
+            "color": "#2fc4b2",
+            "blend": 0.15
+          },
+          {
+            "from": 0.275,
+            "to": 0.305,
+            "color": "#2fc4b2"
+          },
+          {
+            "from": 0.235,
+            "to": 0.265,
+            "color": "#bfeee6"
+          }
+        ]
+      }
+    }
+  ]
+}

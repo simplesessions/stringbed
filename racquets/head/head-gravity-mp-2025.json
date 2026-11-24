@@ -30,7 +30,10 @@
       "style": "open-v",
       "bridge": "curved"
     },
-    "features": []
+    "features": [],
+    "handle": {
+      "elongationMm": 2.8
+    }
   },
   "paint": {
     "base": "#15181c",

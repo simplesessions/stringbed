@@ -30,7 +30,10 @@
       "style": "open-v",
       "bridge": "curved"
     },
-    "features": []
+    "features": [],
+    "handle": {
+      "elongationMm": 3.8
+    }
   },
   "paint": {
     "base": "#8e1d24",
@@ -129,7 +132,10 @@
           "style": "open-v",
           "bridge": "curved"
         },
-        "features": []
+        "features": [],
+        "handle": {
+          "elongationMm": 3.8
+        }
       },
       "parts": {
         "grip": {
@@ -187,7 +193,10 @@
           "style": "open-v",
           "bridge": "curved"
         },
-        "features": []
+        "features": [],
+        "handle": {
+          "elongationMm": 3.8
+        }
       },
       "sources": [
         "https://www.tennis-warehouse.com/Dunlop_CX_400_Tour/descpageRCDUNLOP-DCX4T.html"
@@ -222,7 +231,10 @@
           "style": "open-v",
           "bridge": "curved"
         },
-        "features": []
+        "features": [],
+        "handle": {
+          "elongationMm": 3.8
+        }
       },
       "parts": {
         "grip": {

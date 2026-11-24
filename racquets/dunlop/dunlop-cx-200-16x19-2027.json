@@ -31,7 +31,10 @@
       "style": "open-v",
       "bridge": "curved"
     },
-    "features": []
+    "features": [],
+    "handle": {
+      "elongationMm": 3.8
+    }
   },
   "paint": {
     "base": "#d4211f",
@@ -43,16 +46,9 @@
         "color": "#c01d1f"
       },
       {
-        "from": 0.55,
-        "to": 0.88,
-        "color": "#ee4a1a",
-        "blend": 0.1
-      },
-      {
-        "from": 0.9,
+        "from": 0.72,
         "to": 1,
-        "color": "#2a1618",
-        "blend": 0.04
+        "color": "#ee4a1a"
       }
     ]
   },
@@ -164,7 +160,10 @@
           "style": "open-v",
           "bridge": "curved"
         },
-        "features": []
+        "features": [],
+        "handle": {
+          "elongationMm": 3.8
+        }
       },
       "parts": {
         "grip": {
@@ -224,7 +223,10 @@
           "style": "open-v",
           "bridge": "curved"
         },
-        "features": []
+        "features": [],
+        "handle": {
+          "elongationMm": 3.8
+        }
       },
       "parts": {
         "grip": {
@@ -342,7 +344,10 @@
           "style": "open-v",
           "bridge": "curved"
         },
-        "features": []
+        "features": [],
+        "handle": {
+          "elongationMm": 3.8
+        }
       },
       "paint": {
         "base": "#d4211f",

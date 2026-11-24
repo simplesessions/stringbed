@@ -30,7 +30,10 @@
       "style": "open-v",
       "bridge": "curved"
     },
-    "features": []
+    "features": [],
+    "handle": {
+      "elongationMm": 3.9
+    }
   },
   "paint": {
     "base": "#2f52dc",
@@ -102,7 +105,10 @@
           "style": "open-v",
           "bridge": "curved"
         },
-        "features": []
+        "features": [],
+        "handle": {
+          "elongationMm": 3.9
+        }
       },
       "paint": {
         "base": "#2b4fd8",
