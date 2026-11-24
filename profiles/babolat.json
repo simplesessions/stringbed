@@ -1,0 +1,146 @@
+[
+  {
+    "id": "babolat-pure-aero-100",
+    "summary": "The spin specialist of the Pure family. The 2026 beam and throat were reworked to swing faster, and the flax-fibre dampening takes some of the old edge off. Playtesters rated topspin and manoeuvrability highest, with solid but not Pure Drive-level power. The trade-off is control: it can launch flat balls long, so it rewards players who add spin. Suits aggressive baseliners with fast, brushing swings.",
+    "bestFor": ["spin", "maneuverability", "groundstrokes"],
+    "playerLevel": ["intermediate", "advanced"],
+    "playStyle": "heavy-topspin baseliner",
+    "feel": "firm but less harsh than before, lively",
+    "ratings": { "power": 4, "spin": 5, "control": 3, "comfort": 3, "stability": 4, "maneuverability": 5, "feel": 3 },
+    "compared": ["babolat-pure-drive-100", "head-extreme-mp-2026", "babolat-pure-strike-98"],
+    "variantNotes": {
+      "98": "Smaller head, more precise and less launchy; one reviewer found it cleaner but more muted than the 2023 model.",
+      "Team": "Lighter and easier to swing, with less stability.",
+      "Plus": "Longer for extra reach and serve leverage."
+    },
+    "released": "2026",
+    "confidence": "high",
+    "sources": [
+      "https://www.tennis-warehouse.com/learning_center/racquet_reviews/BPAR26review.html",
+      "https://www.tennisnerd.net/?p=70316",
+      "https://www.tennis-warehouse.com/Babolat_Pure_Aero_2026/descpageRCBAB-BPAR26D.html"
+    ],
+    "researchedOn": "2026-11-23"
+  },
+  {
+    "id": "babolat-pure-drive-100",
+    "summary": "The easy-power benchmark. Gen 11 adds flax-fibre dampening to a beam that carries over from the last generation, so it plays a little softer while staying firm. Playtesters singled out serves and baseline depth, and it is fast through the air. The price of that free pace is precision: flat shots can fly long and touch volleys feel less connected. Best for aggressive baseliners who want pop without effort.",
+    "bestFor": ["power", "serves", "groundstrokes"],
+    "playerLevel": ["intermediate", "advanced"],
+    "playStyle": "aggressive baseliner",
+    "feel": "firm and punchy, a bit muted by the dampening",
+    "ratings": { "power": 5, "spin": 4, "control": 3, "comfort": 3, "stability": 3, "maneuverability": 4, "feel": 3 },
+    "compared": ["babolat-pure-aero-100", "wilson-ultra-100-v5-2025", "yonex-ezone-100"],
+    "variantNotes": {
+      "98": "16x20 pattern and more control for faster swingers; a tester found it a little better on volleys.",
+      "Plus": "Longer, aimed at extra serve power; can be awkward to time.",
+      "Team": "Lighter and easier to swing, at some cost in power and stability.",
+      "107": "Bigger head for more forgiveness."
+    },
+    "released": "2025-01",
+    "confidence": "high",
+    "sources": [
+      "https://www.tennis-warehouse.com/learning_center/racquet_reviews/BPD25Rreview.html",
+      "https://www.tennis-warehouse.com/Babolat_Pure_Drive_2025/descpageRCBAB-BPD25R.html",
+      "https://www.tennisnerd.net/?p=42376"
+    ],
+    "researchedOn": "2026-11-23"
+  },
+  {
+    "id": "babolat-pure-strike-98",
+    "summary": "A heavy, stable control frame for players who swing out fully. The fourth generation softened the beam and added flax dampening, so it is more comfortable than before but gives less free power. Testers rated stability highest and manoeuvrability lowest, and the big swingweight can tire you over long points. Suits experienced baseliners who supply their own pace. Opinions on feel and comfort were mixed.",
+    "bestFor": ["control", "stability", "groundstrokes"],
+    "playerLevel": ["advanced"],
+    "playStyle": "aggressive baseline shotmaker",
+    "feel": "solid and direct, with some firmness",
+    "ratings": { "power": 3, "spin": 3, "control": 5, "comfort": 3, "stability": 5, "maneuverability": 2, "feel": 4 },
+    "compared": ["babolat-pure-aero-100", "wilson-blade-98-v10", "babolat-pure-drive-100"],
+    "variantNotes": {
+      "98 18x20": "Denser pattern for more control, less spin.",
+      "100 16x20": "Bigger head with a tighter cross-string pattern.",
+      "Team": "Lighter and easier to swing, with less plow-through."
+    },
+    "released": "2024",
+    "confidence": "medium",
+    "sources": [
+      "https://www.tennis-warehouse.com/learning_center/racquet_reviews/PS9816review.html",
+      "https://www.tennis-warehouse.com/Babolat_Pure_Strike_98_16x19_Carbon_Grey/descpageRCBAB-PS9816.html"
+    ],
+    "researchedOn": "2026-11-23"
+  },
+  {
+    "id": "babolat-evo-aero-2026",
+    "summary": "A budget, spin-first frame that borrows the aero beam from the pricier Pure Aero. It is light, very flexible and arm-friendly, with a slightly oversized head that adds forgiveness. Retailer copy pitches it at rising intermediates and bargain hunters, and rates power as low to medium. The trade-off is less stability and precision than a full-weight frame. Independent playtests of the 2026 version were not found, so this rests on retailer and brand material.",
+    "bestFor": ["spin", "comfort", "forgiveness"],
+    "playerLevel": ["beginner", "intermediate"],
+    "playStyle": "developing topspin baseliner",
+    "feel": "soft and light",
+    "ratings": { "power": 3, "spin": 4, "control": 3, "comfort": 5, "stability": 2, "maneuverability": 5, "feel": 3 },
+    "compared": ["babolat-boost-aero-2026", "babolat-pure-aero-100", "babolat-evo-drive-2025"],
+    "variantNotes": {
+      "Lite": "Lighter still, aimed at juniors and newer players."
+    },
+    "released": "2026",
+    "confidence": "low",
+    "sources": [
+      "https://www.tennis-warehouse.com/Babolat_Evo_Aero_2026/descpageRCBAB-BEA26R.html",
+      "https://prod.tennis.com/news/articles/babolat-expands-popular-evo-line-with-two-new-racquet-models"
+    ],
+    "researchedOn": "2026-11-23"
+  },
+  {
+    "id": "babolat-evo-drive-2025",
+    "summary": "An affordable, easy-to-swing frame for newer players. Retailer copy calls it good for early intermediates, recreational players and teenagers, with plenty of speed and spin-friendly strings, and a low stiffness for arm comfort. Its light weight makes it quick but means little plow-through against heavy pace. Reviewer feedback was thin, mostly retailer listings and a single user comment, so treat the character as indicative rather than proven.",
+    "bestFor": ["comfort", "forgiveness", "maneuverability"],
+    "playerLevel": ["beginner", "intermediate"],
+    "playStyle": "recreational all-rounder",
+    "feel": "light and soft",
+    "ratings": { "power": 3, "spin": 4, "control": 3, "comfort": 5, "stability": 2, "maneuverability": 5, "feel": 3 },
+    "compared": ["babolat-evo-aero-2026", "babolat-evo-strike-gen2", "babolat-pure-drive-100"],
+    "variantNotes": {
+      "Lite": "Lightest option for juniors and new adult players.",
+      "Tour": "Heavier for more stability and plow-through.",
+      "115": "Largest head, for maximum forgiveness."
+    },
+    "released": "2025",
+    "confidence": "low",
+    "sources": [
+      "https://www.tennis-warehouse.com/Babolat_Evo_Drive/descpageRCBAB-BEDR.html",
+      "https://prod.tennis.com/news/articles/babolat-expands-popular-evo-line-with-two-new-racquet-models"
+    ],
+    "researchedOn": "2026-11-23"
+  },
+  {
+    "id": "babolat-evo-strike-gen2",
+    "summary": "The control-leaning member of Babolat's budget Evo line. It is the heaviest of the three at this price, which retailer copy credits with decent stability at net, and it is aimed at beginners and intermediates who want an easy learning curve. The spin-friendly pattern and fast swing help on the run. It gives up the lightness of its siblings and the power of a bigger frame. Review coverage was minimal, so confidence is low.",
+    "bestFor": ["control", "stability", "volleys"],
+    "playerLevel": ["beginner", "intermediate"],
+    "playStyle": "steady all-court learner",
+    "feel": "soft and controlled",
+    "ratings": { "power": 3, "spin": 3, "control": 4, "comfort": 4, "stability": 3, "maneuverability": 4, "feel": 3 },
+    "compared": ["babolat-evo-drive-2025", "babolat-evo-aero-2026", "babolat-pure-strike-98"],
+    "released": "2025",
+    "confidence": "low",
+    "sources": [
+      "https://www.tennis-warehouse.com/Babolat_EVO_Strike/descpageRCBAB-EVOPS.html",
+      "https://prod.tennis.com/news/articles/babolat-expands-popular-evo-line-with-two-new-racquet-models"
+    ],
+    "researchedOn": "2026-11-23"
+  },
+  {
+    "id": "babolat-boost-aero-2026",
+    "summary": "An entry-level spin racquet with the Aero look. It is light and nimble, with an oversized head that adds forgiveness, and a reviewer quoted by the retailer found spin easy and the power decent. It targets beginners, recreational players and juniors moving to an adult frame. The trade-off is a frame that gets pushed around by heavy hitters. Only retailer copy and a few customer comments were available, so confidence is low.",
+    "bestFor": ["spin", "forgiveness", "maneuverability"],
+    "playerLevel": ["beginner"],
+    "playStyle": "recreational topspin baseliner",
+    "feel": "light and crisp",
+    "ratings": { "power": 3, "spin": 4, "control": 3, "comfort": 4, "stability": 2, "maneuverability": 5, "feel": 3 },
+    "compared": ["babolat-evo-aero-2026", "babolat-evo-drive-2025"],
+    "released": "2026",
+    "confidence": "low",
+    "sources": [
+      "https://www.tennis-warehouse.com/Babolat_Boost_Aero_2026/descpageRCBAB-BBOASR.html"
+    ],
+    "researchedOn": "2026-11-23"
+  }
+]
