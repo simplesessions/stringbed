@@ -1706,7 +1706,9 @@ html:has(.is-full) body { background: var(--niche); }
 .stage.is-full > .full-caption, .build-rig.is-full > .readings {
   position: absolute; z-index: 3; inset: auto 0 calc(100lvh - 100svh);
   padding: 76px 20px calc(20px + env(safe-area-inset-bottom));
-  background: linear-gradient(to top, var(--niche) 24%, color-mix(in oklab, var(--niche) 70%, transparent) 62%, transparent);
+  /* It ends in the wall's grey, which is what Safari shows behind its bottom bar whatever the page says. */
+  background: linear-gradient(to top, var(--wall), color-mix(in oklab, var(--wall) 88%, transparent) 46%, color-mix(in oklab, var(--niche) 62%, transparent) 74%, transparent);
+  box-shadow: 0 140px 0 var(--wall); /* and on below, when the bar is drawn in */
   pointer-events: none;
 }
 .is-full:fullscreen > :is(.full-caption, .readings) { bottom: 0; }
@@ -1724,7 +1726,7 @@ html:has(.is-full) body { background: var(--niche); }
 @media (prefers-reduced-motion: reduce) { .full-caption { animation: none !important; } }
 /* A phone on its side: the caption is a column at the left, and the model has the whole height. */
 @media (max-height: 479px) {
-  .stage.is-full > .full-caption, .build-rig.is-full > .readings { right: auto; width: min(34vw, 300px); padding: 0 0 18px max(20px, env(safe-area-inset-left)); background: none; }
+  .stage.is-full > .full-caption, .build-rig.is-full > .readings { right: auto; width: min(34vw, 300px); padding: 0 0 18px max(20px, env(safe-area-inset-left)); background: none; box-shadow: none; }
   .is-full .full-title { font-size: 1.75rem; }
   .is-full :is(.full-facts, .reading-cells) { grid-template-columns: 1fr 1fr; gap: 8px 14px; }
   .is-full .beam { display: none; }

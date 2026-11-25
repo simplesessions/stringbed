@@ -288,7 +288,7 @@ stand on a flat face; twisted and rough are said in words. A shape no source sta
 and "Shape not stated".
 
 ### Full screen stage (phones and tablets)
-- The niche is the whole screen. Over its foot, on a fade to the niche's own tone: the name in condensed
+- The niche is the whole screen. Over its foot, on a fade to the wall's grey (the tone behind Safari's bar): the name in condensed
   display, its line of Soft Ink, a 2px ink rule and four numbers (racquet, string) or the build's live
   readout. Nothing else; the rest of the page is a tap on the X away. The close-ups, Reset and the X float on blurred wall. On its side the
   caption is a column at the left. It uses the browser's full screen where there is one, else a layer 100lvh
