@@ -1051,6 +1051,10 @@ function exhibitOf(a: App, r: Racquet): Exhibit {
   return { url: asset ? assetUrl(BASE, asset.path) : null, label: `3D view of the ${r.model}`, caption: { title: r.model, sub: [r.brand, generationLabel(r), r.colourway].filter(Boolean).join(' · '), facts } };
 }
 
+/** What the browser's bars are tinted with: the page's wall, and in full screen the tone the stage ends in (--wall, --niche). */
+const WALL = document.querySelector('meta[name="theme-color"]')?.getAttribute('content') ?? '#dbd9d5';
+const NICHE = '#c4b9a8';
+
 const racquetStage = (a: App, r: Racquet) =>
   stage(a, exhibitOf(a, r), { flat: silhouette(r.specs.headSizeSqIn), parts: true, without: 'The 3D preview needs WebGL. Specs and the download still work.' });
 
@@ -1129,6 +1133,7 @@ function stage(a: App, first: Exhibit, { flat, parts, without, ready }: { flat: 
     if (on === isFull()) return;
     const at = layer();
     at.classList.toggle('is-full', on);
+    for (const m of document.querySelectorAll('meta[name="theme-color"]')) m.setAttribute('content', on ? NICHE : WALL); // the browser's bars
     (on ? at.querySelector('.readings') ?? host : host).prepend(caption);
     full.setAttribute('aria-pressed', String(on));
     full.setAttribute('aria-label', on ? 'Leave full screen' : 'Full screen');
