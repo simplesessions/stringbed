@@ -29,7 +29,7 @@ export interface Desk {
   change(next: Partial<Build>, what?: string): void;
   announce(text: string): void;
   /** Sounds of the string bed, each in its time. */
-  strum: { weave(): void; soon(ms: number): void };
+  strum: { restrung(): void; soon(ms: number): void };
   /** Stops when the page is left. */
   clock: Clock;
 }

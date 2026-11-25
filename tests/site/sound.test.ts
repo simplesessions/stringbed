@@ -24,7 +24,7 @@ function rig({ on = true, running = true, gesture = true } = {}) {
   return Object.assign(r, s);
 }
 
-const NEW = ['ratchet', 'weave', 'peel', 'press', 'wrap', 'thump', 'stamp'] as const satisfies readonly SoundName[];
+const NEW = ['ratchet', 'peel', 'press', 'wrap', 'thump', 'stamp'] as const satisfies readonly SoundName[];
 const ALL = Object.keys(SOUNDS) as SoundName[];
 const knock = (name: SoundName): Knock => SOUNDS[name];
 const total = (voices: readonly Voice[]) => voices.reduce((sum, v) => sum + v.level, 0);
@@ -56,7 +56,7 @@ test('a new knock is no louder than its level, all voices together', () => {
 });
 
 test('a run never adds up past 0.16, ring of the earlier knocks included', () => {
-  for (const name of ['weave', 'wrap'] as const) {
+  for (const name of ['wrap'] as const) {
     const voices = played(name);
     for (const t of new Set(voices.map((v) => v.at))) {
       const sum = voices.filter((v) => v.at <= t).reduce((n, v) => n + v.level * Math.exp(-(t - v.at) / v.decay), 0);
@@ -65,9 +65,9 @@ test('a run never adds up past 0.16, ring of the earlier knocks included', () =>
   }
 });
 
-test('weave and wrap are runs of one knock and are over within 400 ms', () => {
-  expect(ALL.filter((name) => knock(name).run)).toEqual(['weave', 'wrap']);
-  for (const name of ['weave', 'wrap'] as const) {
+test('wrap is a run of one knock and is over within 400 ms', () => {
+  expect(ALL.filter((name) => knock(name).run)).toEqual(['wrap']);
+  for (const name of ['wrap'] as const) {
     const voices = played(name);
     const starts = [...new Set(voices.map((v) => v.at))];
     expect(starts).toEqual([...knock(name).run!]);
@@ -78,15 +78,6 @@ test('weave and wrap are runs of one knock and are over within 400 ms', () => {
     const per = voices.length / starts.length; // the same knock every time
     expect(per).toBe(knock(name).partials.length + 1);
   }
-});
-
-test('weave is two soft strokes, mains then crosses: too slow to buzz, and drawn, not struck', () => {
-  const { run, contact, partials } = SOUNDS.weave;
-  expect(run.length).toBe(2);
-  expect(run[1] - run[0]).toBeGreaterThan(0.1);
-  expect(contact.attack).toBeGreaterThan(0.03);
-  expect(contact.hz).toBeLessThan(1000);
-  expect(partials).toEqual([]);
 });
 
 test('lead tape is stroked, not struck, and the peel is over before the press', () => {
@@ -187,8 +178,8 @@ test('30 seconds of dragging at 120 events a second is at most one sound per 60 
 test('the other sounds do not wait for that slot', () => {
   const r = rig();
   r.play('ratchet');
-  for (const name of ['weave', 'peel', 'press', 'wrap', 'thump', 'stamp'] as const) r.play(name);
-  expect(r.played.length).toBe(7);
+  for (const name of ['peel', 'press', 'wrap', 'thump', 'stamp'] as const) r.play(name);
+  expect(r.played.length).toBe(6);
 });
 
 test('hover keeps its own slot of 90 ms', () => {

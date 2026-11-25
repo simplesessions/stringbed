@@ -54,14 +54,6 @@ export const SOUNDS = {
     partials: [[1180, 0.45, 0.008], [2360, 0.12, 0.004]],
     contact: { hz: 2600, share: 0.25, decay: 0.003 },
   },
-  /** String drawn through the grommets: the mains, a breath, the crosses. Two long soft strokes; a run of
-   * quick ticks here (over 20 a second) fuses into a buzzer. */
-  weave: {
-    level: 0.045,
-    partials: [],
-    contact: { hz: 780, share: 1, decay: 0.026, attack: 0.055 },
-    run: [0, 0.18],
-  },
   /** Lead tape coming off its backing: one papery stroke. Ticks here, then the press, are a punch clock. */
   peel: {
     level: 0.032,

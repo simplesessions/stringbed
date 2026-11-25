@@ -126,19 +126,13 @@ export function lastWord(say: () => void, clock: Clock): { soon(ms: number): voi
   };
 }
 
-/** A restring is heard at once and plucked when it is done; anything else is plucked once it settles. Only ever after something a visitor did. */
-export function strummer(sound: { weave(): void; pluck(): void }, weaveMs: number, clock: Clock): { weave(): void; soon(ms: number): void; cancel(): void } {
-  const pluck = lastWord(sound.pluck, clock);
-  let wovenAt = -Infinity;
-  return {
-    weave() {
-      if (clock.now() - wovenAt > weaveMs) {
-        wovenAt = clock.now();
-        sound.weave();
-      }
-      pluck.soon(weaveMs);
-    },
-    soon: pluck.soon,
-    cancel: pluck.cancel,
+/** The bed is plucked once things settle: muted after a restring, ringing after anything else. Only ever after something a visitor did. */
+export function strummer(pluck: (muted: boolean) => void, restrungMs: number, clock: Clock): { restrung(): void; soon(ms: number): void; cancel(): void } {
+  let muted = false;
+  const word = lastWord(() => pluck(muted), clock);
+  const soon = (ms: number, mute: boolean) => {
+    muted = mute;
+    word.soon(ms);
   };
+  return { restrung: () => soon(restrungMs, true), soon: (ms) => soon(ms, false), cancel: word.cancel };
 }

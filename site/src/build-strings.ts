@@ -22,7 +22,7 @@ export function stringsBench(desk: Desk, on: { picked(): void; retry(): void }):
     const before = desk.build.mains;
     desk.change(which === 'mains' ? { mains: choice, crosses: choice ? desk.build.crosses : null } : { crosses: choice }, `${which === 'mains' ? 'Mains' : 'Crosses'}: ${name}.`);
     if (!before && choice) on.picked();
-    desk.strum.weave();
+    desk.strum.restrung();
   }
 
   const mains = stringSet(desk, 'mains', pick);
@@ -31,7 +31,7 @@ export function stringsBench(desk: Desk, on: { picked(): void; retry(): void }):
     if ((v === 'own') === (desk.build.crosses !== null) || !desk.set) return;
     desk.change({ crosses: v === 'own' ? { ...desk.build.mains! } : null }, v === 'own' ? 'Crosses chosen on their own.' : 'Crosses the same as the mains.');
     if (v === 'own') crosses.open(false);
-    else desk.strum.weave();
+    else desk.strum.restrung();
   });
   const crossesBlock = el('div', { class: 'set-crosses' }, el('h3', { class: 'bench-sub' }, 'Crosses'), hybrid.node, crosses.node);
 
@@ -140,7 +140,7 @@ function stringSet(desk: Desk, which: Which, choose: (which: Which, choice: Stri
     const gauges = segmented<number>(`${label} gauge, millimetres and number`, c.spec.gaugesMm.map((g) => ({ value: g, text: gaugeText(c.spec, g) })), (g) => {
       if (inIt()?.gaugeMm === g) return;
       pick({ gaugeMm: g });
-      desk.strum.weave();
+      desk.strum.restrung();
     });
     const cut = el('div', { class: 'set-cut' });
     parts = { colours, gauges, cut };

@@ -86,9 +86,9 @@ export function buildPage(host: BuildHost): BuildPage {
   };
 }
 
-/** Milliseconds between address writes, for a weave, and before a change is announced. */
+/** Milliseconds between address writes, before a restring is heard (a held arrow key repeats faster), and before a change is announced. */
 const ADDRESS_GAP = 400;
-const WEAVE_TAKES = 420;
+const RESTRUNG_AFTER = 90;
 const ANNOUNCE_AFTER = 700;
 
 const strandOf = (c: Chosen): Strand => ({ color: c.colour.hex, finish: c.spec.finish, gaugeMm: c.choice.gaugeMm, sides: c.spec.shape?.sides ?? 0 });
@@ -152,11 +152,12 @@ function onePage(host: BuildHost, base: Racquet, first: To, word: string, sendOf
   }
 
   const hz = () => model && pitchHz(model.beds, strungOf(set?.mains), life.build.tensionLb);
-  function pluckNow() {
+  function pluckBed(muted: boolean) {
     const pitch = hz();
-    if (pitch) pluck(pitch, { muted: life.build.dampener !== null });
+    if (pitch) pluck(pitch, { muted: muted || life.build.dampener !== null });
   }
-  const strum = strummer({ weave: () => play('weave'), pluck: pluckNow }, WEAVE_TAKES, clock);
+  const pluckNow = () => pluckBed(false);
+  const strum = strummer(pluckBed, RESTRUNG_AFTER, clock);
 
   const laid = new Map<string, PlacedTape[]>();
   function lay(p: TapePiece): PlacedTape[] {

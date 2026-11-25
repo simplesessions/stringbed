@@ -139,23 +139,27 @@ describe('strumming', () => {
     const c = fakeClock();
     const sounds: Array<[number, string]> = [];
     const life = new AbortController();
-    const s = strummer({ weave: () => void sounds.push([c.now(), 'weave']), pluck: () => void sounds.push([c.now(), 'pluck']) }, 420, until(life.signal, c));
+    const s = strummer((muted) => void sounds.push([c.now(), muted ? 'muted' : 'pluck']), 90, until(life.signal, c));
     return { c, s, sounds, life };
   };
-  test('a restring weaves at once, then plucks when the weave is over', () => {
+  test('a restring is one muted pluck, almost at once', () => {
     const { c, s, sounds } = heard();
-    s.weave();
+    s.restrung();
     c.tick(2000);
-    expect(sounds).toEqual([[0, 'weave'], [420, 'pluck']]);
+    expect(sounds).toEqual([[90, 'muted']]);
   });
-  test('an arrow key held down on the list: weaves do not pile up, and one pluck ends it', () => {
+  test('an arrow key held down on the list: one muted pluck ends it', () => {
     const { c, s, sounds } = heard();
-    for (let i = 0; i < 40; i++) { s.weave(); c.tick(33); }
+    for (let i = 0; i < 40; i++) { s.restrung(); c.tick(33); }
     c.tick(2000);
-    const weaves = sounds.filter(([, x]) => x === 'weave').map(([t]) => t);
-    for (let i = 1; i < weaves.length; i++) expect(weaves[i] - weaves[i - 1]).toBeGreaterThan(420);
-    expect(sounds.filter(([, x]) => x === 'pluck')).toHaveLength(1);
-    expect(sounds.at(-1)![1]).toBe('pluck');
+    expect(sounds.map(([, x]) => x)).toEqual(['muted']);
+  });
+  test('tension after a restring rings', () => {
+    const { c, s, sounds } = heard();
+    s.restrung();
+    s.soon(180);
+    c.tick(2000);
+    expect(sounds).toEqual([[180, 'pluck']]);
   });
   test('a dragged slider plucks once, after it settles', () => {
     const { c, s, sounds } = heard();
