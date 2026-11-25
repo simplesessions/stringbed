@@ -1682,17 +1682,20 @@ ellipse.beam-hoop { fill: color-mix(in oklch, var(--bed, var(--wall)) 34%, var(-
   }
   .stage:not([data-state='ready']) .stage-full, .is-taping .stage-full { display: none; }
 }
-html:has(.is-full) { overflow: hidden; overscroll-behavior: none; }
+/* Behind its bars a phone's browser draws the page's own colour, so that takes the tone the stage ends in. */
+html:has(.is-full) { overflow: hidden; overscroll-behavior: none; background: var(--niche); }
+html:has(.is-full) body { background: var(--niche); }
 .is-full:is(.stage, .build-rig) {
   position: fixed; inset: 0 0 auto; z-index: 60; display: block;
   width: 100%; height: 100lvh; min-height: 0; margin: 0; padding: 0; border: 0; border-radius: 0;
-  background: radial-gradient(70% 62% at 47% 42%, var(--niche-lit), var(--niche));
+  background: var(--niche) radial-gradient(70% 62% at 47% 42%, var(--niche-lit), var(--niche));
   overflow: hidden; overscroll-behavior: none; touch-action: none;
 }
 .is-full:fullscreen { height: 100%; }
 .build-rig.is-full .stage { position: static; height: auto; }
 .is-full :is(.niche, .stage-model) { position: absolute; inset: 0; height: auto; border-radius: 0; transition: none; }
 .is-full canvas { touch-action: none !important; }
+.is-full .niche::after { content: ''; position: absolute; z-index: 2; inset: 0 0 auto; height: 72px; background: linear-gradient(var(--niche), transparent); pointer-events: none; }
 .is-full .stage-full { top: 14px; right: 16px; }
 .is-full .stage-controls { position: absolute; z-index: 4; top: 14px; left: 16px; flex-wrap: nowrap; gap: 8px; height: 44px; margin: 0; padding: 0; }
 .is-full .stage-controls > :not(.views, .button-quiet) { display: none; }
@@ -1703,7 +1706,7 @@ html:has(.is-full) { overflow: hidden; overscroll-behavior: none; }
 .stage.is-full > .full-caption, .build-rig.is-full > .readings {
   position: absolute; z-index: 3; inset: auto 0 calc(100lvh - 100svh);
   padding: 76px 20px calc(20px + env(safe-area-inset-bottom));
-  background: linear-gradient(to top, color-mix(in oklab, var(--niche) 96%, transparent) 30%, color-mix(in oklab, var(--niche) 70%, transparent) 62%, transparent);
+  background: linear-gradient(to top, var(--niche) 24%, color-mix(in oklab, var(--niche) 70%, transparent) 62%, transparent);
   pointer-events: none;
 }
 .is-full:fullscreen > :is(.full-caption, .readings) { bottom: 0; }
