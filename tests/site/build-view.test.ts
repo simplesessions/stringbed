@@ -10,7 +10,7 @@ import type { Racquet } from '../../site/src/catalog-view';
 import { PLAY_KEYS } from '../../src/play';
 import {
   addPiece, aimStep, announcement, beamPose, chosenStrings, provenance, ratingsWord, yoursHint, cleanMeasure, droppedNotice, figures, gramsOf, mirrored, moveOf, moved, nearestPiece, onBed, playInput,
-  presetPiece, PRESETS, readoutCells, sideEnd, snapped, stringList, tapeName, tensionText, type Figures,
+  finishSaid, leadSaid, limitWord, presetPiece, PRESETS, readoutCells, readoutWord, rowMoved, sideEnd, snapped, stringList, stringsSaid, tapeName, tensionSaid, tensionText, type Figures,
 } from '../../site/src/build-view';
 import { catalog, load } from '../models';
 
@@ -77,12 +77,12 @@ describe('figures', () => {
     expect(f.balance.value).toBeNull();
     expect(f.swingweight.value).toBeNull();
     const cells = readoutCells(f);
-    for (const k of ['weight', 'balance', 'swingweight'] as const) expect(cells[k].value).toBe('Not published');
+    for (const k of ['weight', 'balance', 'swingweight'] as const) expect(cells[k]).toMatchObject({ value: '–', missing: 'Not published' });
     expect(cells.weight.change).toBe('+0.8 g');
-    expect(cells.balance.change).toMatch(/^\+0\.8 g at \d{3} mm$/);
-    expect(cells.balance.against).toBe('tape, grip and dampener'); // strings are not in that one
-    expect(cells.weight.against).toBe('vs stock strings');
-    expect(cells.swingweight.change).toMatch(/^\+\d/);
+    expect(cells.balance.change).toBe('');
+    expect(cells.swingweight).toMatchObject({ change: expect.stringMatching(/^\+\d.* kg·cm²$/), note: '' }); // no number above for the unit to belong to
+    // Without a balance there is only where the weight went on, and strings are not in that one.
+    expect(readoutWord(f)).toMatch(/^Weight, balance and swingweight are not published\. Tape, grip and dampener: 0\.8 g, centred \d{3} mm up\. Changes are against stock strings\.$/);
   });
   test('your own weight and balance are used and labelled yours', async () => {
     const f = await figuresFor(BARE, build({ yours: { g: 250, balanceMm: 300 } }));
@@ -96,7 +96,8 @@ describe('figures', () => {
       expect(f.weight.from).toBe('yours');
       expect(f.weight.value! - f.weight.added).toBeCloseTo(333, 9);
       expect(f.balance.value).toBeNull();
-      expect(readoutCells(f).balance.value).toBe('Not given');
+      expect(readoutCells(f).balance).toMatchObject({ value: '–', missing: 'Not given' });
+      expect(readoutWord(f)).toStartWith('No balance given');
     }
   });
   test('only your balance: not enough, so what is published stands', async () => {
@@ -169,14 +170,40 @@ describe('what is said', () => {
   });
   test('the cells', () => {
     const c = readoutCells(f);
-    expect(c.weight).toEqual({ value: '329 g', change: '+8.3 g', against: 'vs stock strings', note: '305 g bare' });
-    expect(c.balance).toEqual({ value: '331 mm', change: '+3.2 mm', against: 'vs stock strings', note: '4 pts head light' });
-    expect(c.swingweight).toEqual({ value: 'about 322', change: '+6.4', against: 'vs stock strings', note: 'kg·cm²' });
-    expect(c.twist).toEqual({ value: '+0.5', change: '', against: 'vs stock strings', note: 'kg·cm²' });
+    expect(c.weight).toEqual({ value: '329 g', missing: '', change: '+8.3 g', note: '305 g bare' });
+    expect(c.balance).toEqual({ value: '331 mm', missing: '', change: '+3.2 mm', note: '4 pts head light' });
+    expect(c.swingweight).toEqual({ value: 'about 322', missing: '', change: '+6.4', note: 'kg·cm²' });
+    expect(c.twist).toEqual({ value: '+0.5', missing: '', change: '', note: 'kg·cm²' });
     const none = readoutCells({ ...f, weight: { ...f.weight, change: 0.01 }, balance: { ...f.balance, change: -0.02 } });
-    expect(none.weight.change).toBe('no change');
-    expect(none.balance.change).toBe('no change');
+    expect(none.weight.change).toBe('');
+    expect(none.balance.change).toBe('');
+    expect(readoutCells({ ...f, twist: 0.01 }).twist.value).toBe(''); // nothing added: nothing to show
     expect(readoutCells({ ...f, weight: { ...f.weight, change: -2.04 } }).weight.change).toBe('−2.0 g');
+  });
+  test('what the changes are against is said once, and only when there is one', () => {
+    expect(readoutWord(f)).toBe('Changes are against stock strings.');
+    const still: Figures = { ...f, weight: { ...f.weight, change: 0 }, balance: { ...f.balance, change: 0 }, swingweight: { ...f.swingweight, change: 0 }, twist: 0, extras: null };
+    expect(readoutWord(still)).toBe('');
+    expect(readoutWord({ ...still, balance: { ...still.balance, value: null, points: null, change: null } })).toBe('Balance is not published.');
+    expect(readoutWord({ ...still, twist: 0.5 })).toBe('Changes are against stock strings.');
+  });
+  test('a closed section says what is in it', () => {
+    const blast = chooseString(named('babolat-rpm-blast'));
+    const alu = chooseString(named('luxilon-alu-power'));
+    expect(stringsSaid(null)).toBe('Stock strings');
+    expect(stringsSaid(chosenStrings(build({ mains: blast }), strings))).toBe('Babolat RPM Blast');
+    expect(stringsSaid(chosenStrings(build({ mains: blast, crosses: { ...blast, gaugeMm: 1.3 } }), strings))).toBe('Babolat RPM Blast');
+    expect(stringsSaid(chosenStrings(build({ mains: blast, crosses: alu }), strings))).toBe('RPM Blast, ALU Power crosses');
+    expect(tensionSaid(emptyBuild(), 'lb')).toBe('52 lb');
+    expect(tensionSaid(build({ crossTensionLb: 50 }), 'lb')).toBe('52 lb, 50 lb crosses');
+    expect(tensionSaid(build({ crossTensionLb: 52 }), 'kg')).toBe('23.6 kg');
+    expect(leadSaid(0, 0)).toBe('None');
+    expect(leadSaid(1, 0.79)).toBe('1 piece, 0.8 g');
+    expect(leadSaid(2, 3.5)).toBe('2 pieces, 3.5 g');
+    expect(finishSaid(emptyBuild())).toBe('None');
+    expect(finishSaid(build({ overgrip: 'white' }))).toBe('White grip');
+    expect(finishSaid(build({ dampener: 'yellow' }))).toBe('Yellow dampener');
+    expect(finishSaid(build({ overgrip: 'white', dampener: 'yellow' }))).toBe('White grip, yellow dampener');
   });
   test('tension in pounds and kilos', () => {
     expect(tensionText(52, 'lb')).toBe('52 lb');
@@ -353,6 +380,26 @@ describe('what is said about the ratings', () => {
     expect(none).toEqual({ head: '', notes: ['This racquet has no ratings here yet, so this shows the change only.'], retry: false });
     expect(ratingsWord({ ...known, state: 'loading', has: false, stock: false })).toEqual({ head: '', notes: [], retry: false });
     expect(ratingsWord({ ...known, state: 'failed', has: false, stock: false })).toEqual({ head: '', notes: ['The ratings did not load, so this shows the change only.'], retry: true });
+  });
+});
+
+describe('which ratings are worth a row', () => {
+  const row = (base: number | null, value: number | null, shift: number) => ({ key: 'spin' as const, base, value, shift, reasons: [] });
+  test('one that moved, or that the scale held back; not one that stayed', () => {
+    expect(rowMoved(row(3, 3.4, 0.4))).toBe(true);
+    expect(rowMoved(row(5, 5, 0.7))).toBe(true);
+    expect(rowMoved(row(null, null, -0.3))).toBe(true);
+    expect(rowMoved(row(3, 3, 0))).toBe(false);
+    expect(rowMoved(row(5, 5, 0.05))).toBe(false);
+    expect(rowMoved(row(null, null, 0))).toBe(false);
+  });
+  test('a rating the scale holds back says so', () => {
+    expect(limitWord(row(5, 5, 0.7))).toBe('Already at the top');
+    expect(limitWord(row(1, 1, -0.4))).toBe('Already at the bottom');
+    expect(limitWord(row(4.7, 5, 0.7))).toBe('As high as it goes');
+    expect(limitWord(row(1.2, 1, -0.7))).toBe('As low as it goes');
+    expect(limitWord(row(3, 3.7, 0.7))).toBe('');
+    expect(limitWord(row(null, null, 0.7))).toBe('');
   });
 });
 

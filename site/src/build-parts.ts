@@ -55,21 +55,25 @@ export function segmented<T extends string | number>(label: string, options: Rea
   };
 }
 
-/** Colours to choose from: native radios, so arrow keys and names come with them. */
-export function swatches(legend: string, options: ReadonlyArray<{ id: string; name: string; hex: string | null }>, choose: (id: string) => void): { node: HTMLElement; set(id: string): void } {
+/** Colours to choose from: native radios, so arrow keys and names come with them. `dots`: chips alone, and the name of the one chosen beside the legend. */
+export function swatches(legend: string, options: ReadonlyArray<{ id: string; name: string; hex: string | null }>, choose: (id: string) => void, dots = false): { node: HTMLElement; set(id: string): void } {
   const name = uid('swatch');
+  const chosen = dots ? el('span', { class: 'swatch-chosen', 'aria-hidden': 'true' }) : null; // the radio says it itself
   const inputs = options.map((o) => {
     const input = el('input', { class: 'sr-only', type: 'radio', name, value: o.id });
     input.addEventListener('change', () => choose(o.id));
     return input;
   });
   return {
-    node: el('fieldset', { class: 'swatches' },
-      el('legend', {}, legend),
+    node: el('fieldset', { class: `swatches${dots ? ' is-dots' : ''}` },
+      el('legend', {}, legend, chosen),
       ...options.map((o, i) =>
-        el('label', { class: 'swatch', style: o.hex ? `--chip: ${o.hex}` : null },
-          inputs[i], el('span', { class: `swatch-chip${o.hex ? '' : ' is-none'}`, 'aria-hidden': 'true' }), el('span', { class: 'swatch-name' }, o.name)))),
-    set: (id) => inputs.forEach((x) => (x.checked = x.value === id)),
+        el('label', { class: 'swatch', style: o.hex ? `--chip: ${o.hex}` : null, title: dots ? o.name : null },
+          inputs[i], el('span', { class: `swatch-chip${o.hex ? '' : ' is-none'}`, 'aria-hidden': 'true' }), el('span', { class: dots ? 'sr-only' : 'swatch-name' }, o.name)))),
+    set(id) {
+      for (const x of inputs) x.checked = x.value === id;
+      if (chosen) chosen.textContent = options.find((o) => o.id === id)?.name ?? '';
+    },
   };
 }
 
@@ -145,9 +149,31 @@ export function sectionDot(s: StringSpec, hex: string): SVGSVGElement {
   return svg;
 }
 
-/** One section of the page. */
-export const bench = (title: string, ...nodes: Array<Node | null>) => {
-  const id = uid('bench');
-  return el('section', { class: 'bench', 'aria-labelledby': id }, el('h2', { class: 'bench-head', id }, title), ...nodes);
-};
+export interface Bench {
+  node: HTMLDetailsElement;
+  /** What is in it, beside its name while it is closed. */
+  say(text: string): void;
+}
+
+/**
+ * One section of the page. Opening one closes the rest (they share a name). The one pressed stays under
+ * the finger, unless what opened runs off the foot of the window: then as much as fits is brought up.
+ */
+export function bench(title: string, ...nodes: Array<Node | null>): Bench {
+  const said = el('span', { class: 'bench-said' });
+  const top = el('summary', { class: 'bench-top' }, el('h2', { class: 'bench-head' }, title), said, icon('next'));
+  const node = el('details', { class: 'bench', name: 'bench' }, top, el('div', { class: 'bench-body' }, ...nodes));
+  top.addEventListener('click', (e) => {
+    e.preventDefault();
+    const was = top.getBoundingClientRect().top;
+    node.open = !node.open;
+    window.scrollBy({ top: top.getBoundingClientRect().top - was, behavior: 'instant' });
+    if (!node.open) return;
+    const { top: at, bottom } = node.getBoundingClientRect();
+    const ceiling = parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 16; // on a phone the racquet stands over the page
+    const by = Math.min(bottom - innerHeight, at - ceiling);
+    if (by > 0) window.scrollBy({ top: by, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+  });
+  return { node, say: (text) => void (said.textContent = text) };
+}
 export const fullName = (s: StringSpec) => `${s.brand} ${s.name}`;

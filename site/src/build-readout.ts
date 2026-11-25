@@ -1,33 +1,33 @@
-// The readout: weight, balance, swingweight and twist, what changed and against what, and the beam that tips.
+// The readout: weight, balance, swingweight and twist, what changed, one line of small print, and the beam that tips.
 import type { PlayRow } from '../../src/play';
 import type { PlacedTape } from '../../src/tape';
 import type { Build } from './build-state';
 import type { Desk } from './build-parts';
-import { beamPose, hexOf, moved, readoutCells, type Cell, type ChosenStrings, type Figures } from './build-view';
+import { beamPose, hexOf, moved, readoutCells, readoutWord, type Cell, type ChosenStrings, type Figures } from './build-view';
 import type { Racquet } from './catalog-view';
 import { el, icon } from './dom';
 
 function cellView(label: string) {
   const value = el('span', { class: 'reading-value' });
   const change = el('span', { class: 'reading-change' });
-  const against = el('span', { class: 'reading-against' });
   const note = el('span', { class: 'reading-note' });
+  const node = el('div', { class: 'reading' }, el('dt', {}, label), el('dd', {}, value, change, note));
   return {
-    node: el('div', { class: 'reading' }, el('dt', {}, label), el('dd', {}, value, el('span', { class: 'reading-delta' }, change, ' ', against), note)),
+    node,
     set(c: Cell) {
+      node.hidden = !c.value; // nothing added, nothing to say
       const rough = c.value.startsWith('about ');
-      value.replaceChildren(...(rough ? [el('span', { class: 'reading-about' }, 'about ')] : []), rough ? c.value.slice(6) : c.value);
-      value.classList.toggle('is-missing', /^Not /.test(c.value));
+      if (c.missing) value.replaceChildren(el('span', { 'aria-hidden': 'true' }, c.value), el('span', { class: 'sr-only' }, c.missing));
+      else value.replaceChildren(...(rough ? [el('span', { class: 'reading-about' }, 'about ')] : []), rough ? c.value.slice(6) : c.value);
+      value.classList.toggle('is-missing', c.missing !== '');
       change.textContent = c.change;
-      change.classList.toggle('is-still', c.change === 'no change');
-      against.textContent = c.against;
       note.textContent = c.note;
     },
   };
 }
 
-/** `state`: how the model the numbers are worked out on is doing; `retry`: fetch it again. */
-export function readout(desk: Desk, retry: () => void): { node: HTMLElement; sync(state: 'loading' | 'ready' | 'failed' | 'none', rows: PlayRow[]): void } {
+/** `small`: the small print again, for phones, where it has no room among the pinned numbers. `state`: how the model the numbers are worked out on is doing; `retry`: fetch it again. */
+export function readout(desk: Desk, retry: () => void): { node: HTMLElement; small: HTMLElement; sync(state: 'loading' | 'ready' | 'failed' | 'none', rows: PlayRow[]): void } {
   const beam = beamView(desk.base);
   const cells = { weight: cellView('Weight'), balance: cellView('Balance'), swingweight: cellView('Swingweight'), twist: cellView('Twist added') };
   const again = el('button', { class: 'button', type: 'button' }, icon('retry'), 'Try again');
@@ -35,17 +35,21 @@ export function readout(desk: Desk, retry: () => void): { node: HTMLElement; syn
   const word = el('span');
   const fault = el('p', { class: 'reading-fault', hidden: true }, word, again);
   const plays = el('p', { class: 'reading-moved' });
+  const pinned = el('p', { class: 'reading-word' });
+  const loose = el('p', { class: 'reading-word is-loose' });
   return {
     node: el('section', { class: 'readings', 'aria-label': 'Weight, balance and swingweight' },
-      beam.node, fault, el('dl', { class: 'reading-cells' }, ...Object.values(cells).map((c) => c.node)), plays),
+      beam.node, fault, el('dl', { class: 'reading-cells' }, ...Object.values(cells).map((c) => c.node)), pinned, plays),
+    small: loose,
     sync(state, rows) {
       const working = state === 'loading';
       fault.hidden = state === 'ready' || working;
       again.hidden = state !== 'failed';
       word.textContent = state === 'failed' ? 'The model did not load, so weight and balance cannot be worked out, and the estimate leaves them out.' : 'Weight and balance need the model’s geometry, which could not be read here. The estimate leaves them out.';
       const c = desk.figures && readoutCells(desk.figures);
-      const blank: Cell = { value: working ? '…' : '–', change: '', against: '', note: '' };
-      for (const k of ['weight', 'balance', 'swingweight', 'twist'] as const) cells[k].set(c ? c[k] : blank);
+      const blank: Cell = { value: working ? '…' : '–', missing: '', change: '', note: '' };
+      for (const k of ['weight', 'balance', 'swingweight', 'twist'] as const) cells[k].set(c ? c[k] : k === 'twist' ? { ...blank, value: '' } : blank);
+      pinned.textContent = loose.textContent = desk.figures ? readoutWord(desk.figures) : '';
       const line = moved(rows);
       plays.textContent = line ? `Plays: ${line}` : 'Plays as it comes';
       beam.set(desk.figures, desk.build, desk.set, desk.build.tape.flatMap(desk.lay));

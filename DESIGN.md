@@ -190,7 +190,8 @@ sound) and the filter in it is the room's own: sizes, or materials. The second r
 brand directory. Under 1240px the filter drops below the directory; on phones the rooms, the
 directory and the filter take a row each (search and sound stay beside the name), and five materials
 fit one row by narrowing their letters. The header's elements are re-stood at each of those widths, so
-Tab follows the page; never reorder them with `order` alone.
+Tab follows the page; never reorder them with `order` alone. Directory and filter stand on floors only: on a
+racquet's or string's own page the way back leads to them. How to move the view is behind a "?" under the model.
 
 - **Strings home (`#/strings`):** the same aisles. Spools do not fan from a butt cap, so a brand's fan
   (up to five, distinct colours first) is set down as a stack on the rail, as on a shop counter. It
@@ -207,7 +208,7 @@ Tab follows the page; never reorder them with `order` alone.
   does, sticks too (by its foot when it is taller than the window); under that it follows the bench, and
   a one-line "Plays: …" joins the numbers. On phones the rig sticks to the top edge with its controls
   above the model, so they slide away and the racquet and numbers stay; under 520px tall only the
-  numbers do. About this racquet closes the page. Its own chunk: it costs the gallery nothing.
+  numbers do. A link to the racquet's page closes the bench. Its own chunk: it costs the gallery nothing.
 
 The detail view is two columns from 721px: the model stage takes the free width and stays
 sticky; the spec sheet is 320 to 400px. Below 721px the stage comes first at 60svh, then the
@@ -295,26 +296,34 @@ and "Shape not stated".
   tall, so nothing resizes with the address bar.
 
 ### Build page
-- **Readout:** four cells under a 2px ink rule (weight, balance, swingweight, twist added): the number in
-  condensed display, then what changed in ink, then a Soft Ink note. "about" is set small before a derived
-  number; "Not published" or "Not given" replaces a missing one and the change stays. Changes are always
-  against the same racquet with stock strings.
+- **Header:** the name, search and sound only: no rooms, brands, filters or look. One filled button on the
+  page, Copy link; what it can do without (Change racquet, Start over, Show all ratings) is underlined text.
+- **Sections:** strings, tension, lead tape, grip and dampener, where the numbers come from. Closed, each is
+  one line: its name and what is in it. One is open at a time, strings first, and the one pressed stays where it was.
+- **Readout:** cells under a 2px ink rule (weight, balance, swingweight, and twist once some is added): the
+  number in condensed display, then what changed in ink if anything did, then a Soft Ink note. "about" is set
+  small before a derived number; a dash replaces a missing one and the change stays. One line of small print
+  says why there is a dash and that changes are against the same racquet with stock strings. Its height is
+  reserved, so the model never resizes.
 - **Balance beam (signature):** the racquet laid across its own middle, seen from low down, in its swatch
   with the build's grip, bed colour and lead on it. It tips on the spring towards the heavier side; level
   when the balance is unknown. The one thing on the page that moves for its own sake. On phones it stands
-  under the numbers, beside the line about how it plays, and the stage's buttons keep to one row (Reset is its icon).
+  under the numbers, beside the line about how it plays, and the stage's buttons keep to one row (Reset is its icon, the look a menu).
 - **String set:** the string's own section in its colour, its name (a link), and a list to change it from:
   radios, so an arrow key restrings as it goes. The section drawing is the string page's, at one scale
   for mains and crosses.
 - **Slider:** a 3px rail, inked up to a round thumb, − and + at its ends for one step; tension carries a
   tick every 5 lb. Value beside the name, never in a bubble.
 - **Segmented pill and swatch pill:** the header's segments and the colourway pills, as buttons and radios.
-- **Taping:** "Add tape" turns the row under the model into Done, Both sides and one line of help; nothing
+  Plain colours (grip, dampener) are chips alone, with the name of the chosen one beside the legend.
+- **Taping:** "Add tape", in the lead section, turns the row under the model into Done, Both sides and one line of help; nothing
   covers the racquet. Pieces are outlined over the model (lead is thin, and lies on the hoop's inner wall);
   where the next would go is a dotted outline with an ink chip naming the place and the grams.
-- **What it does:** sentences first, then the ratings rows with a ring at the new mark and the reasons
-  under each. No rating: an ink arrow and the change.
-- **Sound:** a labelled switch beside Copy link. Nothing sounds from an incoming link.
+- **What it does:** sentences first, then a row for each rating that moved, with a ring at the new mark; one
+  the scale held back says "Already at the top". The rest, and the reasons, are behind "Show all" and "Why?".
+  No rating: an ink arrow and the change.
+- **About:** a link to the racquet's page, which has the specs, the write-up and the download.
+- **Sound:** the header's switch. Nothing sounds from an incoming link.
 
 ### Spec sheet
 Rows of label and value separated by hairlines (ink at 16%). Values carry their unit and a

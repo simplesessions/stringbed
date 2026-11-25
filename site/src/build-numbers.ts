@@ -57,7 +57,7 @@ export function numbersBench(desk: Desk): { node: HTMLElement; sync(): void; res
     el('p', { class: 'bench-note' }, 'Weigh and balance your racquet without strings. Both are needed: a balance cannot be worked out from a weight alone.'),
     ...fields.map((f) => f.node), hint, forget);
   return {
-    node: bench('Where the numbers come from', from, yours, howItWorks()),
+    node: bench('Where the numbers come from', from, yours, howItWorks()).node,
     reset: () => fields.forEach((f) => f.reset()),
     sync() {
       const mine = desk.build.yours;

@@ -2,7 +2,7 @@
 import { TAPE_G_PER_INCH } from '../../src/mass';
 import type { TapePiece } from '../../src/tape';
 import { bench, segmented, slider, uid, type Desk } from './build-parts';
-import { MAX_TAPE, PRESETS, addPiece, gramsOf, presetPiece, tapeName } from './build-view';
+import { MAX_TAPE, PRESETS, addPiece, gramsOf, leadSaid, presetPiece, tapeName } from './build-view';
 import { el, icon } from './dom';
 import { play } from './sound';
 
@@ -63,6 +63,7 @@ export function leadBench(desk: Desk, way: HTMLElement | null, changed: () => vo
     desk.change({ tape: desk.build.tape.map((p, j) => (j === i ? { ...p, ...patch } : p)) });
   }
   function open(i: number) {
+    if (i >= 0) section.node.open = true; // taken hold of on the model, with this section closed
     pieces.forEach((v, j) => v.open(i === j));
     changed();
   }
@@ -134,8 +135,9 @@ export function leadBench(desk: Desk, way: HTMLElement | null, changed: () => vo
     return view;
   }
 
+  const section = bench('Lead tape', way && el('div', { class: 'lead-ways' }, way), el('p', { class: 'field-label', 'aria-hidden': 'true' }, way ? 'Or stick a piece at' : 'Stick a piece at'), presets, total, list);
   return {
-    node: bench('Lead tape', el('div', { class: 'lead-ways' }, way, presets), total, list),
+    node: section.node,
     stick,
     put,
     open,
@@ -150,9 +152,8 @@ export function leadBench(desk: Desk, way: HTMLElement | null, changed: () => vo
       }
       pieces.forEach((v, i) => v.sync(tape[i]));
       const g = tape.filter((p) => !desk.model || desk.lay(p).length).reduce((sum, p) => sum + gramsOf(p), 0);
-      total.textContent = tape.length
-        ? `${tape.length} ${tape.length === 1 ? 'piece' : 'pieces'}, ${g.toFixed(1)} g in all. ¼ in tape, ${TAPE_G_PER_INCH} g an inch.`
-        : 'None on. A preset sticks 80 mm of ¼ in tape; change it below once it is on.';
+      section.say(leadSaid(tape.length, g));
+      total.textContent = tape.length ? `${leadSaid(tape.length, g)} in all. ¼ in tape, ${TAPE_G_PER_INCH} g an inch.` : '';
     },
   };
 }

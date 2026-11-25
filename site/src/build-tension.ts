@@ -1,6 +1,6 @@
 // The tension bench: the mains and, if they differ, the crosses, in pounds or kilos, and the note they sound.
 import { bench, segmented, slider, type Desk } from './build-parts';
-import { tensionText, type TensionUnit } from './build-view';
+import { tensionSaid, tensionText, type TensionUnit } from './build-view';
 import { el } from './dom';
 import { play, soundOn } from './sound';
 
@@ -55,7 +55,10 @@ export function tensionBench(desk: Desk, { hz, pluck }: { hz(): number | null; p
   button.addEventListener('click', pluck);
   const pitch = el('span', { class: 'pluck-note' });
 
+  const section = bench('Tension', mains.node, el('div', { class: 'tension-row' }, split.node, units.node), crosses.node, el('div', { class: 'pluck-row' }, button, pitch));
+
   function sync() {
+    section.say(tensionSaid(desk.build, unit));
     const { tensionLb, crossTensionLb } = desk.build;
     units.set(unit);
     mains.set(tensionLb);
@@ -67,5 +70,5 @@ export function tensionBench(desk: Desk, { hz, pluck }: { hz(): number | null; p
     button.disabled = note === null;
     pitch.textContent = note === null ? '' : `${Math.round(note)} Hz, the centre main’s own note${soundOn() ? '' : '. Sound is off'}`;
   }
-  return { node: bench('Tension', el('div', { class: 'bench-aside' }, units.node), mains.node, split.node, crosses.node, el('div', { class: 'pluck-row' }, button, pitch)), sync };
+  return { node: section.node, sync };
 }

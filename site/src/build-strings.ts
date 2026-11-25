@@ -2,7 +2,7 @@
 import type { StringMaterial } from '../../src/string-spec';
 import { chooseString, type StringChoice } from './build-state';
 import { bench, fullName, sectionDot, segmented, swatches, uid, type Desk, type Segmented } from './build-parts';
-import { stringList, type Chosen } from './build-view';
+import { stringList, stringsSaid, type Chosen } from './build-view';
 import { crossSection } from './cross-section';
 import { el, icon } from './dom';
 import { stringRoute } from './routes';
@@ -35,9 +35,12 @@ export function stringsBench(desk: Desk, on: { picked(): void; retry(): void }):
   });
   const crossesBlock = el('div', { class: 'set-crosses' }, el('h3', { class: 'bench-sub' }, 'Crosses'), hybrid.node, crosses.node);
 
+  const section = bench('Strings', fault, wait, mains.node, crossesBlock);
+  section.node.open = true; // where a build starts
   return {
-    node: bench('Strings', fault, wait, mains.node, crossesBlock),
+    node: section.node,
     sync() {
+      section.say(desk.stringsState === 'ready' ? stringsSaid(desk.set) : '');
       fault.hidden = desk.stringsState !== 'failed';
       wait.hidden = desk.stringsState !== 'loading';
       crossesBlock.hidden = !desk.set;
@@ -152,7 +155,8 @@ function stringSet(desk: Desk, which: Which, choose: (which: Which, choice: Stri
     node.hidden = desk.stringsState !== 'ready' || (which === 'crosses' && !desk.build.crosses);
     if (which === 'crosses' && !desk.build.crosses) picker.hidden = true;
     toggle.setAttribute('aria-expanded', String(!picker.hidden));
-    toggle.textContent = !picker.hidden ? 'Close list' : c ? 'Change' : 'Choose strings';
+    toggle.hidden = !picker.hidden; // the list has its own Done
+    toggle.textContent = c ? 'Change' : 'Choose strings';
     toggle.setAttribute('aria-label', `${toggle.textContent}: ${label.toLowerCase()}`);
     dot.replaceChildren(c ? sectionDot(c.spec, c.colour.hex) : el('span', { class: 'section-dot is-stock' }));
     name.replaceChildren(c ? el('a', { href: stringRoute(c.spec.id, c.colour.id === c.spec.colours[0].id ? null : c.colour.id) }, fullName(c.spec)) : 'Stock strings');

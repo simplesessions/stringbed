@@ -104,7 +104,7 @@ export function figures(specs: Specs, beds: Beds, b: Build, set: ChosenStrings, 
 
 // ---------- what is said ----------
 
-const signed = (n: number, unit = '', none = 'no change') => {
+const signed = (n: number, unit = '', none = '') => {
   const t = Math.abs(n).toFixed(1);
   return t === '0.0' ? none : `${n > 0 ? '+' : '−'}${t}${unit}`;
 };
@@ -112,13 +112,15 @@ const about = (yes: boolean, text: string) => (yes ? `about ${text}` : text);
 const FROM = { yours: 'yours', published: 'bare', derived: 'bare, about' } as const;
 
 export interface Cell {
+  /** A dash when there is none. '': nothing to show at all. */
   value: string;
+  /** Why there is a dash. */
+  missing: string;
+  /** Against this racquet with stock strings; '' when it is the same. */
   change: string;
-  /** What the change is against, or is made of. */
-  against: string;
   note: string;
 }
-const VS_STOCK = 'vs stock strings';
+const DASH = '–';
 const UNIT = 'kg·cm²';
 
 function pointsText(points: number, long: boolean): string {
@@ -128,23 +130,55 @@ function pointsText(points: number, long: boolean): string {
 }
 
 export function readoutCells(f: Figures): Record<'weight' | 'balance' | 'swingweight' | 'twist', Cell> {
-  const { weight: w, balance: b, swingweight: s, extras } = f;
+  const { weight: w, balance: b, swingweight: s } = f;
   return {
     weight: {
-      value: w.value === null ? 'Not published' : about(w.about, `${Math.round(w.value)} g`),
+      value: w.value === null ? DASH : about(w.about, `${Math.round(w.value)} g`),
+      missing: w.value === null ? 'Not published' : '',
       note: w.value === null || !w.from ? '' : w.from === 'derived' ? `about ${Math.round(w.value - w.added)} g bare` : `${Math.round(w.value - w.added)} g ${FROM[w.from]}`,
       change: signed(w.change, ' g'),
-      against: VS_STOCK,
     },
     balance: {
-      value: b.value === null ? b.missing : about(b.about, `${Math.round(b.value)} mm`),
+      value: b.value === null ? DASH : about(b.about, `${Math.round(b.value)} mm`),
+      missing: b.value === null ? b.missing : '',
       note: b.points === null ? '' : pointsText(b.points, false),
-      change: b.change !== null ? signed(b.change, ' mm') : extras ? `${signed(extras.g, ' g')} at ${Math.round(extras.centreMm)} mm` : 'no change',
-      against: b.change === null && extras ? 'tape, grip and dampener' : VS_STOCK, // without a balance there is only where the weight went on
+      change: b.change === null ? '' : signed(b.change, ' mm'),
     },
-    swingweight: { value: s.value === null ? 'Not published' : about(true, String(Math.round(s.value))), note: UNIT, change: signed(s.change), against: VS_STOCK },
-    twist: { value: signed(f.twist, '', '0'), note: UNIT, change: '', against: VS_STOCK },
+    swingweight: { value: s.value === null ? DASH : about(true, String(Math.round(s.value))), missing: s.value === null ? 'Not published' : '', ...(s.value === null ? { note: '', change: signed(s.change, ` ${UNIT}`) } : { note: UNIT, change: signed(s.change) }) },
+    twist: { value: signed(f.twist), missing: '', note: UNIT, change: '' },
   };
+}
+
+/** The one line under the numbers: why there is a dash, and what the changes are against. */
+export function readoutWord(f: Figures): string {
+  const { weight, balance, swingweight, extras } = f;
+  const cells = readoutCells(f);
+  const gone = [weight.value === null ? 'weight' : '', balance.value === null && balance.missing === 'Not published' ? 'balance' : '', swingweight.value === null && balance.missing === 'Not published' ? 'swingweight' : ''].filter(Boolean);
+  const list = gone.length < 2 ? gone.join('') : `${gone.slice(0, -1).join(', ')} and ${gone[gone.length - 1]}`;
+  return [
+    balance.value === null && balance.missing === 'Not given' ? 'No balance given, so balance and swingweight cannot be worked out.' : '',
+    list && `${list[0].toUpperCase()}${list.slice(1)} ${gone.length > 1 ? 'are' : 'is'} not published.`,
+    balance.change === null && extras ? `Tape, grip and dampener: ${extras.g.toFixed(1)} g, centred ${Math.round(extras.centreMm)} mm up.` : '',
+    cells.twist.value || Object.values(cells).some((c) => c.change) ? 'Changes are against stock strings.' : '',
+  ].filter(Boolean).join(' ');
+}
+
+// What a closed section has in it.
+
+export function stringsSaid(set: ChosenStrings): string {
+  if (!set) return 'Stock strings';
+  const { mains: { spec: m }, crosses: { spec: c } } = set;
+  return m.id === c.id ? `${m.brand} ${m.name}` : `${m.name}, ${c.name} crosses`; // two makers' names would not fit the line
+}
+export function tensionSaid({ tensionLb, crossTensionLb }: Build, unit: TensionUnit): string {
+  const mains = tensionText(tensionLb, unit);
+  return crossTensionLb === null || crossTensionLb === tensionLb ? mains : `${mains}, ${tensionText(crossTensionLb, unit)} crosses`;
+}
+export const leadSaid = (pieces: number, g: number): string => (pieces ? `${pieces} ${pieces === 1 ? 'piece' : 'pieces'}, ${g.toFixed(1)} g` : 'None');
+export function finishSaid({ overgrip, dampener }: Build): string {
+  const name = (id: string | null) => COLOURS.find((c) => c.id === id)?.name ?? '';
+  const said = [overgrip && `${name(overgrip)} grip`, dampener && `${name(dampener)} dampener`].filter(Boolean).join(', ').toLowerCase();
+  return said ? said[0].toUpperCase() + said.slice(1) : 'None';
 }
 
 /** The live region's word on a change. */
@@ -352,6 +386,18 @@ export const PLAY_LABEL: Record<PlayKey, string> = {
 export const shiftText = (n: number): string => signed(n, '', '0');
 
 export { moveOf };
+
+/** Moves smaller than this are none, as shown to a tenth. */
+const STILL = 0.05;
+/** What to say of a rating the scale held back; '' when it went as far as it was pushed. */
+export function limitWord(r: PlayRow): string {
+  if (r.value === null || Math.abs(r.shift - moveOf(r)) < STILL || Math.abs(r.shift) < 0.1) return '';
+  const up = r.shift > 0;
+  if (Math.abs(moveOf(r)) < STILL) return `Already at the ${up ? 'top' : 'bottom'}`;
+  return up ? 'As high as it goes' : 'As low as it goes';
+}
+/** Whether a rating is worth a row before all of them are asked for. */
+export const rowMoved = (r: PlayRow): boolean => Math.abs(moveOf(r)) >= STILL || limitWord(r) !== '';
 
 /** The three biggest moves, biggest first. */
 export function moved(rows: PlayRow[]): string {
