@@ -20,8 +20,6 @@ export interface LeadBench {
   put(index: number, patch: Partial<TapePiece>): void;
   /** Open one piece in the list, and only that one. */
   open(index: number): void;
-  /** Whether a new piece goes on both sides: as the last one was set in the list. */
-  both(): boolean;
   /** The piece open in the list; -1: none. */
   opened(): number;
 }
@@ -47,7 +45,6 @@ export function leadBench(desk: Desk, way: HTMLElement | null, changed: () => vo
   const list = el('ul', { class: 'pieces', role: 'list', 'aria-label': 'Lead tape' });
   const total = el('p', { class: 'bench-note' });
   const pieces: PieceView[] = [];
-  let onBoth = true;
 
   function stick(p: TapePiece) {
     const { tape, index, result } = addPiece(desk.build.tape, p);
@@ -96,8 +93,7 @@ export function leadBench(desk: Desk, way: HTMLElement | null, changed: () => vo
     });
     const both = el('input', { type: 'checkbox' });
     both.addEventListener('change', () => {
-      onBoth = both.checked;
-      set({ mirrored: onBoth });
+      set({ mirrored: both.checked });
       press();
     });
     body.append(
@@ -145,11 +141,9 @@ export function leadBench(desk: Desk, way: HTMLElement | null, changed: () => vo
     stick,
     put,
     open,
-    both: () => onBoth,
     opened: () => pieces.findIndex((v) => v.isOpen()),
     sync() {
       const { tape } = desk.build;
-      if (!tape.length) onBoth = true; // no box to show it any other way
       while (pieces.length > tape.length) pieces.pop()!.node.remove();
       while (pieces.length < tape.length) {
         const v = pieceView();
