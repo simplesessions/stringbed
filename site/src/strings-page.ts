@@ -1,6 +1,11 @@
 // The string rooms: one aisle per brand over a fan of spools, a brand's floor of them, and the page
 // of one string. They are the racquets' rooms with other stock, so the aisle, the bay, the stage and
 // the ratings are the racquets' own; main.ts lends what it owns (the stage, the header, transitions).
+import { finder, foundHead, foundNone, type Finder } from './find-view';
+import {
+  GAUGE_CHOICES, NO_STRING_FIND, SHAPE_CHOICES, STRING_TRAITS, findStrings, formatStringFind, isEmptyFind, orderNote,
+  parseStringFind, type StringFind,
+} from './find';
 import type { StringCatalog } from '../../src/catalog';
 import type { StringMaterial, StringSpec } from '../../src/string-spec';
 import { aisleView } from './aisle-view';
@@ -10,7 +15,7 @@ import { disc, el, faultPage, icon } from './dom';
 import { sourcesLine } from './profile-view';
 import { tagLabel } from './profiles';
 import { inWords, ratingsView, topRatings } from './ratings-view';
-import { brandSlug, isStringsRoute, parseHash, stringRoute, stringsRoute, type StringsRoute } from './routes';
+import { brandSlug, isStringsRoute, parseHash, stringFindRoute, stringRoute, stringsRoute, type StringsRoute } from './routes';
 import { loadStrings } from './strings-data';
 import { MATERIALS, MATERIAL_LABEL, RATING_KEYS, RATING_LABEL, colourNote, firstGauge, resolveStrings, savedMaterial, sectionNote, shownStrings, stringAisles, stringFacts, stringNeighbours, stringStepName, gaugeName, gaugeNote, gaugeText } from './string-view';
 import type { ThumbOptions } from './thumbnails';
@@ -97,6 +102,9 @@ export function stringRooms(host: Host): StringRooms {
   let material = storedMaterial();
   /** The brand whose floor is (or was last) on the wall; null: all of them. */
   let brand: string | null = null;
+  /** What the home floor is filtered to, and the finder standing on it. */
+  let find: StringFind = NO_STRING_FIND;
+  let shelfFinder: Finder<StringFind> | null = null;
   /** The string last opened, to come back to on its floor. */
   let lastOpened: string | null = null;
   /** The string page on show: its colours change in place. */
@@ -177,8 +185,12 @@ export function stringRooms(host: Host): StringRooms {
     }
     for (const b of materials.querySelectorAll<HTMLElement>('[data-material]')) b.setAttribute('aria-pressed', String((b.dataset.material || null) === m));
     lastOpened = null;
-    host.announce(shownStrings(data.strings, m, brand));
-    host.present(floor); // the filter stands only on a floor
+    const finding = !brand && !isEmptyFind(find);
+    if (!finding) host.announce(shownStrings(data.strings, m, brand));
+    host.present(() => {
+      floor(); // the filter stands only on a floor
+      if (finding) announceFound();
+    });
   }
 
   /** Brand signs for the current material; a brand with nothing in it has no sign. */
@@ -215,11 +227,58 @@ export function stringRooms(host: Host): StringRooms {
   }
 
   function homeFloor(): Node[] {
+    shelfFinder = finder<StringFind>({
+      name: 'Find strings',
+      traits: STRING_TRAITS,
+      menus: [
+        { key: 'gauge', label: 'Gauge', any: 'Any gauge', choices: GAUGE_CHOICES },
+        { key: 'shape', label: 'Shape', any: 'Any shape', choices: SHAPE_CHOICES },
+      ],
+      toggles: [{ key: 'value', label: 'Good value' }],
+      empty: NO_STRING_FIND,
+      format: formatStringFind,
+      change: refind,
+      results: (f) => (isEmptyFind(f) ? aisleList() : stringResults(f)),
+    }, find);
+    return [el('h1', { class: 'sr-only' }, 'Strings'), ...shelfFinder.nodes];
+  }
+
+  /** The visitor changed the filter: the address follows, and the floor stays where it is. */
+  function refind(f: StringFind) {
+    const r = stringFindRoute(formatStringFind(f));
+    history.replaceState(null, '', r);
+    lastOpened = null;
+    route(parseHash(r) as StringsRoute);
+    if (isEmptyFind(f)) host.announce('Showing all brands.');
+    else announceFound();
+  }
+
+  function announceFound() {
+    const count = wall.querySelector('.found-count');
+    if (count) host.announce(`${count.textContent}.`);
+  }
+
+  function stringResults(f: StringFind): Node[] {
+    const { hits, noShape } = findStrings(data!.strings, f, material);
+    const head = foundHead(
+      hits.length ? `${some(hits.length, 'string')} ${hits.length === 1 ? 'matches' : 'match'}` : 'No strings match',
+      hits.length ? orderNote(STRING_TRAITS, f.play, 'By brand.') : '',
+      [noShape ? `${some(noShape, 'string')} with no stated shape ${noShape === 1 ? 'is' : 'are'} left out.` : null],
+    );
+    queueMicrotask(() => host.prune());
+    if (!hits.length) {
+      return [head, foundNone(`No ${material ? `${MATERIAL_LABEL[material].toLowerCase()} ` : ''}string has all of that.`, () => {
+        refind(NO_STRING_FIND); // the material is the header's, and stays
+        wall.querySelector<HTMLElement>('.find button')?.focus({ preventScroll: true });
+      })];
+    }
+    return [head, el('ul', { class: 'bays spools found', role: 'list' }, ...hits.map((s) => bay(s, f)))];
+  }
+
+  function aisleList(): Node[] {
     const aisles = stringAisles(data!.strings, material);
-    const title = el('h1', { class: 'sr-only' }, 'String brands');
-    if (!aisles.length) return [title, empty('strings')];
+    if (!aisles.length) return [empty('strings')];
     return [
-      title,
       el('ul', { class: 'aisles', role: 'list' }, ...aisles.map((x) => aisleView({
         brand: x.brand,
         href: stringsRouteFor(x.brand),
@@ -242,19 +301,23 @@ export function stringRooms(host: Host): StringRooms {
       el('h1', { class: 'floor-sign', style: `--letters: ${name.length}` }, el('span', { class: 'floor-name', style: `view-transition-name: brand-${brandSlug(name)}; view-transition-class: brand` }, name)),
       x ? el('p', { class: 'floor-tally' }, `${some(x.strings.length, 'string')} · ${some(x.colours, 'colour')}`) : null,
     );
-    return [head, x ? el('ul', { class: 'bays spools', role: 'list' }, ...x.strings.map(bay)) : empty(`${name} strings`)];
+    return [head, x ? el('ul', { class: 'bays spools', role: 'list' }, ...x.strings.map((s) => bay(s))) : empty(`${name} strings`)];
   }
 
-  function bay(s: StringSpec): HTMLElement {
+  /** `found`: on the list of matches, where the brand and the ratings asked about join the tag. */
+  function bay(s: StringSpec, found?: StringFind): HTMLElement {
     const canvas = el('canvas', { class: 'bay-canvas', 'aria-hidden': 'true' });
     const stage = el('span', { class: 'bay-stage' }, disc(), canvas);
     const link = el('a', { class: 'bay-link', href: stringRoute(s.id) },
       stage,
       el('span', { class: 'tag' },
         el('span', { class: 'tag-model' }, s.name),
+        found ? el('span', { class: 'tag-meta' }, s.brand) : null,
         el('span', { class: 'tag-meta' }, [MATERIAL_LABEL[s.material], s.shape?.label].filter(Boolean).join(' · ')),
+        found?.play.length ? el('span', { class: 'tag-ratings' }, ...found.play.map((k) => el('span', {}, `${RATING_LABEL[k]} `, el('b', {}, String(s.ratings[k]))))) : null,
         el('span', { class: 'tag-foot' },
-          el('span', { class: 'tag-best' }, tagLabel(s.bestFor[0])),
+          // On a match, what the ratings above already say is not said again.
+          found?.play.some((k) => k === s.bestFor[0]) && !found.value ? null : el('span', { class: 'tag-best' }, found?.value ? 'Good value' : tagLabel(s.bestFor[0])),
           el('span', { class: 'version-dots' },
             ...s.colours.map((c) => el('span', { class: 'version-dot', style: `--chip: ${c.hex}`, 'aria-hidden': 'true' })),
             el('span', { class: 'sr-only' }, some(s.colours.length, 'colour'))),
@@ -390,8 +453,16 @@ export function stringRooms(host: Host): StringRooms {
     }
     host.note(place.notice);
     const to = place.string ? null : place.brand;
+    // A string's own page leaves the filter alone; a floor's address says what it is.
+    if (!place.string && !to) find = r.kind === 'string-find' ? parseStringFind(r.query) : NO_STRING_FIND;
     const built = wall.dataset.floor === (to ? 'string-brand' : 'strings') && brand === to;
-    if (!place.string && built && !wall.hidden) return;
+    if (!place.string && built && !wall.hidden) {
+      if (!to) {
+        shelfFinder?.set(find);
+        host.prune();
+      }
+      return;
+    }
     host.present(() => {
       if (place.string) {
         const { string, colour } = place;
@@ -403,6 +474,7 @@ export function stringRooms(host: Host): StringRooms {
       page = null;
       brand = to;
       if (built) {
+        if (!brand) shelfFinder?.set(find);
         host.showWall(brand ? `${brand} strings` : 'Strings');
         enter();
       } else floor();

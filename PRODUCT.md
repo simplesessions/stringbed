@@ -52,6 +52,10 @@ can be swapped or restyled later.
 - Strings: 73 strings from 14 brands (`assets/strings.json`, `docs/string-roster.md`), a Strings
   room with a page and a 3D spool per string, and strings in the search. Ratings are our own,
   1-5 against this set; the roster marks which facts are sourced and which are placeholders.
+- Finding: each room's home floor can be filtered by what a racquet or string is strong on (rated 4
+  or more out of 5), player level, head size, weight and pattern, or gauge, shape and value. Matches
+  from every brand stand in one list, with its own address; what has no ratings or weight is counted,
+  never silently dropped. This also serves a second visitor, someone choosing what to play with.
 - Build my racquet: a page at `#/build/<racquet>` where a visitor picks strings, tension, lead
   tape, overgrip and dampener and sees them on the racquet. Its readout is an estimate:
   weight, balance and swingweight are arithmetic on numbers published by the maker or a retailer

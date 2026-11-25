@@ -193,6 +193,12 @@ fit one row by narrowing their letters. The header's elements are re-stood at ea
 Tab follows the page; never reorder them with `order` alone. Directory and filter stand on floors only: on a
 racquet's or string's own page the way back leads to them. How to move the view is behind a "?" under the model.
 
+- **Finding (`#/find?…`, `#/strings/find?…`):** one bar under the directory on each room's home floor:
+  "Strong on" pills (any number), then drop-down pills, ink once set, and Clear. Nothing picked shows the
+  aisles. Anything picked replaces them with one list from every brand under a 2px ink rule: the count,
+  what the order is and what was left out for want of facts, then bays on rails, each saying why it is
+  there. A racquet line appears once, standing as its first matching size. On phones the bar is two rows
+  that scroll sideways. Size and material in the header apply too.
 - **Strings home (`#/strings`):** the same aisles. Spools do not fan from a butt cap, so a brand's fan
   (up to five, distinct colours first) is set down as a stack on the rail, as on a shop counter. It
   waits gathered in the middle and opens on the aisle's spring; hover loosens it. No idle sway: a reel

@@ -2,6 +2,8 @@
 
 export type Route =
   | { kind: 'home' }
+  | { kind: 'find'; query: string }
+  | { kind: 'string-find'; query: string }
   | { kind: 'brand'; slug: string; lineage: string | null }
   | { kind: 'racquet'; id: string; colourway: string | null }
   | { kind: 'strings' }
@@ -9,22 +11,26 @@ export type Route =
   | { kind: 'string'; id: string; colour: string | null }
   | { kind: 'build'; id: string; colourway: string | null; query: string }; // query '' when none
 
-export type StringsRoute = Extract<Route, { kind: 'strings' | 'string-brand' | 'string' }>;
-export const isStringsRoute = (r: Route): r is StringsRoute => r.kind === 'strings' || r.kind === 'string-brand' || r.kind === 'string';
+export type StringsRoute = Extract<Route, { kind: 'strings' | 'string-brand' | 'string' | 'string-find' }>;
+export const isStringsRoute = (r: Route): r is StringsRoute => r.kind === 'strings' || r.kind === 'string-brand' || r.kind === 'string' || r.kind === 'string-find';
 
 const SLUG = '[a-z0-9]+(?:-[a-z0-9]+)*';
 const RACQUET = new RegExp(`^#/(${SLUG})(?:/(${SLUG}))?/?$`);
 const BRAND = new RegExp(`^#/b/(${SLUG})(?:/(${SLUG}))?/?$`);
 const STRING_BRAND = new RegExp(`^#/strings/b/(${SLUG})/?$`);
 const STRING = new RegExp(`^#/strings/(${SLUG})(?:/(${SLUG}))?/?$`);
+const FIND = /^#\/find\/?(?:\?(.*))?$/;
+const STRING_FIND = /^#\/strings\/find\/?(?:\?(.*))?$/;
 const BUILD = new RegExp(`^#/build/(${SLUG})(?:/(${SLUG}))?/?(?:\\?(.*))?$`);
 
 /** Whole first segments that are never racquet ids. */
-const RESERVED = /^#\/(strings|build)(\/|\?|$)/;
+const RESERVED = /^#\/(strings|build|find)(\/|\?|$)/;
 
-/** Reserved first segments (b, strings, build) are tried before the racquet pattern; anything unreadable is home. */
+/** Reserved first segments (b, find, strings, build) are tried before the racquet pattern; anything unreadable is home. */
 export function parseHash(hash: string): Route {
   let m: RegExpExecArray | null;
+  if ((m = FIND.exec(hash))) return { kind: 'find', query: m[1] ?? '' };
+  if ((m = STRING_FIND.exec(hash))) return { kind: 'string-find', query: m[1] ?? '' };
   if ((m = BRAND.exec(hash))) return { kind: 'brand', slug: m[1], lineage: m[2] ?? null };
   if ((m = STRING_BRAND.exec(hash))) return { kind: 'string-brand', slug: m[1] };
   if (/^#\/strings\/b\/?$/.test(hash) || /^#\/strings\/?$/.test(hash)) return { kind: 'strings' };
@@ -54,6 +60,15 @@ export function stringsRoute(brand?: string | null): string {
 
 export function stringRoute(id: string, colour?: string | null): string {
   return colour ? `#/strings/${id}/${colour}` : `#/strings/${id}`;
+}
+
+/** The home floor with a filter on; with nothing picked, the home floor itself. */
+export function findRoute(query: string): string {
+  return query ? `#/find?${query}` : '#/';
+}
+
+export function stringFindRoute(query: string): string {
+  return query ? `#/strings/find?${query}` : '#/strings';
 }
 
 export function buildRoute(id: string, colourway?: string | null, query = ''): string {
