@@ -6,6 +6,9 @@
 winning. `tests/strings.test.ts` checks the set. Colours: every standard colour a read page names, up
 to eight, with approximate hexes unless marked ✓.
 
+
+**Gauge numbers** (16, 16L, 17…) are the ones a string's own cited pages or its maker's list print; where they do not, the one that brand uses for the same thickness; where the brand gives none (16 gauges), the site shows the usual number for that thickness marked `~`. Makers differ: 1.25 mm is 16L at Luxilon, Solinco and Yonex and 17 at Babolat, Head and Kirschbaum.
+
 ## How to read it
 
 - **Maker first.** Where a maker page was read, its material, shape, gauges and colours win and its

@@ -38,6 +38,7 @@ const ICONS = {
   download: 'M12 4v11M7 10.5l5 5 5-5M5 20h14',
   code: 'M9 7l-5 5 5 5M15 7l5 5-5 5',
   close: 'M6 6l12 12M18 6L6 18',
+  full: 'M9 4H4v5M15 4h5v5M9 20H4v-5M15 20h5v-5',
   retry: 'M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4.5v4h-4',
   minus: 'M6 12h12',
   plus: 'M6 12h12M12 6v12',

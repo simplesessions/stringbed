@@ -37,6 +37,8 @@ import { LookPainter, MARKER_LAYER, type LookScale } from './look-passes';
 import type { Look } from './look';
 
 const FOV = 28;
+/** How far above level a model is first seen from. */
+const PITCH = 0.12;
 const KEY_TURN = Math.PI / 24;
 /** Shift + arrow moves this far, CSS px. */
 const KEY_PAN = 48;
@@ -512,7 +514,7 @@ export class Viewer {
     const c = this.controls;
     const center = this.box.getCenter(new Vector3());
     const yaw = -0.45;
-    const pitch = 0.12;
+    const pitch = PITCH;
     // Fit the whole frame with a margin, whichever of height or width is the tighter fit.
     const distance = (this.distance = fitModel(this.box, FOV, this.camera.aspect, pitch));
     c.target.copy(center);
@@ -526,6 +528,23 @@ export class Viewer {
     c.update();
     this.home = { target: c.target.clone(), offset: this.camera.position.clone().sub(c.target) };
     c.autoRotate = !prefersReducedMotion();
+    this.dirty = true;
+  }
+
+  /** The stage changed shape: stand where the whole model fits it, from the same side. */
+  refit(): void {
+    this.fit();
+    if (!this.model) return;
+    const c = this.controls;
+    const was = this.distance;
+    this.distance = fitModel(this.box, FOV, this.camera.aspect, PITCH);
+    const by = this.distance / was;
+    this.glide = null;
+    c.minDistance = nearSide(this.box) + this.distance * 0.1;
+    c.maxDistance = this.distance * 1.7;
+    this.camera.position.sub(c.target).multiplyScalar(by).add(c.target);
+    this.home.offset.multiplyScalar(by);
+    c.update();
     this.dirty = true;
   }
 

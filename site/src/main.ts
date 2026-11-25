@@ -1101,7 +1101,22 @@ function stage(a: App, first: Exhibit, { flat, parts, without, ready }: { flat: 
       el('span', { class: 'hint-coarse' }, 'Swipe sideways to turn. Two fingers move and zoom.'),
     ),
   );
-  niche.append(fault);
+  // Phones: the stage over the whole screen, where a swipe any way turns the model.
+  const full = el('button', { class: 'stage-full', type: 'button', 'aria-pressed': 'false', 'aria-label': 'Full screen view' }, icon('full'));
+  const setFull = (on: boolean) => {
+    host.classList.toggle('is-full', on);
+    full.setAttribute('aria-pressed', String(on));
+    full.replaceChildren(icon(on ? 'close' : 'full'));
+    requestAnimationFrame(() => viewer.refit());
+  };
+  full.addEventListener('click', () => setFull(!host.classList.contains('is-full')));
+  host.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape' || !host.classList.contains('is-full')) return;
+    e.preventDefault(); // out of the full view, not off the page
+    setFull(false);
+    full.focus();
+  });
+  niche.append(fault, full);
   host.append(controls);
 
   let shown = first;

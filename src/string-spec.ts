@@ -14,6 +14,7 @@ export interface StringSpec {
   material: StringMaterial;
   shape: { sides: number; label: string; twisted?: true; rough?: true } | null; // sides 0 round, else 3..12; null: no source says
   gaugesMm: number[]; // ascending, unique, each 1.0..1.45, at least one
+  gaugeNames?: Record<string, string>; // the number it is sold under, by its mm to two places: { "1.25": "16L" }; makers differ
   colours: Array<{ id: string; name: string; hex: HexColor }>; // 1-8, first is the default, ids unique
   finish: Finish;
   summary: string; // 25-60 words
@@ -50,6 +51,7 @@ const schema = z
       .array(z.number().min(1.0).max(1.45))
       .min(1)
       .refine((g) => g.every((v, i) => i === 0 || v > g[i - 1]), 'expected ascending, unique gauges'),
+    gaugeNames: z.record(z.string(), z.string().regex(/^(1[5-9]|20)L?$/, 'expected a gauge number')).optional(),
     colours: z
       .array(z.object({ id: slug, name: z.string().min(1), hex }).strict())
       .min(1)
@@ -65,7 +67,8 @@ const schema = z
     researchedOn: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
     verified: z.boolean(),
   })
-  .strict();
+  .strict()
+  .refine((s) => Object.keys(s.gaugeNames ?? {}).every((k) => s.gaugesMm.some((g) => g.toFixed(2) === k)), { message: 'names a gauge the string does not come in', path: ['gaugeNames'] });
 
 // Assignment, not a cast: the compiler checks the schema's output against StringSpec.
 export const stringSpecSchema: z.ZodType<StringSpec> = schema;

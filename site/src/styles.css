@@ -690,6 +690,7 @@ main { flex: 1; padding: 6px var(--pad) 72px; overflow-x: clip; }
 .stage[data-state='ready'] canvas { opacity: 1; }
 .stage canvas { opacity: 0; transition: opacity 0.4s var(--ease-out); }
 
+.stage-full { display: none; }
 .stage-controls {
   flex: none;
   display: flex;
@@ -1125,7 +1126,21 @@ a.gen-tab { display: inline-flex; align-items: center; text-decoration: none; }
   .strip { gap: 12px; }
   .detail-body { grid-template-columns: minmax(0, 1fr); }
   /* Room for the niche, plus three short rows of controls under it. */
-  .stage { position: relative; top: 0; height: calc(52svh + 160px); min-height: 480px; }
+  .stage { position: relative; top: 0; height: calc(68svh + 176px); min-height: 520px; }
+  .stage-controls { padding-top: 20px; }
+  .stage-full {
+    position: absolute; top: 10px; right: 10px; z-index: 3;
+    display: grid; place-items: center; width: 44px; height: 44px; padding: 0;
+    border: 1.5px solid var(--line); border-radius: 999px; background: var(--wall); color: var(--ink);
+  }
+  .stage:not([data-state='ready']) .stage-full { display: none; }
+  /* The whole screen: the model, its buttons under it, and a swipe that turns it any way. */
+  .stage.is-full { position: fixed; inset: 0; z-index: 60; height: 100dvh; min-height: 0; padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom); border-radius: 0; background: var(--wall); }
+  .stage.is-full :is(.niche, .stage-model) { border-radius: 0; }
+  .stage.is-full canvas { touch-action: none !important; }
+  .stage.is-full .stage-controls { padding: 14px var(--pad) 12px; }
+  .stage.is-full .stage-hint { display: none; }
+  html:has(.stage.is-full) { overflow: hidden; }
   .bay-fault { left: 4%; right: 4%; font-size: 0.75rem; }
   /* Phones: previous and next get a row of their own, so each arrow keeps the name of where it goes. */
   .detail-nav { flex-wrap: wrap; gap: 10px 16px; }
@@ -1563,13 +1578,13 @@ ellipse.beam-hoop { fill: color-mix(in oklch, var(--bed, var(--wall)) 34%, var(-
 
 @media (max-width: 720px) {
   .build { display: block; }
-  html:has(.build) { scroll-padding-top: calc(max(160px, 27svh) + 146px); } /* what is tabbed to comes out from under it */
+  html:has(.build) { scroll-padding-top: calc(max(160px, 34svh) + 146px); } /* what is tabbed to comes out from under it */
   /* The controls stand above the model and slide away under the top edge; the racquet and its
      numbers stay, whatever is being changed. */
-  .build-rig { --row: 52px; --niche-h: 27svh; z-index: 4; top: calc(-1 * var(--row)); height: auto; min-height: 0; margin-inline: calc(-1 * var(--pad)); padding: 0 var(--pad) 8px; background: var(--wall); border-bottom: 1px solid var(--line); }
+  .build-rig { --row: 66px; --niche-h: 34svh; z-index: 4; top: calc(-1 * var(--row)); height: auto; min-height: 0; margin-inline: calc(-1 * var(--pad)); padding: 0 var(--pad) 8px; background: var(--wall); border-bottom: 1px solid var(--line); }
   .build-rig .stage { flex: none; flex-direction: column-reverse; height: auto; }
   .build-rig .niche { flex: none; height: max(160px, var(--niche-h)); transition: height 0.4s var(--ease-out); }
-  .is-taping .build-rig { --row: 60px; --niche-h: 52svh; top: 0; }
+  .is-taping .build-rig { --row: 70px; --niche-h: 52svh; top: 0; }
   /* No model, no controls: the word about it stands beside the outline. */
   .build-rig:has([data-state='flat']) { --row: 0px; }
   .build-rig .stage-note { position: absolute; inset: auto auto 8px 12px; max-width: 34%; padding: 0; font-size: 0.75rem; line-height: 1.3; text-align: start; }
@@ -1578,7 +1593,10 @@ ellipse.beam-hoop { fill: color-mix(in oklch, var(--bed, var(--wall)) 34%, var(-
   .build-rig .stage-controls .button-quiet { position: relative; width: 40px; padding: 0; margin-inline-start: auto; }
   .build-rig .stage-controls .tape-toggle { padding-inline: 14px; }
   .build-title .looks { display: flex; width: fit-content; margin-top: 12px; }
-  .build-rig .stage-controls { flex-wrap: nowrap; height: var(--row); padding: 4px 0; margin-inline: calc(-1 * var(--pad)); padding-inline: var(--pad); }
+  .build-rig .stage-controls { flex-wrap: nowrap; height: var(--row); padding: 4px var(--pad) 16px; margin-inline: calc(-1 * var(--pad)); }
+  .build-rig .stage.is-full { flex-direction: column; height: 100dvh; }
+  .build-rig .stage.is-full .niche { flex: 1 1 0; height: auto; transition: none; }
+  .build-rig .stage.is-full .stage-controls { height: auto; margin: 0; padding: 14px var(--pad) 12px; }
   .readings { position: static; container-type: normal; }
   /* Off the stage: beside the line about how it plays, where it covers no part of the racquet. */
   .readings { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 0 12px; }

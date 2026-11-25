@@ -7,6 +7,8 @@ bump; new racquets, new colourways and fixes to existing models are minor or pat
 
 ## Unreleased
 
+- Strings carry their gauge numbers (`gaugeNames`, optional), shown beside the mm.
+- Phones: a taller 3D stage, a full screen view, and more room between it and its buttons.
 - Fix: in the Line look, dark parts (black strings, spool flanges, black grips) draw their inner lines pale, so they no longer merge.
 - Strings: 73 strings from 14 brands in `strings/`, written to `assets/strings.json` (version 1) with
   a `spool` entry, and a string spool model, `assets/models/string-spool.glb`, with parts `spool`
