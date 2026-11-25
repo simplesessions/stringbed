@@ -428,7 +428,6 @@ function aisle(a: App, x: Aisle, k: number): HTMLLIElement {
 function openWhenSeen(item: HTMLElement) {
   const open = () => {
     item.dataset.open = '';
-    play('swish');
     setTimeout(() => (item.dataset.settled = ''), 1500);
   };
   if (matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
@@ -490,7 +489,6 @@ function shelf(a: App, sh: Shelf): HTMLElement {
           b.addEventListener('click', () => {
             if (g === family) return;
             a.shelfGen.set(sh.lineage, g.id);
-            play('pick');
             const section = document.getElementById(id);
             transition(() => {
               section?.replaceWith(shelf(a, sh));
@@ -555,7 +553,7 @@ function shelf(a: App, sh: Shelf): HTMLElement {
     );
     open.href = routeFor(r.id);
     open.replaceChildren(`Open the ${r.variantLabel ?? wallName(r)}`, icon('next'));
-    if (how === 'swap') play('hover', members.indexOf(r));
+    if (how === 'swap') play('hover');
   };
 
   const lineup = el('ul', { class: 'lineup', role: 'list', 'aria-label': `${sh.name} variants` },
@@ -1237,14 +1235,17 @@ const paintSound = () => {
 };
 paintSound();
 searchOpen.after(soundButton);
-soundButton.addEventListener('click', () => void setSound(!soundOn()).then(paintSound));
-if (storedSound()) void setSound(true).then(paintSound); // the synth loads lazily and plays nothing until a gesture
+soundButton.addEventListener('click', () => {
+  setSound(!soundOn());
+  play('pick');
+  paintSound();
+});
+if (storedSound()) {
+  setSound(true); // audio itself starts with the first click
+  paintSound();
+}
 
 // Delegated, so every control has its sound without wiring each one.
-document.addEventListener('pointerenter', (e) => {
-  const aisleLink = (e.target as Element).closest?.('.aisle-link');
-  if (aisleLink && e.target === aisleLink) play('swish');
-}, true);
 document.addEventListener('click', (e) => {
   const t = e.target as Element;
   if (t.closest('.shelf-stage, .aisle-link, .lineup-row, .lineup-open, .stock-row, .stock-tag')) play('open');
