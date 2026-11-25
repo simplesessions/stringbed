@@ -22,6 +22,8 @@ export interface Exhibit {
   url: string | null;
   label: string;
   options?: ShowOptions;
+  /** What the full screen says under it. */
+  caption: { title: string; sub: string; facts: Array<[string, string]> };
 }
 export interface Stage {
   node: HTMLElement;
@@ -288,6 +290,7 @@ export function stringRooms(host: Host): StringRooms {
       url: spoolUrl(),
       label: `3D view of a spool of ${fullName(s)}`,
       options: { colours: tint(colour.hex), scale: SPOOL_SCALE },
+      caption: { title: s.name, sub: `${s.brand} · ${colour.name}`, facts: [['Material', MATERIAL_LABEL[s.material]], ['Shape', s.shape?.label ?? 'Not stated'], ['Gauge', gaugeText(s, firstGauge(s))], ['Best for', tagLabel(s.bestFor[0])]] },
     });
     const stage = host.stage(exhibit(first), disc());
 

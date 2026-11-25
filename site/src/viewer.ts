@@ -265,6 +265,7 @@ export class Viewer {
   private home: Pose = { target: new Vector3(), offset: new Vector3(0, 0, 1) };
   private glide: { from: Pose; to: Pose; start: number; done: () => void } | null = null;
   private reveal = 0;
+  private over = { top: 0, bottom: 0 };
   private lit = 0; // when the alcove's light began to come up; 0 before the first racquet
 
   static create(): Viewer | null {
@@ -516,7 +517,7 @@ export class Viewer {
     const yaw = -0.45;
     const pitch = PITCH;
     // Fit the whole frame with a margin, whichever of height or width is the tighter fit.
-    const distance = (this.distance = fitModel(this.box, FOV, this.camera.aspect, pitch));
+    const distance = (this.distance = this.fitted());
     c.target.copy(center);
     this.camera.position.set(
       center.x + distance * Math.sin(yaw) * Math.cos(pitch),
@@ -531,13 +532,17 @@ export class Viewer {
     this.dirty = true;
   }
 
-  /** The stage changed shape: stand where the whole model fits it, from the same side. */
-  refit(): void {
+  /**
+   * The stage changed shape: stand where the whole model fits it, from the same side. `over`: px of
+   * the canvas that other things lie over, at its top and bottom; the model stands between them.
+   */
+  refit(over = { top: 0, bottom: 0 }): void {
+    this.over = over;
     this.fit();
     if (!this.model) return;
     const c = this.controls;
     const was = this.distance;
-    this.distance = fitModel(this.box, FOV, this.camera.aspect, PITCH);
+    this.distance = this.fitted();
     const by = this.distance / was;
     this.glide = null;
     c.minDistance = nearSide(this.box) + this.distance * 0.1;
@@ -548,6 +553,15 @@ export class Viewer {
     this.dirty = true;
   }
 
+  /** How far back the whole model fits what is left of the canvas. */
+  private fitted(): number {
+    const w = this.canvas.clientWidth;
+    const h = this.canvas.clientHeight;
+    const free = h - this.over.top - this.over.bottom;
+    if (free < 1 || free >= h) return fitModel(this.box, FOV, this.camera.aspect, PITCH);
+    return (fitModel(this.box, FOV, w / free, PITCH) * h) / free;
+  }
+
   private fit() {
     if (!this.canvas.parentElement) return;
     const w = this.canvas.clientWidth;
@@ -556,6 +570,8 @@ export class Viewer {
     this.renderer.setPixelRatio(Math.min(devicePixelRatio || 1, 2));
     this.renderer.setSize(w, h, false);
     this.camera.aspect = w / h;
+    if (this.over.top || this.over.bottom) this.camera.setViewOffset(w, h, 0, (this.over.bottom - this.over.top) / 2, w, h);
+    else this.camera.clearViewOffset();
     this.camera.updateProjectionMatrix();
     // Resizing wipes the canvas, and this runs after the frame's own drawing: draw again now, or
     // the browser paints one blank frame for every step of a window resize.

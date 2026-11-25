@@ -287,6 +287,13 @@ millimetre) over a 1 mm bar, with a segmented switch between the gauges it is so
 stand on a flat face; twisted and rough are said in words. A shape no source states is a dashed ring
 and "Shape not stated".
 
+### Full screen stage (phones and tablets)
+- The niche is the whole screen. Over its foot, on a fade to the niche's own tone: the name in condensed
+  display, its line of Soft Ink, a 2px ink rule and four numbers (racquet, string) or the build's live
+  readout. Nothing else; the rest of the page is a tap on the X away. The close-ups, Reset and the X float on blurred wall. On its side the
+  caption is a column at the left. It uses the browser's full screen where there is one, else a layer 100lvh
+  tall, so nothing resizes with the address bar.
+
 ### Build page
 - **Readout:** four cells under a 2px ink rule (weight, balance, swingweight, twist added): the number in
   condensed display, then what changed in ink, then a Soft Ink note. "about" is set small before a derived

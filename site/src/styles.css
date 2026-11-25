@@ -1128,19 +1128,6 @@ a.gen-tab { display: inline-flex; align-items: center; text-decoration: none; }
   /* Room for the niche, plus three short rows of controls under it. */
   .stage { position: relative; top: 0; height: calc(68svh + 176px); min-height: 520px; }
   .stage-controls { padding-top: 20px; }
-  .stage-full {
-    position: absolute; top: 10px; right: 10px; z-index: 3;
-    display: grid; place-items: center; width: 44px; height: 44px; padding: 0;
-    border: 1.5px solid var(--line); border-radius: 999px; background: var(--wall); color: var(--ink);
-  }
-  .stage:not([data-state='ready']) .stage-full { display: none; }
-  /* The whole screen: the model, its buttons under it, and a swipe that turns it any way. */
-  .stage.is-full { position: fixed; inset: 0; z-index: 60; height: 100dvh; min-height: 0; padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom); border-radius: 0; background: var(--wall); }
-  .stage.is-full :is(.niche, .stage-model) { border-radius: 0; }
-  .stage.is-full canvas { touch-action: none !important; }
-  .stage.is-full .stage-controls { padding: 14px var(--pad) 12px; }
-  .stage.is-full .stage-hint { display: none; }
-  html:has(.stage.is-full) { overflow: hidden; }
   .bay-fault { left: 4%; right: 4%; font-size: 0.75rem; }
   /* Phones: previous and next get a row of their own, so each arrow keeps the name of where it goes. */
   .detail-nav { flex-wrap: wrap; gap: 10px 16px; }
@@ -1594,9 +1581,6 @@ ellipse.beam-hoop { fill: color-mix(in oklch, var(--bed, var(--wall)) 34%, var(-
   .build-rig .stage-controls .tape-toggle { padding-inline: 14px; }
   .build-title .looks { display: flex; width: fit-content; margin-top: 12px; }
   .build-rig .stage-controls { flex-wrap: nowrap; height: var(--row); padding: 4px var(--pad) 16px; margin-inline: calc(-1 * var(--pad)); }
-  .build-rig .stage.is-full { flex-direction: column; height: 100dvh; }
-  .build-rig .stage.is-full .niche { flex: 1 1 0; height: auto; transition: none; }
-  .build-rig .stage.is-full .stage-controls { height: auto; margin: 0; padding: 14px var(--pad) 12px; }
   .readings { position: static; container-type: normal; }
   /* Off the stage: beside the line about how it plays, where it covers no part of the racquet. */
   .readings { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 0 12px; }
@@ -1685,3 +1669,60 @@ ellipse.beam-hoop { fill: color-mix(in oklch, var(--bed, var(--wall)) 34%, var(-
 .detail.arriving .sheet > :nth-child(5) { --s: 4; } .detail.arriving .sheet > :nth-child(6) { --s: 5; } .detail.arriving .sheet > :nth-child(n+7) { --s: 6; }
 @keyframes sheet-in { from { opacity: 0; transform: translateX(28px); } }
 @media (prefers-reduced-motion: reduce) { .detail.arriving .sheet > *, .detail.arriving .detail-nav { animation: none; } }
+
+/* ---------- full screen: the stage is the screen, its caption lies over the foot ---------- */
+
+.full-caption { display: none; }
+@media (max-width: 720px), (pointer: coarse) {
+  .stage-full {
+    position: absolute; top: 10px; right: 10px; z-index: 5;
+    display: grid; place-items: center; width: 44px; height: 44px; padding: 0;
+    border: 0; border-radius: 999px; color: var(--ink); cursor: pointer;
+    background: color-mix(in oklab, var(--wall) 62%, transparent); backdrop-filter: blur(10px);
+  }
+  .stage:not([data-state='ready']) .stage-full, .is-taping .stage-full { display: none; }
+}
+html:has(.is-full) { overflow: hidden; overscroll-behavior: none; }
+.is-full:is(.stage, .build-rig) {
+  position: fixed; inset: 0 0 auto; z-index: 60; display: block;
+  width: 100%; height: 100lvh; min-height: 0; margin: 0; padding: 0; border: 0; border-radius: 0;
+  background: radial-gradient(70% 62% at 47% 42%, var(--niche-lit), var(--niche));
+  overflow: hidden; overscroll-behavior: none; touch-action: none;
+}
+.is-full:fullscreen { height: 100%; }
+.build-rig.is-full .stage { position: static; height: auto; }
+.is-full :is(.niche, .stage-model) { position: absolute; inset: 0; height: auto; border-radius: 0; transition: none; }
+.is-full canvas { touch-action: none !important; }
+.is-full .stage-full { top: 14px; right: 16px; }
+.is-full .stage-controls { position: absolute; z-index: 4; top: 14px; left: 16px; flex-wrap: nowrap; gap: 8px; height: 44px; margin: 0; padding: 0; }
+.is-full .stage-controls > :not(.views, .button-quiet) { display: none; }
+.is-full .stage-controls :is(.views, .button-quiet) { border: 0; background: color-mix(in oklab, var(--wall) 62%, transparent); backdrop-filter: blur(10px); }
+.is-full .stage-controls .button-quiet { display: grid; place-items: center; width: 44px; min-height: 44px; margin: 0; padding: 0; border-radius: 999px; }
+.is-full .stage-controls .reset-word { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+/* The foot: never under the address bar, and never moved by it. */
+.stage.is-full > .full-caption, .build-rig.is-full > .readings {
+  position: absolute; z-index: 3; inset: auto 0 calc(100lvh - 100svh);
+  padding: 76px 20px calc(20px + env(safe-area-inset-bottom));
+  background: linear-gradient(to top, color-mix(in oklab, var(--niche) 96%, transparent) 30%, color-mix(in oklab, var(--niche) 70%, transparent) 62%, transparent);
+  pointer-events: none;
+}
+.is-full:fullscreen > :is(.full-caption, .readings) { bottom: 0; }
+.is-full:is(.stage) > .full-caption, .is-full .readings > .full-caption { display: block; animation: full-in 0.7s var(--ease-out) both; }
+.build-rig.is-full > .readings > .full-caption { grid-column: 1 / -1; }
+.full-title { margin: 0; font-size: clamp(2.25rem, 11vw, 3.5rem); font-weight: 800; font-stretch: 76%; line-height: 0.92; letter-spacing: -0.02em; text-wrap: balance; }
+.full-sub { margin: 8px 0 14px; color: var(--ink-2); font-size: 0.9375rem; }
+.full-facts { display: grid; grid-template-columns: repeat(4, auto); justify-content: space-between; gap: 0 14px; margin: 0; padding-top: 12px; border-top: 2px solid var(--ink); }
+.full-facts dt { color: var(--ink-2); font-size: 0.75rem; line-height: 1.2; }
+.full-facts dd { margin: 3px 0 0; font-size: 1.125rem; font-weight: 720; font-stretch: 78%; line-height: 1.15; font-variant-numeric: tabular-nums; }
+.build-rig.is-full .full-facts { display: none; }
+.build-rig.is-full .reading-cells { padding-top: 12px; border-top: 2px solid var(--ink); }
+.build-rig.is-full .full-sub { margin-bottom: 8px; }
+@keyframes full-in { from { opacity: 0; transform: translateY(14px); } }
+@media (prefers-reduced-motion: reduce) { .full-caption { animation: none !important; } }
+/* A phone on its side: the caption is a column at the left, and the model has the whole height. */
+@media (max-height: 479px) {
+  .stage.is-full > .full-caption, .build-rig.is-full > .readings { right: auto; width: min(34vw, 300px); padding: 0 0 18px max(20px, env(safe-area-inset-left)); background: none; }
+  .is-full .full-title { font-size: 1.75rem; }
+  .is-full :is(.full-facts, .reading-cells) { grid-template-columns: 1fr 1fr; gap: 8px 14px; }
+  .is-full .beam { display: none; }
+}
