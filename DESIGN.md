@@ -291,9 +291,8 @@ and "Shape not stated".
 - The niche is the whole screen. Over its foot, on a fade to the niche's own tone: the name in condensed
   display, its line of Soft Ink, a 2px ink rule and four numbers (racquet, string) or the build's live
   readout. Nothing else; the rest of the page is a tap on the X away. The close-ups, Reset and the X float on blurred wall. On its side the
-  caption is a column at the left. It uses the browser's full screen where there is one; elsewhere the stage
-  stands in for the page, 100lvh tall and in the flow (viewport-fit=cover), so it runs on behind the bars and
-  nothing resizes with them.
+  caption is a column at the left. It uses the browser's full screen where there is one, else a layer 100lvh
+  tall, so nothing resizes with the address bar.
 
 ### Build page
 - **Readout:** four cells under a 2px ink rule (weight, balance, swingweight, twist added): the number in
