@@ -1,0 +1,57 @@
+{
+  "id": "solinco-pro-stacked",
+  "brand": "Solinco",
+  "name": "Pro Stacked",
+  "material": "synthetic-gut",
+  "shape": null,
+  "gaugesMm": [
+    1.3
+  ],
+  "colours": [
+    {
+      "id": "black",
+      "name": "Black",
+      "hex": "#2a2a2c"
+    },
+    {
+      "id": "red",
+      "name": "Red",
+      "hex": "#c62f2f"
+    },
+    {
+      "id": "neon-green",
+      "name": "Neon Green",
+      "hex": "#5fd63a"
+    },
+    {
+      "id": "neon-yellow",
+      "name": "Neon Yellow",
+      "hex": "#dbe637"
+    }
+  ],
+  "finish": "satin",
+  "summary": "Solinco's synthetic gut: a solid core wrapped in finer fibres, described by the maker as a balanced all-court string with a fairly soft feel. A plain, affordable full bed or hybrid cross. No independent review was read, so treat these ratings as tentative.",
+  "bestFor": [
+    "value",
+    "comfort"
+  ],
+  "ratings": {
+    "power": 3,
+    "spin": 2,
+    "control": 3,
+    "comfort": 4,
+    "feel": 3,
+    "durability": 3
+  },
+  "compared": [
+    "prince-synthetic-gut-duraflex",
+    "gamma-tnt2",
+    "solinco-vanquish"
+  ],
+  "confidence": "low",
+  "sources": [
+    "https://solinco.com/products/pro-stacked/"
+  ],
+  "researchedOn": "2026-11-24",
+  "verified": false
+}

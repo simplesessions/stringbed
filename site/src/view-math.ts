@@ -49,6 +49,18 @@ export function fitDistance(box: Box3, fovDeg: number, aspect: number, margin = 
   return (Math.max(size.y, Math.max(size.x, size.z) / aspect) * margin) / (2 * tan);
 }
 
+/** How far a solid model's near side stands in front of its middle. A racquet is flat: none. */
+export function nearSide(box: Box3): number {
+  const size = box.getSize(new Vector3());
+  return size.z > size.x / 2 ? size.z / 2 : 0;
+}
+
+/** `fitDistance` for a whole model seen from `pitch` above: a solid one's near rim looms, and its rims open into ellipses. */
+export function fitModel(box: Box3, fovDeg: number, aspect: number, pitch: number): number {
+  const near = nearSide(box);
+  return fitDistance(box.clone().expandByVector(new Vector3(0, near * Math.sin(pitch), 0)), fovDeg, aspect) + near;
+}
+
 /**
  * Keep the point the camera turns around on the racquet, so a pan can reach every part but never
  * lose it. Beyond the fitted distance the room to roam closes up, so zooming out brings the

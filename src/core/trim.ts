@@ -337,11 +337,11 @@ export function buildGrommets(spec: RacquetSpec, layout: Layout): THREE.BufferGe
   return m.build();
 }
 
-const DAMPENER_WIDTH = 0.011;
-const DAMPENER_HEIGHT = 0.008;
-const DAMPENER_DEPTH = 0.007;
-const DAMPENER_CORNER = 0.0025;
-const DAMPENER_SEGMENTS = 3;
+export const DAMPENER_WIDTH = 0.011;
+export const DAMPENER_HEIGHT = 0.008;
+export const DAMPENER_DEPTH = 0.007;
+export const DAMPENER_CORNER = 0.0025;
+export const DAMPENER_SEGMENTS = 3;
 
 /**
  * Dampener: a small rounded block between the two centre mains, just above the bridge. For odd

@@ -1,0 +1,47 @@
+{
+  "id": "luxilon-4g",
+  "brand": "Luxilon",
+  "name": "4G",
+  "material": "polyester",
+  "shape": {
+    "sides": 0,
+    "label": "Round"
+  },
+  "gaugesMm": [
+    1.25,
+    1.3
+  ],
+  "colours": [
+    {
+      "id": "gold",
+      "name": "Gold",
+      "hex": "#d9c88f"
+    }
+  ],
+  "finish": "satin",
+  "summary": "A firm, low-powered co-polyester for hitters who bring their own pace and want predictable placement. Spin and control are strong and feel is better than most polys. It resists breaking about as well as other good polys, and its response fades more gradually than most.",
+  "bestFor": [
+    "control",
+    "spin",
+    "feel"
+  ],
+  "ratings": {
+    "power": 2,
+    "spin": 4,
+    "control": 5,
+    "comfort": 3,
+    "feel": 4,
+    "durability": 4
+  },
+  "compared": [
+    "luxilon-alu-power",
+    "luxilon-element"
+  ],
+  "confidence": "medium",
+  "sources": [
+    "https://tenniscompanion.org/luxilon-4g/",
+    "https://www.tennis-warehouse.com/Luxilon_4G_16_130_String/descpageACWILSON-LUX4G130.html"
+  ],
+  "researchedOn": "2026-11-24",
+  "verified": false
+}

@@ -4,11 +4,19 @@
 // Where OffscreenCanvas has WebGL, frames move as ImageBitmaps into 'bitmaprenderer'
 // canvases (no GPU readback); otherwise they are copied with a 2D drawImage.
 import { OrthographicCamera, type Object3D, type WebGLRenderer, type Scene } from 'three';
-import { createRenderer, createStudio, loadModel, prefersReducedMotion } from './studio';
+import type { HexColor } from '../../src/core/spec';
+import { createRenderer, createStudio, loadModel, prefersReducedMotion, tinted, untint } from './studio';
 import { LookPainter, type LookScale } from './look-passes';
 import type { Look } from './look';
 
 export type ThumbState = 'idle' | 'loading' | 'ready' | 'failed';
+
+export interface ThumbOptions {
+  /** Colours for named parts; without any the model is drawn as it was made. */
+  colours?: Record<string, HexColor>;
+  /** Metres the frame spans from top to bottom. Its width follows the canvas: a spool needs one at least 1.2 times as wide as tall. */
+  fitHeight?: number;
+}
 
 type Target = { kind: 'bitmap'; ctx: ImageBitmapRenderingContext } | { kind: '2d'; ctx: CanvasRenderingContext2D };
 
@@ -16,6 +24,8 @@ interface Entry {
   canvas: HTMLCanvasElement;
   target: Target;
   url: string;
+  colours: Record<string, HexColor>;
+  fitHeight: number;
   onState: (state: ThumbState) => void;
   state: ThumbState;
   model: Object3D | null;
@@ -38,6 +48,8 @@ const LOOK_SCALE: LookScale = { cell: 4, outline: 1, dot: 3, hatch: 5 };
 
 /** Height every thumbnail frames, metres: 29 in, the longest frame the spec allows. */
 const FRAME_HEIGHT_M = 0.7366;
+/** Room under the model, metres: enough that leaning on hover never dips it out of a short frame. */
+const roomBelow = (fitHeight: number) => Math.min(0.012, fitHeight * 0.045);
 
 export class Thumbnails {
   private readonly scene: Scene;
@@ -80,12 +92,12 @@ export class Thumbnails {
   }
 
   /** Track a canvas. `hoverTarget` is the element whose hover or focus turns the racquet. */
-  add(canvas: HTMLCanvasElement, url: string, hoverTarget: HTMLElement, onState: (s: ThumbState) => void): void {
+  add(canvas: HTMLCanvasElement, url: string, hoverTarget: HTMLElement, onState: (s: ThumbState) => void, { colours = {}, fitHeight = FRAME_HEIGHT_M }: ThumbOptions = {}): void {
     const bitmap = this.transfer ? canvas.getContext('bitmaprenderer') : null;
     const flat = bitmap ? null : canvas.getContext('2d');
     const target: Target | null = bitmap ? { kind: 'bitmap', ctx: bitmap } : flat ? { kind: '2d', ctx: flat } : null;
     if (!target) return onState('failed');
-    const e: Entry = { canvas, target, url, onState, state: 'idle', model: null, visible: false, dirty: true, yaw: REST_YAW, spin: 0, wake: 0, phase: Math.random() * Math.PI * 2, turning: false };
+    const e: Entry = { canvas, target, url, colours, fitHeight, onState, state: 'idle', model: null, visible: false, dirty: true, yaw: REST_YAW, spin: 0, wake: 0, phase: Math.random() * Math.PI * 2, turning: false };
     this.entries.set(canvas, e);
     this.seen.observe(canvas);
     this.resized.observe(canvas);
@@ -110,6 +122,7 @@ export class Thumbnails {
       if (e.canvas.isConnected) continue;
       this.seen.unobserve(canvas);
       this.resized.unobserve(canvas);
+      if (e.model) untint(e.model);
       this.entries.delete(canvas);
     }
   }
@@ -141,7 +154,7 @@ export class Thumbnails {
         (source) => {
           // Turn a clone, never the cached source: the detail viewer clones that source and
           // must start from the file's own pose. Clones share geometry and materials.
-          e.model = source.clone();
+          e.model = tinted(source, e.colours);
           this.setState(e, 'ready');
           this.mark(e);
         },
@@ -213,14 +226,14 @@ export class Thumbnails {
     model.updateMatrixWorld(true);
     // One true scale for every racquet: the frame is a fixed 29 in tall with the butt cap (the
     // model's origin) on the rail, so a 25 in junior stands visibly shorter than a 27 in frame.
-    const halfH = (FRAME_HEIGHT_M * 1.03) / 2;
+    const halfH = (e.fitHeight * 1.03) / 2;
     const halfW = halfH * (w / h);
     const cam = this.camera;
     cam.left = -halfW;
     cam.right = halfW;
     cam.top = halfH;
     cam.bottom = -halfH;
-    cam.position.set(0, halfH - 0.012, 3);
+    cam.position.set(0, halfH - roomBelow(e.fitHeight), 3);
     cam.updateProjectionMatrix();
 
     this.scene.add(model);

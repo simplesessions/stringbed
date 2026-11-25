@@ -1,0 +1,3921 @@
+{
+  "version": 1,
+  "spool": {
+    "path": "models/string-spool.glb",
+    "bytes": 23252,
+    "triangles": 3520,
+    "parts": [
+      "spool",
+      "spool_string"
+    ]
+  },
+  "strings": [
+    {
+      "id": "babolat-rpm-blast",
+      "brand": "Babolat",
+      "name": "RPM Blast",
+      "material": "polyester",
+      "shape": {
+        "sides": 8,
+        "label": "Octagonal"
+      },
+      "gaugesMm": [
+        1.2,
+        1.25,
+        1.3,
+        1.35
+      ],
+      "colours": [
+        {
+          "id": "black",
+          "name": "Black",
+          "hex": "#2a2f45"
+        }
+      ],
+      "finish": "satin",
+      "summary": "A firm eight-sided co-polyester built for big, fast swings and heavy topspin. Spin and control are among the best here, but it gives little free power and plays stiff. Customer reviews of the thin gauge disagree on how long it lasts, and one reports arm soreness.",
+      "bestFor": [
+        "spin",
+        "control",
+        "durability"
+      ],
+      "ratings": {
+        "power": 1,
+        "spin": 5,
+        "control": 5,
+        "comfort": 2,
+        "feel": 3,
+        "durability": 4
+      },
+      "compared": [
+        "luxilon-alu-power",
+        "solinco-hyper-g",
+        "babolat-rpm-rough"
+      ],
+      "confidence": "low",
+      "sources": [
+        "https://www.babolat.com/us/rpm-blast-12m/241101.html",
+        "https://tennisoverload.com/babolat-rpm-blast-tennis-string-review/",
+        "https://www.tennisonly.com.au/Babolat_RPM_Blast_17_125_String_Set/descpage-BRPMB17.html?from=tennerd"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": true
+    },
+    {
+      "id": "babolat-rpm-power",
+      "brand": "Babolat",
+      "name": "RPM Power",
+      "material": "polyester",
+      "shape": {
+        "sides": 0,
+        "label": "Round"
+      },
+      "gaugesMm": [
+        1.25,
+        1.3
+      ],
+      "colours": [
+        {
+          "id": "electric-brown",
+          "name": "Electric Brown",
+          "hex": "#7a6445"
+        },
+        {
+          "id": "electric-blue",
+          "name": "Electric Blue",
+          "hex": "#1f7fe0"
+        }
+      ],
+      "finish": "gloss",
+      "summary": "A smooth round co-polyester, livelier than most control polys, with a coating that helps the strings slide and return. It suits long swings that want some extra pace with their spin; with no edges it has less direct bite than the shaped RPM strings.",
+      "bestFor": [
+        "power",
+        "spin",
+        "comfort"
+      ],
+      "ratings": {
+        "power": 4,
+        "spin": 3,
+        "control": 3,
+        "comfort": 3,
+        "feel": 3,
+        "durability": 3
+      },
+      "compared": [
+        "babolat-rpm-blast",
+        "babolat-rpm-team"
+      ],
+      "confidence": "low",
+      "sources": [
+        "https://tennisoverload.com/babolat-rpm-power-tennis-string-review/",
+        "https://www.babolat.com/us/news-articles-blog-tennis-rpm-power/tennis-rpm-power.html"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": false
+    },
+    {
+      "id": "babolat-rpm-rough",
+      "brand": "Babolat",
+      "name": "RPM Rough",
+      "material": "polyester",
+      "shape": {
+        "sides": 8,
+        "label": "Octagonal",
+        "rough": true
+      },
+      "gaugesMm": [
+        1.25,
+        1.3,
+        1.35
+      ],
+      "colours": [
+        {
+          "id": "yellow",
+          "name": "Yellow",
+          "hex": "#d9d811"
+        },
+        {
+          "id": "black",
+          "name": "Black",
+          "hex": "#2a2a2d"
+        },
+        {
+          "id": "red",
+          "name": "Red",
+          "hex": "#e0503c"
+        }
+      ],
+      "finish": "satin",
+      "summary": "RPM Blast with a textured surface, for attacking players with long, fast strokes who want grip on the ball. The shop's playtesters found it a touch softer and livelier than the smooth string and quite durable, though its thin gauge wears sooner than the thicker ones.",
+      "bestFor": [
+        "spin",
+        "durability"
+      ],
+      "ratings": {
+        "power": 2,
+        "spin": 5,
+        "control": 4,
+        "comfort": 3,
+        "feel": 3,
+        "durability": 4
+      },
+      "compared": [
+        "babolat-rpm-blast",
+        "luxilon-alu-power-rough"
+      ],
+      "confidence": "low",
+      "sources": [
+        "https://www.babolat.com/us/rpm-rough-12m/241140.html",
+        "https://www.tennisonly.com.au/Babolat_RPM_Blast_Rough_17_125_String_Set/descpage-BRPMBRS.html"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": false
+    },
+    {
+      "id": "babolat-rpm-team",
+      "brand": "Babolat",
+      "name": "RPM Team",
+      "material": "polyester",
+      "shape": {
+        "sides": 8,
+        "label": "Octagonal"
+      },
+      "gaugesMm": [
+        1.25,
+        1.3
+      ],
+      "colours": [
+        {
+          "id": "black",
+          "name": "Black",
+          "hex": "#2b2b2e"
+        },
+        {
+          "id": "blue",
+          "name": "Blue",
+          "hex": "#2f6fd0"
+        },
+        {
+          "id": "pink",
+          "name": "Pink",
+          "hex": "#e8488f"
+        }
+      ],
+      "finish": "satin",
+      "summary": "An eight-sided co-polyester meant to be a little softer than RPM Blast, with good spin, precision and durability for players with long, quick swings. The shop's playtesters still found it firm, so it rewards sound mechanics; a guest reviewer found it softer and livelier than Blast.",
+      "bestFor": [
+        "spin",
+        "control",
+        "durability"
+      ],
+      "ratings": {
+        "power": 3,
+        "spin": 4,
+        "control": 4,
+        "comfort": 3,
+        "feel": 3,
+        "durability": 4
+      },
+      "compared": [
+        "babolat-rpm-blast",
+        "babolat-rpm-power"
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://tennisoverload.com/babolat-rpm-team-tennis-string-review/",
+        "https://www.tennisnerd.net/gear/strings/babolat-rpm-team-review/31104",
+        "https://www.tennisonly.com.au/Babolat_RPM_Team_16_130_String_Set_/descpage-BRPMT16.html"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": false
+    },
+    {
+      "id": "babolat-touch-vs",
+      "brand": "Babolat",
+      "name": "Touch VS",
+      "material": "natural-gut",
+      "shape": null,
+      "gaugesMm": [
+        1.3
+      ],
+      "colours": [
+        {
+          "id": "natural",
+          "name": "Natural",
+          "hex": "#e6d6a8"
+        },
+        {
+          "id": "black",
+          "name": "Black",
+          "hex": "#2a2a2c"
+        }
+      ],
+      "finish": "satin",
+      "summary": "A long-standing natural gut with a premium feel, plenty of power and a soft response, which suits arm-sensitive players and works well in the mains of a hybrid with polyester. It is expensive, and a couple of customer reviews complain about how soon it broke.",
+      "bestFor": [
+        "comfort",
+        "power",
+        "feel"
+      ],
+      "ratings": {
+        "power": 5,
+        "spin": 3,
+        "control": 3,
+        "comfort": 5,
+        "feel": 5,
+        "durability": 2
+      },
+      "compared": [
+        "luxilon-natural-gut",
+        "wilson-natural-gut"
+      ],
+      "confidence": "low",
+      "sources": [
+        "https://www.tennisonly.com.au/Babolat_Touch_VS_Natural_Gut_16_130_String_Set/descpage-BNGVS16.html",
+        "https://www.tennisonly.com.au/16Gauge_Strings/catpage-16GSTR.html"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": false
+    },
+    {
+      "id": "babolat-xcel",
+      "brand": "Babolat",
+      "name": "Xcel",
+      "material": "multifilament",
+      "shape": {
+        "sides": 0,
+        "label": "Round"
+      },
+      "gaugesMm": [
+        1.25,
+        1.3
+      ],
+      "colours": [
+        {
+          "id": "natural",
+          "name": "Natural",
+          "hex": "#d8c99a"
+        },
+        {
+          "id": "blue",
+          "name": "Blue",
+          "hex": "#2f6fd0"
+        },
+        {
+          "id": "black",
+          "name": "Black",
+          "hex": "#2a2a2c"
+        },
+        {
+          "id": "red",
+          "name": "Red",
+          "hex": "#cc3333"
+        }
+      ],
+      "finish": "satin",
+      "summary": "A soft multifilament of twisted polyamide fibres, made for comfort, feel and easy power, with more control than many soft multis. It suits club-level players who like the ball to sink in. Spin is only adequate, and the fibres can fray in open patterns or under heavy topspin.",
+      "bestFor": [
+        "comfort",
+        "power",
+        "feel"
+      ],
+      "ratings": {
+        "power": 4,
+        "spin": 2,
+        "control": 3,
+        "comfort": 5,
+        "feel": 4,
+        "durability": 2
+      },
+      "compared": [
+        "babolat-touch-vs",
+        "wilson-nxt"
+      ],
+      "confidence": "low",
+      "sources": [
+        "https://tennisoverload.com/babolat-xcel-tennis-string-review/"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": false
+    },
+    {
+      "id": "dunlop-black-widow",
+      "brand": "Dunlop",
+      "name": "Black Widow",
+      "material": "polyester",
+      "shape": {
+        "sides": 7,
+        "label": "Heptagonal"
+      },
+      "gaugesMm": [
+        1.21,
+        1.26,
+        1.31
+      ],
+      "colours": [
+        {
+          "id": "black",
+          "name": "Black",
+          "hex": "#222a2c"
+        }
+      ],
+      "finish": "satin",
+      "summary": "A seven-sided poly with heavy spin and a softer feel than most polys, so it suits aggressive baseliners who want bite. It notches itself quickly and tension drops faster than usual, so expect to restring often. One reviewer found it powerful for a poly, the other badly short of power.",
+      "bestFor": [
+        "spin",
+        "comfort"
+      ],
+      "ratings": {
+        "power": 3,
+        "spin": 5,
+        "control": 3,
+        "comfort": 3,
+        "feel": 3,
+        "durability": 2
+      },
+      "compared": [
+        "solinco-tour-bite",
+        "prince-vortex"
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://us.dunlopsports.com/dunlop/tennis/strings/polyester/black-widow-string/BWS.html",
+        "https://www.perfect-tennis.com/dunlop-black-widow-review/",
+        "https://www.tennisthis.com/tennis-string-reviews/dunlop-black-widow-17-review/",
+        "https://www.tennis-warehouse.com/DunlopString.html"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": false
+    },
+    {
+      "id": "dunlop-explosive-bite",
+      "brand": "Dunlop",
+      "name": "Explosive Bite",
+      "material": "polyester",
+      "shape": {
+        "sides": 3,
+        "label": "Three-sided"
+      },
+      "gaugesMm": [
+        1.27,
+        1.32
+      ],
+      "colours": [
+        {
+          "id": "black",
+          "name": "Black",
+          "hex": "#1d2124"
+        },
+        {
+          "id": "yellow",
+          "name": "Yellow",
+          "hex": "#bba831"
+        }
+      ],
+      "finish": "satin",
+      "summary": "A three-sided polyester aimed at heavy topspin and sharper shot angles. The maker says it is softer and more comfortable than traditional firm polys and suits aggressive baseliners. No independent review was read, so treat these ratings as tentative.",
+      "bestFor": [
+        "spin"
+      ],
+      "ratings": {
+        "power": 2,
+        "spin": 5,
+        "control": 4,
+        "comfort": 3,
+        "feel": 3,
+        "durability": 3
+      },
+      "compared": [
+        "dunlop-explosive-spin",
+        "solinco-tour-bite"
+      ],
+      "confidence": "low",
+      "sources": [
+        "https://us.dunlopsports.com/dunlop/tennis/strings/polyester/explosive-bite-tennis-string/10303293.html",
+        "https://us.dunlopsports.com/dunlop/tennis/strings/polyester/explosive-bite-string/10303294.html",
+        "https://us.dunlopsports.com/dunlop/tennis/strings/polyester",
+        "https://www.tennis-warehouse.com/DunlopString.html"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": false
+    },
+    {
+      "id": "dunlop-explosive-spin",
+      "brand": "Dunlop",
+      "name": "Explosive Spin",
+      "material": "polyester",
+      "shape": {
+        "sides": 6,
+        "label": "Hexagonal"
+      },
+      "gaugesMm": [
+        1.25,
+        1.3
+      ],
+      "colours": [
+        {
+          "id": "black",
+          "name": "Black",
+          "hex": "#1c1f21"
+        },
+        {
+          "id": "yellow",
+          "name": "Yellow",
+          "hex": "#d4d93a"
+        }
+      ],
+      "finish": "matte",
+      "summary": "A six-sided co-poly with a gritty, textured surface, made for spin. The maker calls it firm and stable for fast swings. The one review read found extra curve on kick serves, good durability and steady tension, but less power on flat shots and serves.",
+      "bestFor": [
+        "spin",
+        "control"
+      ],
+      "ratings": {
+        "power": 2,
+        "spin": 5,
+        "control": 4,
+        "comfort": 2,
+        "feel": 3,
+        "durability": 3
+      },
+      "compared": [
+        "babolat-rpm-blast",
+        "dunlop-explosive-bite"
+      ],
+      "confidence": "low",
+      "sources": [
+        "https://us.dunlopsports.com/dunlop/tennis/strings/polyester/explosive-spin-string/10299195.html",
+        "https://us.dunlopsports.com/dunlop/tennis/strings/polyester/explosive-spin-tennis-string/10299193.html",
+        "https://www.perfect-tennis.com/dunlop-explosive-spin-review/",
+        "https://www.tennisonly.com.au/Dunlop_Explosive_Spin_16_130_String_Set/descpage-DXSPN16.html",
+        "https://www.tennis-warehouse.com/DunlopString.html"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": false
+    },
+    {
+      "id": "dunlop-iconic-all",
+      "brand": "Dunlop",
+      "name": "Iconic All",
+      "material": "multifilament",
+      "shape": null,
+      "gaugesMm": [
+        1.25,
+        1.3
+      ],
+      "colours": [
+        {
+          "id": "natural",
+          "name": "Natural",
+          "hex": "#d8c99a"
+        }
+      ],
+      "finish": "satin",
+      "summary": "A nylon multifilament bonded with polyurethane, described by the maker as an all-round balance of easy power, control and comfort, with good shock absorption and touch on volleys and drop shots. No independent review was read, so treat these ratings as tentative.",
+      "bestFor": [
+        "comfort",
+        "power"
+      ],
+      "ratings": {
+        "power": 4,
+        "spin": 2,
+        "control": 3,
+        "comfort": 4,
+        "feel": 3,
+        "durability": 2
+      },
+      "compared": [
+        "head-velocity-mlt",
+        "wilson-nxt"
+      ],
+      "confidence": "low",
+      "sources": [
+        "https://us.dunlopsports.com/dunlop/tennis/strings/multifilament/iconic-tennis-all-string/IAS.html",
+        "https://us.dunlopsports.com/dunlop/tennis/strings/reels/iconic-all-string-reel/10303353.html",
+        "https://www.tennisnuts.com/dunlop-iconic-all-tennis-string-set-natural-1540597.html",
+        "https://www.tennis-warehouse.com/DunlopString.html"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": false
+    },
+    {
+      "id": "gamma-amp-moto",
+      "brand": "Gamma",
+      "name": "AMP Moto",
+      "material": "polyester",
+      "shape": {
+        "sides": 7,
+        "label": "Heptagonal"
+      },
+      "gaugesMm": [
+        1.24,
+        1.29
+      ],
+      "colours": [
+        {
+          "id": "black",
+          "name": "Black",
+          "hex": "#2a2a2c"
+        },
+        {
+          "id": "lime",
+          "name": "Lime",
+          "hex": "#a6d532"
+        }
+      ],
+      "finish": "satin",
+      "summary": "A medium-firm co-poly with seven sharp edges and a strong bite. For such a firm monofilament the shop found surprisingly good pocketing, plenty of response and, strung low, decent comfort. Made for big hitters who want heavy spin. No independent review was read.",
+      "bestFor": [
+        "spin",
+        "control"
+      ],
+      "ratings": {
+        "power": 2,
+        "spin": 4,
+        "control": 3,
+        "comfort": 2,
+        "feel": 3,
+        "durability": 3
+      },
+      "compared": [
+        "dunlop-black-widow",
+        "solinco-tour-bite"
+      ],
+      "confidence": "low",
+      "sources": [
+        "https://www.tennisonly.com.au/Gamma_Moto_16_129_String_Reel_-_200m/descpage-GMR16.html",
+        "https://www.tennis-warehouse.com/GammaString.html"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": false
+    },
+    {
+      "id": "gamma-live-wire",
+      "brand": "Gamma",
+      "name": "Live Wire",
+      "material": "multifilament",
+      "shape": null,
+      "gaugesMm": [
+        1.27,
+        1.32
+      ],
+      "colours": [
+        {
+          "id": "natural",
+          "name": "Natural",
+          "hex": "#d8c99a"
+        }
+      ],
+      "finish": "satin",
+      "summary": "A soft multifilament with a pearl coating, sold as arm-friendly, with easy power and a cushioned feel. A shop adds precision and very low shock. The one review read is promotional in tone, so treat these ratings as tentative.",
+      "bestFor": [
+        "comfort",
+        "power",
+        "value"
+      ],
+      "ratings": {
+        "power": 4,
+        "spin": 2,
+        "control": 2,
+        "comfort": 5,
+        "feel": 4,
+        "durability": 2
+      },
+      "compared": [
+        "babolat-xcel",
+        "gamma-tnt2"
+      ],
+      "confidence": "low",
+      "sources": [
+        "https://tennisscan.com/gamma-live-wire-16-review/",
+        "https://www.tennis-warehouse.com/GammaString.html"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": false
+    },
+    {
+      "id": "gamma-live-wire-professional",
+      "brand": "Gamma",
+      "name": "Live Wire Professional",
+      "material": "multifilament",
+      "shape": null,
+      "gaugesMm": [
+        1.22,
+        1.27,
+        1.32
+      ],
+      "colours": [
+        {
+          "id": "natural",
+          "name": "Natural",
+          "hex": "#d8c99a"
+        }
+      ],
+      "finish": "satin",
+      "summary": "A highly responsive, gut-like multifilament of elastic fibres in urethane resin. The thicker gauge lasts longer and the thinner one helps spin. Its filaments snap and turn fuzzy with wear, early on for topspin hitters. No independent review was read, so treat these ratings as tentative.",
+      "bestFor": [
+        "feel",
+        "comfort"
+      ],
+      "ratings": {
+        "power": 4,
+        "spin": 3,
+        "control": 3,
+        "comfort": 5,
+        "feel": 4,
+        "durability": 2
+      },
+      "compared": [
+        "gamma-live-wire",
+        "babolat-xcel"
+      ],
+      "confidence": "low",
+      "sources": [
+        "https://bellracquetsports.com/product/gamma-professional-string",
+        "https://www.tennis-warehouse.com/GammaString.html"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": false
+    },
+    {
+      "id": "gamma-tnt2",
+      "brand": "Gamma",
+      "name": "TNT2",
+      "material": "synthetic-gut",
+      "shape": null,
+      "gaugesMm": [
+        1.17,
+        1.27,
+        1.32
+      ],
+      "colours": [
+        {
+          "id": "natural",
+          "name": "Natural",
+          "hex": "#d8c99a"
+        },
+        {
+          "id": "black",
+          "name": "Black",
+          "hex": "#2a2a2c"
+        }
+      ],
+      "finish": "satin",
+      "summary": "A solid-core synthetic gut with microfilament wraps and a pearl coating. Shops describe a responsive string with high comfort, controllable power and, for a non-poly, good durability, plus more spin and feel in the thin gauges. No independent review was read, so treat these ratings as tentative.",
+      "bestFor": [
+        "power",
+        "comfort",
+        "value"
+      ],
+      "ratings": {
+        "power": 4,
+        "spin": 3,
+        "control": 3,
+        "comfort": 4,
+        "feel": 4,
+        "durability": 2
+      },
+      "compared": [
+        "prince-synthetic-gut-duraflex",
+        "wilson-nxt"
+      ],
+      "confidence": "low",
+      "sources": [
+        "https://www.tennisonly.com.au/Gamma_TNT2_127_17G_String_Set/descpage-TNT17.html",
+        "https://www.tennis-warehouse.com/GammaString.html"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": false
+    },
+    {
+      "id": "head-hawk",
+      "brand": "Head",
+      "name": "Hawk",
+      "material": "polyester",
+      "shape": {
+        "sides": 0,
+        "label": "Round"
+      },
+      "gaugesMm": [
+        1.2,
+        1.25,
+        1.3
+      ],
+      "colours": [
+        {
+          "id": "white",
+          "name": "White",
+          "hex": "#cfd0ce"
+        },
+        {
+          "id": "grey",
+          "name": "Grey",
+          "hex": "#848587"
+        },
+        {
+          "id": "black",
+          "name": "Black",
+          "hex": "#2a2a2c"
+        }
+      ],
+      "finish": "gloss",
+      "summary": "A round, smooth poly that lets flat, aggressive hitters take full swings with surprising punch for the type, and good snapback for topspin. The one review read calls it comfortable for a poly and a good base for hybrids; its only complaint is less grip on backhand slices.",
+      "bestFor": [
+        "control",
+        "comfort"
+      ],
+      "ratings": {
+        "power": 3,
+        "spin": 4,
+        "control": 4,
+        "comfort": 3,
+        "feel": 3,
+        "durability": 3
+      },
+      "compared": [
+        "head-lynx-tour",
+        "luxilon-alu-power"
+      ],
+      "confidence": "low",
+      "sources": [
+        "https://www.perfect-tennis.com/head-hawk-string-review/",
+        "https://www.tennis-warehouse.com/HeadString.html",
+        "https://www.tennisonly.com.au/Head_Tennis_Racquet_String.html"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": false
+    },
+    {
+      "id": "head-hawk-touch",
+      "brand": "Head",
+      "name": "Hawk Touch",
+      "material": "polyester",
+      "shape": {
+        "sides": 0,
+        "label": "Round"
+      },
+      "gaugesMm": [
+        1.15,
+        1.2,
+        1.25,
+        1.3
+      ],
+      "colours": [
+        {
+          "id": "anthracite",
+          "name": "Anthracite",
+          "hex": "#4a4a4d"
+        },
+        {
+          "id": "tequila-sunrise",
+          "name": "Tequila Sunrise",
+          "hex": "#e8763a"
+        },
+        {
+          "id": "gold",
+          "name": "Gold",
+          "hex": "#b99a4a"
+        },
+        {
+          "id": "red",
+          "name": "Red",
+          "hex": "#902838"
+        }
+      ],
+      "finish": "satin",
+      "summary": "A round, low-powered co-poly that is all about control, with a touch that suits drop shots and volleys. The tester liked it in a powerful open-pattern frame and found it dead in a control frame. Best for advanced players who make their own pace.",
+      "bestFor": [
+        "control"
+      ],
+      "ratings": {
+        "power": 2,
+        "spin": 3,
+        "control": 5,
+        "comfort": 3,
+        "feel": 3,
+        "durability": 3
+      },
+      "compared": [
+        "head-hawk",
+        "head-lynx-tour"
+      ],
+      "confidence": "low",
+      "sources": [
+        "https://tennisoverload.com/head-hawk-touch-tennis-string-review/",
+        "https://www.tennis-warehouse.com/HeadString.html",
+        "https://www.tennisonly.com.au/Head_Tennis_Racquet_String.html",
+        "https://www.tennisnerd.net/gear/strings/string-reviews/head-hawk-touch-string-review/8230"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": false
+    },
+    {
+      "id": "head-lynx-tour",
+      "brand": "Head",
+      "name": "Lynx Tour",
+      "material": "polyester",
+      "shape": {
+        "sides": 6,
+        "label": "Hexagonal"
+      },
+      "gaugesMm": [
+        1.2,
+        1.25,
+        1.3
+      ],
+      "colours": [
+        {
+          "id": "black",
+          "name": "Black",
+          "hex": "#303032"
+        },
+        {
+          "id": "grey",
+          "name": "Grey",
+          "hex": "#6e6f72"
+        },
+        {
+          "id": "orange",
+          "name": "Orange",
+          "hex": "#e03d30"
+        },
+        {
+          "id": "champagne",
+          "name": "Champagne",
+          "hex": "#a39870"
+        }
+      ],
+      "finish": "satin",
+      "summary": "A six-sided co-poly for players who make their own pace, with a firm, crisp response, excellent control and dependable spin. Reviewers found that it keeps its character longer than many polys and is less harsh than expected; there is little free power, and sore arms should look elsewhere.",
+      "bestFor": [
+        "control",
+        "durability"
+      ],
+      "ratings": {
+        "power": 2,
+        "spin": 4,
+        "control": 4,
+        "comfort": 3,
+        "feel": 3,
+        "durability": 4
+      },
+      "compared": [
+        "head-hawk",
+        "solinco-hyper-g"
+      ],
+      "confidence": "high",
+      "sources": [
+        "https://tennisoverload.com/head-lynx-tour-tennis-string-review/",
+        "https://www.perfect-tennis.com/head-lynx-tour-review/",
+        "https://prostrung.com/head-lynx-tour-tennis-string-review/",
+        "https://www.tennis-warehouse.com/HeadString.html",
+        "https://www.tennisonly.com.au/Head_Tennis_Racquet_String.html",
+        "https://www.tennisnerd.net/gear/strings/string-reviews/head-lynx-tour-string-review/20825",
+        "https://tenniscompanion.org/head-lynx-tour/"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": false
+    },
+    {
+      "id": "head-sonic-pro",
+      "brand": "Head",
+      "name": "Sonic Pro",
+      "material": "polyester",
+      "shape": {
+        "sides": 0,
+        "label": "Round"
+      },
+      "gaugesMm": [
+        1.25,
+        1.3
+      ],
+      "colours": [
+        {
+          "id": "black",
+          "name": "Black",
+          "hex": "#303032"
+        },
+        {
+          "id": "white",
+          "name": "White",
+          "hex": "#ecebe6"
+        }
+      ],
+      "finish": "satin",
+      "summary": "A soft-feeling, budget poly with good control. One reviewer preferred it at 55 lb or less for power and found it fairly comfortable; the other found it short of power and spin, ended with a sore arm, and cut it out after five hours with plenty of tension gone. Customers on Tennis Only differ on how arm-friendly it is.",
+      "bestFor": [
+        "value",
+        "control"
+      ],
+      "ratings": {
+        "power": 3,
+        "spin": 3,
+        "control": 4,
+        "comfort": 3,
+        "feel": 3,
+        "durability": 3
+      },
+      "compared": [
+        "head-lynx-tour",
+        "babolat-rpm-blast"
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://tenniscreative.com/head-sonic-pro-review/",
+        "https://www.tennisthis.com/tennis-string-reviews/head-sonic-pro-16-review/",
+        "https://www.tennis-warehouse.com/HeadString.html",
+        "https://www.tennisonly.com.au/Head_Sonic_Pro_17_125_String_Set/descpage-SONIC17.html",
+        "https://www.tennisonly.com.au/Head_Tennis_Racquet_String.html"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": false
+    },
+    {
+      "id": "head-velocity-mlt",
+      "brand": "Head",
+      "name": "Velocity MLT",
+      "material": "multifilament",
+      "shape": {
+        "sides": 0,
+        "label": "Round"
+      },
+      "gaugesMm": [
+        1.25,
+        1.3
+      ],
+      "colours": [
+        {
+          "id": "black",
+          "name": "Black",
+          "hex": "#303032"
+        },
+        {
+          "id": "natural",
+          "name": "Natural",
+          "hex": "#d8c99a"
+        },
+        {
+          "id": "blue",
+          "name": "Blue",
+          "hex": "#2f6fd0"
+        },
+        {
+          "id": "yellow",
+          "name": "Yellow",
+          "hex": "#e6e032"
+        },
+        {
+          "id": "pink",
+          "name": "Pink",
+          "hex": "#e8488f"
+        }
+      ],
+      "finish": "satin",
+      "summary": "An affordable round multifilament with lively, medium-high power that stays controlled. It is arm-friendly and holds tension well for its type, so it suits players moving away from poly. It lacks the plush feel of gut, and reviewers differ on how long it lasts, with hard hitters likely to break it.",
+      "bestFor": [
+        "value",
+        "comfort",
+        "control"
+      ],
+      "ratings": {
+        "power": 4,
+        "spin": 3,
+        "control": 4,
+        "comfort": 4,
+        "feel": 3,
+        "durability": 3
+      },
+      "compared": [
+        "wilson-nxt",
+        "babolat-xcel"
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://tennisoverload.com/head-velocity-mlt-tennis-string-review/",
+        "https://tenniscreative.com/head-velocity-mlt-review/",
+        "https://www.tennisonly.com.au/Head_Velocity_MLT_16_130_String_Set/descpage-VMLT16.html",
+        "https://www.tennis-warehouse.com/HeadString.html",
+        "https://www.tennisonly.com.au/Head_Tennis_Racquet_String.html",
+        "https://www.tennisnerd.net/gear/strings/string-reviews/head-velocity-mlt-string-review-the-control-oriented-multifilament/65597"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": false
+    },
+    {
+      "id": "kirschbaum-max-power",
+      "brand": "Kirschbaum",
+      "name": "Max Power",
+      "material": "polyester",
+      "shape": null,
+      "gaugesMm": [
+        1.2,
+        1.25,
+        1.3
+      ],
+      "colours": [
+        {
+          "id": "red",
+          "name": "Red",
+          "hex": "#c3262e"
+        },
+        {
+          "id": "silver",
+          "name": "Silver",
+          "hex": "#9a9da1"
+        }
+      ],
+      "finish": "satin",
+      "summary": "A firm, high-control co-poly for strong, confident hitters using demanding frames. One reviewer praises its directional control and how long it keeps its playability; the cost is a stiff, less forgiving feel that can be tough on the arm.",
+      "bestFor": [
+        "control",
+        "durability"
+      ],
+      "ratings": {
+        "power": 3,
+        "spin": 3,
+        "control": 5,
+        "comfort": 1,
+        "feel": 3,
+        "durability": 4
+      },
+      "compared": [
+        "kirschbaum-pro-line-ii",
+        "kirschbaum-xplosive-speed"
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://www.tennis-warehouse.com/Kirschbaum_Max_Power_17_125_String/descpageACKIRSCH-MAXPWR7.html",
+        "https://www.tennis-warehouse.com/KirschbaumString.html",
+        "https://prostrung.com/kirschbaum-max-power-tennis-string-review/",
+        "https://www.tennisnerd.net/gear/strings/string-reviews/kirschbaum-strings/36839"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": false
+    },
+    {
+      "id": "kirschbaum-pro-line-ii",
+      "brand": "Kirschbaum",
+      "name": "Pro Line II",
+      "material": "polyester",
+      "shape": null,
+      "gaugesMm": [
+        1.15,
+        1.2,
+        1.25,
+        1.3
+      ],
+      "colours": [
+        {
+          "id": "black",
+          "name": "Black",
+          "hex": "#26262a"
+        }
+      ],
+      "finish": "satin",
+      "summary": "One of the softer Kirschbaum polys. Shops credit it with ball pocketing, tension holding, control and durability, and one says it suits all kinds of player. It is now sold without the II, as the same string. No independent review was read, so treat these ratings as tentative.",
+      "bestFor": [
+        "control",
+        "durability",
+        "comfort"
+      ],
+      "ratings": {
+        "power": 3,
+        "spin": 3,
+        "control": 4,
+        "comfort": 3,
+        "feel": 3,
+        "durability": 4
+      },
+      "compared": [
+        "kirschbaum-xplosive-speed",
+        "kirschbaum-max-power"
+      ],
+      "confidence": "low",
+      "sources": [
+        "https://www.tennis-warehouse.com/KirschbaumString.html",
+        "https://www.tennisnuts.com/kirschbaum-pro-line-ii-tennis-string-set-black-1568266.html"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": false
+    },
+    {
+      "id": "kirschbaum-xplosive-speed",
+      "brand": "Kirschbaum",
+      "name": "Xplosive Speed",
+      "material": "polyester",
+      "shape": {
+        "sides": 5,
+        "label": "Pentagonal"
+      },
+      "gaugesMm": [
+        1.13,
+        1.2,
+        1.23,
+        1.28,
+        1.33
+      ],
+      "colours": [
+        {
+          "id": "black",
+          "name": "Black",
+          "hex": "#27272b"
+        }
+      ],
+      "finish": "satin",
+      "summary": "A soft, five-sided co-poly with a lively response and extra spin help, suited to baseliners and stiff frames. Two reviewers like its power and lift; one says it loses playability sooner than the other Kirschbaums, the other broke it in about an hour but found it held tension.",
+      "bestFor": [
+        "spin",
+        "comfort",
+        "power"
+      ],
+      "ratings": {
+        "power": 4,
+        "spin": 4,
+        "control": 3,
+        "comfort": 4,
+        "feel": 4,
+        "durability": 2
+      },
+      "compared": [
+        "kirschbaum-pro-line-ii",
+        "kirschbaum-max-power"
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://www.tennis-warehouse.com/KirschbaumString.html",
+        "https://www.perfect-tennis.com/kirschbaum-xplosive-speed-review/",
+        "https://www.tennisnerd.net/gear/strings/string-reviews/kirschbaum-strings/36839"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": false
+    },
+    {
+      "id": "luxilon-4g",
+      "brand": "Luxilon",
+      "name": "4G",
+      "material": "polyester",
+      "shape": {
+        "sides": 0,
+        "label": "Round"
+      },
+      "gaugesMm": [
+        1.25,
+        1.3
+      ],
+      "colours": [
+        {
+          "id": "gold",
+          "name": "Gold",
+          "hex": "#d9c88f"
+        }
+      ],
+      "finish": "satin",
+      "summary": "A firm, low-powered co-polyester for hitters who bring their own pace and want predictable placement. Spin and control are strong and feel is better than most polys. It resists breaking about as well as other good polys, and its response fades more gradually than most.",
+      "bestFor": [
+        "control",
+        "spin",
+        "feel"
+      ],
+      "ratings": {
+        "power": 2,
+        "spin": 4,
+        "control": 5,
+        "comfort": 3,
+        "feel": 4,
+        "durability": 4
+      },
+      "compared": [
+        "luxilon-alu-power",
+        "luxilon-element"
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://tenniscompanion.org/luxilon-4g/",
+        "https://www.tennis-warehouse.com/Luxilon_4G_16_130_String/descpageACWILSON-LUX4G130.html"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": false
+    },
+    {
+      "id": "luxilon-alu-power",
+      "brand": "Luxilon",
+      "name": "ALU Power",
+      "material": "polyester",
+      "shape": {
+        "sides": 0,
+        "label": "Round"
+      },
+      "gaugesMm": [
+        1.25,
+        1.3
+      ],
+      "colours": [
+        {
+          "id": "silver",
+          "name": "Silver",
+          "hex": "#9a9da0"
+        },
+        {
+          "id": "blue",
+          "name": "Blue",
+          "hex": "#2f6fd0"
+        },
+        {
+          "id": "ocean-blue",
+          "name": "Ocean Blue",
+          "hex": "#1f8fb3"
+        },
+        {
+          "id": "lime-green",
+          "name": "Lime Green",
+          "hex": "#9fd23a"
+        }
+      ],
+      "finish": "satin",
+      "summary": "A long-running co-polyester that suits strong swingers who want to hit out and keep the ball in. Control and feel stand out and spin is very good; it resists breaking well, but it is firm on the arm, not powerful, and its liveliness fades after a week or two.",
+      "bestFor": [
+        "control",
+        "durability",
+        "spin"
+      ],
+      "ratings": {
+        "power": 2,
+        "spin": 4,
+        "control": 5,
+        "comfort": 2,
+        "feel": 4,
+        "durability": 5
+      },
+      "compared": [
+        "babolat-rpm-blast",
+        "solinco-hyper-g",
+        "luxilon-alu-power-rough"
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://tenniscompanion.org/luxilon-alu-power/",
+        "https://www.tennis-warehouse.com/Luxilon_ALU_Power_16_String/descpageACWILSON-LUXP16.html"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": false
+    },
+    {
+      "id": "luxilon-alu-power-rough",
+      "brand": "Luxilon",
+      "name": "ALU Power Rough",
+      "material": "polyester",
+      "shape": null,
+      "gaugesMm": [
+        1.25
+      ],
+      "colours": [
+        {
+          "id": "grey",
+          "name": "Grey",
+          "hex": "#8f9296"
+        }
+      ],
+      "finish": "satin",
+      "summary": "ALU Power with a textured surface, for hard hitters who want extra bite with a low-powered, controlled response. It plays firm. Customer reviews range from high praise to one that found almost no difference from the smooth string, and a couple mention dropping tension.",
+      "bestFor": [
+        "spin",
+        "control"
+      ],
+      "ratings": {
+        "power": 2,
+        "spin": 5,
+        "control": 5,
+        "comfort": 2,
+        "feel": 3,
+        "durability": 4
+      },
+      "compared": [
+        "luxilon-alu-power",
+        "babolat-rpm-blast"
+      ],
+      "confidence": "low",
+      "sources": [
+        "https://www.tennis-warehouse.com/Luxilon_ALU_Power_Rough_16L_125_String/descpageACWILSON-ALUPR16.html"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": false
+    },
+    {
+      "id": "luxilon-eco-power",
+      "brand": "Luxilon",
+      "name": "ECO Power",
+      "material": "polyester",
+      "shape": {
+        "sides": 6,
+        "label": "Hexagonal"
+      },
+      "gaugesMm": [
+        1.25
+      ],
+      "colours": [
+        {
+          "id": "teal",
+          "name": "Teal",
+          "hex": "#4db89c"
+        }
+      ],
+      "finish": "satin",
+      "summary": "A recycled-plastic, six-sided polyester that one reviewer places between 4G and ALU Power in stiffness. It gives good control and a low launch for players with their own pace; the same reviewer found average tension holding, less bite than he hoped for and a rather dead feel.",
+      "bestFor": [
+        "control",
+        "spin"
+      ],
+      "ratings": {
+        "power": 2,
+        "spin": 3,
+        "control": 4,
+        "comfort": 3,
+        "feel": 3,
+        "durability": 3
+      },
+      "compared": [
+        "luxilon-4g",
+        "luxilon-alu-power",
+        "solinco-hyper-g"
+      ],
+      "confidence": "low",
+      "sources": [
+        "https://www.tennisnerd.net/gear/strings/string-reviews/luxilon-eco-power-review/31394",
+        "https://tennisoverload.com/luxilon-eco-power-tennis-string-review/"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": false
+    },
+    {
+      "id": "luxilon-element",
+      "brand": "Luxilon",
+      "name": "Element",
+      "material": "polyester",
+      "shape": {
+        "sides": 0,
+        "label": "Round"
+      },
+      "gaugesMm": [
+        1.25,
+        1.3
+      ],
+      "colours": [
+        {
+          "id": "bronze",
+          "name": "Bronze",
+          "hex": "#a5634a"
+        },
+        {
+          "id": "forest-green",
+          "name": "Forest Green",
+          "hex": "#2f5a3c"
+        }
+      ],
+      "finish": "satin",
+      "summary": "One of the softer Luxilon polyesters, aimed at long, fast swings that want control without much shock. Customer reviews praise its comfort in full beds and hybrids; it is less break-resistant than the firmest polys and, as one customer notes, loses tension after a few weeks.",
+      "bestFor": [
+        "comfort",
+        "feel",
+        "control"
+      ],
+      "ratings": {
+        "power": 3,
+        "spin": 4,
+        "control": 4,
+        "comfort": 3,
+        "feel": 4,
+        "durability": 3
+      },
+      "compared": [
+        "luxilon-alu-power",
+        "luxilon-4g"
+      ],
+      "confidence": "low",
+      "sources": [
+        "https://www.tennis-warehouse.com/Luxilon_Element_16_130_String/descpageACWILSON-LE130.html",
+        "https://tennisoverload.com/luxilon-element-tennis-string-review/"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": false
+    },
+    {
+      "id": "luxilon-natural-gut",
+      "brand": "Luxilon",
+      "name": "Natural Gut",
+      "material": "natural-gut",
+      "shape": null,
+      "gaugesMm": [
+        1.25,
+        1.3
+      ],
+      "colours": [
+        {
+          "id": "natural",
+          "name": "Natural",
+          "hex": "#e6d6a8"
+        }
+      ],
+      "finish": "satin",
+      "summary": "A coated natural gut made for full beds or as the mains in a hybrid with polyester. It is very lively, gentle on the arm and holds tension well, so it suits players who want comfort and depth; spin and control are good rather than exceptional.",
+      "bestFor": [
+        "comfort",
+        "power",
+        "feel"
+      ],
+      "ratings": {
+        "power": 5,
+        "spin": 3,
+        "control": 3,
+        "comfort": 5,
+        "feel": 5,
+        "durability": 3
+      },
+      "compared": [
+        "babolat-touch-vs",
+        "wilson-natural-gut"
+      ],
+      "confidence": "low",
+      "sources": [
+        "https://tennisoverload.com/luxilon-natural-gut-tennis-string-review/",
+        "http://firstservesa.com/product-review-luxilon-natural-gut/"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": false
+    },
+    {
+      "id": "prince-premier-control",
+      "brand": "Prince",
+      "name": "Premier Control",
+      "material": "multifilament",
+      "shape": {
+        "sides": 0,
+        "label": "Round"
+      },
+      "gaugesMm": [
+        1.25,
+        1.3
+      ],
+      "colours": [
+        {
+          "id": "natural",
+          "name": "Natural",
+          "hex": "#d8c99a"
+        },
+        {
+          "id": "black",
+          "name": "Black",
+          "hex": "#1f1f1f"
+        }
+      ],
+      "finish": "satin",
+      "summary": "A cheap multifilament with three interlaced cores that limit stretch, so it feels more controlled than a typical soft multi. It is comfortable with moderate power and only adequate spin. Customers disagree on durability: one broke it in four hours, another calls it durable in hybrids.",
+      "bestFor": [
+        "comfort",
+        "value",
+        "control"
+      ],
+      "ratings": {
+        "power": 3,
+        "spin": 3,
+        "control": 4,
+        "comfort": 5,
+        "feel": 3,
+        "durability": 2
+      },
+      "compared": [
+        "wilson-nxt",
+        "head-velocity-mlt"
+      ],
+      "confidence": "low",
+      "sources": [
+        "https://princesports.eu/en/strings/362-prem-ctrl-16-nt.html",
+        "https://tennisoverload.com/prince-premier-control-tennis-string-review/",
+        "https://www.tennisonly.com.au/Prince_Premier_Control_17_String_Set/descpage-PPC17.html",
+        "https://www.tennis-warehouse.com/PrinceString.html"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": false
+    },
+    {
+      "id": "prince-synthetic-gut-duraflex",
+      "brand": "Prince",
+      "name": "Synthetic Gut Duraflex",
+      "material": "synthetic-gut",
+      "shape": {
+        "sides": 0,
+        "label": "Round"
+      },
+      "gaugesMm": [
+        1.2,
+        1.25,
+        1.3,
+        1.35
+      ],
+      "colours": [
+        {
+          "id": "white",
+          "name": "White",
+          "hex": "#cdc9bc"
+        },
+        {
+          "id": "natural",
+          "name": "Natural",
+          "hex": "#d8c99a"
+        },
+        {
+          "id": "black",
+          "name": "Black",
+          "hex": "#1f1f1f"
+        },
+        {
+          "id": "gold",
+          "name": "Gold",
+          "hex": "#e8ba63"
+        },
+        {
+          "id": "green",
+          "name": "Green",
+          "hex": "#3fa64a"
+        },
+        {
+          "id": "yellow",
+          "name": "Yellow",
+          "hex": "#cef756"
+        },
+        {
+          "id": "blue",
+          "name": "Blue",
+          "hex": "#2f6fd0"
+        },
+        {
+          "id": "red",
+          "name": "Red",
+          "hex": "#cc3333"
+        }
+      ],
+      "finish": "satin",
+      "summary": "A solid-core nylon synthetic with wear-resistant fibres, and very good value. The one full test found easy power and easy comfort, decent spin for a synthetic gut, and control that loosens at low tension. It also makes a good hybrid cross.",
+      "bestFor": [
+        "value",
+        "comfort",
+        "power"
+      ],
+      "ratings": {
+        "power": 4,
+        "spin": 3,
+        "control": 3,
+        "comfort": 4,
+        "feel": 3,
+        "durability": 3
+      },
+      "compared": [
+        "wilson-sensation",
+        "babolat-xcel"
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://tennisoverload.com/prince-synthetic-gut-duraflex-tennis-string-review/",
+        "https://tenniscreative.com/prince-synthetic-gut-duraflex-review/",
+        "https://www.tennisonly.com.au/Prince_Synthetic_Gut_16_130_Duraflex_String_Set/descpage-S16.html",
+        "https://shop.stringnswing.com/products/prince-synthetic-gut-duraflex-16",
+        "https://www.tennis-warehouse.com/PrinceString.html"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": false
+    },
+    {
+      "id": "prince-tour-xp",
+      "brand": "Prince",
+      "name": "Tour XP",
+      "material": "polyester",
+      "shape": {
+        "sides": 0,
+        "label": "Round"
+      },
+      "gaugesMm": [
+        1.25,
+        1.3
+      ],
+      "colours": [
+        {
+          "id": "black",
+          "name": "Black",
+          "hex": "#1f1f1f"
+        },
+        {
+          "id": "green",
+          "name": "Green",
+          "hex": "#3fa64a"
+        },
+        {
+          "id": "red",
+          "name": "Red",
+          "hex": "#cc3333"
+        }
+      ],
+      "finish": "satin",
+      "summary": "A round co-poly that is softer and livelier than most control polys. It offers good control and useful spin from snapback; power and comfort are acceptable only by polyester standards. Best for strong intermediate and advanced players who want a calmer poly.",
+      "bestFor": [
+        "control",
+        "comfort"
+      ],
+      "ratings": {
+        "power": 3,
+        "spin": 3,
+        "control": 4,
+        "comfort": 3,
+        "feel": 3,
+        "durability": 3
+      },
+      "compared": [
+        "head-hawk",
+        "luxilon-element"
+      ],
+      "confidence": "low",
+      "sources": [
+        "https://tennisoverload.com/prince-tour-xp-tennis-string-review/",
+        "https://www.tennisonly.com.au/Prince_Tour_XP_17_125_String_Set/descpage-PTXP17.html",
+        "https://www.tennis-warehouse.com/PrinceString.html"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": false
+    },
+    {
+      "id": "prince-vortex",
+      "brand": "Prince",
+      "name": "Vortex",
+      "material": "polyester",
+      "shape": {
+        "sides": 6,
+        "label": "Hexagonal"
+      },
+      "gaugesMm": [
+        1.2,
+        1.25,
+        1.3
+      ],
+      "colours": [
+        {
+          "id": "black",
+          "name": "Black",
+          "hex": "#1f1f1f"
+        }
+      ],
+      "finish": "satin",
+      "summary": "A six-sided co-poly made for spin. The shops selling it say a softening agent gives it some elasticity and a comfortable feel, and point it at players with long, powerful strokes. No review was read, so treat these ratings as tentative.",
+      "bestFor": [
+        "spin",
+        "comfort"
+      ],
+      "ratings": {
+        "power": 3,
+        "spin": 4,
+        "control": 3,
+        "comfort": 3,
+        "feel": 3,
+        "durability": 2
+      },
+      "compared": [
+        "dunlop-black-widow",
+        "solinco-tour-bite"
+      ],
+      "confidence": "low",
+      "sources": [
+        "https://www.wdstrings.com/prince-vortex-17-1-25mm-set/",
+        "https://www.racquetdepot.co.uk/prince-vortex-17-1-25mm-set/",
+        "https://www.tennis-warehouse.com/PrinceString.html"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": false
+    },
+    {
+      "id": "signum-pro-firestorm",
+      "brand": "Signum Pro",
+      "name": "Firestorm",
+      "material": "polyester",
+      "shape": null,
+      "gaugesMm": [
+        1.2,
+        1.25,
+        1.3
+      ],
+      "colours": [
+        {
+          "id": "gold-metallic",
+          "name": "Gold Metallic",
+          "hex": "#8f7650"
+        }
+      ],
+      "finish": "satin",
+      "summary": "A firm but crisp co-poly with more pop and comfort than most control polys. Best for big hitters who want playability and touch from a poly; spin is classic rather than exceptional, and off-centre hits are only average.",
+      "bestFor": [
+        "control",
+        "feel",
+        "comfort"
+      ],
+      "ratings": {
+        "power": 3,
+        "spin": 3,
+        "control": 4,
+        "comfort": 3,
+        "feel": 4,
+        "durability": 3
+      },
+      "compared": [
+        "signum-pro-poly-plasma",
+        "signum-pro-x-perience"
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://www.signum-pro.com/html/index.php?id=44&L=1",
+        "https://www.tennis-warehouse.com/Signum_Pro_Firestorm_17_125_String/descpageACSIGNUM-SFS17.html",
+        "https://www.tennis-warehouse.com/SignumString.html",
+        "https://www.extreme-tennis.eu/signum-pro-tennis-strings/723-signum-pro-firestorm-12m.html"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": true
+    },
+    {
+      "id": "signum-pro-poly-plasma",
+      "brand": "Signum Pro",
+      "name": "Poly Plasma",
+      "material": "polyester",
+      "shape": null,
+      "gaugesMm": [
+        1.18,
+        1.23,
+        1.28,
+        1.33
+      ],
+      "colours": [
+        {
+          "id": "pearl-orange",
+          "name": "Pearl-orange",
+          "hex": "#de7f45"
+        }
+      ],
+      "finish": "satin",
+      "summary": "A firm, resin-treated co-poly known for holding tension and lasting a long time. It offers plenty of control for fast swings and moderate spin, but low power and a stiff feel; thin gauges help comfort and feel.",
+      "bestFor": [
+        "durability",
+        "control",
+        "value"
+      ],
+      "ratings": {
+        "power": 2,
+        "spin": 3,
+        "control": 4,
+        "comfort": 2,
+        "feel": 3,
+        "durability": 5
+      },
+      "compared": [
+        "signum-pro-x-perience",
+        "volkl-cyclone"
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://www.signum-pro.com/html/index.php?id=5&L=1",
+        "https://www.tennis-warehouse.com/Signum_Pro_Poly_Plasma_17_123_String/descpageACSIGNUM-SIGPPP170.html",
+        "https://www.tennis-warehouse.com/SignumString.html",
+        "https://www.extreme-tennis.eu/signum-pro-tennis-strings/238-signum-pro-polyplasma.html"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": true
+    },
+    {
+      "id": "signum-pro-tornado",
+      "brand": "Signum Pro",
+      "name": "Tornado",
+      "material": "polyester",
+      "shape": {
+        "sides": 7,
+        "label": "Heptagonal",
+        "twisted": true
+      },
+      "gaugesMm": [
+        1.17,
+        1.23,
+        1.29
+      ],
+      "colours": [
+        {
+          "id": "anthracite",
+          "name": "Anthracite",
+          "hex": "#464749"
+        }
+      ],
+      "finish": "satin",
+      "summary": "A seven-sided twisted co-poly with a soft, fairly lively feel and easy spin. A shop's testers rate its comfort and tension holding and advise moderate tension; customers praise spin and control, though a few say it fades after several matches or a couple of weeks.",
+      "bestFor": [
+        "spin",
+        "comfort",
+        "feel"
+      ],
+      "ratings": {
+        "power": 3,
+        "spin": 4,
+        "control": 3,
+        "comfort": 4,
+        "feel": 4,
+        "durability": 3
+      },
+      "compared": [
+        "volkl-v-square",
+        "signum-pro-x-perience"
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://www.signum-pro.com/html/index.php?id=42&L=1",
+        "https://www.tennis-warehouse.com/SignumString.html",
+        "https://www.extreme-tennis.eu/signum-pro-tennis-strings/255-signum-pro-tornado-12m.html",
+        "https://www.tennis-warehouse.com/Signum_Pro_Tornado_17_123_String/descpageACSIGNUM-SIGTORN170.html"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": true
+    },
+    {
+      "id": "signum-pro-x-perience",
+      "brand": "Signum Pro",
+      "name": "X-Perience",
+      "material": "polyester",
+      "shape": null,
+      "gaugesMm": [
+        1.18,
+        1.24,
+        1.3
+      ],
+      "colours": [
+        {
+          "id": "green",
+          "name": "Green",
+          "hex": "#7fe036"
+        }
+      ],
+      "finish": "satin",
+      "summary": "A control-minded co-poly for heavy hitters. The shop strung it for a test and found immediate grip on the ball, a well-balanced mix of power and control, and pleasant tolerance off centre; the maker describes a shaped, highly elastic string.",
+      "bestFor": [
+        "control",
+        "spin"
+      ],
+      "ratings": {
+        "power": 3,
+        "spin": 4,
+        "control": 4,
+        "comfort": 3,
+        "feel": 4,
+        "durability": 4
+      },
+      "compared": [
+        "signum-pro-poly-plasma",
+        "solinco-hyper-g"
+      ],
+      "confidence": "low",
+      "sources": [
+        "https://www.signum-pro.com/html/index.php?id=86&L=1",
+        "https://www.tennis-warehouse.com/SignumString.html",
+        "https://www.extreme-tennis.eu/signum-pro-tennis-strings/8436-signum-pro-x-perience-12m.html"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": true
+    },
+    {
+      "id": "solinco-barb-wire",
+      "brand": "Solinco",
+      "name": "Barb Wire",
+      "material": "polyester",
+      "shape": {
+        "sides": 0,
+        "label": "Twisted",
+        "twisted": true
+      },
+      "gaugesMm": [
+        1.2,
+        1.25,
+        1.3
+      ],
+      "colours": [
+        {
+          "id": "black",
+          "name": "Black",
+          "hex": "#2a272d"
+        }
+      ],
+      "finish": "satin",
+      "summary": "A twisted, ridged co-polyester that gets its spin from the surface profile rather than extreme stiffness. It suits fast, developed swings that want bite and dip. The textured surface can feel less uniform than a smooth string, and flat hitters may notice extra launch.",
+      "bestFor": [
+        "spin",
+        "control"
+      ],
+      "ratings": {
+        "power": 2,
+        "spin": 5,
+        "control": 4,
+        "comfort": 2,
+        "feel": 3,
+        "durability": 4
+      },
+      "compared": [
+        "solinco-tour-bite",
+        "solinco-revolution"
+      ],
+      "confidence": "low",
+      "sources": [
+        "https://solinco.com/products/barb-wire/",
+        "https://www.wdstrings.com/solinco-barb-wire-16l-1-25mm-set/",
+        "https://tennisoverload.com/solinco-barb-wire-tennis-string-review/"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": true
+    },
+    {
+      "id": "solinco-confidential",
+      "brand": "Solinco",
+      "name": "Confidential",
+      "material": "polyester",
+      "shape": null,
+      "gaugesMm": [
+        1.15,
+        1.2,
+        1.25,
+        1.3
+      ],
+      "colours": [
+        {
+          "id": "charcoal",
+          "name": "Charcoal",
+          "hex": "#3d393d"
+        }
+      ],
+      "finish": "satin",
+      "summary": "A control-first shaped co-polyester for big hitters who want pinpoint direction. It keeps its tension longer than the other Solinco polys. It launches low and offers little power, so players who need help with net clearance or pace may find it flat.",
+      "bestFor": [
+        "control",
+        "durability",
+        "spin"
+      ],
+      "ratings": {
+        "power": 1,
+        "spin": 4,
+        "control": 5,
+        "comfort": 3,
+        "feel": 3,
+        "durability": 5
+      },
+      "compared": [
+        "solinco-tour-bite",
+        "solinco-hyper-g",
+        "solinco-confidential-soft"
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://solinco.com/products/confidential/",
+        "https://www.tennisonly.com.au/Solinco_Confidential_16_130_String_Set/descpage-SHCON16.html",
+        "https://www.tennisnerd.net/gear/strings/best-solinco-strings-ranked-from-spin-to-comfort/70390",
+        "https://www.tennisonly.com.au/Solinco_Tennis_Racquet_String.html",
+        "https://www.tennisnerd.net/gear/strings/solinco-tennis-strings-a-brand-built-for-spin-and-tension-stability/69240"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": true
+    },
+    {
+      "id": "solinco-confidential-soft",
+      "brand": "Solinco",
+      "name": "Confidential Soft",
+      "material": "polyester",
+      "shape": null,
+      "gaugesMm": [
+        1.15,
+        1.2,
+        1.25,
+        1.3
+      ],
+      "colours": [
+        {
+          "id": "electric-pink",
+          "name": "Electric Pink",
+          "hex": "#f55090"
+        }
+      ],
+      "finish": "satin",
+      "summary": "Confidential with a plusher, slightly livelier response that still feels defined. One reviewer rates its comfort and direction and says it keeps tension longer than Hyper-G Soft, at the cost of some easy spin and depth and a little crispness as it ages.",
+      "bestFor": [
+        "control",
+        "comfort",
+        "feel"
+      ],
+      "ratings": {
+        "power": 2,
+        "spin": 4,
+        "control": 4,
+        "comfort": 3,
+        "feel": 4,
+        "durability": 4
+      },
+      "compared": [
+        "solinco-confidential",
+        "solinco-hyper-g-soft"
+      ],
+      "confidence": "low",
+      "sources": [
+        "https://solinco.com/products/confidential-soft/",
+        "https://www.tennisonly.com.au/Solinco_Confidential_Soft_16_130_String/descpage-CONSF30.html",
+        "https://www.tennisnerd.net/gear/strings/best-solinco-strings-ranked-from-spin-to-comfort/70390",
+        "https://www.tennisonly.com.au/Solinco_Tennis_Racquet_String.html",
+        "https://www.tennisnerd.net/gear/strings/solinco-tennis-strings-a-brand-built-for-spin-and-tension-stability/69240"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": true
+    },
+    {
+      "id": "solinco-hyper-g",
+      "brand": "Solinco",
+      "name": "Hyper-G",
+      "material": "polyester",
+      "shape": {
+        "sides": 4,
+        "label": "Square"
+      },
+      "gaugesMm": [
+        1.05,
+        1.1,
+        1.15,
+        1.2,
+        1.25,
+        1.3
+      ],
+      "colours": [
+        {
+          "id": "hyper-green",
+          "name": "Hyper Green",
+          "hex": "#34d028"
+        }
+      ],
+      "finish": "satin",
+      "summary": "A square co-polyester that suits hard-hitting baseliners: heavy topspin with a launch that is easy to read. It keeps its tension well and has a little more life than Tour Bite, but stays firm and low-powered, so short swings get little free depth.",
+      "bestFor": [
+        "spin",
+        "control",
+        "durability"
+      ],
+      "ratings": {
+        "power": 2,
+        "spin": 5,
+        "control": 4,
+        "comfort": 2,
+        "feel": 3,
+        "durability": 4
+      },
+      "compared": [
+        "solinco-tour-bite",
+        "solinco-hyper-g-round",
+        "solinco-hyper-g-soft"
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://solinco.com/products/hyper-g/",
+        "https://www.tennisonly.com.au/Solinco_Hyper-G_16_130_String_Set/descpage-SHG16.html",
+        "https://www.tennisnerd.net/gear/strings/best-solinco-strings-ranked-from-spin-to-comfort/70390",
+        "https://www.tennisonly.com.au/Solinco_Tennis_Racquet_String.html",
+        "https://www.tennisnerd.net/gear/strings/solinco-tennis-strings-a-brand-built-for-spin-and-tension-stability/69240"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": true
+    },
+    {
+      "id": "solinco-hyper-g-round",
+      "brand": "Solinco",
+      "name": "Hyper-G Round",
+      "material": "polyester",
+      "shape": {
+        "sides": 0,
+        "label": "Round"
+      },
+      "gaugesMm": [
+        1.15,
+        1.2,
+        1.25,
+        1.3
+      ],
+      "colours": [
+        {
+          "id": "hyper-green",
+          "name": "Hyper Green",
+          "hex": "#3ad626"
+        }
+      ],
+      "finish": "satin",
+      "summary": "Hyper-G reshaped as a smooth round string, medium firm, with a low-friction surface and quick snapback. It suits aggressive players who drive through the court, and one reviewer likes it as a cross with a shaped main; it is less bite-led than the square string.",
+      "bestFor": [
+        "spin",
+        "durability",
+        "value"
+      ],
+      "ratings": {
+        "power": 3,
+        "spin": 4,
+        "control": 4,
+        "comfort": 3,
+        "feel": 3,
+        "durability": 4
+      },
+      "compared": [
+        "solinco-hyper-g",
+        "solinco-hyper-g-soft"
+      ],
+      "confidence": "low",
+      "sources": [
+        "https://solinco.com/products/mach-10-copy/",
+        "https://www.tennisonly.com.au/Solinco_Hyper-G_Round_16_130_String_Set/descpage-SHGR16.html",
+        "https://www.tennisnerd.net/gear/strings/best-solinco-strings-ranked-from-spin-to-comfort/70390",
+        "https://www.tennisonly.com.au/Solinco_Tennis_Racquet_String.html"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": true
+    },
+    {
+      "id": "solinco-hyper-g-soft",
+      "brand": "Solinco",
+      "name": "Hyper-G Soft",
+      "material": "polyester",
+      "shape": {
+        "sides": 4,
+        "label": "Square"
+      },
+      "gaugesMm": [
+        1.15,
+        1.2,
+        1.25,
+        1.3
+      ],
+      "colours": [
+        {
+          "id": "hyper-green",
+          "name": "Hyper Green",
+          "hex": "#3ad626"
+        }
+      ],
+      "finish": "satin",
+      "summary": "The square Hyper-G made softer and stretchier, with most of the spin and far less shock. It is a good step down from firm control polys and quick to get used to; the price is that its tension fades sooner than the standard string's.",
+      "bestFor": [
+        "comfort",
+        "spin",
+        "feel"
+      ],
+      "ratings": {
+        "power": 3,
+        "spin": 4,
+        "control": 3,
+        "comfort": 3,
+        "feel": 4,
+        "durability": 3
+      },
+      "compared": [
+        "solinco-hyper-g",
+        "solinco-confidential-soft"
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://solinco.com/products/hyper-g-soft/",
+        "https://www.tennisonly.com.au/Solinco_Hyper-G_Soft_16_130_String_Set/descpage-SHGS16.html",
+        "https://www.tennisnerd.net/gear/strings/best-solinco-strings-ranked-from-spin-to-comfort/70390",
+        "https://www.tennisonly.com.au/Solinco_Tennis_Racquet_String.html",
+        "https://www.tennisnerd.net/gear/strings/solinco-tennis-strings-a-brand-built-for-spin-and-tension-stability/69240"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": true
+    },
+    {
+      "id": "solinco-mach-10",
+      "brand": "Solinco",
+      "name": "Mach-10",
+      "material": "polyester",
+      "shape": {
+        "sides": 5,
+        "label": "Pentagonal"
+      },
+      "gaugesMm": [
+        1.15,
+        1.2,
+        1.25,
+        1.3
+      ],
+      "colours": [
+        {
+          "id": "blue",
+          "name": "Blue",
+          "hex": "#2aa8c8"
+        }
+      ],
+      "finish": "satin",
+      "summary": "Solinco's livelier polyester, with five edges and a softening agent. One reviewer found it far more elastic than Solinco's firmer polys, with extra depth in defence, a kinder feel and good tension holding, but not the best at any one thing, and pricey.",
+      "bestFor": [
+        "power",
+        "comfort",
+        "spin"
+      ],
+      "ratings": {
+        "power": 3,
+        "spin": 4,
+        "control": 3,
+        "comfort": 3,
+        "feel": 4,
+        "durability": 3
+      },
+      "compared": [
+        "solinco-tour-bite-soft",
+        "solinco-confidential",
+        "solinco-hyper-g"
+      ],
+      "confidence": "low",
+      "sources": [
+        "https://solinco.com/products/mach-10/",
+        "https://www.tennisonly.com.au/Solinco_Mach-10_16_130_String_Set/descpage-SM10130.html",
+        "https://www.tennisnerd.net/gear/strings/best-solinco-strings-ranked-from-spin-to-comfort/70390",
+        "https://www.tennisonly.com.au/Solinco_Tennis_Racquet_String.html",
+        "https://www.tennisnerd.net/gear/strings/solinco-tennis-strings-a-brand-built-for-spin-and-tension-stability/69240"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": true
+    },
+    {
+      "id": "solinco-outlast",
+      "brand": "Solinco",
+      "name": "Outlast",
+      "material": "polyester",
+      "shape": {
+        "sides": 0,
+        "label": "Round"
+      },
+      "gaugesMm": [
+        1.15,
+        1.2,
+        1.25,
+        1.3
+      ],
+      "colours": [
+        {
+          "id": "red",
+          "name": "Red",
+          "hex": "#b02a2e"
+        }
+      ],
+      "finish": "satin",
+      "summary": "A smooth round co-polyester aimed at durability and steady all-court control at a budget price. It has less bite than the shaped Solinco strings and, like any polyester, still loses tension over time, but it suits frequent restringers.",
+      "bestFor": [
+        "durability",
+        "value",
+        "control"
+      ],
+      "ratings": {
+        "power": 3,
+        "spin": 3,
+        "control": 4,
+        "comfort": 3,
+        "feel": 3,
+        "durability": 4
+      },
+      "compared": [
+        "solinco-revolution",
+        "solinco-hyper-g-round"
+      ],
+      "confidence": "low",
+      "sources": [
+        "https://solinco.com/products/outlast/",
+        "https://img.typtiwarehouse.com/watermark/rs.php?path=SOUT16-1.jpg",
+        "https://tennisoverload.com/solinco-outlast-tennis-string-review/",
+        "https://www.tennisnerd.net/gear/strings/best-solinco-strings-ranked-from-spin-to-comfort/70390"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": true
+    },
+    {
+      "id": "solinco-pro-stacked",
+      "brand": "Solinco",
+      "name": "Pro Stacked",
+      "material": "synthetic-gut",
+      "shape": null,
+      "gaugesMm": [
+        1.3
+      ],
+      "colours": [
+        {
+          "id": "black",
+          "name": "Black",
+          "hex": "#2a2a2c"
+        },
+        {
+          "id": "red",
+          "name": "Red",
+          "hex": "#c62f2f"
+        },
+        {
+          "id": "neon-green",
+          "name": "Neon Green",
+          "hex": "#5fd63a"
+        },
+        {
+          "id": "neon-yellow",
+          "name": "Neon Yellow",
+          "hex": "#dbe637"
+        }
+      ],
+      "finish": "satin",
+      "summary": "Solinco's synthetic gut: a solid core wrapped in finer fibres, described by the maker as a balanced all-court string with a fairly soft feel. A plain, affordable full bed or hybrid cross. No independent review was read, so treat these ratings as tentative.",
+      "bestFor": [
+        "value",
+        "comfort"
+      ],
+      "ratings": {
+        "power": 3,
+        "spin": 2,
+        "control": 3,
+        "comfort": 4,
+        "feel": 3,
+        "durability": 3
+      },
+      "compared": [
+        "prince-synthetic-gut-duraflex",
+        "gamma-tnt2",
+        "solinco-vanquish"
+      ],
+      "confidence": "low",
+      "sources": [
+        "https://solinco.com/products/pro-stacked/"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": false
+    },
+    {
+      "id": "solinco-revolution",
+      "brand": "Solinco",
+      "name": "Revolution",
+      "material": "polyester",
+      "shape": {
+        "sides": 6,
+        "label": "Six-sided"
+      },
+      "gaugesMm": [
+        1.15,
+        1.2,
+        1.25,
+        1.3
+      ],
+      "colours": [
+        {
+          "id": "blue",
+          "name": "Blue",
+          "hex": "#2f4d8c"
+        }
+      ],
+      "finish": "satin",
+      "summary": "A value-priced six-sided co-polyester for experienced hitters who like an edged string that flies predictably and lasts. It feels a little more responsive than Solinco's firmest strings and works well as a hybrid component.",
+      "bestFor": [
+        "spin",
+        "control",
+        "value"
+      ],
+      "ratings": {
+        "power": 3,
+        "spin": 4,
+        "control": 5,
+        "comfort": 3,
+        "feel": 3,
+        "durability": 4
+      },
+      "compared": [
+        "solinco-tour-bite",
+        "solinco-outlast",
+        "solinco-hyper-g"
+      ],
+      "confidence": "low",
+      "sources": [
+        "https://solinco.com/products/revolution/",
+        "https://www.wdstrings.com/solinco-revolution-16-1-30mm-set/",
+        "https://tennisoverload.com/solinco-revolution-tennis-string-review/",
+        "https://www.tennisnerd.net/gear/strings/best-solinco-strings-ranked-from-spin-to-comfort/70390"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": true
+    },
+    {
+      "id": "solinco-tour-bite",
+      "brand": "Solinco",
+      "name": "Tour Bite",
+      "material": "polyester",
+      "shape": {
+        "sides": 4,
+        "label": "Square"
+      },
+      "gaugesMm": [
+        1.05,
+        1.1,
+        1.15,
+        1.2,
+        1.25,
+        1.3,
+        1.35
+      ],
+      "colours": [
+        {
+          "id": "silver",
+          "name": "Silver",
+          "hex": "#686678"
+        }
+      ],
+      "finish": "satin",
+      "summary": "The sharpest-edged string in the Solinco line. Best for players with fast racquet heads who supply the pace themselves and want the most bite. It is firm, crisp and very low-powered, and it feels rigid once the tension drops, so it is demanding on the arm.",
+      "bestFor": [
+        "spin",
+        "control",
+        "durability"
+      ],
+      "ratings": {
+        "power": 1,
+        "spin": 5,
+        "control": 5,
+        "comfort": 1,
+        "feel": 3,
+        "durability": 4
+      },
+      "compared": [
+        "solinco-hyper-g",
+        "solinco-confidential"
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://solinco.com/products/tour-bite/",
+        "https://www.tennisonly.com.au/Solinco_Tour_Bite_16_130_String_Set/descpage-STB16.html",
+        "https://www.tennisnerd.net/gear/strings/best-solinco-strings-ranked-from-spin-to-comfort/70390",
+        "https://www.tennisonly.com.au/Solinco_Tennis_Racquet_String.html",
+        "https://www.tennisnerd.net/gear/strings/solinco-tennis-strings-a-brand-built-for-spin-and-tension-stability/69240"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": true
+    },
+    {
+      "id": "solinco-tour-bite-diamond-rough",
+      "brand": "Solinco",
+      "name": "Tour Bite Diamond Rough",
+      "material": "polyester",
+      "shape": null,
+      "gaugesMm": [
+        1.25,
+        1.3
+      ],
+      "colours": [
+        {
+          "id": "silver",
+          "name": "Silver",
+          "hex": "#6e6a78"
+        }
+      ],
+      "finish": "satin",
+      "summary": "Tour Bite with a diamond-patterned surface, for advanced hitters with big swings. The shop describes a firm, highly predictable response with great precision and spin, and a slightly gentler feel than Tour Bite itself; of two customer reviews, one found it muted and one praised its spin and pocketing.",
+      "bestFor": [
+        "spin",
+        "control"
+      ],
+      "ratings": {
+        "power": 2,
+        "spin": 5,
+        "control": 4,
+        "comfort": 2,
+        "feel": 3,
+        "durability": 4
+      },
+      "compared": [
+        "solinco-tour-bite",
+        "solinco-tour-bite-soft"
+      ],
+      "confidence": "low",
+      "sources": [
+        "https://solinco.com/products/tour-bite-diamond-rough/",
+        "https://www.typtiwarehouse.com/Solinco_Tour_Bite_Diamond_Rough_16_130_String_/descpage-TBDR16.html",
+        "https://www.tennisnerd.net/gear/strings/best-solinco-strings-ranked-from-spin-to-comfort/70390"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": true
+    },
+    {
+      "id": "solinco-tour-bite-soft",
+      "brand": "Solinco",
+      "name": "Tour Bite Soft",
+      "material": "polyester",
+      "shape": {
+        "sides": 4,
+        "label": "Square"
+      },
+      "gaugesMm": [
+        1.2,
+        1.25
+      ],
+      "colours": [
+        {
+          "id": "light-silver",
+          "name": "Light Silver",
+          "hex": "#7b7885"
+        }
+      ],
+      "finish": "satin",
+      "summary": "A gentler take on Tour Bite for big swingers who want the grip and spin without as much shock. Playtesters found it more generous on power than the original, though it still needs a full swing to get the most from it.",
+      "bestFor": [
+        "spin",
+        "comfort",
+        "control"
+      ],
+      "ratings": {
+        "power": 2,
+        "spin": 5,
+        "control": 4,
+        "comfort": 3,
+        "feel": 3,
+        "durability": 3
+      },
+      "compared": [
+        "solinco-tour-bite",
+        "solinco-mach-10"
+      ],
+      "confidence": "low",
+      "sources": [
+        "https://solinco.com/products/tour-bite-soft/",
+        "https://www.tennisonly.com.au/Solinco_Tour_Bite_Soft_16L_125_String_Set/descpage-STBS16L.html",
+        "https://www.tennisnerd.net/gear/strings/best-solinco-strings-ranked-from-spin-to-comfort/70390",
+        "https://www.tennisonly.com.au/Solinco_Tennis_Racquet_String.html"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": true
+    },
+    {
+      "id": "solinco-vanquish",
+      "brand": "Solinco",
+      "name": "Vanquish",
+      "material": "multifilament",
+      "shape": {
+        "sides": 0,
+        "label": "Round"
+      },
+      "gaugesMm": [
+        1.2,
+        1.3,
+        1.35
+      ],
+      "colours": [
+        {
+          "id": "natural",
+          "name": "Natural",
+          "hex": "#d3b48f"
+        }
+      ],
+      "finish": "satin",
+      "summary": "Solinco's soft multifilament for forgiving comfort, easy power and touch. It suits arm-sensitive players, or works as a soft cross with a shaped polyester main. Used as a full bed it gives far less spin and control than polyester and frays quickly.",
+      "bestFor": [
+        "comfort",
+        "power",
+        "feel"
+      ],
+      "ratings": {
+        "power": 4,
+        "spin": 2,
+        "control": 3,
+        "comfort": 5,
+        "feel": 4,
+        "durability": 2
+      },
+      "compared": [
+        "solinco-x-natural",
+        "solinco-hyper-g-round"
+      ],
+      "confidence": "low",
+      "sources": [
+        "https://solinco.com/products/vanquish/",
+        "https://www.wdstrings.com/solinco-vanquish-16-1-30mm-set/",
+        "https://tennisoverload.com/solinco-vanquish-tennis-string-review/",
+        "https://www.tennisnerd.net/gear/strings/best-solinco-strings-ranked-from-spin-to-comfort/70390"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": true
+    },
+    {
+      "id": "solinco-x-natural",
+      "brand": "Solinco",
+      "name": "X-Natural",
+      "material": "multifilament",
+      "shape": null,
+      "gaugesMm": [
+        1.2
+      ],
+      "colours": [
+        {
+          "id": "black",
+          "name": "Black",
+          "hex": "#1c1b1c"
+        }
+      ],
+      "finish": "satin",
+      "summary": "A multifilament infused with polyurethane and given a textured surface, very arm friendly and generous with power. It suits players who rarely break strings: customer reviews like its feel and control, but three of the five complain that it does not last.",
+      "bestFor": [
+        "comfort",
+        "power",
+        "feel"
+      ],
+      "ratings": {
+        "power": 4,
+        "spin": 2,
+        "control": 2,
+        "comfort": 5,
+        "feel": 4,
+        "durability": 2
+      },
+      "compared": [
+        "solinco-vanquish",
+        "solinco-hyper-g-round"
+      ],
+      "confidence": "low",
+      "sources": [
+        "https://solinco.com/products/x-natural/",
+        "https://www.tennisonly.com.au/Solinco_X-Natural_17_120_String_Set/descpage-SXN17.html",
+        "https://www.tennisonly.com.au/Solinco_Tennis_Racquet_String.html"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": true
+    },
+    {
+      "id": "tecnifibre-black-code",
+      "brand": "Tecnifibre",
+      "name": "Black Code",
+      "material": "polyester",
+      "shape": {
+        "sides": 5,
+        "label": "Pentagonal"
+      },
+      "gaugesMm": [
+        1.18,
+        1.24,
+        1.28,
+        1.32
+      ],
+      "colours": [
+        {
+          "id": "black",
+          "name": "Black",
+          "hex": "#1f2022"
+        },
+        {
+          "id": "lime",
+          "name": "Lime",
+          "hex": "#90bf62"
+        },
+        {
+          "id": "fire",
+          "name": "Fire",
+          "hex": "#dc3c0c"
+        }
+      ],
+      "finish": "satin",
+      "summary": "A five-sided co-poly built for bite. It gives strong spin and a controlled, low-powered launch, with a touch more give than a stiff poly. Best for aggressive players with fast swings; compact swingers may struggle for depth, and the edges can notch the mains.",
+      "bestFor": [
+        "spin",
+        "control"
+      ],
+      "ratings": {
+        "power": 2,
+        "spin": 5,
+        "control": 4,
+        "comfort": 3,
+        "feel": 3,
+        "durability": 3
+      },
+      "compared": [
+        "solinco-tour-bite",
+        "tecnifibre-razor-code"
+      ],
+      "confidence": "low",
+      "sources": [
+        "https://tennisoverload.com/tecnifibre-black-code-tennis-string-review/",
+        "https://www.tennis-warehouse.com/TecnifibreString.html",
+        "https://www.tennisnuts.com/tecnifibre-black-code-tennis-678180.html",
+        "https://www.tennisnuts.com/tecnifibre-black-code-tennis-string-set-lime-green-1395268.html"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": false
+    },
+    {
+      "id": "tecnifibre-nrg2",
+      "brand": "Tecnifibre",
+      "name": "NRG2",
+      "material": "multifilament",
+      "shape": {
+        "sides": 0,
+        "label": "Round"
+      },
+      "gaugesMm": [
+        1.18,
+        1.24,
+        1.32
+      ],
+      "colours": [
+        {
+          "id": "natural",
+          "name": "Natural",
+          "hex": "#d8c99a"
+        },
+        {
+          "id": "black",
+          "name": "Black",
+          "hex": "#1f2022"
+        }
+      ],
+      "finish": "satin",
+      "summary": "A round, soft multifilament with plenty of power and a forgiving feel. It is a good pick for players with sensitive arms, or anyone wanting easy depth. Control and spin vary with swing speed and gauge; durability is moderate, and the fibres fray with friction.",
+      "bestFor": [
+        "power",
+        "comfort"
+      ],
+      "ratings": {
+        "power": 5,
+        "spin": 3,
+        "control": 3,
+        "comfort": 5,
+        "feel": 4,
+        "durability": 2
+      },
+      "compared": [
+        "tecnifibre-x-one-biphase",
+        "wilson-nxt"
+      ],
+      "confidence": "low",
+      "sources": [
+        "https://tennisoverload.com/tecnifibre-nrg2-tennis-string-review/",
+        "https://www.tennis-warehouse.com/TecnifibreString.html"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": false
+    },
+    {
+      "id": "tecnifibre-razor-code",
+      "brand": "Tecnifibre",
+      "name": "Razor Code",
+      "material": "polyester",
+      "shape": {
+        "sides": 0,
+        "label": "Round"
+      },
+      "gaugesMm": [
+        1.2,
+        1.25,
+        1.3
+      ],
+      "colours": [
+        {
+          "id": "carbon",
+          "name": "Carbon",
+          "hex": "#b6b4b7"
+        },
+        {
+          "id": "blue",
+          "name": "Blue",
+          "hex": "#46a9cb"
+        },
+        {
+          "id": "white",
+          "name": "White",
+          "hex": "#ececec"
+        }
+      ],
+      "finish": "satin",
+      "summary": "A round, firm co-poly that plays livelier than most control polys, with good bite for its smooth profile. It suits fast, committed swingers who want precision and decent string life, but offers little easy depth and is not gentle on a sore arm.",
+      "bestFor": [
+        "control",
+        "durability"
+      ],
+      "ratings": {
+        "power": 3,
+        "spin": 4,
+        "control": 4,
+        "comfort": 3,
+        "feel": 3,
+        "durability": 4
+      },
+      "compared": [
+        "luxilon-alu-power",
+        "solinco-hyper-g"
+      ],
+      "confidence": "low",
+      "sources": [
+        "https://tennisoverload.com/tecnifibre-razor-code-tennis-string-review/",
+        "https://www.tennisnerd.net/gear/strings/string-reviews/tecnifibre-razor-code-hybrid-review/36865",
+        "https://www.tennis-warehouse.com/TecnifibreString.html",
+        "https://www.tennisnuts.com/tecnifibre-razor-code-tennis-string-set-white-1505344.html"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": false
+    },
+    {
+      "id": "tecnifibre-triax",
+      "brand": "Tecnifibre",
+      "name": "Triax",
+      "material": "multifilament",
+      "shape": {
+        "sides": 0,
+        "label": "Round"
+      },
+      "gaugesMm": [
+        1.28,
+        1.33,
+        1.38
+      ],
+      "colours": [
+        {
+          "id": "natural",
+          "name": "Natural",
+          "hex": "#d8c99a"
+        }
+      ],
+      "finish": "satin",
+      "summary": "A multifilament blended with co-polyester fibres, so it feels close to natural gut but firmer and more controlled. Comfortable and durable for the type, it suits flat to moderate hitters and arm-sensitive poly players. Heavy topspin players will want more bite.",
+      "bestFor": [
+        "comfort",
+        "control",
+        "durability"
+      ],
+      "ratings": {
+        "power": 4,
+        "spin": 3,
+        "control": 4,
+        "comfort": 4,
+        "feel": 4,
+        "durability": 3
+      },
+      "compared": [
+        "babolat-xcel",
+        "luxilon-element"
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://tennisoverload.com/tecnifibre-triax-tennis-string-review/",
+        "https://www.perfect-tennis.com/tecnifibre-triax-string-review/",
+        "https://www.tennis-warehouse.com/TecnifibreString.html",
+        "https://www.tennisnuts.com/tecnifibre-triax-tennis-string-set-natural-1497454.html",
+        "https://www.tennisnerd.net/gear/strings/string-reviews/tecnifibre-triax-string-review-part-1/22732"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": false
+    },
+    {
+      "id": "tecnifibre-x-one-biphase",
+      "brand": "Tecnifibre",
+      "name": "X-One Biphase",
+      "material": "multifilament",
+      "shape": {
+        "sides": 0,
+        "label": "Round"
+      },
+      "gaugesMm": [
+        1.18,
+        1.24,
+        1.3,
+        1.35
+      ],
+      "colours": [
+        {
+          "id": "natural",
+          "name": "Natural",
+          "hex": "#d8c99a"
+        },
+        {
+          "id": "black",
+          "name": "Black",
+          "hex": "#1f2022"
+        },
+        {
+          "id": "red",
+          "name": "Red",
+          "hex": "#a30b12"
+        }
+      ],
+      "finish": "satin",
+      "summary": "A premium multifilament that leans hard on power and comfort, with a lively, gut-like pocket. It is easy on the arm and generous on depth, so it suits moderate and compact swings. Spin is modest and heavy hitters may fray it.",
+      "bestFor": [
+        "power",
+        "comfort",
+        "feel"
+      ],
+      "ratings": {
+        "power": 5,
+        "spin": 2,
+        "control": 3,
+        "comfort": 5,
+        "feel": 5,
+        "durability": 2
+      },
+      "compared": [
+        "babolat-xcel",
+        "wilson-nxt",
+        "tecnifibre-nrg2"
+      ],
+      "confidence": "low",
+      "sources": [
+        "https://tennisoverload.com/tecnifibre-x-one-biphase-tennis-string-review/",
+        "https://www.tennis-warehouse.com/TecnifibreString.html",
+        "https://www.tennisnuts.com/tecnifibre-x-one-biphase-tennis-string-set-black-1536109.html"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": false
+    },
+    {
+      "id": "toroline-absolute",
+      "brand": "Toroline",
+      "name": "Absolute",
+      "material": "polyester",
+      "shape": {
+        "sides": 6,
+        "label": "Hexagonal"
+      },
+      "gaugesMm": [
+        1.2
+      ],
+      "colours": [
+        {
+          "id": "black",
+          "name": "Black",
+          "hex": "#232326"
+        }
+      ],
+      "finish": "satin",
+      "summary": "A thin, black, six-sided co-poly for aggressive players who want spin and a predictable response on full swings. One overview lists it among the softest Torolines, for players avoiding arm fatigue, and the one customer review read agrees; the shop describes a crisp feel.",
+      "bestFor": [
+        "spin",
+        "control",
+        "comfort"
+      ],
+      "ratings": {
+        "power": 3,
+        "spin": 4,
+        "control": 4,
+        "comfort": 4,
+        "feel": 4,
+        "durability": 2
+      },
+      "compared": [
+        "toroline-caviar",
+        "toroline-o-toro"
+      ],
+      "confidence": "low",
+      "sources": [
+        "https://www.tennis-warehouse.com/TOROLINE_Absolute_17_120_String/descpageACTORO-T7ABS.html",
+        "https://www.tennis-warehouse.com/Toroline_Tennis_Strings/catpage-TOROLSTR.html",
+        "https://www.tennisnerd.net/gear/strings/toroline-strings-spin-control-and-color/63502"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": false
+    },
+    {
+      "id": "toroline-caviar",
+      "brand": "Toroline",
+      "name": "Caviar",
+      "material": "polyester",
+      "shape": {
+        "sides": 6,
+        "label": "Hexagonal"
+      },
+      "gaugesMm": [
+        1.2,
+        1.24
+      ],
+      "colours": [
+        {
+          "id": "neon-yellow",
+          "name": "Neon Yellow",
+          "hex": "#d6e41c"
+        }
+      ],
+      "finish": "satin",
+      "summary": "A firm six-sided co-poly with a low-friction surface, among the most control-oriented in the Toroline range. It gives predictable trajectory for big swings and still grips the ball; the price is a stiffer feel than Wasabi or O-Toro.",
+      "bestFor": [
+        "control",
+        "spin",
+        "durability"
+      ],
+      "ratings": {
+        "power": 2,
+        "spin": 4,
+        "control": 5,
+        "comfort": 2,
+        "feel": 3,
+        "durability": 4
+      },
+      "compared": [
+        "toroline-wasabi",
+        "toroline-o-toro"
+      ],
+      "confidence": "low",
+      "sources": [
+        "https://www.tennis-warehouse.com/TOROLINE_Caviar_16L_124_String/descpageACTORO-T6CAVA.html",
+        "https://www.tennis-warehouse.com/Toroline_Tennis_Strings/catpage-TOROLSTR.html",
+        "https://www.tennisnerd.net/gear/strings/toroline-strings-spin-control-and-color/63502"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": false
+    },
+    {
+      "id": "toroline-o-toro",
+      "brand": "Toroline",
+      "name": "O-Toro",
+      "material": "polyester",
+      "shape": {
+        "sides": 6,
+        "label": "Hexagonal"
+      },
+      "gaugesMm": [
+        1.23
+      ],
+      "colours": [
+        {
+          "id": "black",
+          "name": "Black",
+          "hex": "#2c2c2e"
+        },
+        {
+          "id": "neon-green",
+          "name": "Neon Green",
+          "hex": "#7fe02a"
+        },
+        {
+          "id": "neon-pink",
+          "name": "Neon Pink",
+          "hex": "#f0399a"
+        },
+        {
+          "id": "white",
+          "name": "White",
+          "hex": "#ecece8"
+        }
+      ],
+      "finish": "satin",
+      "summary": "A six-sided co-poly with a slick surface, which one overview calls the most versatile Toroline. It gives plenty of spin, and the shop's playtesters found comfort and pocketing at lower tensions; two customers mention how soon it fades, and opinions on arm comfort differ.",
+      "bestFor": [
+        "spin",
+        "comfort",
+        "control"
+      ],
+      "ratings": {
+        "power": 3,
+        "spin": 5,
+        "control": 3,
+        "comfort": 4,
+        "feel": 3,
+        "durability": 3
+      },
+      "compared": [
+        "toroline-wasabi",
+        "toroline-caviar"
+      ],
+      "confidence": "low",
+      "sources": [
+        "https://www.tennis-warehouse.com/TOROLINE_O-TORO_17_123_String/descpageACTORO-TOTORO7.html",
+        "https://www.tennis-warehouse.com/Toroline_Tennis_Strings/catpage-TOROLSTR.html",
+        "https://www.tennisnerd.net/gear/strings/toroline-strings-spin-control-and-color/63502"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": false
+    },
+    {
+      "id": "toroline-wasabi",
+      "brand": "Toroline",
+      "name": "Wasabi",
+      "material": "polyester",
+      "shape": {
+        "sides": 4,
+        "label": "Square"
+      },
+      "gaugesMm": [
+        1.23,
+        1.25
+      ],
+      "colours": [
+        {
+          "id": "neon-green",
+          "name": "Neon Green",
+          "hex": "#86e030"
+        },
+        {
+          "id": "neon-pink",
+          "name": "Neon Pink",
+          "hex": "#f03c9b"
+        },
+        {
+          "id": "pomegranate-red",
+          "name": "Pomegranate Red",
+          "hex": "#b8283a"
+        }
+      ],
+      "finish": "satin",
+      "summary": "A square, slippery co-poly with sharp edges that grips the ball and snaps back for heavy topspin. One reviewer calls it soft for a shaped poly with about average tension holding, though the shop ranks it among the firmer, control-leaning Torolines and customers differ on feel.",
+      "bestFor": [
+        "spin",
+        "control",
+        "comfort"
+      ],
+      "ratings": {
+        "power": 3,
+        "spin": 5,
+        "control": 4,
+        "comfort": 3,
+        "feel": 3,
+        "durability": 3
+      },
+      "compared": [
+        "toroline-caviar",
+        "toroline-o-toro",
+        "solinco-hyper-g"
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://www.tennis-warehouse.com/TOROLINE_Wasabi_17_123_String/descpage-TWASA.html",
+        "https://www.tennis-warehouse.com/Toroline_Tennis_Strings/catpage-TOROLSTR.html",
+        "https://tennisnerd.net/?p=31178",
+        "https://www.tennisnerd.net/gear/strings/toroline-strings-spin-control-and-color/63502"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": false
+    },
+    {
+      "id": "volkl-cyclone",
+      "brand": "Volkl",
+      "name": "Cyclone",
+      "material": "polyester",
+      "shape": {
+        "sides": 8,
+        "label": "Gear-shaped"
+      },
+      "gaugesMm": [
+        1.1,
+        1.15,
+        1.2,
+        1.25,
+        1.3,
+        1.35
+      ],
+      "colours": [
+        {
+          "id": "black",
+          "name": "Black",
+          "hex": "#2b2b2d"
+        },
+        {
+          "id": "anthracite",
+          "name": "Anthracite",
+          "hex": "#4c4f53"
+        },
+        {
+          "id": "graphite",
+          "name": "Graphite",
+          "hex": "#6d7074"
+        },
+        {
+          "id": "neon-blue",
+          "name": "Neon Blue",
+          "hex": "#22a4e6"
+        },
+        {
+          "id": "fluo-orange",
+          "name": "Fluo Orange",
+          "hex": "#ec5a1c"
+        },
+        {
+          "id": "yellow",
+          "name": "Yellow",
+          "hex": "#d3e11f"
+        }
+      ],
+      "finish": "satin",
+      "summary": "A low-priced gear-shaped co-poly for powerful baseliners who want heavy spin. The shop's testers found it user-friendly, and customer reviews praise its grip, value and durability; one says it hurt the wrist, while another finds it soft on the arm.",
+      "bestFor": [
+        "spin",
+        "durability",
+        "value"
+      ],
+      "ratings": {
+        "power": 3,
+        "spin": 4,
+        "control": 4,
+        "comfort": 2,
+        "feel": 3,
+        "durability": 4
+      },
+      "compared": [
+        "volkl-cyclone-tour",
+        "volkl-v-square",
+        "solinco-hyper-g"
+      ],
+      "confidence": "low",
+      "sources": [
+        "https://www.tennis-warehouse.com/VolklString.html",
+        "https://www.tennis-warehouse.com/Volkl_Cyclone_16_130_String/descpageACVOLKL-VCYC.html",
+        "https://www.tennisnuts.com/volkl-cyclone-tennis-string-set-1226299.html",
+        "https://www.tennisnuts.com/volkl-cyclone-tennis-string-set-1226307.html",
+        "https://www.tennisnuts.com/volkl-cyclone-tennis-string-set-1226323.html"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": false
+    },
+    {
+      "id": "volkl-cyclone-tour",
+      "brand": "Volkl",
+      "name": "Cyclone Tour",
+      "material": "polyester",
+      "shape": {
+        "sides": 8,
+        "label": "Gear-shaped",
+        "twisted": true
+      },
+      "gaugesMm": [
+        1.2,
+        1.25,
+        1.3
+      ],
+      "colours": [
+        {
+          "id": "red",
+          "name": "Red",
+          "hex": "#c8242b"
+        },
+        {
+          "id": "anthracite",
+          "name": "Anthracite",
+          "hex": "#55585c"
+        }
+      ],
+      "finish": "satin",
+      "summary": "The Cyclone gear shape with a twist and a softer compound, for advanced players with powerful swings. The shop and customers describe extra bite, a springier response and more comfort than the original, though one buyer did not get on with it at all.",
+      "bestFor": [
+        "spin",
+        "control",
+        "feel"
+      ],
+      "ratings": {
+        "power": 3,
+        "spin": 4,
+        "control": 4,
+        "comfort": 3,
+        "feel": 4,
+        "durability": 4
+      },
+      "compared": [
+        "volkl-cyclone",
+        "volkl-v-square"
+      ],
+      "confidence": "low",
+      "sources": [
+        "https://www.tennis-warehouse.com/VolklString.html",
+        "https://www.tennis-warehouse.com/Volkl_Cyclone_Tour_16_130_String_Red/descpageACVOLKL-VCTR16.html",
+        "https://www.tennisnuts.com/volkl-cyclone-tour-tennis-string-1247047.html"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": false
+    },
+    {
+      "id": "volkl-v-square",
+      "brand": "Volkl",
+      "name": "V-Square",
+      "material": "polyester",
+      "shape": {
+        "sides": 4,
+        "label": "Square"
+      },
+      "gaugesMm": [
+        1.1,
+        1.2,
+        1.25,
+        1.3
+      ],
+      "colours": [
+        {
+          "id": "black",
+          "name": "Black",
+          "hex": "#2a2a2c"
+        },
+        {
+          "id": "lava",
+          "name": "Lava",
+          "hex": "#d33a2a"
+        },
+        {
+          "id": "yellow",
+          "name": "Yellow",
+          "hex": "#d9dd2b"
+        }
+      ],
+      "finish": "satin",
+      "summary": "A four-sided co-poly with sharp edges and a slick surface, for players who want bite and snapback with precise targeting. The shop calls it slightly softer than Cyclone and durable. Customer reviews praise the spin but disagree on tension holding and how long it lasts.",
+      "bestFor": [
+        "spin",
+        "control",
+        "durability"
+      ],
+      "ratings": {
+        "power": 3,
+        "spin": 5,
+        "control": 4,
+        "comfort": 3,
+        "feel": 3,
+        "durability": 4
+      },
+      "compared": [
+        "volkl-cyclone",
+        "solinco-hyper-g"
+      ],
+      "confidence": "low",
+      "sources": [
+        "https://www.tennis-warehouse.com/VolklString.html",
+        "https://www.tennis-warehouse.com/Volkl_V-Square_16_130_String/descpageACVOLKL-VSQ16.html",
+        "https://www.tennisnuts.com/volkl-v-square-200m-tennis-string-reel-red-1466595.html"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": false
+    },
+    {
+      "id": "volkl-v-star",
+      "brand": "Volkl",
+      "name": "V-Star",
+      "material": "polyester",
+      "shape": {
+        "sides": 0,
+        "label": "Round"
+      },
+      "gaugesMm": [
+        1.1,
+        1.15,
+        1.2,
+        1.25,
+        1.3
+      ],
+      "colours": [
+        {
+          "id": "silver",
+          "name": "Silver",
+          "hex": "#a8abae"
+        },
+        {
+          "id": "orange",
+          "name": "Orange",
+          "hex": "#ee6a24"
+        },
+        {
+          "id": "white",
+          "name": "White",
+          "hex": "#e8e8e4"
+        },
+        {
+          "id": "yellow",
+          "name": "Yellow",
+          "hex": "#d8dc2a"
+        }
+      ],
+      "finish": "satin",
+      "summary": "A smooth round co-poly that the shop ranks among the most comfortable, with more power than most control strings and good spin. It is offered as a first poly; customer reviews mostly like its price and comfort, and one notes that it notches quickly.",
+      "bestFor": [
+        "comfort",
+        "feel",
+        "value"
+      ],
+      "ratings": {
+        "power": 3,
+        "spin": 3,
+        "control": 3,
+        "comfort": 4,
+        "feel": 4,
+        "durability": 3
+      },
+      "compared": [
+        "volkl-cyclone",
+        "yonex-polytour-pro"
+      ],
+      "confidence": "low",
+      "sources": [
+        "https://www.tennis-warehouse.com/VolklString.html",
+        "https://www.tennis-warehouse.com/Volkl_V-Star_16_130_String/descpageACVOLKL-VS16S.html",
+        "https://www.tennisnuts.com/volkl-v-star-tennis-string-set-silver-1537994.html",
+        "https://www.tennisnuts.com/volkl-v-star-tennis-string-set-1224667.html"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": false
+    },
+    {
+      "id": "wilson-nxt",
+      "brand": "Wilson",
+      "name": "NXT",
+      "material": "multifilament",
+      "shape": {
+        "sides": 0,
+        "label": "Round"
+      },
+      "gaugesMm": [
+        1.24,
+        1.3
+      ],
+      "colours": [
+        {
+          "id": "natural",
+          "name": "Natural",
+          "hex": "#ebe2c6"
+        },
+        {
+          "id": "black",
+          "name": "Black",
+          "hex": "#2a2a2c"
+        }
+      ],
+      "finish": "satin",
+      "summary": "A time-tested multifilament with a gut-like feel, good for players with slow to moderate swings who want comfort, touch and easy power. It also works well as a soft partner to polyester in a hybrid, though it gives up spin and control to the stiffer strings.",
+      "bestFor": [
+        "comfort",
+        "power",
+        "feel"
+      ],
+      "ratings": {
+        "power": 4,
+        "spin": 2,
+        "control": 3,
+        "comfort": 5,
+        "feel": 4,
+        "durability": 2
+      },
+      "compared": [
+        "wilson-sensation",
+        "babolat-xcel"
+      ],
+      "confidence": "low",
+      "sources": [
+        "https://www.typtiwarehouse.com/Wilson_NXT_16_130_String_Natural/descpage-NXT16.html",
+        "https://tennisoverload.com/wilson-nxt-tennis-string-review/"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": false
+    },
+    {
+      "id": "wilson-natural-gut",
+      "brand": "Wilson",
+      "name": "Natural Gut",
+      "material": "natural-gut",
+      "shape": {
+        "sides": 0,
+        "label": "Round"
+      },
+      "gaugesMm": [
+        1.25,
+        1.3
+      ],
+      "colours": [
+        {
+          "id": "natural",
+          "name": "Natural",
+          "hex": "#d6cfbd"
+        }
+      ],
+      "finish": "satin",
+      "summary": "The traditional choice for power, comfort and feel, made from natural fibres with a protective coating. It gives easy depth and a soft response that protects the arm, which suits players who want playability, at a much higher price than synthetic strings.",
+      "bestFor": [
+        "comfort",
+        "power",
+        "feel"
+      ],
+      "ratings": {
+        "power": 5,
+        "spin": 3,
+        "control": 4,
+        "comfort": 5,
+        "feel": 5,
+        "durability": 3
+      },
+      "compared": [
+        "babolat-touch-vs",
+        "luxilon-natural-gut"
+      ],
+      "confidence": "low",
+      "sources": [
+        "https://tennisoverload.com/wilson-natural-gut-tennis-string-review/",
+        "https://img.tennisonly.com.au/watermark/rs.php?path=WNATY16-1.jpg"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": false
+    },
+    {
+      "id": "wilson-revolve",
+      "brand": "Wilson",
+      "name": "Revolve",
+      "material": "polyester",
+      "shape": {
+        "sides": 0,
+        "label": "Round"
+      },
+      "gaugesMm": [
+        1.25,
+        1.3,
+        1.35
+      ],
+      "colours": [
+        {
+          "id": "black",
+          "name": "Black",
+          "hex": "#2a2a2a"
+        },
+        {
+          "id": "orange",
+          "name": "Orange",
+          "hex": "#ef6a22"
+        },
+        {
+          "id": "white",
+          "name": "White",
+          "hex": "#ecebe6"
+        }
+      ],
+      "finish": "satin",
+      "summary": "A comfortably firm co-polyester for players with long, fast strokes, offering precise control on big swings and spin from a low-friction additive. It is gentler than a traditional polyester and durable, so it suits intermediate and advanced players seeking control.",
+      "bestFor": [
+        "control",
+        "spin",
+        "durability"
+      ],
+      "ratings": {
+        "power": 2,
+        "spin": 4,
+        "control": 4,
+        "comfort": 3,
+        "feel": 3,
+        "durability": 4
+      },
+      "compared": [
+        "luxilon-alu-power",
+        "solinco-hyper-g-round"
+      ],
+      "confidence": "low",
+      "sources": [
+        "https://www.tennisonly.com.au/Wilson_Revolve_16_130_String_Set/descpage-WRV16.html",
+        "https://tennisoverload.com/wilson-revolve-tennis-string-review/"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": false
+    },
+    {
+      "id": "wilson-sensation",
+      "brand": "Wilson",
+      "name": "Sensation",
+      "material": "multifilament",
+      "shape": {
+        "sides": 0,
+        "label": "Round"
+      },
+      "gaugesMm": [
+        1.25,
+        1.3,
+        1.35
+      ],
+      "colours": [
+        {
+          "id": "natural",
+          "name": "Natural",
+          "hex": "#e9e2cc"
+        },
+        {
+          "id": "lime",
+          "name": "Lime",
+          "hex": "#e2ea3a"
+        }
+      ],
+      "finish": "satin",
+      "summary": "An arm-friendly value multifilament that damps vibration and plays soft and comfortable. It suits players wanting a soft stand-in for natural gut or something gentler than stiff synthetic guts, though it is less precise and spin-friendly than polyester.",
+      "bestFor": [
+        "comfort",
+        "value",
+        "power"
+      ],
+      "ratings": {
+        "power": 4,
+        "spin": 2,
+        "control": 2,
+        "comfort": 4,
+        "feel": 3,
+        "durability": 2
+      },
+      "compared": [
+        "wilson-nxt",
+        "babolat-xcel"
+      ],
+      "confidence": "low",
+      "sources": [
+        "https://www.tennisonly.com.au/Wilson_Sensation_16_130_String_Set/descpage-SEN16.html",
+        "https://tennisoverload.com/wilson-sensation-tennis-string-review/"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": false
+    },
+    {
+      "id": "yonex-polytour-drive",
+      "brand": "Yonex",
+      "name": "PolyTour Drive",
+      "material": "polyester",
+      "shape": null,
+      "gaugesMm": [
+        1.25
+      ],
+      "colours": [
+        {
+          "id": "yellow",
+          "name": "Yellow",
+          "hex": "#e6ee3a"
+        }
+      ],
+      "finish": "satin",
+      "summary": "A comfortably firm, sharp-edged polyester that gives easy access to spin at a modest price. Its response is predictable, so players can swing out without fear of overhitting, though independent coverage of it is thin.",
+      "bestFor": [
+        "spin",
+        "value"
+      ],
+      "ratings": {
+        "power": 2,
+        "spin": 4,
+        "control": 4,
+        "comfort": 3,
+        "feel": 3,
+        "durability": 3
+      },
+      "compared": [
+        "yonex-polytour-spin",
+        "yonex-polytour-rev"
+      ],
+      "confidence": "low",
+      "sources": [
+        "https://www.tennisonly.com.au/Yonex_POLYTOUR_DRIVE_16L_125_String_Set/descpage-YPTDRI.html",
+        "https://www.tennisnerd.net/gear/strings/yonex-poly-tour-rev-mint/31913"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": false
+    },
+    {
+      "id": "yonex-polytour-pro",
+      "brand": "Yonex",
+      "name": "PolyTour Pro",
+      "material": "polyester",
+      "shape": {
+        "sides": 0,
+        "label": "Round"
+      },
+      "gaugesMm": [
+        1.2,
+        1.25,
+        1.3
+      ],
+      "colours": [
+        {
+          "id": "yellow",
+          "name": "Yellow",
+          "hex": "#e6e032"
+        },
+        {
+          "id": "graphite",
+          "name": "Graphite",
+          "hex": "#6d6e70"
+        },
+        {
+          "id": "blue",
+          "name": "Blue",
+          "hex": "#2f8fd8"
+        },
+        {
+          "id": "purple",
+          "name": "Purple",
+          "hex": "#4a3f8c"
+        },
+        {
+          "id": "black",
+          "name": "Black",
+          "hex": "#2a2a2c"
+        }
+      ],
+      "finish": "satin",
+      "summary": "One of the softer co-polyesters, widely used by pros and a friendly first poly. It gives controlled, comfortable hitting when fresh but little bite. One reviewer suggests pairing it with a firmer string and finds the tension drop fairly steep; two customers praise its staying power.",
+      "bestFor": [
+        "comfort",
+        "control",
+        "feel"
+      ],
+      "ratings": {
+        "power": 2,
+        "spin": 3,
+        "control": 4,
+        "comfort": 3,
+        "feel": 4,
+        "durability": 3
+      },
+      "compared": [
+        "yonex-polytour-spin",
+        "yonex-polytour-rev",
+        "luxilon-element"
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://www.tennisonly.com.au/Yonex_Poly_Tour_Pro_16L_125_String_Set_Yellow/descpage-YPTP125.html",
+        "https://www.tennisnerd.net/gear/strings/string-reviews/yonex-poly-tour-pro-review/32064",
+        "https://www.tennisonly.com.au/Yonex_Tennis_Racquet_String.html"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": false
+    },
+    {
+      "id": "yonex-polytour-rev",
+      "brand": "Yonex",
+      "name": "PolyTour Rev",
+      "material": "polyester",
+      "shape": {
+        "sides": 8,
+        "label": "Octagonal"
+      },
+      "gaugesMm": [
+        1.2,
+        1.25
+      ],
+      "colours": [
+        {
+          "id": "orange",
+          "name": "Orange",
+          "hex": "#e07a2a"
+        },
+        {
+          "id": "mint",
+          "name": "Mint",
+          "hex": "#8fe0cf"
+        },
+        {
+          "id": "purple",
+          "name": "Purple",
+          "hex": "#b9a2e0"
+        }
+      ],
+      "finish": "satin",
+      "summary": "An eight-sided co-polyester with a silicone-infused filament for grab and snapback, aimed at players who want a kinder control string. One reviewer found useful spin without harshness; a customer called it stiff but comfortable, and not very powerful.",
+      "bestFor": [
+        "spin",
+        "control",
+        "durability"
+      ],
+      "ratings": {
+        "power": 2,
+        "spin": 4,
+        "control": 4,
+        "comfort": 3,
+        "feel": 3,
+        "durability": 4
+      },
+      "compared": [
+        "yonex-polytour-spin",
+        "yonex-polytour-pro"
+      ],
+      "confidence": "medium",
+      "sources": [
+        "https://www.tennisonly.com.au/Yonex_Poly_Tour_REV_16L_125_String_Set_Orange/descpage-YPTR16L.html",
+        "https://www.tennisnerd.net/gear/strings/yonex-poly-tour-rev-mint/31913",
+        "https://www.tennisonly.com.au/Yonex_Tennis_Racquet_String.html"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": false
+    },
+    {
+      "id": "yonex-polytour-spin",
+      "brand": "Yonex",
+      "name": "PolyTour Spin",
+      "material": "polyester",
+      "shape": {
+        "sides": 5,
+        "label": "Pentagonal"
+      },
+      "gaugesMm": [
+        1.25
+      ],
+      "colours": [
+        {
+          "id": "cobalt",
+          "name": "Cobalt",
+          "hex": "#2d8fd6"
+        },
+        {
+          "id": "black",
+          "name": "Black",
+          "hex": "#28282a"
+        }
+      ],
+      "finish": "satin",
+      "summary": "A five-sided polyester that adds bite for big hitters who want low-powered precision. It is firmer and more spin-oriented than PolyTour Pro, and the two are paired in hybrids. Customer reviews praise its spin and control, and one its tension holding.",
+      "bestFor": [
+        "spin",
+        "control"
+      ],
+      "ratings": {
+        "power": 2,
+        "spin": 5,
+        "control": 4,
+        "comfort": 2,
+        "feel": 3,
+        "durability": 3
+      },
+      "compared": [
+        "yonex-polytour-pro",
+        "yonex-polytour-rev"
+      ],
+      "confidence": "low",
+      "sources": [
+        "https://www.tennisonly.com.au/Yonex_Poly_Tour_Spin_125_16L_String_Reel_Blue_-_200m/descpage-YPTS125R.html",
+        "https://www.tennisnerd.net/gear/strings/string-reviews/yonex-poly-tour-pro-review/32064",
+        "https://www.tennisonly.com.au/Yonex_Tennis_Racquet_String.html"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": false
+    },
+    {
+      "id": "yonex-rexis-speed",
+      "brand": "Yonex",
+      "name": "Rexis Speed",
+      "material": "multifilament",
+      "shape": null,
+      "gaugesMm": [
+        1.25,
+        1.3
+      ],
+      "colours": [
+        {
+          "id": "natural",
+          "name": "Natural",
+          "hex": "#e4e2dc"
+        }
+      ],
+      "finish": "satin",
+      "summary": "A firmer multifilament for comfort seekers who want a bit more control and durability than a soft multi. It holds tension better than Rexis Comfort, is easy on the arm, and works in a full bed or as a hybrid string.",
+      "bestFor": [
+        "comfort",
+        "control",
+        "durability"
+      ],
+      "ratings": {
+        "power": 3,
+        "spin": 2,
+        "control": 3,
+        "comfort": 4,
+        "feel": 4,
+        "durability": 3
+      },
+      "compared": [
+        "wilson-nxt",
+        "babolat-xcel"
+      ],
+      "confidence": "low",
+      "sources": [
+        "https://www.tennisonly.com.au/Yonex_Rexis_Speed_16_130_String_Set/descpage-YREXS.html",
+        "https://www.tennisnerd.net/gear/strings/yonex-rexis-string-review-speed-and-comfort/24827"
+      ],
+      "researchedOn": "2026-11-24",
+      "verified": false
+    }
+  ]
+}

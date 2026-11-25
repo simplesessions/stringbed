@@ -1,6 +1,8 @@
 import type { PartName } from './core/build';
 import type { HexColor, RacquetSpec } from './core/spec';
+import type { SpoolPartName } from './core/spool';
 import type { Placeholder } from './placeholders';
+import type { StringSpec } from './string-spec';
 
 export interface Catalog {
   version: 1;
@@ -59,4 +61,11 @@ export interface Catalog {
   }>;
   /** Researched racquets with no model yet (placeholders/), without their research notes. */
   placeholders: Array<Omit<Placeholder, 'status' | 'notes' | 'verified'>>;
+}
+
+/** assets/strings.json: the strings plus the one spool model the gallery tints to each string's colour. */
+export interface StringCatalog {
+  version: 1;
+  spool: { path: string; bytes: number; triangles: number; parts: SpoolPartName[] };
+  strings: StringSpec[];
 }

@@ -1,0 +1,59 @@
+{
+  "id": "tecnifibre-razor-code",
+  "brand": "Tecnifibre",
+  "name": "Razor Code",
+  "material": "polyester",
+  "shape": {
+    "sides": 0,
+    "label": "Round"
+  },
+  "gaugesMm": [
+    1.2,
+    1.25,
+    1.3
+  ],
+  "colours": [
+    {
+      "id": "carbon",
+      "name": "Carbon",
+      "hex": "#b6b4b7"
+    },
+    {
+      "id": "blue",
+      "name": "Blue",
+      "hex": "#46a9cb"
+    },
+    {
+      "id": "white",
+      "name": "White",
+      "hex": "#ececec"
+    }
+  ],
+  "finish": "satin",
+  "summary": "A round, firm co-poly that plays livelier than most control polys, with good bite for its smooth profile. It suits fast, committed swingers who want precision and decent string life, but offers little easy depth and is not gentle on a sore arm.",
+  "bestFor": [
+    "control",
+    "durability"
+  ],
+  "ratings": {
+    "power": 3,
+    "spin": 4,
+    "control": 4,
+    "comfort": 3,
+    "feel": 3,
+    "durability": 4
+  },
+  "compared": [
+    "luxilon-alu-power",
+    "solinco-hyper-g"
+  ],
+  "confidence": "low",
+  "sources": [
+    "https://tennisoverload.com/tecnifibre-razor-code-tennis-string-review/",
+    "https://www.tennisnerd.net/gear/strings/string-reviews/tecnifibre-razor-code-hybrid-review/36865",
+    "https://www.tennis-warehouse.com/TecnifibreString.html",
+    "https://www.tennisnuts.com/tecnifibre-razor-code-tennis-string-set-white-1505344.html"
+  ],
+  "researchedOn": "2026-11-24",
+  "verified": false
+}

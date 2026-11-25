@@ -1,0 +1,58 @@
+{
+  "id": "wilson-revolve",
+  "brand": "Wilson",
+  "name": "Revolve",
+  "material": "polyester",
+  "shape": {
+    "sides": 0,
+    "label": "Round"
+  },
+  "gaugesMm": [
+    1.25,
+    1.3,
+    1.35
+  ],
+  "colours": [
+    {
+      "id": "black",
+      "name": "Black",
+      "hex": "#2a2a2a"
+    },
+    {
+      "id": "orange",
+      "name": "Orange",
+      "hex": "#ef6a22"
+    },
+    {
+      "id": "white",
+      "name": "White",
+      "hex": "#ecebe6"
+    }
+  ],
+  "finish": "satin",
+  "summary": "A comfortably firm co-polyester for players with long, fast strokes, offering precise control on big swings and spin from a low-friction additive. It is gentler than a traditional polyester and durable, so it suits intermediate and advanced players seeking control.",
+  "bestFor": [
+    "control",
+    "spin",
+    "durability"
+  ],
+  "ratings": {
+    "power": 2,
+    "spin": 4,
+    "control": 4,
+    "comfort": 3,
+    "feel": 3,
+    "durability": 4
+  },
+  "compared": [
+    "luxilon-alu-power",
+    "solinco-hyper-g-round"
+  ],
+  "confidence": "low",
+  "sources": [
+    "https://www.tennisonly.com.au/Wilson_Revolve_16_130_String_Set/descpage-WRV16.html",
+    "https://tennisoverload.com/wilson-revolve-tennis-string-review/"
+  ],
+  "researchedOn": "2026-11-24",
+  "verified": false
+}

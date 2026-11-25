@@ -46,11 +46,19 @@ can be swapped or restyled later.
 
 ## Capabilities and Constraints
 
-- v1 lineup: 14 racquets from Babolat, Prince, Solinco, Wilson and Yonex (the roster
-  planned 15; see `docs/racquet-roster.md`). One visual style, "Realistic".
-- Planned, not built: customization (grips, strings, dampeners) and other visual styles
-  (toon, pixel, voxel, some not 3D). The gallery must read styles from the catalog and
-  show no style switcher while there is only one.
+- Lineup now: 358 modelled racquets from Babolat, Dunlop, Head, Prince, Solinco, Tecnifibre,
+  Wilson and Yonex (see `docs/racquet-roster.md`), shown in Realistic, Pixel, Line and
+  Halftone looks.
+- Strings: 73 strings from 14 brands (`assets/strings.json`, `docs/string-roster.md`), a Strings
+  room with a page and a 3D spool per string, and strings in the search. Ratings are our own,
+  1-5 against this set; the roster marks which facts are sourced and which are placeholders.
+- Build my racquet: a page at `#/build/<racquet>` where a visitor picks strings, tension, lead
+  tape, overgrip and dampener and sees them on the racquet. Its readout is an estimate:
+  weight, balance and swingweight are arithmetic on numbers published by the maker or a retailer
+  where they exist, and how the setup plays is our estimate from the string ratings, never a measurement.
+  The address is a saved build and is stable from `v=1`. The download stays the stock model.
+- Planned, not built: downloading the restrung racquet, leather grips, butt-cap lead, string
+  weave, build presets, more string brands and further visual styles (toon, voxel).
 - At most two WebGL contexts on the page however many racquets exist; works without WebGL
   to the extent of listing racquets, specs and downloads; usable from 375 px; keyboard
   navigable; respects reduced motion.
@@ -62,8 +70,8 @@ can be swapped or restyled later.
 ## Brand Commitments
 
 - Name: stringbed, lower case.
-- No brand logos, wordmarks or string stencils anywhere, in assets or on the site. Brand
-  and model names appear only as plain text labels.
+- No brand logos, wordmarks or string stencils anywhere, in assets or on the site. Brand,
+  model and string names appear only as plain text labels.
 - The footer carries the README's trademark line verbatim and a link to the repo
   (`https://github.com/simplesessions/stringbed`).
 - The owner chose Impeccable for the gallery's design; its guidance wins over generic
@@ -71,8 +79,8 @@ can be swapped or restyled later.
 
 ## Evidence on Hand
 
-- `assets/catalog.json` and `assets/realistic/*.glb`: the real content (14 models, about
-  4.3–4.7k triangles and 110–135 kB each).
+- `assets/catalog.json`, `assets/strings.json` and `assets/realistic/*.glb`: the real content
+  (racquet files about 33-43 kB each; run `bun run generate` for the current counts).
 - `docs/racquet-roster.md`: what gives each racquet its identity.
 - No screenshots, testimonials, usage numbers or press exist. Do not invent any.
 

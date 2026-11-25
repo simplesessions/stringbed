@@ -1,0 +1,58 @@
+{
+  "id": "babolat-rpm-rough",
+  "brand": "Babolat",
+  "name": "RPM Rough",
+  "material": "polyester",
+  "shape": {
+    "sides": 8,
+    "label": "Octagonal",
+    "rough": true
+  },
+  "gaugesMm": [
+    1.25,
+    1.3,
+    1.35
+  ],
+  "colours": [
+    {
+      "id": "yellow",
+      "name": "Yellow",
+      "hex": "#d9d811"
+    },
+    {
+      "id": "black",
+      "name": "Black",
+      "hex": "#2a2a2d"
+    },
+    {
+      "id": "red",
+      "name": "Red",
+      "hex": "#e0503c"
+    }
+  ],
+  "finish": "satin",
+  "summary": "RPM Blast with a textured surface, for attacking players with long, fast strokes who want grip on the ball. The shop's playtesters found it a touch softer and livelier than the smooth string and quite durable, though its thin gauge wears sooner than the thicker ones.",
+  "bestFor": [
+    "spin",
+    "durability"
+  ],
+  "ratings": {
+    "power": 2,
+    "spin": 5,
+    "control": 4,
+    "comfort": 3,
+    "feel": 3,
+    "durability": 4
+  },
+  "compared": [
+    "babolat-rpm-blast",
+    "luxilon-alu-power-rough"
+  ],
+  "confidence": "low",
+  "sources": [
+    "https://www.babolat.com/us/rpm-rough-12m/241140.html",
+    "https://www.tennisonly.com.au/Babolat_RPM_Blast_Rough_17_125_String_Set/descpage-BRPMBRS.html"
+  ],
+  "researchedOn": "2026-11-24",
+  "verified": false
+}

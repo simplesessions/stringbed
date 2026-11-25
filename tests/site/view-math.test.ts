@@ -1,6 +1,6 @@
 import { test, expect } from 'bun:test';
-import { Box3, BoxGeometry, Group, Mesh, Vector3 } from 'three';
-import { between, ease, fitDistance, holdTarget, partBoxes, presence } from '../../site/src/view-math';
+import { Box3, BoxGeometry, Group, Mesh, PerspectiveCamera, Vector3 } from 'three';
+import { between, ease, fitDistance, fitModel, holdTarget, nearSide, partBoxes, presence } from '../../site/src/view-math';
 
 /** A racquet-shaped stack of boxes with the public part names. */
 function racquet(): Group {
@@ -92,4 +92,30 @@ test('the floor and wall only ever fade as the camera sinks', () => {
     expect(now.wall).toBeLessThanOrEqual(last.wall);
     last = now;
   }
+});
+
+test('a racquet is fitted by its face alone, whichever way the camera tips', () => {
+  for (const aspect of [0.7, 1.5]) expect(fitModel(all, 28, aspect, 0.12)).toBe(fitDistance(all, 28, aspect));
+  expect(nearSide(all)).toBe(0);
+});
+
+test('a solid model is fitted by its near side, so none of a spool is cropped', () => {
+  // A spool at the stage's scale, seen a little from above, through a narrow view and a wide one.
+  const spool = new Box3(new Vector3(-0.33, 0, -0.33), new Vector3(0.33, 0.42, 0.33));
+  const pitch = 0.12;
+  for (const aspect of [0.8, 1.2, 1.9]) {
+    const camera = new PerspectiveCamera(28, aspect, 0.01, 20);
+    const away = fitModel(spool, 28, aspect, pitch);
+    camera.position.set(0, 0.21 + away * Math.sin(pitch), away * Math.cos(pitch));
+    camera.lookAt(0, 0.21, 0);
+    camera.updateMatrixWorld();
+    let reach = 0;
+    for (let i = 0; i < 64; i++) for (const y of [0, 0.42]) {
+      const at = new Vector3(0.33 * Math.cos((i * Math.PI) / 32), y, 0.33 * Math.sin((i * Math.PI) / 32)).project(camera);
+      reach = Math.max(reach, Math.abs(at.x), Math.abs(at.y));
+    }
+    expect(reach).toBeLessThan(0.97);
+    expect(reach).toBeGreaterThan(0.6); // and it still fills the view
+  }
+  expect(nearSide(spool)).toBeCloseTo(0.33);
 });

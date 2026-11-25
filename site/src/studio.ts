@@ -2,6 +2,7 @@
 import {
   BackSide,
   BufferAttribute,
+  type BufferGeometry,
   Color,
   DirectionalLight,
   DoubleSide,
@@ -17,10 +18,12 @@ import {
   SRGBColorSpace,
   Vector3,
   WebGLRenderer,
+  type MeshStandardMaterial,
   type Object3D,
 } from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js';
+import type { HexColor } from '../../src/core/spec';
 import { fetchModelBytes } from './prefetch';
 
 /** Creates a renderer, or returns null when the browser cannot give us WebGL. */
@@ -162,6 +165,34 @@ export function loadModel(url: string): Promise<Object3D> {
     cache.set(url, pending);
   }
   return pending;
+}
+
+/** Materials made by `tinted`, so `untint` can tell them from the shared ones. */
+const tints = new WeakSet<MeshStandardMaterial>();
+
+/**
+ * A clone of `source` with the named meshes in other colours. Each gets its own copy of its material
+ * (clones share theirs with the cached source, so recolouring in place would repaint every one of
+ * them); everything else stays shared. Give the copies back with `untint`.
+ */
+export function tinted(source: Object3D, colours: Record<string, HexColor>): Object3D {
+  const model = source.clone();
+  for (const [name, hex] of Object.entries(colours)) {
+    const part = model.getObjectByName(name) as Mesh<BufferGeometry, MeshStandardMaterial> | undefined;
+    if (!part?.isMesh) continue;
+    part.material = part.material.clone();
+    part.material.color.set(hex);
+    tints.add(part.material);
+  }
+  return model;
+}
+
+/** Dispose the materials `tinted` made for this model. Any other model is left alone. */
+export function untint(model: Object3D): void {
+  model.traverse((o) => {
+    const material = (o as Mesh).material as MeshStandardMaterial | undefined;
+    if (material && tints.has(material)) material.dispose();
+  });
 }
 
 export const prefersReducedMotion = (): boolean => matchMedia('(prefers-reduced-motion: reduce)').matches;

@@ -1,0 +1,54 @@
+{
+  "id": "head-sonic-pro",
+  "brand": "Head",
+  "name": "Sonic Pro",
+  "material": "polyester",
+  "shape": {
+    "sides": 0,
+    "label": "Round"
+  },
+  "gaugesMm": [
+    1.25,
+    1.3
+  ],
+  "colours": [
+    {
+      "id": "black",
+      "name": "Black",
+      "hex": "#303032"
+    },
+    {
+      "id": "white",
+      "name": "White",
+      "hex": "#ecebe6"
+    }
+  ],
+  "finish": "satin",
+  "summary": "A soft-feeling, budget poly with good control. One reviewer preferred it at 55 lb or less for power and found it fairly comfortable; the other found it short of power and spin, ended with a sore arm, and cut it out after five hours with plenty of tension gone. Customers on Tennis Only differ on how arm-friendly it is.",
+  "bestFor": [
+    "value",
+    "control"
+  ],
+  "ratings": {
+    "power": 3,
+    "spin": 3,
+    "control": 4,
+    "comfort": 3,
+    "feel": 3,
+    "durability": 3
+  },
+  "compared": [
+    "head-lynx-tour",
+    "babolat-rpm-blast"
+  ],
+  "confidence": "medium",
+  "sources": [
+    "https://tenniscreative.com/head-sonic-pro-review/",
+    "https://www.tennisthis.com/tennis-string-reviews/head-sonic-pro-16-review/",
+    "https://www.tennis-warehouse.com/HeadString.html",
+    "https://www.tennisonly.com.au/Head_Sonic_Pro_17_125_String_Set/descpage-SONIC17.html",
+    "https://www.tennisonly.com.au/Head_Tennis_Racquet_String.html"
+  ],
+  "researchedOn": "2026-11-24",
+  "verified": false
+}

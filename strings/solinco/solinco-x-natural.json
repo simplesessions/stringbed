@@ -1,0 +1,44 @@
+{
+  "id": "solinco-x-natural",
+  "brand": "Solinco",
+  "name": "X-Natural",
+  "material": "multifilament",
+  "shape": null,
+  "gaugesMm": [
+    1.2
+  ],
+  "colours": [
+    {
+      "id": "black",
+      "name": "Black",
+      "hex": "#1c1b1c"
+    }
+  ],
+  "finish": "satin",
+  "summary": "A multifilament infused with polyurethane and given a textured surface, very arm friendly and generous with power. It suits players who rarely break strings: customer reviews like its feel and control, but three of the five complain that it does not last.",
+  "bestFor": [
+    "comfort",
+    "power",
+    "feel"
+  ],
+  "ratings": {
+    "power": 4,
+    "spin": 2,
+    "control": 2,
+    "comfort": 5,
+    "feel": 4,
+    "durability": 2
+  },
+  "compared": [
+    "solinco-vanquish",
+    "solinco-hyper-g-round"
+  ],
+  "confidence": "low",
+  "sources": [
+    "https://solinco.com/products/x-natural/",
+    "https://www.tennisonly.com.au/Solinco_X-Natural_17_120_String_Set/descpage-SXN17.html",
+    "https://www.tennisonly.com.au/Solinco_Tennis_Racquet_String.html"
+  ],
+  "researchedOn": "2026-11-24",
+  "verified": true
+}

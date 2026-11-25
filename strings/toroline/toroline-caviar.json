@@ -1,0 +1,48 @@
+{
+  "id": "toroline-caviar",
+  "brand": "Toroline",
+  "name": "Caviar",
+  "material": "polyester",
+  "shape": {
+    "sides": 6,
+    "label": "Hexagonal"
+  },
+  "gaugesMm": [
+    1.2,
+    1.24
+  ],
+  "colours": [
+    {
+      "id": "neon-yellow",
+      "name": "Neon Yellow",
+      "hex": "#d6e41c"
+    }
+  ],
+  "finish": "satin",
+  "summary": "A firm six-sided co-poly with a low-friction surface, among the most control-oriented in the Toroline range. It gives predictable trajectory for big swings and still grips the ball; the price is a stiffer feel than Wasabi or O-Toro.",
+  "bestFor": [
+    "control",
+    "spin",
+    "durability"
+  ],
+  "ratings": {
+    "power": 2,
+    "spin": 4,
+    "control": 5,
+    "comfort": 2,
+    "feel": 3,
+    "durability": 4
+  },
+  "compared": [
+    "toroline-wasabi",
+    "toroline-o-toro"
+  ],
+  "confidence": "low",
+  "sources": [
+    "https://www.tennis-warehouse.com/TOROLINE_Caviar_16L_124_String/descpageACTORO-T6CAVA.html",
+    "https://www.tennis-warehouse.com/Toroline_Tennis_Strings/catpage-TOROLSTR.html",
+    "https://www.tennisnerd.net/gear/strings/toroline-strings-spin-control-and-color/63502"
+  ],
+  "verified": false,
+  "researchedOn": "2026-11-24"
+}

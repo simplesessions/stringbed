@@ -1,0 +1,49 @@
+{
+  "id": "solinco-confidential-soft",
+  "brand": "Solinco",
+  "name": "Confidential Soft",
+  "material": "polyester",
+  "shape": null,
+  "gaugesMm": [
+    1.15,
+    1.2,
+    1.25,
+    1.3
+  ],
+  "colours": [
+    {
+      "id": "electric-pink",
+      "name": "Electric Pink",
+      "hex": "#f55090"
+    }
+  ],
+  "finish": "satin",
+  "summary": "Confidential with a plusher, slightly livelier response that still feels defined. One reviewer rates its comfort and direction and says it keeps tension longer than Hyper-G Soft, at the cost of some easy spin and depth and a little crispness as it ages.",
+  "bestFor": [
+    "control",
+    "comfort",
+    "feel"
+  ],
+  "ratings": {
+    "power": 2,
+    "spin": 4,
+    "control": 4,
+    "comfort": 3,
+    "feel": 4,
+    "durability": 4
+  },
+  "compared": [
+    "solinco-confidential",
+    "solinco-hyper-g-soft"
+  ],
+  "confidence": "low",
+  "sources": [
+    "https://solinco.com/products/confidential-soft/",
+    "https://www.tennisonly.com.au/Solinco_Confidential_Soft_16_130_String/descpage-CONSF30.html",
+    "https://www.tennisnerd.net/gear/strings/best-solinco-strings-ranked-from-spin-to-comfort/70390",
+    "https://www.tennisonly.com.au/Solinco_Tennis_Racquet_String.html",
+    "https://www.tennisnerd.net/gear/strings/solinco-tennis-strings-a-brand-built-for-spin-and-tension-stability/69240"
+  ],
+  "researchedOn": "2026-11-24",
+  "verified": true
+}

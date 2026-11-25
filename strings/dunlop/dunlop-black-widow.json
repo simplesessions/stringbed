@@ -1,0 +1,49 @@
+{
+  "id": "dunlop-black-widow",
+  "brand": "Dunlop",
+  "name": "Black Widow",
+  "material": "polyester",
+  "shape": {
+    "sides": 7,
+    "label": "Heptagonal"
+  },
+  "gaugesMm": [
+    1.21,
+    1.26,
+    1.31
+  ],
+  "colours": [
+    {
+      "id": "black",
+      "name": "Black",
+      "hex": "#222a2c"
+    }
+  ],
+  "finish": "satin",
+  "summary": "A seven-sided poly with heavy spin and a softer feel than most polys, so it suits aggressive baseliners who want bite. It notches itself quickly and tension drops faster than usual, so expect to restring often. One reviewer found it powerful for a poly, the other badly short of power.",
+  "bestFor": [
+    "spin",
+    "comfort"
+  ],
+  "ratings": {
+    "power": 3,
+    "spin": 5,
+    "control": 3,
+    "comfort": 3,
+    "feel": 3,
+    "durability": 2
+  },
+  "compared": [
+    "solinco-tour-bite",
+    "prince-vortex"
+  ],
+  "confidence": "medium",
+  "sources": [
+    "https://us.dunlopsports.com/dunlop/tennis/strings/polyester/black-widow-string/BWS.html",
+    "https://www.perfect-tennis.com/dunlop-black-widow-review/",
+    "https://www.tennisthis.com/tennis-string-reviews/dunlop-black-widow-17-review/",
+    "https://www.tennis-warehouse.com/DunlopString.html"
+  ],
+  "researchedOn": "2026-11-24",
+  "verified": false
+}

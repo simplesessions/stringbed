@@ -2,7 +2,7 @@
 // context). Realistic is a plain render. Pixel renders to a small target and blows it up
 // with nearest-neighbour cells. Line renders view normals plus coverage and a flat, unlit
 // colour pass, then fills each part with its own colour in two tones and inks the edges.
-// Materials are never changed: line swaps mesh materials for one draw and puts them back,
+// Materials are never changed: line and pixel swap mesh materials for one draw and put them back,
 // because clones share materials with the cached source.
 import {
   DepthTexture,
@@ -47,6 +47,9 @@ export interface LookStage {
   /** 0: racquet only, 1: the alcove is fully there. */
   reveal: number;
 }
+
+/** The balance marker is a note about the racquet, not part of it: no look draws it as one, and no light or ray meets it. */
+export const MARKER_LAYER = 1;
 
 /** What the alcove is drawn with, as sRGB 0..1 (written to the canvas as is). */
 const srgb = (hex: number) => new Vector3(((hex >> 16) & 255) / 255, ((hex >> 8) & 255) / 255, (hex & 255) / 255);
@@ -121,8 +124,8 @@ const pixelFragment = /* glsl */ `
       sum /= 49.0;
       if (sum.a < 0.01) { gl_FragColor = over(vec4(0.0), ground()); return; }
       c = vec4(sum.rgb / sum.a, 1.0);
-      // One flat string colour: keep the hue, drop the lighting, so the bed has no blotches.
-      c.rgb = c.rgb / max(max(c.r, max(c.g, c.b)), 1e-4) * 0.85;
+      // Drawn unlit, so the bed is one flat colour with no blotches; a little off white, so it is not glaring.
+      c.rgb *= 0.85;
       vec2 idx = floor(gl_FragCoord.xy / cell);
       bool line = mod(idx.x, 3.0) < 0.5 || mod(idx.y, 3.0) < 0.5;
       alpha = line ? 0.72 : 0.2;
@@ -354,10 +357,11 @@ export class LookPainter {
   }));
   private readonly bodyMaterial = new ShaderMaterial({ uniforms: { marker: { value: 1 } }, vertexShader: gbufferVertex, fragmentShader: gbufferFragment, side: DoubleSide, blending: NoBlending, toneMapped: false });
   private readonly stringMaterial = new ShaderMaterial({ uniforms: { marker: { value: 0.5 } }, vertexShader: gbufferVertex, fragmentShader: gbufferFragment, side: DoubleSide, blending: NoBlending, toneMapped: false });
+  private readonly depthOnly = new MeshBasicMaterial({ colorWrite: false, side: DoubleSide });
   private readonly swapped: Array<[Mesh, Material | Material[]]> = [];
   private fillTarget: WebGLRenderTarget | null = null;
   private stringTarget: WebGLRenderTarget | null = null;
-  /** Unlit copies of the models' materials (same colour, same vertex colours), made once each. */
+  /** Unlit copies of the models' materials (same colour, same vertex colours), made once each and gone with their originals. */
   private readonly flat = new WeakMap<Material, MeshBasicMaterial>();
 
   private flatFor(material: Material): MeshBasicMaterial {
@@ -365,9 +369,31 @@ export class LookPainter {
     if (!f) {
       const m = material as MeshStandardMaterial;
       f = new MeshBasicMaterial({ color: m.color, vertexColors: m.vertexColors, side: DoubleSide, toneMapped: false });
+      const copy = f;
+      const forget = () => {
+        material.removeEventListener('dispose', forget);
+        copy.dispose();
+        this.flat.delete(material);
+      };
+      material.addEventListener('dispose', forget);
       this.flat.set(material, f);
     }
     return f;
+  }
+
+  /** Draw these meshes flat until `unswap`. */
+  private flatten(meshes: Iterable<Object3D>) {
+    for (const o of meshes) {
+      const m = o as Mesh;
+      if (Array.isArray(m.material)) continue;
+      this.swapped.push([m, m.material]);
+      m.material = this.flatFor(m.material);
+    }
+  }
+
+  private unswap() {
+    for (const [m, material] of this.swapped) m.material = material;
+    this.swapped.length = 0;
   }
 
   constructor(private readonly renderer: WebGLRenderer) {}
@@ -395,9 +421,28 @@ export class LookPainter {
     const w = this.size.x;
     const h = this.size.y;
     if (w === 0 || h === 0) return;
+    const marked = camera.layers.isEnabled(MARKER_LAYER);
+    camera.layers.disable(MARKER_LAYER);
     if (this.look === 'pixel') this.renderPixel(scene, camera, w, h, Math.max(1, Math.round(sizes.cell * scale)));
     else if (this.look === 'halftone') this.renderHalftone(scene, camera, w, h, Math.max(3, sizes.dot * scale));
     else this.renderLine(scene, camera, w, h, scale, sizes);
+    if (marked) this.renderMarker(scene, camera);
+  }
+
+  /** The balance marker as it is, over the finished drawing, hidden only where the racquet stands before it. */
+  private renderMarker(scene: Scene, camera: Camera) {
+    const r = this.renderer;
+    const shadows = r.shadowMap.autoUpdate;
+    const clear = r.autoClear;
+    r.shadowMap.autoUpdate = r.autoClear = false;
+    scene.overrideMaterial = this.depthOnly;
+    r.render(scene, camera);
+    scene.overrideMaterial = null;
+    camera.layers.set(MARKER_LAYER);
+    r.render(scene, camera);
+    camera.layers.enable(0);
+    r.shadowMap.autoUpdate = shadows;
+    r.autoClear = clear;
   }
 
   private renderHalftone(scene: Scene, camera: Camera, w: number, h: number, pitch: number) {
@@ -435,11 +480,14 @@ export class LookPainter {
     r.render(scene, camera);
     for (const o of strings) o.visible = true;
     for (const o of others) o.visible = false;
-    this.stringTarget ??= new WebGLRenderTarget(lw * 4, lh * 4, { type: HalfFloatType, depthBuffer: true });
+    this.flatten(strings);
+    // Multisampled: a string is thinner than a texel, and one that is missed shows as a hole in a dark bed or a blotch in a hybrid.
+    this.stringTarget ??= new WebGLRenderTarget(lw * 4, lh * 4, { type: HalfFloatType, depthBuffer: true, samples: 4 });
     const st = this.stringTarget;
     if (st.width !== lw * 4 || st.height !== lh * 4) st.setSize(lw * 4, lh * 4);
     r.setRenderTarget(st);
     r.render(scene, camera);
+    this.unswap();
     for (const o of others) o.visible = true;
     r.setRenderTarget(null);
     const u = this.pixel.material.uniforms;
@@ -469,24 +517,19 @@ export class LookPainter {
     r.setRenderTarget(t);
     r.render(scene, camera);
     r.setRenderTarget(null);
-    for (const [m, material] of this.swapped) m.material = material;
-    this.swapped.length = 0;
+    this.unswap();
 
     // Flat colour pass: the same scene unlit, in linear colour (converted in the line shader).
     this.fillTarget ??= new WebGLRenderTarget(w, h, { type: HalfFloatType, minFilter: NearestFilter, magFilter: NearestFilter, depthBuffer: true });
     const f = this.fillTarget;
     if (f.width !== w || f.height !== h) f.setSize(w, h);
-    scene.traverse((o: Object3D) => {
-      const m = o as Mesh;
-      if (!m.isMesh || Array.isArray(m.material)) return;
-      this.swapped.push([m, m.material]);
-      m.material = this.flatFor(m.material);
-    });
+    const meshes: Object3D[] = [];
+    scene.traverse((o: Object3D) => void ((o as Mesh).isMesh && meshes.push(o)));
+    this.flatten(meshes);
     r.setRenderTarget(f);
     r.render(scene, camera);
     r.setRenderTarget(null);
-    for (const [m, material] of this.swapped) m.material = material;
-    this.swapped.length = 0;
+    this.unswap();
 
     const cam = camera as Camera & { near: number; far: number; isPerspectiveCamera?: boolean };
     const u = this.line.material.uniforms;

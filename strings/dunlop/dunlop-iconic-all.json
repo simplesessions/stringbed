@@ -1,0 +1,45 @@
+{
+  "id": "dunlop-iconic-all",
+  "brand": "Dunlop",
+  "name": "Iconic All",
+  "material": "multifilament",
+  "shape": null,
+  "gaugesMm": [
+    1.25,
+    1.3
+  ],
+  "colours": [
+    {
+      "id": "natural",
+      "name": "Natural",
+      "hex": "#d8c99a"
+    }
+  ],
+  "finish": "satin",
+  "summary": "A nylon multifilament bonded with polyurethane, described by the maker as an all-round balance of easy power, control and comfort, with good shock absorption and touch on volleys and drop shots. No independent review was read, so treat these ratings as tentative.",
+  "bestFor": [
+    "comfort",
+    "power"
+  ],
+  "ratings": {
+    "power": 4,
+    "spin": 2,
+    "control": 3,
+    "comfort": 4,
+    "feel": 3,
+    "durability": 2
+  },
+  "compared": [
+    "head-velocity-mlt",
+    "wilson-nxt"
+  ],
+  "confidence": "low",
+  "sources": [
+    "https://us.dunlopsports.com/dunlop/tennis/strings/multifilament/iconic-tennis-all-string/IAS.html",
+    "https://us.dunlopsports.com/dunlop/tennis/strings/reels/iconic-all-string-reel/10303353.html",
+    "https://www.tennisnuts.com/dunlop-iconic-all-tennis-string-set-natural-1540597.html",
+    "https://www.tennis-warehouse.com/DunlopString.html"
+  ],
+  "researchedOn": "2026-11-24",
+  "verified": false
+}

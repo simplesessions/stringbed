@@ -17,7 +17,8 @@
       26,
       23
     ],
-    "unstrungWeightG": 300
+    "unstrungWeightG": 300,
+    "balanceMm": 320
   },
   "geometry": {
     "head": {

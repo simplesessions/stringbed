@@ -1,0 +1,52 @@
+{
+  "id": "luxilon-element",
+  "brand": "Luxilon",
+  "name": "Element",
+  "material": "polyester",
+  "shape": {
+    "sides": 0,
+    "label": "Round"
+  },
+  "gaugesMm": [
+    1.25,
+    1.3
+  ],
+  "colours": [
+    {
+      "id": "bronze",
+      "name": "Bronze",
+      "hex": "#a5634a"
+    },
+    {
+      "id": "forest-green",
+      "name": "Forest Green",
+      "hex": "#2f5a3c"
+    }
+  ],
+  "finish": "satin",
+  "summary": "One of the softer Luxilon polyesters, aimed at long, fast swings that want control without much shock. Customer reviews praise its comfort in full beds and hybrids; it is less break-resistant than the firmest polys and, as one customer notes, loses tension after a few weeks.",
+  "bestFor": [
+    "comfort",
+    "feel",
+    "control"
+  ],
+  "ratings": {
+    "power": 3,
+    "spin": 4,
+    "control": 4,
+    "comfort": 3,
+    "feel": 4,
+    "durability": 3
+  },
+  "compared": [
+    "luxilon-alu-power",
+    "luxilon-4g"
+  ],
+  "confidence": "low",
+  "sources": [
+    "https://www.tennis-warehouse.com/Luxilon_Element_16_130_String/descpageACWILSON-LE130.html",
+    "https://tennisoverload.com/luxilon-element-tennis-string-review/"
+  ],
+  "researchedOn": "2026-11-24",
+  "verified": false
+}

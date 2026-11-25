@@ -1,0 +1,44 @@
+{
+  "id": "gamma-live-wire",
+  "brand": "Gamma",
+  "name": "Live Wire",
+  "material": "multifilament",
+  "shape": null,
+  "gaugesMm": [
+    1.27,
+    1.32
+  ],
+  "colours": [
+    {
+      "id": "natural",
+      "name": "Natural",
+      "hex": "#d8c99a"
+    }
+  ],
+  "finish": "satin",
+  "summary": "A soft multifilament with a pearl coating, sold as arm-friendly, with easy power and a cushioned feel. A shop adds precision and very low shock. The one review read is promotional in tone, so treat these ratings as tentative.",
+  "bestFor": [
+    "comfort",
+    "power",
+    "value"
+  ],
+  "ratings": {
+    "power": 4,
+    "spin": 2,
+    "control": 2,
+    "comfort": 5,
+    "feel": 4,
+    "durability": 2
+  },
+  "compared": [
+    "babolat-xcel",
+    "gamma-tnt2"
+  ],
+  "confidence": "low",
+  "sources": [
+    "https://tennisscan.com/gamma-live-wire-16-review/",
+    "https://www.tennis-warehouse.com/GammaString.html"
+  ],
+  "researchedOn": "2026-11-24",
+  "verified": false
+}

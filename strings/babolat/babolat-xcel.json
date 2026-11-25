@@ -1,0 +1,61 @@
+{
+  "id": "babolat-xcel",
+  "brand": "Babolat",
+  "name": "Xcel",
+  "material": "multifilament",
+  "shape": {
+    "sides": 0,
+    "label": "Round"
+  },
+  "gaugesMm": [
+    1.25,
+    1.3
+  ],
+  "colours": [
+    {
+      "id": "natural",
+      "name": "Natural",
+      "hex": "#d8c99a"
+    },
+    {
+      "id": "blue",
+      "name": "Blue",
+      "hex": "#2f6fd0"
+    },
+    {
+      "id": "black",
+      "name": "Black",
+      "hex": "#2a2a2c"
+    },
+    {
+      "id": "red",
+      "name": "Red",
+      "hex": "#cc3333"
+    }
+  ],
+  "finish": "satin",
+  "summary": "A soft multifilament of twisted polyamide fibres, made for comfort, feel and easy power, with more control than many soft multis. It suits club-level players who like the ball to sink in. Spin is only adequate, and the fibres can fray in open patterns or under heavy topspin.",
+  "bestFor": [
+    "comfort",
+    "power",
+    "feel"
+  ],
+  "ratings": {
+    "power": 4,
+    "spin": 2,
+    "control": 3,
+    "comfort": 5,
+    "feel": 4,
+    "durability": 2
+  },
+  "compared": [
+    "babolat-touch-vs",
+    "wilson-nxt"
+  ],
+  "confidence": "low",
+  "sources": [
+    "https://tennisoverload.com/babolat-xcel-tennis-string-review/"
+  ],
+  "researchedOn": "2026-11-24",
+  "verified": false
+}

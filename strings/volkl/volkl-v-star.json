@@ -1,0 +1,67 @@
+{
+  "id": "volkl-v-star",
+  "brand": "Volkl",
+  "name": "V-Star",
+  "material": "polyester",
+  "shape": {
+    "sides": 0,
+    "label": "Round"
+  },
+  "gaugesMm": [
+    1.1,
+    1.15,
+    1.2,
+    1.25,
+    1.3
+  ],
+  "colours": [
+    {
+      "id": "silver",
+      "name": "Silver",
+      "hex": "#a8abae"
+    },
+    {
+      "id": "orange",
+      "name": "Orange",
+      "hex": "#ee6a24"
+    },
+    {
+      "id": "white",
+      "name": "White",
+      "hex": "#e8e8e4"
+    },
+    {
+      "id": "yellow",
+      "name": "Yellow",
+      "hex": "#d8dc2a"
+    }
+  ],
+  "finish": "satin",
+  "summary": "A smooth round co-poly that the shop ranks among the most comfortable, with more power than most control strings and good spin. It is offered as a first poly; customer reviews mostly like its price and comfort, and one notes that it notches quickly.",
+  "bestFor": [
+    "comfort",
+    "feel",
+    "value"
+  ],
+  "ratings": {
+    "power": 3,
+    "spin": 3,
+    "control": 3,
+    "comfort": 4,
+    "feel": 4,
+    "durability": 3
+  },
+  "compared": [
+    "volkl-cyclone",
+    "yonex-polytour-pro"
+  ],
+  "confidence": "low",
+  "sources": [
+    "https://www.tennis-warehouse.com/VolklString.html",
+    "https://www.tennis-warehouse.com/Volkl_V-Star_16_130_String/descpageACVOLKL-VS16S.html",
+    "https://www.tennisnuts.com/volkl-v-star-tennis-string-set-silver-1537994.html",
+    "https://www.tennisnuts.com/volkl-v-star-tennis-string-set-1224667.html"
+  ],
+  "verified": false,
+  "researchedOn": "2026-11-24"
+}

@@ -1,0 +1,51 @@
+{
+  "id": "tecnifibre-triax",
+  "brand": "Tecnifibre",
+  "name": "Triax",
+  "material": "multifilament",
+  "shape": {
+    "sides": 0,
+    "label": "Round"
+  },
+  "gaugesMm": [
+    1.28,
+    1.33,
+    1.38
+  ],
+  "colours": [
+    {
+      "id": "natural",
+      "name": "Natural",
+      "hex": "#d8c99a"
+    }
+  ],
+  "finish": "satin",
+  "summary": "A multifilament blended with co-polyester fibres, so it feels close to natural gut but firmer and more controlled. Comfortable and durable for the type, it suits flat to moderate hitters and arm-sensitive poly players. Heavy topspin players will want more bite.",
+  "bestFor": [
+    "comfort",
+    "control",
+    "durability"
+  ],
+  "ratings": {
+    "power": 4,
+    "spin": 3,
+    "control": 4,
+    "comfort": 4,
+    "feel": 4,
+    "durability": 3
+  },
+  "compared": [
+    "babolat-xcel",
+    "luxilon-element"
+  ],
+  "confidence": "medium",
+  "sources": [
+    "https://tennisoverload.com/tecnifibre-triax-tennis-string-review/",
+    "https://www.perfect-tennis.com/tecnifibre-triax-string-review/",
+    "https://www.tennis-warehouse.com/TecnifibreString.html",
+    "https://www.tennisnuts.com/tecnifibre-triax-tennis-string-set-natural-1497454.html",
+    "https://www.tennisnerd.net/gear/strings/string-reviews/tecnifibre-triax-string-review-part-1/22732"
+  ],
+  "researchedOn": "2026-11-24",
+  "verified": false
+}

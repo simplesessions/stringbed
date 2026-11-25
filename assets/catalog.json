@@ -344,7 +344,10 @@
           23,
           26,
           23
-        ]
+        ],
+        "unstrungWeightG": 260,
+        "balanceMm": 340,
+        "stiffnessRa": 68
       },
       "swatch": "#3a3f45",
       "parts": [
@@ -933,7 +936,10 @@
           23,
           26,
           23
-        ]
+        ],
+        "unstrungWeightG": 275,
+        "balanceMm": 320,
+        "stiffnessRa": 64
       },
       "swatch": "#6c7e79",
       "parts": [
@@ -1123,7 +1129,10 @@
           23,
           26,
           23
-        ]
+        ],
+        "unstrungWeightG": 270,
+        "balanceMm": 325,
+        "stiffnessRa": 70
       },
       "swatch": "#4fa9a2",
       "parts": [
@@ -1368,7 +1377,10 @@
           23,
           24,
           23
-        ]
+        ],
+        "unstrungWeightG": 290,
+        "balanceMm": 320,
+        "stiffnessRa": 70
       },
       "swatch": "#eeefef",
       "parts": [
@@ -2864,7 +2876,9 @@
           26,
           23
         ],
-        "unstrungWeightG": 300
+        "unstrungWeightG": 300,
+        "balanceMm": 320,
+        "stiffnessRa": 72
       },
       "swatch": "#4aa3d6",
       "parts": [
@@ -4112,7 +4126,9 @@
           23,
           21
         ],
-        "unstrungWeightG": 305
+        "unstrungWeightG": 305,
+        "balanceMm": 320,
+        "stiffnessRa": 68
       },
       "swatch": "#8a929b",
       "parts": [
@@ -4966,7 +4982,8 @@
           21.5,
           21.5
         ],
-        "unstrungWeightG": 305
+        "unstrungWeightG": 305,
+        "balanceMm": 315
       },
       "swatch": "#c01a28",
       "parts": [
@@ -5571,7 +5588,8 @@
           26,
           23
         ],
-        "unstrungWeightG": 300
+        "unstrungWeightG": 300,
+        "balanceMm": 320
       },
       "swatch": "#4b4d88",
       "parts": [
@@ -6026,7 +6044,8 @@
           27,
           26
         ],
-        "unstrungWeightG": 255
+        "unstrungWeightG": 255,
+        "balanceMm": 355
       },
       "swatch": "#dfe3e1",
       "parts": [
@@ -6180,7 +6199,8 @@
           26,
           23
         ],
-        "unstrungWeightG": 300
+        "unstrungWeightG": 300,
+        "balanceMm": 320
       },
       "swatch": "#147a8a",
       "parts": [

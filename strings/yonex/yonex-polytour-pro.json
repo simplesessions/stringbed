@@ -1,0 +1,70 @@
+{
+  "id": "yonex-polytour-pro",
+  "brand": "Yonex",
+  "name": "PolyTour Pro",
+  "material": "polyester",
+  "shape": {
+    "sides": 0,
+    "label": "Round"
+  },
+  "gaugesMm": [
+    1.2,
+    1.25,
+    1.3
+  ],
+  "colours": [
+    {
+      "id": "yellow",
+      "name": "Yellow",
+      "hex": "#e6e032"
+    },
+    {
+      "id": "graphite",
+      "name": "Graphite",
+      "hex": "#6d6e70"
+    },
+    {
+      "id": "blue",
+      "name": "Blue",
+      "hex": "#2f8fd8"
+    },
+    {
+      "id": "purple",
+      "name": "Purple",
+      "hex": "#4a3f8c"
+    },
+    {
+      "id": "black",
+      "name": "Black",
+      "hex": "#2a2a2c"
+    }
+  ],
+  "finish": "satin",
+  "summary": "One of the softer co-polyesters, widely used by pros and a friendly first poly. It gives controlled, comfortable hitting when fresh but little bite. One reviewer suggests pairing it with a firmer string and finds the tension drop fairly steep; two customers praise its staying power.",
+  "bestFor": [
+    "comfort",
+    "control",
+    "feel"
+  ],
+  "ratings": {
+    "power": 2,
+    "spin": 3,
+    "control": 4,
+    "comfort": 3,
+    "feel": 4,
+    "durability": 3
+  },
+  "compared": [
+    "yonex-polytour-spin",
+    "yonex-polytour-rev",
+    "luxilon-element"
+  ],
+  "confidence": "medium",
+  "sources": [
+    "https://www.tennisonly.com.au/Yonex_Poly_Tour_Pro_16L_125_String_Set_Yellow/descpage-YPTP125.html",
+    "https://www.tennisnerd.net/gear/strings/string-reviews/yonex-poly-tour-pro-review/32064",
+    "https://www.tennisonly.com.au/Yonex_Tennis_Racquet_String.html"
+  ],
+  "researchedOn": "2026-11-24",
+  "verified": false
+}

@@ -1,0 +1,52 @@
+{
+  "id": "solinco-revolution",
+  "brand": "Solinco",
+  "name": "Revolution",
+  "material": "polyester",
+  "shape": {
+    "sides": 6,
+    "label": "Six-sided"
+  },
+  "gaugesMm": [
+    1.15,
+    1.2,
+    1.25,
+    1.3
+  ],
+  "colours": [
+    {
+      "id": "blue",
+      "name": "Blue",
+      "hex": "#2f4d8c"
+    }
+  ],
+  "finish": "satin",
+  "summary": "A value-priced six-sided co-polyester for experienced hitters who like an edged string that flies predictably and lasts. It feels a little more responsive than Solinco's firmest strings and works well as a hybrid component.",
+  "bestFor": [
+    "spin",
+    "control",
+    "value"
+  ],
+  "ratings": {
+    "power": 3,
+    "spin": 4,
+    "control": 5,
+    "comfort": 3,
+    "feel": 3,
+    "durability": 4
+  },
+  "compared": [
+    "solinco-tour-bite",
+    "solinco-outlast",
+    "solinco-hyper-g"
+  ],
+  "confidence": "low",
+  "sources": [
+    "https://solinco.com/products/revolution/",
+    "https://www.wdstrings.com/solinco-revolution-16-1-30mm-set/",
+    "https://tennisoverload.com/solinco-revolution-tennis-string-review/",
+    "https://www.tennisnerd.net/gear/strings/best-solinco-strings-ranked-from-spin-to-comfort/70390"
+  ],
+  "researchedOn": "2026-11-24",
+  "verified": true
+}

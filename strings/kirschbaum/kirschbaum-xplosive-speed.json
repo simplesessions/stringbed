@@ -1,0 +1,51 @@
+{
+  "id": "kirschbaum-xplosive-speed",
+  "brand": "Kirschbaum",
+  "name": "Xplosive Speed",
+  "material": "polyester",
+  "shape": {
+    "sides": 5,
+    "label": "Pentagonal"
+  },
+  "gaugesMm": [
+    1.13,
+    1.2,
+    1.23,
+    1.28,
+    1.33
+  ],
+  "colours": [
+    {
+      "id": "black",
+      "name": "Black",
+      "hex": "#27272b"
+    }
+  ],
+  "finish": "satin",
+  "summary": "A soft, five-sided co-poly with a lively response and extra spin help, suited to baseliners and stiff frames. Two reviewers like its power and lift; one says it loses playability sooner than the other Kirschbaums, the other broke it in about an hour but found it held tension.",
+  "bestFor": [
+    "spin",
+    "comfort",
+    "power"
+  ],
+  "ratings": {
+    "power": 4,
+    "spin": 4,
+    "control": 3,
+    "comfort": 4,
+    "feel": 4,
+    "durability": 2
+  },
+  "compared": [
+    "kirschbaum-pro-line-ii",
+    "kirschbaum-max-power"
+  ],
+  "confidence": "medium",
+  "sources": [
+    "https://www.tennis-warehouse.com/KirschbaumString.html",
+    "https://www.perfect-tennis.com/kirschbaum-xplosive-speed-review/",
+    "https://www.tennisnerd.net/gear/strings/string-reviews/kirschbaum-strings/36839"
+  ],
+  "verified": false,
+  "researchedOn": "2026-11-24"
+}

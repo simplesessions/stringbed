@@ -1,0 +1,52 @@
+{
+  "id": "dunlop-explosive-bite",
+  "brand": "Dunlop",
+  "name": "Explosive Bite",
+  "material": "polyester",
+  "shape": {
+    "sides": 3,
+    "label": "Three-sided"
+  },
+  "gaugesMm": [
+    1.27,
+    1.32
+  ],
+  "colours": [
+    {
+      "id": "black",
+      "name": "Black",
+      "hex": "#1d2124"
+    },
+    {
+      "id": "yellow",
+      "name": "Yellow",
+      "hex": "#bba831"
+    }
+  ],
+  "finish": "satin",
+  "summary": "A three-sided polyester aimed at heavy topspin and sharper shot angles. The maker says it is softer and more comfortable than traditional firm polys and suits aggressive baseliners. No independent review was read, so treat these ratings as tentative.",
+  "bestFor": [
+    "spin"
+  ],
+  "ratings": {
+    "power": 2,
+    "spin": 5,
+    "control": 4,
+    "comfort": 3,
+    "feel": 3,
+    "durability": 3
+  },
+  "compared": [
+    "dunlop-explosive-spin",
+    "solinco-tour-bite"
+  ],
+  "confidence": "low",
+  "sources": [
+    "https://us.dunlopsports.com/dunlop/tennis/strings/polyester/explosive-bite-tennis-string/10303293.html",
+    "https://us.dunlopsports.com/dunlop/tennis/strings/polyester/explosive-bite-string/10303294.html",
+    "https://us.dunlopsports.com/dunlop/tennis/strings/polyester",
+    "https://www.tennis-warehouse.com/DunlopString.html"
+  ],
+  "researchedOn": "2026-11-24",
+  "verified": false
+}

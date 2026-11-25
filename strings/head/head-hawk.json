@@ -1,0 +1,58 @@
+{
+  "id": "head-hawk",
+  "brand": "Head",
+  "name": "Hawk",
+  "material": "polyester",
+  "shape": {
+    "sides": 0,
+    "label": "Round"
+  },
+  "gaugesMm": [
+    1.2,
+    1.25,
+    1.3
+  ],
+  "colours": [
+    {
+      "id": "white",
+      "name": "White",
+      "hex": "#cfd0ce"
+    },
+    {
+      "id": "grey",
+      "name": "Grey",
+      "hex": "#848587"
+    },
+    {
+      "id": "black",
+      "name": "Black",
+      "hex": "#2a2a2c"
+    }
+  ],
+  "finish": "gloss",
+  "summary": "A round, smooth poly that lets flat, aggressive hitters take full swings with surprising punch for the type, and good snapback for topspin. The one review read calls it comfortable for a poly and a good base for hybrids; its only complaint is less grip on backhand slices.",
+  "bestFor": [
+    "control",
+    "comfort"
+  ],
+  "ratings": {
+    "power": 3,
+    "spin": 4,
+    "control": 4,
+    "comfort": 3,
+    "feel": 3,
+    "durability": 3
+  },
+  "compared": [
+    "head-lynx-tour",
+    "luxilon-alu-power"
+  ],
+  "confidence": "low",
+  "sources": [
+    "https://www.perfect-tennis.com/head-hawk-string-review/",
+    "https://www.tennis-warehouse.com/HeadString.html",
+    "https://www.tennisonly.com.au/Head_Tennis_Racquet_String.html"
+  ],
+  "researchedOn": "2026-11-24",
+  "verified": false
+}

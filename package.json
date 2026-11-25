@@ -11,14 +11,17 @@
       "default": "./lib/index.js"
     },
     "./catalog.json": "./assets/catalog.json",
+    "./strings.json": "./assets/strings.json",
     "./assets/*": "./assets/*",
     "./racquets/*": "./racquets/*",
+    "./strings/*": "./strings/*",
     "./package.json": "./package.json"
   },
   "files": [
     "lib",
     "assets",
     "racquets",
+    "strings",
     "placeholders",
     "CHANGELOG.md",
     "LICENSE"

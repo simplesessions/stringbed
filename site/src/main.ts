@@ -18,9 +18,6 @@ import {
   membersOf,
   brandRoute,
   brandSlug,
-  parseBrandRoute,
-  parseShelfRoute,
-  type Aisle,
   type Shelf,
   isJunior,
   generationsOf,
@@ -30,13 +27,11 @@ import {
   stepName,
   groupPlaceholders,
   placeholderLabel,
-  parseRoute,
   pickStyle,
   routeFor,
   inColourway,
   familyOf,
   wallName,
-  searchRacquets,
   AGES,
   type Age,
   type BrandGroup,
@@ -45,15 +40,24 @@ import {
   type Racquet,
   type StockGroup,
   type Style,
+  brandNamed,
 } from './catalog-view';
-import { el, icon, silhouette } from './dom';
+import { buildRoute, isStringsRoute, parseHash, stringRoute } from './routes';
+import { chooseString, emptyBuild, formatBuild } from './build-state';
+import type { BuildHost, BuildPage } from './build-page';
+import { searchAll, type Hit } from './string-view';
+import type { StringSpec } from '../../src/string-spec';
+import { aisleView } from './aisle-view';
+import { el, faultPage, icon, silhouette } from './dom';
 import { fetchModelBytes } from './prefetch';
-import { loadProfiles } from './profiles';
+import { loadProfiles, type Profile } from './profiles';
 import { profileView, type Rival } from './profile-view';
 import { lineupView } from './lineup-view';
 import { play, setSound, soundOn, storedSound } from './sound';
 import { LOOKS, LOOK_LABEL, storedLook, storeLook, type Look } from './look';
 import { PARTS, PART_LABEL } from './parts';
+import { loadStrings } from './strings-data';
+import { stringRooms, type Exhibit, type Host, type Sign, type Stage } from './strings-page';
 import type { Thumbnails, ThumbState, Viewer } from './gl';
 
 const BASE = import.meta.env.BASE_URL;
@@ -104,8 +108,22 @@ interface App {
 let app: App | null = null;
 /** False until the 3D code has settled; routing waits so a detail view never misreports WebGL. */
 let ready = false;
-/** The standing notice (no WebGL, no 3D code); route-specific notes are added in front of it. */
-let baseNotice = '';
+/** Why there is no 3D, when there is none. */
+let no3D: 'code' | 'webgl' | null = null;
+
+/** What still works when there is no 3D, by the kind of page. */
+const INSTEAD = {
+  racquets: 'racquets show as colour silhouettes. Specs and downloads still work.',
+  strings: 'strings show as colour discs. Facts and ratings still work.',
+  build: 'the racquet shows as a colour silhouette.',
+};
+
+/** The notice: what there is to say about this address, then the standing word on missing 3D. */
+function note(text: string, page: keyof typeof INSTEAD = 'racquets') {
+  const instead = INSTEAD[page];
+  const standing = no3D === 'code' ? `The 3D viewer did not load, so ${instead}` : no3D === 'webgl' ? `This browser is not giving the page WebGL, so ${instead}` : '';
+  notice.textContent = [text, standing].filter(Boolean).join(' ');
+}
 
 // ---------- catalog ----------
 
@@ -146,9 +164,14 @@ async function boot() {
     lastOpened: null,
   };
   const a = app;
-  a.brand = parseBrandRoute(location.hash, brandsOf(a));
+  const first = parseHash(location.hash);
+  a.brand = first.kind === 'brand' ? brandNamed(first.slug, brandsOf(a)) : null;
   buildHeader(a);
-  renderFloor(a);
+  if (isStringsRoute(first)) rooms(a).route(first);
+  else {
+    enterRoom('racquets');
+    renderFloor(a);
+  }
   a.gl = await loadGL();
   a.thumbs = a.gl?.Thumbnails.create() ?? null;
   a.thumbs?.setLook(a.look);
@@ -156,30 +179,15 @@ async function boot() {
   pendingBays = [];
   glSettled = true;
   ready = true;
-  baseNotice = !a.gl
-    ? 'The 3D viewer did not load, so racquets show as colour silhouettes. Specs and downloads still work.'
-    : !a.thumbs
-      ? 'This browser is not giving the page WebGL, so racquets show as colour silhouettes. Specs and downloads still work.'
-      : '';
-  notice.textContent = baseNotice;
+  no3D = !a.gl ? 'code' : !a.thumbs ? 'webgl' : null;
   route();
 }
 
 function catalogFailed(err: unknown) {
-  // A thrown TypeError is fetch's network failure; anything else is a message we wrote.
-  const offline = !(err instanceof Error) || err instanceof TypeError;
-  const reason = offline ? 'The request did not reach the server. Check your connection, then try again.' : `${(err as Error).message} Try again in a moment.`;
-  const retry = el('button', { class: 'button', type: 'button' }, icon('retry'), 'Try again');
-  retry.addEventListener('click', () => void boot());
+  const fault = faultPage('The racquet list did not load.', err, () => void boot());
   wall.setAttribute('aria-busy', 'false');
-  wall.replaceChildren(
-    el('div', { class: 'fault-page', role: 'alert' },
-      el('h1', { class: 'fault-title' }, 'The racquet list did not load.'),
-      el('p', {}, reason),
-      retry,
-    ),
-  );
-  retry.focus();
+  wall.replaceChildren(fault);
+  fault.querySelector('button')!.focus();
 }
 
 // ---------- header ----------
@@ -209,6 +217,44 @@ function brandsOf(a: Pick<App, 'catalog'>): string[] {
 
 const sizes = el('div', { class: 'signs sizes', role: 'group', 'aria-label': 'Racquet size' });
 
+// The two rooms, racquets and strings, share the header: the brand signs and the filter beside them
+// are the room's own.
+const roomSwitch = $<HTMLElement>('rooms');
+let room: 'racquets' | 'strings' | null = null;
+let stringsIn: ReturnType<typeof stringRooms> | null = null;
+const rooms = (a: App) => (stringsIn ??= stringRooms(stringsHost(a)));
+
+function enterRoom(to: 'racquets' | 'strings') {
+  if (room === to) return;
+  room = to;
+  document.body.dataset.room = to;
+  for (const l of roomSwitch.querySelectorAll<HTMLElement>('[data-room]')) l.setAttribute('aria-current', String(l.dataset.room === to));
+  sizes.hidden = to !== 'racquets';
+  if (stringsIn && to === 'racquets') stringsIn.materials.hidden = true;
+}
+
+/** Wherever the visitor was, the header is the racquets' now. */
+function inRacquets(a: App) {
+  if (room === 'racquets') return;
+  enterRoom('racquets');
+  renderSigns(a);
+}
+
+const strip = document.querySelector<HTMLElement>('.strip')!;
+const stripEnd = $<HTMLElement>('strip-end');
+const wide = matchMedia('(min-width: 1240px)');
+const phone = matchMedia('(max-width: 720px)');
+
+/** Stand the header's parts in the order they are drawn at this width, so Tab follows the page. */
+function arrangeHeader() {
+  const filter = [sizes, ...(stringsIn ? [stringsIn.materials] : [])];
+  const held = strip.contains(document.activeElement) ? (document.activeElement as HTMLElement) : null;
+  if (wide.matches) strip.append(roomSwitch, ...filter, stripEnd, signs);
+  else if (phone.matches) strip.append(stripEnd, roomSwitch, signs, ...filter);
+  else strip.append(roomSwitch, stripEnd, signs, ...filter);
+  held?.focus({ preventScroll: true }); // moving an element drops its focus
+}
+
 function buildHeader(a: App) {
   renderSigns(a);
   // Size is a second, smaller axis: three choices, adult by default and remembered.
@@ -232,12 +278,19 @@ function buildHeader(a: App) {
     });
     return b;
   }));
-  if (!sizes.isConnected) signs.after(sizes);
+  if (!sizes.isConnected) {
+    signs.after(sizes, rooms(a).materials);
+    arrangeHeader();
+    for (const q of [wide, phone]) q.addEventListener('change', arrangeHeader);
+  }
+  // The strings are fetched when their room is opened; reaching for its door is sign enough.
+  const strings = roomSwitch.querySelector<HTMLElement>('[data-room="strings"]')!;
+  for (const reach of ['pointerenter', 'focus']) strings.addEventListener(reach, () => void loadStrings().catch(() => {}), { once: true });
+  roomSwitch.hidden = false;
   if (!headerLook) {
     headerLook = lookControl(a);
-    searchOpen.before(headerLook);
+    stripEnd.prepend(headerLook);
   }
-  signs.hidden = false;
   searchOpen.hidden = false;
 }
 
@@ -254,6 +307,7 @@ function lookControl(a: App): HTMLElement {
     b.addEventListener('click', () => setLook(a, look));
     group.append(b);
   }
+  for (const old of lookControls) if (!old.isConnected && old !== headerLook) lookControls.delete(old); // or the pages they stood on are kept whole
   lookControls.add(group);
   return group;
 }
@@ -286,15 +340,10 @@ function renderSigns(a: App) {
   const counts = brandCounts(a);
   const brands = [...counts.keys()].sort((x, y) => x.localeCompare(y, 'en'));
   const n = [...counts.values()].reduce((x, y) => x + y, 0);
-  // Brand signs are the floor's directory: each opens that brand's aisle.
-  const links: HTMLAnchorElement[] = [];
-  const add = (brand: string | null, label: string, count: number) =>
-    links.push(el('a', { class: 'sign', href: brand ? brandRoute(brand) : routeFor(null), 'data-brand': brand ?? '' },
-      el('span', {}, label), el('span', { class: 'sign-count' }, String(count))));
-  add(null, 'All brands', n);
-  for (const b of brands) add(b, b, counts.get(b)!);
-  signs.replaceChildren(...links);
-  markSigns(a);
+  putSigns([
+    { brand: null, href: routeFor(null), count: n },
+    ...brands.map((b) => ({ brand: b, href: brandRoute(b), count: counts.get(b)! })),
+  ], a.brand);
 
   // Styles come from the catalog. With a single style there is nothing to switch.
   if (a.catalog.styles.length > 1) {
@@ -305,6 +354,15 @@ function renderSigns(a: App) {
   }
 }
 
+/** Brand signs are the floor's directory: each opens that brand's aisle. */
+function putSigns(list: Sign[], current: string | null) {
+  signs.replaceChildren(...list.map((x) =>
+    el('a', { class: 'sign', href: x.href, 'data-brand': x.brand ?? '' },
+      el('span', {}, x.brand ?? 'All brands'), el('span', { class: 'sign-count' }, String(x.count)))));
+  signs.hidden = list.length === 0;
+  markSigns(current);
+}
+
 /** Recompute what the wall shows after the size or the older-generations choice changed. */
 function regroup(a: App) {
   a.groups = wallGroups(a.catalog, a.age, false);
@@ -312,9 +370,9 @@ function regroup(a: App) {
 }
 
 /** Show which floor the visitor is on: a brand, or all brands on the home floor. */
-function markSigns(a: App) {
+function markSigns(current: string | null) {
   for (const l of signs.querySelectorAll<HTMLElement>('a.sign[data-brand]')) {
-    const on = !wall.hidden && (l.dataset.brand || null) === a.brand;
+    const on = !wall.hidden && (l.dataset.brand || null) === current;
     if (on) l.setAttribute('aria-current', 'page');
     else l.removeAttribute('aria-current');
   }
@@ -363,14 +421,6 @@ function variantChip(p: Placeholder, label: string, showSize: boolean): HTMLLIEl
 // per line, each standing the line's sizes side by side at one true scale, with generation tabs
 // that swap what stands on the shelf.
 
-const FAN_ANGLES: Record<number, number[]> = {
-  1: [0],
-  2: [-9, 9],
-  3: [-16, 0, 16],
-  4: [-18, -6, 6, 18],
-  5: [-21, -10.5, 0, 10.5, 21],
-};
-
 /** Render whichever floor the route names: a brand's, or the home aisles. */
 function renderFloor(a: App) {
   const views = a.brand ? brandFloor(a, a.brand) : homeFloor(a);
@@ -378,76 +428,31 @@ function renderFloor(a: App) {
   wall.dataset.floor = a.brand ? 'brand' : 'home';
   a.thumbs?.prune();
   wall.setAttribute('aria-busy', 'false');
-  markSigns(a);
+  markSigns(a.brand);
 }
 
 function homeFloor(a: App): HTMLElement[] {
   const aisles = aislesOf(a.catalog, a.age);
   return [
     el('h1', { class: 'sr-only' }, 'Brands'),
-    el('ul', { class: 'aisles', role: 'list' }, ...aisles.map((x, k) => aisle(a, x, k))),
+    el('ul', { class: 'aisles', role: 'list' }, ...aisles.map((x) => aisleView({
+      brand: x.brand,
+      href: brandRoute(x.brand),
+      label: `${x.brand}: ${x.racquets} racquets in ${x.lines} lines`,
+      kind: 'racquets',
+      blades: x.fan.map((r) => ({
+        swatch: r.swatch,
+        flat: silhouette(r.specs.headSizeSqIn),
+        mount: (blade, canvas, link) => thumbnail(a, r, blade, canvas, link),
+      })),
+      tally: [
+        el('span', {}, `${x.lines} ${x.lines === 1 ? 'line' : 'lines'}`),
+        el('span', {}, `${x.racquets} ${x.racquets === 1 ? 'racquet' : 'racquets'}`),
+        x.colourways ? el('span', {}, `${x.colourways} ${x.colourways === 1 ? 'colourway' : 'colourways'}`) : null,
+        x.noModel ? el('span', { class: 'aisle-soft' }, `+${x.noModel} no model yet`) : null,
+      ],
+    }))),
   ];
-}
-
-function aisle(a: App, x: Aisle, k: number): HTMLLIElement {
-  const slug = brandSlug(x.brand);
-  const angles = FAN_ANGLES[x.fan.length] ?? FAN_ANGLES[5];
-  const link = el('a', { class: 'aisle-link', href: brandRoute(x.brand), 'aria-label': `${x.brand}: ${x.racquets} racquets in ${x.lines} lines` });
-  const fan = el('span', { class: 'fan', 'aria-hidden': 'true' });
-  x.fan.forEach((r, i) => {
-    const canvas = el('canvas', { class: 'bay-canvas' });
-    const off = i - (x.fan.length - 1) / 2;
-    // Centre blade on top; the fans open aisle by aisle, centre out.
-    const r1 = (n: number) => (Math.random() - 0.5) * 2 * n;
-    // A degree or two of play, and its own beat, travel and sway: the hand never reads as copies.
-    const blade = el('span', { class: 'blade', style: `--a: ${(angles[i] + r1(1.6)).toFixed(2)}deg; --i: ${off}; --k: ${Math.round(Math.abs(off) * 2)}; z-index: ${10 - Math.round(Math.abs(off) * 2)}; --swatch: ${r.swatch}; --delay: ${Math.round(Math.abs(off) * 90 + Math.random() * 140)}ms; --dur: ${Math.round(820 + Math.random() * 420)}ms; --sway: ${(6 + Math.random() * 4).toFixed(1)}s; --sway-delay: ${(-Math.random() * 6).toFixed(1)}s` },
-      el('span', { class: 'bay-stage' }, silhouette(r.specs.headSizeSqIn), canvas));
-    fan.append(blade);
-    thumbnail(a, r, blade, canvas, link);
-  });
-  const centre = x.fan[Math.floor(x.fan.length / 2)];
-  link.append(
-    // The morph is named on the word itself, not the full-width sign: the boxes on both ends
-    // must hug the lettering, or the snapshot scales by box width and overshoots the title.
-    el('span', { class: 'aisle-sign' }, el('span', { class: 'aisle-name', style: `view-transition-name: brand-${slug}; view-transition-class: brand` }, x.brand)),
-    fan,
-    el('span', { class: 'aisle-rail', style: `--swatch: ${centre?.swatch ?? 'var(--rail)'}` }),
-    el('span', { class: 'aisle-tag' },
-      el('span', {}, `${x.lines} ${x.lines === 1 ? 'line' : 'lines'}`),
-      el('span', {}, `${x.racquets} ${x.racquets === 1 ? 'racquet' : 'racquets'}`),
-      x.colourways ? el('span', {}, `${x.colourways} ${x.colourways === 1 ? 'colourway' : 'colourways'}`) : null,
-      x.noModel ? el('span', { class: 'aisle-soft' }, `+${x.noModel} no model yet`) : null,
-    ),
-  );
-  const item = el('li', { class: 'aisle', 'data-brand': x.brand }, link);
-  openWhenSeen(item);
-  return item;
-}
-
-/** Open an aisle's fan when it scrolls into view and its racquets have arrived (or a moment has passed). */
-function openWhenSeen(item: HTMLElement) {
-  const open = () => {
-    item.dataset.open = '';
-    setTimeout(() => (item.dataset.settled = ''), 1500);
-  };
-  if (matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
-    item.dataset.open = '';
-    item.dataset.settled = '';
-    return;
-  }
-  const io = new IntersectionObserver((records) => {
-    if (!records.some((r) => r.isIntersecting)) return;
-    io.disconnect();
-    const started = performance.now();
-    const check = () => {
-      const blades = [...item.querySelectorAll<HTMLElement>('.blade')];
-      const loaded = blades.every((b) => b.dataset.state === 'ready' || b.dataset.state === 'flat' || b.dataset.state === 'failed');
-      if (loaded || performance.now() - started > 1400) open();
-      else setTimeout(check, 80);
-    };
-    check();
-  }, { threshold: 0.25 });
-  io.observe(item);
 }
 
 function brandFloor(a: App, brand: string): HTMLElement[] {
@@ -455,7 +460,7 @@ function brandFloor(a: App, brand: string): HTMLElement[] {
   const x = aislesOf(a.catalog, a.age).find((y) => y.brand === brand);
   const head = el('header', { class: 'floor-head' },
     el('a', { class: 'back', href: routeFor(null) }, icon('back'), 'All brands'),
-    el('h1', { class: 'floor-sign' }, el('span', { class: 'floor-name', style: `view-transition-name: brand-${brandSlug(brand)}; view-transition-class: brand` }, brand)),
+    el('h1', { class: 'floor-sign', style: `--letters: ${brand.length}` }, el('span', { class: 'floor-name', style: `view-transition-name: brand-${brandSlug(brand)}; view-transition-class: brand` }, brand)),
     x
       ? el('p', { class: 'floor-tally' }, `${x.lines} ${x.lines === 1 ? 'line' : 'lines'} · ${x.racquets} racquets${x.colourways ? ` · ${x.colourways} colourways` : ''}`)
       : null,
@@ -597,17 +602,19 @@ function shelf(a: App, sh: Shelf): HTMLElement {
   return section;
 }
 
-/** Hook a canvas up to the shared thumbnail renderer once the 3D code has settled. */
+/** Draw a racquet in a bay. */
 function thumbnail(a: App, r: Racquet, item: HTMLElement, canvas: HTMLCanvasElement, hover: HTMLElement) {
   const asset = assetFor(r, a.style.id);
-  if (!asset) {
-    item.dataset.state = 'flat';
-    return;
-  }
-  void fetchModelBytes(assetUrl(BASE, asset.path)).catch(() => {}); // download now; parse when the renderer is up
+  if (asset) preview(a, { url: assetUrl(BASE, asset.path), name: r.model, item, canvas, hover });
+  else item.dataset.state = 'flat';
+}
+
+/** Hook a canvas up to the shared thumbnail renderer once the 3D code has settled. */
+function preview(a: App, p: Parameters<Host['preview']>[0]) {
+  void fetchModelBytes(p.url).catch(() => {}); // download now; parse when the renderer is up
   const attach = (thumbs: Thumbnails | null) => {
-    if (thumbs) watch(thumbs, item, hover, canvas, r, asset.path);
-    else item.dataset.state = 'flat';
+    if (thumbs) watch(thumbs, p);
+    else p.item.dataset.state = 'flat';
   };
   if (glSettled) attach(a.thumbs);
   else pendingBays.push(attach);
@@ -640,24 +647,34 @@ function transition(change: () => void): void {
   });
 }
 
-function watch(thumbs: Thumbnails, item: HTMLElement, link: HTMLElement, canvas: HTMLCanvasElement, r: Racquet, path: string) {
+function watch(thumbs: Thumbnails, { url, name, item, canvas, hover, options }: Parameters<Host['preview']>[0]) {
   const retry = el('button', { class: 'bay-retry', type: 'button' }, icon('retry'), 'Retry');
-  retry.setAttribute('aria-label', `Retry loading the ${r.model} preview`);
+  retry.setAttribute('aria-label', `Retry loading the ${name} preview`);
   const fault = el('span', { class: 'bay-fault', hidden: true }, el('span', {}, 'Preview failed'), retry);
   item.append(fault);
   retry.addEventListener('click', () => {
-    link.focus(); // the button hides as loading starts; keep focus on the entry
+    hover.focus(); // the button hides as loading starts; keep focus on the entry
     thumbs.retry(canvas);
   });
-  thumbs.add(canvas, assetUrl(BASE, path), link, (state: ThumbState) => {
+  thumbs.add(canvas, url, hover, (state: ThumbState) => {
     item.dataset.state = state;
     fault.hidden = state !== 'failed';
-  });
+  }, options);
 }
 
 // ---------- routing ----------
 
 let routed = false;
+
+/** Make a change on screen. The first render is the page loading, not a move between places: no transition. */
+function present(change: () => void, inPlace = false) {
+  if (routed && !inPlace) transition(change);
+  else {
+    settle();
+    change();
+  }
+  routed = ready; // until the 3D code settles the page is still loading
+}
 
 /** Bring a line's shelf into view (under the sticky line index) and focus its heading. */
 function scrollToShelf(lineage: string | null, smooth: boolean) {
@@ -675,23 +692,36 @@ function scrollToShelf(lineage: string | null, smooth: boolean) {
 function route() {
   if (!app || !ready) return;
   const a = app;
-  const brand = parseBrandRoute(location.hash, brandsOf(a));
-  const { racquetId, colourway } = brand ? { racquetId: null, colourway: null } : parseRoute(location.hash);
+  const parsed = parseHash(location.hash);
+  if (isStringsRoute(parsed)) {
+    rooms(a).route(parsed);
+    routed = true;
+    return;
+  }
+  const brand = parsed.kind === 'brand' ? brandNamed(parsed.slug, brandsOf(a)) : null;
+  // An unknown brand slug has always read as a racquet called "b" (the notice names it).
+  const { racquetId, colourway } =
+    parsed.kind === 'racquet' ? { racquetId: parsed.id, colourway: parsed.colourway }
+    : parsed.kind === 'build' ? { racquetId: parsed.id, colourway: parsed.colourway }
+    : parsed.kind === 'brand' && !brand && !parsed.lineage ? { racquetId: 'b', colourway: parsed.slug }
+    : { racquetId: null, colourway: null };
   const r = racquetId ? a.catalog.racquets.find((x) => x.id === racquetId) : undefined;
   const p = racquetId && !r ? a.stockOrder.find((x) => x.id === racquetId) : undefined;
-  const missing = racquetId && !r && !p ? `There is no racquet with the id “${racquetId}”. Here are the brands.` : '';
-  notice.textContent = [missing, baseNotice].filter(Boolean).join(' ');
-  const shelfId = brand ? parseShelfRoute(location.hash) : null;
+  if (parsed.kind === 'build' && r) return showBuild(a, r, parsed);
+  const missing = racquetId && !r && !p ? `There is no racquet with the id “${racquetId}”. Here are the brands.`
+    : parsed.kind === 'build' && p ? `The ${p.model} has no 3D model yet, so there is nothing to build on.` : '';
+  note(missing);
+  const shelfId = parsed.kind === 'brand' && brand ? parsed.lineage : null;
   const sameFloor = !r && !p && !wall.hidden && a.brand === brand && wall.dataset.floor === (brand ? 'brand' : 'home');
   if (sameFloor) {
     // Only the shelf changed (the line index): scroll to it, no page transition.
-    markSigns(a);
+    markSigns(a.brand);
     scrollToShelf(shelfId, true);
     routed = true;
     return;
   }
   const change = () => {
-    if (r || p) detail.dataset.brand = (r ?? p)!.brand;
+    inRacquets(a);
     if (r) showDetail(a, r, colourway);
     else if (p) showPlaceholder(a, p);
     else {
@@ -705,26 +735,121 @@ function route() {
       else if (floorChanged && !a.lastOpened) window.scrollTo(0, 0);
       document.title = brand ? `${brand} · ${baseTitle.split(':')[0]}` : baseTitle;
     }
-    markSigns(a);
+    markSigns(a.brand);
   };
-  // The first render is the page loading, not a move between places: no transition.
   // Moving within a line changes the page in place, so there is nothing to transition between.
-  if (routed && !(r && page?.lineage === r.lineage)) transition(change);
-  else {
-    settle();
-    change();
-  }
-  routed = true;
+  present(change, !!r && page?.lineage === r.lineage);
+}
+
+/** What the string rooms borrow: the stage, the header, and the moves between places. */
+function stringsHost(a: App): Host {
+  return {
+    base: BASE,
+    wall,
+    ready: () => ready,
+    present,
+    enter(list, current) {
+      enterRoom('strings');
+      putSigns(list, current);
+      a.lastOpened = null; // a racquet left for the strings is not waiting on its floor
+    },
+    note: (text) => note(text, 'strings'),
+    announce: (text) => (announce.textContent = text),
+    showWall(title) {
+      clearDetail(a);
+      wall.hidden = false;
+      document.body.dataset.view = 'wall';
+      document.title = `${title} · ${baseTitle.split(':')[0]}`;
+    },
+    showDetail: openDetail,
+    preview: (p) => preview(a, p),
+    prune: () => a.thumbs?.prune(),
+    stage: (first, flat) => stage(a, first, { flat, parts: false, without: 'The 3D preview needs WebGL. Facts and ratings still work.' }),
+    stepper: (prev, next) => stepper(prev, next, 'string'),
+    tryOn: (s, colour) => openSearch((id) => buildRoute(id, null, formatBuild({ ...emptyBuild(), mains: chooseString(s, colour) }))),
+  };
+}
+
+// The build page is its own chunk: fetched when the way in is reached for, or opened.
+let builds: BuildPage | null = null;
+let buildCode: Promise<typeof import('./build-page')> | null = null;
+const loadBuildCode = () =>
+  (buildCode ??= import('./build-page').catch((err) => {
+    buildCode = null; // forgotten, so the next try fetches it again
+    throw err;
+  }));
+
+function showBuild(a: App, r: Racquet, to: { colourway: string | null; query: string }) {
+  if (builds) return builds.route(r, to);
+  const at = location.hash;
+  loadBuildCode().then(
+    (m) => {
+      builds ??= m.buildPage(buildHost(a));
+      if (location.hash === at) route();
+    },
+    (err) => {
+      if (location.hash !== at) return;
+      note('');
+      present(() => {
+        inRacquets(a);
+        openDetail('Build', () => [faultPage('The build page did not load.', err, route)]);
+        markSigns(a.brand);
+      });
+    },
+  );
+}
+
+/** What the build page borrows. */
+function buildHost(a: App): BuildHost {
+  return {
+    gl: () => a.gl,
+    modelUrl: (r) => exhibitOf(a, r).url,
+    present,
+    showDetail(base, title, nodes) {
+      inRacquets(a);
+      openDetail(title, nodes);
+      a.lastOpened = familyOf(a.catalog, base).id;
+      markSigns(a.brand);
+    },
+    note: (text) => note(text, 'build'),
+    announce: (text) => (announce.textContent = text),
+    stage: (r, ready) => stage(a, exhibitOf(a, r), { flat: silhouette(r.specs.headSizeSqIn), parts: true, without: 'The 3D preview needs WebGL. Everything else here works without it.', ready }),
+    exhibit: (r) => exhibitOf(a, r),
+    family: (r) => familyOf(a.catalog, r),
+    specs: (r) => el('dl', { class: 'rows' }, ...specRows(r, true)),
+    profile: (p, family) => profileOf(a, p, family),
+    file: (r) => getFile(a, r),
+    soundSwitch: (changed, signal) => soundSwitch('Sound', changed, signal),
+    pickRacquet: openSearch,
+  };
+}
+
+function clearDetail(a: App) {
+  if (detail.hidden) return;
+  builds?.leave();
+  a.viewer?.detach();
+  a.viewer?.clear();
+  detail.hidden = true;
+  detail.replaceChildren();
+  page = null;
+}
+
+/** Give the detail view the page, from its top. `nodes` is called once the last page is out of the way. */
+function openDetail(title: string, nodes: () => Node[]) {
+  builds?.leave();
+  page = null;
+  wall.hidden = true;
+  detail.hidden = false;
+  document.body.dataset.view = 'detail';
+  document.title = `${title} · ${baseTitle.split(':')[0]}`;
+  detail.classList.add('arriving');
+  detail.replaceChildren(...nodes());
+  window.scrollTo(0, 0);
+  detail.querySelector<HTMLElement>('h1')?.focus({ preventScroll: true });
 }
 
 function showWall(a: App) {
-  if (!detail.hidden) {
-    a.viewer?.detach();
-    a.viewer?.clear();
-    detail.hidden = true;
-    detail.replaceChildren();
-    page = null;
-  }
+  clearDetail(a);
   wall.hidden = false;
   document.body.dataset.view = 'wall';
   if (a.lastOpened) {
@@ -738,25 +863,17 @@ function showWall(a: App) {
 }
 
 function showDetail(a: App, r: Racquet, colourway: string | null = null) {
-  const inPlace = page?.lineage === r.lineage;
   a.lastOpened = familyOf(a.catalog, r).id; // the wall shows the family, so return to its bay
-  wall.hidden = true;
-  detail.hidden = false;
-  document.body.dataset.view = 'detail';
+  if (page?.lineage !== r.lineage) return openDetail(r.model, () => detailView(a, r, colourway));
+  // Another version, colour or generation of the racquet on show: scroll, focus and view stay put.
   document.title = `${r.model} · ${baseTitle.split(':')[0]}`;
-  detail.classList.toggle('arriving', !inPlace);
-  if (inPlace && page) {
-    // Another version, colour or generation of the racquet on show: scroll, focus and view stay put.
-    updateDetail(a, page, r, colourway);
-    announce.textContent = `Showing the ${r.model}.`;
-    return;
-  }
-  detail.replaceChildren(...detailView(a, r, colourway));
-  window.scrollTo(0, 0);
-  detail.querySelector<HTMLElement>('h1')?.focus({ preventScroll: true });
+  detail.classList.remove('arriving');
+  updateDetail(a, page, r, colourway);
+  announce.textContent = `Showing the ${r.model}.`;
 }
 
 function showPlaceholder(a: App, p: Placeholder) {
+  builds?.leave();
   page = null;
   a.viewer?.detach();
   a.viewer?.clear();
@@ -824,11 +941,6 @@ function sourceLabel(u: string): string {
 
 // ---------- detail ----------
 
-interface Stage {
-  node: HTMLElement;
-  /** Put another racquet of the line on the stage, at the same angle and zoom. False when it cannot. */
-  update(r: Racquet): boolean;
-}
 interface Sheet {
   node: HTMLElement;
   family: Racquet;
@@ -849,13 +961,13 @@ function detailView(a: App, base: Racquet, colourwayId: string | null = null): N
   const { shown: r, colourway } = inColourway(base, colourwayId);
   const onWall = a.order.some((x) => x.lineage === base.lineage);
   const { prev, next } = neighboursOf(onWall ? a.order : wallGroups(a.catalog, 'all', true).flatMap((g) => g.racquets), base);
-  const file = el('div', { class: 'detail-file' }, ...getFile(a, r));
+  const file = el('div', { class: 'detail-file' }, ...fileArea(a, base, r, colourway));
   const nav = el('nav', { class: 'detail-nav', 'aria-label': 'Racquet' },
     el('a', { class: 'back', href: brandRoute(base.brand) }, icon('back'), `All ${base.brand}`),
     stepper({ href: routeFor(prev.id), name: stepName(prev, base.brand) }, { href: routeFor(next.id), name: stepName(next, base.brand) }),
     file,
   );
-  const stageView = stage(a, r);
+  const stageView = racquetStage(a, r);
   const sheetView = sheet(a, family, base, r, colourway);
   const body = el('div', { class: 'detail-body', style: `--swatch: ${r.swatch}` }, stageView.node, sheetView.node);
   page = { lineage: base.lineage, body, file, stage: stageView, sheet: sheetView };
@@ -867,9 +979,9 @@ function updateDetail(a: App, p: Page, base: Racquet, colourwayId: string | null
   const family = familyOf(a.catalog, base);
   const { shown: r, colourway } = inColourway(base, colourwayId);
   p.body.style.setProperty('--swatch', r.swatch);
-  p.file.replaceChildren(...getFile(a, r));
-  if (!p.stage.update(r)) {
-    const fresh = stage(a, r);
+  p.file.replaceChildren(...fileArea(a, base, r, colourway));
+  if (!p.stage.update(exhibitOf(a, r))) {
+    const fresh = racquetStage(a, r);
     p.stage.node.replaceWith(fresh.node);
     p.stage = fresh;
   }
@@ -897,8 +1009,8 @@ function warmVersions(a: App, family: Racquet): void {
 }
 
 /** Previous and next, each with the name of where it goes. */
-function stepper(prev: { href: string; name: string }, next: { href: string; name: string }): HTMLElement {
-  return el('div', { class: 'stepper', role: 'group', 'aria-label': 'Previous and next racquet' },
+function stepper(prev: { href: string; name: string }, next: { href: string; name: string }, of = 'racquet'): HTMLElement {
+  return el('div', { class: 'stepper', role: 'group', 'aria-label': `Previous and next ${of}` },
     el('a', { class: 'step-prev', href: prev.href, 'aria-label': `Previous: ${prev.name}` }, icon('prev'), el('span', { class: 'stepper-name' }, prev.name)),
     el('a', { class: 'step-next', href: next.href, 'aria-label': `Next: ${next.name}` }, el('span', { class: 'stepper-name' }, next.name), icon('next')),
   );
@@ -932,11 +1044,19 @@ function colourwayPicker(r: Racquet): { node: HTMLElement; update(colourway: str
   };
 }
 
-function stage(a: App, r: Racquet): Stage {
+function exhibitOf(a: App, r: Racquet): Exhibit {
   const asset = assetFor(r, a.style.id);
+  return { url: asset ? assetUrl(BASE, asset.path) : null, label: `3D view of the ${r.model}` };
+}
+
+const racquetStage = (a: App, r: Racquet) =>
+  stage(a, exhibitOf(a, r), { flat: silhouette(r.specs.headSizeSqIn), parts: true, without: 'The 3D preview needs WebGL. Specs and the download still work.' });
+
+/** `flat` stands in for the render; `parts` offers the close-ups of a racquet's parts; `without` is the word when there is no WebGL; `ready` is called for each model that arrives. */
+function stage(a: App, first: Exhibit, { flat, parts, without, ready }: { flat: SVGSVGElement; parts: boolean; without: string; ready?: () => void }): Stage {
   const hintId = 'stage-hint';
-  // Only the racquet carries the transition name: it flies in while the alcove behind it fades.
-  const model = el('div', { class: 'stage-model', style: 'view-transition-name: racquet' }, silhouette(r.specs.headSizeSqIn));
+  // Only the model carries the transition name: it flies in while the alcove behind it fades.
+  const model = el('div', { class: 'stage-model', style: 'view-transition-name: racquet' }, flat);
   const niche = el('div', { class: 'niche' }, model);
   const host = el('div', { class: 'stage', 'data-state': 'loading' }, niche);
 
@@ -945,27 +1065,27 @@ function stage(a: App, r: Racquet): Stage {
     a.viewer?.setLook(a.look);
   }
   const viewer = a.viewer;
-  if (!viewer || !asset) {
-    // Coming from another detail view: stop drawing the previous racquet.
+  if (!viewer || !first.url) {
+    // Coming from another detail view: stop drawing what stood there.
     viewer?.detach();
     viewer?.clear();
     host.dataset.state = 'flat';
-    host.append(el('p', { class: 'stage-note' }, viewer ? 'No 3D file for this style.' : 'The 3D preview needs WebGL. Specs and the download still work.'));
-    return { node: host, update: () => false };
+    host.append(el('p', { class: 'stage-note' }, viewer ? 'No 3D file for this style.' : without));
+    return { node: host, viewer: null, update: () => false };
   }
 
   host.setAttribute('tabindex', '0');
   host.setAttribute('role', 'group');
-  host.setAttribute('aria-label', `3D view of the ${r.model}`);
+  host.setAttribute('aria-label', first.label);
   host.setAttribute('aria-describedby', hintId);
   host.addEventListener('keydown', (e) => {
     if (viewer.key(e)) e.preventDefault();
   });
 
-  const reset = el('button', { class: 'button button-quiet', type: 'button' }, icon('reset'), 'Reset view');
+  const reset = el('button', { class: 'button button-quiet', type: 'button' }, icon('reset'), el('span', { class: 'reset-word' }, 'Reset view'));
   reset.addEventListener('click', () => viewer.reset());
-  const views = el('div', { class: 'views', role: 'group', 'aria-label': 'Move in on' });
-  for (const part of PARTS) {
+  const views = parts ? el('div', { class: 'views', role: 'group', 'aria-label': 'Move in on' }) : null;
+  if (views) for (const part of PARTS) {
     const b = el('button', { class: 'sign sign-size', type: 'button' }, PART_LABEL[part]);
     b.addEventListener('click', () => viewer.focus(part));
     views.append(b);
@@ -984,18 +1104,20 @@ function stage(a: App, r: Racquet): Stage {
   niche.append(fault);
   host.append(controls);
 
-  let url = assetUrl(BASE, asset.path);
-  // With a racquet already standing here, it stays until the next one is ready to take its place.
+  let shown = first;
+  // With a model already standing here, it stays until the next one is ready to take its place.
   const load = (keepView: boolean) => {
-    const wanted = url;
+    const wanted = shown;
     if (!keepView) host.dataset.state = 'loading';
     fault.hidden = true;
-    viewer.show(wanted, keepView).then(
+    viewer.show(wanted.url!, keepView, wanted.options).then(
       () => {
-        if (wanted === url) host.dataset.state = 'ready';
+        if (wanted !== shown) return;
+        host.dataset.state = 'ready';
+        ready?.();
       },
       () => {
-        if (wanted !== url) return; // a newer choice won
+        if (wanted !== shown) return; // a newer choice won
         host.dataset.state = 'failed';
         fault.hidden = false;
       },
@@ -1009,11 +1131,11 @@ function stage(a: App, r: Racquet): Stage {
   load(false);
   return {
     node: host,
+    viewer,
     update(next) {
-      const to = assetFor(next, a.style.id);
-      if (!to) return false;
-      host.setAttribute('aria-label', `3D view of the ${next.model}`);
-      url = assetUrl(BASE, to.path);
+      if (!next.url) return false;
+      host.setAttribute('aria-label', next.label);
+      shown = next;
       load(host.dataset.state === 'ready');
       return true;
     },
@@ -1041,6 +1163,14 @@ function useInCode(r: Racquet, path: string): HTMLElement[] {
     copyable(url, 'file URL', false),
     copyable(snippet, 'three.js snippet', true),
   ];
+}
+
+/** What you can do with the racquet on show: build on it, or take its file. */
+function fileArea(a: App, base: Racquet, r: Racquet, colourway: string | null): HTMLElement[] {
+  if (!exhibitOf(a, r).url) return getFile(a, r);
+  const build = el('a', { class: 'build-open', href: buildRoute(base.id, colourway) }, 'Build', el('span', { class: 'build-what' }, ' this racquet'));
+  for (const reach of ['pointerenter', 'focus']) build.addEventListener(reach, () => void loadBuildCode().catch(() => {}), { once: true });
+  return [build, ...getFile(a, r)];
 }
 
 /** The nav's one button and the dialog it opens: the download, loading it in code, file facts and part names. */
@@ -1087,14 +1217,35 @@ function specRows(r: Racquet, listsWeight: boolean): HTMLElement[] {
   const len = formatLength(s.lengthIn);
   const row = (label: string, value: Node | string, aside?: string | null) =>
     el('div', { class: 'row' }, el('dt', {}, label), el('dd', {}, value, aside ? el('span', { class: 'aside' }, aside) : null));
+  // Unstrung and strung are different numbers, so each says which it is.
+  const both = (label: string, unit: string, unstrung?: number, strung?: number) =>
+    el('div', { class: 'row' }, el('dt', {}, label), el('dd', {}, ...([[unstrung, 'unstrung'], [strung, 'strung']] as const).flatMap(([n, how]) =>
+      n ? [el('span', { class: 'measure' }, `${formatCount(n)} ${unit}`, el('span', { class: 'aside' }, how))] : [])));
   return [
     row('Head size', head.primary, head.secondary),
     row('Length', len.primary, len.secondary),
     row('String pattern', formatPattern(s.stringPattern), 'mains × crosses'),
     row('Beam', formatBeam(s.beamMm), new Set(s.beamMm).size > 1 ? 'tip / middle / shaft' : undefined),
-    ...(s.unstrungWeightG ? [row('Weight', `${formatCount(s.unstrungWeightG)} g`, 'unstrung')] : listsWeight ? [row('Weight', 'Not listed')] : []),
+    ...(s.unstrungWeightG || s.strungWeightG ? [both('Weight', 'g', s.unstrungWeightG, s.strungWeightG)] : listsWeight ? [row('Weight', 'Not listed')] : []),
+    ...(s.balanceMm || s.strungBalanceMm ? [both('Balance', 'mm', s.balanceMm, s.strungBalanceMm)] : []),
+    ...(s.swingweight ? [row('Swingweight', String(s.swingweight), 'strung, kg·cm²')] : []),
+    ...(s.stiffnessRa ? [row('Stiffness', `${s.stiffnessRa} RA`)] : []),
     row('Base colour', el('span', { class: 'chip-row' }, el('span', { class: 'chip', 'aria-hidden': 'true' }), r.swatch), r.colourway),
   ];
+}
+
+/** A family's write-up, if it has one. */
+function profileOf(a: App, profiles: Map<string, Profile>, family: Racquet): HTMLElement | null {
+  const p = profiles.get(family.id);
+  if (!p) return null;
+  const byId = new Map(a.catalog.racquets.map((x) => [x.id, x]));
+  // Rivals are the profile's closest alternatives that this library has a page for and a profile of.
+  const rivals: Rival[] = p.compared.flatMap((id) => {
+    const x = byId.get(id);
+    const rp = profiles.get(id);
+    return x && rp ? [{ id, name: x.model, href: routeFor(x.id), profile: rp }] : [];
+  });
+  return profileView(p, rivals, family.variants?.length ? { name: lineageName(family), rated: family.variantLabel ?? family.model } : null);
 }
 
 /** `base` is the page's racquet; `r` is it in the chosen colourway. */
@@ -1126,15 +1277,8 @@ function sheet(a: App, family: Racquet, base: Racquet, r: Racquet, colourway: st
     const p = profiles.get(family.id);
     if (!p || !profileSlot.isConnected) return;
     lineup?.setNotes(p.variantNotes ?? {});
-    const byId = new Map(a.catalog.racquets.map((x) => [x.id, x]));
-    // Rivals are the profile's closest alternatives that this library has a page for and a profile of.
-    const rivals: Rival[] = p.compared.flatMap((id) => {
-      const x = byId.get(id);
-      const rp = profiles.get(id);
-      return x && rp ? [{ id, name: x.model, href: routeFor(x.id), profile: rp }] : [];
-    });
-    profileSlot.append(profileView(p, rivals, isFamily ? { name: lineageName(family), rated: family.variantLabel ?? family.model } : null));
-  });
+    profileSlot.append(profileOf(a, profiles, family)!);
+  }, () => {}); // the page goes without its write-up; the next one tries again
 
   // The page is the family's: its name and write-up stay put, and the line-up says which version is on show.
   const node = el('div', { class: 'sheet' },
@@ -1159,30 +1303,74 @@ const isMac = /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent);
 $<HTMLElement>('search-key').textContent = isMac ? '⌘K' : 'Ctrl K';
 let searchActive = -1;
 
-function openSearch() {
+/** Strings for search: null until strings.json arrives (or while it fails); search then lists racquets only. */
+let searchStrings: StringSpec[] | null = null;
+
+function fetchSearchStrings() {
+  if (searchStrings) return;
+  loadStrings().then((c) => {
+    searchStrings = c.strings;
+    if (searchDialog.open) renderSearch(true);
+  }, () => {}); // a failed load is forgotten by loadStrings and retried the next time search opens
+}
+
+/** Set while the dialog asks which racquet, for something that goes on one: where each choice leads. */
+let picking: ((id: string) => string) | null = null;
+let searchFrom: HTMLElement = searchOpen;
+/** What was typed in the shop's own search, while the dialog asks for a racquet. */
+let typed = '';
+
+function openSearch(pick: typeof picking = null) {
   if (!app || searchDialog.open) return;
+  picking = pick;
+  searchFrom = pick && document.activeElement instanceof HTMLElement ? document.activeElement : searchOpen;
+  const label = pick ? 'Search racquets' : 'Search racquets and strings';
+  searchDialog.setAttribute('aria-label', label);
+  searchInput.setAttribute('aria-label', label);
+  searchInput.placeholder = pick ? 'Which racquet?' : 'Racquet, string, brand or year';
+  if (pick) {
+    typed = searchInput.value;
+    searchInput.value = '';
+  }
   searchDialog.showModal();
   searchInput.select();
+  if (!pick) fetchSearchStrings();
   renderSearch();
 }
 
-function renderSearch() {
+/** Only a racquet with a model can be built on. */
+const searchHits = (c: Catalog, q: string): Hit[] =>
+  picking ? searchAll(c, null, q, Infinity).filter((h) => h.kind === 'racquet' && h.hit.hasModel).slice(0, 40) : searchAll(c, searchStrings, q);
+
+const hitKey = (h: Hit) => (h.kind === 'string' ? `s:${h.id}` : `r:${h.hit.id}`);
+let searchKeys: string[] = [];
+
+/** `keep`: strings just arrived, so stay on the chosen row when it still exists. */
+function renderSearch(keep = false) {
   if (!app) return;
   const q = searchInput.value.trim();
-  const hits = searchRacquets(app.catalog, q);
-  searchActive = hits.length ? 0 : -1;
-  searchList.replaceChildren(...hits.map((h, i) =>
-    el('li', { id: `search-hit-${i}`, role: 'option', 'aria-selected': String(i === 0) },
-      el('a', { class: 'search-hit', href: routeFor(h.id), tabindex: '-1' },
-        el('span', { class: 'search-model' }, h.model),
-        el('span', { class: 'search-meta' }, [h.brand, h.meta].filter(Boolean).join(' · ')),
-        el('span', { class: 'search-badge' }, [h.junior ? 'Junior' : '', h.hasModel ? '3D' : 'No model yet'].filter(Boolean).join(' · ')),
-      ),
-    ),
-  ));
+  const hits = searchHits(app.catalog, q);
+  const kept = keep && searchActive >= 0 ? hits.findIndex((h) => hitKey(h) === searchKeys[searchActive]) : -1;
+  searchKeys = hits.map(hitKey);
+  searchActive = kept >= 0 ? kept : hits.length ? 0 : -1;
+  searchList.replaceChildren(...hits.map((h, i) => {
+    const on = i === searchActive;
+    const link = h.kind === 'string'
+      ? el('a', { class: 'search-hit', href: stringRoute(h.id), tabindex: '-1' },
+          el('span', { class: 'search-model' }, el('span', { class: 'search-dot', style: `--chip: ${h.swatch}` }), h.name),
+          el('span', { class: 'search-meta' }, [h.brand, h.meta].filter(Boolean).join(' · ')),
+          el('span', { class: 'search-badge' }, 'String'))
+      : el('a', { class: 'search-hit', href: picking ? picking(h.hit.id) : routeFor(h.hit.id), tabindex: '-1' },
+          el('span', { class: 'search-model' }, h.hit.model),
+          el('span', { class: 'search-meta' }, [h.hit.brand, h.hit.meta].filter(Boolean).join(' · ')),
+          el('span', { class: 'search-badge' }, [h.hit.junior ? 'Junior' : '', h.hit.hasModel ? '3D' : 'No model yet'].filter(Boolean).join(' · ')));
+    return el('li', { id: `search-hit-${i}`, role: 'option', 'aria-selected': String(on) }, link);
+  }));
   searchInput.setAttribute('aria-expanded', String(hits.length > 0));
-  searchInput.setAttribute('aria-activedescendant', hits.length ? 'search-hit-0' : '');
-  searchEmpty.textContent = !q ? 'Type a brand, model or year.' : hits.length ? '' : `No racquet matches “${q}”.`;
+  searchInput.setAttribute('aria-activedescendant', searchActive >= 0 ? `search-hit-${searchActive}` : '');
+  searchEmpty.textContent = hits.length ? ''
+    : picking ? (q ? `No racquet with a 3D model matches “${q}”.` : 'Type a racquet, brand or year.')
+    : q ? `No racquet or string matches “${q}”.` : 'Type a racquet, string, brand or year.';
 }
 
 function moveSearch(step: number) {
@@ -1196,8 +1384,8 @@ function moveSearch(step: number) {
   item.scrollIntoView({ block: 'nearest' });
 }
 
-searchOpen.addEventListener('click', openSearch);
-searchInput.addEventListener('input', renderSearch);
+searchOpen.addEventListener('click', () => openSearch());
+searchInput.addEventListener('input', () => renderSearch());
 searchInput.addEventListener('keydown', (e) => {
   if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
     e.preventDefault();
@@ -1207,18 +1395,24 @@ searchInput.addEventListener('keydown', (e) => {
     if (link) {
       e.preventDefault();
       searchDialog.close();
+      if (link.getAttribute('href')!.startsWith('#/strings/')) play('spool');
       location.hash = link.getAttribute('href')!;
     }
   }
 });
 searchList.addEventListener('click', (e) => {
-  if ((e.target as Element).closest('a')) searchDialog.close();
+  const a = (e.target as Element).closest('a');
+  if (a) searchDialog.close();
+  if (a?.getAttribute('href')?.startsWith('#/strings/')) play('spool');
 });
 // A click on the backdrop (the dialog element itself, outside its content) closes it.
 searchDialog.addEventListener('click', (e) => {
   if (e.target === searchDialog) searchDialog.close();
 });
-searchDialog.addEventListener('close', () => searchOpen.focus({ preventScroll: true }));
+searchDialog.addEventListener('close', () => {
+  if (picking) searchInput.value = typed; // what was typed for that is not a search of the shop
+  (searchFrom.isConnected ? searchFrom : searchOpen).focus({ preventScroll: true });
+});
 
 // ---------- sound ----------
 
@@ -1228,18 +1422,32 @@ const SPEAKER = (on: boolean) =>
       ? '<path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>'
       : '<path d="M16 9.5l5 5M21 9.5l-5 5" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>'
   }</svg>`;
-const soundButton = el('button', { class: 'sound-toggle', type: 'button', 'aria-pressed': 'false', 'aria-label': 'Interface sounds', title: 'Interface sounds' });
-const paintSound = () => {
-  soundButton.innerHTML = SPEAKER(soundOn());
-  soundButton.setAttribute('aria-pressed', String(soundOn()));
-};
-paintSound();
-searchOpen.after(soundButton);
-soundButton.addEventListener('click', () => {
-  setSound(!soundOn());
-  play('pick');
-  paintSound();
-});
+/** The header's is an icon; the build page's says what it is. They are one switch. `changed` hears of it, until the signal. */
+function soundSwitch(label?: string, changed?: () => void, signal?: AbortSignal): HTMLElement {
+  const b = el('button', { class: `sound-toggle${label ? ' is-labelled' : ''}`, type: 'button', 'aria-label': label ? null : 'Interface sounds', title: label ? null : 'Interface sounds' });
+  const face = el('span', { 'aria-hidden': 'true' });
+  b.append(face, label ?? '');
+  b.addEventListener('click', () => {
+    setSound(!soundOn());
+    play('pick');
+    paintSound();
+  });
+  const paint = () => {
+    face.innerHTML = SPEAKER(soundOn());
+    b.setAttribute('aria-pressed', String(soundOn()));
+  };
+  const heard = () => {
+    paint();
+    changed?.();
+  };
+  soundFaces.add(heard);
+  signal?.addEventListener('abort', () => soundFaces.delete(heard));
+  paint();
+  return b;
+}
+const soundFaces = new Set<() => void>();
+const paintSound = () => soundFaces.forEach((paint) => paint());
+searchOpen.after(soundSwitch());
 if (storedSound()) {
   setSound(true); // audio itself starts with the first click
   paintSound();
@@ -1248,7 +1456,8 @@ if (storedSound()) {
 // Delegated, so every control has its sound without wiring each one.
 document.addEventListener('click', (e) => {
   const t = e.target as Element;
-  if (t.closest('.shelf-stage, .aisle-link, .lineup-row, .lineup-open, .stock-row, .stock-tag')) play('open');
+  if (t.closest('[data-room="strings"] :is(.aisle-link, .bay-link)')) play('spool');
+  else if (t.closest('.shelf-stage, .aisle-link, .lineup-row, .lineup-open, .stock-row, .stock-tag')) play('open');
   else if (t.closest('.back, .stepper a')) play('back');
   else if (t.closest('.sign, .gen-tab')) play('pick');
 });
@@ -1274,6 +1483,6 @@ window.addEventListener('keydown', (e) => {
     return;
   }
   if (searchDialog.open) return; // Escape closes the dialog, not the detail view
-  if (e.key === 'Escape' && !detail.hidden && !e.defaultPrevented) location.hash = detail.dataset.brand ? brandRoute(detail.dataset.brand) : routeFor(null);
+  if (e.key === 'Escape' && !detail.hidden && !e.defaultPrevented) location.hash = detail.querySelector('.back')?.getAttribute('href') ?? routeFor(null);
 });
 void boot();

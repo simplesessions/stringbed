@@ -17,7 +17,9 @@
       23,
       21
     ],
-    "unstrungWeightG": 305
+    "unstrungWeightG": 305,
+    "balanceMm": 320,
+    "stiffnessRa": 68
   },
   "geometry": {
     "head": {

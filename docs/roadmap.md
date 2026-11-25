@@ -5,8 +5,19 @@ detail; each item gets its own design when it is picked up.
 
 ## 1. Customization
 
-**Want:** take any racquet and change its grip, strings, dampener and similar, then get an
-asset (or a live view) of the result.
+**Built:** the Build page (`#/build/<racquet>`) puts strings (hybrids too), tension, lead tape,
+overgrip and a dampener on any racquet in the browser, with a weight, balance and swingweight
+estimate and how it plays. 73 strings from 14 brands are in `strings.json`. Racquet downloads stay stock.
+
+**Still planned:**
+
+- A download of the restrung, taped racquet.
+- Leather grips, butt-cap lead (trap door colours) and string weave.
+- Build presets.
+- The remaining string brands, Diadem and Ashaway.
+
+**Original want:** take any racquet and change its grip, strings, dampener and similar, then get
+an asset (or a live view) of the result.
 
 **Seam left in v1:**
 
@@ -19,8 +30,8 @@ asset (or a live view) of the result.
 - `buildRacquet` runs in both Node and the browser, so a future customizer can rebuild
   geometry live (overgrip thickness, string gauge, a dampener) instead of only recolouring.
 
-**Likely first steps:** grip colour and overgrip, string colour, hybrid strings (mains and
-crosses differ), dampener shapes, lead tape, butt-cap trap door colours.
+**Done from the first steps:** overgrip, string colour, hybrid strings, dampener, lead tape.
+**Left:** grip colour on the model itself, dampener shapes and the planned items above.
 
 ## 2. Visual styles
 
@@ -49,7 +60,7 @@ A style switcher in the gallery arrives with the second style.
 
 ## 3. Library growth
 
-- More brands: Head, Tecnifibre, Dunlop, Völkl, ProKennex.
+- More brands: Völkl, ProKennex (Head, Tecnifibre and Dunlop are in).
 - More models per brand, and variants (weights, 18×20 versions, extended lengths).
 - Previous generations and classic frames.
 - Possibly pickleball and padel, which would test how racquet-specific the spec really is.

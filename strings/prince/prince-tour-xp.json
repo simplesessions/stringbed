@@ -1,0 +1,57 @@
+{
+  "id": "prince-tour-xp",
+  "brand": "Prince",
+  "name": "Tour XP",
+  "material": "polyester",
+  "shape": {
+    "sides": 0,
+    "label": "Round"
+  },
+  "gaugesMm": [
+    1.25,
+    1.3
+  ],
+  "colours": [
+    {
+      "id": "black",
+      "name": "Black",
+      "hex": "#1f1f1f"
+    },
+    {
+      "id": "green",
+      "name": "Green",
+      "hex": "#3fa64a"
+    },
+    {
+      "id": "red",
+      "name": "Red",
+      "hex": "#cc3333"
+    }
+  ],
+  "finish": "satin",
+  "summary": "A round co-poly that is softer and livelier than most control polys. It offers good control and useful spin from snapback; power and comfort are acceptable only by polyester standards. Best for strong intermediate and advanced players who want a calmer poly.",
+  "bestFor": [
+    "control",
+    "comfort"
+  ],
+  "ratings": {
+    "power": 3,
+    "spin": 3,
+    "control": 4,
+    "comfort": 3,
+    "feel": 3,
+    "durability": 3
+  },
+  "compared": [
+    "head-hawk",
+    "luxilon-element"
+  ],
+  "confidence": "low",
+  "sources": [
+    "https://tennisoverload.com/prince-tour-xp-tennis-string-review/",
+    "https://www.tennisonly.com.au/Prince_Tour_XP_17_125_String_Set/descpage-PTXP17.html",
+    "https://www.tennis-warehouse.com/PrinceString.html"
+  ],
+  "researchedOn": "2026-11-24",
+  "verified": false
+}

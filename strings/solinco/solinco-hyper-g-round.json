@@ -1,0 +1,51 @@
+{
+  "id": "solinco-hyper-g-round",
+  "brand": "Solinco",
+  "name": "Hyper-G Round",
+  "material": "polyester",
+  "shape": {
+    "sides": 0,
+    "label": "Round"
+  },
+  "gaugesMm": [
+    1.15,
+    1.2,
+    1.25,
+    1.3
+  ],
+  "colours": [
+    {
+      "id": "hyper-green",
+      "name": "Hyper Green",
+      "hex": "#3ad626"
+    }
+  ],
+  "finish": "satin",
+  "summary": "Hyper-G reshaped as a smooth round string, medium firm, with a low-friction surface and quick snapback. It suits aggressive players who drive through the court, and one reviewer likes it as a cross with a shaped main; it is less bite-led than the square string.",
+  "bestFor": [
+    "spin",
+    "durability",
+    "value"
+  ],
+  "ratings": {
+    "power": 3,
+    "spin": 4,
+    "control": 4,
+    "comfort": 3,
+    "feel": 3,
+    "durability": 4
+  },
+  "compared": [
+    "solinco-hyper-g",
+    "solinco-hyper-g-soft"
+  ],
+  "confidence": "low",
+  "sources": [
+    "https://solinco.com/products/mach-10-copy/",
+    "https://www.tennisonly.com.au/Solinco_Hyper-G_Round_16_130_String_Set/descpage-SHGR16.html",
+    "https://www.tennisnerd.net/gear/strings/best-solinco-strings-ranked-from-spin-to-comfort/70390",
+    "https://www.tennisonly.com.au/Solinco_Tennis_Racquet_String.html"
+  ],
+  "researchedOn": "2026-11-24",
+  "verified": true
+}

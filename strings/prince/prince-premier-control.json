@@ -1,0 +1,54 @@
+{
+  "id": "prince-premier-control",
+  "brand": "Prince",
+  "name": "Premier Control",
+  "material": "multifilament",
+  "shape": {
+    "sides": 0,
+    "label": "Round"
+  },
+  "gaugesMm": [
+    1.25,
+    1.3
+  ],
+  "colours": [
+    {
+      "id": "natural",
+      "name": "Natural",
+      "hex": "#d8c99a"
+    },
+    {
+      "id": "black",
+      "name": "Black",
+      "hex": "#1f1f1f"
+    }
+  ],
+  "finish": "satin",
+  "summary": "A cheap multifilament with three interlaced cores that limit stretch, so it feels more controlled than a typical soft multi. It is comfortable with moderate power and only adequate spin. Customers disagree on durability: one broke it in four hours, another calls it durable in hybrids.",
+  "bestFor": [
+    "comfort",
+    "value",
+    "control"
+  ],
+  "ratings": {
+    "power": 3,
+    "spin": 3,
+    "control": 4,
+    "comfort": 5,
+    "feel": 3,
+    "durability": 2
+  },
+  "compared": [
+    "wilson-nxt",
+    "head-velocity-mlt"
+  ],
+  "confidence": "low",
+  "sources": [
+    "https://princesports.eu/en/strings/362-prem-ctrl-16-nt.html",
+    "https://tennisoverload.com/prince-premier-control-tennis-string-review/",
+    "https://www.tennisonly.com.au/Prince_Premier_Control_17_String_Set/descpage-PPC17.html",
+    "https://www.tennis-warehouse.com/PrinceString.html"
+  ],
+  "researchedOn": "2026-11-24",
+  "verified": false
+}

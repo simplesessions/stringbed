@@ -1,0 +1,60 @@
+{
+  "id": "toroline-wasabi",
+  "brand": "Toroline",
+  "name": "Wasabi",
+  "material": "polyester",
+  "shape": {
+    "sides": 4,
+    "label": "Square"
+  },
+  "gaugesMm": [
+    1.23,
+    1.25
+  ],
+  "colours": [
+    {
+      "id": "neon-green",
+      "name": "Neon Green",
+      "hex": "#86e030"
+    },
+    {
+      "id": "neon-pink",
+      "name": "Neon Pink",
+      "hex": "#f03c9b"
+    },
+    {
+      "id": "pomegranate-red",
+      "name": "Pomegranate Red",
+      "hex": "#b8283a"
+    }
+  ],
+  "finish": "satin",
+  "summary": "A square, slippery co-poly with sharp edges that grips the ball and snaps back for heavy topspin. One reviewer calls it soft for a shaped poly with about average tension holding, though the shop ranks it among the firmer, control-leaning Torolines and customers differ on feel.",
+  "bestFor": [
+    "spin",
+    "control",
+    "comfort"
+  ],
+  "ratings": {
+    "power": 3,
+    "spin": 5,
+    "control": 4,
+    "comfort": 3,
+    "feel": 3,
+    "durability": 3
+  },
+  "compared": [
+    "toroline-caviar",
+    "toroline-o-toro",
+    "solinco-hyper-g"
+  ],
+  "confidence": "medium",
+  "sources": [
+    "https://www.tennis-warehouse.com/TOROLINE_Wasabi_17_123_String/descpage-TWASA.html",
+    "https://www.tennis-warehouse.com/Toroline_Tennis_Strings/catpage-TOROLSTR.html",
+    "https://tennisnerd.net/?p=31178",
+    "https://www.tennisnerd.net/gear/strings/toroline-strings-spin-control-and-color/63502"
+  ],
+  "verified": false,
+  "researchedOn": "2026-11-24"
+}

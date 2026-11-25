@@ -1,0 +1,51 @@
+{
+  "id": "babolat-rpm-blast",
+  "brand": "Babolat",
+  "name": "RPM Blast",
+  "material": "polyester",
+  "shape": {
+    "sides": 8,
+    "label": "Octagonal"
+  },
+  "gaugesMm": [
+    1.2,
+    1.25,
+    1.3,
+    1.35
+  ],
+  "colours": [
+    {
+      "id": "black",
+      "name": "Black",
+      "hex": "#2a2f45"
+    }
+  ],
+  "finish": "satin",
+  "summary": "A firm eight-sided co-polyester built for big, fast swings and heavy topspin. Spin and control are among the best here, but it gives little free power and plays stiff. Customer reviews of the thin gauge disagree on how long it lasts, and one reports arm soreness.",
+  "bestFor": [
+    "spin",
+    "control",
+    "durability"
+  ],
+  "ratings": {
+    "power": 1,
+    "spin": 5,
+    "control": 5,
+    "comfort": 2,
+    "feel": 3,
+    "durability": 4
+  },
+  "compared": [
+    "luxilon-alu-power",
+    "solinco-hyper-g",
+    "babolat-rpm-rough"
+  ],
+  "confidence": "low",
+  "sources": [
+    "https://www.babolat.com/us/rpm-blast-12m/241101.html",
+    "https://tennisoverload.com/babolat-rpm-blast-tennis-string-review/",
+    "https://www.tennisonly.com.au/Babolat_RPM_Blast_17_125_String_Set/descpage-BRPMB17.html?from=tennerd"
+  ],
+  "researchedOn": "2026-11-24",
+  "verified": true
+}

@@ -1,0 +1,49 @@
+{
+  "id": "solinco-tour-bite-soft",
+  "brand": "Solinco",
+  "name": "Tour Bite Soft",
+  "material": "polyester",
+  "shape": {
+    "sides": 4,
+    "label": "Square"
+  },
+  "gaugesMm": [
+    1.2,
+    1.25
+  ],
+  "colours": [
+    {
+      "id": "light-silver",
+      "name": "Light Silver",
+      "hex": "#7b7885"
+    }
+  ],
+  "finish": "satin",
+  "summary": "A gentler take on Tour Bite for big swingers who want the grip and spin without as much shock. Playtesters found it more generous on power than the original, though it still needs a full swing to get the most from it.",
+  "bestFor": [
+    "spin",
+    "comfort",
+    "control"
+  ],
+  "ratings": {
+    "power": 2,
+    "spin": 5,
+    "control": 4,
+    "comfort": 3,
+    "feel": 3,
+    "durability": 3
+  },
+  "compared": [
+    "solinco-tour-bite",
+    "solinco-mach-10"
+  ],
+  "confidence": "low",
+  "sources": [
+    "https://solinco.com/products/tour-bite-soft/",
+    "https://www.tennisonly.com.au/Solinco_Tour_Bite_Soft_16L_125_String_Set/descpage-STBS16L.html",
+    "https://www.tennisnerd.net/gear/strings/best-solinco-strings-ranked-from-spin-to-comfort/70390",
+    "https://www.tennisonly.com.au/Solinco_Tennis_Racquet_String.html"
+  ],
+  "researchedOn": "2026-11-24",
+  "verified": true
+}

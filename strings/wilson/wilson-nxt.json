@@ -1,0 +1,52 @@
+{
+  "id": "wilson-nxt",
+  "brand": "Wilson",
+  "name": "NXT",
+  "material": "multifilament",
+  "shape": {
+    "sides": 0,
+    "label": "Round"
+  },
+  "gaugesMm": [
+    1.24,
+    1.3
+  ],
+  "colours": [
+    {
+      "id": "natural",
+      "name": "Natural",
+      "hex": "#ebe2c6"
+    },
+    {
+      "id": "black",
+      "name": "Black",
+      "hex": "#2a2a2c"
+    }
+  ],
+  "finish": "satin",
+  "summary": "A time-tested multifilament with a gut-like feel, good for players with slow to moderate swings who want comfort, touch and easy power. It also works well as a soft partner to polyester in a hybrid, though it gives up spin and control to the stiffer strings.",
+  "bestFor": [
+    "comfort",
+    "power",
+    "feel"
+  ],
+  "ratings": {
+    "power": 4,
+    "spin": 2,
+    "control": 3,
+    "comfort": 5,
+    "feel": 4,
+    "durability": 2
+  },
+  "compared": [
+    "wilson-sensation",
+    "babolat-xcel"
+  ],
+  "confidence": "low",
+  "sources": [
+    "https://www.typtiwarehouse.com/Wilson_NXT_16_130_String_Natural/descpage-NXT16.html",
+    "https://tennisoverload.com/wilson-nxt-tennis-string-review/"
+  ],
+  "researchedOn": "2026-11-24",
+  "verified": false
+}

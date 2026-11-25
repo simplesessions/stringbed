@@ -1,0 +1,50 @@
+{
+  "id": "solinco-confidential",
+  "brand": "Solinco",
+  "name": "Confidential",
+  "material": "polyester",
+  "shape": null,
+  "gaugesMm": [
+    1.15,
+    1.2,
+    1.25,
+    1.3
+  ],
+  "colours": [
+    {
+      "id": "charcoal",
+      "name": "Charcoal",
+      "hex": "#3d393d"
+    }
+  ],
+  "finish": "satin",
+  "summary": "A control-first shaped co-polyester for big hitters who want pinpoint direction. It keeps its tension longer than the other Solinco polys. It launches low and offers little power, so players who need help with net clearance or pace may find it flat.",
+  "bestFor": [
+    "control",
+    "durability",
+    "spin"
+  ],
+  "ratings": {
+    "power": 1,
+    "spin": 4,
+    "control": 5,
+    "comfort": 3,
+    "feel": 3,
+    "durability": 5
+  },
+  "compared": [
+    "solinco-tour-bite",
+    "solinco-hyper-g",
+    "solinco-confidential-soft"
+  ],
+  "confidence": "medium",
+  "sources": [
+    "https://solinco.com/products/confidential/",
+    "https://www.tennisonly.com.au/Solinco_Confidential_16_130_String_Set/descpage-SHCON16.html",
+    "https://www.tennisnerd.net/gear/strings/best-solinco-strings-ranked-from-spin-to-comfort/70390",
+    "https://www.tennisonly.com.au/Solinco_Tennis_Racquet_String.html",
+    "https://www.tennisnerd.net/gear/strings/solinco-tennis-strings-a-brand-built-for-spin-and-tension-stability/69240"
+  ],
+  "researchedOn": "2026-11-24",
+  "verified": true
+}
