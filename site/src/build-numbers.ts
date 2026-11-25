@@ -38,10 +38,12 @@ function measureField(desk: Desk, key: 'g' | 'balanceMm', label: string, unit: s
     sync() {
       if (document.activeElement !== input) show();
     },
+    reset: show,
   };
 }
 
-export function numbersBench(desk: Desk): { node: HTMLElement; sync(): void } {
+/** `reset`: another build is on the page, so a number half typed was for the last one. */
+export function numbersBench(desk: Desk): { node: HTMLElement; sync(): void; reset(): void } {
   const from = el('p', { class: 'bench-note' });
   const fields = [measureField(desk, 'g', 'Weight, unstrung', 'g'), measureField(desk, 'balanceMm', 'Balance, unstrung', 'mm from the butt')];
   const hint = el('p', { class: 'bench-note' });
@@ -56,6 +58,7 @@ export function numbersBench(desk: Desk): { node: HTMLElement; sync(): void } {
     ...fields.map((f) => f.node), hint, forget);
   return {
     node: bench('Where the numbers come from', from, yours, howItWorks()),
+    reset: () => fields.forEach((f) => f.reset()),
     sync() {
       const mine = desk.build.yours;
       from.textContent = provenance(desk.base.specs, mine);

@@ -294,7 +294,8 @@ and "Shape not stated".
   against the same racquet with stock strings.
 - **Balance beam (signature):** the racquet laid across its own middle, seen from low down, in its swatch
   with the build's grip, bed colour and lead on it. It tips on the spring towards the heavier side; level
-  when the balance is unknown. The one thing on the page that moves for its own sake.
+  when the balance is unknown. The one thing on the page that moves for its own sake. On phones it stands
+  under the numbers, beside the line about how it plays, and the stage's buttons keep to one row (Reset is its icon).
 - **String set:** the string's own section in its colour, its name (a link), and a list to change it from:
   radios, so an arrow key restrings as it goes. The section drawing is the string page's, at one scale
   for mains and crosses.

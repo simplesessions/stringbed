@@ -1316,13 +1316,16 @@ function fetchSearchStrings() {
 
 /** Set while the dialog asks which racquet, for something that goes on one: where each choice leads. */
 let picking: ((id: string) => string) | null = null;
+/** Told which one was chosen; a dialog that is only closed tells nobody. */
+let chosen: ((href: string) => void) | null = null;
 let searchFrom: HTMLElement = searchOpen;
 /** What was typed in the shop's own search, while the dialog asks for a racquet. */
 let typed = '';
 
-function openSearch(pick: typeof picking = null) {
+function openSearch(pick: typeof picking = null, then: typeof chosen = null) {
   if (!app || searchDialog.open) return;
   picking = pick;
+  chosen = then;
   searchFrom = pick && document.activeElement instanceof HTMLElement ? document.activeElement : searchOpen;
   const label = pick ? 'Search racquets' : 'Search racquets and strings';
   searchDialog.setAttribute('aria-label', label);
@@ -1395,6 +1398,7 @@ searchInput.addEventListener('keydown', (e) => {
     if (link) {
       e.preventDefault();
       searchDialog.close();
+      chosen?.(link.getAttribute('href')!);
       if (link.getAttribute('href')!.startsWith('#/strings/')) play('spool');
       location.hash = link.getAttribute('href')!;
     }
@@ -1403,6 +1407,7 @@ searchInput.addEventListener('keydown', (e) => {
 searchList.addEventListener('click', (e) => {
   const a = (e.target as Element).closest('a');
   if (a) searchDialog.close();
+  if (a && !(e.metaKey || e.ctrlKey || e.shiftKey || e.altKey)) chosen?.(a.getAttribute('href')!); // not for a new tab
   if (a?.getAttribute('href')?.startsWith('#/strings/')) play('spool');
 });
 // A click on the backdrop (the dialog element itself, outside its content) closes it.
