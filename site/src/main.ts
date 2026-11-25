@@ -1054,8 +1054,6 @@ function exhibitOf(a: App, r: Racquet): Exhibit {
 /** What the browser's bars are tinted with: the page's wall, and in full screen the tone the stage ends in (--wall, --niche). */
 const WALL = document.querySelector('meta[name="theme-color"]')?.getAttribute('content') ?? '#dbd9d5';
 const NICHE = '#c4b9a8';
-const viewportMeta = document.querySelector('meta[name="viewport"]');
-const VIEWPORT = viewportMeta?.getAttribute('content') ?? '';
 
 const racquetStage = (a: App, r: Racquet) =>
   stage(a, exhibitOf(a, r), { flat: silhouette(r.specs.headSizeSqIn), parts: true, without: 'The 3D preview needs WebGL. Specs and the download still work.' });
@@ -1110,9 +1108,8 @@ function stage(a: App, first: Exhibit, { flat, parts, without, ready }: { flat: 
     ),
   );
   // Phones and tablets: the stage is the whole screen, and what matters most lies over its foot. Where
-  // the browser has a real full screen it is used. An iPhone has none, and Safari cuts a fixed layer off at
-  // its bars: there the stage stands in for the whole page, as tall as the screen ever is, so it runs on
-  // behind them and nothing in it changes size when they come and go.
+  // the browser has a real full screen it is used; an iPhone gets a layer as tall as the screen ever is,
+  // so nothing in it changes size when the address bar comes and goes.
   const caption = el('div', { class: 'full-caption' });
   const setCaption = ({ caption: c }: Exhibit) =>
     caption.replaceChildren(
@@ -1132,23 +1129,10 @@ function stage(a: App, first: Exhibit, { flat, parts, without, ready }: { flat: 
     viewer.refit(box.height < 480 ? { top: 0, bottom: 1 } : { top: 70, bottom: Math.max(0, box.bottom - words.top - 36) });
   };
   let frame = new AbortController();
-  /** Holds the stage's place in the page, and how far down that was, while it stands in for it. */
-  const place = document.createComment('stage');
-  let scrolled = 0;
   const setFull = (on: boolean) => {
     if (on === isFull()) return;
     const at = layer();
-    if (on) {
-      scrolled = window.scrollY;
-      at.style.setProperty('--swatch', getComputedStyle(at).getPropertyValue('--swatch')); // set on the page it leaves
-      at.replaceWith(place);
-      document.body.append(at);
-    } else if (place.isConnected) place.replaceWith(at);
-    else at.remove(); // the page it came from has gone
     at.classList.toggle('is-full', on);
-    viewportMeta?.setAttribute('content', on ? `${VIEWPORT}, viewport-fit=cover` : VIEWPORT);
-    window.scrollTo(0, on ? 0 : scrolled);
-    full.focus({ preventScroll: true });
     for (const m of document.querySelectorAll('meta[name="theme-color"]')) m.setAttribute('content', on ? NICHE : WALL); // the browser's bars
     (on ? at.querySelector('.readings') ?? host : host).prepend(caption);
     full.setAttribute('aria-pressed', String(on));
@@ -1169,6 +1153,7 @@ function stage(a: App, first: Exhibit, { flat, parts, without, ready }: { flat: 
         e.preventDefault(); // out of the full screen, not off the page
         e.stopPropagation();
         setFull(false);
+        full.focus();
       }, { signal, capture: true });
       at.requestFullscreen?.({ navigationUI: 'hide' }).catch(() => {}); // the layer covers the page as it is
       requestAnimationFrame(refit);
