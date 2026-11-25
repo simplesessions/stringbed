@@ -249,6 +249,7 @@ function onePage(host: BuildHost, base: Racquet, first: To, word: string, sendOf
       tape: () => life.build.tape,
       lay,
       lengthIn: base.specs.lengthIn,
+      both: lead.both,
       aim(p) {
         extra = p;
         dress?.soon();

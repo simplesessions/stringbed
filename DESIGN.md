@@ -316,9 +316,9 @@ and "Shape not stated".
   tick every 5 lb. Value beside the name, never in a bubble.
 - **Segmented pill and swatch pill:** the header's segments and the colourway pills, as buttons and radios.
   Plain colours (grip, dampener) are chips alone, with the name of the chosen one beside the legend.
-- **Taping:** "Add tape", in the lead section, turns the row under the model into Done, Both sides and one line of help; nothing
+- **Taping:** "Add tape", in the lead section, turns the row under the model into Done and one line of help; nothing
   covers the racquet. Pieces are outlined over the model (lead is thin, and lies on the hoop's inner wall);
-  where the next would go is a dotted outline with an ink chip naming the place and the grams.
+  where the next would go is a dotted outline with an ink chip naming the place and the grams. "Both sides" is a piece's own, in the list; the next piece follows it.
 - **What it does:** sentences first, then a row for each rating that moved, with a ring at the new mark; one
   the scale held back says "Already at the top". The rest, and the reasons, are behind "Show all" and "Why?".
   No rating: an ink arrow and the change.

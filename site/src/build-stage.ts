@@ -20,6 +20,8 @@ export interface TapeHost {
   tape(): TapePiece[];
   lay(p: TapePiece): PlacedTape[];
   lengthIn: number;
+  /** Whether a new piece goes on both sides. */
+  both(): boolean;
   /** Show where a piece would go; null: nowhere. */
   aim(p: TapePiece | null): void;
   stick(p: TapePiece): void;
@@ -54,16 +56,12 @@ export function tapeTool(o: TapeHost): TapeTool {
   const { canvas } = viewer;
   const niche = stage.querySelector<HTMLElement>('.niche')!;
   let state = newHand();
-  let both = true;
   let aimed: TapePiece | null = null;
   let keyed: Place = { zone: 'h', at: 0 };
   /** A pointer event of our own on its way to the camera. */
   let passing = false;
 
-  const bothBox = el('input', { type: 'checkbox', checked: true });
-  bothBox.addEventListener('change', () => (both = bothBox.checked));
   const bar = el('div', { class: 'tape-bar', hidden: true },
-    el('label', { class: 'check' }, bothBox, 'Both sides'),
     el('p', {},
       el('span', { class: 'hint-fine' }, 'Click the frame to stick lead on it; drag a piece to move it. Or the arrow keys, then Enter.'),
       el('span', { class: 'hint-coarse' }, 'Touch the frame, slide to aim, let go to stick. Two fingers move the view.')));
@@ -74,7 +72,7 @@ export function tapeTool(o: TapeHost): TapeTool {
 
   // ---------- what is under a point ----------
 
-  const fresh = (place: Place): TapePiece => ({ ...place, ...NEW_PIECE, mirrored: both });
+  const fresh = (place: Place): TapePiece => ({ ...place, ...NEW_PIECE, mirrored: o.both() });
   const fits = (p: TapePiece) => o.lay(p).length > 0;
   const frameAt = (x: number, y: number, reach: number) => ringSearch((px, py) => viewer.pick(px, py), x, y, reach);
   const grabAt = (hit: Vector3) => nearestPiece(o.tape().map(o.lay), hit, GRAB);
