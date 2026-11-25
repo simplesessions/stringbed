@@ -1051,7 +1051,9 @@ a.gen-tab { display: inline-flex; align-items: center; text-decoration: none; }
   .signs:not(.sizes)::-webkit-scrollbar { display: none; }
   .signs:not(.sizes) .sign { flex: none; }
   .sizes { display: grid; grid-template-columns: repeat(3, 1fr); width: 100%; }
+  /* Safari doesn't stretch a <button> to fill its grid cell, so the width is set here. */
   .sign-size { justify-content: center; min-height: 34px; }
+  .sizes .sign-size { width: 100%; }
   /* No room for a third header row: on phones the look lives in the detail stage. */
   .strip-end { display: contents; }
   .strip .looks { display: none; }
