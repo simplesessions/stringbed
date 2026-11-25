@@ -7,6 +7,9 @@
   "gaugesMm": [
     1.25
   ],
+  "gaugeNames": {
+    "1.25": "16L"
+  },
   "colours": [
     {
       "id": "grey",

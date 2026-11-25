@@ -30,6 +30,8 @@ test.each([
   ['colours', { colours: [silver, silver] }],
   ['colours', { colours: [] }],
   ['gaugesMm', { gaugesMm: [] }],
+  ['gaugeNames', { gaugeNames: { '9.99': '17' } }],
+  ['gaugeNames.1.25', { gaugeNames: { '1.25': 'fat' } }],
   ['gaugesMm', { gaugesMm: [1.3, 1.25] }],
   ['gaugesMm', { gaugesMm: [1.25, 1.25] }],
   ['gaugesMm.0', { gaugesMm: [0.9] }],

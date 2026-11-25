@@ -12,7 +12,7 @@ import { tagLabel } from './profiles';
 import { inWords, ratingsView, topRatings } from './ratings-view';
 import { brandSlug, isStringsRoute, parseHash, stringRoute, stringsRoute, type StringsRoute } from './routes';
 import { loadStrings } from './strings-data';
-import { MATERIALS, MATERIAL_LABEL, RATING_KEYS, RATING_LABEL, colourNote, firstGauge, resolveStrings, savedMaterial, sectionNote, shownStrings, stringAisles, stringFacts, stringNeighbours, stringStepName } from './string-view';
+import { MATERIALS, MATERIAL_LABEL, RATING_KEYS, RATING_LABEL, colourNote, firstGauge, resolveStrings, savedMaterial, sectionNote, shownStrings, stringAisles, stringFacts, stringNeighbours, stringStepName, gaugeName, gaugeNote, gaugeText } from './string-view';
 import type { ThumbOptions } from './thumbnails';
 import type { ShowOptions, Viewer } from './viewer';
 
@@ -348,14 +348,14 @@ export function stringRooms(host: Host): StringRooms {
     const width = el('p', { class: 'section-gauge' });
     const tabs = s.gaugesMm.length > 1
       ? s.gaugesMm.map((g) => {
-          const b = el('button', { class: 'gen-tab', type: 'button', 'data-gauge': String(g) }, g.toFixed(2));
+          const b = el('button', { class: 'gen-tab', type: 'button', 'data-gauge': String(g) }, gaugeText(s, g));
           b.addEventListener('click', () => draw(g));
           return b;
         })
       : [];
     const draw = (g: number) => {
       cut.replaceChildren(crossSection(s.shape, g));
-      width.textContent = `${g.toFixed(2)} mm`;
+      width.textContent = `${g.toFixed(2)} mm · ${gaugeName(s, g)} gauge`;
       for (const b of tabs) b.setAttribute('aria-pressed', String(b.dataset.gauge === String(g)));
     };
     draw(firstGauge(s));
@@ -364,7 +364,8 @@ export function stringRooms(host: Host): StringRooms {
       el('div', { class: 'section-facts' },
         width,
         el('p', { class: 'section-note' }, sectionNote(s.shape)),
-        tabs.length ? el('div', { class: 'gen-tabs', role: 'group', 'aria-label': 'Gauge in millimetres' }, ...tabs) : null,
+        tabs.length ? el('div', { class: 'gen-tabs', role: 'group', 'aria-label': 'Gauge: millimetres and number' }, ...tabs) : null,
+        gaugeNote(s) ? el('p', { class: 'sheet-note' }, gaugeNote(s)) : null,
         el('p', { class: 'sheet-note' }, 'Every string is drawn to this scale.'),
       ),
     );

@@ -61,11 +61,23 @@ export function stringNeighbours(all: StringSpec[], s: StringSpec): { prev: Stri
   return { prev: order[(i - 1 + order.length) % order.length] ?? s, next: order[(i + 1) % order.length] ?? s };
 }
 
+/** The usual gauge number for a thickness, for a string nobody gave one. Makers differ by half a step. */
+export const usualGauge = (mm: number): string => (mm >= 1.335 ? '15L' : mm >= 1.255 ? '16' : mm >= 1.185 ? '17' : mm >= 1.115 ? '18' : mm >= 1.065 ? '19' : '20');
+
+/** The gauge number a string is sold under at this thickness: "16L"; "~17" when it is only the usual one. */
+export const gaugeName = (s: Pick<StringSpec, 'gaugeNames'>, mm: number): string => s.gaugeNames?.[mm.toFixed(2)] ?? `~${usualGauge(mm)}`;
+
+/** Both: "1.25 · 16L". */
+export const gaugeText = (s: Pick<StringSpec, 'gaugeNames'>, mm: number): string => `${mm.toFixed(2)} · ${gaugeName(s, mm)}`;
+
+/** Said where a ~ shows. */
+export const gaugeNote = (s: StringSpec): string | null => (s.gaugesMm.some((g) => gaugeName(s, g).startsWith('~')) ? '~ is the usual number for that thickness; no page read gave this string’s own.' : null);
+
 export function stringFacts(s: StringSpec): Array<{ label: string; value: string }> {
   return [
     { label: 'Material', value: MATERIAL_LABEL[s.material] },
     { label: 'Shape', value: s.shape?.label ?? 'Not stated' },
-    { label: 'Gauges', value: `${s.gaugesMm.map((g) => g.toFixed(2)).join(', ')} mm` },
+    { label: 'Gauges', value: `${s.gaugesMm.map((g) => `${g.toFixed(2)}\u00a0(${gaugeName(s, g)})`).join(', ')} mm` },
     { label: 'Colours', value: String(s.colours.length) },
   ];
 }

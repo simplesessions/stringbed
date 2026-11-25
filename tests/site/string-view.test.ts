@@ -4,7 +4,7 @@ import { join } from 'node:path';
 import type { Catalog } from '../../src/catalog';
 import { STRING_RATINGS, type StringMaterial, type StringSpec } from '../../src/string-spec';
 import { searchRacquets } from '../../site/src/catalog-view';
-import { MATERIAL_LABEL, RATING_KEYS, RATING_LABEL, colourOf, colourNote, firstGauge, resolveStrings, savedMaterial, searchAll, shownStrings, stringAisles, sectionNote, stringFacts, stringNeighbours, stringStepName } from '../../site/src/string-view';
+import { MATERIAL_LABEL, RATING_KEYS, RATING_LABEL, colourOf, colourNote, firstGauge, resolveStrings, savedMaterial, searchAll, shownStrings, stringAisles, sectionNote, stringFacts, stringNeighbours, stringStepName, gaugeText, usualGauge } from '../../site/src/string-view';
 import { forgetStrings, loadStrings } from '../../site/src/strings-data';
 
 const catalog: Catalog = JSON.parse(readFileSync(join(__dirname, '../../assets/catalog.json'), 'utf8'));
@@ -64,7 +64,7 @@ test('facts say Not stated for a null shape', () => {
   expect(stringFacts(strings[1])).toEqual([
     { label: 'Material', value: 'Natural gut' },
     { label: 'Shape', value: 'Not stated' },
-    { label: 'Gauges', value: '1.20, 1.25 mm' },
+    { label: 'Gauges', value: '1.20\u00a0(~17), 1.25\u00a0(~17) mm' },
     { label: 'Colours', value: '2' },
   ]);
   expect(stringFacts(strings[0])[1].value).toBe('Round');
@@ -204,4 +204,10 @@ test('loadStrings retries after a network error and after invalid JSON', async (
     expect(calls).toBe(2);
     forgetStrings();
   }
+});
+
+test('a gauge shows its number beside its mm: its own, or the usual one marked ~', () => {
+  expect(gaugeText({ gaugeNames: { '1.25': '16L' } }, 1.25)).toBe('1.25 · 16L');
+  expect(gaugeText({}, 1.25)).toBe('1.25 · ~17');
+  expect([1.38, 1.3, 1.2, 1.15, 1.1, 1.05].map(usualGauge)).toEqual(['15L', '16', '17', '18', '19', '20']);
 });

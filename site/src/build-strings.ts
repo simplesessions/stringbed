@@ -7,7 +7,7 @@ import { crossSection } from './cross-section';
 import { el, icon } from './dom';
 import { stringRoute } from './routes';
 import { play } from './sound';
-import { MATERIALS, MATERIAL_LABEL, sectionNote } from './string-view';
+import { MATERIALS, MATERIAL_LABEL, sectionNote, gaugeText } from './string-view';
 
 type Which = 'mains' | 'crosses';
 
@@ -134,7 +134,7 @@ function stringSet(desk: Desk, which: Which, choose: (which: Which, choice: Stri
       pick({ colour: id });
       play('pick');
     });
-    const gauges = segmented<number>(`${label} gauge, millimetres`, c.spec.gaugesMm.map((g) => ({ value: g, text: g.toFixed(2) })), (g) => {
+    const gauges = segmented<number>(`${label} gauge, millimetres and number`, c.spec.gaugesMm.map((g) => ({ value: g, text: gaugeText(c.spec, g) })), (g) => {
       if (inIt()?.gaugeMm === g) return;
       pick({ gaugeMm: g });
       desk.strum.weave();
