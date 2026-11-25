@@ -68,8 +68,6 @@ export interface Dress {
 /** Where tape can go, and what a pick finds. */
 const SURFACE = ['frame', 'collar', 'grip'];
 const LEAD: HexColor = '#9a9ea3';
-/** The dampener's edges stay this far off the lowest cross's middle and the bridge, metres. */
-const DAMPENER_GAP = 0.001;
 /** The balance marker: a band this tall, standing this far off the racquet, metres. */
 const MARKER_HEIGHT = 0.003;
 const MARKER_OFF = 0.004;
@@ -127,16 +125,12 @@ function markerMesh(): Mesh<BufferGeometry, MeshBasicMaterial> {
   return m;
 }
 
-/**
- * As buildDampener makes it, but where it is weighed, and no taller than the space there: published
- * models leave 6 mm between the bridge and the lowest cross.
- */
+/** As buildDampener makes it, but where it is weighed. */
 function dampenerGeometry(beds: Beds): BufferGeometry {
   const { x: xc, y: yc } = dampenerMass(beds);
-  const lowest = Math.min(...beds.crosses.lines.map((l) => l.at));
   const nearest = Math.min(...beds.mains.lines.map((l) => Math.abs(l.at - xc))); // half the space between the two mains
   const w = Math.min(DAMPENER_WIDTH, 2 * nearest * 0.7);
-  const h = Math.min(DAMPENER_HEIGHT, 2 * (lowest - DAMPENER_GAP - yc));
+  const h = DAMPENER_HEIGHT;
   const r = Math.min(DAMPENER_CORNER, w / 3, h / 3);
   const [right, top] = [w / 2 - r, h / 2 - r];
   const outline = new Shape();

@@ -24,12 +24,12 @@ function rig({ on = true, running = true, gesture = true } = {}) {
   return Object.assign(r, s);
 }
 
-const NEW = ['ratchet', 'weave', 'peel', 'press', 'wrap', 'thump', 'stamp'] as const satisfies readonly SoundName[];
+const NEW = ['ratchet', 'peel', 'press', 'wrap', 'thump', 'stamp'] as const satisfies readonly SoundName[];
 const ALL = Object.keys(SOUNDS) as SoundName[];
 const knock = (name: SoundName): Knock => SOUNDS[name];
 const total = (voices: readonly Voice[]) => voices.reduce((sum, v) => sum + v.level, 0);
 /** When the last of it falls silent, in seconds. */
-const ends = (voices: readonly Voice[]) => Math.max(...voices.map((v) => v.at + 0.002 + v.decay * 6));
+const ends = (voices: readonly Voice[]) => Math.max(...voices.map((v) => v.at + (v.attack ?? 0.002) + v.decay * 6));
 const played = (name: SoundName) => {
   const r = rig();
   r.play(name);
@@ -56,7 +56,7 @@ test('a new knock is no louder than its level, all voices together', () => {
 });
 
 test('a run never adds up past 0.16, ring of the earlier knocks included', () => {
-  for (const name of ['weave', 'peel', 'wrap'] as const) {
+  for (const name of ['wrap'] as const) {
     const voices = played(name);
     for (const t of new Set(voices.map((v) => v.at))) {
       const sum = voices.filter((v) => v.at <= t).reduce((n, v) => n + v.level * Math.exp(-(t - v.at) / v.decay), 0);
@@ -65,13 +65,13 @@ test('a run never adds up past 0.16, ring of the earlier knocks included', () =>
   }
 });
 
-test('weave, peel and wrap are runs of one knock and are over within 400 ms', () => {
-  expect(ALL.filter((name) => knock(name).run)).toEqual(['weave', 'peel', 'wrap']);
-  for (const name of ['weave', 'peel', 'wrap'] as const) {
+test('wrap is a run of one knock and is over within 400 ms', () => {
+  expect(ALL.filter((name) => knock(name).run)).toEqual(['wrap']);
+  for (const name of ['wrap'] as const) {
     const voices = played(name);
     const starts = [...new Set(voices.map((v) => v.at))];
     expect(starts).toEqual([...knock(name).run!]);
-    expect(starts.length).toBeGreaterThan(2);
+    expect(starts.length).toBeGreaterThan(1);
     expect(starts).toEqual([...starts].sort((a, b) => a - b));
     expect(starts[0]).toBe(0);
     expect(ends(voices)).toBeLessThanOrEqual(0.4);
@@ -80,27 +80,27 @@ test('weave, peel and wrap are runs of one knock and are over within 400 ms', ()
   }
 });
 
-test('weave is the mains, a breath, then the crosses', () => {
-  const run = knock('weave').run!;
-  const gaps = run.slice(1).map((t, i) => t - run[i]);
-  const widest = gaps.indexOf(Math.max(...gaps));
-  expect(gaps[widest]).toBeGreaterThan(2 * Math.max(...gaps.filter((_, i) => i !== widest)));
-  expect(widest + 1).toBe(run.length / 2);
+test('lead tape is stroked, not struck, and the peel is over before the press', () => {
+  expect(SOUNDS.peel.contact.attack).toBeGreaterThan(0.05);
+  expect(SOUNDS.peel.partials).toEqual([]);
+  expect(ends(played('peel'))).toBeLessThan(0.3); // build-lead.ts PRESS_AFTER
+  expect(SOUNDS.press.contact.attack).toBeGreaterThan(0.01);
+  expect(SOUNDS.press.level).toBeLessThanOrEqual(0.05);
 });
 
 test('the single sounds are one knock', () => {
-  for (const name of ['ratchet', 'press', 'thump', 'stamp'] as const) {
+  for (const name of ['ratchet', 'peel', 'press', 'thump', 'stamp'] as const) {
     const voices = played(name);
     expect(voices.every((v) => v.at === 0)).toBe(true);
     expect(voices.filter((v) => v.noise).length).toBe(1);
   }
 });
 
-test('a pluck is 1, 2 and 3 times the pitch it is given, ringing 0.28, 0.16 and 0.09 s', () => {
+test('a pluck is 1, 2 and 3 times the pitch it is given, ringing 0.11, 0.05 and 0.022 s', () => {
   const v = plucked(571);
   expect(v.map((x) => x.hz)).toEqual([571, 1142, 1713]); // never detuned
-  expect(v.map((x) => x.decay)).toEqual([0.28, 0.16, 0.09]);
-  expect(v.every((x) => x.at === 0 && !x.noise)).toBe(true);
+  expect(v.map((x) => x.decay)).toEqual([0.11, 0.05, 0.022]);
+  expect(v.every((x) => x.at === 0 && !x.noise && x.attack === 0.005)).toBe(true);
 });
 
 test('a dampener cuts the ring and nothing else', () => {
@@ -178,8 +178,8 @@ test('30 seconds of dragging at 120 events a second is at most one sound per 60 
 test('the other sounds do not wait for that slot', () => {
   const r = rig();
   r.play('ratchet');
-  for (const name of ['weave', 'peel', 'press', 'wrap', 'thump', 'stamp'] as const) r.play(name);
-  expect(r.played.length).toBe(7);
+  for (const name of ['peel', 'press', 'wrap', 'thump', 'stamp'] as const) r.play(name);
+  expect(r.played.length).toBe(6);
 });
 
 test('hover keeps its own slot of 90 ms', () => {
