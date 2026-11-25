@@ -136,7 +136,7 @@ test('tape lies where placeTape puts it, lead grey, on the model itself; a piece
   }
 });
 
-/** What is wrong with where a dampener lies: between the centre mains, below every cross, touching nothing. */
+/** What is wrong with where a dampener lies: between the centre mains, on the lowest cross alone, clear of the frame. */
 function dampenerFaults(root: Object3D, beds: Beds, b: Box3): string[] {
   const faults: string[] = [];
   const say = (bad: boolean, what: string) => void (bad && faults.push(what));
@@ -146,11 +146,11 @@ function dampenerFaults(root: Object3D, beds: Beds, b: Box3): string[] {
   say(xs.some((x) => x > b.min.x - 0.0007 && x < b.max.x + 0.0007), 'a main runs through it');
   say(Math.abs((b.min.x + b.max.x) / 2 - (left + right) / 2) > 1e-6, 'off centre');
   say(middle !== left && middle !== right, 'not at the middle mains');
-  const lowest = Math.min(...beds.crosses.lines.map((l) => l.at));
-  say(b.max.y > lowest - 0.0008, 'not below the lowest cross'); // a 1.4 string and daylight
-  say(b.max.y < lowest - 0.0015, 'far below the lowest cross');
+  const [lowest, next] = beds.crosses.lines.map((l) => l.at).sort((p, q) => p - q);
+  say(b.min.y > lowest || b.max.y < lowest, 'not on the lowest cross');
+  say(b.max.y > next - 0.002, 'up to the next cross');
   say(b.min.y < Math.max(...beds.mains.lines.filter((l) => l.at === left || l.at === right).map((l) => l.from)), 'below the mains');
-  say(b.max.y - b.min.y < 0.0035 || b.max.y - b.min.y > DAMPENER_HEIGHT + 1e-9, 'a strange height');
+  say(Math.abs(b.max.y - b.min.y - DAMPENER_HEIGHT) > 1e-6, 'a strange height');
   say(b.max.x - b.min.x < 0.0045 || b.max.x - b.min.x > DAMPENER_WIDTH + 1e-9, 'a strange width');
   say(Math.abs(b.max.z - DAMPENER_DEPTH / 2) > 1e-6 || Math.abs(b.min.z + DAMPENER_DEPTH / 2) > 1e-6, 'a strange depth');
   for (const name of ['frame', 'grommets', 'bumper']) {
@@ -165,7 +165,7 @@ function dampenerFaults(root: Object3D, beds: Beds, b: Box3): string[] {
   return faults;
 }
 
-test('on every published file the dampener lies below the lowest cross and clear of the bridge', async () => {
+test('on every published file the dampener sits on the lowest cross, full size and clear of the bridge', async () => {
   for (const f of catalog.files) {
     const root = await load(f.path);
     const beds = bedLines(root)!;

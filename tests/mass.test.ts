@@ -176,7 +176,7 @@ test('tape weighs its asked length times its layers, once a side, at its middle'
   expect(tapeMasses([])).toEqual([]);
 });
 
-test('an overgrip lies along the handle and a dampener between the bridge and the lowest cross', () => {
+test('an overgrip lies along the handle and a dampener is on the lowest cross', () => {
   for (const lengthIn of [21, 25, 27, 28]) {
     const grip = overgripMass(lengthIn);
     expect(grip).toMatchObject({ g: OVERGRIP_G, x: 0 });
@@ -186,8 +186,6 @@ test('an overgrip lies along the handle and a dampener between the bridge and th
   const damp = dampenerMass(beds);
   expect(damp.g).toBe(DAMPENER_G);
   expect(damp.x).toBeCloseTo(0, 9);
-  const lowest = Math.min(...beds.crosses.lines.map((l) => l.at));
-  expect(damp.y).toBeCloseTo((beds.mains.lines[7].from + lowest) / 2, 9);
-  expect(lowest - damp.y).toBeGreaterThan(0.003);
+  expect(damp.y).toBe(Math.min(...beds.crosses.lines.map((l) => l.at)));
   expect(damp.y - beds.mains.lines[7].from).toBeGreaterThan(0.003);
 });

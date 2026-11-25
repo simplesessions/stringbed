@@ -7,6 +7,7 @@ bump; new racquets, new colourways and fixes to existing models are minor or pat
 
 ## Unreleased
 
+- Fix: the Build page's dampener was squeezed under the lowest cross, half behind the frame. It now sits on that cross at full size, and `dampenerMass` weighs it there (about 3 mm higher).
 - Gallery: softer sounds for choosing strings: one muted pluck in place of a buzz and a long tone. Lead tape is a papery stroke and a soft press in place of ticks and a thunk.
 - Gallery: a quieter Build page (slim header, one section open at a time, only the ratings that moved, Copy link as the one filled button) and no brand directory or filters on racquet and string pages.
 - Fix: the Build page's pinned columns were drawn over "About this racquet" on wide windows, and the size filter left a racquet or build for a floor.

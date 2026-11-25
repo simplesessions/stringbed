@@ -66,8 +66,8 @@ export function overgripMass(lengthIn: number): PointMass {
 const centreMain = (beds: Beds) => beds.mains.lines.reduce((a, b) => (Math.abs(b.at) < Math.abs(a.at) ? b : a));
 
 /**
- * A dampener between the two centre mains, outside the crossed strings: half way from the mains' lower
- * ends (the bridge) to the lowest cross. With an odd count "the centre two" are the middle string and
+ * A dampener between the two centre mains, seated on the lowest cross: published models leave under 7 mm
+ * between that and the bridge, where the frame would hide it. With an odd count "the centre two" are the middle string and
  * the one to its right, as buildDampener has it. It is drawn here too.
  */
 export function dampenerMass(beds: Beds): PointMass {
@@ -75,7 +75,7 @@ export function dampenerMass(beds: Beds): PointMass {
   const b = (mains.length >> 1) + (mains.length % 2);
   const [left, right] = [mains[b - 1], mains[b]];
   const lowest = Math.min(...beds.crosses.lines.map((l) => l.at));
-  return { g: DAMPENER_G, x: (left.at + right.at) / 2, y: (Math.max(left.from, right.from) + lowest) / 2, label: 'dampener' };
+  return { g: DAMPENER_G, x: (left.at + right.at) / 2, y: lowest, label: 'dampener' };
 }
 
 interface Sum { g: number; moment: number; swingweight: number; twist: number }
