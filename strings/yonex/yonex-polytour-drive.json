@@ -1,0 +1,42 @@
+{
+  "id": "yonex-polytour-drive",
+  "brand": "Yonex",
+  "name": "PolyTour Drive",
+  "material": "polyester",
+  "shape": null,
+  "gaugesMm": [
+    1.25
+  ],
+  "colours": [
+    {
+      "id": "yellow",
+      "name": "Yellow",
+      "hex": "#e6ee3a"
+    }
+  ],
+  "finish": "satin",
+  "summary": "A comfortably firm, sharp-edged polyester that gives easy access to spin at a modest price. Its response is predictable, so players can swing out without fear of overhitting, though independent coverage of it is thin.",
+  "bestFor": [
+    "spin",
+    "value"
+  ],
+  "ratings": {
+    "power": 2,
+    "spin": 4,
+    "control": 4,
+    "comfort": 3,
+    "feel": 3,
+    "durability": 3
+  },
+  "compared": [
+    "yonex-polytour-spin",
+    "yonex-polytour-rev"
+  ],
+  "confidence": "low",
+  "sources": [
+    "https://www.tennisonly.com.au/Yonex_POLYTOUR_DRIVE_16L_125_String_Set/descpage-YPTDRI.html",
+    "https://www.tennisnerd.net/gear/strings/yonex-poly-tour-rev-mint/31913"
+  ],
+  "researchedOn": "2026-11-24",
+  "verified": false
+}

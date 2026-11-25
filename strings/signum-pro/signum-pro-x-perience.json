@@ -1,0 +1,45 @@
+{
+  "id": "signum-pro-x-perience",
+  "brand": "Signum Pro",
+  "name": "X-Perience",
+  "material": "polyester",
+  "shape": null,
+  "gaugesMm": [
+    1.18,
+    1.24,
+    1.3
+  ],
+  "colours": [
+    {
+      "id": "green",
+      "name": "Green",
+      "hex": "#7fe036"
+    }
+  ],
+  "finish": "satin",
+  "summary": "A control-minded co-poly for heavy hitters. The shop strung it for a test and found immediate grip on the ball, a well-balanced mix of power and control, and pleasant tolerance off centre; the maker describes a shaped, highly elastic string.",
+  "bestFor": [
+    "control",
+    "spin"
+  ],
+  "ratings": {
+    "power": 3,
+    "spin": 4,
+    "control": 4,
+    "comfort": 3,
+    "feel": 4,
+    "durability": 4
+  },
+  "compared": [
+    "signum-pro-poly-plasma",
+    "solinco-hyper-g"
+  ],
+  "confidence": "low",
+  "sources": [
+    "https://www.signum-pro.com/html/index.php?id=86&L=1",
+    "https://www.tennis-warehouse.com/SignumString.html",
+    "https://www.extreme-tennis.eu/signum-pro-tennis-strings/8436-signum-pro-x-perience-12m.html"
+  ],
+  "verified": true,
+  "researchedOn": "2026-11-24"
+}

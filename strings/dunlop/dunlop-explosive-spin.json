@@ -1,0 +1,54 @@
+{
+  "id": "dunlop-explosive-spin",
+  "brand": "Dunlop",
+  "name": "Explosive Spin",
+  "material": "polyester",
+  "shape": {
+    "sides": 6,
+    "label": "Hexagonal"
+  },
+  "gaugesMm": [
+    1.25,
+    1.3
+  ],
+  "colours": [
+    {
+      "id": "black",
+      "name": "Black",
+      "hex": "#1c1f21"
+    },
+    {
+      "id": "yellow",
+      "name": "Yellow",
+      "hex": "#d4d93a"
+    }
+  ],
+  "finish": "matte",
+  "summary": "A six-sided co-poly with a gritty, textured surface, made for spin. The maker calls it firm and stable for fast swings. The one review read found extra curve on kick serves, good durability and steady tension, but less power on flat shots and serves.",
+  "bestFor": [
+    "spin",
+    "control"
+  ],
+  "ratings": {
+    "power": 2,
+    "spin": 5,
+    "control": 4,
+    "comfort": 2,
+    "feel": 3,
+    "durability": 3
+  },
+  "compared": [
+    "babolat-rpm-blast",
+    "dunlop-explosive-bite"
+  ],
+  "confidence": "low",
+  "sources": [
+    "https://us.dunlopsports.com/dunlop/tennis/strings/polyester/explosive-spin-string/10299195.html",
+    "https://us.dunlopsports.com/dunlop/tennis/strings/polyester/explosive-spin-tennis-string/10299193.html",
+    "https://www.perfect-tennis.com/dunlop-explosive-spin-review/",
+    "https://www.tennisonly.com.au/Dunlop_Explosive_Spin_16_130_String_Set/descpage-DXSPN16.html",
+    "https://www.tennis-warehouse.com/DunlopString.html"
+  ],
+  "researchedOn": "2026-11-24",
+  "verified": false
+}

@@ -1,0 +1,46 @@
+{
+  "id": "luxilon-eco-power",
+  "brand": "Luxilon",
+  "name": "ECO Power",
+  "material": "polyester",
+  "shape": {
+    "sides": 6,
+    "label": "Hexagonal"
+  },
+  "gaugesMm": [
+    1.25
+  ],
+  "colours": [
+    {
+      "id": "teal",
+      "name": "Teal",
+      "hex": "#4db89c"
+    }
+  ],
+  "finish": "satin",
+  "summary": "A recycled-plastic, six-sided polyester that one reviewer places between 4G and ALU Power in stiffness. It gives good control and a low launch for players with their own pace; the same reviewer found average tension holding, less bite than he hoped for and a rather dead feel.",
+  "bestFor": [
+    "control",
+    "spin"
+  ],
+  "ratings": {
+    "power": 2,
+    "spin": 3,
+    "control": 4,
+    "comfort": 3,
+    "feel": 3,
+    "durability": 3
+  },
+  "compared": [
+    "luxilon-4g",
+    "luxilon-alu-power",
+    "solinco-hyper-g"
+  ],
+  "confidence": "low",
+  "sources": [
+    "https://www.tennisnerd.net/gear/strings/string-reviews/luxilon-eco-power-review/31394",
+    "https://tennisoverload.com/luxilon-eco-power-tennis-string-review/"
+  ],
+  "researchedOn": "2026-11-24",
+  "verified": false
+}

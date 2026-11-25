@@ -75,10 +75,10 @@ code { font-family: var(--mono); }
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 12px 40px;
+  gap: 12px 20px;
   padding: 18px var(--pad) 14px;
 }
-.strip-id { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 20px; min-width: 0; }
+.strip-id { display: flex; flex-wrap: wrap; align-items: center; gap: 2px 20px; min-width: 0; }
 .name {
   display: inline-block;
   padding-block: 6px;
@@ -114,6 +114,10 @@ code { font-family: var(--mono); }
 .sign[aria-pressed='true'], .sign[aria-current='true'] { background: var(--ink); color: var(--wall); }
 .sign-count { color: var(--ink-2); font-weight: 450; font-variant-numeric: tabular-nums; }
 .sign[aria-pressed='true'] .sign-count { color: color-mix(in oklch, var(--wall) 72%, var(--ink)); }
+/* Which room: racquets or strings. The same segmented pill as the filters, beside the name. */
+.rooms { display: flex; padding: 2px; border: 1.5px solid var(--line); border-radius: 999px; }
+.rooms[hidden] { display: none; }
+.rooms .sign { align-items: center; }
 .signs-break { width: 1px; margin: 6px 8px; background: var(--line); }
 /* Size: a quieter second filter beside the brand signs, joined into one segmented pill. */
 .sizes { gap: 0; margin-inline: 0; padding: 2px; border: 1.5px solid var(--line); border-radius: 999px; }
@@ -123,11 +127,17 @@ code { font-family: var(--mono); }
 .looks { display: flex; align-items: center; padding: 2px; border: 1.5px solid var(--line); border-radius: 999px; }
 .looks-label { padding: 0 6px 0 10px; color: var(--ink-2); font-size: 0.8125rem; font-weight: 620; font-stretch: 84%; }
 /* Look and Search share the right end of the strip and wrap together. */
-.strip-end { display: flex; align-items: center; gap: 12px; margin-inline-start: auto; }
+.strip-end, .strip-tools { display: flex; align-items: center; gap: 12px; }
+.strip-end { margin-inline-start: auto; }
 .looks .sign-size { padding-inline: 10px; }
 .stage-controls .looks { display: none; }
-/* Keep the header on one row at common desktop widths: the pill's words carry the meaning. */
-@media (max-width: 1559px) { .looks-label { display: none; } }
+/* Who and what on the first row, with the tools at its end; the brand directory has the next to itself. */
+.signs:not(.sizes) { flex-basis: 100%; }
+/* Keep the first row one row: the pills' words carry the meaning. */
+@media (max-width: 1559px) {
+  .looks-label { display: none; }
+  .materials .sign-size { padding-inline: 10px; }
+}
 
 /* ---------- main ---------- */
 
@@ -241,13 +251,38 @@ main { flex: 1; padding: 6px var(--pad) 72px; overflow-x: clip; }
 }
 .aisle-soft { color: var(--ink-2); font-weight: 450; }
 
+/* Spools do not fan from a butt cap: a hand of them is set down as a stack, as on a shop counter.
+   It waits gathered in the middle and opens out on the same spring, centre first. A canvas is wider
+   than a reel is tall, and the reel stands a little above its foot: hence the fractions. */
+.aisle:has(.fan-spools) { container-type: inline-size; }
+.fan-spools {
+  --reel-w: min(39cqi, 200px);
+  --reel-h: calc(var(--reel-w) / 1.25);
+  --tier: calc(var(--reel-h) * 0.755);
+  height: calc(var(--reel-h) + var(--tier) + 18px);
+}
+.fan-spools .blade {
+  left: calc(50% - var(--reel-w) / 2);
+  bottom: calc(var(--reel-h) * -0.044 + 2px); /* the flange on the rail */
+  width: var(--reel-w);
+  height: var(--reel-h);
+  transform: translate(calc(var(--x) * var(--reel-w) * 0.12), calc(var(--row) * var(--tier) * -0.8 - 22px));
+}
+.aisle[data-open] .fan-spools .blade { transform: translate(calc(var(--x) * var(--reel-w) * 0.78), calc(var(--row) * var(--tier) * -1)); }
+/* A reel on a counter stands still. Walking up to it, the stack loosens. */
+.aisle[data-settled] .fan-spools .blade { animation: none; }
+.aisle[data-settled] .aisle-link:is(:hover, :focus-visible) .fan-spools .blade {
+  transform: translate(calc(var(--x) * var(--reel-w) * 0.81), calc(var(--row) * (var(--tier) * -1 - 10px)));
+}
+
 /* ---------- brand floor: one shelf per line ---------- */
 
 .floor-head { display: grid; gap: 10px; margin-bottom: 8px; }
 .floor-head .back { justify-self: start; }
 .floor-sign {
   margin: 6px 0 0;
-  font-size: clamp(3rem, 1.4rem + 5.6vw, 6rem);
+  /* A long name (Kirschbaum) is set no larger than the line it has. */
+  font-size: min(clamp(3rem, 1.4rem + 5.6vw, 6rem), calc((100vw - 2 * var(--pad)) / (var(--letters, 1) * 0.91)));
   font-weight: 800;
   font-stretch: 125%;
   /* Same proportions as a hovered aisle sign (wdth 125, no tracking, line-height 0.9), so the
@@ -500,6 +535,54 @@ main { flex: 1; padding: 6px var(--pad) 72px; overflow-x: clip; }
 /* The header is the same on every page (the brand signs are the site's directory), so view
    transitions can hold it still instead of swapping one header for another. */
 
+/* ---------- a string brand's floor: its spools along the rail ---------- */
+
+.floor-empty p { margin: 0 0 14px; }
+.spools {
+  --cols: 3;
+  --gap: 24px;
+  display: grid;
+  grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
+  gap: 40px var(--gap);
+  margin-top: 40px;
+  background: none;
+  /* A shelf runs on past a short row, as far as the page does. */
+  clip-path: inset(-12px -4px -12px -12px);
+}
+.spools .bay { width: auto; }
+.spools .bay-link { border-radius: 4px; }
+.spools .bay-link:focus-visible { outline-offset: 2px; } /* inside the clip */
+.spools .bay-stage { height: auto; aspect-ratio: 1.4; }
+.spools .bay-stage::before { content: ''; position: absolute; left: 0; bottom: -3px; width: 100vw; height: 3px; background: var(--rail); }
+.spools .bay-canvas { bottom: auto; transform: translateY(4.4%); } /* the flange on the rail */
+.spools .tag { gap: 4px; }
+.tag-foot { display: flex; align-items: center; gap: 10px; margin-top: 4px; }
+.tag-best {
+  padding: 3px 10px 2px;
+  border-radius: 999px;
+  background: color-mix(in oklch, var(--swatch, var(--rail)) 24%, var(--wall));
+  font-size: 0.8125rem;
+  font-weight: 620;
+  font-stretch: 86%;
+}
+.spools .version-dots { margin: 0; }
+/* Over the reel, not the tag under it. */
+:is(.spools, .fan-spools) .bay-fault { inset: 0 0 auto; aspect-ratio: 1.4; align-content: center; transform: none; }
+
+/* ---------- a string cut through ---------- */
+
+.section { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px; margin-top: 8px; }
+.section-cell { flex: none; }
+.section-drawing { display: block; }
+.section-cut { fill: var(--swatch); stroke: oklch(0.23 0.01 75 / 0.35); stroke-width: 1; stroke-linejoin: round; }
+.section-cut.is-unknown { fill: none; stroke: var(--ink-2); stroke-width: 1.5; stroke-dasharray: 4 5; }
+.section-bar { fill: none; stroke: var(--ink-2); stroke-width: 1.5; }
+.section-unit { fill: var(--ink-2); font: 500 13px var(--sans); }
+.section-facts { display: grid; justify-items: start; gap: 4px; flex: 1 1 160px; }
+.section-gauge { margin: 0; font-size: 1.75rem; font-weight: 760; font-stretch: 78%; font-variant-numeric: tabular-nums; line-height: 1; }
+.section-note { margin: 0 0 8px; }
+.section .sheet-note { margin: 6px 0 0; }
+
 /* ---------- buttons ---------- */
 
 .button, .bay-retry {
@@ -586,6 +669,7 @@ main { flex: 1; padding: 6px var(--pad) 72px; overflow-x: clip; }
   min-height: 440px;
   border-radius: 12px;
 }
+@media (min-width: 721px) { [data-room='strings'] .stage { height: min(calc(100svh - 234px), 880px); } } /* its directory is a row longer */
 /* The panel shows before the 3D alcove arrives and without WebGL. */
 .niche {
   position: relative;
@@ -614,7 +698,7 @@ main { flex: 1; padding: 6px var(--pad) 72px; overflow-x: clip; }
   gap: 8px 16px;
   padding: 10px 0;
 }
-.views .sign, .looks .sign { align-items: center; }
+.views .sign, .looks .sign, .sizes .sign { align-items: center; }
 .views { display: flex; padding: 2px; border: 1.5px solid var(--line); border-radius: 999px; }
 .stage-controls .button-quiet { padding-inline: 10px 14px; }
 .stage-controls > * { flex: none; }
@@ -909,6 +993,7 @@ main { flex: 1; padding: 6px var(--pad) 72px; overflow-x: clip; }
 }
 .search-hit:hover, [aria-selected='true'] > .search-hit { background: var(--wall-2); }
 .search-model { font-size: 0.9375rem; font-weight: 640; font-stretch: 86%; line-height: 1.25; }
+.search-dot { display: inline-block; width: 10px; height: 10px; margin-right: 8px; border-radius: 50%; background: var(--chip); box-shadow: inset 0 0 0 1px oklch(0.23 0.01 75 / 0.25); }
 .search-meta { grid-column: 1; color: var(--ink-2); font-size: 0.8125rem; }
 .search-badge { grid-column: 2; grid-row: 1 / span 2; align-self: center; color: var(--ink-2); font-size: 0.75rem; white-space: nowrap; }
 .search-empty { margin: 0; padding: 14px 16px; color: var(--ink-2); font-size: 0.9375rem; }
@@ -1007,18 +1092,32 @@ a.gen-tab { display: inline-flex; align-items: center; text-decoration: none; }
 }
 .copy:hover { border-color: var(--ink); }
 
+@media (min-width: 1100px) { .spools { --cols: 4; } }
+@media (min-width: 1500px) { .spools { --cols: 5; } }
 @media (max-width: 1099px) {
   .aisles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
-@media (max-width: 720px) {
+/* Tablets: the name, the rooms and the tools still share the first row. Where it is tightest, under
+   768px, the look pill draws in as well. */
+@media (max-width: 899px) {
   .search-open .search-key { display: none; }
-  .strip { position: relative; }
-  .search-open { position: absolute; top: 18px; right: var(--pad); }
+  .search-open { padding-inline-end: 14px; }
+}
+@media (max-width: 767px) {
+  .strip .looks .sign-size { padding-inline: 6px; }
+  .strip-end, .strip-tools { gap: 8px; }
+}
+
+@media (max-width: 720px) {
   .search { margin-top: 12px; }
   :root { --bay-gap: 10px; }
   .wall { --bay-w: calc((100vw - 2 * var(--pad) - 2 * var(--bay-gap)) / 3.3); }
   .aisles { --fan-h: 300px; grid-template-columns: minmax(0, 1fr); gap: 48px; }
+  /* One aisle a row: nothing beside it to line its rail up with, so one row of reels needs no more height. */
+  .fan-spools:is([data-count='1'], [data-count='2']) { height: calc(var(--reel-h) + 18px); }
+  .spools { --cols: 2; --gap: 14px; row-gap: 32px; margin-top: 24px; }
+  .section { column-gap: 18px; }
   .floor-index { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
   .floor-index a { flex: none; }
   .shelf .bays { margin-inline: calc(-1 * var(--pad)); padding-inline: var(--pad); scroll-padding-inline: var(--pad); scroll-snap-type: x proximity; }
@@ -1038,7 +1137,6 @@ a.gen-tab { display: inline-flex; align-items: center; text-decoration: none; }
   /* Header: brands on one row that scrolls sideways (bleeding to the screen edges), size as a
      full-width segmented row under it, so the filters take two short rows instead of three. */
   .strip { gap: 10px; padding-bottom: 10px; }
-  .strip-id { width: 100%; }
   .signs:not(.sizes) {
     flex-wrap: nowrap;
     width: calc(100% + 2 * var(--pad));
@@ -1052,11 +1150,14 @@ a.gen-tab { display: inline-flex; align-items: center; text-decoration: none; }
   .signs:not(.sizes)::-webkit-scrollbar { display: none; }
   .signs:not(.sizes) .sign { flex: none; }
   .sizes { display: grid; grid-template-columns: repeat(3, 1fr); width: 100%; }
+  .rooms { display: grid; grid-template-columns: repeat(2, 1fr); width: 100%; }
   /* Safari doesn't stretch a <button> to fill its grid cell, so the width is set here. */
   .sign-size { justify-content: center; min-height: 34px; }
-  .sizes .sign-size { width: 100%; }
+  .sizes:not(.materials) .sign-size, .rooms .sign-size { width: 100%; }
+  /* Five materials in one row on a phone: the letters narrow before anything has to scroll. */
+  .materials { display: flex; overflow-x: auto; scrollbar-width: none; }
+  .materials .sign-size { flex: 1 0 auto; min-width: 38px; padding-inline: 6px; font-size: 0.8125rem; font-stretch: 72%; }
   /* No room for a third header row: on phones the look lives in the detail stage. */
-  .strip-end { display: contents; }
   .strip .looks { display: none; }
   .stage-controls .looks { display: flex; }
   .stage-controls .stage-hint { flex-basis: 100%; }
@@ -1167,6 +1268,361 @@ a.gen-tab { display: inline-flex; align-items: center; text-decoration: none; }
 .profile-sources a { color: inherit; text-underline-offset: 2px; }
 @media (max-width: 720px) { .rating { grid-template-columns: 7.2rem minmax(0, 1fr); } }
 @media (prefers-reduced-motion: reduce) { .pip.on, .ring { transition: none; } }
+
+/* ---------- build my racquet ---------- */
+
+/* The way in, beside the download: the same slab in outline, so the two read as a pair. */
+.detail-file { display: flex; gap: 8px; }
+.build-open {
+  position: relative; display: inline-flex; align-items: center; white-space: pre;
+  min-height: 44px; padding: 0 16px;
+  border: 1.5px solid var(--ink); border-radius: 999px;
+  color: var(--ink);
+  font: 640 0.9375rem/1.2 var(--sans); font-stretch: 88%; text-decoration: none;
+  transition: background-color 0.2s var(--ease-out), color 0.2s var(--ease-out);
+}
+.build-open:hover { background: var(--ink); color: var(--wall); }
+.measure { display: inline-flex; align-items: baseline; gap: 6px; }
+.measure + .measure { margin-inline-start: 6px; }
+
+.build-nav { flex-wrap: wrap; }
+.build-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-inline-start: auto; }
+.build-actions .button { min-height: 40px; }
+.button:disabled { border-color: var(--line); background: transparent; color: var(--ink-2); cursor: default; }
+.sound-toggle.is-labelled { display: inline-flex; align-items: center; gap: 8px; width: auto; height: 40px; padding: 0 16px 0 12px; color: var(--ink); font: 620 1rem/1 var(--sans); font-stretch: 88%; }
+.sound-toggle.is-labelled > span { display: grid; }
+.sound-toggle.is-labelled[aria-pressed='true'] { color: var(--wall); }
+.copy-field { flex: 1 1 100%; }
+
+/* Two columns, and three where there is room: the racquet and its numbers hold still beside the
+   bench they are changed from. */
+.build {
+  display: grid;
+  grid-template: 'rig bench' auto 'rig does' 1fr 'about about' auto / minmax(0, 1fr) minmax(320px, 400px);
+  gap: 0 clamp(28px, 3.4vw, 56px);
+  align-items: start;
+}
+.build-rig { grid-area: rig; position: sticky; top: 16px; display: flex; flex-direction: column; height: min(calc(100svh - 214px), 900px); min-height: 480px; }
+.build-bench { grid-area: bench; min-width: 0; }
+@media (min-width: 721px) and (max-width: 1239px) { .build-rig { height: min(calc(100svh - 296px), 900px); } } /* its header is a row longer */
+.build-does { grid-area: does; min-width: 0; }
+.build-about { grid-area: about; min-width: 0; }
+@media (min-width: 1240px) {
+  .build { grid-template: 'rig bench does' auto 'about about about' auto / minmax(360px, 1.15fr) minmax(340px, 1fr) minmax(300px, 0.85fr); }
+  .build-does { position: sticky; top: min(16px, calc(100svh - var(--tall, 0px) - 16px)); }
+  .build-does .bench-head { margin-top: 0; }
+  .reading-moved { display: none; }
+}
+
+/* ---- the stage, and the readout under it ---- */
+
+.build-rig .stage { position: relative; top: 0; flex: 1 1 0; height: auto; min-height: 0; }
+.build-rig .stage-controls { gap: 8px; padding: 8px 0; }
+.build-rig .stage-hint { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+.tape-toggle[aria-expanded='true'] { background: var(--ink); color: var(--wall); }
+.stage-controls .tape-toggle { min-height: 36px; padding-block: 5px; font-size: 0.9375rem; }
+/* While tape is out the row under the model is about that, and nothing covers the racquet. */
+.is-taping > .stage-controls { flex-wrap: wrap; }
+.is-taping > .stage-controls > :not(.tape-toggle, .tape-bar) { display: none; }
+.stage-controls .tape-bar { flex: 1 1 0; display: flex; align-items: center; gap: 4px 14px; min-width: 0; }
+.tape-bar .check { flex: none; }
+.tape-bar p { margin: 0; color: var(--ink-2); font-size: 0.8125rem; line-height: 1.3; text-wrap: pretty; }
+.stage-controls .tape-bar[hidden], .tape-chip[hidden] { display: none; }
+.tape-marks { position: absolute; z-index: 2; inset: 0; width: 100%; height: 100%; overflow: hidden; pointer-events: none; }
+.tape-marks polyline { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.tape-marks .edge { stroke: var(--ink); stroke-width: 7; }
+.tape-marks .core { stroke: #b9bdc2; stroke-width: 3.5; }
+.tape-marks .core:is(.is-aim, .is-chosen) { stroke: var(--wall); }
+.tape-marks .edge.is-aim { stroke-width: 9; }
+.tape-marks .core.is-aim { stroke-width: 5; stroke-dasharray: 1 8; }
+.tape-chip {
+  position: absolute; z-index: 3; top: 0; left: 0;
+  margin: 14px 0 0 14px; padding: 4px 9px 3px;
+  border-radius: 8px;
+  background: var(--ink); color: var(--wall);
+  font-size: 0.8125rem; font-weight: 600; font-stretch: 86%; font-variant-numeric: tabular-nums; white-space: nowrap;
+  pointer-events: none;
+}
+.tape-chip.is-left { transform: translateX(calc(-100% - 28px)); }
+
+.readings { flex: none; position: relative; container-type: inline-size; }
+.beam { display: block; width: min(100%, 320px); height: auto; margin: 2px auto 0; overflow: visible; }
+.beam [hidden] { display: none; }
+.beam-racquet { transform: rotate(var(--tilt, 0deg)); transform-origin: 200px 34px; transition: transform 0.9s var(--spring); }
+.beam-foot { fill: var(--ink); stroke: var(--ink); stroke-width: 2; }
+.beam-hoop { fill: none; stroke: var(--swatch); stroke-width: 4.5; stroke-linecap: round; transition: fill 0.3s var(--ease-out); }
+ellipse.beam-hoop { fill: color-mix(in oklch, var(--bed, var(--wall)) 34%, var(--wall)); }
+.beam-grip { fill: var(--grip, oklch(0.3 0.01 75)); stroke: oklch(0.23 0.01 75 / 0.3); stroke-width: 1; transition: fill 0.3s var(--ease-out); }
+.beam-lead { fill: none; stroke: var(--wall); stroke-width: 6; paint-order: stroke; stroke-linecap: butt; }
+.beam-dot { fill: var(--wall); stroke: var(--ink); stroke-width: 2.5; transition: cx 0.6s var(--ease-out); }
+
+.reading-cells { display: grid; grid-template-columns: 1.1fr 1.25fr 1.1fr 0.9fr; gap: 0 14px; margin: 6px 0 0; padding-top: 10px; border-top: 2px solid var(--ink); }
+.reading dt { color: var(--ink-2); font-size: 0.8125rem; line-height: 1.2; }
+.reading dd { display: flex; flex-direction: column; margin: 3px 0 0; font-variant-numeric: tabular-nums; line-height: 1.2; }
+.reading-value { height: 1.7rem; font-size: 1.5rem; font-weight: 760; font-stretch: 76%; line-height: 1.7rem; white-space: nowrap; }
+.reading-value.is-missing { font-size: 1.0625rem; color: var(--ink-2); }
+.reading-change { font-size: 0.875rem; font-weight: 680; font-stretch: 88%; min-height: 1.2em; }
+.reading-change.is-still { color: var(--ink-2); font-weight: 450; }
+@container (max-width: 380px) { .reading-cells { grid-template-columns: 1fr 1fr; gap: 8px 14px; } }
+.reading-about { line-height: 1; font-size: 0.875rem; font-weight: 600; font-stretch: 86%; }
+/* What a change is against stands beside it where there is room, under it where there is not. */
+.reading-delta { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 5px; }
+.reading-change:empty { display: none; }
+.reading-against { color: var(--ink-2); font-size: 0.8125rem; font-stretch: 84%; min-height: 1.2em; }
+.reading-note { color: var(--ink-2); font-size: 0.8125rem; min-height: 1.2em; }
+.reading-moved { margin: 8px 0 0; font-size: 0.875rem; font-weight: 600; font-stretch: 88%; font-variant-numeric: tabular-nums; }
+.reading-fault { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin: 4px 0; font-size: 0.875rem; }
+.reading-fault[hidden] { display: none; }
+
+/* ---- the bench ---- */
+
+.build-title .sheet-title { font-size: clamp(2rem, 1.4rem + 1.6vw, 2.75rem); }
+.build-title .sheet-sub { margin: 8px 0 14px; }
+.build-title .build-actions { margin: 0; }
+.bench { position: relative; }
+.bench-head {
+  margin: 34px 0 14px; padding-top: 10px;
+  border-top: 2px solid var(--ink);
+  font-size: 1.0625rem; font-weight: 780; font-stretch: 72%; letter-spacing: 0.07em; text-transform: uppercase; line-height: 1.2;
+}
+.bench-sub { margin: 0 0 8px; font-size: 1rem; font-weight: 700; font-stretch: 82%; line-height: 1.2; }
+.bench-note { margin: 8px 0; color: var(--ink-2); font-size: 0.875rem; line-height: 1.4; }
+.bench-note:empty { display: none; }
+.bench-fault { margin-bottom: 14px; padding: 12px 14px; border-radius: 12px; background: var(--wall-2); font-size: 0.9375rem; }
+.bench-fault p { margin: 0 0 10px; }
+.bench-aside { position: absolute; top: 4px; right: 0; background: var(--wall); }
+:is(.bench-fault, .build .button, .set, .set-crosses, .slider, .picker, .piece-body, .piece-fault, .build-does .rating, .copy-field)[hidden] { display: none; }
+
+.segs { display: flex; flex-wrap: wrap; padding: 2px; border: 1.5px solid var(--line); border-radius: 18px; width: fit-content; max-width: 100%; }
+.seg {
+  appearance: none;
+  min-height: 30px; padding: 4px 11px 3px;
+  border: 0; border-radius: 999px; background: transparent; color: var(--ink);
+  font: inherit; font-size: 0.8125rem; font-weight: 640; font-stretch: 86%; font-variant-numeric: tabular-nums;
+  cursor: pointer;
+}
+.seg:hover { background: var(--wall-2); }
+.seg[aria-pressed='true'] { background: var(--ink); color: var(--wall); }
+.seg:focus-visible { outline-offset: 1px; border-radius: 999px; }
+.field-row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; margin-top: 12px; }
+.field-label { color: var(--ink-2); font-size: 0.875rem; }
+.field {
+  appearance: none;
+  min-width: 0; min-height: 40px; padding: 6px 12px;
+  border: 1.5px solid var(--line); border-radius: 10px;
+  background: color-mix(in oklch, var(--wall) 60%, white); color: var(--ink);
+  font: 500 1rem/1.3 var(--sans);
+}
+.field::placeholder { color: var(--ink-2); opacity: 1; }
+.field:focus-visible { outline-offset: 0; border-radius: 10px; }
+.field[aria-invalid='true'] { border-color: var(--ink); border-style: dashed; }
+.field-fault { margin: 4px 0 0; font-size: 0.875rem; font-weight: 620; }
+.field-fault:empty { display: none; }
+
+/* A set of strings: what is in, and what it can be. */
+.set-crosses { margin-top: 26px; }
+.set-crosses .set { margin-top: 14px; }
+.set-row { display: flex; align-items: center; gap: 12px; }
+.set-dot .section-dot { width: 38px; height: 38px; }
+.set-text { display: grid; flex: 1; min-width: 0; gap: 1px; }
+.set-name { font-size: 1.125rem; font-weight: 700; font-stretch: 82%; line-height: 1.2; }
+.set-meta { color: var(--ink-2); font-size: 0.8125rem; line-height: 1.3; }
+.set-change { flex: none; min-height: 38px; padding: 6px 14px; font-size: 0.9375rem; }
+.section-dot { display: block; flex: none; width: 24px; height: 24px; }
+.section-dot.is-stock { border: 1.5px dashed var(--ink-2); border-radius: 50%; }
+.set-dot .section-dot.is-stock { width: 34px; height: 34px; margin: 2px; }
+.section-dot .section-cut { stroke-width: 6; }
+.section-dot .section-cut.is-unknown { stroke-width: 9; stroke-dasharray: 18 16; fill: color-mix(in oklch, var(--swatch) 60%, transparent); }
+.set-options { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 0 18px; align-items: start; margin-top: 12px; }
+.set-options:empty { display: none; }
+.set-cut .section-drawing { width: 112px; height: auto; }
+.set-fields { min-width: 0; }
+
+.picker { margin-top: 12px; padding: 12px; border-radius: 12px; background: var(--wall-2); }
+.picker-top { display: flex; gap: 8px; margin-bottom: 10px; }
+.picker-top .field { flex: 1; }
+.picker .segs { border-color: transparent; padding: 0; gap: 2px; }
+.picker .seg:not([aria-pressed='true']):hover { background: var(--wall); }
+.picker-count { margin: 8px 0 4px; color: var(--ink-2); font-size: 0.8125rem; }
+.picker-list { position: relative; max-height: min(320px, 44svh); overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: var(--rail) transparent; padding: 3px; margin-inline: -3px; }
+.pick { position: relative; display: flex; align-items: center; gap: 12px; padding: 7px 10px; border-radius: 10px; cursor: pointer; }
+.pick-text { display: grid; min-width: 0; }
+.pick-name { font-size: 0.9375rem; font-weight: 660; font-stretch: 84%; line-height: 1.25; }
+.pick-meta { color: var(--ink-2); font-size: 0.8125rem; line-height: 1.25; }
+@media (hover: hover) { .pick:hover { background: var(--wall); } }
+.pick:has(:checked) { background: var(--ink); color: var(--wall); }
+.pick:has(:checked) .pick-meta { color: color-mix(in oklch, var(--wall) 78%, var(--ink)); }
+.pick:has(:focus-visible) { outline: 2px solid var(--ink); outline-offset: 1px; }
+
+.swatches { margin: 0; padding: 0; border: 0; min-width: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.swatches legend { padding: 0; margin-bottom: 6px; color: var(--ink-2); font-size: 0.875rem; }
+.swatches + .swatches { margin-top: 16px; }
+.swatch {
+  position: relative; display: inline-flex; align-items: center; gap: 7px;
+  min-height: 36px; padding: 4px 11px 4px 5px;
+  border: 1.5px solid var(--line); border-radius: 999px;
+  font-size: 0.875rem; font-weight: 600; font-stretch: 86%; cursor: pointer;
+}
+.swatch:hover { background: var(--wall-2); }
+.swatch:has(:checked) { border-color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink); }
+.swatch:has(:focus-visible) { outline: 2px solid var(--ink); outline-offset: 2px; }
+.swatch-chip { width: 22px; height: 22px; border-radius: 50%; background: var(--chip); box-shadow: inset 0 0 0 1px oklch(0.23 0.01 75 / 0.25); }
+.swatch-chip.is-none { background: linear-gradient(to top right, transparent calc(50% - 1px), var(--ink-2) calc(50% - 1px) calc(50% + 1px), transparent calc(50% + 1px)); }
+
+/* A slider is a rail with a scale, like the machine it stands for. */
+.slider { display: grid; grid-template-columns: 1fr auto; align-items: baseline; gap: 2px 12px; margin-top: 12px; }
+.slider-label { color: var(--ink-2); font-size: 0.875rem; }
+.slider-value { font-weight: 700; font-stretch: 82%; font-variant-numeric: tabular-nums; }
+.bench > .slider .slider-value { font-size: 1.75rem; font-weight: 760; font-stretch: 76%; line-height: 1; }
+.slider-run { grid-column: 1 / -1; display: flex; align-items: center; gap: 6px; }
+.nudge { appearance: none; flex: none; display: grid; place-items: center; width: 36px; height: 36px; padding: 0; border: 1.5px solid var(--line); border-radius: 50%; background: transparent; color: var(--ink); cursor: pointer; }
+.nudge:hover { background: var(--wall-2); border-color: transparent; }
+.nudge:active { transform: scale(0.92); }
+.slide { appearance: none; flex: 1; min-width: 0; height: 36px; margin: 0; background: none; cursor: pointer; }
+.slide::-webkit-slider-runnable-track { height: 3px; background: linear-gradient(var(--ink), var(--ink)) 0 / var(--done, 0%) 100% no-repeat var(--rail); }
+.slide::-moz-range-track { height: 3px; background: var(--rail); }
+.slide::-moz-range-progress { height: 3px; background: var(--ink); }
+.slide::-webkit-slider-thumb { appearance: none; width: 22px; height: 22px; margin-top: -9.5px; border: 0; border-radius: 50%; background: var(--ink); transition: scale 0.25s var(--spring); }
+.slide::-moz-range-thumb { width: 22px; height: 22px; border: 0; border-radius: 50%; background: var(--ink); }
+.slide:active::-webkit-slider-thumb { scale: 1.18; }
+.slide:focus-visible { outline-offset: 0; border-radius: 12px; }
+.bench > .slider .slide { background: linear-gradient(90deg, var(--ink-2) 0 1.5px, transparent 1.5px) 11px calc(50% + 12px) / calc((100% - 22px) / 9) 5px repeat-x; }
+.bench > .slider + .segs { margin-top: 10px; }
+.pluck-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; margin-top: 16px; }
+.pluck:active { transform: translateX(2px); }
+.pluck-note { color: var(--ink-2); font-size: 0.875rem; }
+
+.lead-ways, .presets { display: flex; flex-wrap: wrap; gap: 8px; }
+.lead-ways { align-items: center; }
+.chip-button {
+  appearance: none; min-height: 38px; padding: 6px 13px 5px;
+  border: 1.5px solid var(--line); border-radius: 999px; background: transparent; color: var(--ink);
+  font: inherit; font-size: 0.875rem; font-weight: 620; font-stretch: 86%; font-variant-numeric: tabular-nums; cursor: pointer;
+}
+.chip-button:hover { border-color: var(--ink); }
+.chip-button:active { transform: scale(0.96); }
+.pieces { margin: 10px 0 0; padding: 0; list-style: none; }
+.piece { border-top: 1px solid var(--line); }
+.piece:last-child { border-bottom: 1px solid var(--line); }
+.piece-head { display: flex; align-items: center; gap: 8px; }
+.piece-open { appearance: none; flex: 1; min-width: 0; display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 0 12px; min-height: 44px; padding: 9px 0; border: 0; background: none; color: inherit; font: inherit; text-align: start; cursor: pointer; }
+.piece-open:hover .piece-name { text-decoration: underline; text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
+.piece-open[aria-expanded='true'] .piece-name { font-weight: 740; }
+.piece-name { font-weight: 620; font-stretch: 86%; }
+.piece-meta { color: var(--ink-2); font-size: 0.875rem; font-variant-numeric: tabular-nums; }
+.piece-remove { appearance: none; flex: none; display: grid; place-items: center; width: 36px; height: 36px; margin-inline-end: -8px; padding: 0; border: 0; border-radius: 50%; background: none; color: var(--ink-2); cursor: pointer; }
+.piece-remove:hover { background: var(--wall-2); color: var(--ink); }
+.piece-body { padding: 0 0 16px; }
+.piece-fault { margin: 0 0 8px; font-size: 0.875rem; font-weight: 620; }
+.check { display: inline-flex; align-items: center; gap: 8px; min-height: 36px; font-size: 0.9375rem; cursor: pointer; }
+.piece-body .check { margin-top: 8px; }
+.check input { width: 18px; height: 18px; margin: 0; accent-color: var(--ink); }
+.tape-bar .check { font-size: 0.875rem; }
+
+.fold { border-top: 1px solid var(--line); }
+.fold:last-of-type { border-bottom: 1px solid var(--line); }
+.fold summary { min-height: 44px; padding: 10px 0; font-weight: 620; font-stretch: 86%; cursor: pointer; }
+.fold summary:hover { text-decoration: underline; text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
+.fold[open] { padding-bottom: 16px; }
+.fold .row { grid-template-columns: 7rem minmax(0, 1fr); padding: 6px 0; font-size: 0.875rem; }
+.fold .row dt { font-size: 0.875rem; }
+.fold .row dd { font-weight: 450; }
+.measure-field { display: grid; gap: 4px; margin-top: 10px; }
+.measure-field .field { width: 6.5rem; }
+.field-unit { display: flex; align-items: center; gap: 10px; color: var(--ink-2); font-size: 0.875rem; }
+
+/* ---- what it does ---- */
+
+.verdict { margin-bottom: 16px; }
+.build-does .ratings-head { margin: 18px 0 6px; }
+.build-title .looks { display: none; }
+.verdict p { margin: 0; font-size: 1.125rem; font-weight: 560; font-stretch: 92%; line-height: 1.3; text-wrap: pretty; }
+.verdict p + p { margin-top: 6px; color: var(--ink-2); font-size: 1rem; font-weight: 400; font-stretch: 100%; line-height: 1.4; }
+.estimate .rating { grid-template-columns: 7.2rem minmax(0, 1fr); gap: 0 12px; padding: 6px 0; }
+.estimate .rating dt { align-self: center; }
+.estimate .rating dd:not(.reasons) { gap: 8px; }
+.estimate .rating-n { flex: none; width: 2.3ch; text-align: end; }
+.estimate .delta { flex: none; width: 4ch; }
+.estimate .reasons { grid-column: 2; display: block; color: var(--ink-2); font-size: 0.8125rem; line-height: 1.35; }
+.reason { display: inline-block; margin-inline-end: 10px; font-variant-numeric: tabular-nums; }
+.estimate .rating:not([data-dir='same']) dt { color: var(--ink); font-weight: 650; }
+.shift-arrow { display: none; }
+.is-bare .shift-arrow { display: grid; transition: transform 0.4s var(--spring); }
+.is-bare .pips, .is-bare .rating-n { display: none; }
+.is-bare .shift-arrow { width: 26px; height: 26px; place-items: center; border-radius: 50%; background: var(--wall-2); }
+.is-bare[data-dir='down'] .shift-arrow { transform: rotate(180deg); }
+.is-bare[data-dir='same'] .shift-arrow { transform: rotate(90deg); opacity: 0.4; }
+.is-bare:not([data-dir='same']) .shift-arrow { background: var(--ink); color: var(--wall); }
+.is-bare .delta { text-align: start; width: auto; }
+
+.about-body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 28px clamp(32px, 5vw, 80px); align-items: start; }
+.about-body .profile { margin-top: 0; }
+.about-body:not(:has(.profile)) { grid-template-columns: minmax(0, 46rem); }
+.build-about { margin-top: 28px; }
+.about-file { margin-top: 18px; }
+
+@media (max-width: 720px) {
+  .build { display: block; }
+  html:has(.build) { scroll-padding-top: calc(max(160px, 27svh) + 146px); } /* what is tabbed to comes out from under it */
+  /* The controls stand above the model and slide away under the top edge; the racquet and its
+     numbers stay, whatever is being changed. */
+  .build-rig { --row: 52px; --niche-h: 27svh; z-index: 4; top: calc(-1 * var(--row)); height: auto; min-height: 0; margin-inline: calc(-1 * var(--pad)); padding: 0 var(--pad) 8px; background: var(--wall); border-bottom: 1px solid var(--line); }
+  .build-rig .stage { flex: none; flex-direction: column-reverse; height: auto; }
+  .build-rig .niche { flex: none; height: max(160px, var(--niche-h)); transition: height 0.4s var(--ease-out); }
+  .is-taping .build-rig { --row: 60px; --niche-h: 52svh; top: 0; }
+  /* No model, no controls: the word about it stands beside the outline. */
+  .build-rig:has([data-state='flat']) { --row: 0px; }
+  .build-rig .stage-note { position: absolute; inset: auto auto 8px 12px; max-width: 34%; padding: 0; font-size: 0.75rem; line-height: 1.3; text-align: start; }
+  /* One row and no scrolling: Reset keeps its icon, and the looks stand under the title. */
+  .build-rig .stage-controls .reset-word { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .build-rig .stage-controls .button-quiet { position: relative; width: 40px; padding: 0; margin-inline-start: auto; }
+  .build-rig .stage-controls .tape-toggle { padding-inline: 14px; }
+  .build-title .looks { display: flex; width: fit-content; margin-top: 12px; }
+  .build-rig .stage-controls { flex-wrap: nowrap; height: var(--row); padding: 4px 0; margin-inline: calc(-1 * var(--pad)); padding-inline: var(--pad); }
+  .readings { position: static; container-type: normal; }
+  /* Off the stage: beside the line about how it plays, where it covers no part of the racquet. */
+  .readings { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 0 12px; }
+  .readings > :is(.reading-cells, .reading-fault) { grid-column: 1 / -1; grid-row: auto; }
+  .beam { order: 1; width: 104px; margin: 2px 8px 2px 0; }
+  .reading-cells { grid-template-columns: 1fr 1.2fr 1.1fr 0.9fr; gap: 0 8px; margin-top: 6px; padding-top: 0; border-top: 0; }
+  .reading dt { font-size: 0.75rem; }
+  .reading-value { height: 1.4rem; font-size: 1.125rem; line-height: 1.4rem; }
+  .reading-value.is-missing { font-size: 0.8125rem; }
+  .reading-change, .reading-note, .reading-against { font-size: 0.75rem; }
+  .reading-against { font-stretch: 76%; }
+  .reading-moved { margin-top: 3px; font-size: 0.8125rem; }
+  .build-title { margin-top: 20px; }
+  .build-nav { flex-wrap: nowrap; }
+  .build-nav:has(.copy-field:not([hidden])) { flex-wrap: wrap; }
+  .build-nav .back { flex: 0 1 auto; min-width: 0; }
+  .build-nav .back span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .build-nav .build-actions { flex: none; flex-wrap: nowrap; }
+  .build-actions .button, .build-actions .sound-toggle { min-height: 44px; padding-inline: 14px; }
+  /* Beside the way back there is room for one word each. */
+  .build-what { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .detail-file { margin-inline-start: auto; }
+  .detail-file > :is(a, button) { padding-inline: 14px; }
+  .about-body { grid-template-columns: minmax(0, 1fr); }
+  .swatch { min-height: 40px; }
+}
+@media (max-width: 359px) {
+  .build-rig .stage-controls { gap: 4px; }
+  .build-rig .stage-controls .tape-toggle { padding-inline: 10px; }
+  .build-rig .views .sign { padding-inline: 7px; }
+}
+/* Too short for both: only the numbers hold. */
+@media (max-width: 720px) and (max-height: 520px) {
+  .build:not(.is-taping) .build-rig { top: calc(-1 * (var(--row) + max(160px, var(--niche-h)))); }
+  html:has(.build) { scroll-padding-top: 150px; }
+}
+@media (pointer: coarse) {
+  .seg { min-height: 40px; }
+  .bench-aside + .slider { margin-top: 24px; }
+  .nudge, .piece-remove { width: 44px; height: 44px; }
+  .chip-button, .set-change, .build .swatch { min-height: 44px; }
+  .slide { height: 44px; }
+  .pick { min-height: 48px; }
+}
 
 /* ---------- view transitions ---------- */
 

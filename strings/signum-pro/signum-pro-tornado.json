@@ -1,0 +1,51 @@
+{
+  "id": "signum-pro-tornado",
+  "brand": "Signum Pro",
+  "name": "Tornado",
+  "material": "polyester",
+  "shape": {
+    "sides": 7,
+    "label": "Heptagonal",
+    "twisted": true
+  },
+  "gaugesMm": [
+    1.17,
+    1.23,
+    1.29
+  ],
+  "colours": [
+    {
+      "id": "anthracite",
+      "name": "Anthracite",
+      "hex": "#464749"
+    }
+  ],
+  "finish": "satin",
+  "summary": "A seven-sided twisted co-poly with a soft, fairly lively feel and easy spin. A shop's testers rate its comfort and tension holding and advise moderate tension; customers praise spin and control, though a few say it fades after several matches or a couple of weeks.",
+  "bestFor": [
+    "spin",
+    "comfort",
+    "feel"
+  ],
+  "ratings": {
+    "power": 3,
+    "spin": 4,
+    "control": 3,
+    "comfort": 4,
+    "feel": 4,
+    "durability": 3
+  },
+  "compared": [
+    "volkl-v-square",
+    "signum-pro-x-perience"
+  ],
+  "confidence": "medium",
+  "sources": [
+    "https://www.signum-pro.com/html/index.php?id=42&L=1",
+    "https://www.tennis-warehouse.com/SignumString.html",
+    "https://www.extreme-tennis.eu/signum-pro-tennis-strings/255-signum-pro-tornado-12m.html",
+    "https://www.tennis-warehouse.com/Signum_Pro_Tornado_17_123_String/descpageACSIGNUM-SIGTORN170.html"
+  ],
+  "verified": true,
+  "researchedOn": "2026-11-24"
+}

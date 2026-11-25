@@ -1,20 +1,23 @@
 // Small interface sounds, synthesized with Web Audio (no library, no audio files): the knock of a
 // hard thing on wood or felt. Each is a few sine partials that ring down on their own, plus a
 // breath of filtered noise for the contact. Pitch never slides or jumps; that is what sounds like
-// an arcade game. Off by default and remembered.
+// an arcade game. Off by default and remembered. The build page's strings are the one exception to
+// the knock: a pluck, at the pitch the bed works out to.
 
 const KEY = 'stringbed.sound';
 
-interface Knock {
+export interface Knock {
   /** Peak level, 0–1. */
   level: number;
   /** [frequency in Hz, share of the level, decay time constant in seconds] */
   partials: ReadonlyArray<readonly [number, number, number]>;
   /** The moment of contact: band-passed noise. */
   contact: { hz: number; share: number; decay: number };
+  /** Strike it at each of these times (seconds) instead of once. */
+  run?: readonly number[];
 }
 
-const SOUNDS = {
+export const SOUNDS = {
   /** A fingertip on felt, as the line-up moves to another racquet. */
   hover: {
     level: 0.06,
@@ -33,23 +36,110 @@ const SOUNDS = {
     partials: [[220, 0.62, 0.07], [446, 0.2, 0.04], [905, 0.07, 0.016]],
     contact: { hz: 1100, share: 0.18, decay: 0.008 },
   },
+  /** A string opened: a plastic reel set on the same counter. Hollow, light, and gone sooner than a racquet. */
+  spool: {
+    level: 0.14,
+    partials: [[338, 0.5, 0.034], [812, 0.26, 0.018], [1630, 0.1, 0.008]],
+    contact: { hz: 1900, share: 0.24, decay: 0.005 },
+  },
   /** The same counter, touched more lightly and lower. */
   back: {
     level: 0.12,
     partials: [[185, 0.62, 0.05], [375, 0.2, 0.03], [760, 0.06, 0.012]],
     contact: { hz: 900, share: 0.15, decay: 0.007 },
   },
+  /** One tooth of the stringing machine's tension head. */
+  ratchet: {
+    level: 0.07,
+    partials: [[1180, 0.45, 0.008], [2360, 0.12, 0.004]],
+    contact: { hz: 2600, share: 0.25, decay: 0.003 },
+  },
+  /** String drawn through the grommets: the mains, a breath, the crosses. */
+  weave: {
+    level: 0.05,
+    partials: [[740, 0.5, 0.006], [1490, 0.12, 0.003]],
+    contact: { hz: 2400, share: 0.3, decay: 0.003 },
+    run: [0, 0.018, 0.036, 0.054, 0.072, 0.09, 0.108, 0.126, 0.18, 0.198, 0.216, 0.234, 0.252, 0.27, 0.288, 0.306],
+  },
+  /** Lead tape coming off its backing: all contact, unevenly. */
+  peel: {
+    level: 0.07,
+    partials: [[620, 0.12, 0.004]],
+    contact: { hz: 2500, share: 0.8, decay: 0.006 },
+    run: [0, 0.019, 0.031, 0.056, 0.068, 0.094, 0.108, 0.137, 0.151, 0.18, 0.203, 0.231, 0.252, 0.286],
+  },
+  /** A thumb pressing the tape down. */
+  press: {
+    level: 0.12,
+    partials: [[165, 0.6, 0.03], [332, 0.18, 0.016]],
+    contact: { hz: 620, share: 0.2, decay: 0.008 },
+  },
+  /** An overgrip going round the handle, turn by turn, under the hand. */
+  wrap: {
+    level: 0.09,
+    partials: [[178, 0.45, 0.018], [350, 0.15, 0.01]],
+    contact: { hz: 700, share: 0.4, decay: 0.016 },
+    run: [0, 0.092, 0.18, 0.272],
+  },
+  /** A rubber dampener pushed between two strings. */
+  thump: {
+    level: 0.14,
+    partials: [[142, 0.65, 0.045], [286, 0.2, 0.02]],
+    contact: { hz: 440, share: 0.12, decay: 0.008 },
+  },
+  /** A wooden stamp on paper: the link copied. */
+  stamp: {
+    level: 0.15,
+    partials: [[262, 0.55, 0.04], [612, 0.2, 0.02], [1240, 0.07, 0.01]],
+    contact: { hz: 1300, share: 0.18, decay: 0.006 },
+  },
 } satisfies Record<string, Knock>;
 export type SoundName = keyof typeof SOUNDS;
+
+/** A string of the bed: [multiple of its pitch, share of the level, ring in seconds, ring with a dampener]. */
+const PLUCK = { level: 0.14, partials: [[1, 0.62, 0.28, 0.04], [2, 0.25, 0.16, 0.02], [3, 0.13, 0.09, 0.01]], low: 200, high: 1200 } as const;
+
+/** Milliseconds before the next sound of a kind: sweeping a list or a tension slider should patter softly. */
+export const GAP_MS = { hover: 90, bed: 60 };
+type Kind = keyof typeof GAP_MS;
 
 const ATTACK = 0.002; // long enough not to click
 const SILENT = 6; // time constants until a partial is inaudible (-52 dB)
 
-let enabled = false;
-let lastHover = 0;
-let out: { ctx: AudioContext; bus: AudioNode; noise: AudioBuffer } | null = null;
+/** One sine, or one band of noise, that rises at `at` (seconds from now) and rings down. */
+export interface Voice {
+  hz: number;
+  level: number;
+  decay: number;
+  at: number;
+  noise?: boolean;
+}
 
-function openOutput(): NonNullable<typeof out> {
+/** Where voices go. Web Audio on the page. */
+export interface Output {
+  running(): boolean;
+  resume(): Promise<void>;
+  /** Sound these together; call the result to damp them. */
+  sound(voices: readonly Voice[]): () => void;
+  close(): void;
+}
+
+function struck(k: Knock): Voice[] {
+  return (k.run ?? [0]).flatMap((at) => {
+    const tune = 1 + (Math.random() - 0.5) * 0.02; // no two touches are quite identical
+    return [
+      ...k.partials.map(([hz, share, decay]) => ({ hz: hz * tune, level: k.level * share, decay, at })),
+      { hz: k.contact.hz, level: k.level * k.contact.share, decay: k.contact.decay, at, noise: true },
+    ];
+  });
+}
+
+function plucked(hz: number, muted: boolean): Voice[] {
+  const pitch = Math.min(PLUCK.high, Math.max(PLUCK.low, hz));
+  return PLUCK.partials.map(([n, share, ring, damped]) => ({ hz: pitch * n, level: PLUCK.level * share, decay: muted ? damped : ring, at: 0 }));
+}
+
+function webAudio(): Output {
   const ctx = new AudioContext();
   // Everything passes a gentle low-pass, so nothing is brittle on small speakers.
   const bus = ctx.createBiquadFilter();
@@ -60,60 +150,112 @@ function openOutput(): NonNullable<typeof out> {
   const noise = ctx.createBuffer(1, Math.ceil(ctx.sampleRate * 0.1), ctx.sampleRate);
   const data = noise.getChannelData(0);
   for (let i = 0; i < data.length; i++) data[i] = Math.random() * 2 - 1;
-  return { ctx, bus, noise };
-}
 
-function strike({ ctx, bus, noise }: NonNullable<typeof out>, k: Knock): void {
-  const t = ctx.currentTime;
-  const tune = 1 + (Math.random() - 0.5) * 0.02; // no two touches are quite identical
-  const voice = (source: AudioScheduledSourceNode, from: AudioNode, level: number, decay: number) => {
+  const voice = ({ hz, level, decay, at, noise: rough }: Voice, now: number): GainNode => {
+    const t = now + at;
     const g = ctx.createGain();
     g.gain.setValueAtTime(0, t);
     g.gain.linearRampToValueAtTime(level, t + ATTACK);
     g.gain.setTargetAtTime(0, t + ATTACK, decay);
-    from.connect(g).connect(bus);
-    source.start(t);
+    g.connect(bus);
+    let source: AudioScheduledSourceNode;
+    if (rough) {
+      const src = (source = ctx.createBufferSource());
+      src.buffer = noise;
+      src.loop = true;
+      const band = ctx.createBiquadFilter();
+      band.type = 'bandpass';
+      band.frequency.value = hz;
+      band.Q.value = 0.8;
+      src.connect(band).connect(g);
+      src.start(t, Math.random() * noise.duration); // or every knock of a run is the same grain
+    } else {
+      const osc = (source = ctx.createOscillator());
+      osc.frequency.value = hz;
+      osc.connect(g);
+      osc.start(t);
+    }
     source.stop(t + ATTACK + decay * SILENT);
     source.onended = () => g.disconnect();
+    return g;
   };
-  for (const [hz, share, decay] of k.partials) {
-    const osc = ctx.createOscillator();
-    osc.frequency.value = hz * tune;
-    voice(osc, osc, k.level * share, decay);
-  }
-  const src = ctx.createBufferSource();
-  src.buffer = noise;
-  const band = ctx.createBiquadFilter();
-  band.type = 'bandpass';
-  band.frequency.value = k.contact.hz;
-  band.Q.value = 0.8;
-  src.connect(band);
-  voice(src, band, k.level * k.contact.share, k.contact.decay);
+  return {
+    running: () => ctx.state === 'running',
+    resume: () => ctx.resume(),
+    sound(voices) {
+      const now = ctx.currentTime;
+      const gains = voices.map((v) => voice(v, now));
+      return () => gains.forEach((g) => g.gain.setTargetAtTime(0, ctx.currentTime, 0.008));
+    },
+    close: () => void ctx.close().catch(() => {}),
+  };
 }
 
-export const soundOn = () => enabled;
+/** The sounds over a clock, a way to tell a gesture and an output, so tests can stand in for all three. */
+export function sounds(host: { now(): number; gesture(): boolean; open(): Output }) {
+  let enabled = false;
+  let out: Output | null = null;
+  let waiting: ((o: Output) => void) | null = null;
+  let damp: (() => void) | null = null; // the last pluck's ring
+  const last = { hover: -Infinity, bed: -Infinity };
 
-/** Play a sound. All but `hover` must be called from a click, which is what lets audio start. */
-export function play(name: SoundName): void {
-  if (!enabled) return;
-  if (name === 'hover') {
-    // Hovering may not start audio: a sound queued before the first click would fire with it.
-    if (out?.ctx.state !== 'running') return;
-    const now = performance.now();
-    if (now - lastHover < 90) return; // sweeping down a list should patter softly
-    lastHover = now;
+  function start(make: (o: Output) => void, kind?: Kind): void {
+    if (!enabled) return;
+    // Only a gesture may start audio, and hovering is not one: a sound queued before the first
+    // click would fire with it.
+    if (!out?.running() && (kind === 'hover' || !host.gesture())) return;
+    if (kind) {
+      const now = host.now();
+      if (now - last[kind] < GAP_MS[kind]) return;
+      last[kind] = now;
+    }
+    try {
+      const o = (out ??= host.open());
+      if (o.running()) return make(o);
+      waiting = make; // one at a time, or a drag's worth would go off together
+      void o.resume().then(() => {
+        if (o !== out) return; // switched off meanwhile
+        const next = waiting;
+        waiting = null;
+        next?.(o);
+      }).catch(() => {});
+    } catch {
+      enabled = false; // no Web Audio here
+    }
   }
-  try {
-    const o = (out ??= openOutput());
-    if (o.ctx.state === 'running') strike(o, SOUNDS[name]);
-    else void o.ctx.resume().then(() => strike(o, SOUNDS[name]), () => {});
-  } catch {
-    enabled = false; // no Web Audio here
-  }
+
+  return {
+    soundOn: () => enabled,
+    /** Play a sound. All but `hover` must come from a gesture, which is what lets audio start. */
+    play(name: SoundName): void {
+      start((o) => void o.sound(struck(SOUNDS[name])), name === 'hover' ? 'hover' : name === 'ratchet' ? 'bed' : undefined);
+    },
+    /** A string of the bed, at its own pitch. `muted`: a dampener is on it. */
+    pluck(hz: number, { muted }: { muted: boolean }): void {
+      if (Number.isNaN(hz)) return; // Web Audio would throw
+      start((o) => {
+        damp?.(); // the same bed cannot ring twice at once
+        damp = o.sound(plucked(hz, muted));
+      }, 'bed');
+    },
+    setSound(on: boolean): void {
+      enabled = on;
+      if (on) return;
+      out?.close(); // a ring or a run stops with the switch
+      out = waiting = damp = null;
+    },
+  };
 }
+
+const page = sounds({
+  now: () => performance.now(),
+  gesture: () => navigator.userActivation?.isActive ?? true, // a browser too old to say
+  open: webAudio,
+});
+export const { play, pluck, soundOn } = page;
 
 export function setSound(on: boolean): void {
-  enabled = on;
+  page.setSound(on);
   try {
     localStorage.setItem(KEY, on ? 'on' : 'off');
   } catch {

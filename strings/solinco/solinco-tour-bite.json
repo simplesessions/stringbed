@@ -1,0 +1,55 @@
+{
+  "id": "solinco-tour-bite",
+  "brand": "Solinco",
+  "name": "Tour Bite",
+  "material": "polyester",
+  "shape": {
+    "sides": 4,
+    "label": "Square"
+  },
+  "gaugesMm": [
+    1.05,
+    1.1,
+    1.15,
+    1.2,
+    1.25,
+    1.3,
+    1.35
+  ],
+  "colours": [
+    {
+      "id": "silver",
+      "name": "Silver",
+      "hex": "#686678"
+    }
+  ],
+  "finish": "satin",
+  "summary": "The sharpest-edged string in the Solinco line. Best for players with fast racquet heads who supply the pace themselves and want the most bite. It is firm, crisp and very low-powered, and it feels rigid once the tension drops, so it is demanding on the arm.",
+  "bestFor": [
+    "spin",
+    "control",
+    "durability"
+  ],
+  "ratings": {
+    "power": 1,
+    "spin": 5,
+    "control": 5,
+    "comfort": 1,
+    "feel": 3,
+    "durability": 4
+  },
+  "compared": [
+    "solinco-hyper-g",
+    "solinco-confidential"
+  ],
+  "confidence": "medium",
+  "sources": [
+    "https://solinco.com/products/tour-bite/",
+    "https://www.tennisonly.com.au/Solinco_Tour_Bite_16_130_String_Set/descpage-STB16.html",
+    "https://www.tennisnerd.net/gear/strings/best-solinco-strings-ranked-from-spin-to-comfort/70390",
+    "https://www.tennisonly.com.au/Solinco_Tennis_Racquet_String.html",
+    "https://www.tennisnerd.net/gear/strings/solinco-tennis-strings-a-brand-built-for-spin-and-tension-stability/69240"
+  ],
+  "researchedOn": "2026-11-24",
+  "verified": true
+}

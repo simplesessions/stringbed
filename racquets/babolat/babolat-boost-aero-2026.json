@@ -16,7 +16,10 @@
       23,
       26,
       23
-    ]
+    ],
+    "unstrungWeightG": 260,
+    "balanceMm": 340,
+    "stiffnessRa": 68
   },
   "geometry": {
     "head": {
@@ -76,7 +79,8 @@
     "dampener": null
   },
   "sources": [
-    "https://www.tennis-warehouse.com/Babolat_Boost_Aero_2026/descpageRCBAB-BBOASR.html"
+    "https://www.tennis-warehouse.com/Babolat_Boost_Aero_2026/descpageRCBAB-BBOASR.html",
+    "https://www.babolat.com/us/boost-aero-strung/121266.html"
   ],
   "verified": true,
   "colourway": "Grey/Fluorescent yellow",

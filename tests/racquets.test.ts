@@ -70,3 +70,11 @@ test('every spec has 1-10 paint zones, none equal to the base colour', () => {
     for (const z of s.paint.zones) expect(z.color).not.toBe(s.paint.base);
   }
 });
+test('a strung weight is 8-25 g above the unstrung one where both are given', () => {
+  const believable = ({ strungWeightG: strung, unstrungWeightG: bare }: Pick<(typeof specs)[number]['specs'], 'strungWeightG' | 'unstrungWeightG'>) =>
+    strung === undefined || bare === undefined || (strung - bare >= 8 && strung - bare <= 25);
+  // No racquet has a strung weight today, so made-up ones keep the rule honest.
+  for (const [strungWeightG, ok] of [[307, false], [308, true], [325, true], [326, false], [300, false]] as const) expect(believable({ unstrungWeightG: 300, strungWeightG })).toBe(ok);
+  expect(believable({ unstrungWeightG: 300 })).toBe(true);
+  for (const s of specs) expect(believable(s.specs), s.id).toBe(true);
+});

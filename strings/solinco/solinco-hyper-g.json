@@ -1,0 +1,55 @@
+{
+  "id": "solinco-hyper-g",
+  "brand": "Solinco",
+  "name": "Hyper-G",
+  "material": "polyester",
+  "shape": {
+    "sides": 4,
+    "label": "Square"
+  },
+  "gaugesMm": [
+    1.05,
+    1.1,
+    1.15,
+    1.2,
+    1.25,
+    1.3
+  ],
+  "colours": [
+    {
+      "id": "hyper-green",
+      "name": "Hyper Green",
+      "hex": "#34d028"
+    }
+  ],
+  "finish": "satin",
+  "summary": "A square co-polyester that suits hard-hitting baseliners: heavy topspin with a launch that is easy to read. It keeps its tension well and has a little more life than Tour Bite, but stays firm and low-powered, so short swings get little free depth.",
+  "bestFor": [
+    "spin",
+    "control",
+    "durability"
+  ],
+  "ratings": {
+    "power": 2,
+    "spin": 5,
+    "control": 4,
+    "comfort": 2,
+    "feel": 3,
+    "durability": 4
+  },
+  "compared": [
+    "solinco-tour-bite",
+    "solinco-hyper-g-round",
+    "solinco-hyper-g-soft"
+  ],
+  "confidence": "medium",
+  "sources": [
+    "https://solinco.com/products/hyper-g/",
+    "https://www.tennisonly.com.au/Solinco_Hyper-G_16_130_String_Set/descpage-SHG16.html",
+    "https://www.tennisnerd.net/gear/strings/best-solinco-strings-ranked-from-spin-to-comfort/70390",
+    "https://www.tennisonly.com.au/Solinco_Tennis_Racquet_String.html",
+    "https://www.tennisnerd.net/gear/strings/solinco-tennis-strings-a-brand-built-for-spin-and-tension-stability/69240"
+  ],
+  "researchedOn": "2026-11-24",
+  "verified": true
+}

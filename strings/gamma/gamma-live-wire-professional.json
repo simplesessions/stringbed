@@ -1,0 +1,44 @@
+{
+  "id": "gamma-live-wire-professional",
+  "brand": "Gamma",
+  "name": "Live Wire Professional",
+  "material": "multifilament",
+  "shape": null,
+  "gaugesMm": [
+    1.22,
+    1.27,
+    1.32
+  ],
+  "colours": [
+    {
+      "id": "natural",
+      "name": "Natural",
+      "hex": "#d8c99a"
+    }
+  ],
+  "finish": "satin",
+  "summary": "A highly responsive, gut-like multifilament of elastic fibres in urethane resin. The thicker gauge lasts longer and the thinner one helps spin. Its filaments snap and turn fuzzy with wear, early on for topspin hitters. No independent review was read, so treat these ratings as tentative.",
+  "bestFor": [
+    "feel",
+    "comfort"
+  ],
+  "ratings": {
+    "power": 4,
+    "spin": 3,
+    "control": 3,
+    "comfort": 5,
+    "feel": 4,
+    "durability": 2
+  },
+  "compared": [
+    "gamma-live-wire",
+    "babolat-xcel"
+  ],
+  "confidence": "low",
+  "sources": [
+    "https://bellracquetsports.com/product/gamma-professional-string",
+    "https://www.tennis-warehouse.com/GammaString.html"
+  ],
+  "researchedOn": "2026-11-24",
+  "verified": false
+}

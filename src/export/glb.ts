@@ -3,6 +3,7 @@ import { EXTMeshoptCompression, KHRMeshQuantization } from '@gltf-transform/exte
 import { meshopt, reorder } from '@gltf-transform/functions';
 import { MeshoptDecoder, MeshoptEncoder } from 'meshoptimizer';
 import type { Part, RacquetModel } from '../core/build';
+import type { SpoolPart } from '../core/spool';
 
 export interface PbrMaterial {
   baseColor: [number, number, number]; // linear RGB
@@ -19,15 +20,20 @@ function quantised(src: ArrayLike<number>): Float32Array<ArrayBuffer> {
 }
 
 /** Write a model to binary glTF: one root node, one node/mesh/material per part, no textures. */
-export async function modelToGlb(model: RacquetModel, materialFor: (part: Part) => PbrMaterial): Promise<Uint8Array> {
+export function modelToGlb(model: RacquetModel, materialFor: (part: Part) => PbrMaterial): Promise<Uint8Array> {
+  return partsToGlb(model.spec.id, model.parts, materialFor);
+}
+
+/** The body of modelToGlb: named parts under one root node `id`. `materialFor` is called once per part. */
+export async function partsToGlb<P extends Part | SpoolPart>(id: string, parts: P[], materialFor: (part: P) => PbrMaterial): Promise<Uint8Array> {
   const doc = new Document().setLogger(new Logger(Logger.Verbosity.WARN));
   doc.getRoot().getAsset().generator = 'stringbed';
   const buffer = doc.createBuffer();
-  const scene = doc.createScene(model.spec.id);
-  const root = doc.createNode(model.spec.id);
+  const scene = doc.createScene(id);
+  const root = doc.createNode(id);
   scene.addChild(root);
 
-  for (const part of model.parts) {
+  for (const part of parts) {
     const g = part.geometry;
     const pos = g.getAttribute('position');
     const nor = g.getAttribute('normal');

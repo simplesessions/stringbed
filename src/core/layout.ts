@@ -13,6 +13,11 @@ export interface Layout {
 const STANDARD_LENGTH_IN = 27;
 const STANDARD_GRIP_M = 0.178;
 
+/** Top of the grip, metres from the butt: half of any length beyond 27 in goes to the grip. */
+export function gripTopY(lengthIn: number): number {
+  return STANDARD_GRIP_M + (inToM(lengthIn) - inToM(STANDARD_LENGTH_IN)) / 2;
+}
+
 /**
  * Vertical layout along the racquet axis (butt cap at y = 0). Head size comes from the outline
  * only. Length beyond 27 in is shared equally between grip and throat, never the head.
@@ -22,7 +27,6 @@ export function computeLayout(spec: RacquetSpec, hoopRadial: number): Layout {
   const { headSizeSqIn, lengthIn } = spec.specs;
   const { shape, aspect } = spec.geometry.head;
   const totalLength = inToM(lengthIn);
-  const extra = totalLength - inToM(STANDARD_LENGTH_IN);
 
   const loop = headOutline(shape, headSizeSqIn, aspect, 256);
   const innerHalfLength = Math.max(...loop.map((p) => p.y));
@@ -31,7 +35,7 @@ export function computeLayout(spec: RacquetSpec, hoopRadial: number): Layout {
   const headCenterY = tipY - hoopRadial - innerHalfLength;
   return {
     totalLength,
-    gripTopY: STANDARD_GRIP_M + extra / 2,
+    gripTopY: gripTopY(lengthIn),
     bridgeY: headCenterY - innerHalfLength,
     headCenterY,
     tipY,

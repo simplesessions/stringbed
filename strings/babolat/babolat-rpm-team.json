@@ -1,0 +1,58 @@
+{
+  "id": "babolat-rpm-team",
+  "brand": "Babolat",
+  "name": "RPM Team",
+  "material": "polyester",
+  "shape": {
+    "sides": 8,
+    "label": "Octagonal"
+  },
+  "gaugesMm": [
+    1.25,
+    1.3
+  ],
+  "colours": [
+    {
+      "id": "black",
+      "name": "Black",
+      "hex": "#2b2b2e"
+    },
+    {
+      "id": "blue",
+      "name": "Blue",
+      "hex": "#2f6fd0"
+    },
+    {
+      "id": "pink",
+      "name": "Pink",
+      "hex": "#e8488f"
+    }
+  ],
+  "finish": "satin",
+  "summary": "An eight-sided co-polyester meant to be a little softer than RPM Blast, with good spin, precision and durability for players with long, quick swings. The shop's playtesters still found it firm, so it rewards sound mechanics; a guest reviewer found it softer and livelier than Blast.",
+  "bestFor": [
+    "spin",
+    "control",
+    "durability"
+  ],
+  "ratings": {
+    "power": 3,
+    "spin": 4,
+    "control": 4,
+    "comfort": 3,
+    "feel": 3,
+    "durability": 4
+  },
+  "compared": [
+    "babolat-rpm-blast",
+    "babolat-rpm-power"
+  ],
+  "confidence": "medium",
+  "sources": [
+    "https://tennisoverload.com/babolat-rpm-team-tennis-string-review/",
+    "https://www.tennisnerd.net/gear/strings/babolat-rpm-team-review/31104",
+    "https://www.tennisonly.com.au/Babolat_RPM_Team_16_130_String_Set_/descpage-BRPMT16.html"
+  ],
+  "researchedOn": "2026-11-24",
+  "verified": false
+}

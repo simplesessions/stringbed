@@ -1,0 +1,51 @@
+{
+  "id": "kirschbaum-max-power",
+  "brand": "Kirschbaum",
+  "name": "Max Power",
+  "material": "polyester",
+  "shape": null,
+  "gaugesMm": [
+    1.2,
+    1.25,
+    1.3
+  ],
+  "colours": [
+    {
+      "id": "red",
+      "name": "Red",
+      "hex": "#c3262e"
+    },
+    {
+      "id": "silver",
+      "name": "Silver",
+      "hex": "#9a9da1"
+    }
+  ],
+  "finish": "satin",
+  "summary": "A firm, high-control co-poly for strong, confident hitters using demanding frames. One reviewer praises its directional control and how long it keeps its playability; the cost is a stiff, less forgiving feel that can be tough on the arm.",
+  "bestFor": [
+    "control",
+    "durability"
+  ],
+  "ratings": {
+    "power": 3,
+    "spin": 3,
+    "control": 5,
+    "comfort": 1,
+    "feel": 3,
+    "durability": 4
+  },
+  "compared": [
+    "kirschbaum-pro-line-ii",
+    "kirschbaum-xplosive-speed"
+  ],
+  "confidence": "medium",
+  "sources": [
+    "https://www.tennis-warehouse.com/Kirschbaum_Max_Power_17_125_String/descpageACKIRSCH-MAXPWR7.html",
+    "https://www.tennis-warehouse.com/KirschbaumString.html",
+    "https://prostrung.com/kirschbaum-max-power-tennis-string-review/",
+    "https://www.tennisnerd.net/gear/strings/string-reviews/kirschbaum-strings/36839"
+  ],
+  "verified": false,
+  "researchedOn": "2026-11-24"
+}

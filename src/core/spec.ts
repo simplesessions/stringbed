@@ -47,6 +47,12 @@ export interface RacquetSpec {
     stringPattern: [number, number]; // [mains, crosses], each 12..22
     beamMm: [number, number, number]; // [tip, mid, shaft], each 14..32
     unstrungWeightG?: number;
+    // As published, never converted between strung and unstrung. Balance is from the butt.
+    balanceMm?: number; // unstrung, 250..420
+    strungWeightG?: number; // 150..420
+    strungBalanceMm?: number; // 250..420
+    swingweight?: number; // strung, kg cm², 180..420
+    stiffnessRa?: number; // 40..85
   };
   geometry: {
     head: { shape: HeadShape; aspect: number }; // aspect = inner length / inner width, 1.2..1.45
@@ -152,6 +158,11 @@ const baseSpecSchema = z
         stringPattern: z.tuple([patternCount, patternCount]),
         beamMm: z.tuple([beam, beam, beam]),
         unstrungWeightG: z.number().positive().optional(),
+        balanceMm: z.number().min(250).max(420).optional(),
+        strungWeightG: z.number().min(150).max(420).optional(),
+        strungBalanceMm: z.number().min(250).max(420).optional(),
+        swingweight: z.number().min(180).max(420).optional(),
+        stiffnessRa: z.number().min(40).max(85).optional(),
       })
       .strict(),
     geometry: z

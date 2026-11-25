@@ -1,0 +1,52 @@
+{
+  "id": "tecnifibre-nrg2",
+  "brand": "Tecnifibre",
+  "name": "NRG2",
+  "material": "multifilament",
+  "shape": {
+    "sides": 0,
+    "label": "Round"
+  },
+  "gaugesMm": [
+    1.18,
+    1.24,
+    1.32
+  ],
+  "colours": [
+    {
+      "id": "natural",
+      "name": "Natural",
+      "hex": "#d8c99a"
+    },
+    {
+      "id": "black",
+      "name": "Black",
+      "hex": "#1f2022"
+    }
+  ],
+  "finish": "satin",
+  "summary": "A round, soft multifilament with plenty of power and a forgiving feel. It is a good pick for players with sensitive arms, or anyone wanting easy depth. Control and spin vary with swing speed and gauge; durability is moderate, and the fibres fray with friction.",
+  "bestFor": [
+    "power",
+    "comfort"
+  ],
+  "ratings": {
+    "power": 5,
+    "spin": 3,
+    "control": 3,
+    "comfort": 5,
+    "feel": 4,
+    "durability": 2
+  },
+  "compared": [
+    "tecnifibre-x-one-biphase",
+    "wilson-nxt"
+  ],
+  "confidence": "low",
+  "sources": [
+    "https://tennisoverload.com/tecnifibre-nrg2-tennis-string-review/",
+    "https://www.tennis-warehouse.com/TecnifibreString.html"
+  ],
+  "researchedOn": "2026-11-24",
+  "verified": false
+}

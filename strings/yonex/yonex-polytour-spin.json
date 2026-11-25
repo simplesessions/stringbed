@@ -1,0 +1,51 @@
+{
+  "id": "yonex-polytour-spin",
+  "brand": "Yonex",
+  "name": "PolyTour Spin",
+  "material": "polyester",
+  "shape": {
+    "sides": 5,
+    "label": "Pentagonal"
+  },
+  "gaugesMm": [
+    1.25
+  ],
+  "colours": [
+    {
+      "id": "cobalt",
+      "name": "Cobalt",
+      "hex": "#2d8fd6"
+    },
+    {
+      "id": "black",
+      "name": "Black",
+      "hex": "#28282a"
+    }
+  ],
+  "finish": "satin",
+  "summary": "A five-sided polyester that adds bite for big hitters who want low-powered precision. It is firmer and more spin-oriented than PolyTour Pro, and the two are paired in hybrids. Customer reviews praise its spin and control, and one its tension holding.",
+  "bestFor": [
+    "spin",
+    "control"
+  ],
+  "ratings": {
+    "power": 2,
+    "spin": 5,
+    "control": 4,
+    "comfort": 2,
+    "feel": 3,
+    "durability": 3
+  },
+  "compared": [
+    "yonex-polytour-pro",
+    "yonex-polytour-rev"
+  ],
+  "confidence": "low",
+  "sources": [
+    "https://www.tennisonly.com.au/Yonex_Poly_Tour_Spin_125_16L_String_Reel_Blue_-_200m/descpage-YPTS125R.html",
+    "https://www.tennisnerd.net/gear/strings/string-reviews/yonex-poly-tour-pro-review/32064",
+    "https://www.tennisonly.com.au/Yonex_Tennis_Racquet_String.html"
+  ],
+  "researchedOn": "2026-11-24",
+  "verified": false
+}

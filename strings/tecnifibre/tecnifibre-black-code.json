@@ -1,0 +1,60 @@
+{
+  "id": "tecnifibre-black-code",
+  "brand": "Tecnifibre",
+  "name": "Black Code",
+  "material": "polyester",
+  "shape": {
+    "sides": 5,
+    "label": "Pentagonal"
+  },
+  "gaugesMm": [
+    1.18,
+    1.24,
+    1.28,
+    1.32
+  ],
+  "colours": [
+    {
+      "id": "black",
+      "name": "Black",
+      "hex": "#1f2022"
+    },
+    {
+      "id": "lime",
+      "name": "Lime",
+      "hex": "#90bf62"
+    },
+    {
+      "id": "fire",
+      "name": "Fire",
+      "hex": "#dc3c0c"
+    }
+  ],
+  "finish": "satin",
+  "summary": "A five-sided co-poly built for bite. It gives strong spin and a controlled, low-powered launch, with a touch more give than a stiff poly. Best for aggressive players with fast swings; compact swingers may struggle for depth, and the edges can notch the mains.",
+  "bestFor": [
+    "spin",
+    "control"
+  ],
+  "ratings": {
+    "power": 2,
+    "spin": 5,
+    "control": 4,
+    "comfort": 3,
+    "feel": 3,
+    "durability": 3
+  },
+  "compared": [
+    "solinco-tour-bite",
+    "tecnifibre-razor-code"
+  ],
+  "confidence": "low",
+  "sources": [
+    "https://tennisoverload.com/tecnifibre-black-code-tennis-string-review/",
+    "https://www.tennis-warehouse.com/TecnifibreString.html",
+    "https://www.tennisnuts.com/tecnifibre-black-code-tennis-678180.html",
+    "https://www.tennisnuts.com/tecnifibre-black-code-tennis-string-set-lime-green-1395268.html"
+  ],
+  "researchedOn": "2026-11-24",
+  "verified": false
+}

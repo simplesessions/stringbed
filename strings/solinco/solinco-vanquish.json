@@ -1,0 +1,50 @@
+{
+  "id": "solinco-vanquish",
+  "brand": "Solinco",
+  "name": "Vanquish",
+  "material": "multifilament",
+  "shape": {
+    "sides": 0,
+    "label": "Round"
+  },
+  "gaugesMm": [
+    1.2,
+    1.3,
+    1.35
+  ],
+  "colours": [
+    {
+      "id": "natural",
+      "name": "Natural",
+      "hex": "#d3b48f"
+    }
+  ],
+  "finish": "satin",
+  "summary": "Solinco's soft multifilament for forgiving comfort, easy power and touch. It suits arm-sensitive players, or works as a soft cross with a shaped polyester main. Used as a full bed it gives far less spin and control than polyester and frays quickly.",
+  "bestFor": [
+    "comfort",
+    "power",
+    "feel"
+  ],
+  "ratings": {
+    "power": 4,
+    "spin": 2,
+    "control": 3,
+    "comfort": 5,
+    "feel": 4,
+    "durability": 2
+  },
+  "compared": [
+    "solinco-x-natural",
+    "solinco-hyper-g-round"
+  ],
+  "confidence": "low",
+  "sources": [
+    "https://solinco.com/products/vanquish/",
+    "https://www.wdstrings.com/solinco-vanquish-16-1-30mm-set/",
+    "https://tennisoverload.com/solinco-vanquish-tennis-string-review/",
+    "https://www.tennisnerd.net/gear/strings/best-solinco-strings-ranked-from-spin-to-comfort/70390"
+  ],
+  "researchedOn": "2026-11-24",
+  "verified": true
+}

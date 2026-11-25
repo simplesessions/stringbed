@@ -1,0 +1,62 @@
+{
+  "id": "toroline-o-toro",
+  "brand": "Toroline",
+  "name": "O-Toro",
+  "material": "polyester",
+  "shape": {
+    "sides": 6,
+    "label": "Hexagonal"
+  },
+  "gaugesMm": [
+    1.23
+  ],
+  "colours": [
+    {
+      "id": "black",
+      "name": "Black",
+      "hex": "#2c2c2e"
+    },
+    {
+      "id": "neon-green",
+      "name": "Neon Green",
+      "hex": "#7fe02a"
+    },
+    {
+      "id": "neon-pink",
+      "name": "Neon Pink",
+      "hex": "#f0399a"
+    },
+    {
+      "id": "white",
+      "name": "White",
+      "hex": "#ecece8"
+    }
+  ],
+  "finish": "satin",
+  "summary": "A six-sided co-poly with a slick surface, which one overview calls the most versatile Toroline. It gives plenty of spin, and the shop's playtesters found comfort and pocketing at lower tensions; two customers mention how soon it fades, and opinions on arm comfort differ.",
+  "bestFor": [
+    "spin",
+    "comfort",
+    "control"
+  ],
+  "ratings": {
+    "power": 3,
+    "spin": 5,
+    "control": 3,
+    "comfort": 4,
+    "feel": 3,
+    "durability": 3
+  },
+  "compared": [
+    "toroline-wasabi",
+    "toroline-caviar"
+  ],
+  "confidence": "low",
+  "sources": [
+    "https://www.tennis-warehouse.com/TOROLINE_O-TORO_17_123_String/descpageACTORO-TOTORO7.html",
+    "https://www.tennis-warehouse.com/Toroline_Tennis_Strings/catpage-TOROLSTR.html",
+    "https://www.tennisnerd.net/gear/strings/toroline-strings-spin-control-and-color/63502"
+  ],
+  "verified": false,
+  "researchedOn": "2026-11-24"
+}

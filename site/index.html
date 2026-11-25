@@ -15,19 +15,25 @@
       <div class="strip-id">
         <a class="name" href="#/">stringbed</a>
       </div>
-      <div class="signs" id="signs" role="group" aria-label="Filter by brand" hidden></div>
-      <div class="strip-end">
-        <button class="search-open" id="search-open" type="button" aria-haspopup="dialog" aria-keyshortcuts="Meta+K Control+K" hidden>
-          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10.5 17a6.5 6.5 0 1 0 0-13 6.5 6.5 0 0 0 0 13zM15.2 15.2 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
-          <span>Search</span><kbd class="search-key" id="search-key">⌘K</kbd>
-        </button>
+      <nav class="rooms" id="rooms" aria-label="Racquets or strings" hidden>
+        <a class="sign sign-size" href="#/" data-room="racquets">Racquets</a>
+        <a class="sign sign-size" href="#/strings" data-room="strings">Strings</a>
+      </nav>
+      <div class="strip-end" id="strip-end">
+        <div class="strip-tools">
+          <button class="search-open" id="search-open" type="button" aria-haspopup="dialog" aria-keyshortcuts="Meta+K Control+K" hidden>
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10.5 17a6.5 6.5 0 1 0 0-13 6.5 6.5 0 0 0 0 13zM15.2 15.2 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+            <span>Search</span><kbd class="search-key" id="search-key">⌘K</kbd>
+          </button>
+        </div>
       </div>
+      <div class="signs" id="signs" role="group" aria-label="Filter by brand" hidden></div>
     </header>
-    <dialog class="search" id="search" aria-label="Search racquets">
+    <dialog class="search" id="search" aria-label="Search racquets and strings">
       <div class="search-field">
         <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10.5 17a6.5 6.5 0 1 0 0-13 6.5 6.5 0 0 0 0 13zM15.2 15.2 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
-        <input id="search-input" type="search" placeholder="Brand, model or year" autocomplete="off" spellcheck="false"
-          role="combobox" aria-expanded="false" aria-controls="search-results" aria-autocomplete="list" aria-label="Search racquets" />
+        <input id="search-input" type="search" placeholder="Racquet, string, brand or year" autocomplete="off" spellcheck="false"
+          role="combobox" aria-expanded="false" aria-controls="search-results" aria-autocomplete="list" aria-label="Search racquets and strings" />
         <kbd class="search-key">Esc</kbd>
       </div>
       <ul class="search-results" id="search-results" role="listbox" aria-label="Results"></ul>
@@ -45,7 +51,7 @@
 
     <footer class="foot">
       <p>
-        Racquet and brand names are trademarks of their owners and are used here only to identify
+        Racquet, string and brand names are trademarks of their owners and are used here only to identify
         the models. This project is not affiliated with or endorsed by any manufacturer. Assets
         contain no logos or wordmarks.
       </p>

@@ -1,0 +1,61 @@
+{
+  "id": "tecnifibre-x-one-biphase",
+  "brand": "Tecnifibre",
+  "name": "X-One Biphase",
+  "material": "multifilament",
+  "shape": {
+    "sides": 0,
+    "label": "Round"
+  },
+  "gaugesMm": [
+    1.18,
+    1.24,
+    1.3,
+    1.35
+  ],
+  "colours": [
+    {
+      "id": "natural",
+      "name": "Natural",
+      "hex": "#d8c99a"
+    },
+    {
+      "id": "black",
+      "name": "Black",
+      "hex": "#1f2022"
+    },
+    {
+      "id": "red",
+      "name": "Red",
+      "hex": "#a30b12"
+    }
+  ],
+  "finish": "satin",
+  "summary": "A premium multifilament that leans hard on power and comfort, with a lively, gut-like pocket. It is easy on the arm and generous on depth, so it suits moderate and compact swings. Spin is modest and heavy hitters may fray it.",
+  "bestFor": [
+    "power",
+    "comfort",
+    "feel"
+  ],
+  "ratings": {
+    "power": 5,
+    "spin": 2,
+    "control": 3,
+    "comfort": 5,
+    "feel": 5,
+    "durability": 2
+  },
+  "compared": [
+    "babolat-xcel",
+    "wilson-nxt",
+    "tecnifibre-nrg2"
+  ],
+  "confidence": "low",
+  "sources": [
+    "https://tennisoverload.com/tecnifibre-x-one-biphase-tennis-string-review/",
+    "https://www.tennis-warehouse.com/TecnifibreString.html",
+    "https://www.tennisnuts.com/tecnifibre-x-one-biphase-tennis-string-set-black-1536109.html"
+  ],
+  "researchedOn": "2026-11-24",
+  "verified": false
+}

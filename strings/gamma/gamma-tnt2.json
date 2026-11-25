@@ -1,0 +1,50 @@
+{
+  "id": "gamma-tnt2",
+  "brand": "Gamma",
+  "name": "TNT2",
+  "material": "synthetic-gut",
+  "shape": null,
+  "gaugesMm": [
+    1.17,
+    1.27,
+    1.32
+  ],
+  "colours": [
+    {
+      "id": "natural",
+      "name": "Natural",
+      "hex": "#d8c99a"
+    },
+    {
+      "id": "black",
+      "name": "Black",
+      "hex": "#2a2a2c"
+    }
+  ],
+  "finish": "satin",
+  "summary": "A solid-core synthetic gut with microfilament wraps and a pearl coating. Shops describe a responsive string with high comfort, controllable power and, for a non-poly, good durability, plus more spin and feel in the thin gauges. No independent review was read, so treat these ratings as tentative.",
+  "bestFor": [
+    "power",
+    "comfort",
+    "value"
+  ],
+  "ratings": {
+    "power": 4,
+    "spin": 3,
+    "control": 3,
+    "comfort": 4,
+    "feel": 4,
+    "durability": 2
+  },
+  "compared": [
+    "prince-synthetic-gut-duraflex",
+    "wilson-nxt"
+  ],
+  "confidence": "low",
+  "sources": [
+    "https://www.tennisonly.com.au/Gamma_TNT2_127_17G_String_Set/descpage-TNT17.html",
+    "https://www.tennis-warehouse.com/GammaString.html"
+  ],
+  "researchedOn": "2026-11-24",
+  "verified": false
+}

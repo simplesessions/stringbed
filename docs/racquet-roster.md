@@ -401,3 +401,39 @@ FX 700 specs: beams confirmed, unstrung weights added. CX 200 Tour 2024 (Canada 
 LX 800: Dunlop US says 27 in, an older Canada page 27.5; 27 kept. Tempo OS and L have no published beam, so they are placeholders.
 TF40 2024: TW's review page for it is dated February 2022 (the previous generation), so it was removed from the sources; the 22 mm beam is on TW's product
 page (tennisnerd says 21.7). Tempo Tour: both Tecnifibre sites list 68.5 cm, but their range text says every Tempo is X-Short at 67.5; 27 in is kept.
+
+## Weight, balance, swingweight and stiffness (2026-11-24)
+
+Published numbers only, written to the base racquet's own `specs` with the page added to its `sources`. Nothing is estimated, converted
+between strung and unstrung, or copied down to variants (a variant with its own `specs` does not inherit them, so no variant has a balance or a stiffness).
+
+**Coverage.** Unstrung weight plus balance: 10 racquets, all profiled base racquets, so 10 of 37 (Babolat 6 of 7, Dunlop 4 of 4, no other brand)
+and 10 of 358 overall. Stiffness (RA): the 6 Babolat. Strung weight, strung balance and swingweight: none. Unstrung weight alone: 136 of 358 racquets, 26 of
+the 37. The other 27 of the 37 have no balance: on the Build page they show only what you add, unless you enter your own weight and balance.
+
+| Racquet | Unstrung weight | Balance | RA |
+|---|---|---|---|
+| Babolat Boost Aero 2026 | 260 g | 340 mm | 68 |
+| Babolat Evo Aero 2026 | 275 g | 320 mm | 64 |
+| Babolat Evo Drive 2025 | 270 g | 325 mm | 70 |
+| Babolat Evo Strike Gen2 | 290 g | 320 mm | 70 |
+| Babolat Pure Drive 100 | 300 g | 320 mm | 72 |
+| Babolat Pure Strike 98 | 305 g | 320 mm | 68 |
+| Dunlop CX 200 16x19 2027 | 305 g | 315 mm | |
+| Dunlop FX 500 2025 | 300 g | 320 mm | |
+| Dunlop LX 800 2024 | 255 g | 355 mm | |
+| Dunlop SX 300 2025 | 300 g | 320 mm | |
+
+**Where from.** The makers' own pages. Babolat labels weight and balance "(unstrung)" and prints "Stiffness (RA)"; Evo Aero and Evo Drive print it with
+and without AHT, and the figure without is used. Its swing weight is not labelled strung or unstrung, so it was left out. Dunlop US labels the weight
+"(Unstrung)" and prints no stiffness; its balance has no label, but stands beside the unstrung weight on a frame that ships unstrung, so it is taken as unstrung.
+No existing unstrung weight differed from the maker's; four racquets had none (Boost Aero, Evo Aero, Evo Drive, Evo Strike) and took it.
+FX 500 (`dunlop-fx-500-2025`): the maker page is the plain FX 500 at 300 g, the same as our base racquet, not the Lite.
+
+**Read and not published.** A retailer's table (Tennis Only, tennisonly.com.au: strung weight, balance, swingweight and stiffness) was read for 21 of the 37
+base racquets and deliberately not published: its terms (https://www.tennisonly.com.au/termsofuse.html, read 2026-11-24) forbid reproducing its content.
+None of its racquet numbers are in the specs, and it is no longer among their sources.
+
+**Not reached.** Sites that refused or were left alone: Racquet Guys (.com and .ca), Tennis Express, Merchant of Tennis, Tennis Point, Tecnifibre.com,
+Wilson.com and Yonex.com (HTTP 429); tennis-only.com returned 525; head.com disallows its product pages for robots. Tennis Warehouse was not used for these
+numbers. Babolat lists only Gen 9 of the Pure Aero 100, so it has none.

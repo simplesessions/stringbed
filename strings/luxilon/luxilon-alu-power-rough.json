@@ -1,0 +1,41 @@
+{
+  "id": "luxilon-alu-power-rough",
+  "brand": "Luxilon",
+  "name": "ALU Power Rough",
+  "material": "polyester",
+  "shape": null,
+  "gaugesMm": [
+    1.25
+  ],
+  "colours": [
+    {
+      "id": "grey",
+      "name": "Grey",
+      "hex": "#8f9296"
+    }
+  ],
+  "finish": "satin",
+  "summary": "ALU Power with a textured surface, for hard hitters who want extra bite with a low-powered, controlled response. It plays firm. Customer reviews range from high praise to one that found almost no difference from the smooth string, and a couple mention dropping tension.",
+  "bestFor": [
+    "spin",
+    "control"
+  ],
+  "ratings": {
+    "power": 2,
+    "spin": 5,
+    "control": 5,
+    "comfort": 2,
+    "feel": 3,
+    "durability": 4
+  },
+  "compared": [
+    "luxilon-alu-power",
+    "babolat-rpm-blast"
+  ],
+  "confidence": "low",
+  "sources": [
+    "https://www.tennis-warehouse.com/Luxilon_ALU_Power_Rough_16L_125_String/descpageACWILSON-ALUPR16.html"
+  ],
+  "researchedOn": "2026-11-24",
+  "verified": false
+}

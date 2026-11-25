@@ -184,6 +184,31 @@ The gallery is a shop floor in three steps: brands, then lines, then sizes.
   so juniors stand shorter than adult frames. Bays are `clamp(104px, 11.5vw, 168px)` wide and
   height = width / 0.42; long shelves scroll sideways (and bleed to the edges on phones).
 
+**Two rooms.** Racquets and Strings are the same shop with other stock; the switch beside the
+wordmark is the only thing between them. The first header row holds still (name, rooms, look, search,
+sound) and the filter in it is the room's own: sizes, or materials. The second row is that room's
+brand directory. Under 1240px the filter drops below the directory; on phones the rooms, the
+directory and the filter take a row each (search and sound stay beside the name), and five materials
+fit one row by narrowing their letters. The header's elements are re-stood at each of those widths, so
+Tab follows the page; never reorder them with `order` alone.
+
+- **Strings home (`#/strings`):** the same aisles. Spools do not fan from a butt cap, so a brand's fan
+  (up to five, distinct colours first) is set down as a stack on the rail, as on a shop counter. It
+  waits gathered in the middle and opens on the aisle's spring; hover loosens it. No idle sway: a reel
+  stands still. Every reel is at one size, so a brand of one string is one reel on a rail.
+- **String floor (`#/strings/b/<brand>`):** bays along a rail, two across on a phone, three from 721px,
+  four from 1100px, five from 1500px. The rail runs on past a short row.
+- **String page (`#/strings/<id>[/<colour>]`):** the racquet's two columns, with no part views.
+  Colours change in place; unverified ones say they are approximate, under the swatches.
+
+- **Build page (`#/build/<racquet>[/<colourway>]?…`):** a workbench. The racquet and its numbers (the
+  *rig*) hold still; what they are changed from (the *bench*) scrolls beside them: strings, tension,
+  lead tape, grip and dampener, then where the numbers come from. From 1240px a third column, what it
+  does, sticks too (by its foot when it is taller than the window); under that it follows the bench, and
+  a one-line "Plays: …" joins the numbers. On phones the rig sticks to the top edge with its controls
+  above the model, so they slide away and the racquet and numbers stay; under 520px tall only the
+  numbers do. About this racquet closes the page. Its own chunk: it costs the gallery nothing.
+
 The detail view is two columns from 721px: the model stage takes the free width and stays
 sticky; the spec sheet is 320 to 400px. Below 721px the stage comes first at 60svh, then the
 sheet. Page padding is `clamp(16px, 3.2vw, 48px)`; more space sits above a section than
@@ -246,6 +271,42 @@ A racquet render in its own canvas standing on the shelf rail, with a hang-tag l
 racquet on its axis and wipes a swatch-coloured mark along its stretch of rail. Loading,
 failure and no-WebGL states all show the racquet's flat silhouette in its swatch colour; a
 failure adds "Preview failed" and a Retry pill inside the hoop.
+
+A string's bay is the same bay, wider than it is tall (1.4: 1; a reel is cropped under 1.2): the
+string's name, "Material · Shape", then what it is best for and a dot per colour. Its flat state is a
+**disc** in the string's colour, a spool seen from the end, standing on the rail the 3D reel stands on.
+
+### Ratings
+Five pips a row, the highest in ink, a line under them saying whose reading they are; "Hold it up
+against" sets a rival's rings on the same bars. One component (`ratings-view.ts`) for racquets and
+strings.
+
+### Cross-section
+A string cut through, in its colour, at one scale for every string and gauge (100 px to the
+millimetre) over a 1 mm bar, with a segmented switch between the gauges it is sold in. Shaped strings
+stand on a flat face; twisted and rough are said in words. A shape no source states is a dashed ring
+and "Shape not stated".
+
+### Build page
+- **Readout:** four cells under a 2px ink rule (weight, balance, swingweight, twist added): the number in
+  condensed display, then what changed in ink, then a Soft Ink note. "about" is set small before a derived
+  number; "Not published" or "Not given" replaces a missing one and the change stays. Changes are always
+  against the same racquet with stock strings.
+- **Balance beam (signature):** the racquet laid across its own middle, seen from low down, in its swatch
+  with the build's grip, bed colour and lead on it. It tips on the spring towards the heavier side; level
+  when the balance is unknown. The one thing on the page that moves for its own sake.
+- **String set:** the string's own section in its colour, its name (a link), and a list to change it from:
+  radios, so an arrow key restrings as it goes. The section drawing is the string page's, at one scale
+  for mains and crosses.
+- **Slider:** a 3px rail, inked up to a round thumb, − and + at its ends for one step; tension carries a
+  tick every 5 lb. Value beside the name, never in a bubble.
+- **Segmented pill and swatch pill:** the header's segments and the colourway pills, as buttons and radios.
+- **Taping:** "Add tape" turns the row under the model into Done, Both sides and one line of help; nothing
+  covers the racquet. Pieces are outlined over the model (lead is thin, and lies on the hoop's inner wall);
+  where the next would go is a dotted outline with an ink chip naming the place and the grams.
+- **What it does:** sentences first, then the ratings rows with a ring at the new mark and the reasons
+  under each. No rating: an ink arrow and the change.
+- **Sound:** a labelled switch beside Copy link. Nothing sounds from an incoming link.
 
 ### Spec sheet
 Rows of label and value separated by hairlines (ink at 16%). Values carry their unit and a

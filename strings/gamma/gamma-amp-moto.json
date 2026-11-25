@@ -1,0 +1,51 @@
+{
+  "id": "gamma-amp-moto",
+  "brand": "Gamma",
+  "name": "AMP Moto",
+  "material": "polyester",
+  "shape": {
+    "sides": 7,
+    "label": "Heptagonal"
+  },
+  "gaugesMm": [
+    1.24,
+    1.29
+  ],
+  "colours": [
+    {
+      "id": "black",
+      "name": "Black",
+      "hex": "#2a2a2c"
+    },
+    {
+      "id": "lime",
+      "name": "Lime",
+      "hex": "#a6d532"
+    }
+  ],
+  "finish": "satin",
+  "summary": "A medium-firm co-poly with seven sharp edges and a strong bite. For such a firm monofilament the shop found surprisingly good pocketing, plenty of response and, strung low, decent comfort. Made for big hitters who want heavy spin. No independent review was read.",
+  "bestFor": [
+    "spin",
+    "control"
+  ],
+  "ratings": {
+    "power": 2,
+    "spin": 4,
+    "control": 3,
+    "comfort": 2,
+    "feel": 3,
+    "durability": 3
+  },
+  "compared": [
+    "dunlop-black-widow",
+    "solinco-tour-bite"
+  ],
+  "confidence": "low",
+  "sources": [
+    "https://www.tennisonly.com.au/Gamma_Moto_16_129_String_Reel_-_200m/descpage-GMR16.html",
+    "https://www.tennis-warehouse.com/GammaString.html"
+  ],
+  "researchedOn": "2026-11-24",
+  "verified": false
+}

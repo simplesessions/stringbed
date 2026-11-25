@@ -2,7 +2,7 @@ import { describe, test, expect, beforeEach, afterEach } from 'bun:test';
 import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { loadAllSpecs, parseSpec, type RacquetSpec } from '../../src/core/spec';
+import { loadAllSpecs, parseSpec, withVariant, type RacquetSpec } from '../../src/core/spec';
 
 const good: RacquetSpec = {
   id: 'babolat-pure-aero-100',
@@ -70,6 +70,19 @@ describe('parseSpec', () => {
     const bad = structuredClone(good);
     bad.id = 'Pure Aero';
     expect(() => parseSpec(bad, 'x.json')).toThrow(/x\.json: id/);
+  });
+  test.each([
+    ['balanceMm', 250, 420], ['strungWeightG', 150, 420], ['strungBalanceMm', 250, 420], ['swingweight', 180, 420], ['stiffnessRa', 40, 85],
+  ] as const)('%s is optional, %d to %d', (field, lo, hi) => {
+    const withField = (v: unknown) => ({ ...good, specs: { ...good.specs, [field]: v } });
+    expect(parseSpec(good, 'x.json').specs[field]).toBeUndefined();
+    for (const v of [lo, (lo + hi) / 2, hi]) expect(parseSpec(withField(v), 'x.json').specs[field]).toBe(v);
+    for (const v of [lo - 0.1, hi + 0.1, '300']) expect(() => parseSpec(withField(v), 'x.json')).toThrow(`specs.${field}`);
+  });
+  test('a variant that replaces specs does not inherit the base\'s numbers', () => {
+    const base = parseSpec({ ...good, specs: { ...good.specs, balanceMm: 320, strungWeightG: 318, strungBalanceMm: 328, swingweight: 320, stiffnessRa: 70 } }, 'x.json');
+    const variant = withVariant(base, { id: 'babolat-pure-aero-98', label: '98', specs: { headSizeSqIn: 98, lengthIn: 27, stringPattern: [16, 20], beamMm: [21, 23, 22] } });
+    for (const field of ['unstrungWeightG', 'balanceMm', 'strungWeightG', 'strungBalanceMm', 'swingweight', 'stiffnessRa'] as const) expect(variant.specs[field]).toBeUndefined();
   });
 });
 

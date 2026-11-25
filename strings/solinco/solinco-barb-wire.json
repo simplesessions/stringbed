@@ -1,0 +1,49 @@
+{
+  "id": "solinco-barb-wire",
+  "brand": "Solinco",
+  "name": "Barb Wire",
+  "material": "polyester",
+  "shape": {
+    "sides": 0,
+    "label": "Twisted",
+    "twisted": true
+  },
+  "gaugesMm": [
+    1.2,
+    1.25,
+    1.3
+  ],
+  "colours": [
+    {
+      "id": "black",
+      "name": "Black",
+      "hex": "#2a272d"
+    }
+  ],
+  "finish": "satin",
+  "summary": "A twisted, ridged co-polyester that gets its spin from the surface profile rather than extreme stiffness. It suits fast, developed swings that want bite and dip. The textured surface can feel less uniform than a smooth string, and flat hitters may notice extra launch.",
+  "bestFor": [
+    "spin",
+    "control"
+  ],
+  "ratings": {
+    "power": 2,
+    "spin": 5,
+    "control": 4,
+    "comfort": 2,
+    "feel": 3,
+    "durability": 4
+  },
+  "compared": [
+    "solinco-tour-bite",
+    "solinco-revolution"
+  ],
+  "confidence": "low",
+  "sources": [
+    "https://solinco.com/products/barb-wire/",
+    "https://www.wdstrings.com/solinco-barb-wire-16l-1-25mm-set/",
+    "https://tennisoverload.com/solinco-barb-wire-tennis-string-review/"
+  ],
+  "researchedOn": "2026-11-24",
+  "verified": true
+}

@@ -1,0 +1,44 @@
+{
+  "id": "luxilon-natural-gut",
+  "brand": "Luxilon",
+  "name": "Natural Gut",
+  "material": "natural-gut",
+  "shape": null,
+  "gaugesMm": [
+    1.25,
+    1.3
+  ],
+  "colours": [
+    {
+      "id": "natural",
+      "name": "Natural",
+      "hex": "#e6d6a8"
+    }
+  ],
+  "finish": "satin",
+  "summary": "A coated natural gut made for full beds or as the mains in a hybrid with polyester. It is very lively, gentle on the arm and holds tension well, so it suits players who want comfort and depth; spin and control are good rather than exceptional.",
+  "bestFor": [
+    "comfort",
+    "power",
+    "feel"
+  ],
+  "ratings": {
+    "power": 5,
+    "spin": 3,
+    "control": 3,
+    "comfort": 5,
+    "feel": 5,
+    "durability": 3
+  },
+  "compared": [
+    "babolat-touch-vs",
+    "wilson-natural-gut"
+  ],
+  "confidence": "low",
+  "sources": [
+    "https://tennisoverload.com/luxilon-natural-gut-tennis-string-review/",
+    "http://firstservesa.com/product-review-luxilon-natural-gut/"
+  ],
+  "researchedOn": "2026-11-24",
+  "verified": false
+}

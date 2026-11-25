@@ -1,0 +1,53 @@
+{
+  "id": "wilson-sensation",
+  "brand": "Wilson",
+  "name": "Sensation",
+  "material": "multifilament",
+  "shape": {
+    "sides": 0,
+    "label": "Round"
+  },
+  "gaugesMm": [
+    1.25,
+    1.3,
+    1.35
+  ],
+  "colours": [
+    {
+      "id": "natural",
+      "name": "Natural",
+      "hex": "#e9e2cc"
+    },
+    {
+      "id": "lime",
+      "name": "Lime",
+      "hex": "#e2ea3a"
+    }
+  ],
+  "finish": "satin",
+  "summary": "An arm-friendly value multifilament that damps vibration and plays soft and comfortable. It suits players wanting a soft stand-in for natural gut or something gentler than stiff synthetic guts, though it is less precise and spin-friendly than polyester.",
+  "bestFor": [
+    "comfort",
+    "value",
+    "power"
+  ],
+  "ratings": {
+    "power": 4,
+    "spin": 2,
+    "control": 2,
+    "comfort": 4,
+    "feel": 3,
+    "durability": 2
+  },
+  "compared": [
+    "wilson-nxt",
+    "babolat-xcel"
+  ],
+  "confidence": "low",
+  "sources": [
+    "https://www.tennisonly.com.au/Wilson_Sensation_16_130_String_Set/descpage-SEN16.html",
+    "https://tennisoverload.com/wilson-sensation-tennis-string-review/"
+  ],
+  "researchedOn": "2026-11-24",
+  "verified": false
+}

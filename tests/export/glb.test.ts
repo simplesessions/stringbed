@@ -4,6 +4,7 @@ import { EXTMeshoptCompression, KHRMeshQuantization } from '@gltf-transform/exte
 import { MeshoptDecoder } from 'meshoptimizer';
 import { buildRacquet } from '../../src/core/build';
 import { loadAllSpecs } from '../../src/core/spec';
+import { modelToGlb } from '../../src/export/glb';
 import { realistic } from '../../src/styles/realistic';
 
 const spec = loadAllSpecs()[0];
@@ -29,4 +30,21 @@ test('GLB is deterministic and under 60 KB', async () => {
   const b = await realistic.render(buildRacquet(spec));
   expect(Buffer.from(a).equals(Buffer.from(b))).toBe(true);
   expect(a.byteLength).toBeLessThanOrEqual(60 * 1024);
+});
+
+test('materialFor is asked once per part, even when parts share one surface', async () => {
+  const model = buildRacquet(spec);
+  const shared = { ...model.parts[0].surface, vertexColors: false };
+  const parts = model.parts.map((p) => ({ ...p, surface: shared }));
+  const asked: string[] = [];
+  const bytes = await modelToGlb({ ...model, parts }, (part) => {
+    asked.push(part.name);
+    return { baseColor: [parts.findIndex((p) => p.name === part.name) / parts.length, 0, 0], metallic: 0, roughness: 1 };
+  });
+  expect(asked).toEqual(parts.map((p) => p.name));
+  const doc = await reader().readBinary(bytes);
+  for (const [i, p] of parts.entries()) {
+    const node = doc.getRoot().listNodes().find((n) => n.getName() === p.name)!;
+    expect(node.getMesh()!.listPrimitives()[0].getMaterial()!.getBaseColorFactor()[0], p.name).toBeCloseTo(i / parts.length, 5);
+  }
 });

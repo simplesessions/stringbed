@@ -1,0 +1,44 @@
+{
+  "id": "yonex-rexis-speed",
+  "brand": "Yonex",
+  "name": "Rexis Speed",
+  "material": "multifilament",
+  "shape": null,
+  "gaugesMm": [
+    1.25,
+    1.3
+  ],
+  "colours": [
+    {
+      "id": "natural",
+      "name": "Natural",
+      "hex": "#e4e2dc"
+    }
+  ],
+  "finish": "satin",
+  "summary": "A firmer multifilament for comfort seekers who want a bit more control and durability than a soft multi. It holds tension better than Rexis Comfort, is easy on the arm, and works in a full bed or as a hybrid string.",
+  "bestFor": [
+    "comfort",
+    "control",
+    "durability"
+  ],
+  "ratings": {
+    "power": 3,
+    "spin": 2,
+    "control": 3,
+    "comfort": 4,
+    "feel": 4,
+    "durability": 3
+  },
+  "compared": [
+    "wilson-nxt",
+    "babolat-xcel"
+  ],
+  "confidence": "low",
+  "sources": [
+    "https://www.tennisonly.com.au/Yonex_Rexis_Speed_16_130_String_Set/descpage-YREXS.html",
+    "https://www.tennisnerd.net/gear/strings/yonex-rexis-string-review-speed-and-comfort/24827"
+  ],
+  "researchedOn": "2026-11-24",
+  "verified": false
+}

@@ -1,0 +1,47 @@
+{
+  "id": "toroline-absolute",
+  "brand": "Toroline",
+  "name": "Absolute",
+  "material": "polyester",
+  "shape": {
+    "sides": 6,
+    "label": "Hexagonal"
+  },
+  "gaugesMm": [
+    1.2
+  ],
+  "colours": [
+    {
+      "id": "black",
+      "name": "Black",
+      "hex": "#232326"
+    }
+  ],
+  "finish": "satin",
+  "summary": "A thin, black, six-sided co-poly for aggressive players who want spin and a predictable response on full swings. One overview lists it among the softest Torolines, for players avoiding arm fatigue, and the one customer review read agrees; the shop describes a crisp feel.",
+  "bestFor": [
+    "spin",
+    "control",
+    "comfort"
+  ],
+  "ratings": {
+    "power": 3,
+    "spin": 4,
+    "control": 4,
+    "comfort": 4,
+    "feel": 4,
+    "durability": 2
+  },
+  "compared": [
+    "toroline-caviar",
+    "toroline-o-toro"
+  ],
+  "confidence": "low",
+  "sources": [
+    "https://www.tennis-warehouse.com/TOROLINE_Absolute_17_120_String/descpageACTORO-T7ABS.html",
+    "https://www.tennis-warehouse.com/Toroline_Tennis_Strings/catpage-TOROLSTR.html",
+    "https://www.tennisnerd.net/gear/strings/toroline-strings-spin-control-and-color/63502"
+  ],
+  "verified": false,
+  "researchedOn": "2026-11-24"
+}

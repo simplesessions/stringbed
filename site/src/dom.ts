@@ -39,6 +39,9 @@ const ICONS = {
   code: 'M9 7l-5 5 5 5M15 7l5 5-5 5',
   close: 'M6 6l12 12M18 6L6 18',
   retry: 'M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4.5v4h-4',
+  minus: 'M6 12h12',
+  plus: 'M6 12h12M12 6v12',
+  rise: 'M12 19V5M6 11l6-6 6 6',
   reset: 'M12 4.5a7.5 7.5 0 1 1-7.1 5.1M4.5 4.5v5h5',
 } as const;
 
@@ -67,4 +70,43 @@ export function silhouette(headSizeSqIn: number): SVGSVGElement {
     ['path', { d: `M${(21 - rx * 0.55).toFixed(2)} ${(throatY - 3).toFixed(2)} L19.6 ${shaftTop.toFixed(2)} M${(21 + rx * 0.55).toFixed(2)} ${(throatY - 3).toFixed(2)} L22.4 ${shaftTop.toFixed(2)}`, fill: 'none', stroke: 'var(--swatch)', 'stroke-width': '2.2', 'stroke-linecap': 'round' }],
     ['rect', { x: '19.4', y: shaftTop.toFixed(2), width: '3.2', height: (bottom - shaftTop).toFixed(2), rx: '1.2', fill: 'var(--swatch)' }],
   ]);
+}
+
+/**
+ * A spool from the end, in its string's colour: the loading state, the failed state and the no-WebGL
+ * fallback. As tall as the 3D framing draws a reel, and standing on the same line.
+ */
+export function disc(): SVGSVGElement {
+  const ring = (r: number) => `M${50 - r} 58a${r} ${r} 0 1 0 ${2 * r} 0a${r} ${r} 0 1 0 ${-2 * r} 0z`;
+  return svg('0 0 100 100', 'silhouette disc', [
+    ['path', { d: ring(37) + ring(10), fill: 'var(--swatch)', 'fill-rule': 'evenodd', stroke: 'oklch(0.23 0.01 75 / 0.25)', 'stroke-width': '1', 'vector-effect': 'non-scaling-stroke' }],
+  ]);
+}
+
+/** Lines over a picture, in its own CSS pixels: each an outline with a lighter core. */
+export function polylines(cls: string): { node: SVGSVGElement; set(lines: ReadonlyArray<{ kind: string; points: ReadonlyArray<readonly [number, number]> }>): void } {
+  const node = document.createElementNS(SVG, 'svg');
+  node.setAttribute('class', cls);
+  node.setAttribute('aria-hidden', 'true');
+  return {
+    node,
+    set(lines) {
+      node.replaceChildren(...lines.flatMap(({ kind, points }) => ['edge', 'core'].map((part) => {
+        const p = document.createElementNS(SVG, 'polyline');
+        p.setAttribute('class', `${part} ${kind}`);
+        p.setAttribute('points', points.map(([x, y]) => `${x.toFixed(1)},${y.toFixed(1)}`).join(' '));
+        return p;
+      })));
+    },
+  };
+}
+
+/** A list that could not be fetched: what went wrong, and a way to try again. */
+export function faultPage(title: string, err: unknown, again: () => void): HTMLElement {
+  // A thrown TypeError is fetch's network failure; anything else is a message we wrote.
+  const offline = !(err instanceof Error) || err instanceof TypeError;
+  const reason = offline ? 'The request did not reach the server. Check your connection, then try again.' : `${err.message} Try again in a moment.`;
+  const retry = el('button', { class: 'button', type: 'button' }, icon('retry'), 'Try again');
+  retry.addEventListener('click', again);
+  return el('div', { class: 'fault-page', role: 'alert' }, el('h1', { class: 'fault-title' }, title), el('p', {}, reason), retry);
 }

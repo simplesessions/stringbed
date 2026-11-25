@@ -2,6 +2,7 @@ import { test, expect } from 'bun:test';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import type { Catalog } from '../../src/catalog';
+import { brandRoute, parseHash } from '../../site/src/routes';
 import {
   DEFAULT_STYLE,
   assetFor,
@@ -15,9 +16,7 @@ import {
   formatPattern,
   generationLabel,
   groupByBrand,
-  parseRoute,
   pickStyle,
-  routeFor,
   groupPlaceholders,
   placeholderLabel,
   searchRacquets,
@@ -30,9 +29,7 @@ import {
   aislesOf,
   shelvesOf,
   membersOf,
-  brandRoute,
-  parseBrandRoute,
-  parseShelfRoute,
+  brandNamed,
 } from '../../site/src/catalog-view';
 
 const catalog: Catalog = JSON.parse(readFileSync(join(__dirname, '../../assets/catalog.json'), 'utf8'));
@@ -45,27 +42,6 @@ test('assetUrl respects the base path', () => {
 test('assetUrl tolerates a base without a trailing slash and a path with a leading one', () => {
   expect(assetUrl('/stringbed', '/realistic/x.glb')).toBe('/stringbed/realistic/x.glb');
   expect(assetUrl('./', 'catalog.json')).toBe('./catalog.json');
-});
-
-test('parseRoute', () => {
-  expect(parseRoute('#/wilson-blade-98-v10')).toEqual({ racquetId: 'wilson-blade-98-v10', colourway: null });
-  expect(parseRoute('')).toEqual({ racquetId: null, colourway: null });
-  expect(parseRoute('#/yonex-ezone-100/espresso-brown')).toEqual({ racquetId: 'yonex-ezone-100', colourway: 'espresso-brown' });
-  expect(routeFor('yonex-ezone-100', 'espresso-brown')).toBe('#/yonex-ezone-100/espresso-brown');
-});
-
-test('parseRoute ignores hashes that are not racquet routes', () => {
-  expect(parseRoute('#')).toEqual({ racquetId: null, colourway: null });
-  expect(parseRoute('#/')).toEqual({ racquetId: null, colourway: null });
-  expect(parseRoute('#main')).toEqual({ racquetId: null, colourway: null });
-  expect(parseRoute('#/wilson-blade-98-v10/')).toEqual({ racquetId: 'wilson-blade-98-v10', colourway: null });
-  expect(parseRoute('#/Not%20An%20Id')).toEqual({ racquetId: null, colourway: null });
-});
-
-test('routeFor round-trips through parseRoute', () => {
-  expect(routeFor('yonex-ezone-100')).toBe('#/yonex-ezone-100');
-  expect(parseRoute(routeFor('yonex-ezone-100'))).toEqual({ racquetId: 'yonex-ezone-100', colourway: null });
-  expect(routeFor(null)).toBe('#/');
 });
 
 test('groupByBrand sorts brands', () => {
@@ -209,15 +185,16 @@ test('shop floor: aisles, shelves and members', () => {
   expect(membersOf(catalog, aero.generations[0], 'adult').every((r) => !isJunior(r))).toBe(true);
   expect(membersOf(catalog, aero.generations[0], 'junior').every(isJunior)).toBe(true);
   expect(shelves.find((s) => s.lineage === 'babolat-pure-aero-rafa')?.name).toBe('Pure Aero Rafa');
-  expect(parseBrandRoute(brandRoute('Babolat'), ['Babolat', 'Head'])).toBe('Babolat');
-  expect(parseBrandRoute('#/babolat-pure-aero-100', ['Babolat'])).toBeNull();
+  const named = (hash: string) => { const r = parseHash(hash); return r.kind === 'brand' ? brandNamed(r.slug, ['Babolat', 'Head']) : null; };
+  expect(named(brandRoute('Babolat'))).toBe('Babolat');
+  expect(named('#/babolat-pure-aero-100')).toBeNull();
+  expect(named('#/b/nope')).toBeNull();
 });
 
 test('brand routes can point at a line', () => {
   expect(brandRoute('Babolat', 'babolat-pure-aero')).toBe('#/b/babolat/babolat-pure-aero');
-  expect(parseBrandRoute('#/b/babolat/babolat-pure-aero', ['Babolat'])).toBe('Babolat');
-  expect(parseShelfRoute('#/b/babolat/babolat-pure-aero')).toBe('babolat-pure-aero');
-  expect(parseShelfRoute('#/b/babolat')).toBeNull();
+  expect(parseHash('#/b/babolat/babolat-pure-aero')).toEqual({ kind: 'brand', slug: 'babolat', lineage: 'babolat-pure-aero' });
+  expect(parseHash('#/b/babolat')).toEqual({ kind: 'brand', slug: 'babolat', lineage: null });
 });
 
 test('groupPlaceholders gathers variants by product line', () => {

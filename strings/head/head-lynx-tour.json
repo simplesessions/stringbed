@@ -1,0 +1,67 @@
+{
+  "id": "head-lynx-tour",
+  "brand": "Head",
+  "name": "Lynx Tour",
+  "material": "polyester",
+  "shape": {
+    "sides": 6,
+    "label": "Hexagonal"
+  },
+  "gaugesMm": [
+    1.2,
+    1.25,
+    1.3
+  ],
+  "colours": [
+    {
+      "id": "black",
+      "name": "Black",
+      "hex": "#303032"
+    },
+    {
+      "id": "grey",
+      "name": "Grey",
+      "hex": "#6e6f72"
+    },
+    {
+      "id": "orange",
+      "name": "Orange",
+      "hex": "#e03d30"
+    },
+    {
+      "id": "champagne",
+      "name": "Champagne",
+      "hex": "#a39870"
+    }
+  ],
+  "finish": "satin",
+  "summary": "A six-sided co-poly for players who make their own pace, with a firm, crisp response, excellent control and dependable spin. Reviewers found that it keeps its character longer than many polys and is less harsh than expected; there is little free power, and sore arms should look elsewhere.",
+  "bestFor": [
+    "control",
+    "durability"
+  ],
+  "ratings": {
+    "power": 2,
+    "spin": 4,
+    "control": 4,
+    "comfort": 3,
+    "feel": 3,
+    "durability": 4
+  },
+  "compared": [
+    "head-hawk",
+    "solinco-hyper-g"
+  ],
+  "confidence": "high",
+  "sources": [
+    "https://tennisoverload.com/head-lynx-tour-tennis-string-review/",
+    "https://www.perfect-tennis.com/head-lynx-tour-review/",
+    "https://prostrung.com/head-lynx-tour-tennis-string-review/",
+    "https://www.tennis-warehouse.com/HeadString.html",
+    "https://www.tennisonly.com.au/Head_Tennis_Racquet_String.html",
+    "https://www.tennisnerd.net/gear/strings/string-reviews/head-lynx-tour-string-review/20825",
+    "https://tenniscompanion.org/head-lynx-tour/"
+  ],
+  "researchedOn": "2026-11-24",
+  "verified": false
+}

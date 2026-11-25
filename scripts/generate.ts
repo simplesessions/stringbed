@@ -1,13 +1,24 @@
 import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { pathToFileURL } from 'node:url';
-import type { Catalog } from '../src/catalog';
+import type { Catalog, StringCatalog } from '../src/catalog';
+import { buildSpool } from '../src/core/spool';
+import { hexToLinear } from '../src/core/color';
+import { partsToGlb } from '../src/export/glb';
+import { loadAllStrings } from '../src/string-spec';
 import { buildRacquet, triangleCount } from '../src/core/build';
 import { lineageOf, loadAllSpecs, withColourway, type RacquetSpec } from '../src/core/spec';
 import { loadPlaceholders } from '../src/placeholders';
 import { styles } from '../src/styles';
+import { ROUGHNESS } from '../src/styles/finish';
 
 export const MAX_BYTES = 150 * 1024;
+export const SPOOL_MAX_BYTES = 40 * 1024;
+/** Size limit by the kind of file: the spool is not a racquet style. */
+const maxBytes = (style: string) => (style === 'models' ? SPOOL_MAX_BYTES : MAX_BYTES);
+const SPOOL_PATH = 'models/string-spool.glb';
+/** Folders generate owns outright: stale files in them are removed. */
+const OWNED_DIRS = [...styles.map((s) => s.id), 'models'];
 
 export interface Generated {
   /** Relative path (forward slashes) to file content. */
@@ -78,6 +89,13 @@ export async function generateInMemory(): Promise<Generated> {
       }
     }
   }
+  const spool = buildSpool();
+  const spoolBytes = await partsToGlb('string-spool', spool, (part) => ({ baseColor: hexToLinear(part.surface.color), metallic: 0, roughness: ROUGHNESS.satin }));
+  const spoolTriangles = spool.reduce((n, p) => n + p.geometry.index!.count / 3, 0);
+  files.set(SPOOL_PATH, spoolBytes);
+  rows.push({ id: 'string-spool', triangles: spoolTriangles, bytes: spoolBytes.byteLength, style: 'models' });
+  const strings: StringCatalog = { version: 1, spool: { path: SPOOL_PATH, bytes: spoolBytes.byteLength, triangles: spoolTriangles, parts: spool.map((p) => p.name) }, strings: loadAllStrings() };
+  files.set('strings.json', new TextEncoder().encode(JSON.stringify(strings, null, 2) + '\n'));
   files.set('catalog.json', new TextEncoder().encode(JSON.stringify(catalog, null, 2) + '\n'));
   return { files, catalog, rows };
 }
@@ -90,11 +108,11 @@ export async function generateAll(outDir: string): Promise<Generated> {
     mkdirSync(dirname(full), { recursive: true });
     writeFileSync(full, bytes);
   }
-  for (const style of styles) {
-    const dir = join(outDir, style.id);
+  for (const id of OWNED_DIRS) {
+    const dir = join(outDir, id);
     if (!existsSync(dir)) continue;
     for (const f of readdirSync(dir)) {
-      if (!gen.files.has(`${style.id}/${f}`)) rmSync(join(dir, f), { recursive: true, force: true });
+      if (!gen.files.has(`${id}/${f}`)) rmSync(join(dir, f), { recursive: true, force: true });
     }
   }
   return gen;
@@ -107,10 +125,10 @@ export function diffAgainstDisk(gen: Generated, outDir: string): string[] {
     const full = join(outDir, path);
     if (!existsSync(full) || !Buffer.from(bytes).equals(readFileSync(full))) diffs.push(path);
   }
-  for (const style of styles) {
-    const dir = join(outDir, style.id);
+  for (const id of OWNED_DIRS) {
+    const dir = join(outDir, id);
     if (!existsSync(dir)) continue;
-    for (const f of readdirSync(dir)) if (!gen.files.has(`${style.id}/${f}`)) diffs.push(`${style.id}/${f}`);
+    for (const f of readdirSync(dir)) if (!gen.files.has(`${id}/${f}`)) diffs.push(`${id}/${f}`);
   }
   return diffs.sort();
 }
@@ -137,9 +155,9 @@ async function main(): Promise<number> {
   }
   const gen = await generateAll(outDir);
   printTable(gen.rows);
-  const over = gen.rows.filter((r) => r.bytes > MAX_BYTES);
+  const over = gen.rows.filter((r) => r.bytes > maxBytes(r.style));
   if (over.length > 0) {
-    for (const r of over) console.error(`${r.style}/${r.id}: ${r.bytes} bytes exceeds ${MAX_BYTES}`);
+    for (const r of over) console.error(`${r.style}/${r.id}: ${r.bytes} bytes exceeds ${maxBytes(r.style)}`);
     return 1;
   }
   return 0;

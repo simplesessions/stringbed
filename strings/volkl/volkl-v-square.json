@@ -1,0 +1,60 @@
+{
+  "id": "volkl-v-square",
+  "brand": "Volkl",
+  "name": "V-Square",
+  "material": "polyester",
+  "shape": {
+    "sides": 4,
+    "label": "Square"
+  },
+  "gaugesMm": [
+    1.1,
+    1.2,
+    1.25,
+    1.3
+  ],
+  "colours": [
+    {
+      "id": "black",
+      "name": "Black",
+      "hex": "#2a2a2c"
+    },
+    {
+      "id": "lava",
+      "name": "Lava",
+      "hex": "#d33a2a"
+    },
+    {
+      "id": "yellow",
+      "name": "Yellow",
+      "hex": "#d9dd2b"
+    }
+  ],
+  "finish": "satin",
+  "summary": "A four-sided co-poly with sharp edges and a slick surface, for players who want bite and snapback with precise targeting. The shop calls it slightly softer than Cyclone and durable. Customer reviews praise the spin but disagree on tension holding and how long it lasts.",
+  "bestFor": [
+    "spin",
+    "control",
+    "durability"
+  ],
+  "ratings": {
+    "power": 3,
+    "spin": 5,
+    "control": 4,
+    "comfort": 3,
+    "feel": 3,
+    "durability": 4
+  },
+  "compared": [
+    "volkl-cyclone",
+    "solinco-hyper-g"
+  ],
+  "confidence": "low",
+  "sources": [
+    "https://www.tennis-warehouse.com/VolklString.html",
+    "https://www.tennis-warehouse.com/Volkl_V-Square_16_130_String/descpageACVOLKL-VSQ16.html",
+    "https://www.tennisnuts.com/volkl-v-square-200m-tennis-string-reel-red-1466595.html"
+  ],
+  "verified": false,
+  "researchedOn": "2026-11-24"
+}

@@ -17,7 +17,9 @@
       26,
       23
     ],
-    "unstrungWeightG": 300
+    "unstrungWeightG": 300,
+    "balanceMm": 320,
+    "stiffnessRa": 72
   },
   "geometry": {
     "head": {
@@ -89,7 +91,8 @@
     "https://www.tennis-warehouse.com/Best_Racquets_of_2026/catpage-BESTRAC26.html",
     "https://racquetguys.ca/products/babolat-pure-drive-gen-11",
     "https://www.tennisnerd.net/?p=42376",
-    "https://www.tennis-warehouse.com/Babolat_Pure_Drive_2025/descpageRCBAB-BPD25R.html"
+    "https://www.tennis-warehouse.com/Babolat_Pure_Drive_2025/descpageRCBAB-BPD25R.html",
+    "https://www.babolat.com/gb/pure-drive-gen11-unstrung/101552.html"
   ],
   "verified": true,
   "variantLabel": "100",

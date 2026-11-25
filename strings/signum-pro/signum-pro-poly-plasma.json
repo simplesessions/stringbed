@@ -1,0 +1,48 @@
+{
+  "id": "signum-pro-poly-plasma",
+  "brand": "Signum Pro",
+  "name": "Poly Plasma",
+  "material": "polyester",
+  "shape": null,
+  "gaugesMm": [
+    1.18,
+    1.23,
+    1.28,
+    1.33
+  ],
+  "colours": [
+    {
+      "id": "pearl-orange",
+      "name": "Pearl-orange",
+      "hex": "#de7f45"
+    }
+  ],
+  "finish": "satin",
+  "summary": "A firm, resin-treated co-poly known for holding tension and lasting a long time. It offers plenty of control for fast swings and moderate spin, but low power and a stiff feel; thin gauges help comfort and feel.",
+  "bestFor": [
+    "durability",
+    "control",
+    "value"
+  ],
+  "ratings": {
+    "power": 2,
+    "spin": 3,
+    "control": 4,
+    "comfort": 2,
+    "feel": 3,
+    "durability": 5
+  },
+  "compared": [
+    "signum-pro-x-perience",
+    "volkl-cyclone"
+  ],
+  "confidence": "medium",
+  "sources": [
+    "https://www.signum-pro.com/html/index.php?id=5&L=1",
+    "https://www.tennis-warehouse.com/Signum_Pro_Poly_Plasma_17_123_String/descpageACSIGNUM-SIGPPP170.html",
+    "https://www.tennis-warehouse.com/SignumString.html",
+    "https://www.extreme-tennis.eu/signum-pro-tennis-strings/238-signum-pro-polyplasma.html"
+  ],
+  "verified": true,
+  "researchedOn": "2026-11-24"
+}

@@ -1,0 +1,44 @@
+{
+  "id": "solinco-tour-bite-diamond-rough",
+  "brand": "Solinco",
+  "name": "Tour Bite Diamond Rough",
+  "material": "polyester",
+  "shape": null,
+  "gaugesMm": [
+    1.25,
+    1.3
+  ],
+  "colours": [
+    {
+      "id": "silver",
+      "name": "Silver",
+      "hex": "#6e6a78"
+    }
+  ],
+  "finish": "satin",
+  "summary": "Tour Bite with a diamond-patterned surface, for advanced hitters with big swings. The shop describes a firm, highly predictable response with great precision and spin, and a slightly gentler feel than Tour Bite itself; of two customer reviews, one found it muted and one praised its spin and pocketing.",
+  "bestFor": [
+    "spin",
+    "control"
+  ],
+  "ratings": {
+    "power": 2,
+    "spin": 5,
+    "control": 4,
+    "comfort": 2,
+    "feel": 3,
+    "durability": 4
+  },
+  "compared": [
+    "solinco-tour-bite",
+    "solinco-tour-bite-soft"
+  ],
+  "confidence": "low",
+  "sources": [
+    "https://solinco.com/products/tour-bite-diamond-rough/",
+    "https://www.typtiwarehouse.com/Solinco_Tour_Bite_Diamond_Rough_16_130_String_/descpage-TBDR16.html",
+    "https://www.tennisnerd.net/gear/strings/best-solinco-strings-ranked-from-spin-to-comfort/70390"
+  ],
+  "researchedOn": "2026-11-24",
+  "verified": true
+}

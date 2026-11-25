@@ -1,0 +1,53 @@
+{
+  "id": "solinco-mach-10",
+  "brand": "Solinco",
+  "name": "Mach-10",
+  "material": "polyester",
+  "shape": {
+    "sides": 5,
+    "label": "Pentagonal"
+  },
+  "gaugesMm": [
+    1.15,
+    1.2,
+    1.25,
+    1.3
+  ],
+  "colours": [
+    {
+      "id": "blue",
+      "name": "Blue",
+      "hex": "#2aa8c8"
+    }
+  ],
+  "finish": "satin",
+  "summary": "Solinco's livelier polyester, with five edges and a softening agent. One reviewer found it far more elastic than Solinco's firmer polys, with extra depth in defence, a kinder feel and good tension holding, but not the best at any one thing, and pricey.",
+  "bestFor": [
+    "power",
+    "comfort",
+    "spin"
+  ],
+  "ratings": {
+    "power": 3,
+    "spin": 4,
+    "control": 3,
+    "comfort": 3,
+    "feel": 4,
+    "durability": 3
+  },
+  "compared": [
+    "solinco-tour-bite-soft",
+    "solinco-confidential",
+    "solinco-hyper-g"
+  ],
+  "confidence": "low",
+  "sources": [
+    "https://solinco.com/products/mach-10/",
+    "https://www.tennisonly.com.au/Solinco_Mach-10_16_130_String_Set/descpage-SM10130.html",
+    "https://www.tennisnerd.net/gear/strings/best-solinco-strings-ranked-from-spin-to-comfort/70390",
+    "https://www.tennisonly.com.au/Solinco_Tennis_Racquet_String.html",
+    "https://www.tennisnerd.net/gear/strings/solinco-tennis-strings-a-brand-built-for-spin-and-tension-stability/69240"
+  ],
+  "researchedOn": "2026-11-24",
+  "verified": true
+}

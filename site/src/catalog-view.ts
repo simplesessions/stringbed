@@ -1,5 +1,6 @@
 // Pure view logic for the gallery. No DOM, no three.js: everything here is unit-tested.
 import type { Catalog } from '../../src/catalog';
+import { brandSlug } from './routes';
 
 export type Racquet = Catalog['racquets'][number];
 export type Style = Catalog['styles'][number];
@@ -48,17 +49,7 @@ export function assetUrl(base: string, path: string): string {
   return `${base.replace(/\/+$/, '')}/${path.replace(/^\/+/, '')}`;
 }
 
-const ROUTE = /^#\/([a-z0-9]+(?:-[a-z0-9]+)*)(?:\/([a-z0-9]+(?:-[a-z0-9]+)*))?\/?$/;
-
-/** "#/<racquet>" or "#/<racquet>/<colourway>". */
-export function parseRoute(hash: string): { racquetId: string | null; colourway: string | null } {
-  const m = ROUTE.exec(hash);
-  return { racquetId: m ? m[1] : null, colourway: m?.[2] ?? null };
-}
-
-export function routeFor(racquetId: string | null, colourway?: string | null): string {
-  return racquetId === null ? '#/' : colourway ? `#/${racquetId}/${colourway}` : `#/${racquetId}`;
-}
+export { routeFor, brandRoute, brandSlug } from './routes';
 
 /**
  * The racquet as shown in one of its colourways: that swatch and those files, everything else
@@ -215,7 +206,10 @@ export interface SearchHit {
   junior: boolean;
 }
 
-const fold = (s: string) => s.toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, ' ');
+export const fold = (s: string) => s.toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, ' ');
+
+/** Search rank, lower first: prefix match on the model, then racquets with a 3D model. */
+export const searchScore = (prefix: boolean, hasModel: boolean) => (prefix ? 0 : 2) + (hasModel ? 0 : 1);
 
 /**
  * Every query word must appear in brand, line, model, generation or year. Prefix matches on the
@@ -235,7 +229,7 @@ export function searchRacquets(c: Catalog, query: string, limit = 40): SearchHit
       model_: fold(p.model), year: p.releaseYear ?? Math.max(...p.onSaleIn) - 1,
     })),
   ];
-  const score = (h: (typeof pool)[number]) => (h.model_.startsWith(words[0]) ? 0 : 1) * 2 + (h.hasModel ? 0 : 1);
+  const score = (h: (typeof pool)[number]) => searchScore(h.model_.startsWith(words[0]), h.hasModel);
   return pool
     .filter((h) => words.every((w) => h.hay.includes(` ${w}`)))
     .sort((a, b) => score(a) - score(b) || b.year - a.year || byText(a.brand, b.brand) || byText(a.model, b.model))
@@ -302,26 +296,9 @@ export function olderCount(c: Catalog, age: Age): number {
 
 // ---------- the shop floor: brands, then lines, then sizes ----------
 
-export function brandSlug(brand: string): string {
-  return brand.toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-}
-
-/** "#/b/<brand>" opens a brand's floor; "#/b/<brand>/<lineage>" opens it at that line's shelf. */
-export function brandRoute(brand: string, lineage?: string | null): string {
-  return lineage ? `#/b/${brandSlug(brand)}/${lineage}` : `#/b/${brandSlug(brand)}`;
-}
-
-const BRAND_ROUTE = /^#\/b\/([a-z0-9-]+)(?:\/([a-z0-9-]+))?\/?$/;
-
-/** The brand a "#/b/<slug>[/<lineage>]" hash names, if any. */
-export function parseBrandRoute(hash: string, brands: readonly string[]): string | null {
-  const m = BRAND_ROUTE.exec(hash);
-  return m ? brands.find((b) => brandSlug(b) === m[1]) ?? null : null;
-}
-
-/** The line (lineage) a brand-floor hash points at, if any. */
-export function parseShelfRoute(hash: string): string | null {
-  return BRAND_ROUTE.exec(hash)?.[2] ?? null;
+/** The brand a route's slug names, if the catalog has it. */
+export function brandNamed(slug: string, brands: readonly string[]): string | null {
+  return brands.find((b) => brandSlug(b) === slug) ?? null;
 }
 
 /** A family and its variants as full entries, base first, limited to one size. */
