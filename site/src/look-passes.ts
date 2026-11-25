@@ -267,6 +267,7 @@ const lineFragment = /* glsl */ `
     // Outer silhouette and occluding contours: body against not-body, or a depth jump.
     // Sampled on two rings so the line is solid and about 2 * outline wide.
     float hits = 0.0;
+    float outer = 0.0; // of those, the ones against no body at all: the racquet's own outline
     for (int i = 0; i < 8; i++) {
       float an = float(i) * 0.7853982;
       vec2 dir = vec2(cos(an), sin(an)) * px;
@@ -274,6 +275,7 @@ const lineFragment = /* glsl */ `
         vec2 uv = vUv + dir * outline * float(k) * 0.5;
         float b = isBody(texture2D(tG, uv).a);
         float edge = abs(b - b0);
+        outer += edge;
         if (b * b0 > 0.5 && viewZ(uv) - z0 > depthStep) edge = 1.0; // the far side of an occluding edge
         hits += edge;
       }
@@ -301,8 +303,11 @@ const lineFragment = /* glsl */ `
     float tone = mix(0.78, 1.0, smoothstep(0.28, 0.36, n0.z));
     float fa = max(b0, isString(g0.a) * 0.55);
     vec3 base = toSRGB(fill * (b0 > 0.5 ? tone : 1.0));
+    // Ink does not show on a black part, so inside one the lines are scratched out of it instead.
+    float dark = b0 * (1.0 - smoothstep(0.16, 0.3, dot(base, vec3(0.2126, 0.7152, 0.0722)))) * (1.0 - smoothstep(0.0, 3.0, outer));
+    vec3 line = mix(ink, base + 0.34, dark);
     // Ink over fill, premultiplied (the canvas is premultiplied alpha).
-    gl_FragColor = over(vec4(ink * a + base * fa * (1.0 - a), a + fa * (1.0 - a)), ground());
+    gl_FragColor = over(vec4(line * a + base * fa * (1.0 - a), a + fa * (1.0 - a)), ground());
   }`;
 
 function fullscreen(material: ShaderMaterial): { scene: Scene; material: ShaderMaterial } {
