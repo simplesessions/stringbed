@@ -7,6 +7,8 @@ bump; new racquets, new colourways and fixes to existing models are minor or pat
 
 ## Unreleased
 
+- Gallery: a quieter Build page (slim header, one section open at a time, only the ratings that moved, Copy link as the one filled button) and no brand directory or filters on racquet and string pages.
+- Fix: the Build page's pinned columns were drawn over "About this racquet" on wide windows, and the size filter left a racquet or build for a floor.
 - Strings carry their gauge numbers (`gaugeNames`, optional), shown beside the mm.
 - Phones: a taller 3D stage, more room between it and its buttons, and a full screen: the stage edge to edge with its caption and key numbers over the foot.
 - Fix: in the Line look, dark parts (black strings, spool flanges, black grips) draw their inner lines pale, so they no longer merge.

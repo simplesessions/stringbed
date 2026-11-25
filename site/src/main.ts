@@ -274,7 +274,6 @@ function buildHeader(a: App) {
       renderSigns(a);
       transition(() => renderFloor(a));
       announceShown(a);
-      if (wall.hidden) location.hash = a.brand ? brandRoute(a.brand) : routeFor(null);
     });
     return b;
   }));
@@ -295,7 +294,8 @@ function buildHeader(a: App) {
 }
 
 // Look: how the 3D previews are drawn. Viewer-only, unrelated to the catalog's asset styles.
-// The header carries it on wider screens; on phones it sits in the detail stage's controls.
+// The header carries it on wider screens; on phones it sits in the detail stage's controls, and on the
+// build page it is a menu there at every width.
 let headerLook: HTMLElement | null = null;
 const lookControls = new Set<HTMLElement>();
 
@@ -307,9 +307,23 @@ function lookControl(a: App): HTMLElement {
     b.addEventListener('click', () => setLook(a, look));
     group.append(b);
   }
+  return keepLook(group);
+}
+
+function lookMenu(a: App): HTMLElement {
+  const menu = el('select', { class: 'look-menu', 'aria-label': 'Look of the 3D preview' },
+    ...LOOKS.map((look) => el('option', { value: look, selected: look === a.look }, LOOK_LABEL[look])));
+  menu.addEventListener('change', () => {
+    setLook(a, menu.value as Look);
+    play('pick');
+  });
+  return keepLook(menu);
+}
+
+function keepLook(control: HTMLElement): HTMLElement {
   for (const old of lookControls) if (!old.isConnected && old !== headerLook) lookControls.delete(old); // or the pages they stood on are kept whole
-  lookControls.add(group);
-  return group;
+  lookControls.add(control);
+  return control;
 }
 
 function setLook(a: App, look: Look) {
@@ -321,6 +335,7 @@ function setLook(a: App, look: Look) {
       lookControls.delete(group);
       continue;
     }
+    if (group instanceof HTMLSelectElement) group.value = look;
     for (const b of group.querySelectorAll<HTMLElement>('[data-look]')) b.setAttribute('aria-pressed', String(b.dataset.look === look));
   }
   a.thumbs?.setLook(look);
@@ -808,18 +823,19 @@ function buildHost(a: App): BuildHost {
     showDetail(base, title, nodes) {
       inRacquets(a);
       openDetail(title, nodes);
+      document.body.dataset.view = 'build'; // the header keeps to what a build needs
       a.lastOpened = familyOf(a.catalog, base).id;
       markSigns(a.brand);
     },
     note: (text) => note(text, 'build'),
     announce: (text) => (announce.textContent = text),
-    stage: (r, ready) => stage(a, exhibitOf(a, r), { flat: silhouette(r.specs.headSizeSqIn), parts: true, without: 'The 3D preview needs WebGL. Everything else here works without it.', ready }),
+    stage: (r, ready) => stage(a, exhibitOf(a, r), { flat: silhouette(r.specs.headSizeSqIn), parts: true, compact: true, without: 'The 3D preview needs WebGL. Everything else here works without it.', ready }),
     exhibit: (r) => exhibitOf(a, r),
     family: (r) => familyOf(a.catalog, r),
-    specs: (r) => el('dl', { class: 'rows' }, ...specRows(r, true)),
-    profile: (p, family) => profileOf(a, p, family),
-    file: (r) => getFile(a, r),
-    soundSwitch: (changed, signal) => soundSwitch('Sound', changed, signal),
+    onSound(changed, signal) {
+      soundFaces.add(changed);
+      signal.addEventListener('abort', () => soundFaces.delete(changed));
+    },
     pickRacquet: openSearch,
   };
 }
@@ -1058,8 +1074,8 @@ const NICHE = '#c4b9a8';
 const racquetStage = (a: App, r: Racquet) =>
   stage(a, exhibitOf(a, r), { flat: silhouette(r.specs.headSizeSqIn), parts: true, without: 'The 3D preview needs WebGL. Specs and the download still work.' });
 
-/** `flat` stands in for the render; `parts` offers the close-ups of a racquet's parts; `without` is the word when there is no WebGL; `ready` is called for each model that arrives. */
-function stage(a: App, first: Exhibit, { flat, parts, without, ready }: { flat: SVGSVGElement; parts: boolean; without: string; ready?: () => void }): Stage {
+/** `flat` stands in for the render; `parts` offers the close-ups of a racquet's parts; `compact` keeps the controls to one short row; `without` is the word when there is no WebGL; `ready` is called for each model that arrives. */
+function stage(a: App, first: Exhibit, { flat, parts, compact = false, without, ready }: { flat: SVGSVGElement; parts: boolean; compact?: boolean; without: string; ready?: () => void }): Stage {
   const hintId = 'stage-hint';
   // Only the model carries the transition name: it flies in while the alcove behind it fades.
   const model = el('div', { class: 'stage-model', style: 'view-transition-name: racquet' }, flat);
@@ -1085,10 +1101,11 @@ function stage(a: App, first: Exhibit, { flat, parts, without, ready }: { flat: 
   host.setAttribute('aria-label', first.label);
   host.setAttribute('aria-describedby', hintId);
   host.addEventListener('keydown', (e) => {
+    if (e.target instanceof HTMLSelectElement) return; // its arrows are its own
     if (viewer.key(e)) e.preventDefault();
   });
 
-  const reset = el('button', { class: 'button button-quiet', type: 'button' }, icon('reset'), el('span', { class: 'reset-word' }, 'Reset view'));
+  const reset = el('button', { class: 'button button-quiet', type: 'button', title: compact ? 'Reset view' : null }, icon('reset'), el('span', { class: 'reset-word' }, 'Reset view'));
   reset.addEventListener('click', () => viewer.reset());
   const views = parts ? el('div', { class: 'views', role: 'group', 'aria-label': 'Move in on' }) : null;
   if (views) for (const part of PARTS) {
@@ -1098,15 +1115,17 @@ function stage(a: App, first: Exhibit, { flat, parts, without, ready }: { flat: 
   }
   const retry = el('button', { class: 'button', type: 'button' }, icon('retry'), 'Retry');
   const fault = el('div', { class: 'stage-fault', hidden: true }, el('p', {}, 'The model did not load.'), retry);
-  const controls = el('div', { class: 'stage-controls' },
-    views,
-    reset,
-    lookControl(a),
-    el('p', { class: 'stage-hint', id: hintId },
-      el('span', { class: 'hint-fine' }, 'Drag to turn, Shift-drag to move, scroll to zoom. Double-click to move in. Arrow keys, Shift + arrows and + / − work too.'),
-      el('span', { class: 'hint-coarse' }, 'Swipe sideways to turn. Two fingers move and zoom.'),
-    ),
+  // Hidden, it still describes the stage to a screen reader.
+  const hint = el('p', { class: 'stage-hint', id: hintId, hidden: true },
+    el('span', { class: 'hint-fine' }, 'Drag to turn, Shift-drag to move, scroll to zoom. Double-click to move in. Arrow keys, Shift + arrows and + / − work too.'),
+    el('span', { class: 'hint-coarse' }, 'Swipe sideways to turn. Two fingers move and zoom.'),
   );
+  const help = el('button', { class: 'hint-open', type: 'button', 'aria-label': 'How to move the view', title: 'How to move the view', 'aria-expanded': 'false', 'aria-controls': hintId }, icon('help'));
+  help.addEventListener('click', () => {
+    hint.hidden = !hint.hidden;
+    help.setAttribute('aria-expanded', String(!hint.hidden));
+  });
+  const controls = el('div', { class: 'stage-controls' }, views, reset, ...(compact ? [lookMenu(a), hint] : [lookControl(a), help, hint]));
   // Phones and tablets: the stage is the whole screen, and what matters most lies over its foot. Where
   // the browser has a real full screen it is used; an iPhone gets a layer as tall as the screen ever is,
   // so nothing in it changes size when the address bar comes and goes.
@@ -1491,29 +1510,22 @@ const SPEAKER = (on: boolean) =>
       ? '<path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>'
       : '<path d="M16 9.5l5 5M21 9.5l-5 5" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>'
   }</svg>`;
-/** The header's is an icon; the build page's says what it is. They are one switch. `changed` hears of it, until the signal. */
-function soundSwitch(label?: string, changed?: () => void, signal?: AbortSignal): HTMLElement {
-  const b = el('button', { class: `sound-toggle${label ? ' is-labelled' : ''}`, type: 'button', 'aria-label': label ? null : 'Interface sounds', title: label ? null : 'Interface sounds' });
-  const face = el('span', { 'aria-hidden': 'true' });
-  b.append(face, label ?? '');
+function soundSwitch(): HTMLElement {
+  const b = el('button', { class: 'sound-toggle', type: 'button', 'aria-label': 'Interface sounds', title: 'Interface sounds' });
   b.addEventListener('click', () => {
     setSound(!soundOn());
     play('pick');
     paintSound();
   });
   const paint = () => {
-    face.innerHTML = SPEAKER(soundOn());
+    b.innerHTML = SPEAKER(soundOn());
     b.setAttribute('aria-pressed', String(soundOn()));
   };
-  const heard = () => {
-    paint();
-    changed?.();
-  };
-  soundFaces.add(heard);
-  signal?.addEventListener('abort', () => soundFaces.delete(heard));
+  soundFaces.add(paint);
   paint();
   return b;
 }
+/** Told whenever sound goes on or off. */
 const soundFaces = new Set<() => void>();
 const paintSound = () => soundFaces.forEach((paint) => paint());
 searchOpen.after(soundSwitch());

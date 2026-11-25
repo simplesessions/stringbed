@@ -18,7 +18,7 @@ import { COLOURS, formatBuild, type Build } from './build-state';
 import { stringsBench } from './build-strings';
 import { tensionBench } from './build-tension';
 import { addressWriter, browserClock, dresser, lastWord, strummer, until } from './build-timing';
-import { announcement, chosenStrings, droppedNotice, figures, hexOf, playInput, ratingsWord, sideEnd, strungOf, type Chosen, type Figures } from './build-view';
+import { announcement, chosenStrings, droppedNotice, figures, finishSaid, hexOf, playInput, ratingsWord, sideEnd, strungOf, type Chosen, type Figures } from './build-view';
 import { formatLength, inColourway, isJunior, type Racquet } from './catalog-view';
 import { el, icon } from './dom';
 import { loadProfiles, type Profile } from './profiles';
@@ -42,12 +42,8 @@ export interface BuildHost {
   stage(r: Racquet, ready: () => void): Stage;
   exhibit(r: Racquet): Exhibit;
   family(r: Racquet): Racquet;
-  specs(r: Racquet): HTMLElement;
-  profile(profiles: Map<string, Profile>, family: Racquet): HTMLElement | null;
-  /** The download button and its dialog. */
-  file(r: Racquet): HTMLElement[];
-  /** `changed` is called whenever sound goes on or off, here or in the header, until the signal. */
-  soundSwitch(changed: () => void, signal: AbortSignal): HTMLElement;
+  /** `changed` is called whenever sound goes on or off in the header, until the signal. */
+  onSound(changed: () => void, signal: AbortSignal): void;
   /** Ask which racquet, and go where it leads. */
   pickRacquet(leadsTo: (id: string) => string, chosen: (href: string) => void): void;
 }
@@ -205,16 +201,11 @@ function onePage(host: BuildHost, base: Racquet, first: To, word: string, sendOf
     balanceMm: now?.balance.value ?? null,
   }), clock);
 
-  // The way in to sticking tape on the model, under the stage and among the rest of the lead.
-  const tapeButtons = viewer
-    ? [0, 1].map(() => {
-        const b = el('button', { class: 'button tape-toggle', type: 'button', 'aria-expanded': 'false' }, 'Add tape');
-        b.addEventListener('click', () => tool?.setMode(!tool.on));
-        return b;
-      })
-    : [];
-  const controls = stage.node.querySelector('.stage-controls');
-  if (tapeButtons.length) controls?.prepend(tapeButtons[0]);
+  // Sticking tape on the model starts from the lead; while it is out, its way back is under the model too.
+  const tapeButton = viewer ? el('button', { class: 'button', type: 'button' }, 'Add tape') : null;
+  const tapeDone = el('button', { class: 'button tape-toggle', type: 'button', hidden: true }, 'Done');
+  for (const b of [tapeButton, tapeDone]) b?.addEventListener('click', () => tool?.setMode(!tool.on));
+  if (viewer) stage.node.querySelector('.stage-controls')?.prepend(tapeDone);
 
   // ---------- the benches ----------
 
@@ -231,17 +222,18 @@ function onePage(host: BuildHost, base: Racquet, first: To, word: string, sendOf
     retry: fetchStrings,
   });
   const tension = tensionBench(desk, { hz, pluck: pluckNow });
-  const lead = leadBench(desk, tapeButtons[1] ?? null, () => tool?.wake());
+  const lead = leadBench(desk, tapeButton, () => tool?.wake());
   const NONE = { id: '', name: 'None', hex: null };
   const nameOf = (id: string) => COLOURS.find((c) => c.id === id)!.name;
   const grip = swatches('Overgrip', [NONE, ...COLOURS], (id) => {
     change({ overgrip: id || null }, id ? `${nameOf(id)} overgrip.` : 'No overgrip.');
     play('wrap');
-  });
+  }, true);
   const dampener = swatches('Dampener', [NONE, ...COLOURS], (id) => {
     change({ dampener: id || null }, id ? `${nameOf(id)} dampener.` : 'No dampener.');
     play('thump');
-  });
+  }, true);
+  const finish = bench('Grip and dampener', grip.node, dampener.node);
   const numbers = numbersBench(desk);
   const does = doesSection(fetchProfiles);
 
@@ -273,10 +265,13 @@ function onePage(host: BuildHost, base: Racquet, first: To, word: string, sendOf
       tapBed: pluckNow,
       onMode(on) {
         root.classList.toggle('is-taping', on);
-        for (const b of tapeButtons) {
-          b.setAttribute('aria-expanded', String(on));
-          b.textContent = on ? 'Done' : 'Add tape';
+        if (tapeButton) {
+          tapeButton.disabled = on;
+          tapeButton.textContent = on ? 'Adding tape' : 'Add tape';
         }
+        const from = document.activeElement === tapeDone;
+        tapeDone.hidden = !on;
+        if (from && !on) (tapeButton?.checkVisibility() ? tapeButton : stage.node).focus({ preventScroll: true });
         // The racquet and its numbers grow for this on a phone: have both in view.
         const r = rig.getBoundingClientRect();
         if (on && r.bottom > innerHeight && r.top > 0) window.scrollBy({ top: r.top, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
@@ -288,23 +283,11 @@ function onePage(host: BuildHost, base: Racquet, first: To, word: string, sendOf
     });
   }
 
-  // ---------- about ----------
-
-  const specsSlot = el('div');
-  const profileSlot = el('div', { class: 'profile-slot' });
-  const fileSlot = el('div', { class: 'about-file' });
-  const about = el('section', { class: 'build-about', 'aria-labelledby': 'about-head' },
-    el('h2', { class: 'bench-head', id: 'about-head' }, 'About this racquet'),
-    el('div', { class: 'about-body' }, el('div', {}, specsSlot, fileSlot), profileSlot));
-  function drawAbout() {
-    specsSlot.replaceChildren(host.specs(shown));
-    fileSlot.replaceChildren(...host.file(shown), el('p', { class: 'bench-note' }, 'The download is the stock racquet: your strings, tape, grip and dampener are not in it.'));
-  }
-
   // ---------- the page's own buttons ----------
 
   const back = el('a', { class: 'back' }, icon('back'), el('span', {}, base.model));
-  const swap = el('button', { class: 'button', type: 'button', 'aria-haspopup': 'dialog' }, 'Change racquet');
+  const about = el('a', {}, 'Specs, write-up and stock 3D file');
+  const swap = el('button', { class: 'text-button', type: 'button', 'aria-haspopup': 'dialog' }, 'Change racquet');
   swap.addEventListener('click', () => {
     address.flush();
     const c = carry(life.build, base.model);
@@ -314,7 +297,7 @@ function onePage(host: BuildHost, base: Racquet, first: To, word: string, sendOf
     });
   });
   const copyField = el('input', { class: 'field copy-field', type: 'text', readonly: true, 'aria-label': 'The link to this build', hidden: true });
-  const copy = el('button', { class: 'button', type: 'button' }, 'Copy link');
+  const copy = el('button', { class: 'button is-main', type: 'button' }, 'Copy link');
   const copyAgain = lastWord(() => (copy.textContent = 'Copy link'), clock);
   copy.addEventListener('click', async () => {
     address.flush();
@@ -332,7 +315,7 @@ function onePage(host: BuildHost, base: Racquet, first: To, word: string, sendOf
       copyField.select();
     }
   });
-  const over = el('button', { class: 'button', type: 'button' });
+  const over = el('button', { class: 'text-button', type: 'button', hidden: true });
   over.addEventListener('click', () => {
     const did = life.startOver();
     if (!did) return;
@@ -341,18 +324,18 @@ function onePage(host: BuildHost, base: Racquet, first: To, word: string, sendOf
     announceSoon(did === 'back' ? 'Your build is back.' : 'Build cleared.');
     play(did === 'back' ? 'press' : 'peel');
   });
-  const nav = el('nav', { class: 'detail-nav build-nav', 'aria-label': 'Build' }, back,
-    el('div', { class: 'build-actions' }, copy, host.soundSwitch(tension.sync, signal)), copyField);
+  host.onSound(tension.sync, signal);
+  const nav = el('nav', { class: 'detail-nav build-nav', 'aria-label': 'Build' }, back, copy, copyField);
 
   const title = el('div', { class: 'build-title' },
     el('h1', { class: 'sheet-title', tabindex: '-1' }, `Build my ${base.model}`),
     el('p', { class: 'sheet-sub' }, `${base.brand} · ${formatLength(base.specs.lengthIn).primary} · ${base.specs.headSizeSqIn} in²`),
     el('div', { class: 'build-actions' }, swap, over),
-    controls?.querySelector('.looks') as HTMLElement | null); // phones have no room for it under the model
+    readings.small);
   const rig = el('div', { class: 'build-rig' }, stage.node, readings.node);
   const root = el('div', { class: 'build' }, rig,
-    el('div', { class: 'build-bench' }, title, stringBench.node, tension.node, lead.node, bench('Grip and dampener', grip.node, dampener.node), numbers.node),
-    does.node, about);
+    el('div', { class: 'build-bench' }, title, stringBench.node, tension.node, lead.node, finish.node, numbers.node, el('p', { class: 'build-more' }, about)),
+    does.node);
 
   // The estimate sticks beside the bench; taller than the window, it sticks by its foot.
   const tall = new ResizeObserver(() => does.node.style.setProperty('--tall', `${does.node.offsetHeight}px`));
@@ -376,6 +359,7 @@ function onePage(host: BuildHost, base: Racquet, first: To, word: string, sendOf
     lead.sync();
     grip.set(build.overgrip ?? '');
     dampener.set(build.dampener ?? '');
+    finish.say(finishSaid(build));
     numbers.sync();
     does.sync(rows, sentences, ratingsWord({
       version: family.variants?.length ? family.variantLabel ?? family.model : null,
@@ -385,7 +369,7 @@ function onePage(host: BuildHost, base: Racquet, first: To, word: string, sendOf
       stock: set === null && stringsState !== 'loading',
     }), profilesState !== 'loading');
     over.textContent = life.canPutBack ? 'Put it back' : 'Start over';
-    over.disabled = !life.canPutBack && formatBuild(build) === '';
+    over.hidden = !life.canPutBack && formatBuild(build) === '';
     tool?.wake();
     dress?.soon();
   }
@@ -445,7 +429,6 @@ function onePage(host: BuildHost, base: Racquet, first: To, word: string, sendOf
         if (life.left) return;
         profiles = p;
         profilesState = 'ready';
-        profileSlot.replaceChildren(...(rated ? [host.profile(p, family) ?? ''] : []));
         update();
       },
       () => {
@@ -470,16 +453,14 @@ function onePage(host: BuildHost, base: Racquet, first: To, word: string, sendOf
     stringBench.close();
     arrived = word;
     note();
-    back.href = routeFor(base.id, colourway);
+    back.href = about.href = routeFor(base.id, colourway);
     root.style.setProperty('--swatch', shown.swatch);
     if (repaint) {
-      drawAbout();
       stage.update(host.exhibit(shown));
       loadModel();
     } else update();
   }
 
-  drawAbout();
   read(first, word);
   loadModel();
   fetchStrings();

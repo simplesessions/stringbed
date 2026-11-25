@@ -178,9 +178,7 @@ export function stringRooms(host: Host): StringRooms {
     for (const b of materials.querySelectorAll<HTMLElement>('[data-material]')) b.setAttribute('aria-pressed', String((b.dataset.material || null) === m));
     lastOpened = null;
     host.announce(shownStrings(data.strings, m, brand));
-    if (!wall.hidden) return host.present(floor);
-    delete wall.dataset.floor; // built before this choice
-    location.hash = stringsRouteFor(brand);
+    host.present(floor); // the filter stands only on a floor
   }
 
   /** Brand signs for the current material; a brand with nothing in it has no sign. */
