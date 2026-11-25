@@ -178,7 +178,7 @@ Off by default and remembered, as now; the build page carries a labelled switch.
 | Tension | One ratchet click per lb, then the new pluck on release |
 | Restring | One muted pluck at the bed's pitch |
 | Tape on / off | A papery stroke, then a soft thumb press / the stroke |
-| Overgrip | Muffled wraps |
+| Overgrip | One long soft stroke |
 | Dampener on / off | The bed's pluck, muted / ringing again |
 | Open a string | A plastic spool set on the counter |
 | Copy link | A wooden stamp |

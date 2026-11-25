@@ -7,6 +7,7 @@ bump; new racquets, new colourways and fixes to existing models are minor or pat
 
 ## Unreleased
 
+- Gallery: the overgrip's sound is one soft stroke in place of four knocks.
 - Gallery: choosing a dampener plays the bed with it on, a muted pluck, and taking it off lets the bed ring, in place of a thump.
 - Fix: the Build page's dampener was squeezed under the lowest cross, half behind the frame. It now sits on that cross at full size, and `dampenerMass` weighs it there (about 3 mm higher).
 - Gallery: softer sounds for choosing strings: one muted pluck in place of a buzz and a long tone. Lead tape is a papery stroke and a soft press in place of ticks and a thunk.
