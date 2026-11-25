@@ -86,9 +86,9 @@ export function buildPage(host: BuildHost): BuildPage {
   };
 }
 
-/** Milliseconds between address writes, before a restring is heard (a held arrow key repeats faster), and before a change is announced. */
+/** Milliseconds between address writes, before a restring or a dampener is heard (a held arrow key repeats faster), and before a change is announced. */
 const ADDRESS_GAP = 400;
-const RESTRUNG_AFTER = 90;
+const SETTLES = 90;
 const ANNOUNCE_AFTER = 700;
 
 const strandOf = (c: Chosen): Strand => ({ color: c.colour.hex, finish: c.spec.finish, gaugeMm: c.choice.gaugeMm, sides: c.spec.shape?.sides ?? 0 });
@@ -157,7 +157,7 @@ function onePage(host: BuildHost, base: Racquet, first: To, word: string, sendOf
     if (pitch) pluck(pitch, { muted: muted || life.build.dampener !== null });
   }
   const pluckNow = () => pluckBed(false);
-  const strum = strummer(pluckBed, RESTRUNG_AFTER, clock);
+  const strum = strummer(pluckBed, SETTLES, clock);
 
   const laid = new Map<string, PlacedTape[]>();
   function lay(p: TapePiece): PlacedTape[] {
@@ -232,7 +232,7 @@ function onePage(host: BuildHost, base: Racquet, first: To, word: string, sendOf
   }, true);
   const dampener = swatches('Dampener', [NONE, ...COLOURS], (id) => {
     change({ dampener: id || null }, id ? `${nameOf(id)} dampener.` : 'No dampener.');
-    play('thump');
+    strum.soon(SETTLES); // the bed, muted or let ring again
   }, true);
   const finish = bench('Grip and dampener', grip.node, dampener.node);
   const numbers = numbersBench(desk);

@@ -24,7 +24,7 @@ function rig({ on = true, running = true, gesture = true } = {}) {
   return Object.assign(r, s);
 }
 
-const NEW = ['ratchet', 'peel', 'press', 'wrap', 'thump', 'stamp'] as const satisfies readonly SoundName[];
+const NEW = ['ratchet', 'peel', 'press', 'wrap', 'stamp'] as const satisfies readonly SoundName[];
 const ALL = Object.keys(SOUNDS) as SoundName[];
 const knock = (name: SoundName): Knock => SOUNDS[name];
 const total = (voices: readonly Voice[]) => voices.reduce((sum, v) => sum + v.level, 0);
@@ -89,7 +89,7 @@ test('lead tape is stroked, not struck, and the peel is over before the press', 
 });
 
 test('the single sounds are one knock', () => {
-  for (const name of ['ratchet', 'peel', 'press', 'thump', 'stamp'] as const) {
+  for (const name of ['ratchet', 'peel', 'press', 'stamp'] as const) {
     const voices = played(name);
     expect(voices.every((v) => v.at === 0)).toBe(true);
     expect(voices.filter((v) => v.noise).length).toBe(1);
@@ -178,8 +178,8 @@ test('30 seconds of dragging at 120 events a second is at most one sound per 60 
 test('the other sounds do not wait for that slot', () => {
   const r = rig();
   r.play('ratchet');
-  for (const name of ['peel', 'press', 'wrap', 'thump', 'stamp'] as const) r.play(name);
-  expect(r.played.length).toBe(6);
+  for (const name of ['peel', 'press', 'wrap', 'stamp'] as const) r.play(name);
+  expect(r.played.length).toBe(5);
 });
 
 test('hover keeps its own slot of 90 ms', () => {

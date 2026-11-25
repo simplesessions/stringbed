@@ -73,12 +73,6 @@ export const SOUNDS = {
     contact: { hz: 700, share: 0.4, decay: 0.016 },
     run: [0, 0.092, 0.18, 0.272],
   },
-  /** A rubber dampener pushed between two strings. */
-  thump: {
-    level: 0.14,
-    partials: [[142, 0.65, 0.045], [286, 0.2, 0.02]],
-    contact: { hz: 440, share: 0.12, decay: 0.008 },
-  },
   /** A wooden stamp on paper: the link copied. */
   stamp: {
     level: 0.15,
