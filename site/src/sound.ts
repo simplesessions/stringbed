@@ -13,8 +13,6 @@ export interface Knock {
   partials: ReadonlyArray<readonly [number, number, number]>;
   /** The moment of contact: band-passed noise. With an `attack` (seconds) it is drawn rather than struck. */
   contact: { hz: number; share: number; decay: number; attack?: number };
-  /** Strike it at each of these times (seconds) instead of once. */
-  run?: readonly number[];
 }
 
 export const SOUNDS = {
@@ -66,12 +64,11 @@ export const SOUNDS = {
     partials: [[150, 0.34, 0.018]],
     contact: { hz: 480, share: 0.5, decay: 0.022, attack: 0.014 },
   },
-  /** An overgrip going round the handle, turn by turn, under the hand. */
+  /** An overgrip drawn round the handle under the hand: one long soft stroke, lower than the tape's. */
   wrap: {
-    level: 0.09,
-    partials: [[178, 0.45, 0.018], [350, 0.15, 0.01]],
-    contact: { hz: 700, share: 0.4, decay: 0.016 },
-    run: [0, 0.092, 0.18, 0.272],
+    level: 0.036,
+    partials: [],
+    contact: { hz: 520, share: 1, decay: 0.045, attack: 0.11 },
   },
   /** A wooden stamp on paper: the link copied. */
   stamp: {
@@ -120,13 +117,11 @@ export interface Output {
 }
 
 function struck(k: Knock): Voice[] {
-  return (k.run ?? [0]).flatMap((at) => {
-    const tune = 1 + (Math.random() - 0.5) * 0.02; // no two touches are quite identical
-    return [
-      ...k.partials.map(([hz, share, decay]) => ({ hz: hz * tune, level: k.level * share, decay, at })),
-      { hz: k.contact.hz, level: k.level * k.contact.share, decay: k.contact.decay, at, attack: k.contact.attack, noise: true },
-    ];
-  });
+  const tune = 1 + (Math.random() - 0.5) * 0.02; // no two touches are quite identical
+  return [
+    ...k.partials.map(([hz, share, decay]) => ({ hz: hz * tune, level: k.level * share, decay, at: 0 })),
+    { hz: k.contact.hz, level: k.level * k.contact.share, decay: k.contact.decay, at: 0, attack: k.contact.attack, noise: true },
+  ];
 }
 
 function plucked(hz: number, muted: boolean): Voice[] {
@@ -163,7 +158,7 @@ function webAudio(): Output {
       band.frequency.value = hz;
       band.Q.value = 0.8;
       src.connect(band).connect(g);
-      src.start(t, Math.random() * noise.duration); // or every knock of a run is the same grain
+      src.start(t, Math.random() * noise.duration); // or every touch is the same grain
     } else {
       const osc = (source = ctx.createOscillator());
       osc.frequency.value = hz;
@@ -236,7 +231,7 @@ export function sounds(host: { now(): number; gesture(): boolean; open(): Output
     setSound(on: boolean): void {
       enabled = on;
       if (on) return;
-      out?.close(); // a ring or a run stops with the switch
+      out?.close(); // a ring stops with the switch
       out = waiting = damp = null;
     },
   };

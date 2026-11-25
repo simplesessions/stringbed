@@ -55,29 +55,18 @@ test('a new knock is no louder than its level, all voices together', () => {
   }
 });
 
-test('a run never adds up past 0.16, ring of the earlier knocks included', () => {
-  for (const name of ['wrap'] as const) {
+test('every sound is one touch: a quick run of knocks is a buzzer, a punch clock or a jackhammer', () => {
+  for (const name of ALL.filter((n) => n !== 'hover')) { // which never starts audio
     const voices = played(name);
-    for (const t of new Set(voices.map((v) => v.at))) {
-      const sum = voices.filter((v) => v.at <= t).reduce((n, v) => n + v.level * Math.exp(-(t - v.at) / v.decay), 0);
-      expect(sum).toBeLessThanOrEqual(0.16);
-    }
+    expect(voices.every((v) => v.at === 0)).toBe(true);
+    expect(voices.filter((v) => v.noise).length).toBe(1);
   }
 });
 
-test('wrap is a run of one knock and is over within 400 ms', () => {
-  expect(ALL.filter((name) => knock(name).run)).toEqual(['wrap']);
-  for (const name of ['wrap'] as const) {
-    const voices = played(name);
-    const starts = [...new Set(voices.map((v) => v.at))];
-    expect(starts).toEqual([...knock(name).run!]);
-    expect(starts.length).toBeGreaterThan(1);
-    expect(starts).toEqual([...starts].sort((a, b) => a - b));
-    expect(starts[0]).toBe(0);
-    expect(ends(voices)).toBeLessThanOrEqual(0.4);
-    const per = voices.length / starts.length; // the same knock every time
-    expect(per).toBe(knock(name).partials.length + 1);
-  }
+test('an overgrip is stroked, not struck, and soon over', () => {
+  expect(SOUNDS.wrap.contact.attack).toBeGreaterThan(0.05);
+  expect(SOUNDS.wrap.partials).toEqual([]);
+  expect(ends(played('wrap'))).toBeLessThanOrEqual(0.4);
 });
 
 test('lead tape is stroked, not struck, and the peel is over before the press', () => {
@@ -86,14 +75,6 @@ test('lead tape is stroked, not struck, and the peel is over before the press', 
   expect(ends(played('peel'))).toBeLessThan(0.3); // build-lead.ts PRESS_AFTER
   expect(SOUNDS.press.contact.attack).toBeGreaterThan(0.01);
   expect(SOUNDS.press.level).toBeLessThanOrEqual(0.05);
-});
-
-test('the single sounds are one knock', () => {
-  for (const name of ['ratchet', 'peel', 'press', 'stamp'] as const) {
-    const voices = played(name);
-    expect(voices.every((v) => v.at === 0)).toBe(true);
-    expect(voices.filter((v) => v.noise).length).toBe(1);
-  }
 });
 
 test('a pluck is 1, 2 and 3 times the pitch it is given, ringing 0.11, 0.05 and 0.022 s', () => {
