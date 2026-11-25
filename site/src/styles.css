@@ -1590,7 +1590,7 @@ ellipse.beam-hoop { fill: color-mix(in oklch, var(--bed, var(--wall)) 34%, var(-
   .reading-value.is-missing { font-size: 0.8125rem; }
   .reading-change, .reading-note, .reading-against { font-size: 0.75rem; }
   .reading-against { font-stretch: 76%; }
-  .reading-moved { margin-top: 3px; font-size: 0.8125rem; }
+  .reading-moved { min-height: 2lh; margin-top: 3px; font-size: 0.8125rem; } /* one line or two, nothing below moves */
   .build-title { margin-top: 20px; }
   .build-nav { flex-wrap: nowrap; }
   .build-nav:has(.copy-field:not([hidden])) { flex-wrap: wrap; }

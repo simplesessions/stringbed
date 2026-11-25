@@ -49,7 +49,7 @@ export interface BuildHost {
   /** `changed` is called whenever sound goes on or off, here or in the header, until the signal. */
   soundSwitch(changed: () => void, signal: AbortSignal): HTMLElement;
   /** Ask which racquet, and go where it leads. */
-  pickRacquet(leadsTo: (id: string) => string): void;
+  pickRacquet(leadsTo: (id: string) => string, chosen: (href: string) => void): void;
 }
 interface To {
   colourway: string | null;
@@ -307,11 +307,10 @@ function onePage(host: BuildHost, base: Racquet, first: To, word: string, sendOf
   const swap = el('button', { class: 'button', type: 'button', 'aria-haspopup': 'dialog' }, 'Change racquet');
   swap.addEventListener('click', () => {
     address.flush();
-    host.pickRacquet((id) => {
-      if (id === base.id) return buildRoute(id, colourway, formatBuild(life.build));
-      const c = carry(life.build, base.model);
-      sendOff(c);
-      return buildRoute(id, null, c.query);
+    const c = carry(life.build, base.model);
+    const stay = buildRoute(base.id, colourway, formatBuild(life.build));
+    host.pickRacquet((id) => (id === base.id ? stay : buildRoute(id, null, c.query)), (href) => {
+      if (href !== stay) sendOff(c);
     });
   });
   const copyField = el('input', { class: 'field copy-field', type: 'text', readonly: true, 'aria-label': 'The link to this build', hidden: true });
@@ -467,6 +466,7 @@ function onePage(host: BuildHost, base: Racquet, first: To, word: string, sendOf
     const repaint = next.colourway !== colourway;
     ({ colourway, shown } = next);
     life.read(to.query);
+    numbers.reset();
     stringBench.close();
     arrived = word;
     note();
