@@ -177,7 +177,7 @@ Off by default and remembered, as now; the build page carries a labelled switch.
 | Pick a string, or tap the bed | Pluck at the bed's own pitch; a dampener cuts its ring |
 | Tension | One ratchet click per lb, then the new pluck on release |
 | Restring | Two soft strokes, mains then crosses (a run of quick ticks fused into a buzzer) |
-| Tape on / off | Peel crackle, then a thumb press / a peel |
+| Tape on / off | A papery stroke, then a soft thumb press / the stroke |
 | Overgrip, dampener | Muffled wraps; a small rubber thump |
 | Open a string | A plastic spool set on the counter |
 | Copy link | A wooden stamp |

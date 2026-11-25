@@ -62,18 +62,17 @@ export const SOUNDS = {
     contact: { hz: 780, share: 1, decay: 0.026, attack: 0.055 },
     run: [0, 0.18],
   },
-  /** Lead tape coming off its backing: all contact, unevenly. */
+  /** Lead tape coming off its backing: one papery stroke. Ticks here, then the press, are a punch clock. */
   peel: {
-    level: 0.07,
-    partials: [[620, 0.12, 0.004]],
-    contact: { hz: 2500, share: 0.8, decay: 0.006 },
-    run: [0, 0.019, 0.031, 0.056, 0.068, 0.094, 0.108, 0.137, 0.151, 0.18, 0.203, 0.231, 0.252, 0.286],
+    level: 0.032,
+    partials: [],
+    contact: { hz: 1250, share: 1, decay: 0.028, attack: 0.085 },
   },
-  /** A thumb pressing the tape down. */
+  /** A thumb smoothing the tape down: felt, hardly a knock. */
   press: {
-    level: 0.12,
-    partials: [[165, 0.6, 0.03], [332, 0.18, 0.016]],
-    contact: { hz: 620, share: 0.2, decay: 0.008 },
+    level: 0.05,
+    partials: [[150, 0.34, 0.018]],
+    contact: { hz: 480, share: 0.5, decay: 0.022, attack: 0.014 },
   },
   /** An overgrip going round the handle, turn by turn, under the hand. */
   wrap: {
