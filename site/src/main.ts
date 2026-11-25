@@ -1046,7 +1046,9 @@ function colourwayPicker(r: Racquet): { node: HTMLElement; update(colourway: str
 
 function exhibitOf(a: App, r: Racquet): Exhibit {
   const asset = assetFor(r, a.style.id);
-  return { url: asset ? assetUrl(BASE, asset.path) : null, label: `3D view of the ${r.model}` };
+  const p = r.specs;
+  const facts: Array<[string, string]> = [['Head', formatHeadSize(p.headSizeSqIn).primary], ['Weight', p.unstrungWeightG ? `${formatCount(p.unstrungWeightG)} g` : 'Not listed'], ['Pattern', formatPattern(p.stringPattern)], ['Beam', formatBeam(p.beamMm)]];
+  return { url: asset ? assetUrl(BASE, asset.path) : null, label: `3D view of the ${r.model}`, caption: { title: r.model, sub: [r.brand, generationLabel(r), r.colourway].filter(Boolean).join(' · '), facts } };
 }
 
 const racquetStage = (a: App, r: Racquet) =>
@@ -1101,23 +1103,64 @@ function stage(a: App, first: Exhibit, { flat, parts, without, ready }: { flat: 
       el('span', { class: 'hint-coarse' }, 'Swipe sideways to turn. Two fingers move and zoom.'),
     ),
   );
-  // Phones: the stage over the whole screen, where a swipe any way turns the model.
-  const full = el('button', { class: 'stage-full', type: 'button', 'aria-pressed': 'false', 'aria-label': 'Full screen view' }, icon('full'));
-  const setFull = (on: boolean) => {
-    host.classList.toggle('is-full', on);
-    full.setAttribute('aria-pressed', String(on));
-    full.replaceChildren(icon(on ? 'close' : 'full'));
-    requestAnimationFrame(() => viewer.refit());
+  // Phones and tablets: the stage is the whole screen, and what matters most lies over its foot. Where
+  // the browser has a real full screen it is used; an iPhone gets a layer as tall as the screen ever is,
+  // so nothing in it changes size when the address bar comes and goes.
+  const caption = el('div', { class: 'full-caption' });
+  const setCaption = ({ caption: c }: Exhibit) =>
+    caption.replaceChildren(
+      el('p', { class: 'full-title' }, c.title),
+      el('p', { class: 'full-sub' }, c.sub),
+      el('dl', { class: 'full-facts' }, ...c.facts.map(([k, v]) => el('div', {}, el('dt', {}, k), el('dd', {}, v)))),
+    );
+  setCaption(first);
+  const full = el('button', { class: 'stage-full', type: 'button', 'aria-pressed': 'false', 'aria-label': 'Full screen' }, icon('full'));
+  const layer = () => host.closest<HTMLElement>('.build-rig') ?? host;
+  const isFull = () => layer().classList.contains('is-full');
+  const refit = () => {
+    if (!isFull()) return;
+    const box = viewer.canvas.getBoundingClientRect();
+    const words = (layer().querySelector('.readings') ?? caption).getBoundingClientRect();
+    // On its side the caption stands beside the model, not under it. 36: its top fades.
+    viewer.refit(box.height < 480 ? { top: 0, bottom: 1 } : { top: 70, bottom: Math.max(0, box.bottom - words.top - 36) });
   };
-  full.addEventListener('click', () => setFull(!host.classList.contains('is-full')));
-  host.addEventListener('keydown', (e) => {
-    if (e.key !== 'Escape' || !host.classList.contains('is-full')) return;
-    e.preventDefault(); // out of the full view, not off the page
-    setFull(false);
-    full.focus();
-  });
+  let frame = new AbortController();
+  const setFull = (on: boolean) => {
+    if (on === isFull()) return;
+    const at = layer();
+    at.classList.toggle('is-full', on);
+    (on ? at.querySelector('.readings') ?? host : host).prepend(caption);
+    full.setAttribute('aria-pressed', String(on));
+    full.setAttribute('aria-label', on ? 'Leave full screen' : 'Full screen');
+    full.replaceChildren(icon(on ? 'close' : 'full'));
+    frame.abort();
+    if (on) {
+      frame = new AbortController();
+      const { signal } = frame;
+      window.addEventListener('resize', () => requestAnimationFrame(refit), { signal });
+      document.addEventListener('fullscreenchange', () => {
+        if (!document.fullscreenElement) setFull(false); // left by the phone's own way out
+        else requestAnimationFrame(refit);
+      }, { signal });
+      window.addEventListener('hashchange', () => setFull(false), { signal });
+      document.addEventListener('keydown', (e) => {
+        if (e.key !== 'Escape') return;
+        e.preventDefault(); // out of the full screen, not off the page
+        e.stopPropagation();
+        setFull(false);
+        full.focus();
+      }, { signal, capture: true });
+      at.requestFullscreen?.({ navigationUI: 'hide' }).catch(() => {}); // the layer covers the page as it is
+      requestAnimationFrame(refit);
+    } else {
+      if (document.fullscreenElement) void document.exitFullscreen().catch(() => {});
+      requestAnimationFrame(() => viewer.refit());
+    }
+  };
+  full.addEventListener('click', () => setFull(!isFull()));
   niche.append(fault, full);
   host.append(controls);
+  host.prepend(caption);
 
   let shown = first;
   // With a model already standing here, it stays until the next one is ready to take its place.
@@ -1151,6 +1194,7 @@ function stage(a: App, first: Exhibit, { flat, parts, without, ready }: { flat: 
       if (!next.url) return false;
       host.setAttribute('aria-label', next.label);
       shown = next;
+      setCaption(next);
       load(host.dataset.state === 'ready');
       return true;
     },
