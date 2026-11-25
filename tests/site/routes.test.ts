@@ -2,7 +2,7 @@ import { test, expect } from 'bun:test';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import type { Catalog, StringCatalog } from '../../src/catalog';
-import { parseHash, routeFor, brandRoute, brandSlug, stringsRoute, stringRoute, buildRoute, type Route } from '../../site/src/routes';
+import { parseHash, routeFor, brandRoute, brandSlug, stringsRoute, stringRoute, buildRoute, type Route, findRoute, stringFindRoute } from '../../site/src/routes';
 import { brandNamed } from '../../site/src/catalog-view';
 
 const asset = (name: string) => JSON.parse(readFileSync(join(__dirname, '../../assets', name), 'utf8'));
@@ -83,4 +83,14 @@ test('no racquet or placeholder is called b, build or strings', () => {
 
 test('no string is called b: #/strings/b/<brand> is a brand floor', () => {
   expect(strings.map((s) => s.id)).not.toContain('b');
+});
+
+test('a filtered floor has its own address, and nothing picked is the floor itself', () => {
+  expect(parseHash('#/find?play=spin')).toEqual({ kind: 'find', query: 'play=spin' });
+  expect(parseHash('#/strings/find?value=1')).toEqual({ kind: 'string-find', query: 'value=1' });
+  expect(parseHash('#/find')).toEqual({ kind: 'find', query: '' });
+  expect(findRoute('')).toBe('#/');
+  expect(findRoute('play=spin')).toBe('#/find?play=spin');
+  expect(stringFindRoute('')).toBe('#/strings');
+  expect(stringFindRoute('value=1')).toBe('#/strings/find?value=1');
 });

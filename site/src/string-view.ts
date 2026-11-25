@@ -93,7 +93,7 @@ export type StringsPlace =
   | { string: null; brand: string | null; notice: string };
 
 export function resolveStrings(r: StringsRoute, all: StringSpec[]): StringsPlace {
-  if (r.kind === 'strings') return { string: null, brand: null, notice: '' };
+  if (r.kind === 'strings' || r.kind === 'string-find') return { string: null, brand: null, notice: '' };
   if (r.kind === 'string-brand') {
     const brand = brandNamed(r.slug, all.map((s) => s.brand));
     return { string: null, brand, notice: brand === null ? `There is no string brand “${r.slug}”. Here are the brands.` : '' };

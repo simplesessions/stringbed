@@ -168,6 +168,61 @@ main { flex: 1; padding: 6px var(--pad) 72px; overflow-x: clip; }
 }
 .wall[hidden] { display: none; }
 
+/* ---------- finding: how it plays and what it is, over the home floor ---------- */
+
+.find { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 20px; margin: 6px 0 26px; }
+.find-traits, .find-menus { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.find-traits { gap: 2px; }
+.find-label { margin-inline-end: 8px; color: var(--ink-2); font-size: 0.8125rem; font-weight: 620; font-stretch: 84%; }
+.find-traits .sign, .find-toggle, .find-menu { border: 1.5px solid var(--line); }
+.find-menu, .find-toggle {
+  min-height: 34px;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink);
+  font: 620 0.875rem/1.2 var(--sans);
+  font-stretch: 86%;
+  cursor: pointer;
+  transition: background-color 0.2s var(--ease-out), color 0.2s var(--ease-out);
+}
+.find-toggle { appearance: none; padding: 4px 12px 3px; }
+.find-menu {
+  appearance: none;
+  padding: 4px 30px 3px 12px;
+  /* Our own chevron: the browser's sits against the pill's edge. */
+  background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%);
+  background-position: calc(100% - 17px) 55%, calc(100% - 12px) 55%;
+  background-size: 5px 5px;
+  background-repeat: no-repeat;
+  field-sizing: content;
+}
+.find-menu:hover, .find-toggle:hover { background-color: var(--wall-2); }
+.find-menu.is-set, .find-toggle[aria-pressed='true'] { background-color: var(--ink); border-color: var(--ink); color: var(--wall); }
+.find-menu option { background: var(--wall); color: var(--ink); }
+.find-traits .sign[aria-pressed='true'] { border-color: var(--ink); }
+.find-clear { appearance: none; min-height: 34px; padding: 4px 6px; border: 0; background: none; color: var(--ink); font: inherit; font-size: 0.875rem; text-decoration: underline; cursor: pointer; }
+.find-clear[hidden] { display: none; }
+
+.found-head { padding-top: 12px; border-top: 2px solid var(--ink); }
+.found-count { margin: 0; font-size: 1.375rem; font-weight: 800; font-stretch: 112%; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.found-note { margin: 4px 0 0; max-width: 75ch; color: var(--ink-2); font-size: 0.875rem; }
+.found-note:empty { display: none; }
+/* Matches from every brand on rails, a grid so each row has its own. */
+.found.racquets {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--bay-w), 1fr));
+  gap: 40px 24px;
+  margin: 28px 0 0;
+  padding: 0;
+  list-style: none;
+  clip-path: inset(-12px -4px -12px -12px);
+}
+.found.racquets .bay { width: auto; }
+.found.racquets .bay-stage::before { content: ''; position: absolute; left: 0; bottom: -3px; width: 100vw; height: 3px; background: var(--rail); }
+.found.racquets .bay-link:focus-visible { outline-offset: 2px; }
+.spools.found { margin-top: 28px; }
+.tag-ratings { display: flex; flex-wrap: wrap; gap: 0 10px; font-size: 0.8125rem; font-variant-numeric: tabular-nums; }
+
 /* ---------- home floor: one aisle per brand ---------- */
 
 .aisles {
@@ -1138,6 +1193,12 @@ a.gen-tab { display: inline-flex; align-items: center; text-decoration: none; }
 
 @media (max-width: 720px) {
   .search { margin-top: 12px; }
+  /* Finding on a phone: two rows that scroll sideways, so the stock stays on the first screen. */
+  .find { gap: 8px; margin-bottom: 20px; }
+  .find-traits, .find-menus { flex-wrap: nowrap; width: calc(100% + 2 * var(--pad)); margin-inline: calc(-1 * var(--pad)); padding: 3px var(--pad); overflow-x: auto; scrollbar-width: none; }
+  .find-traits > *, .find-menus > * { flex: none; }
+  .find-menu { font-size: 1rem; } /* or iOS zooms the page to the menu */
+  .found.racquets { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 14px; --bay-h: 300px; }
   :root { --bay-gap: 10px; }
   .wall { --bay-w: calc((100vw - 2 * var(--pad) - 2 * var(--bay-gap)) / 3.3); }
   .aisles { --fan-h: 300px; grid-template-columns: minmax(0, 1fr); gap: 48px; }
@@ -1200,6 +1261,7 @@ a.gen-tab { display: inline-flex; align-items: center; text-decoration: none; }
   .hint-fine { display: none; }
   .hint-coarse { display: inline; }
   .sign { min-height: 44px; }
+  .find-menu, .find-toggle, .find-clear { min-height: 44px; }
   .version { align-items: center; min-height: 44px; }
   .sheet .gen-tab { min-height: 44px; }
   .pickers .colourway { min-height: 44px; }

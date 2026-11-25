@@ -42,15 +42,21 @@ import {
   type Style,
   brandNamed,
 } from './catalog-view';
-import { buildRoute, isStringsRoute, parseHash, stringRoute } from './routes';
+import { buildRoute, findRoute, isStringsRoute, parseHash, stringRoute } from './routes';
 import { chooseString, emptyBuild, formatBuild } from './build-state';
 import type { BuildHost, BuildPage } from './build-page';
 import { searchAll, type Hit } from './string-view';
 import type { StringSpec } from '../../src/string-spec';
 import { aisleView } from './aisle-view';
+import { finder, foundHead, foundNone, type Finder } from './find-view';
+import {
+  HEAD_CHOICES, LEVEL_CHOICES, NO_RACQUET_FIND, RACQUET_TRAITS, WEIGHT_CHOICES, findRacquets, formatRacquetFind,
+  isEmptyFind, orderNote, parseRacquetFind, patternChoices, type RacquetFind, type RacquetHit,
+} from './find';
+import { topRatings } from './ratings-view';
 import { el, faultPage, icon, silhouette } from './dom';
 import { fetchModelBytes } from './prefetch';
-import { loadProfiles, type Profile } from './profiles';
+import { RATING_KEYS, RATING_LABEL, loadProfiles, type Profile } from './profiles';
 import { profileView, type Rival } from './profile-view';
 import { lineupView } from './lineup-view';
 import { play, setSound, soundOn, storedSound } from './sound';
@@ -98,6 +104,11 @@ interface App {
   stock: StockGroup[];
   stockOrder: Placeholder[];
   brand: string | null;
+  /** What the home floor is filtered to, and the finder standing on it. */
+  find: RacquetFind;
+  finder: Finder<RacquetFind> | null;
+  /** The racquets' ratings, once fetched. */
+  profiles: Map<string, Profile> | null;
   age: Age;
   look: Look;
   gl: GL | null;
@@ -156,6 +167,9 @@ async function boot() {
     shelfGen: new Map(),
     shelfPick: new Map(),
     brand: null,
+    find: NO_RACQUET_FIND,
+    finder: null,
+    profiles: null,
     age,
     look: storedLook(),
     gl: null,
@@ -166,6 +180,7 @@ async function boot() {
   const a = app;
   const first = parseHash(location.hash);
   a.brand = first.kind === 'brand' ? brandNamed(first.slug, brandsOf(a)) : null;
+  if (first.kind === 'find') a.find = parseRacquetFind(first.query);
   buildHeader(a);
   if (isStringsRoute(first)) rooms(a).route(first);
   else {
@@ -272,8 +287,10 @@ function buildHeader(a: App) {
       a.lastOpened = null;
       regroup(a);
       renderSigns(a);
-      transition(() => renderFloor(a));
-      announceShown(a);
+      transition(() => {
+        renderFloor(a);
+        announceShown(a); // after the floor, so a filtered one can say what it found
+      });
     });
     return b;
   }));
@@ -344,6 +361,7 @@ function setLook(a: App, look: Look) {
 }
 
 function announceShown(a: App) {
+  if (!a.brand && !isEmptyFind(a.find)) return announceFound();
   const counts = brandCounts(a);
   const shown = a.brand ? (counts.get(a.brand) ?? 0) : [...counts.values()].reduce((x, y) => x + y, 0);
   const size = a.age === 'all' ? '' : ` ${a.age}`;
@@ -446,11 +464,113 @@ function renderFloor(a: App) {
   markSigns(a.brand);
 }
 
-function homeFloor(a: App): HTMLElement[] {
+function homeFloor(a: App): Node[] {
+  a.finder = finder<RacquetFind>({
+    name: 'Find racquets',
+    traits: RACQUET_TRAITS,
+    menus: [
+      { key: 'level', label: 'Player level', any: 'Any level', choices: LEVEL_CHOICES },
+      { key: 'head', label: 'Head size', any: 'Any head size', choices: HEAD_CHOICES },
+      { key: 'weight', label: 'Unstrung weight', any: 'Any weight', choices: WEIGHT_CHOICES },
+      { key: 'pattern', label: 'String pattern', any: 'Any pattern', choices: patternChoices(a.catalog) },
+    ],
+    empty: NO_RACQUET_FIND,
+    format: formatRacquetFind,
+    change(f) {
+      history.replaceState(null, '', findRoute(formatRacquetFind(f)));
+      a.lastOpened = null;
+      route();
+      if (isEmptyFind(f)) announce.textContent = 'Showing all brands.';
+      else announceFound();
+    },
+    results: (f) => (isEmptyFind(f) ? [aisleList(a)] : racquetResults(a, f)),
+  }, a.find);
+  return [el('h1', { class: 'sr-only' }, 'Racquets'), ...a.finder.nodes];
+}
+
+/** Say what the filter found, once it is on the wall. */
+function announceFound() {
+  const count = wall.querySelector('.found-count');
+  announce.textContent = count ? `${count.textContent}.` : '';
+}
+
+/** The matches from every brand. The ratings are fetched the first time they are wanted. */
+function racquetResults(a: App, f: RacquetFind): Node[] {
+  if (!a.profiles) {
+    const wait = el('div', {}, el('p', { class: 'loading' }, 'Loading ratings…'));
+    const load = () => loadProfiles().then(
+      (profiles) => {
+        a.profiles = profiles;
+        if (!wait.isConnected) return;
+        wait.replaceWith(...racquetResults(a, a.find));
+        announceFound();
+      },
+      (err) => {
+        if (wait.isConnected) wait.replaceChildren(faultPage('The ratings did not load.', err, () => {
+          wait.replaceChildren(el('p', { class: 'loading' }, 'Loading ratings…'));
+          void load();
+        }));
+      },
+    );
+    void load();
+    return [wait];
+  }
+  const { hits, unrated, noWeight } = findRacquets(a.catalog, a.profiles, f, a.age);
+  const lines = (n: number) => `${n} ${n === 1 ? 'line' : 'lines'}`;
+  const notes = [
+    unrated ? `${lines(unrated)} with no ratings yet ${unrated === 1 ? 'is' : 'are'} left out.` : null,
+    noWeight ? `${lines(noWeight)} with no listed weight ${noWeight === 1 ? 'is' : 'are'} left out.` : null,
+  ];
+  const head = foundHead(
+    hits.length ? `${lines(hits.length)} ${hits.length === 1 ? 'matches' : 'match'}` : 'No racquets match',
+    hits.length ? orderNote(RACQUET_TRAITS, f.play, 'Newest first.') : '',
+    notes,
+  );
+  if (!hits.length) {
+    return [head, foundNone(`Nothing ${a.age === 'all' ? '' : `in ${a.age} sizes `}has all of that.`, () => {
+      history.replaceState(null, '', findRoute(''));
+      route();
+      wall.querySelector<HTMLElement>('.find button')?.focus({ preventScroll: true });
+    })];
+  }
+  const list = el('ul', { class: 'found racquets', role: 'list' }, ...hits.map((h) => racquetBay(a, h, f)));
+  queueMicrotask(() => a.thumbs?.prune());
+  return [head, list];
+}
+
+/** A match: the first size that fits stands for its line, with why it is here. */
+function racquetBay(a: App, h: RacquetHit, f: RacquetFind): HTMLElement {
+  const r = h.matching[0];
+  const s = r.specs;
+  // The ratings asked about; with none asked, the frame's strongest.
+  const shown = h.ratings ? (f.play.length ? f.play : topRatings(RATING_KEYS, h.ratings).slice(0, 2)) : [];
+  const sizes = h.sizes < 2 ? null
+    : h.matching.length === h.sizes ? `${h.sizes} sizes`
+    : `Matches: ${h.matching.map((m) => m.variantLabel ?? wallName(m)).join(', ')}`;
+  const canvas = el('canvas', { class: 'bay-canvas', 'aria-hidden': 'true' });
+  const stage = el('span', { class: 'bay-stage' }, silhouette(s.headSizeSqIn), canvas);
+  const link = el('a', { class: 'bay-link', href: routeFor(r.id) },
+    stage,
+    el('span', { class: 'tag' },
+      el('span', { class: 'tag-model' }, wallName(h.family)),
+      el('span', { class: 'tag-meta' }, `${h.family.brand} · ${generationShort(h.family)}`),
+      el('span', { class: 'tag-meta' }, [formatHeadSize(s.headSizeSqIn).primary, formatPattern(s.stringPattern), s.unstrungWeightG ? `${s.unstrungWeightG} g` : null].filter(Boolean).join(' · ')),
+      sizes ? el('span', { class: 'tag-meta' }, sizes) : null,
+      shown.length ? el('span', { class: 'tag-ratings' }, ...shown.map((k) => el('span', {}, `${RATING_LABEL[k]} `, el('b', {}, String(h.ratings![k]))))) : null,
+    ),
+  );
+  link.addEventListener('click', () => {
+    for (const old of wall.querySelectorAll<HTMLElement>('.bay-stage[style*="view-transition-name"]')) old.style.viewTransitionName = '';
+    stage.style.viewTransitionName = 'racquet';
+  });
+  const item = el('li', { class: 'bay', 'data-family': h.family.id, style: `--swatch: ${r.swatch}` }, link);
+  thumbnail(a, r, item, canvas, link);
+  return item;
+}
+
+function aisleList(a: App): HTMLElement {
   const aisles = aislesOf(a.catalog, a.age);
-  return [
-    el('h1', { class: 'sr-only' }, 'Brands'),
-    el('ul', { class: 'aisles', role: 'list' }, ...aisles.map((x) => aisleView({
+  return el('ul', { class: 'aisles', role: 'list' }, ...aisles.map((x) => aisleView({
       brand: x.brand,
       href: brandRoute(x.brand),
       label: `${x.brand}: ${x.racquets} racquets in ${x.lines} lines`,
@@ -466,8 +586,7 @@ function homeFloor(a: App): HTMLElement[] {
         x.colourways ? el('span', {}, `${x.colourways} ${x.colourways === 1 ? 'colourway' : 'colourways'}`) : null,
         x.noModel ? el('span', { class: 'aisle-soft' }, `+${x.noModel} no model yet`) : null,
       ],
-    }))),
-  ];
+  })));
 }
 
 function brandFloor(a: App, brand: string): HTMLElement[] {
@@ -726,10 +845,18 @@ function route() {
   const missing = racquetId && !r && !p ? `There is no racquet with the id “${racquetId}”. Here are the brands.`
     : parsed.kind === 'build' && p ? `The ${p.model} has no 3D model yet, so there is nothing to build on.` : '';
   note(missing);
+  // A racquet's own page leaves the filter alone; a floor's address says what it is.
+  const find = parsed.kind === 'find' ? parseRacquetFind(parsed.query) : NO_RACQUET_FIND;
   const shelfId = parsed.kind === 'brand' && brand ? parsed.lineage : null;
   const sameFloor = !r && !p && !wall.hidden && a.brand === brand && wall.dataset.floor === (brand ? 'brand' : 'home');
   if (sameFloor) {
     // Only the shelf changed (the line index): scroll to it, no page transition.
+    if (!brand) {
+      a.find = find;
+      a.finder?.set(find);
+      a.thumbs?.prune();
+      document.title = homeTitle(a);
+    }
     markSigns(a.brand);
     scrollToShelf(shelfId, true);
     routed = true;
@@ -741,19 +868,24 @@ function route() {
     else if (p) showPlaceholder(a, p);
     else {
       const floorChanged = a.brand !== brand || wall.dataset.floor !== (brand ? 'brand' : 'home');
+      if (!brand) a.find = find;
       if (floorChanged) {
         a.brand = brand;
         renderFloor(a);
-      }
+      } else if (!brand) a.finder?.set(find);
       showWall(a);
       if (shelfId) scrollToShelf(shelfId, false);
       else if (floorChanged && !a.lastOpened) window.scrollTo(0, 0);
-      document.title = brand ? `${brand} · ${baseTitle.split(':')[0]}` : baseTitle;
+      document.title = brand ? `${brand} · ${baseTitle.split(':')[0]}` : homeTitle(a);
     }
     markSigns(a.brand);
   };
   // Moving within a line changes the page in place, so there is nothing to transition between.
   present(change, !!r && page?.lineage === r.lineage);
+}
+
+function homeTitle(a: App): string {
+  return isEmptyFind(a.find) ? baseTitle : `Find racquets · ${baseTitle.split(':')[0]}`;
 }
 
 /** What the string rooms borrow: the stage, the header, and the moves between places. */
@@ -869,7 +1001,7 @@ function showWall(a: App) {
   wall.hidden = false;
   document.body.dataset.view = 'wall';
   if (a.lastOpened) {
-    const link = wall.querySelector<HTMLAnchorElement>(`.shelf-stage[data-family="${a.lastOpened}"], li[data-id="${a.lastOpened}"] .stock-row, li[data-id="${a.lastOpened}"] .stock-tag`);
+    const link = wall.querySelector<HTMLAnchorElement>(`.shelf-stage[data-family="${a.lastOpened}"], li[data-family="${a.lastOpened}"] .bay-link, li[data-id="${a.lastOpened}"] .stock-row, li[data-id="${a.lastOpened}"] .stock-tag`);
     a.lastOpened = null;
     if (link && !link.closest('[hidden]')) {
       link.focus({ preventScroll: true });
