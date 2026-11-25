@@ -29,7 +29,7 @@ const ALL = Object.keys(SOUNDS) as SoundName[];
 const knock = (name: SoundName): Knock => SOUNDS[name];
 const total = (voices: readonly Voice[]) => voices.reduce((sum, v) => sum + v.level, 0);
 /** When the last of it falls silent, in seconds. */
-const ends = (voices: readonly Voice[]) => Math.max(...voices.map((v) => v.at + 0.002 + v.decay * 6));
+const ends = (voices: readonly Voice[]) => Math.max(...voices.map((v) => v.at + (v.attack ?? 0.002) + v.decay * 6));
 const played = (name: SoundName) => {
   const r = rig();
   r.play(name);
@@ -71,7 +71,7 @@ test('weave, peel and wrap are runs of one knock and are over within 400 ms', ()
     const voices = played(name);
     const starts = [...new Set(voices.map((v) => v.at))];
     expect(starts).toEqual([...knock(name).run!]);
-    expect(starts.length).toBeGreaterThan(2);
+    expect(starts.length).toBeGreaterThan(1);
     expect(starts).toEqual([...starts].sort((a, b) => a - b));
     expect(starts[0]).toBe(0);
     expect(ends(voices)).toBeLessThanOrEqual(0.4);
@@ -80,12 +80,13 @@ test('weave, peel and wrap are runs of one knock and are over within 400 ms', ()
   }
 });
 
-test('weave is the mains, a breath, then the crosses', () => {
-  const run = knock('weave').run!;
-  const gaps = run.slice(1).map((t, i) => t - run[i]);
-  const widest = gaps.indexOf(Math.max(...gaps));
-  expect(gaps[widest]).toBeGreaterThan(2 * Math.max(...gaps.filter((_, i) => i !== widest)));
-  expect(widest + 1).toBe(run.length / 2);
+test('weave is two soft strokes, mains then crosses: too slow to buzz, and drawn, not struck', () => {
+  const { run, contact, partials } = SOUNDS.weave;
+  expect(run.length).toBe(2);
+  expect(run[1] - run[0]).toBeGreaterThan(0.1);
+  expect(contact.attack).toBeGreaterThan(0.03);
+  expect(contact.hz).toBeLessThan(1000);
+  expect(partials).toEqual([]);
 });
 
 test('the single sounds are one knock', () => {
@@ -96,11 +97,11 @@ test('the single sounds are one knock', () => {
   }
 });
 
-test('a pluck is 1, 2 and 3 times the pitch it is given, ringing 0.28, 0.16 and 0.09 s', () => {
+test('a pluck is 1, 2 and 3 times the pitch it is given, ringing 0.11, 0.05 and 0.022 s', () => {
   const v = plucked(571);
   expect(v.map((x) => x.hz)).toEqual([571, 1142, 1713]); // never detuned
-  expect(v.map((x) => x.decay)).toEqual([0.28, 0.16, 0.09]);
-  expect(v.every((x) => x.at === 0 && !x.noise)).toBe(true);
+  expect(v.map((x) => x.decay)).toEqual([0.11, 0.05, 0.022]);
+  expect(v.every((x) => x.at === 0 && !x.noise && x.attack === 0.005)).toBe(true);
 });
 
 test('a dampener cuts the ring and nothing else', () => {

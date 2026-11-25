@@ -11,8 +11,8 @@ export interface Knock {
   level: number;
   /** [frequency in Hz, share of the level, decay time constant in seconds] */
   partials: ReadonlyArray<readonly [number, number, number]>;
-  /** The moment of contact: band-passed noise. */
-  contact: { hz: number; share: number; decay: number };
+  /** The moment of contact: band-passed noise. With an `attack` (seconds) it is drawn rather than struck. */
+  contact: { hz: number; share: number; decay: number; attack?: number };
   /** Strike it at each of these times (seconds) instead of once. */
   run?: readonly number[];
 }
@@ -54,12 +54,13 @@ export const SOUNDS = {
     partials: [[1180, 0.45, 0.008], [2360, 0.12, 0.004]],
     contact: { hz: 2600, share: 0.25, decay: 0.003 },
   },
-  /** String drawn through the grommets: the mains, a breath, the crosses. */
+  /** String drawn through the grommets: the mains, a breath, the crosses. Two long soft strokes; a run of
+   * quick ticks here (over 20 a second) fuses into a buzzer. */
   weave: {
-    level: 0.05,
-    partials: [[740, 0.5, 0.006], [1490, 0.12, 0.003]],
-    contact: { hz: 2400, share: 0.3, decay: 0.003 },
-    run: [0, 0.018, 0.036, 0.054, 0.072, 0.09, 0.108, 0.126, 0.18, 0.198, 0.216, 0.234, 0.252, 0.27, 0.288, 0.306],
+    level: 0.045,
+    partials: [],
+    contact: { hz: 780, share: 1, decay: 0.026, attack: 0.055 },
+    run: [0, 0.18],
   },
   /** Lead tape coming off its backing: all contact, unevenly. */
   peel: {
@@ -96,8 +97,15 @@ export const SOUNDS = {
 } satisfies Record<string, Knock>;
 export type SoundName = keyof typeof SOUNDS;
 
-/** A string of the bed: [multiple of its pitch, share of the level, ring in seconds, ring with a dampener]. */
-const PLUCK = { level: 0.14, partials: [[1, 0.62, 0.28, 0.04], [2, 0.25, 0.16, 0.02], [3, 0.13, 0.09, 0.01]], low: 200, high: 1200 } as const;
+/** A string of the bed, under a fingertip: [multiple of its pitch, share of the level, ring in seconds, ring
+ * with a dampener]. Mostly its own note and soon gone: a long clear ring is a game-show tone. */
+const PLUCK = {
+  level: 0.1,
+  attack: 0.005,
+  partials: [[1, 0.72, 0.11, 0.04], [2, 0.14, 0.05, 0.02], [3, 0.04, 0.022, 0.01]],
+  low: 200,
+  high: 1200,
+} as const;
 
 /** Milliseconds before the next sound of a kind: sweeping a list or a tension slider should patter softly. */
 export const GAP_MS = { hover: 90, bed: 60 };
@@ -112,6 +120,8 @@ export interface Voice {
   level: number;
   decay: number;
   at: number;
+  /** Seconds to its peak, if not the shortest that does not click. */
+  attack?: number;
   noise?: boolean;
 }
 
@@ -129,14 +139,14 @@ function struck(k: Knock): Voice[] {
     const tune = 1 + (Math.random() - 0.5) * 0.02; // no two touches are quite identical
     return [
       ...k.partials.map(([hz, share, decay]) => ({ hz: hz * tune, level: k.level * share, decay, at })),
-      { hz: k.contact.hz, level: k.level * k.contact.share, decay: k.contact.decay, at, noise: true },
+      { hz: k.contact.hz, level: k.level * k.contact.share, decay: k.contact.decay, at, attack: k.contact.attack, noise: true },
     ];
   });
 }
 
 function plucked(hz: number, muted: boolean): Voice[] {
   const pitch = Math.min(PLUCK.high, Math.max(PLUCK.low, hz));
-  return PLUCK.partials.map(([n, share, ring, damped]) => ({ hz: pitch * n, level: PLUCK.level * share, decay: muted ? damped : ring, at: 0 }));
+  return PLUCK.partials.map(([n, share, ring, damped]) => ({ hz: pitch * n, level: PLUCK.level * share, decay: muted ? damped : ring, at: 0, attack: PLUCK.attack }));
 }
 
 function webAudio(): Output {
@@ -147,16 +157,16 @@ function webAudio(): Output {
   bus.frequency.value = 4200;
   bus.Q.value = 0.5;
   bus.connect(ctx.destination);
-  const noise = ctx.createBuffer(1, Math.ceil(ctx.sampleRate * 0.1), ctx.sampleRate);
+  const noise = ctx.createBuffer(1, ctx.sampleRate, ctx.sampleRate);
   const data = noise.getChannelData(0);
   for (let i = 0; i < data.length; i++) data[i] = Math.random() * 2 - 1;
 
-  const voice = ({ hz, level, decay, at, noise: rough }: Voice, now: number): GainNode => {
+  const voice = ({ hz, level, decay, at, attack = ATTACK, noise: rough }: Voice, now: number): GainNode => {
     const t = now + at;
     const g = ctx.createGain();
     g.gain.setValueAtTime(0, t);
-    g.gain.linearRampToValueAtTime(level, t + ATTACK);
-    g.gain.setTargetAtTime(0, t + ATTACK, decay);
+    g.gain.linearRampToValueAtTime(level, t + attack);
+    g.gain.setTargetAtTime(0, t + attack, decay);
     g.connect(bus);
     let source: AudioScheduledSourceNode;
     if (rough) {
@@ -175,7 +185,7 @@ function webAudio(): Output {
       osc.connect(g);
       osc.start(t);
     }
-    source.stop(t + ATTACK + decay * SILENT);
+    source.stop(t + attack + decay * SILENT);
     source.onended = () => g.disconnect();
     return g;
   };

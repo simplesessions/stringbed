@@ -7,6 +7,7 @@ bump; new racquets, new colourways and fixes to existing models are minor or pat
 
 ## Unreleased
 
+- Gallery: softer sounds for choosing strings: two brushed strokes and a short, quiet pluck in place of a buzz and a long tone.
 - Gallery: a quieter Build page (slim header, one section open at a time, only the ratings that moved, Copy link as the one filled button) and no brand directory or filters on racquet and string pages.
 - Fix: the Build page's pinned columns were drawn over "About this racquet" on wide windows, and the size filter left a racquet or build for a floor.
 - Strings carry their gauge numbers (`gaugeNames`, optional), shown beside the mm.
